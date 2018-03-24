@@ -165,7 +165,7 @@ public class MuseumBuilder : MonoBehaviour
             if (display != null)
                 LoadResource(display, "test");
 
-            disp.name = "Display" + r.RoomTiles;
+            disp.name = "Display" + r.RoomTiles[0];
             disp.transform.SetParent(associatedFloorGameobjects[i].transform);
             disp.transform.localPosition = Vector3.zero;// * dispInf.LocalPosition;
             i++;
@@ -192,11 +192,11 @@ public class MuseumBuilder : MonoBehaviour
 
             if (display is MeshDisplay)
             {
-                disp.transform.localPosition = new Vector3((1.75f + (MeshDisplayPrefab.transform.localScale.x)) * dispInf.LocalPosition, -0.5f, 0);
+                disp.transform.localPosition = new Vector3((1.75f + (MeshDisplayPrefab.transform.localScale.x)) * dispInf.PositionModifier.x, -0.5f, dispInf.PositionModifier.y);
             }
             else
             {
-                disp.transform.localPosition = new Vector3(0.55f * dispInf.LocalPosition, -0.3f, 0);
+                disp.transform.localPosition = new Vector3(0.55f * dispInf.PositionModifier.x, -0.3f, dispInf.PositionModifier.y);
                 disp.transform.localEulerAngles = new Vector3(0, 90f, 0);
                 disp.transform.localScale = new Vector3(0.2f, 0.2f, 1);
             }

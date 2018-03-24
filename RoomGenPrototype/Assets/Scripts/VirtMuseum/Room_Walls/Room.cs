@@ -53,7 +53,7 @@ public class Room
         {
             CenterDisplayInfos[i] = new MuseumDisplayInfo
             {
-                LocalPosition = 1f
+                PositionModifier = Vector2.right
             };
         }
 

@@ -341,17 +341,15 @@ public class Museum
     /// </summary>
     public int AddWall(Wall w)
     {
-        //adding dummy display that needs to be filled with info
-        MuseumDisplayInfo newDisplay = new MuseumDisplayInfo();
         for (int i = 0; i < Walls.Count; i++)
         {
             if (Walls[i] == w)
             {
-                Walls[i].AddNewDisplayInfo(newDisplay, w.Tile);
+                Walls[i].AddNewDisplayInfo(w.Tile);
                 return i;
             }
         }
-        w.AddNewDisplayInfo(newDisplay, w.Tile);
+        w.AddNewDisplayInfo(w.Tile);
         Walls.Add(w);
         return Walls.Count - 1;
     }

@@ -40,7 +40,7 @@ public class Wall
         Tile = associatedTile;
         Rotation = rot;
 
-        DisplayInfos = new List<MuseumDisplayInfo>((t == WallType.Solid) ? 2 : 0);
+        DisplayInfos = new List<MuseumDisplayInfo>(Type == WallType.Solid ? 4:0);
     }
 
     public override bool Equals(object obj)
@@ -115,33 +115,59 @@ public class Wall
     /// </summary>
     /// <param name="displayInfo"></param>
     /// <param name="tile"></param>
-    public void AddNewDisplayInfo(MuseumDisplayInfo displayInfo, Vector2Int tile)
+    public void AddNewDisplayInfo(Vector2Int tile)
     {
         if (DisplayInfos.Count == DisplayInfos.Capacity)
             throw new System.Exception($"Can only have {DisplayInfos.Capacity} displays on wall of type {Type}");
 
-        //figure out position
-        float x = Location[0].x - tile.x;
-
-        if (x < 0)
-            displayInfo.LocalPosition = -1;
-        else
-            displayInfo.LocalPosition = 1;
-
-        if ((Tile.x == 0 || Tile.x == VirtMuse.Size - 1) && Rotation == WallRotation.Vertical)
-            displayInfo.LocalPosition = -displayInfo.LocalPosition;
-
-        if (Tile.y == 0 && Rotation == WallRotation.Horizontal)
-            displayInfo.LocalPosition = -displayInfo.LocalPosition;
-
-        DisplayInfos.Add(displayInfo);
+        AddDisplayToWall(tile);
+        AddDisplayToWall(tile,- 1f);
 
         //weird fix
-        if (DisplayInfos.Count > 1)
-            DisplayInfos[1].LocalPosition = -DisplayInfos[0].LocalPosition;
+        //TODO FIX in AddDisplay and remove this afterwards
+        if (DisplayInfos.Count > 2)
+        {
+            switch(Rotation)
+            {
+                case WallRotation.Vertical:
+                    DisplayInfos[2].PositionModifier.x = -DisplayInfos[0].PositionModifier.x;
+                    break;
+                case WallRotation.Horizontal:
+                    DisplayInfos[2].PositionModifier.x = -DisplayInfos[3].PositionModifier.x;
+                    DisplayInfos[3].PositionModifier.x = -DisplayInfos[3].PositionModifier.x;
+                    break;
+            }
+        }
 
     }
-    
+
+    /// <summary>
+    /// adds a new display
+    /// </summary>
+    void AddDisplayToWall(Vector2Int tile, float posModSign =1f)
+    {
+        float x = Location[0].x - tile.x;
+
+        MuseumDisplayInfo displayInfo = new MuseumDisplayInfo();
+
+        //figure out position
+
+        displayInfo.PositionModifier.y = .25f * posModSign;
+
+        if (x < 0)
+            displayInfo.PositionModifier.x = -1;
+        else
+            displayInfo.PositionModifier.x = 1;
+
+        if ((Tile.x == 0 || Tile.x == VirtMuse.Size - 1) && Rotation == WallRotation.Vertical)
+            displayInfo.PositionModifier.x = -displayInfo.PositionModifier.x;
+
+        if (Tile.y == 0 && Rotation == WallRotation.Horizontal)
+            displayInfo.PositionModifier.x = -displayInfo.PositionModifier.x;
+
+        DisplayInfos.Add(displayInfo);
+    }
+
     /// <summary>
     /// Changes the type of the wall to t
     /// ensures that displayInfos are kept correctly
@@ -150,19 +176,14 @@ public class Wall
     public void ChangeWallType(WallType t)
     {
         Type = t;
-
-        if(t == WallType.Door)
+        if (t == WallType.Door)
         {
             DisplayInfos.Clear();
             DisplayInfos.Capacity = 0;
         }
         else
-        {
-            //TODO Maybe add display infos
-            // atleast one maybe two if not edge of museum
-            // check tile edge tile and decide
-            DisplayInfos.Capacity = 2;
-        }
+            DisplayInfos.Capacity = 4;
+
     }
 
 }
