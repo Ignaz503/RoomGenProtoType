@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class MetadataDisplay : MonoBehaviour {
 
-    public static MetadataDisplay Instance;
-
-    private void Awake()
+    private void Start()
     {
-        Instance = this;
         gameObject.SetActive(false);
-    }
-
-    public void SetActiveTo(bool value)
-    {
-        Debug.Log(value);
-        gameObject.SetActive(value);
     }
 }
