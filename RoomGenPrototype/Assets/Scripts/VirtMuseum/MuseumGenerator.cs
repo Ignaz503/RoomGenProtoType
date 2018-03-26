@@ -16,8 +16,8 @@ public class MuseumGenerator : MonoBehaviour {
     public int SIZE;
 
     public Color[] RoomTypeColors;
-
     public string Seed = "";
+
 
     public GameObject cubePrefab;
 
@@ -42,7 +42,7 @@ public class MuseumGenerator : MonoBehaviour {
         {
             //TODO Move away from update
             Tuple<MuseumRequest,Queue<string>> req = null;
-            if ((req = MuseumRequests.Peek())!= null)
+            if ((req = MuseumRequests.Dequeue())!= null)
             {
                 Museum virt = new Museum((int)req.Item1.Size);
                 virt.Generate(Seed);// temp
@@ -50,6 +50,7 @@ public class MuseumGenerator : MonoBehaviour {
 
                 if (CreateDebugGameobject)
                     GenerateTempRoomDisplay();
+
 
                 //using (FileStream f = File.Open(Application.persistentDataPath + @"\VirtMuse.xml", FileMode.OpenOrCreate))
                 //{

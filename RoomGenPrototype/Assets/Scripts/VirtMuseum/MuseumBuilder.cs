@@ -23,19 +23,25 @@ public class MuseumBuilder : MonoBehaviour
 
     public float XScale;
     public float ZScale;
+    float DisplayXScale;
 
     Museum VirtMuse = null;
+
+    public bool DisableAfterRequest;
 
     private void Start()
     {
         XScale = FloorPrefab.transform.localScale.x * 10f;
         ZScale = FloorPrefab.transform.localScale.z * 10f;
-
+        DisplayXScale = 1.75f / 0.24f;
+        Debug.Log(DisplayXScale);
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
         {
             MuseumType = "TestMuseum",
             Size = MuseumSize.Large
         }).Serialize(),MuseumData);
+        if (DisableAfterRequest)
+            gameObject.SetActive(false);
     }
 
     private void Update()
@@ -140,10 +146,7 @@ public class MuseumBuilder : MonoBehaviour
                 wallObj.transform.SetParent(parent.transform);
             #endregion
 
-            if (w.Type == Wall.WallType.Solid)
-            {
-                SetUpDisplaysForWall(w, wallObj);
-            }
+            SetUpDisplaysForWall(w, wallObj);
 
         }
     }
@@ -189,17 +192,29 @@ public class MuseumBuilder : MonoBehaviour
 
             if (display != null)
                 LoadResource(display, "test");
-
             if (display is MeshDisplay)
             {
-                disp.transform.localPosition = new Vector3((1.75f + (MeshDisplayPrefab.transform.localScale.x)) * dispInf.PositionModifier.x, -0.5f, dispInf.PositionModifier.y);
+                float xLocalPos = DisplayXScale * ((w.Type == Wall.WallType.Solid) ? wallObj.transform.localScale.x : (1f - wallObj.transform.localScale.x));
+
+                xLocalPos += (w.Type == Wall.WallType.Solid)? 1f:0f;
+                float yLocalPos = (w.Type == Wall.WallType.Solid) ? -.5f : -1f;
+
+                disp.transform.localPosition = new Vector3(xLocalPos * dispInf.PositionModifier.x, yLocalPos, dispInf.PositionModifier.y);
             }
             else
             {
-                disp.transform.localPosition = new Vector3(0.55f * dispInf.PositionModifier.x, -0.3f, dispInf.PositionModifier.y);
+                float xLocPos = (w.Type == Wall.WallType.Solid) ? .55f * dispInf.PositionModifier.x : dispInf.PositionModifier.x;
+                if (xLocPos > 0 && w.Type == Wall.WallType.Door)
+                    xLocPos += 0.02f;
+
+                float yLocPos = (w.Type == Wall.WallType.Solid) ? -0.3f : -0.6f; 
+                disp.transform.localPosition = new Vector3(xLocPos, yLocPos, dispInf.PositionModifier.y);
                 disp.transform.localEulerAngles = new Vector3(0, 90f, 0);
-                disp.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+                float scale = 0.2f * ((w.Type == Wall.WallType.Solid)? 1f:2f);
+                disp.transform.localScale = new Vector3(scale*.75f, scale, 1);
             }
+
+
         }
     }
     

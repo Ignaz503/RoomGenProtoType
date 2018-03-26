@@ -237,8 +237,8 @@ public class Museum
 
         foreach(Wall w in Walls)
         {
-            if (w.Type == Wall.WallType.Door)
-                continue;
+            //if (w.Type == Wall.WallType.Door)
+            //    continue;
 
             foreach(MuseumDisplayInfo dispInf in w.DisplayInfos)
             {

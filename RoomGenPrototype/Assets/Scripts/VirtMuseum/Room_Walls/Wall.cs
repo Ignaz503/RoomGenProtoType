@@ -20,9 +20,12 @@ public class Wall
     }
 
     Museum VirtMuse;
+    float DisplayXPositionModifier = 1f;
 
     [DataMember]
     public WallType Type { get; protected set; }
+    //TODO:
+    //Currently abs pos, should switcht to local pos with parenting
     [DataMember]
     public Vector2[] Location { get; protected set; }
     [DataMember]
@@ -40,7 +43,7 @@ public class Wall
         Tile = associatedTile;
         Rotation = rot;
 
-        DisplayInfos = new List<MuseumDisplayInfo>(Type == WallType.Solid ? 4:0);
+        DisplayInfos = new List<MuseumDisplayInfo>(4);
     }
 
     public override bool Equals(object obj)
@@ -123,43 +126,24 @@ public class Wall
         AddDisplayToWall(tile);
         AddDisplayToWall(tile,- 1f);
 
-        //weird fix
-        //TODO FIX in AddDisplay and remove this afterwards
-        if (DisplayInfos.Count > 2)
-        {
-            switch(Rotation)
-            {
-                case WallRotation.Vertical:
-                    DisplayInfos[2].PositionModifier.x = -DisplayInfos[0].PositionModifier.x;
-                    break;
-                case WallRotation.Horizontal:
-                    DisplayInfos[2].PositionModifier.x = -DisplayInfos[3].PositionModifier.x;
-                    DisplayInfos[3].PositionModifier.x = -DisplayInfos[3].PositionModifier.x;
-                    break;
-            }
-        }
-
+        DisplayXPositionModifier = -DisplayXPositionModifier;
     }
 
     /// <summary>
     /// adds a new display
     /// </summary>
-    void AddDisplayToWall(Vector2Int tile, float posModSign =1f)
+    void AddDisplayToWall(Vector2Int tile, float YposModSign =1f)
     {
-        float x = Location[0].x - tile.x;
-
         MuseumDisplayInfo displayInfo = new MuseumDisplayInfo();
 
         //figure out position
 
-        displayInfo.PositionModifier.y = .25f * posModSign;
+        displayInfo.PositionModifier.y = .25f * YposModSign;
 
-        if (x < 0)
-            displayInfo.PositionModifier.x = -1;
-        else
-            displayInfo.PositionModifier.x = 1;
+        displayInfo.PositionModifier.x = DisplayXPositionModifier;
 
-        if ((Tile.x == 0 || Tile.x == VirtMuse.Size - 1) && Rotation == WallRotation.Vertical)
+        //outer walls fix
+        if ((Tile.x == VirtMuse.Size - 1) && Rotation == WallRotation.Vertical)
             displayInfo.PositionModifier.x = -displayInfo.PositionModifier.x;
 
         if (Tile.y == 0 && Rotation == WallRotation.Horizontal)
@@ -178,8 +162,13 @@ public class Wall
         Type = t;
         if (t == WallType.Door)
         {
-            DisplayInfos.Clear();
-            DisplayInfos.Capacity = 0;
+            foreach(MuseumDisplayInfo info in DisplayInfos)
+            {
+                if (info.PositionModifier.y < 0)
+                    info.PositionModifier.y = -.6f;
+                else
+                    info.PositionModifier.y = .6f;
+            }
         }
         else
             DisplayInfos.Capacity = 4;
