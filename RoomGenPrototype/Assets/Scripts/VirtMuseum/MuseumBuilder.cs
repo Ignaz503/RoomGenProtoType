@@ -146,7 +146,8 @@ public class MuseumBuilder : MonoBehaviour
                 wallObj.transform.SetParent(parent.transform);
             #endregion
 
-            SetUpDisplaysForWall(w, wallObj);
+            if(w.Type == Wall.WallType.Solid)
+                SetUpDisplaysForWall(w, wallObj);
 
         }
     }

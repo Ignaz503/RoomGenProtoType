@@ -43,7 +43,7 @@ public class Wall
         Tile = associatedTile;
         Rotation = rot;
 
-        DisplayInfos = new List<MuseumDisplayInfo>(4);
+        DisplayInfos = new List<MuseumDisplayInfo>(Type == WallType.Solid? 4 :0);
     }
 
     public override bool Equals(object obj)
@@ -162,13 +162,15 @@ public class Wall
         Type = t;
         if (t == WallType.Door)
         {
-            foreach(MuseumDisplayInfo info in DisplayInfos)
-            {
-                if (info.PositionModifier.y < 0)
-                    info.PositionModifier.y = -.6f;
-                else
-                    info.PositionModifier.y = .6f;
-            }
+            DisplayInfos.Clear();
+            DisplayInfos.Capacity = 0;
+            //foreach(MuseumDisplayInfo info in DisplayInfos)
+            //{
+            //    if (info.PositionModifier.y < 0)
+            //        info.PositionModifier.y = -.6f;
+            //    else
+            //        info.PositionModifier.y = .6f;
+            //}
         }
         else
             DisplayInfos.Capacity = 4;

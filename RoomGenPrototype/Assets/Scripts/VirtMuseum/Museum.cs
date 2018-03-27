@@ -237,10 +237,10 @@ public class Museum
 
         foreach(Wall w in Walls)
         {
-            //if (w.Type == Wall.WallType.Door)
-            //    continue;
+            if (w.Type == Wall.WallType.Door)
+                continue;
 
-            foreach(MuseumDisplayInfo dispInf in w.DisplayInfos)
+            foreach (MuseumDisplayInfo dispInf in w.DisplayInfos)
             {
                 dispInf.Type = (rng.Next(0, 2) > 0) ? Display.DisplayType.MeshDisplay : Display.DisplayType.ImageDisplay;
             }
