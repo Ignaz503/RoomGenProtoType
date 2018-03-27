@@ -30,9 +30,19 @@ public class Room
         new Vector2(.5f, -.5f),// lower right
         new Vector2(-.5f, -.5f)//lower left
     };
+
+    static Dictionary<RoomType, IWallValidator> wallValidators = new Dictionary<RoomType, IWallValidator>()
+    {
+        {RoomType.Normal, new NormalRoomWallValidator() },
+        {RoomType.Long, new LongRoomWallValidator() },
+        {RoomType.L, new LRoomWallVaildator() },
+        {RoomType.Big, new BigRoomWallValidator() },
+
+    };
+
     #endregion
 
-    Museum VirtMuse;
+    Museum virtMuse;
 
     [DataMember]
     public RoomType Type { get; protected set; }
@@ -47,7 +57,7 @@ public class Room
     {
         Type = t;
         RoomTiles = Tiles;
-        VirtMuse = virtMuse;
+        this.virtMuse = virtMuse;
         CenterDisplayInfos = new MuseumDisplayInfo[Tiles.Count];
         for(int i = 0; i < Tiles.Count; i++)
         {
@@ -77,17 +87,17 @@ public class Room
             Vector2 lR = tile + cornerOffsets[(int)CornerIndex.LowerRight];// lower right
             Vector2 lL = tile + cornerOffsets[(int)CornerIndex.LowerLeft];// lower left
 
-            float uROneD = uR.x + (uR.y * VirtMuse.Size);
-            float uLOneD = uL.x + (uL.y * VirtMuse.Size);
-            float lROneD = lR.x + (lR.y * VirtMuse.Size);
-            float lLOneD = lL.x + (lL.y * VirtMuse.Size);
+            float uROneD = uR.x + (uR.y * virtMuse.Size);
+            float uLOneD = uL.x + (uL.y * virtMuse.Size);
+            float lROneD = lR.x + (lR.y * virtMuse.Size);
+            float lLOneD = lL.x + (lL.y * virtMuse.Size);
 
             Wall upper = new Wall(
                     Wall.WallType.Solid, //type
                     new Vector2[] { uR, uL },// location of corner points museum coords
                     tile, //associated tile
                     Wall.WallRotation.Horizontal,
-                    VirtMuse
+                    virtMuse
                     );
             tempWalls.Add(upper);
             Wall lower = new Wall(
@@ -95,7 +105,7 @@ public class Room
                  new Vector2[] { lR, lL },
                  tile,
                 Wall.WallRotation.Horizontal,
-                VirtMuse
+                virtMuse
                 );
             tempWalls.Add(lower);
             Wall right = new Wall(
@@ -103,7 +113,7 @@ public class Room
                 new Vector2[] { uR, lR }, 
                 tile,
                 Wall.WallRotation.Vertical,
-                VirtMuse
+                virtMuse
                 );
             tempWalls.Add(right);
             Wall left =new Wall
@@ -112,7 +122,7 @@ public class Room
                 new Vector2[] { uL, lL },
                 tile,
                 Wall.WallRotation.Vertical,
-                VirtMuse
+                virtMuse
                 );
             tempWalls.Add(left);
 
@@ -155,7 +165,7 @@ public class Room
         // stores index of wall in museum walls list into walls list
         foreach(Wall w in tempWalls)
         {
-            Walls.Add(VirtMuse.AddWall(w));
+            Walls.Add(virtMuse.AddWall(w));
         }
     }
 
@@ -169,8 +179,8 @@ public class Room
         {
             Vector2 firstPoint = tempWalls[i].Location[0];
             Vector2 secondPoint = tempWalls[i].Location[1];
-            float first1D = firstPoint.x + (firstPoint.y * VirtMuse.Size);
-            float second1D = secondPoint.x + (secondPoint.y * VirtMuse.Size);
+            float first1D = firstPoint.x + (firstPoint.y * virtMuse.Size);
+            float second1D = secondPoint.x + (secondPoint.y * virtMuse.Size);
 
             uint firstCount = AppearanceCount[first1D];
             uint secondCount = AppearanceCount[second1D];
@@ -183,35 +193,44 @@ public class Room
                 secondCount = tmp;
             }
 
-            switch (Type)
+            if (wallValidators.ContainsKey(Type))
             {
-                case RoomType.Normal:
-                    // do nothig 
-                    break;
-                case RoomType.Long:
-                    if (firstCount > 1 && secondCount > 1)
-                    {
-                        tempWalls.RemoveAt(i);
-                        i--;
-                    }
-                    break;
-                case RoomType.L:
-                    {
-                        if (firstCount > 2 && secondCount > 1)
-                        {
-                            tempWalls.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                    break;
-                case RoomType.Big:
-                    if (firstCount > 2)
-                    {
-                        tempWalls.RemoveAt(i);
-                        i--;
-                    }
-                    break;
+                if(wallValidators[Type].WallNeedsRemoval(firstCount,secondCount))
+                {
+                    tempWalls.RemoveAt(i);
+                    i--;
+                }
             }
+
+            //switch (Type)
+            //{
+            //    case RoomType.Normal:
+            //        // do nothig 
+            //        break;
+            //    case RoomType.Long:
+            //        if (firstCount > 1 && secondCount > 1)
+            //        {
+            //            tempWalls.RemoveAt(i);
+            //            i--;
+            //        }
+            //        break;
+            //    case RoomType.L:
+            //        {
+            //            if (firstCount > 2 && secondCount > 1)
+            //            {
+            //                tempWalls.RemoveAt(i);
+            //                i--;
+            //            }
+            //        }
+            //        break;
+            //    case RoomType.Big:
+            //        if (firstCount > 2)
+            //        {
+            //            tempWalls.RemoveAt(i);
+            //            i--;
+            //        }
+            //        break;
+            //}
         }
     }
 
@@ -228,8 +247,8 @@ public class Room
             {
                 if (w1Idx == w2Idx)
                 {
-                    r1.VirtMuse.Walls[w1Idx].ChangeWallType(Wall.WallType.Door);
-                    r2.VirtMuse.Walls[w2Idx].ChangeWallType(Wall.WallType.Door);
+                    r1.virtMuse.Walls[w1Idx].ChangeWallType(Wall.WallType.Door);
+                    r2.virtMuse.Walls[w2Idx].ChangeWallType(Wall.WallType.Door);
                     addedOneDoor = true;
                     break;
                 }
@@ -239,4 +258,15 @@ public class Room
         }
         return addedOneDoor;
     }
+
+    public static void AddNewWallValidator(RoomType t, IWallValidator val, bool overrideExisting = false)
+    {
+        if (wallValidators.ContainsKey(t) && !overrideExisting)
+            throw new Exception("There already exits a wall validator for this type");
+        else if (wallValidators.ContainsKey(t))
+            wallValidators[t] = val;
+        else
+            wallValidators.Add(t, val);
+    }
+
 }

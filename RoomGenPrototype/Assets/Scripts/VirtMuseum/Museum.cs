@@ -11,7 +11,13 @@ using UnityEngine;
 [DataContract]
 public class Museum
 {
-    Dictionary<RoomType, RoomTypePlacableCheker> roomTypeToPlaceableChecker;
+    static Dictionary<RoomType, BaseRoomTypePlacableCheker> roomTypeToPlaceableChecker = new Dictionary<RoomType, BaseRoomTypePlacableCheker>()
+    {
+            { RoomType.Normal, new BaseRoomTypePlacableCheker(RoomType.Normal) },
+            { RoomType.Long, new BaseRoomTypePlacableCheker(RoomType.Long) },
+            { RoomType.Big, new BaseRoomTypePlacableCheker(RoomType.Big) },
+            { RoomType.L, new BaseRoomTypePlacableCheker(RoomType.L) }
+    };
 
     [DataMember]
     public int Size { get; set; }
@@ -64,14 +70,6 @@ public class Museum
                 RoomMap[x, y] = -1;
             }
         }
-
-        roomTypeToPlaceableChecker = new Dictionary<RoomType, RoomTypePlacableCheker>
-        {
-            { RoomType.Normal, new RoomTypePlacableCheker(RoomType.Normal) },
-            { RoomType.Long, new RoomTypePlacableCheker(RoomType.Long) },
-            { RoomType.Big, new RoomTypePlacableCheker(RoomType.Big) },
-            { RoomType.L, new RoomTypePlacableCheker(RoomType.L) }
-        };
 
         Rooms = new List<Room>();
         Walls = new List<Wall>();

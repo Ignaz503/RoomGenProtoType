@@ -10,7 +10,7 @@ public class MuseumGenerator : MonoBehaviour {
 
     public static MuseumGenerator Instance;
 
-    static Queue<Tuple<MuseumRequest,Queue<string>>> MuseumRequests = new Queue<Tuple<MuseumRequest, Queue<string>>>();
+    static Queue<Tuple<MuseumRequest,Queue<string>>> museumRequests = new Queue<Tuple<MuseumRequest, Queue<string>>>();
 
     [Range(1, 10)]
     public int SIZE;
@@ -38,11 +38,11 @@ public class MuseumGenerator : MonoBehaviour {
 
     private void Update()
     {
-        if(MuseumRequests.Count > 0)
+        if(museumRequests.Count > 0)
         {
             //TODO Move away from update
             Tuple<MuseumRequest,Queue<string>> req = null;
-            if ((req = MuseumRequests.Dequeue())!= null)
+            if ((req = museumRequests.Dequeue())!= null)
             {
                 Museum virt = new Museum((int)req.Item1.Size);
                 virt.Generate(Seed);// temp
@@ -67,7 +67,7 @@ public class MuseumGenerator : MonoBehaviour {
 
     public void RequestNewMuseum(string request, Queue<string> requester)
     {
-        MuseumRequests.Enqueue(new Tuple<MuseumRequest, Queue<string>>(
+        museumRequests.Enqueue(new Tuple<MuseumRequest, Queue<string>>(
                                     MuseumRequest.Deserialize(request),
                                     requester));
     }

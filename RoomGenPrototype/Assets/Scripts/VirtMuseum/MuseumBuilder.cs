@@ -23,9 +23,9 @@ public class MuseumBuilder : MonoBehaviour
 
     public float XScale;
     public float ZScale;
-    float DisplayXScale;
+    float displayXScale;
 
-    Museum VirtMuse = null;
+    Museum virtMuse = null;
 
     public bool DisableAfterRequest;
 
@@ -33,8 +33,12 @@ public class MuseumBuilder : MonoBehaviour
     {
         XScale = FloorPrefab.transform.localScale.x * 10f;
         ZScale = FloorPrefab.transform.localScale.z * 10f;
-        DisplayXScale = 1.75f / 0.24f;
-        Debug.Log(DisplayXScale);
+
+        Transform glassSphere = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
+        Debug.Log(glassSphere.gameObject.name);
+
+        displayXScale = (glassSphere.localScale.x + 0.25f) / 0.24f; // 0.24 is local scale of wall objects
+        Debug.Log(displayXScale);
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
         {
             MuseumType = "TestMuseum",
@@ -51,12 +55,12 @@ public class MuseumBuilder : MonoBehaviour
             string data = null;
             if((data = MuseumData.Dequeue())!= null)
             {
-                VirtMuse = Museum.Deserialize(data);
+                virtMuse = Museum.Deserialize(data);
                 List<GameObject> floors = new List<GameObject>();
                 SetUpFloor(floors);
                 SetUpWalls(floors);
 
-                Player.transform.position = new Vector3(VirtMuse.Rooms[0].RoomTiles[0].x * 10f, 4f, VirtMuse.Rooms[0].RoomTiles[0].y * 10f);
+                Player.transform.position = new Vector3(virtMuse.Rooms[0].RoomTiles[0].x * 10f, 4f, virtMuse.Rooms[0].RoomTiles[0].y * 10f);
                 Player.SetActive(true);
                 gameObject.SetActive(false);
             }
@@ -70,7 +74,7 @@ public class MuseumBuilder : MonoBehaviour
     /// </summary>
     void SetUpFloor(List<GameObject> floors)
     {
-        foreach (Room r in VirtMuse.Rooms)
+        foreach (Room r in virtMuse.Rooms)
         {
             //create floor
             List<GameObject> roomFloors = new List<GameObject>();
@@ -121,7 +125,7 @@ public class MuseumBuilder : MonoBehaviour
     /// <param name="floors"></param>
     void SetUpWalls(List<GameObject> floors)
     {
-        foreach (Wall w in VirtMuse.Walls)
+        foreach (Wall w in virtMuse.Walls)
         {
             #region Wall gamobject setup
             Vector3 pos = new Vector3(XScale * w.Location[0].x, 5, ZScale * w.Location[0].y);
@@ -195,7 +199,7 @@ public class MuseumBuilder : MonoBehaviour
                 LoadResource(display, "test");
             if (display is MeshDisplay)
             {
-                float xLocalPos = DisplayXScale * ((w.Type == Wall.WallType.Solid) ? wallObj.transform.localScale.x : (1f - wallObj.transform.localScale.x));
+                float xLocalPos = displayXScale * ((w.Type == Wall.WallType.Solid) ? wallObj.transform.localScale.x : (1f - wallObj.transform.localScale.x));
 
                 xLocalPos += (w.Type == Wall.WallType.Solid)? 1f:0f;
                 float yLocalPos = (w.Type == Wall.WallType.Solid) ? -.5f : -1f;
