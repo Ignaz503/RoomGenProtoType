@@ -7,6 +7,7 @@ using UnityEngine;
 public class MuseumBuilder : MonoBehaviour
 {
     public static Queue<string> MuseumData = new Queue<string>();
+
     #region Prefabs
     public GameObject FloorPrefab;
     public GameObject WallPrefab;
@@ -19,10 +20,9 @@ public class MuseumBuilder : MonoBehaviour
 
     public GameObject Player;
 
-    public GameObject MetadataDisplayTrigger;
     #endregion
 
-    public float MetadisplayTriggerLocalPosition;
+
     public float ImageDisplayYPosSolidWall;
 
     public MeshFilter[] TestMesh;
@@ -184,23 +184,9 @@ public class MuseumBuilder : MonoBehaviour
             disp.name = "Display" + r.RoomTiles[0];
             disp.transform.SetParent(associatedFloorGameobjects[i].transform);
             disp.transform.localPosition = Vector3.zero;// * dispInf.LocalPosition;
-            SetUpMetadatDisplayTriggersForCenterDisplays(disp);
             i++;
         }
     }
-    
-    void SetUpMetadatDisplayTriggersForCenterDisplays(GameObject display)
-    {
-        for(int i = 0; i < 4; i++)
-        {
-            GameObject trigger = Instantiate(MetadataDisplayTrigger);
-            trigger.transform.SetParent(display.transform);
-
-            trigger.transform.localPosition = new Vector3((i % 2 == 0) ? ((i > 0) ? MetadisplayTriggerLocalPosition : -MetadisplayTriggerLocalPosition) : 0f, .5f, (i % 2 != 0) ? ((i > 1) ? MetadisplayTriggerLocalPosition : -MetadisplayTriggerLocalPosition) : 0f);
-            trigger.name += trigger.transform.localPosition;
-        }
-    }
-
 
     /// <summary>
     /// Creates wall displays for museum
@@ -231,6 +217,9 @@ public class MuseumBuilder : MonoBehaviour
             }
             else
             {
+                //wall image display
+                //currently with poss for door displays can be simplified if decided on no door displays#
+                // which is my current preference
                 float xLocPos = (w.Type == Wall.WallType.Solid) ? .55f * dispInf.PositionModifier.x : dispInf.PositionModifier.x;
                 if (xLocPos > 0 && w.Type == Wall.WallType.Door)
                     xLocPos += 0.02f;
@@ -241,38 +230,7 @@ public class MuseumBuilder : MonoBehaviour
                 float scale = 0.2f * ((w.Type == Wall.WallType.Solid)? 1f:2f);
                 disp.transform.localScale = new Vector3(scale*.75f, scale, 1);
             }
-
-            SetUpMetadataDsiplayTriggersForWallDisplay( disp, (dispInf.PositionModifier.y<0)?1f:-1f, w, display);
         }
-    }
-
-    void SetUpMetadataDsiplayTriggersForWallDisplay(GameObject wallDisplay, float posModifier,Wall w, Display disp)
-    {
-        Debug.Log(posModifier);
-        if (disp is MeshDisplay)
-        {
-            GameObject dispTrigger = Instantiate(MetadataDisplayTrigger);
-            dispTrigger.transform.SetParent(wallDisplay.transform);
-
-            dispTrigger.transform.localPosition = new Vector3((w.Rotation == Wall.WallRotation.Vertical ? 1f:0f)*posModifier, .5f, (w.Rotation == Wall.WallRotation.Horizontal ? 1f:0f) * posModifier);
-            dispTrigger.transform.localScale = new Vector3(2f, 1, 2f);
-
-        }
-        else
-        {
-            SetUpMetadataDisplayTriggerForWallImageDisplay(wallDisplay, posModifier);
-        }
-    }
-
-    void SetUpMetadataDisplayTriggerForWallImageDisplay(GameObject wallDisp,float posModifier)
-    {
-        GameObject dispTrigger = Instantiate(MetadataDisplayTrigger);
-        dispTrigger.transform.SetParent(wallDisp.transform);
-
-        dispTrigger.transform.localPosition = new Vector3(0, -.75f, posModifier*MetadisplayTriggerLocalPosition + (.75f * posModifier));
-        Vector3 scale = dispTrigger.transform.localScale;
-        scale.z = 1.6f;//???
-        dispTrigger.transform.localScale = scale;
     }
 
     /// <summary>
