@@ -409,16 +409,17 @@ MonoBehaviour:
     type: 2}
   WallImageDisplayPrefab: {fileID: 1059841343251520, guid: ad80442e48b39f84c957ac08f1d46647,
     type: 2}
-  TestMesh:
-  - {fileID: 3300000, guid: 6a7c427473b4d03439b149a811ac1644, type: 3}
-  - {fileID: 3300000, guid: a9ce92e3f8bb6224fa1e92b7adec8c65, type: 3}
-  TestSprite: {fileID: 21300000, guid: b11ca85c3ccac254788db0bb8c2d61d2, type: 3}
   Player: {fileID: 1675310006}
   MetadataDisplayTrigger: {fileID: 1358659157459954, guid: 06951ec8f48ff724aa8bf890746392d3,
     type: 2}
   MetadisplayTriggerLocalPosition: 1.5
-  XScale: 0
-  ZScale: 0
+  ImageDisplayYPosSolidWall: -0.3
+  TestMesh:
+  - {fileID: 3300000, guid: 6a7c427473b4d03439b149a811ac1644, type: 3}
+  - {fileID: 3300000, guid: a9ce92e3f8bb6224fa1e92b7adec8c65, type: 3}
+  TestSprite: {fileID: 21300000, guid: b11ca85c3ccac254788db0bb8c2d61d2, type: 3}
+  XPosScale: 0
+  ZPosScale: 0
   DisableAfterRequest: 0
 --- !u!1 &2050256159
 GameObject:

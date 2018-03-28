@@ -7,7 +7,7 @@ using UnityEngine;
 public class MuseumBuilder : MonoBehaviour
 {
     public static Queue<string> MuseumData = new Queue<string>();
-
+    #region Prefabs
     public GameObject FloorPrefab;
     public GameObject WallPrefab;
     public GameObject WallWithDoorPrefab;
@@ -16,18 +16,21 @@ public class MuseumBuilder : MonoBehaviour
     public GameObject MeshDisplayPrefab;
     public GameObject WallImageDisplayPrefab;
 
-    public MeshFilter[] TestMesh;
-    public Sprite TestSprite;
 
     public GameObject Player;
 
     public GameObject MetadataDisplayTrigger;
+    #endregion
 
     public float MetadisplayTriggerLocalPosition;
+    public float ImageDisplayYPosSolidWall;
 
-    public float XScale;
-    public float ZScale;
-    float displayXScale;
+    public MeshFilter[] TestMesh;
+    public Sprite TestSprite;
+
+    public float XPosScale;
+    public float ZPosScale;
+    float displayXPosScale;
     
 
     Museum virtMuse = null;
@@ -36,14 +39,14 @@ public class MuseumBuilder : MonoBehaviour
 
     private void Start()
     {
-        XScale = FloorPrefab.transform.localScale.x * 10f;
-        ZScale = FloorPrefab.transform.localScale.z * 10f;
+        XPosScale = FloorPrefab.transform.localScale.x * 10f;
+        ZPosScale = FloorPrefab.transform.localScale.z * 10f;
 
         Transform glassSphere = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
         Debug.Log(glassSphere.gameObject.name);
 
-        displayXScale = (1.5f*glassSphere.localScale.x ) / 0.24f; // 0.24 is local scale of wall objects
-        Debug.Log(displayXScale);
+        displayXPosScale = (1.5f*glassSphere.localScale.x ) / 0.24f; // 0.24 is local scale of wall objects
+
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
         {
             MuseumType = "TestMuseum",
@@ -111,7 +114,7 @@ public class MuseumBuilder : MonoBehaviour
                 }
 
 
-                Vector3 pos = new Vector3(XScale * tile.x, 0, ZScale * tile.y);
+                Vector3 pos = new Vector3(XPosScale * tile.x, 0, ZPosScale * tile.y);
 
                 floor.transform.position = pos;
                 floor.name = r.Type.ToString() + " " + tile.ToString();
@@ -133,12 +136,12 @@ public class MuseumBuilder : MonoBehaviour
         foreach (Wall w in virtMuse.Walls)
         {
             #region Wall gamobject setup
-            Vector3 pos = new Vector3(XScale * w.Location[0].x, 5, ZScale * w.Location[0].y);
+            Vector3 pos = new Vector3(XPosScale * w.Location[0].x, 5, ZPosScale * w.Location[0].y);
 
             if (w.Rotation == Wall.WallRotation.Vertical)
-                pos.z -= (ZScale * .5f);
+                pos.z -= (ZPosScale * .5f);
             else if (w.Rotation == Wall.WallRotation.Horizontal)
-                pos.x -= (XScale * .5f);
+                pos.x -= (XPosScale * .5f);
 
             GameObject wallObj = w.Type == Wall.WallType.Solid ? Instantiate(WallPrefab) : Instantiate(WallWithDoorPrefab);
 
@@ -219,7 +222,7 @@ public class MuseumBuilder : MonoBehaviour
 
             if (display is MeshDisplay)
             {
-                float xLocalPos = displayXScale * ((w.Type == Wall.WallType.Solid) ? wallObj.transform.localScale.x : (1f - wallObj.transform.localScale.x));
+                float xLocalPos = displayXPosScale * ((w.Type == Wall.WallType.Solid) ? wallObj.transform.localScale.x : (1f - wallObj.transform.localScale.x));
 
                 xLocalPos += (w.Type == Wall.WallType.Solid)? 1f:0f;
                 float yLocalPos = (w.Type == Wall.WallType.Solid) ? -.5f : -1f;
@@ -232,30 +235,28 @@ public class MuseumBuilder : MonoBehaviour
                 if (xLocPos > 0 && w.Type == Wall.WallType.Door)
                     xLocPos += 0.02f;
 
-                float yLocPos = (w.Type == Wall.WallType.Solid) ? -0.3f : -0.6f; 
+                float yLocPos = (w.Type == Wall.WallType.Solid) ? ImageDisplayYPosSolidWall : -0.6f; 
                 disp.transform.localPosition = new Vector3(xLocPos, yLocPos, dispInf.PositionModifier.y);
                 disp.transform.localEulerAngles = new Vector3(0, 90f, 0);
                 float scale = 0.2f * ((w.Type == Wall.WallType.Solid)? 1f:2f);
                 disp.transform.localScale = new Vector3(scale*.75f, scale, 1);
             }
 
-            SetUpMetadataDsiplayTriggersForWallDisplay( disp, (dispInf.PositionModifier.y<0)?1f:-1f, display);
+            SetUpMetadataDsiplayTriggersForWallDisplay( disp, (dispInf.PositionModifier.y<0)?1f:-1f, w, display);
         }
     }
 
-    void SetUpMetadataDsiplayTriggersForWallDisplay(GameObject wallDisplay, float posModifier, Display disp)
+    void SetUpMetadataDsiplayTriggersForWallDisplay(GameObject wallDisplay, float posModifier,Wall w, Display disp)
     {
+        Debug.Log(posModifier);
         if (disp is MeshDisplay)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                GameObject dispTrigger = Instantiate(MetadataDisplayTrigger);
-                dispTrigger.transform.SetParent(wallDisplay.transform);
-                if (i == 0)
-                    dispTrigger.transform.localPosition = new Vector3(MetadisplayTriggerLocalPosition * posModifier, .5f, 0f);
-                else
-                    dispTrigger.transform.localPosition = new Vector3(0, .5f, (i == 2) ? MetadisplayTriggerLocalPosition : -MetadisplayTriggerLocalPosition);
-            }
+            GameObject dispTrigger = Instantiate(MetadataDisplayTrigger);
+            dispTrigger.transform.SetParent(wallDisplay.transform);
+
+            dispTrigger.transform.localPosition = new Vector3((w.Rotation == Wall.WallRotation.Vertical ? 1f:0f)*posModifier, .5f, (w.Rotation == Wall.WallRotation.Horizontal ? 1f:0f) * posModifier);
+            dispTrigger.transform.localScale = new Vector3(2f, 1, 2f);
+
         }
         else
         {
@@ -265,9 +266,13 @@ public class MuseumBuilder : MonoBehaviour
 
     void SetUpMetadataDisplayTriggerForWallImageDisplay(GameObject wallDisp,float posModifier)
     {
+        GameObject dispTrigger = Instantiate(MetadataDisplayTrigger);
+        dispTrigger.transform.SetParent(wallDisp.transform);
 
-        //TODO
-
+        dispTrigger.transform.localPosition = new Vector3(0, -.75f, posModifier*MetadisplayTriggerLocalPosition + (.75f * posModifier));
+        Vector3 scale = dispTrigger.transform.localScale;
+        scale.z = 1.6f;//???
+        dispTrigger.transform.localScale = scale;
     }
 
     /// <summary>
