@@ -21,9 +21,14 @@ public class MuseumBuilder : MonoBehaviour
 
     public GameObject Player;
 
+    public GameObject MetadataDisplayTrigger;
+
+    public float MetadisplayTriggerLocalPosition;
+
     public float XScale;
     public float ZScale;
     float displayXScale;
+    
 
     Museum virtMuse = null;
 
@@ -37,7 +42,7 @@ public class MuseumBuilder : MonoBehaviour
         Transform glassSphere = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
         Debug.Log(glassSphere.gameObject.name);
 
-        displayXScale = (glassSphere.localScale.x + 0.25f) / 0.24f; // 0.24 is local scale of wall objects
+        displayXScale = (1.5f*glassSphere.localScale.x ) / 0.24f; // 0.24 is local scale of wall objects
         Debug.Log(displayXScale);
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
         {
@@ -176,10 +181,24 @@ public class MuseumBuilder : MonoBehaviour
             disp.name = "Display" + r.RoomTiles[0];
             disp.transform.SetParent(associatedFloorGameobjects[i].transform);
             disp.transform.localPosition = Vector3.zero;// * dispInf.LocalPosition;
+            SetUpMetadatDisplayTriggersForCenterDisplays(disp);
             i++;
         }
     }
     
+    void SetUpMetadatDisplayTriggersForCenterDisplays(GameObject display)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            GameObject trigger = Instantiate(MetadataDisplayTrigger);
+            trigger.transform.SetParent(display.transform);
+
+            trigger.transform.localPosition = new Vector3((i % 2 == 0) ? ((i > 0) ? MetadisplayTriggerLocalPosition : -MetadisplayTriggerLocalPosition) : 0f, .5f, (i % 2 != 0) ? ((i > 1) ? MetadisplayTriggerLocalPosition : -MetadisplayTriggerLocalPosition) : 0f);
+            trigger.name += trigger.transform.localPosition;
+        }
+    }
+
+
     /// <summary>
     /// Creates wall displays for museum
     /// </summary>
@@ -197,6 +216,7 @@ public class MuseumBuilder : MonoBehaviour
 
             if (display != null)
                 LoadResource(display, "test");
+
             if (display is MeshDisplay)
             {
                 float xLocalPos = displayXScale * ((w.Type == Wall.WallType.Solid) ? wallObj.transform.localScale.x : (1f - wallObj.transform.localScale.x));
@@ -219,12 +239,39 @@ public class MuseumBuilder : MonoBehaviour
                 disp.transform.localScale = new Vector3(scale*.75f, scale, 1);
             }
 
-
+            SetUpMetadataDsiplayTriggersForWallDisplay( disp, (dispInf.PositionModifier.y<0)?1f:-1f, display);
         }
     }
-    
+
+    void SetUpMetadataDsiplayTriggersForWallDisplay(GameObject wallDisplay, float posModifier, Display disp)
+    {
+        if (disp is MeshDisplay)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                GameObject dispTrigger = Instantiate(MetadataDisplayTrigger);
+                dispTrigger.transform.SetParent(wallDisplay.transform);
+                if (i == 0)
+                    dispTrigger.transform.localPosition = new Vector3(MetadisplayTriggerLocalPosition * posModifier, .5f, 0f);
+                else
+                    dispTrigger.transform.localPosition = new Vector3(0, .5f, (i == 2) ? MetadisplayTriggerLocalPosition : -MetadisplayTriggerLocalPosition);
+            }
+        }
+        else
+        {
+            SetUpMetadataDisplayTriggerForWallImageDisplay(wallDisplay, posModifier);
+        }
+    }
+
+    void SetUpMetadataDisplayTriggerForWallImageDisplay(GameObject wallDisp,float posModifier)
+    {
+
+        //TODO
+
+    }
+
     /// <summary>
-    /// 
+    /// Loads Resource for a dsiplay
     /// </summary>
     void LoadResource(Display disp, string resourceLocator)
     {
