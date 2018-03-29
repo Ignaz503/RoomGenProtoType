@@ -323,6 +323,8 @@
     <Compile Include="Assets\Scripts\Displays\Display.cs" />
     <Compile Include="Assets\Scripts\Displays\ImageDisplay.cs" />
     <Compile Include="Assets\Scripts\Displays\MeshDisplay.cs" />
+    <Compile Include="Assets\Scripts\MetaData\MetaData.cs" />
+    <Compile Include="Assets\Scripts\MetaData\MetaDataDisplayStyles.cs" />
     <Compile Include="Assets\Scripts\ResourceLoader\ResourceLoader.cs" />
     <Compile Include="Assets\Scripts\ResourceManager\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Utility\BoundingSphere.cs" />
