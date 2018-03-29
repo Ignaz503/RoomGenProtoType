@@ -43,8 +43,6 @@ public class MuseumBuilder : MonoBehaviour
         ZPosScale = FloorPrefab.transform.localScale.z * 10f;
 
         Transform glassSphere = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
-        Debug.Log(glassSphere.gameObject.name);
-
         displayXPosScale = (1.5f*glassSphere.localScale.x ) / 0.24f; // 0.24 is local scale of wall objects
 
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()

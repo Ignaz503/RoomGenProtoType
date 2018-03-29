@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23932311222066432}
   - component: {fileID: 114705594613259660}
   - component: {fileID: 114427498739075682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GlassSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,9 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3fb0cc87a47eb43a4a07990fff31a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Metadata: 
   ParentMesh: {fileID: 33676256926870348}
   ChildMesh: {fileID: 0}
-  rotator: {fileID: 0}
 --- !u!135 &135592653558974674
 SphereCollider:
   m_ObjectHideFlags: 1

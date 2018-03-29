@@ -319,11 +319,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Display\Display.cs" />
-    <Compile Include="Assets\Scripts\Display\ImageDisplay.cs" />
-    <Compile Include="Assets\Scripts\Display\MeshDisplay.cs" />
-    <Compile Include="Assets\Scripts\Display\MetadataDisplay.cs" />
-    <Compile Include="Assets\Scripts\Display\MetadataDisplayTrigger.cs" />
+    <Compile Include="Assets\Scripts\Controllers\MetadataController.cs" />
+    <Compile Include="Assets\Scripts\Displays\Display.cs" />
+    <Compile Include="Assets\Scripts\Displays\ImageDisplay.cs" />
+    <Compile Include="Assets\Scripts\Displays\MeshDisplay.cs" />
     <Compile Include="Assets\Scripts\ResourceLoader\ResourceLoader.cs" />
     <Compile Include="Assets\Scripts\ResourceManager\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Utility\BoundingSphere.cs" />
