@@ -11,4 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: -1936749209, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: TMP StyleSheet
   m_EditorClassIdentifier: 
-  m_StyleList: []
+  m_StyleList:
+  - m_Name: 
+    m_HashCode: 0
+    m_OpeningDefinition: 
+    m_ClosingDefinition: 
+    m_OpeningTagArray: 
+    m_ClosingTagArray: 
