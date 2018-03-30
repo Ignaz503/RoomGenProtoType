@@ -320,6 +320,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controllers\MetadataController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\MetadataStyleController.cs" />
     <Compile Include="Assets\Scripts\Displays\Display.cs" />
     <Compile Include="Assets\Scripts\Displays\ImageDisplay.cs" />
     <Compile Include="Assets\Scripts\Displays\MeshDisplay.cs" />

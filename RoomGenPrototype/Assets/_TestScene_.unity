@@ -246,6 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605860489}
   - component: {fileID: 605860490}
+  - component: {fileID: 605860491}
   m_Layer: 0
   m_Name: MetadataController
   m_TagString: Untagged
@@ -278,6 +279,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCam: {fileID: 1793845694}
+--- !u!114 &605860491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 605860488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2568ed36a28a04c478f9e9f986e7f8a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MetaDataTypeToStyleMapping:
+  - AttributeName: Creator
+    Styles:
+    - Creator
+    ApllicationStyle: 0
+  - AttributeName: Date
+    Styles:
+    - Default
+    ApllicationStyle: 0
+  - AttributeName: FurtherInformation
+    Styles:
+    - Default
+    ApllicationStyle: 0
+  - AttributeName: Sources
+    Styles:
+    - Default
+    ApllicationStyle: 0
+  - AttributeName: License
+    Styles:
+    - Default
+    ApllicationStyle: 0
 --- !u!1 &971932050
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,9 +3,11 @@ using System.IO;
 using System.Xml;
 using System.Text;
 using System.Collections;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
+using TMPro;
 using MetaDataDisplayStyles;
 
 [DataContract]
@@ -18,23 +20,23 @@ public class MetaData
     public List<string> associatedResourceIDs;
 
     [DataMember]
-    [MetaDataAttribute("Creator")]
+    [MetaData("Creator")]
     public List<string> Creators;
 
     [DataMember]
-    [MetaDataAttribute("Date")]
+    [MetaData("Date")]
     public string DateOfCreation;
 
     [DataMember]
-    [MetaDataAttribute("FurtherInformation")]
+    [MetaData("FurtherInformation")]
     public Dictionary<int, string> FurterInformationAccordingToLOD;
 
     [DataMember]
-    [MetaDataAttribute("Sources")]
+    [MetaData("Sources")]
     public List<string> Sources;
      
     [DataMember]
-    [MetaDataAttribute("License")]
+    [MetaData("License")]
     public string License;
 
     #region Gamification

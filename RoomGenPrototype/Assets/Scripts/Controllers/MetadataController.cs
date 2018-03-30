@@ -21,7 +21,7 @@ public class MetadataController : MonoBehaviour {
         {
             Display disp = hit.transform.gameObject.GetComponent<Display>();
             if (disp != null)
-                Debug.Log(disp.Metadata);
+                Debug.Log(disp.GetMetadata());
         }
 	}
 

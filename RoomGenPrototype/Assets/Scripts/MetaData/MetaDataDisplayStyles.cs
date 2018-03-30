@@ -10,26 +10,40 @@ namespace MetaDataDisplayStyles
     {
         public enum StyleApplicationType
         {
+            Default,
             AllSame,
             AlternateAllStyles,
             AlternateOnlyFirstTwoStyles
         }
 
         public List<TMP_Style> Styles;
+        StyleApplicationType Default;
 
-        public Style()
+        public Style(StyleApplicationType applyDefault, List<string>styleNames = null)
         {
             Styles = new List<TMP_Style>();
+            Default = applyDefault;
+
+            if(styleNames != null)
+            {
+                foreach(string styleName in styleNames)
+                {
+                    Styles.Add(TMP_StyleSheet.GetStyle(styleName.Length.GetHashCode()));
+                }
+            }
+
         }
 
-        void ApplyStyle(ref string[] text, StyleApplicationType type)
+        public void ApplyStyle(ref string[] text, StyleApplicationType type)
         {
             int counterIncrease = 1;
             int ceiling = 1;
 
+            StyleApplicationType applyHow = (type == StyleApplicationType.Default) ? Default : type;
+
             if (Styles.Count > 1)
             {
-                switch (type)
+                switch (applyHow)
                 {
                     case StyleApplicationType.AllSame:
                         counterIncrease = 0;
@@ -39,6 +53,9 @@ namespace MetaDataDisplayStyles
                         break;
                     case StyleApplicationType.AlternateOnlyFirstTwoStyles:
                         ceiling = 2;
+                        break;
+                    default:
+                        counterIncrease = 0;
                         break;
                 }
             }
@@ -56,7 +73,7 @@ namespace MetaDataDisplayStyles
 
         }
 
-        void ApplyStyle(ref string text, int styleIdx = 0)
+        public void ApplyStyle(ref string text, int styleIdx = 0)
         {
             if (styleIdx < 0)
                 styleIdx = 0;
@@ -70,10 +87,10 @@ namespace MetaDataDisplayStyles
     }
     [AttributeUsage(AttributeTargets.Property|AttributeTargets.Field)]
 
-    public  class MetaDataAttributeAttribute : Attribute
+    public  class MetaDataAttribute : Attribute
     {
         public string Type;
-        public MetaDataAttributeAttribute(string type)
+        public MetaDataAttribute(string type)
         {
             Type = type;
         }
@@ -82,22 +99,10 @@ namespace MetaDataDisplayStyles
         {
             return Type.GetHashCode();
         }
-    }
-    
-    public class MetaDataStylesController : MonoBehaviour
-    {
-        public static MetaDataStylesController Instance;
 
-        public Dictionary<MetaDataAttributeAttribute, Style> MetaDataTypeToStyleMapping;
-
-        private void Awake()
+        public override string ToString()
         {
-            if(Instance != null)
-            {
-                throw new Exception("There already exists a metadata style controller");
-            }
-            Instance = this;   
+            return Type;
         }
-
     }
 }
