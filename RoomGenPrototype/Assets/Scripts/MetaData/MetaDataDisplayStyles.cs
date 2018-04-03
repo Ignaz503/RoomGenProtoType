@@ -85,8 +85,8 @@ namespace MetaDataDisplayStyles
         }
 
     }
-    [AttributeUsage(AttributeTargets.Property|AttributeTargets.Field)]
 
+    [AttributeUsage(AttributeTargets.Property|AttributeTargets.Field)]
     public  class MetaDataAttribute : Attribute
     {
         public string Type;

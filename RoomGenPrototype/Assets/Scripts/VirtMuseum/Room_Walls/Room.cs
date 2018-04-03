@@ -95,6 +95,7 @@ public class Room
             Wall upper = new Wall(
                     Wall.WallType.Solid, //type
                     new Vector2[] { uR, uL },// location of corner points museum coords
+                    1f,
                     tile, //associated tile
                     Wall.WallRotation.Horizontal,
                     virtMuse
@@ -103,6 +104,7 @@ public class Room
             Wall lower = new Wall(
                 Wall.WallType.Solid,
                  new Vector2[] { lR, lL },
+                 -1f,
                  tile,
                 Wall.WallRotation.Horizontal,
                 virtMuse
@@ -111,6 +113,7 @@ public class Room
             Wall right = new Wall(
                 Wall.WallType.Solid,
                 new Vector2[] { uR, lR }, 
+                1f,
                 tile,
                 Wall.WallRotation.Vertical,
                 virtMuse
@@ -120,6 +123,7 @@ public class Room
                 (
                 Wall.WallType.Solid,
                 new Vector2[] { uL, lL },
+                -1f,
                 tile,
                 Wall.WallRotation.Vertical,
                 virtMuse
@@ -201,36 +205,6 @@ public class Room
                     i--;
                 }
             }
-
-            //switch (Type)
-            //{
-            //    case RoomType.Normal:
-            //        // do nothig 
-            //        break;
-            //    case RoomType.Long:
-            //        if (firstCount > 1 && secondCount > 1)
-            //        {
-            //            tempWalls.RemoveAt(i);
-            //            i--;
-            //        }
-            //        break;
-            //    case RoomType.L:
-            //        {
-            //            if (firstCount > 2 && secondCount > 1)
-            //            {
-            //                tempWalls.RemoveAt(i);
-            //                i--;
-            //            }
-            //        }
-            //        break;
-            //    case RoomType.Big:
-            //        if (firstCount > 2)
-            //        {
-            //            tempWalls.RemoveAt(i);
-            //            i--;
-            //        }
-            //        break;
-            //}
         }
     }
 

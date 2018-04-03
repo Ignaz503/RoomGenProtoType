@@ -134,29 +134,31 @@ public class MuseumBuilder : MonoBehaviour
         foreach (Wall w in virtMuse.Walls)
         {
             #region Wall gamobject setup
-            Vector3 pos = new Vector3(XPosScale * w.Location[0].x, 5, ZPosScale * w.Location[0].y);
-
-            if (w.Rotation == Wall.WallRotation.Vertical)
-                pos.z -= (ZPosScale * .5f);
-            else if (w.Rotation == Wall.WallRotation.Horizontal)
-                pos.x -= (XPosScale * .5f);
-
             GameObject wallObj = w.Type == Wall.WallType.Solid ? Instantiate(WallPrefab) : Instantiate(WallWithDoorPrefab);
 
-            wallObj.transform.position = pos;
+            GameObject parent = floors.Where((obj) => { return obj.name.Contains(w.Tiles[0].ToString()); }).First();
+            if (parent != null)
+                wallObj.transform.SetParent(parent.transform);
+
+            //TODO: Remove fixed values
+            if(w.Rotation == Wall.WallRotation.Horizontal)
+            {
+                wallObj.transform.localPosition = new Vector3(0, 5f, 5f *w.PositionModifier);
+            }
+            else
+            {
+                wallObj.transform.localPosition = new Vector3(5f * w.PositionModifier, 5f, 0);
+            }
 
             Vector3 newRot = new Vector3(0f, 90f * (int)w.Rotation, 0);
 
             wallObj.transform.eulerAngles = newRot;
 
-            wallObj.name = w.Rotation.ToString() + " " + w.Tile.ToString();
+            wallObj.name = w.Rotation.ToString() + " " + w.Tiles[0].ToString();
 
-            GameObject parent = floors.Where((obj) => { return obj.name.Contains(w.Tile.ToString()); }).First();
-            if (parent != null)
-                wallObj.transform.SetParent(parent.transform);
             #endregion
 
-            if(w.Type == Wall.WallType.Solid)
+            if (w.Type == Wall.WallType.Solid)
                 SetUpDisplaysForWall(w, wallObj);
 
         }

@@ -343,11 +343,12 @@ public class Museum
         {
             if (Walls[i] == w)
             {
-                Walls[i].AddNewDisplayInfo(w.Tile);
+                Walls[i].AddNewDisplayInfo();
+                Walls[i].AddTile(w.Tiles[0]);
                 return i;
             }
         }
-        w.AddNewDisplayInfo(w.Tile);
+        w.AddNewDisplayInfo();
         Walls.Add(w);
         return Walls.Count - 1;
     }
