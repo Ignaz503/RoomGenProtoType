@@ -22,7 +22,6 @@ public class MuseumBuilder : MonoBehaviour
 
     #endregion
 
-
     public float ImageDisplayYPosSolidWall;
 
     public MeshFilter[] TestMesh;
@@ -31,7 +30,6 @@ public class MuseumBuilder : MonoBehaviour
     public float XPosScale;
     public float ZPosScale;
     float displayXPosScale;
-    
 
     Museum virtMuse = null;
 
@@ -183,7 +181,7 @@ public class MuseumBuilder : MonoBehaviour
 
             disp.name = "Display" + r.RoomTiles[0];
             disp.transform.SetParent(associatedFloorGameobjects[i].transform);
-            disp.transform.localPosition = Vector3.zero;// * dispInf.LocalPosition;
+            disp.transform.localPosition = Vector3.zero;
             i++;
         }
     }

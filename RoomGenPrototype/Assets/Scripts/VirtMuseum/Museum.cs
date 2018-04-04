@@ -11,7 +11,7 @@ using UnityEngine;
 [DataContract]
 public class Museum
 {
-    static Dictionary<RoomType, BaseRoomTypePlacableCheker> roomTypeToPlaceableChecker = new Dictionary<RoomType, BaseRoomTypePlacableCheker>()
+    static Dictionary<RoomType, IRoomPlacableChecker> roomTypeToPlaceableChecker = new Dictionary<RoomType, IRoomPlacableChecker>()
     {
             { RoomType.Normal, new BaseRoomTypePlacableCheker(RoomType.Normal) },
             { RoomType.Long, new BaseRoomTypePlacableCheker(RoomType.Long) },
@@ -401,4 +401,19 @@ public class Museum
         stream.Close();
         return museum;
     }
+
+    public static void AddNewRoomPlacableChecker(RoomType t, IRoomPlacableChecker checker, bool overrideExisting)
+    {
+        if (roomTypeToPlaceableChecker.ContainsKey(t) && overrideExisting)
+        {
+            roomTypeToPlaceableChecker[t] = checker;
+        }
+        else if (!roomTypeToPlaceableChecker.ContainsKey(t))
+        {
+            roomTypeToPlaceableChecker.Add(t, checker);
+        }
+        else
+            throw new Exception("There already exits a placable checker for this type");
+    }
+
 }
