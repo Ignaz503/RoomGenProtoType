@@ -337,7 +337,7 @@
     <Compile Include="Assets\Scripts\VirtMuseum\MuseumDisplayInfo.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\MuseumGenerator.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\Room_Walls\Room.cs" />
-    <Compile Include="Assets\Scripts\VirtMuseum\Room_Walls\RoomPlacableCheckers\RoomPlacableChecker.cs" />
+    <Compile Include="Assets\Scripts\VirtMuseum\Room_Walls\RoomPlacableCheckers\BaseRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\Room_Walls\Wall.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\Room_Walls\WallValidators\BigRoomWallValidator.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\Room_Walls\WallValidators\LongRoomWallValidator.cs" />
