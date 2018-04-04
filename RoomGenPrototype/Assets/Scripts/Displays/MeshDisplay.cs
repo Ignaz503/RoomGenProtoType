@@ -21,7 +21,12 @@ public class MeshDisplay : Display {
 
         //scale = boundsSphere.extents.magnitude / boundsMesh.extents.magnitude;
 
-        float scale = (boundsParent.radius / boundsChild.radius)*1.5f;//????
+        Vector3 locScale = gameObject.transform.localScale;
+        float avg = (locScale.x + locScale.y + locScale.z) / 3f;
+        Debug.Log(avg);
+        float scale = (boundsParent.radius / boundsChild.radius)*avg;
+        
+
 
         //Debug.Log(boundsChild.radius);
         //Debug.Log(boundsParent.radius);
