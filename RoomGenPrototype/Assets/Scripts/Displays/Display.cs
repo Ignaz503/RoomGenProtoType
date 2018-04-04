@@ -11,7 +11,7 @@ public abstract class Display : MonoBehaviour {
     };
 
     public DisplayType Type { get; protected set; }
-    string Metadata = "Metadata pending";
+    string Metadata = "All speech is free speech";
 
     /// <summary>
     /// Applies a resource to a display

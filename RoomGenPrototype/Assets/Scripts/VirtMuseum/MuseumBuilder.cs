@@ -17,6 +17,7 @@ public class MuseumBuilder : MonoBehaviour
     public GameObject MeshDisplayPrefab;
     public GameObject WallImageDisplayPrefab;
 
+    public GameObject CeilingPrefab;
 
     public GameObject Player;
 
@@ -31,6 +32,8 @@ public class MuseumBuilder : MonoBehaviour
     public float ZPosScale;
     float displayXPosScale;
 
+    float wallHeight;
+
     Museum virtMuse = null;
 
     public bool DisableAfterRequest;
@@ -40,8 +43,10 @@ public class MuseumBuilder : MonoBehaviour
         XPosScale = FloorPrefab.transform.localScale.x * 10f;
         ZPosScale = FloorPrefab.transform.localScale.z * 10f;
 
+        wallHeight = WallPrefab.transform.localScale.y + (.5f*CeilingPrefab.transform.localScale.y);
+
         Transform glassSphere = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
-        displayXPosScale = (1.5f*glassSphere.localScale.x ) / 0.24f; // 0.24 is local scale of wall objects
+        displayXPosScale = (1.5f*glassSphere.localScale.x ) / 0.24f; // 0.24 is local scale of wall objects when parented to floor
 
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
         {
@@ -87,8 +92,10 @@ public class MuseumBuilder : MonoBehaviour
             foreach (Vector2Int tile in r.RoomTiles)
             {
                 GameObject floor = Instantiate(FloorPrefab);
-                MeshRenderer rend = floor.GetComponent<MeshRenderer>();
+                GameObject ceiling = Instantiate(CeilingPrefab);
 
+                MeshRenderer rend = floor.GetComponent<MeshRenderer>();
+                MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
                 floors.Add(floor);
 
                 //TEMP
@@ -97,24 +104,34 @@ public class MuseumBuilder : MonoBehaviour
                 {
                     case RoomType.Normal:
                         rend.material.color = Color.yellow;
+                        ceilRend.material.color = Color.yellow;
                         break;
                     case RoomType.Long:
                         rend.material.color = Color.red;
+                        ceilRend.material.color = Color.red;
                         break;
                     case RoomType.Big:
                         rend.material.color = Color.green;
+                        ceilRend.material.color = Color.green;
                         break;
                     case RoomType.L:
                         rend.material.color = Color.blue;
+                        ceilRend.material.color = Color.blue;
                         break;
                 }
 
 
                 Vector3 pos = new Vector3(XPosScale * tile.x, 0, ZPosScale * tile.y);
 
+                string name = r.Type.ToString() + " " + tile.ToString();
+
                 floor.transform.position = pos;
-                floor.name = r.Type.ToString() + " " + tile.ToString();
+                floor.name = name;
                 roomFloors.Add(floor);
+
+                ceiling.name = name;
+                pos.y += wallHeight;
+                ceiling.transform.position = pos;
 
             }
             #endregion

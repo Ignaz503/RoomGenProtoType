@@ -23,7 +23,6 @@ public class MeshDisplay : Display {
 
         Vector3 locScale = gameObject.transform.localScale;
         float avg = (locScale.x + locScale.y + locScale.z) / 3f;
-        Debug.Log(avg);
         float scale = (boundsParent.radius / boundsChild.radius)*avg;
         
 

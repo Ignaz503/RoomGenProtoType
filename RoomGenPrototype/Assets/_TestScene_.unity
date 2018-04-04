@@ -488,6 +488,8 @@ MonoBehaviour:
     type: 2}
   WallImageDisplayPrefab: {fileID: 1461467040587286, guid: ad80442e48b39f84c957ac08f1d46647,
     type: 2}
+  CeilingPrefab: {fileID: 1110854600383252, guid: 794d19ad07a970a44b0dd282b7f15a8a,
+    type: 2}
   Player: {fileID: 1675310006}
   ImageDisplayYPosSolidWall: -0.3
   TestMesh:
@@ -509,7 +511,7 @@ GameObject:
   - component: {fileID: 2050256161}
   - component: {fileID: 2050256160}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: DebugCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
