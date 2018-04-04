@@ -208,26 +208,20 @@ public class MuseumBuilder : MonoBehaviour
 
             if (display is MeshDisplay)
             {
-                float xLocalPos = displayXPosScale * ((w.Type == Wall.WallType.Solid) ? wallObj.transform.localScale.x : (1f - wallObj.transform.localScale.x));
+                float xLocalPos = (displayXPosScale * wallObj.transform.localScale.x) + 1f;
 
-                xLocalPos += (w.Type == Wall.WallType.Solid)? 1f:0f;
-                float yLocalPos = (w.Type == Wall.WallType.Solid) ? -.5f : -1f;
+                float yLocalPos = -.5f;
 
                 disp.transform.localPosition = new Vector3(xLocalPos * dispInf.PositionModifier.x, yLocalPos, dispInf.PositionModifier.y);
             }
             else
             {
                 //wall image display
-                //currently with poss for door displays can be simplified if decided on no door displays#
-                // which is my current preference
-                float xLocPos = (w.Type == Wall.WallType.Solid) ? .55f * dispInf.PositionModifier.x : dispInf.PositionModifier.x;
-                if (xLocPos > 0 && w.Type == Wall.WallType.Door)
-                    xLocPos += 0.02f;
+                float xLocPos = .55f * dispInf.PositionModifier.x;
 
-                float yLocPos = (w.Type == Wall.WallType.Solid) ? ImageDisplayYPosSolidWall : -0.6f; 
-                disp.transform.localPosition = new Vector3(xLocPos, yLocPos, dispInf.PositionModifier.y);
+                disp.transform.localPosition = new Vector3(xLocPos, ImageDisplayYPosSolidWall, dispInf.PositionModifier.y);
                 disp.transform.localEulerAngles = new Vector3(0, 90f, 0);
-                float scale = 0.2f * ((w.Type == Wall.WallType.Solid)? 1f:2f);
+                float scale = 0.2f;
                 disp.transform.localScale = new Vector3(scale*.75f, scale, 1);
             }
         }
