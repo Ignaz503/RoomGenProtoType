@@ -104,10 +104,10 @@ public class MuseumBuilder : MonoBehaviour
             foreach (Vector2Int tile in r.RoomTiles)
             {
                 GameObject floor = Instantiate(FloorPrefab);
-                //GameObject ceiling = Instantiate(CeilingPrefab);
+                GameObject ceiling = Instantiate(CeilingPrefab);
 
                 MeshRenderer rend = floor.GetComponent<MeshRenderer>();
-                //MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
+                MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
                 floors.Add(floor);
 
                 //TEMP
@@ -116,19 +116,19 @@ public class MuseumBuilder : MonoBehaviour
                 {
                     case RoomType.Normal:
                         rend.material.color = Color.yellow;
-                        //ceilRend.material.color = Color.yellow;
+                        ceilRend.material.color = Color.yellow;
                         break;
                     case RoomType.Long:
                         rend.material.color = Color.red;
-                        //ceilRend.material.color = Color.red;
+                        ceilRend.material.color = Color.red;
                         break;
                     case RoomType.Big:
                         rend.material.color = Color.green;
-                        //ceilRend.material.color = Color.green;
+                        ceilRend.material.color = Color.green;
                         break;
                     case RoomType.L:
                         rend.material.color = Color.blue;
-                        //ceilRend.material.color = Color.blue;
+                        ceilRend.material.color = Color.blue;
                         break;
                 }
 
@@ -141,9 +141,9 @@ public class MuseumBuilder : MonoBehaviour
                 floor.name = name;
                 roomFloors.Add(floor);
 
-                //ceiling.name = name;
-                //pos.y += wallHeight;
-                //ceiling.transform.position = pos;
+                ceiling.name = name;
+                pos.y += wallHeight;
+                ceiling.transform.position = pos;
 
             }
             #endregion

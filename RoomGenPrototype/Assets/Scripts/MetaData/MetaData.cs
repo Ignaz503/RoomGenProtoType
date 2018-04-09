@@ -20,23 +20,23 @@ public class MetaData
     public List<string> associatedResourceIDs;
 
     [DataMember]
-    [MetaData("Creator")]
+    [MetaDataAttribute("Creator")]
     public List<string> Creators;
 
     [DataMember]
-    [MetaData("Date")]
+    [MetaDataAttribute("Date")]
     public string DateOfCreation;
 
     [DataMember]
-    [MetaData("FurtherInformation")]
+    [MetaDataAttribute("FurtherInformation")]
     public Dictionary<int, string> FurterInformationAccordingToLOD;
 
     [DataMember]
-    [MetaData("Sources")]
+    [MetaDataAttribute("Sources")]
     public List<string> Sources;
      
     [DataMember]
-    [MetaData("License")]
+    [MetaDataAttribute("License")]
     public string License;
 
     #region Gamification
