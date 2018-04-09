@@ -31,6 +31,7 @@ public class MuseumBuilder : MonoBehaviour
     public float XPosScale;
     public float ZPosScale;
     float displayXPosScale;
+    float MeshDisplayXPosModifier;
 
     float wallHeight;
 
@@ -40,14 +41,25 @@ public class MuseumBuilder : MonoBehaviour
 
     private void Start()
     {
-        XPosScale = FloorPrefab.transform.localScale.x * 10f;
-        ZPosScale = FloorPrefab.transform.localScale.z * 10f;
-
+        XPosScale = FloorPrefab.transform.localScale.x;
+        ZPosScale = FloorPrefab.transform.localScale.z;
         wallHeight = WallPrefab.transform.localScale.y + (.5f*CeilingPrefab.transform.localScale.y);
 
-        Transform glassSphere = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
-        displayXPosScale = (1.5f*glassSphere.localScale.x ) / 0.24f; // 0.24 is local scale of wall objects when parented to floor
+        #region MeshDisplayXPosModificiation
+        Transform meshDisplayTrans  = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
 
+        float avg = (meshDisplayTrans.localScale.x + meshDisplayTrans.localScale.y + meshDisplayTrans.localScale.z) / 3f;
+
+        MeshDisplayXPosModifier = avg * .5f;
+
+        Debug.Log(MeshDisplayXPosModifier);
+        #endregion
+
+        Transform glassSphere = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
+        displayXPosScale = (1.5f * glassSphere.localScale.x) / (WallPrefab.transform.localScale.x / FloorPrefab.transform.localScale.x);
+
+        //requesting museum (simulate comunication with server^^)
+        //for testing of serialization of museum and deserialization
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
         {
             MuseumType = "TestMuseum",
@@ -92,10 +104,10 @@ public class MuseumBuilder : MonoBehaviour
             foreach (Vector2Int tile in r.RoomTiles)
             {
                 GameObject floor = Instantiate(FloorPrefab);
-                GameObject ceiling = Instantiate(CeilingPrefab);
+                //GameObject ceiling = Instantiate(CeilingPrefab);
 
                 MeshRenderer rend = floor.GetComponent<MeshRenderer>();
-                MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
+                //MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
                 floors.Add(floor);
 
                 //TEMP
@@ -104,24 +116,24 @@ public class MuseumBuilder : MonoBehaviour
                 {
                     case RoomType.Normal:
                         rend.material.color = Color.yellow;
-                        ceilRend.material.color = Color.yellow;
+                        //ceilRend.material.color = Color.yellow;
                         break;
                     case RoomType.Long:
                         rend.material.color = Color.red;
-                        ceilRend.material.color = Color.red;
+                        //ceilRend.material.color = Color.red;
                         break;
                     case RoomType.Big:
                         rend.material.color = Color.green;
-                        ceilRend.material.color = Color.green;
+                        //ceilRend.material.color = Color.green;
                         break;
                     case RoomType.L:
                         rend.material.color = Color.blue;
-                        ceilRend.material.color = Color.blue;
+                        //ceilRend.material.color = Color.blue;
                         break;
                 }
 
 
-                Vector3 pos = new Vector3(XPosScale * tile.x, 0, ZPosScale * tile.y);
+                Vector3 pos = new Vector3(XPosScale * tile.x, FloorPrefab.transform.position.y, ZPosScale * tile.y);
 
                 string name = r.Type.ToString() + " " + tile.ToString();
 
@@ -129,9 +141,9 @@ public class MuseumBuilder : MonoBehaviour
                 floor.name = name;
                 roomFloors.Add(floor);
 
-                ceiling.name = name;
-                pos.y += wallHeight;
-                ceiling.transform.position = pos;
+                //ceiling.name = name;
+                //pos.y += wallHeight;
+                //ceiling.transform.position = pos;
 
             }
             #endregion
@@ -155,14 +167,16 @@ public class MuseumBuilder : MonoBehaviour
             if (parent != null)
                 wallObj.transform.SetParent(parent.transform);
 
+            float yPos = (w.Type == Wall.WallType.Solid ? wallObj.transform.localScale.y * .5f : wallObj.transform.localScale.y)+.5f;
+
             //TODO: Remove fixed values
-            if(w.Rotation == Wall.WallRotation.Horizontal)
+            if (w.Rotation == Wall.WallRotation.Horizontal)
             {
-                wallObj.transform.localPosition = new Vector3(0, 5f, 5f *w.PositionModifier);
+                wallObj.transform.localPosition = new Vector3(0, yPos, .5f *w.PositionModifier);
             }
             else
             {
-                wallObj.transform.localPosition = new Vector3(5f * w.PositionModifier, 5f, 0);
+                wallObj.transform.localPosition = new Vector3(.5f * w.PositionModifier, yPos, 0);
             }
 
             Vector3 newRot = new Vector3(0f, 90f * (int)w.Rotation, 0);
@@ -188,8 +202,9 @@ public class MuseumBuilder : MonoBehaviour
         int i = 0;
         foreach(MuseumDisplayInfo dispInf in r.CenterDisplayInfos)
         {
-            GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ? 
-                Instantiate(CenterImageDisplayPrefab) : Instantiate(MeshDisplayPrefab);
+            GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ?
+                Instantiate(CenterImageDisplayPrefab) :
+                Instantiate(MeshDisplayPrefab);
 
             Display display = disp.GetComponentInChildren<Display>();
 
@@ -210,7 +225,6 @@ public class MuseumBuilder : MonoBehaviour
     {
         foreach(MuseumDisplayInfo dispInf in w.DisplayInfos)
         {
-            //TODO: for display on both sides
             GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ?
                 Instantiate(WallImageDisplayPrefab) : Instantiate(MeshDisplayPrefab);
 
@@ -223,7 +237,7 @@ public class MuseumBuilder : MonoBehaviour
 
             if (display is MeshDisplay)
             {
-                float xLocalPos = (displayXPosScale * wallObj.transform.localScale.x) + 1f;
+                float xLocalPos = (displayXPosScale * wallObj.transform.localScale.x) + MeshDisplayXPosModifier;
 
                 float yLocalPos = -.5f;
 
