@@ -842,6 +842,8 @@ MonoBehaviour:
     type: 2}
   CenterImageDisplayPrefab: {fileID: 1666428050593864, guid: f66cf15a88d032b4f99f69fa6c25786c,
     type: 2}
+  CenterMeshDisplay: {fileID: 1431718989695678, guid: 0458d2ee0ebbe1d4abde158fb8b07eeb,
+    type: 2}
   MeshDisplayPrefab: {fileID: 1725104589574558, guid: caee5a0b54f99e34a87ee40b20cfc58b,
     type: 2}
   WallImageDisplayPrefab: {fileID: 1461467040587286, guid: ad80442e48b39f84c957ac08f1d46647,

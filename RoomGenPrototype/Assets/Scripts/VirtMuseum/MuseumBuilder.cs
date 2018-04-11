@@ -14,6 +14,7 @@ public class MuseumBuilder : MonoBehaviour
     public GameObject WallWithDoorPrefab;
 
     public GameObject CenterImageDisplayPrefab;
+    public GameObject CenterMeshDisplay;
     public GameObject MeshDisplayPrefab;
     public GameObject WallImageDisplayPrefab;
 
@@ -23,15 +24,11 @@ public class MuseumBuilder : MonoBehaviour
 
     #endregion
 
-    public float ImageDisplayYPosSolidWall;
-
     public MeshFilter[] TestMesh;
     public Sprite TestSprite;
 
-    public float XPosScale;
-    public float ZPosScale;
-    float displayXPosScale;
-    float MeshDisplayXPosModifier;
+    public float FloorXPosScale;
+    public float FloorZPosScale;
 
     float wallHeight;
 
@@ -41,8 +38,8 @@ public class MuseumBuilder : MonoBehaviour
 
     private void Start()
     {
-        XPosScale = FloorPrefab.transform.localScale.x;
-        ZPosScale = FloorPrefab.transform.localScale.z;
+        FloorXPosScale = FloorPrefab.transform.localScale.x;
+        FloorZPosScale = FloorPrefab.transform.localScale.z;
         wallHeight = WallPrefab.transform.localScale.y + (.5f*CeilingPrefab.transform.localScale.y);
 
         #region MeshDisplayXPosModificiation
@@ -50,13 +47,11 @@ public class MuseumBuilder : MonoBehaviour
 
         float avg = (meshDisplayTrans.localScale.x + meshDisplayTrans.localScale.y + meshDisplayTrans.localScale.z) / 3f;
 
-        MeshDisplayXPosModifier = avg * .5f;
+        MeshDisplay.XPosModifier = avg * .5f;
 
-        Debug.Log(MeshDisplayXPosModifier);
+        MeshDisplay.XPosScale = (1.5f * meshDisplayTrans.localScale.x) / (WallPrefab.transform.localScale.x / FloorPrefab.transform.localScale.x);
+
         #endregion
-
-        Transform glassSphere = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
-        displayXPosScale = (1.5f * glassSphere.localScale.x) / (WallPrefab.transform.localScale.x / FloorPrefab.transform.localScale.x);
 
         //requesting museum (simulate comunication with server^^)
         //for testing of serialization of museum and deserialization
@@ -133,7 +128,7 @@ public class MuseumBuilder : MonoBehaviour
                 }
 
 
-                Vector3 pos = new Vector3(XPosScale * tile.x, FloorPrefab.transform.position.y, ZPosScale * tile.y);
+                Vector3 pos = new Vector3(FloorXPosScale * tile.x, FloorPrefab.transform.position.y, FloorZPosScale * tile.y);
 
                 string name = r.Type.ToString() + " " + tile.ToString();
 
@@ -204,16 +199,17 @@ public class MuseumBuilder : MonoBehaviour
         {
             GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ?
                 Instantiate(CenterImageDisplayPrefab) :
-                Instantiate(MeshDisplayPrefab);
+                Instantiate(CenterMeshDisplay);
+
+            disp.name = "Display" + r.RoomTiles[0];
+            
 
             Display display = disp.GetComponentInChildren<Display>();
 
+            display.SetUp(dispInf, associatedFloorGameobjects[i]);
+
             if (display != null)
                 LoadResource(display, "test");
-
-            disp.name = "Display" + r.RoomTiles[0];
-            disp.transform.SetParent(associatedFloorGameobjects[i].transform);
-            disp.transform.localPosition = Vector3.zero;
             i++;
         }
     }
@@ -228,31 +224,13 @@ public class MuseumBuilder : MonoBehaviour
             GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ?
                 Instantiate(WallImageDisplayPrefab) : Instantiate(MeshDisplayPrefab);
 
-            disp.transform.SetParent(wallObj.transform);
 
             Display display = disp.GetComponentInChildren<Display>();
+            disp.name = wallObj.name + " " + display.GetType();
+            display.SetUp(dispInf, wallObj);
 
             if (display != null)
                 LoadResource(display, "test");
-
-            if (display is MeshDisplay)
-            {
-                float xLocalPos = (displayXPosScale * wallObj.transform.localScale.x) + MeshDisplayXPosModifier;
-
-                float yLocalPos = -.5f;
-
-                disp.transform.localPosition = new Vector3(xLocalPos * dispInf.PositionModifier.x, yLocalPos, dispInf.PositionModifier.y);
-            }
-            else
-            {
-                //wall image display
-                float xLocPos = .55f * dispInf.PositionModifier.x;
-
-                disp.transform.localPosition = new Vector3(xLocPos, ImageDisplayYPosSolidWall, dispInf.PositionModifier.y);
-                disp.transform.localEulerAngles = new Vector3(0, 90f, 0);
-                float scale = 0.2f;
-                disp.transform.localScale = new Vector3(scale*.75f, scale, 1);
-            }
         }
     }
 

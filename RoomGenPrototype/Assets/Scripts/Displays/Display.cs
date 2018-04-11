@@ -31,4 +31,6 @@ public abstract class Display : MonoBehaviour {
         return Metadata;
     }
 
+    public abstract void SetUp(MuseumDisplayInfo dispInfo, GameObject parent);
+
 }

@@ -321,9 +321,13 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controllers\MetadataController.cs" />
     <Compile Include="Assets\Scripts\Controllers\MetadataStyleController.cs" />
+    <Compile Include="Assets\Scripts\Displays\CenterImageDisplay.cs" />
+    <Compile Include="Assets\Scripts\Displays\CenterMeshDisplay.cs" />
     <Compile Include="Assets\Scripts\Displays\Display.cs" />
     <Compile Include="Assets\Scripts\Displays\ImageDisplay.cs" />
     <Compile Include="Assets\Scripts\Displays\MeshDisplay.cs" />
+    <Compile Include="Assets\Scripts\Door\BaseDoor.cs" />
+    <Compile Include="Assets\Scripts\Door\SlideDoor.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaData.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaDataDisplayStyles.cs" />
     <Compile Include="Assets\Scripts\ResourceLoader\ResourceLoader.cs" />
