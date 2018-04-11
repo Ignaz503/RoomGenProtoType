@@ -327,12 +327,14 @@
     <Compile Include="Assets\Scripts\Displays\ImageDisplay.cs" />
     <Compile Include="Assets\Scripts\Displays\MeshDisplay.cs" />
     <Compile Include="Assets\Scripts\Door\BaseDoor.cs" />
-    <Compile Include="Assets\Scripts\Door\SlideDoor.cs" />
+    <Compile Include="Assets\Scripts\Door\DoorTrigger.cs" />
+    <Compile Include="Assets\Scripts\Door\SlidingDoor.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaData.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaDataDisplayStyles.cs" />
     <Compile Include="Assets\Scripts\ResourceLoader\ResourceLoader.cs" />
     <Compile Include="Assets\Scripts\ResourceManager\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Utility\BoundingSphere.cs" />
+    <Compile Include="Assets\Scripts\Utility\Interfaces\IDoor.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IWallValidator.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\MueseumRequest.cs" />

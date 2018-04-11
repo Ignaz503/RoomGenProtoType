@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public abstract class BasseDoor : MonoBehaviour
+public class BaseDoor : MonoBehaviour, IDoor
 {
     //TODO Door base class that allows for diff kind of doors
     public enum DoorState
@@ -16,15 +16,26 @@ public abstract class BasseDoor : MonoBehaviour
         Locked
     }
 
-    [SerializeField]DoorState CurrentState;
-    [SerializeField]float MovementSpeed;
+    [SerializeField]protected DoorState currentState;
+    [SerializeField]protected float movementSpeed;
 
-    public abstract void Open();
+    public virtual void Open()
+    {
+        throw new NotImplementedException();
+    }
 
-    public abstract void Close();
+    public virtual void Close()
+    {
+        throw new NotImplementedException();
+    }
 
-    public abstract void Lock(string key);
+    public virtual void Lock(string key)
+    {
+        throw new NotImplementedException();
+    }
 
-    public abstract void Unlock(string key);
-
+    public virtual void Unlock(string key)
+    {
+        throw new NotImplementedException();
+    }
 }

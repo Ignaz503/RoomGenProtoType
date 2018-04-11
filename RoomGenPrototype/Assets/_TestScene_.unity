@@ -851,13 +851,12 @@ MonoBehaviour:
   CeilingPrefab: {fileID: 1110854600383252, guid: 794d19ad07a970a44b0dd282b7f15a8a,
     type: 2}
   Player: {fileID: 1675310006}
-  ImageDisplayYPosSolidWall: -0.3
   TestMesh:
   - {fileID: 3300000, guid: 6a7c427473b4d03439b149a811ac1644, type: 3}
   - {fileID: 3300000, guid: a9ce92e3f8bb6224fa1e92b7adec8c65, type: 3}
   TestSprite: {fileID: 21300000, guid: b11ca85c3ccac254788db0bb8c2d61d2, type: 3}
-  XPosScale: 0
-  ZPosScale: 0
+  FloorXPosScale: 0
+  FloorZPosScale: 0
   DisableAfterRequest: 0
 --- !u!1 &2050256159
 GameObject:
