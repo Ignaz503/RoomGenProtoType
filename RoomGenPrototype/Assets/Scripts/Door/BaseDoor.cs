@@ -4,38 +4,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class BaseDoor : MonoBehaviour, IDoor
+public abstract class BaseDoor : MonoBehaviour
 {
-    //TODO Door base class that allows for diff kind of doors
     public enum DoorState
     {
         Open,
         Opening,
         Closed,
         Closing,
-        Locked
+        LockedClose,
+        LockedOpen
     }
+
+    public event Action<BaseDoor> OnOpen;
+    public event Action<BaseDoor> OnClose;
 
     [SerializeField]protected DoorState currentState;
     [SerializeField]protected float movementSpeed;
 
-    public virtual void Open()
+    public abstract void Open();
+
+    public abstract void Close();
+
+    public abstract void Lock(string key);
+
+    public abstract void Unlock(string key);
+
+    public abstract void LockOpen();
+
+    public abstract void UnlockOpen();
+
+    protected void OnDoorOpen()
     {
-        throw new NotImplementedException();
+        OnOpen?.Invoke(this);
     }
 
-    public virtual void Close()
+    protected void OnDoorClose()
     {
-        throw new NotImplementedException();
-    }
-
-    public virtual void Lock(string key)
-    {
-        throw new NotImplementedException();
-    }
-
-    public virtual void Unlock(string key)
-    {
-        throw new NotImplementedException();
+        OnClose?.Invoke(this);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,24 +22,28 @@ public class SlidingDoor : BaseDoor
         if (currentState == DoorState.Closed || currentState == DoorState.Closing)
             return;
 
+        if (currentState == DoorState.LockedOpen)
+            return; //TODO UserFeedback
+
         if (currentState == DoorState.Opening && openCoroutine != null)
         {
             StopCoroutine(openCoroutine);
             openCoroutine = null;
         }
-
+        currentState = DoorState.Closing;
         closeCoroutine = StartCoroutine(CloseCorutine());
     }
 
     public override void Open()
     {
-        if (currentState == DoorState.Open || currentState == DoorState.Opening)
+        if (currentState == DoorState.Open || currentState == DoorState.Opening || currentState == DoorState.LockedOpen)
             return;
-        if (currentState == DoorState.Locked)
+        if (currentState == DoorState.LockedClose)
             return; //TODO player feedback
 
         if(currentState == DoorState.Closing && closeCoroutine != null)
         {
+            Debug.Log("Hi");
             StopCoroutine(closeCoroutine);
             closeCoroutine = null;
         }
@@ -55,6 +60,20 @@ public class SlidingDoor : BaseDoor
     public override void Unlock(string key)
     {
         throw new System.NotImplementedException();
+    }
+
+    public override void LockOpen()
+    {
+        //TODO: maybe check if open before
+        //extra function set open for setting doors open
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, maxMovement);
+        currentState = DoorState.LockedOpen;
+        currentMovement = maxMovement;
+    }
+
+    public override void UnlockOpen()
+    {
+        currentState = DoorState.Open;
     }
 
     #region coroutines
@@ -75,6 +94,7 @@ public class SlidingDoor : BaseDoor
         transform.localPosition = locPos;
 
         openCoroutine = null;
+        OnDoorOpen();
     }
 
     IEnumerator CloseCorutine()
@@ -95,6 +115,7 @@ public class SlidingDoor : BaseDoor
         localPos.z = defaultClosePosition;
         transform.localPosition = localPos;
         closeCoroutine = null;
+        OnDoorClose();
     }
     #endregion
 }

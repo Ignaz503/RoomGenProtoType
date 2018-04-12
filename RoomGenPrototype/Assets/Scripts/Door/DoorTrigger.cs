@@ -6,6 +6,13 @@ public class DoorTrigger : MonoBehaviour {
 
     [SerializeField] BaseDoor door;
 
+    private void Start()
+    {
+        //Temp
+        //door.LockOpen();
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         door.Open();

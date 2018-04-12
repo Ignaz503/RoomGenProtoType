@@ -334,7 +334,6 @@
     <Compile Include="Assets\Scripts\ResourceLoader\ResourceLoader.cs" />
     <Compile Include="Assets\Scripts\ResourceManager\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Utility\BoundingSphere.cs" />
-    <Compile Include="Assets\Scripts\Utility\Interfaces\IDoor.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IWallValidator.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\MueseumRequest.cs" />
