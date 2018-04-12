@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class SlidingDoor : BaseDoor
 {
-    Vector3 defaultClosePosition;
+    float defaultClosePosition;
     float maxMovement;
     float currentMovement;
+    Coroutine openCoroutine;
+    Coroutine closeCoroutine;
 
     private void Awake()
     {
-        maxMovement = transform.localScale.z;
-        defaultClosePosition = transform.localPosition;
+        maxMovement = Mathf.Abs(transform.localScale.z);
+        defaultClosePosition = transform.localPosition.z;
     }
 
     public override void Close()
@@ -19,14 +21,13 @@ public class SlidingDoor : BaseDoor
         if (currentState == DoorState.Closed || currentState == DoorState.Closing)
             return;
 
-        //TODO implement
-        //temp
-        if (currentState == DoorState.Opening)
-            StopCoroutine(OpenCorutine());
+        if (currentState == DoorState.Opening && openCoroutine != null)
+        {
+            StopCoroutine(openCoroutine);
+            openCoroutine = null;
+        }
 
-        transform.localPosition = defaultClosePosition;
-
-        currentState = DoorState.Closed;
+        closeCoroutine = StartCoroutine(CloseCorutine());
     }
 
     public override void Open()
@@ -36,8 +37,14 @@ public class SlidingDoor : BaseDoor
         if (currentState == DoorState.Locked)
             return; //TODO player feedback
 
+        if(currentState == DoorState.Closing && closeCoroutine != null)
+        {
+            StopCoroutine(closeCoroutine);
+            closeCoroutine = null;
+        }
+
         currentState = DoorState.Opening;
-        StartCoroutine(OpenCorutine());
+        openCoroutine = StartCoroutine(OpenCorutine());
     }
 
     public override void Lock(string key)
@@ -50,6 +57,7 @@ public class SlidingDoor : BaseDoor
         throw new System.NotImplementedException();
     }
 
+    #region coroutines
     IEnumerator OpenCorutine()
     {
         Vector3 locPos = Vector3.zero;
@@ -59,11 +67,34 @@ public class SlidingDoor : BaseDoor
             currentMovement += movementSpeed * Time.deltaTime;
             locPos.z = currentMovement;
             transform.localPosition = locPos;
+            
             yield return null;
         }
         currentState = DoorState.Open;
-        currentMovement = 0f;
-        Debug.Log(currentState);
+        locPos.z = maxMovement;
+        transform.localPosition = locPos;
+
+        openCoroutine = null;
     }
 
+    IEnumerator CloseCorutine()
+    {
+        Vector3 localPos = Vector3.zero;
+        localPos.y = transform.localPosition.y;
+
+        while(currentMovement > defaultClosePosition)
+        {
+            currentMovement -= movementSpeed * Time.deltaTime;
+            localPos.z = currentMovement;
+            transform.localPosition = localPos;
+            yield return null;
+        }
+
+        currentState = DoorState.Closed;
+        currentMovement = 0f;
+        localPos.z = defaultClosePosition;
+        transform.localPosition = localPos;
+        closeCoroutine = null;
+    }
+    #endregion
 }
