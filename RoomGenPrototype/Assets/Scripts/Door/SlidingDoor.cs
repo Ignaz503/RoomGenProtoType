@@ -43,7 +43,6 @@ public class SlidingDoor : BaseDoor
 
         if(currentState == DoorState.Closing && closeCoroutine != null)
         {
-            Debug.Log("Hi");
             StopCoroutine(closeCoroutine);
             closeCoroutine = null;
         }
@@ -64,8 +63,13 @@ public class SlidingDoor : BaseDoor
 
     public override void LockOpen()
     {
-        //TODO: maybe check if open before
-        //extra function set open for setting doors open
+        if(currentState != DoorState.Open)
+        {
+            //TODO User Feedback
+            Debug.Log("Open first");
+            return;
+        }
+
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, maxMovement);
         currentState = DoorState.LockedOpen;
         currentMovement = maxMovement;
