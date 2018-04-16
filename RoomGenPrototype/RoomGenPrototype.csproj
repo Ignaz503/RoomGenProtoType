@@ -328,6 +328,7 @@
     <Compile Include="Assets\Scripts\Displays\MeshDisplay.cs" />
     <Compile Include="Assets\Scripts\Door\BaseDoor.cs" />
     <Compile Include="Assets\Scripts\Door\DoorTrigger.cs" />
+    <Compile Include="Assets\Scripts\Door\SingleHingeDoor.cs" />
     <Compile Include="Assets\Scripts\Door\SlidingDoor.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaData.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaDataDisplayStyles.cs" />

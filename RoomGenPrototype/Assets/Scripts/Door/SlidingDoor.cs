@@ -19,7 +19,7 @@ public class SlidingDoor : BaseDoor
 
     public override void Close()
     {
-        if (currentState == DoorState.Closed || currentState == DoorState.Closing)
+        if (currentState == DoorState.Closed || currentState == DoorState.Closing || currentState == DoorState.LockedClose)
             return;
 
         if (currentState == DoorState.LockedOpen)
