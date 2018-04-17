@@ -25,12 +25,18 @@ public class MuseumBuilder : MonoBehaviour
     #endregion
 
     public MeshFilter[] TestMesh;
-    public Sprite TestSprite;
+    public Sprite[] TestSprite;
+    public Texture[] TestTextures;
+
 
     public float FloorXPosScale;
     public float FloorZPosScale;
 
     float wallHeight;
+
+    //Temp
+    int TestTextSize;
+    int currIdx = 0;
 
     Museum virtMuse = null;
 
@@ -38,11 +44,14 @@ public class MuseumBuilder : MonoBehaviour
 
     private void Start()
     {
+        TestTextSize = TestTextures.Length - 1;
+
         FloorXPosScale = FloorPrefab.transform.localScale.x;
         FloorZPosScale = FloorPrefab.transform.localScale.z;
         wallHeight = WallPrefab.transform.localScale.y + (.5f*CeilingPrefab.transform.localScale.y);
 
         #region MeshDisplayXPosModificiation
+        //TODO remove and move to display that needs it
         Transform meshDisplayTrans  = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
 
         float avg = (meshDisplayTrans.localScale.x + meshDisplayTrans.localScale.y + meshDisplayTrans.localScale.z) / 3f;
@@ -52,6 +61,8 @@ public class MuseumBuilder : MonoBehaviour
         MeshDisplay.XPosScale = (1.5f * meshDisplayTrans.localScale.x) / (WallPrefab.transform.localScale.x / FloorPrefab.transform.localScale.x);
 
         #endregion
+
+        
 
         //requesting museum (simulate comunication with server^^)
         //for testing of serialization of museum and deserialization
@@ -247,10 +258,12 @@ public class MuseumBuilder : MonoBehaviour
                 disp.ApplyResource(Instantiate(TestMesh[rng.Next(2)]));
                 break;
             case Display.DisplayType.ImageDisplay:
-                disp.ApplyResource(TestSprite);
+                disp.ApplyResource(TestSprite[rng.Next(2)]);
+                break;
+            case Display.DisplayType.CenterImageDisplay:
+                disp.ApplyResource(TestTextures[currIdx++ % TestTextSize]);
                 break;
         }
-
     }
 }
 

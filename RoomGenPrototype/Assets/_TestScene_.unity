@@ -840,7 +840,7 @@ MonoBehaviour:
   WallPrefab: {fileID: 1122957230001198, guid: eecd628831ab99844818c821a1229216, type: 2}
   WallWithDoorPrefab: {fileID: 1356208461315344, guid: ea891563980e83c4fa26bfaae1ad3bd2,
     type: 2}
-  CenterImageDisplayPrefab: {fileID: 1666428050593864, guid: f66cf15a88d032b4f99f69fa6c25786c,
+  CenterImageDisplayPrefab: {fileID: 1412343219314506, guid: a3a42cd89462965428a1ac26d7e4ad11,
     type: 2}
   CenterMeshDisplay: {fileID: 1431718989695678, guid: 0458d2ee0ebbe1d4abde158fb8b07eeb,
     type: 2}
@@ -854,7 +854,13 @@ MonoBehaviour:
   TestMesh:
   - {fileID: 3300000, guid: 6a7c427473b4d03439b149a811ac1644, type: 3}
   - {fileID: 3300000, guid: a9ce92e3f8bb6224fa1e92b7adec8c65, type: 3}
-  TestSprite: {fileID: 21300000, guid: b11ca85c3ccac254788db0bb8c2d61d2, type: 3}
+  TestSprite:
+  - {fileID: 21300000, guid: b11ca85c3ccac254788db0bb8c2d61d2, type: 3}
+  - {fileID: 21300000, guid: 86ee36b13a5e7cd43ac8223352c0329d, type: 3}
+  TestTextures:
+  - {fileID: 2800000, guid: 86ee36b13a5e7cd43ac8223352c0329d, type: 3}
+  - {fileID: 2800000, guid: b11ca85c3ccac254788db0bb8c2d61d2, type: 3}
+  - {fileID: 2800000, guid: 2e88a4f2612ea7844bdbe6e1d1e75fdd, type: 3}
   FloorXPosScale: 0
   FloorZPosScale: 0
   DisableAfterRequest: 0

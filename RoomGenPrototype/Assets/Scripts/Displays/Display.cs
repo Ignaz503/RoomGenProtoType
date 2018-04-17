@@ -7,7 +7,9 @@ public abstract class Display : MonoBehaviour {
     public enum DisplayType
     {
         MeshDisplay,
-        ImageDisplay
+        ImageDisplay,
+        //Temp
+        CenterImageDisplay
     };
 
     public DisplayType Type { get; protected set; }
