@@ -7,9 +7,11 @@ public class CenterImageDisplay : Display
     [SerializeField] Material MaterialPrefab;
     MeshRenderer[] displayMeshRenderes;
 
+    //TODO: Maybe scale a bit depending on texture that is applied
+
     private void Awake()
     {
-        Type = DisplayType.CenterImageDisplay;
+        Type = DisplayType.ImageDisplay;
 
         displayMeshRenderes = new MeshRenderer[transform.childCount];
         int debug = 0;

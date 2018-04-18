@@ -25,9 +25,7 @@ public class MuseumBuilder : MonoBehaviour
     #endregion
 
     public MeshFilter[] TestMesh;
-    public Sprite[] TestSprite;
     public Texture[] TestTextures;
-
 
     public float FloorXPosScale;
     public float FloorZPosScale;
@@ -44,7 +42,7 @@ public class MuseumBuilder : MonoBehaviour
 
     private void Start()
     {
-        TestTextSize = TestTextures.Length - 1;
+        TestTextSize = TestTextures.Length;
 
         FloorXPosScale = FloorPrefab.transform.localScale.x;
         FloorZPosScale = FloorPrefab.transform.localScale.z;
@@ -258,9 +256,6 @@ public class MuseumBuilder : MonoBehaviour
                 disp.ApplyResource(Instantiate(TestMesh[rng.Next(2)]));
                 break;
             case Display.DisplayType.ImageDisplay:
-                disp.ApplyResource(TestSprite[rng.Next(2)]);
-                break;
-            case Display.DisplayType.CenterImageDisplay:
                 disp.ApplyResource(TestTextures[currIdx++ % TestTextSize]);
                 break;
         }

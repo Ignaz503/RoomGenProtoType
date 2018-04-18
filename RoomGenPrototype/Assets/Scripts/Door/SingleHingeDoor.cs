@@ -14,6 +14,7 @@ public class SingleHingeDoor : BaseDoor
     Coroutine openCoroutine;
     Coroutine closeCoroutine;
 
+    BoxCollider boxCollider;
     // Use this for initialization
     void Start()
     {
@@ -22,6 +23,10 @@ public class SingleHingeDoor : BaseDoor
         //if already rotated because wall rotated just add it to the wall
         targetYRotation += transform.eulerAngles.y;
         PointToRotateAround = transform.TransformPoint(new Vector3(.5f, -1f, .5f));
+
+        boxCollider = GetComponent<BoxCollider>();
+
+        OnOpen += (door) => { boxCollider.enabled = true; };
 
     }
 
@@ -50,7 +55,15 @@ public class SingleHingeDoor : BaseDoor
 
     public override void LockOpen()
     {
-        throw new System.NotImplementedException();
+        if(currentState != DoorState.Open)
+        {
+            //UserFeedaback
+            Debug.Log("Door needs to be open to be locked open");
+            return;
+        }
+
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, targetYRotation, transform.eulerAngles.z);
+        currentState = DoorState.LockedOpen;
     }
 
     public override void Open()
@@ -66,6 +79,9 @@ public class SingleHingeDoor : BaseDoor
             StopCoroutine(closeCoroutine);
             closeCoroutine = null;
         }
+
+        //disable boxcolider as to not clooide with player
+        boxCollider.enabled = false;
 
         currentState = DoorState.Opening;
         openCoroutine = StartCoroutine(OpenCoroutine());

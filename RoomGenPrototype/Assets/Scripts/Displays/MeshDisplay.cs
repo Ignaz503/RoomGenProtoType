@@ -37,6 +37,15 @@ public class MeshDisplay : Display {
         ChildMesh.gameObject.transform.localScale *= scale;
     }
 
+    void SetUpMeshRendererOptions()
+    {
+
+        MeshRenderer re = ChildMesh.gameObject.GetComponent<MeshRenderer>();
+
+        re.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+
+    }
+
     public override void ApplyResource(UnityEngine.Object obj)
     {
         if ((obj is MeshFilter))
@@ -45,6 +54,7 @@ public class MeshDisplay : Display {
             ChildMesh.transform.SetParent(ParentMesh.transform);
             ChildMesh.transform.localPosition =  Vector3.zero;
             ScaleChildToFitParent();
+            SetUpMeshRendererOptions();
         }
         else
             throw new Exception("Trying to apply non valid resource to MeshDisplay");

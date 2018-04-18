@@ -8,8 +8,6 @@ public abstract class Display : MonoBehaviour {
     {
         MeshDisplay,
         ImageDisplay,
-        //Temp
-        CenterImageDisplay
     };
 
     public DisplayType Type { get; protected set; }

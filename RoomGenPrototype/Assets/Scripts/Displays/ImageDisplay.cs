@@ -5,29 +5,33 @@ using UnityEngine;
 public class ImageDisplay : Display {
 
     public static float XPosScale = .55f;
-    public static Vector3 Rotation = new Vector3(0, 90f, 0);
+    public static Vector3 Rotation = new Vector3(0, -90f, 180);
     public static float Scale = 0.2f;
     public static float YPos = -.3f;
 
-    public SpriteRenderer[] PictureDisplays;
+    [SerializeField] Material materialPrefab;
+    MeshRenderer meshRenderer;
 
     private void Awake()
     {
         Type = DisplayType.ImageDisplay;
 
-        PictureDisplays = GetComponentsInChildren<SpriteRenderer>();
+        meshRenderer = GetComponent<MeshRenderer>();
 
     }
 
     public override void ApplyResource(UnityEngine.Object obj)
     {
-        if (obj is Sprite)
+        if (obj is Texture)
         {
-            Sprite sprite = obj as Sprite;
-            foreach(SpriteRenderer spRen in PictureDisplays)
+            Material mat = new Material(materialPrefab)
             {
-                spRen.sprite = sprite;
-            }
+                mainTexture = obj as Texture
+            };
+
+            meshRenderer.material = mat;
+            //TODO
+            //scale x and y a bit depending on size of texture
         }
         else
             throw new System.Exception("Trying to apply wrong resource to ImgaeDisplay");
@@ -41,6 +45,6 @@ public class ImageDisplay : Display {
         transform.localPosition = new Vector3(xLocPos, YPos, dispInfo.PositionModifier.y);
 
         transform.localEulerAngles = Rotation;
-        transform.localScale = new Vector3(Scale * .75f, Scale, 1);
+        transform.localScale = new Vector3(Scale * .75f, Scale, 0.01f);
     }
 }
