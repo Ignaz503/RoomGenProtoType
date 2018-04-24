@@ -85,7 +85,7 @@ public class MuseumBuilder : MonoBehaviour
                 SetUpFloor(floors);
                 SetUpWalls(floors);
 
-                Player.transform.position = new Vector3(virtMuse.Rooms[0].RoomTiles[0].x * 10f, 4f, virtMuse.Rooms[0].RoomTiles[0].y * 10f);
+                Player.transform.position = new Vector3(floors[0].transform.position.x, 4f, floors[0].transform.position.z);
                 Player.SetActive(true);
                 gameObject.SetActive(false);
             }
@@ -139,7 +139,7 @@ public class MuseumBuilder : MonoBehaviour
 
                 Vector3 pos = new Vector3(FloorXPosScale * tile.x, FloorPrefab.transform.position.y, FloorZPosScale * tile.y);
 
-                string name = r.Type.ToString() + " " + tile.ToString();
+                string name = r.RoomID + " " + r.Type.ToString() + " " + tile.ToString();
 
                 floor.transform.position = pos;
                 floor.name = name;
@@ -187,7 +187,17 @@ public class MuseumBuilder : MonoBehaviour
 
             wallObj.transform.eulerAngles = newRot;
 
-            wallObj.name = w.Rotation.ToString() + " " + w.Tiles[0].ToString();
+            wallObj.name =  w.Rotation.ToString() + " " + w.Tiles[0].ToString();
+
+            if(w.AssociatedRoomIDs.Count < 2)
+            {
+                wallObj.name += " " + w.AssociatedRoomIDs[0];
+            }
+            else
+            {
+                wallObj.name += " "+w.AssociatedRoomIDs[0];
+                wallObj.name += " " + w.AssociatedRoomIDs[1];
+            }
 
             #endregion
 
@@ -210,7 +220,7 @@ public class MuseumBuilder : MonoBehaviour
                 Instantiate(CenterImageDisplayPrefab) :
                 Instantiate(CenterMeshDisplay);
 
-            disp.name = "Display" + r.RoomTiles[0];
+            disp.name = "Display" + r.RoomID + " " + r.RoomTiles[0];
             
 
             Display display = disp.GetComponentInChildren<Display>();

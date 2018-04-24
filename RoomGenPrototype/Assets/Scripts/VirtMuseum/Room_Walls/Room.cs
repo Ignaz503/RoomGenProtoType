@@ -40,10 +40,14 @@ public class Room
 
     };
 
+    static uint RoomIDGen = 0;
+
     #endregion
 
     Museum virtMuse;
 
+    [DataMember]
+    public uint RoomID { get; protected set; }
     [DataMember]
     public RoomType Type { get; protected set; }
     [DataMember]
@@ -55,6 +59,7 @@ public class Room
 
     public Room(RoomType t, List<Vector2Int> Tiles, Museum virtMuse)
     {
+        RoomID = RoomIDGen++;
         Type = t;
         RoomTiles = Tiles;
         this.virtMuse = virtMuse;
@@ -97,15 +102,17 @@ public class Room
                     new Vector2[] { uR, uL },// location of corner points museum coords
                     1f,
                     tile, //associated tile
+                    RoomID,
                     Wall.WallRotation.Horizontal,
                     virtMuse
                     );
             tempWalls.Add(upper);
             Wall lower = new Wall(
                 Wall.WallType.Solid,
-                 new Vector2[] { lR, lL },
-                 -1f,
-                 tile,
+                new Vector2[] { lR, lL },
+                -1f,
+                tile,
+                RoomID,
                 Wall.WallRotation.Horizontal,
                 virtMuse
                 );
@@ -115,6 +122,7 @@ public class Room
                 new Vector2[] { uR, lR }, 
                 1f,
                 tile,
+                RoomID,
                 Wall.WallRotation.Vertical,
                 virtMuse
                 );
@@ -125,6 +133,7 @@ public class Room
                 new Vector2[] { uL, lL },
                 -1f,
                 tile,
+                RoomID,
                 Wall.WallRotation.Vertical,
                 virtMuse
                 );

@@ -35,7 +35,10 @@ public class Wall
     [DataMember]
     public List<MuseumDisplayInfo> DisplayInfos { get; protected set; }
 
-    public Wall(WallType t, Vector2[] location,float posMod , Vector2Int associatedTile, WallRotation rot, Museum virt)
+    [DataMember]
+    public List<uint> AssociatedRoomIDs { get; protected set; }
+
+    public Wall(WallType t, Vector2[] location,float posMod , Vector2Int associatedTile,uint associatedRoomID, WallRotation rot, Museum virt)
     {
         VirtMuse = virt;
         Type = t;
@@ -48,6 +51,11 @@ public class Wall
         Rotation = rot;
 
         DisplayInfos = new List<MuseumDisplayInfo>(Type == WallType.Solid? 4 :0);
+
+        AssociatedRoomIDs = new List<uint>(2)
+        {
+            associatedRoomID
+        };
     }
 
     public override bool Equals(object obj)
@@ -120,13 +128,13 @@ public class Wall
     /// Adds a new display to this wall if possible
     /// and sets the local position of this display correctly
     /// </summary>
-    public void AddNewDisplayInfo()
+    public void AddNewDisplayInfo(uint associatedRoomID)
     {
         if (DisplayInfos.Count == DisplayInfos.Capacity)
             throw new System.Exception($"Can only have {DisplayInfos.Capacity} displays on wall of type {Type}");
 
-        AddDisplayToWall();
-        AddDisplayToWall(- 1f);
+        AddDisplayToWall(associatedRoomID);
+        AddDisplayToWall(associatedRoomID,- 1f);
 
         DisplayXPositionModifier = -DisplayXPositionModifier;
     }
@@ -134,9 +142,12 @@ public class Wall
     /// <summary>
     /// adds a new display
     /// </summary>
-    void AddDisplayToWall(float YposModSign =1f)
+    void AddDisplayToWall(uint associatedRoomID,float YposModSign =1f)
     {
-        MuseumDisplayInfo displayInfo = new MuseumDisplayInfo();
+        MuseumDisplayInfo displayInfo = new MuseumDisplayInfo()
+        {
+            AssociatedRoomID = associatedRoomID
+        };
 
         //figure out position
 
@@ -172,11 +183,12 @@ public class Wall
 
     }
 
-    public void AddTile(Vector2Int tile)
+    public void MergeWalls(Wall w)
     {
         if(Tiles.Count < 2)
         {
-            Tiles.Add(tile);
+            Tiles.Add(w.Tiles[0]);
+            AssociatedRoomIDs.Add(w.AssociatedRoomIDs[0]);
         }
     }
 

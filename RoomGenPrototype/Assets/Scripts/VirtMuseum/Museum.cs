@@ -115,12 +115,12 @@ public class Museum
 
             foreach (RoomType t in Enum.GetValues(typeof(RoomType)))
             {
-                List<Vector2Int[]> sequencesForType;
+                List<Vector2Int[]> possibleSequencesForType;
                 if (roomTypeToPlaceableChecker.ContainsKey(t))
                 {
-                    if (roomTypeToPlaceableChecker[t].CheckIfPlacable(newRoomOrigin, out sequencesForType,this))
+                    if (roomTypeToPlaceableChecker[t].CheckIfPlacable(newRoomOrigin, out possibleSequencesForType,this))
                     {
-                        typeToPossStepSequences.Add(t, sequencesForType);
+                        typeToPossStepSequences.Add(t, possibleSequencesForType);
                     }
                 }
             }
@@ -128,6 +128,7 @@ public class Museum
 
             if (typeToPossStepSequences.Keys.Count > 0)
             {
+                //there are possible rooms to place
                 RoomType typeToPlace = typeToPossStepSequences.Keys.ToList()[rng.Next(0, typeToPossStepSequences.Keys.Count)];
 
                 Vector2Int[] sequence = typeToPossStepSequences[typeToPlace][rng.Next(0, typeToPossStepSequences[typeToPlace].Count)];
@@ -144,6 +145,7 @@ public class Museum
                 #region Add all tiles to room
                 if (typeToPlace != RoomType.Normal)
                 {
+                    //normal already added by starting tile no need to add anything else
                     foreach (Vector2Int step in sequence)
                     {
                         Vector2Int coord = newRoomOrigin + step;
@@ -343,13 +345,13 @@ public class Museum
         {
             if (Walls[i] == w)
             {
-                Walls[i].AddNewDisplayInfo();
-                Walls[i].AddTile(w.Tiles[0]);
+                Walls[i].MergeWalls(w);
+                Walls[i].AddNewDisplayInfo(w.AssociatedRoomIDs[0]);
                 return i;
             }
         }
-        w.AddNewDisplayInfo();
         Walls.Add(w);
+        w.AddNewDisplayInfo(w.AssociatedRoomIDs[0]);
         return Walls.Count - 1;
     }
 
