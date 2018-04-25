@@ -28,6 +28,8 @@ public class Museum
     public List<Room> Rooms { get; protected set; }
     [DataMember]
     public List<Wall> Walls { get; protected set; }
+    [DataMember]
+    public MuseumGraph MuseumsGraph { get; protected set; }
 
     //[DataMember]
     public int CurrentNumberOfDoors
@@ -73,13 +75,14 @@ public class Museum
 
         Rooms = new List<Room>();
         Walls = new List<Wall>();
+        MuseumsGraph = new MuseumGraph();
     }
 
     /// <summary>
     /// Generates a Museum
     /// </summary>
     /// <param name="seed"></param>
-    public void Generate(string seed)
+    public void Generate(string seed, bool buildMuseumsGraph = true)
     {
         //TODO add resourcemanager get numb resources for type
         System.Random rng = new System.Random(seed.GetHashCode());
@@ -216,6 +219,9 @@ public class Museum
         }// end while
 
         FillDisplays(rng);
+
+        if (buildMuseumsGraph)
+            MuseumsGraph.BuildMuseumGraph(this);
     }
 
     /// <summary>

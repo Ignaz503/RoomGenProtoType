@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class MuseumBuilder : MonoBehaviour
 {
+
+    public static MuseumBuilder Instance;
     public static Queue<string> MuseumData = new Queue<string>();
 
     #region Prefabs
@@ -40,14 +42,27 @@ public class MuseumBuilder : MonoBehaviour
 
     public bool DisableAfterRequest;
 
-    private void Start()
+    private void Awake()
     {
+        if(Instance != null)
+        {
+            Debug.LogError("There already exists a museum builder");
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
+
         TestTextSize = TestTextures.Length;
 
         FloorXPosScale = FloorPrefab.transform.localScale.x;
         FloorZPosScale = FloorPrefab.transform.localScale.z;
-        wallHeight = WallPrefab.transform.localScale.y + (.5f*CeilingPrefab.transform.localScale.y);
 
+        wallHeight = WallPrefab.transform.localScale.y + (.5f * CeilingPrefab.transform.localScale.y);
+    }
+
+    private void Start()
+    {
         #region MeshDisplayXPosModificiation
         //TODO remove and move to display that needs it
         Transform meshDisplayTrans  = MeshDisplayPrefab.transform.GetChild(MeshDisplayPrefab.transform.childCount - 1);
@@ -59,9 +74,7 @@ public class MuseumBuilder : MonoBehaviour
         MeshDisplay.XPosScale = (1.5f * meshDisplayTrans.localScale.x) / (WallPrefab.transform.localScale.x / FloorPrefab.transform.localScale.x);
 
         #endregion
-
-        
-
+     
         //requesting museum (simulate comunication with server^^)
         //for testing of serialization of museum and deserialization
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
@@ -84,6 +97,8 @@ public class MuseumBuilder : MonoBehaviour
                 List<GameObject> floors = new List<GameObject>();
                 SetUpFloor(floors);
                 SetUpWalls(floors);
+
+                MuseumController.Instance.SetMuseumToControl(virtMuse);
 
                 Player.transform.position = new Vector3(floors[0].transform.position.x, 4f, floors[0].transform.position.z);
                 Player.SetActive(true);
@@ -268,6 +283,14 @@ public class MuseumBuilder : MonoBehaviour
             case Display.DisplayType.ImageDisplay:
                 disp.ApplyResource(TestTextures[currIdx++ % TestTextSize]);
                 break;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if(virtMuse != null)
+        {
+
         }
     }
 }
