@@ -42,6 +42,8 @@ public class MuseumBuilder : MonoBehaviour
 
     public bool DisableAfterRequest;
 
+    MuseumController _MusemControllerInstance;
+
     private void Awake()
     {
         if(Instance != null)
@@ -74,7 +76,9 @@ public class MuseumBuilder : MonoBehaviour
         MeshDisplay.XPosScale = (1.5f * meshDisplayTrans.localScale.x) / (WallPrefab.transform.localScale.x / FloorPrefab.transform.localScale.x);
 
         #endregion
-     
+
+        _MusemControllerInstance = MuseumController.Instance;
+
         //requesting museum (simulate comunication with server^^)
         //for testing of serialization of museum and deserialization
         MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
@@ -94,11 +98,12 @@ public class MuseumBuilder : MonoBehaviour
             if((data = MuseumData.Dequeue())!= null)
             {
                 virtMuse = Museum.Deserialize(data);
+                MuseumController.Instance.SetMuseumToControl(virtMuse);
+
                 List<GameObject> floors = new List<GameObject>();
                 SetUpFloor(floors);
                 SetUpWalls(floors);
 
-                MuseumController.Instance.SetMuseumToControl(virtMuse);
 
                 Player.transform.position = new Vector3(floors[0].transform.position.x, 4f, floors[0].transform.position.z);
                 Player.SetActive(true);
@@ -107,7 +112,7 @@ public class MuseumBuilder : MonoBehaviour
         }
     }
 
-    /// <summary>
+ /// <summary>
     /// Sets up the floor for a museum
     /// fills list of gameobjects used for parenting information
     /// when setting up walls
@@ -124,6 +129,9 @@ public class MuseumBuilder : MonoBehaviour
             {
                 GameObject floor = Instantiate(FloorPrefab);
                 GameObject ceiling = Instantiate(CeilingPrefab);
+
+                AddToRoomManagmentUnit(r.RoomID, floor);
+                AddToRoomManagmentUnit(r.RoomID, ceiling);
 
                 MeshRenderer rend = floor.GetComponent<MeshRenderer>();
                 MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
@@ -182,12 +190,19 @@ public class MuseumBuilder : MonoBehaviour
             #region Wall gamobject setup
             GameObject wallObj = w.Type == Wall.WallType.Solid ? Instantiate(WallPrefab) : Instantiate(WallWithDoorPrefab);
 
+            foreach(uint assIds in w.AssociatedRoomIDs)
+            {
+                AddToRoomManagmentUnit(assIds, wallObj);
+            }
+
+            //position parenting
             GameObject parent = floors.Where((obj) => { return obj.name.Contains(w.Tiles[0].ToString()); }).First();
             if (parent != null)
                 wallObj.transform.SetParent(parent.transform);
 
             float yPos = (w.Type == Wall.WallType.Solid ? wallObj.transform.localScale.y * .5f : wallObj.transform.localScale.y)+.5f;
 
+            //rotation
             //TODO: Remove fixed values
             if (w.Rotation == Wall.WallRotation.Horizontal)
             {
@@ -204,6 +219,7 @@ public class MuseumBuilder : MonoBehaviour
 
             wallObj.name =  w.Rotation.ToString() + " " + w.Tiles[0].ToString();
 
+            //name
             if(w.AssociatedRoomIDs.Count < 2)
             {
                 wallObj.name += " " + w.AssociatedRoomIDs[0];
@@ -236,7 +252,8 @@ public class MuseumBuilder : MonoBehaviour
                 Instantiate(CenterMeshDisplay);
 
             disp.name = "Display" + r.RoomID + " " + r.RoomTiles[0];
-            
+
+            AddToRoomManagmentUnit(dispInf.AssociatedRoomID, disp);
 
             Display display = disp.GetComponentInChildren<Display>();
 
@@ -258,6 +275,7 @@ public class MuseumBuilder : MonoBehaviour
             GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ?
                 Instantiate(WallImageDisplayPrefab) : Instantiate(MeshDisplayPrefab);
 
+            AddToRoomManagmentUnit(dispInf.AssociatedRoomID, disp);
 
             Display display = disp.GetComponentInChildren<Display>();
             disp.name = w.Rotation + " " + display.GetType() +" "+ dispInf.AssociatedRoomID;
@@ -284,6 +302,14 @@ public class MuseumBuilder : MonoBehaviour
                 disp.ApplyResource(TestTextures[currIdx++ % TestTextSize]);
                 break;
         }
+    }
+
+    void AddToRoomManagmentUnit(uint roomID,GameObject objToAdd)
+    {
+        RoomManagmentUnit rManage = _MusemControllerInstance.GetRoomManagmentUnitForRoom(roomID);
+
+        if (rManage != null)
+            rManage.AddGameObject(objToAdd);
     }
 
     private void OnDrawGizmos()

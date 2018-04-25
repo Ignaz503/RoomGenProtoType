@@ -1062,6 +1062,7 @@ MonoBehaviour:
   xPositionScaler: 0
   zPositionScaler: 0
   player: {fileID: 1675310007}
+  ManageRooms: 0
 --- !u!4 &2104614414
 Transform:
   m_ObjectHideFlags: 0

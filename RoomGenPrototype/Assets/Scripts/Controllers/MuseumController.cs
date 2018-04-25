@@ -9,10 +9,13 @@ public class MuseumController : MonoBehaviour {
     [SerializeField] float xPositionScaler;
     [SerializeField] float zPositionScaler;
     [SerializeField] Transform player;
+    [SerializeField] bool ManageRooms;
 
     MuseumGraph virtMuseGraph;
     int museumSize;
 
+    Dictionary<uint, RoomManagmentUnit> roomManagmentMap;
+    //temp
     Dictionary<uint, Room> roomDictionary;
     Room[,] roomMap;
     Room roomPlayerIsIn;
@@ -30,6 +33,8 @@ public class MuseumController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        roomManagmentMap = new Dictionary<uint, RoomManagmentUnit>();
+
         roomDictionary = new Dictionary<uint, Room>();
 
         xPositionScaler = MuseumBuilder.Instance.FloorXPosScale;
@@ -45,13 +50,57 @@ public class MuseumController : MonoBehaviour {
 
             if (InBounds(x, y))
             {
-                roomPlayerIsIn = roomMap[x, y];
-                if (roomPlayerIsIn != null)
-                    Debug.Log(roomPlayerIsIn.RoomID);
-            }
+                Room possNewRoom = roomMap[x, y];
 
-        }
+                if(roomPlayerIsIn == null)
+                {
+                    roomPlayerIsIn = possNewRoom;
+                    if(ManageRooms)
+                        LoadRoomAndNeighbors(roomPlayerIsIn);
+                }
+
+                if (possNewRoom != null && roomPlayerIsIn.RoomID != roomMap[x, y].RoomID)
+                {
+                    if (ManageRooms)
+                    {
+                        //"unload" all old rooms
+                        UnloadRoomAndNeighbors(roomPlayerIsIn);
+                        //load new rooms
+                        LoadRoomAndNeighbors(possNewRoom);
+                    }
+                    roomPlayerIsIn = possNewRoom;
+                }// end if new room
+            }// end if in bounds
+        }// end if graph not null
 	}
+
+    void LoadRoomAndNeighbors(Room rToLoad)
+    {
+        if (roomManagmentMap.ContainsKey(rToLoad.RoomID))
+            roomManagmentMap[rToLoad.RoomID].LoadRoom();
+
+        foreach (uint edge in virtMuseGraph.GetNodeForRoom(rToLoad).Edges)
+        {
+            if (roomManagmentMap.ContainsKey(edge))
+            {
+                roomManagmentMap[edge].LoadRoom();
+            }
+        }
+    }
+
+    void UnloadRoomAndNeighbors(Room rToUnload)
+    {
+        if (roomManagmentMap.ContainsKey(rToUnload.RoomID))
+            roomManagmentMap[rToUnload.RoomID].LoadRoom();
+
+        foreach (uint edge in virtMuseGraph.GetNodeForRoom(rToUnload).Edges)
+        {
+            if (roomManagmentMap.ContainsKey(edge))
+            {
+                roomManagmentMap[edge].UnloadRoom();
+            }
+        }
+    }
 
     public void SetMuseumToControl(Museum virMus)
     {
@@ -66,6 +115,7 @@ public class MuseumController : MonoBehaviour {
                 if(tile.x >= 0 && tile.x < virMus.Size && tile.y >= 0 && tile.y < virMus.Size)
                     roomMap[tile.x, tile.y] = r;
             }
+            roomManagmentMap.Add(r.RoomID, new RoomManagmentUnit(r.RoomID,true));
             roomDictionary.Add(r.RoomID, r);
         }
     }
@@ -81,7 +131,7 @@ public class MuseumController : MonoBehaviour {
         {
             foreach(MuseumGraph.Node n in virtMuseGraph.Nodes)
             {
-                if (roomDictionary.ContainsKey(n.NodeID))
+                if (roomManagmentMap.ContainsKey(n.NodeID))
                 {
                     Vector2Int rLoc = roomDictionary[n.NodeID].RoomTiles[0];
 
@@ -91,7 +141,7 @@ public class MuseumController : MonoBehaviour {
 
                     foreach(uint edge in n.Edges)
                     {
-                        if (roomDictionary.ContainsKey(edge))
+                        if (roomManagmentMap.ContainsKey(edge))
                         {
                             Vector2Int edgeLoc = roomDictionary[edge].RoomTiles [0];
                             Gizmos.color = Color.cyan;
@@ -101,6 +151,13 @@ public class MuseumController : MonoBehaviour {
                 }// end if room dictionary contains room
             }// end foreach virtmuse graph
         }// end if virt muse graph not null
+    }
+
+    public RoomManagmentUnit GetRoomManagmentUnitForRoom(uint r)
+    {
+        if (roomManagmentMap.ContainsKey(r))
+            return roomManagmentMap[r];
+        return null;
     }
 
 }
