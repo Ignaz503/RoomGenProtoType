@@ -20,7 +20,7 @@ public class Wall
     }
 
     Museum VirtMuse;
-    float DisplayXPositionModifier = 1f;
+    int TileIndexForXPositionModifierCalc = 0;
 
     [DataMember]
     public WallType Type { get; protected set; }
@@ -136,7 +136,7 @@ public class Wall
         AddDisplayToWall(associatedRoomID);
         AddDisplayToWall(associatedRoomID,- 1f);
 
-        DisplayXPositionModifier = -DisplayXPositionModifier;
+        TileIndexForXPositionModifierCalc++;
     }
 
     /// <summary>
@@ -153,14 +153,11 @@ public class Wall
 
         displayInfo.PositionModifier.y = .25f * YposModSign;
 
-        displayInfo.PositionModifier.x = DisplayXPositionModifier;
+        if(Rotation == WallRotation.Vertical)
+            displayInfo.PositionModifier.x = Mathf.Sign(Tiles[TileIndexForXPositionModifierCalc].x - Location[0].x);
+        else
+            displayInfo.PositionModifier.x = Mathf.Sign(Tiles[TileIndexForXPositionModifierCalc].y - Location[0].y)*-1f;
 
-        //outer walls fix
-        if ((Tiles[0].x == VirtMuse.Size - 1) && Rotation == WallRotation.Vertical)
-            displayInfo.PositionModifier.x = -displayInfo.PositionModifier.x;
-
-        if (Tiles[0].y == 0 && Rotation == WallRotation.Horizontal)
-            displayInfo.PositionModifier.x = -displayInfo.PositionModifier.x;
 
         DisplayInfos.Add(displayInfo);
     }

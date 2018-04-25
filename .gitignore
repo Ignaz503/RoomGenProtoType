@@ -18,6 +18,9 @@ ExportedObj/
 *.booproj
 *.svd
 
+# Visual Studio cache directory
+.vs/
+
 # Unity3D generated meta files
 *.pidb.meta
 
@@ -27,6 +30,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-Robot Warehouse Game/.vs/
+RoomGenPrototype/.vs/
 Build/
 Prototype/

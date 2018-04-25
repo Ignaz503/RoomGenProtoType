@@ -245,7 +245,7 @@ public class MuseumBuilder : MonoBehaviour
 
 
             Display display = disp.GetComponentInChildren<Display>();
-            disp.name = wallObj.name + " " + display.GetType();
+            disp.name = w.Rotation + " " + display.GetType() +" "+ dispInf.AssociatedRoomID;
             display.SetUp(dispInf, wallObj);
 
             if (display != null)
