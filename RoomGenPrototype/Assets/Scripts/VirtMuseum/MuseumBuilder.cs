@@ -235,6 +235,8 @@ public class MuseumBuilder : MonoBehaviour
             if (w.Type == Wall.WallType.Solid)
                 SetUpDisplaysForWall(w, wallObj);
 
+            wallObj.transform.SetParent(null);
+
         }
     }
 
