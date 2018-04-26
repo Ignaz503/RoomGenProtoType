@@ -104,6 +104,8 @@ public class MuseumBuilder : MonoBehaviour
                 SetUpFloor(floors);
                 SetUpWalls(floors);
 
+                //_MusemControllerInstance.LogRoomManagmentUnitForRoom(0);
+                //_MusemControllerInstance.LogRoomManagmentUnitForRoom(17);
 
                 Player.transform.position = new Vector3(floors[0].transform.position.x, 4f, floors[0].transform.position.z);
                 Player.SetActive(true);
@@ -190,10 +192,7 @@ public class MuseumBuilder : MonoBehaviour
             #region Wall gamobject setup
             GameObject wallObj = w.Type == Wall.WallType.Solid ? Instantiate(WallPrefab) : Instantiate(WallWithDoorPrefab);
 
-            foreach(uint assIds in w.AssociatedRoomIDs)
-            {
-                AddToRoomManagmentUnit(assIds, wallObj);
-            }
+
 
             //position parenting
             GameObject parent = floors.Where((obj) => { return obj.name.Contains(w.Tiles[0].ToString()); }).First();
@@ -228,6 +227,11 @@ public class MuseumBuilder : MonoBehaviour
             {
                 wallObj.name += " "+w.AssociatedRoomIDs[0];
                 wallObj.name += " " + w.AssociatedRoomIDs[1];
+            }
+
+            foreach (uint assIds in w.AssociatedRoomIDs)
+            {
+                AddToRoomManagmentUnit(assIds, wallObj);
             }
 
             #endregion
@@ -312,6 +316,8 @@ public class MuseumBuilder : MonoBehaviour
 
         if (rManage != null)
             rManage.AddGameObject(objToAdd);
+        else
+            Debug.LogError($"Could Not find associated room in mamangment units for: {objToAdd.name}");
     }
 
     private void OnDrawGizmos()

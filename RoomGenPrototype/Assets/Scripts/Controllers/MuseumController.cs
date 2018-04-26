@@ -33,6 +33,7 @@ public class MuseumController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         roomManagmentMap = new Dictionary<uint, RoomManagmentUnit>();
 
         roomDictionary = new Dictionary<uint, Room>();
@@ -63,6 +64,8 @@ public class MuseumController : MonoBehaviour {
                 {
                     if (ManageRooms)
                     {
+                        //TODO no need to unload all and load again
+                        // optimize this shit
                         //"unload" all old rooms
                         UnloadRoomAndNeighbors(roomPlayerIsIn);
                         //load new rooms
@@ -160,4 +163,11 @@ public class MuseumController : MonoBehaviour {
         return null;
     }
 
+    public void LogRoomManagmentUnitForRoom(uint roomID)
+    {
+        if (roomManagmentMap.ContainsKey(roomID))
+        {
+            Debug.Log(roomManagmentMap[roomID].ToString());
+        }
+    }
 }

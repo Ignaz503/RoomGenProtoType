@@ -17,17 +17,12 @@ public class RoomManagmentUnit
 
     public void LoadRoom()
     {
-        if (IsLoaded)
-            return;
         SetGameobjectsActiveTo(true);
         IsLoaded = true;
     }
 
     public void UnloadRoom()
     {
-        if (!IsLoaded)
-            return;
-
         SetGameobjectsActiveTo(false);
         IsLoaded = false;
     }
@@ -41,7 +36,9 @@ public class RoomManagmentUnit
     void SetGameobjectsActiveTo(bool state)
     {
         foreach (GameObject obj in gameobjectsInRoom)
+        {
             obj.SetActive(state);
+        }
     }
 
     public void AddGameObject(GameObject obj)
@@ -65,6 +62,13 @@ public class RoomManagmentUnit
 
     public override string ToString()
     {
-        return ManagedRoomID.ToString();
+        string str = ManagedRoomID.ToString();
+
+        foreach(GameObject obj in gameobjectsInRoom)
+        {
+            str += " " + obj.name + "\n";
+        }
+        return str;
     }
+
 }
