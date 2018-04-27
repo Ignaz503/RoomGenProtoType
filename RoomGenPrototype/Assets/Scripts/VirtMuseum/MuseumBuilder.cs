@@ -257,7 +257,7 @@ public class MuseumBuilder : MonoBehaviour
                 Instantiate(CenterImageDisplayPrefab) :
                 Instantiate(CenterMeshDisplay);
 
-            disp.name = "Display" + r.RoomID + " " + r.RoomTiles[0];
+            disp.name = "Display " + r.RoomID + " " + r.RoomTiles[0];
 
             AddToRoomManagmentUnit(dispInf.AssociatedRoomID, disp);
 
@@ -280,11 +280,11 @@ public class MuseumBuilder : MonoBehaviour
         {
             GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ?
                 Instantiate(WallImageDisplayPrefab) : Instantiate(MeshDisplayPrefab);
-
             AddToRoomManagmentUnit(dispInf.AssociatedRoomID, disp);
 
             Display display = disp.GetComponentInChildren<Display>();
             disp.name = w.Rotation + " " + display.GetType() +" "+ dispInf.AssociatedRoomID;
+
             display.SetUp(dispInf, wallObj);
 
             if (display != null)

@@ -5,13 +5,14 @@ using UnityEngine;
 public class RoomManagmentUnit
 {
     uint ManagedRoomID;
-    List<GameObject> gameobjectsInRoom;
+    //TODO mabye not public
+    public List<GameObject> GameobjectsInRoom;
     public bool IsLoaded { get; protected set; }
 
     public RoomManagmentUnit(uint roomID,bool loadedState)
     {
         ManagedRoomID = roomID;
-        gameobjectsInRoom = new List<GameObject>();
+        GameobjectsInRoom = new List<GameObject>();
         IsLoaded = loadedState;
     }
 
@@ -35,7 +36,7 @@ public class RoomManagmentUnit
 
     void SetGameobjectsActiveTo(bool state)
     {
-        foreach (GameObject obj in gameobjectsInRoom)
+        foreach (GameObject obj in GameobjectsInRoom)
         {
             obj.SetActive(state);
         }
@@ -43,7 +44,7 @@ public class RoomManagmentUnit
 
     public void AddGameObject(GameObject obj)
     {
-        gameobjectsInRoom.Add(obj);
+        GameobjectsInRoom.Add(obj);
     }
 
     public override int GetHashCode()
@@ -64,7 +65,7 @@ public class RoomManagmentUnit
     {
         string str = ManagedRoomID.ToString();
 
-        foreach(GameObject obj in gameobjectsInRoom)
+        foreach(GameObject obj in GameobjectsInRoom)
         {
             str += " " + obj.name + "\n";
         }

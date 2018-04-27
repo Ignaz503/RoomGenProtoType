@@ -68,7 +68,8 @@ public class Room
         {
             CenterDisplayInfos[i] = new MuseumDisplayInfo
             {
-                PositionModifier = Vector2.right
+                PositionModifier = Vector2.right,
+                AssociatedRoomID = RoomID
             };
         }
 

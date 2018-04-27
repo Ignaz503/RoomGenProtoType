@@ -9,7 +9,9 @@ public class MuseumController : MonoBehaviour {
     [SerializeField] float xPositionScaler;
     [SerializeField] float zPositionScaler;
     [SerializeField] Transform player;
-    [SerializeField] bool ManageRooms;
+    [SerializeField] bool manageRooms;
+    [SerializeField] bool drawGraphGizmos;
+    [SerializeField] bool drawRoomManagmentUnitGizmos;
 
     MuseumGraph virtMuseGraph;
     int museumSize;
@@ -56,13 +58,13 @@ public class MuseumController : MonoBehaviour {
                 if(roomPlayerIsIn == null)
                 {
                     roomPlayerIsIn = possNewRoom;
-                    if(ManageRooms)
+                    if(manageRooms)
                         LoadRoomAndNeighbors(roomPlayerIsIn);
                 }
 
                 if (possNewRoom != null && roomPlayerIsIn.RoomID != roomMap[x, y].RoomID)
                 {
-                    if (ManageRooms)
+                    if (manageRooms)
                     {
                         //TODO no need to unload all and load again
                         // optimize this shit
@@ -130,30 +132,47 @@ public class MuseumController : MonoBehaviour {
 
     private void OnDrawGizmos()
     {
-        if(virtMuseGraph != null)
+        if(virtMuseGraph != null && drawGraphGizmos)
         {
-            foreach(MuseumGraph.Node n in virtMuseGraph.Nodes)
-            {
-                if (roomManagmentMap.ContainsKey(n.NodeID))
-                {
-                    Vector2Int rLoc = roomDictionary[n.NodeID].RoomTiles[0];
+            DrawMuseumGraph();
 
-                    Gizmos.color = Color.black;
-                    Vector3 roomPos = new Vector3(rLoc.x * xPositionScaler, 20f, rLoc.y * zPositionScaler);
-                    Gizmos.DrawSphere(roomPos, 1f);
-
-                    foreach(uint edge in n.Edges)
-                    {
-                        if (roomManagmentMap.ContainsKey(edge))
-                        {
-                            Vector2Int edgeLoc = roomDictionary[edge].RoomTiles [0];
-                            Gizmos.color = Color.cyan;
-                            Gizmos.DrawLine(roomPos, new Vector3(edgeLoc.x * xPositionScaler, 20f, edgeLoc.y * zPositionScaler));
-                        }// end if  room dict contains edge
-                    }// end foreach edge
-                }// end if room dictionary contains room
-            }// end foreach virtmuse graph
         }// end if virt muse graph not null
+
+        if(roomPlayerIsIn != null && drawRoomManagmentUnitGizmos)
+        {
+            if (roomManagmentMap.ContainsKey(roomPlayerIsIn.RoomID))
+            {
+                foreach (GameObject obj  in roomManagmentMap[roomPlayerIsIn.RoomID].GameobjectsInRoom)
+                {
+                    Gizmos.DrawSphere(obj.transform.position, .5f);
+                }
+            }
+        }
+    }
+
+    void DrawMuseumGraph()
+    {
+        foreach (MuseumGraph.Node n in virtMuseGraph.Nodes)
+        {
+            if (roomManagmentMap.ContainsKey(n.NodeID))
+            {
+                Vector2Int rLoc = roomDictionary[n.NodeID].RoomTiles[0];
+
+                Gizmos.color = Color.black;
+                Vector3 roomPos = new Vector3(rLoc.x * xPositionScaler, 20f, rLoc.y * zPositionScaler);
+                Gizmos.DrawSphere(roomPos, 1f);
+
+                foreach (uint edge in n.Edges)
+                {
+                    if (roomManagmentMap.ContainsKey(edge))
+                    {
+                        Vector2Int edgeLoc = roomDictionary[edge].RoomTiles[0];
+                        Gizmos.color = Color.cyan;
+                        Gizmos.DrawLine(roomPos, new Vector3(edgeLoc.x * xPositionScaler, 20f, edgeLoc.y * zPositionScaler));
+                    }// end if  room dict contains edge
+                }// end foreach edge
+            }// end if room dictionary contains room
+        }// end foreach virtmuse graph node
     }
 
     public RoomManagmentUnit GetRoomManagmentUnitForRoom(uint r)
