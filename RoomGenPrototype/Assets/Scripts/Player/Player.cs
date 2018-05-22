@@ -26,13 +26,8 @@ public class Player : MonoBehaviour {
 
         HandleInteractionPrompt();
 
-        if(lastDisplayHit != null && Input.GetKeyDown(interactKey))
-        {
-            //do stuff
-            // eg. load scene
-            // put display mesh gameobject into "hand"   
-            firstPersonController.enabled = !firstPersonController.enabled;
-        }
+        HandleInteraction();
+ 
 	}
 
     void HandleDisplayRaycast()
@@ -49,11 +44,12 @@ public class Player : MonoBehaviour {
                 lastDisplayHit = disp;
 
             }// end if disp null
-            else
-            {
-                lastDisplayHit = null;
-            }
         }// end if raycast hit
+        else
+        {
+            //no hit
+            lastDisplayHit = null;
+        }
     }
 
     void HandleInteractionPrompt()
@@ -69,6 +65,21 @@ public class Player : MonoBehaviour {
         }
 
 
+    }
+
+    void HandleInteraction()
+    {
+        if (lastDisplayHit != null && Input.GetKeyDown(interactKey))
+        {
+            //do stuff
+            // eg. load scene
+            // put display mesh gameobject into "hand"   
+            //firstPersonController.enabled = !firstPersonController.enabled;
+            if(lastDisplayHit is IInteractable)
+            {
+                (lastDisplayHit as IInteractable).Interact(this);
+            }
+        }
     }
 
 }

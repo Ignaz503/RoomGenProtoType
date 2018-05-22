@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Display : MonoBehaviour {
+public abstract class Display : MonoBehaviour, IInteractable {
 
     public enum DisplayType
     {
@@ -33,4 +33,8 @@ public abstract class Display : MonoBehaviour {
 
     public abstract void SetUp(MuseumDisplayInfo dispInfo, GameObject parent);
 
+    virtual public void Interact(Player player)
+    {
+        throw new System.NotImplementedException();
+    }
 }

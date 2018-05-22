@@ -841,6 +841,13 @@ MonoBehaviour:
   rayCastMaxDist: 7.5
   interactKey: 101
   interactionPrompt: {fileID: 361132707}
+  firstPersonController: {fileID: 1675310011}
+--- !u!114 &1675310011 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 2}
+  m_PrefabInternal: {fileID: 434298619}
+  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
 --- !u!20 &1793845694 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,

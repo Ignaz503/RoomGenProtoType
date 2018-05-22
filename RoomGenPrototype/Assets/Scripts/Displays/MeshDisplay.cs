@@ -71,4 +71,10 @@ public class MeshDisplay : Display {
 
         transform.parent.localPosition = new Vector3(xLocalPos * dispInfo.PositionModifier.x, yLocalPos, dispInfo.PositionModifier.y);
     }
+
+    public override void Interact(Player player)
+    {   
+
+        Debug.Log("Hello");
+    }
 }
