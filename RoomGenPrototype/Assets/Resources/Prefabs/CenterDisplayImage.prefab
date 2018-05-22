@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33714555184255566}
   - component: {fileID: 64065662051667270}
   - component: {fileID: 23833928297289888}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Display#1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 65595981840620214}
   - component: {fileID: 23781453816020948}
   - component: {fileID: 114247524959543504}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: CenterImagePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 33019697420897596}
   - component: {fileID: 64717672624586866}
   - component: {fileID: 23788953731989508}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Display#2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 33248045421449390}
   - component: {fileID: 64798087593109420}
   - component: {fileID: 23261156520096702}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Display#4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 33127414027006176}
   - component: {fileID: 64840811767324812}
   - component: {fileID: 23004374862806962}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Display#3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

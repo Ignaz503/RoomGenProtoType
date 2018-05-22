@@ -333,6 +333,7 @@
     <Compile Include="Assets\Scripts\Door\SlidingDoor.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaData.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaDataDisplayStyles.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\ResourceLoader\ResourceLoader.cs" />
     <Compile Include="Assets\Scripts\ResourceManager\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\RoomManagement\RoomManagmentUnit.cs" />

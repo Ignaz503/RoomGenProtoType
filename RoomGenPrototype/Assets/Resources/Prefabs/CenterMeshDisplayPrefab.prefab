@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 23822338042839700}
   - component: {fileID: 114874440980006228}
   - component: {fileID: 114340636727860444}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GlassSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -175,6 +175,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &110708305
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4222867916083764, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222867916083764, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222867916083764, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222867916083764, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222867916083764, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222867916083764, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222867916083764, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222867916083764, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499767103635588, guid: c90f69282e238234abf76ace76419932,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499767103635588, guid: c90f69282e238234abf76ace76419932,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223353367536800262, guid: c90f69282e238234abf76ace76419932,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1793845694}
+    - target: {fileID: 1889438308597424, guid: c90f69282e238234abf76ace76419932, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c90f69282e238234abf76ace76419932, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &361132706 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1889438308597424, guid: c90f69282e238234abf76ace76419932,
+    type: 2}
+  m_PrefabInternal: {fileID: 110708305}
 --- !u!1001 &434298619
 Prefab:
   m_ObjectHideFlags: 0
@@ -742,6 +808,21 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_PrefabInternal: {fileID: 434298619}
+--- !u!114 &1675310008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1675310006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6a810323045db4e8b39e1f05122a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCam: {fileID: 1793845694}
+  rayCastMaxDist: 7.5
+  interactKey: 101
+  interactionPrompt: {fileID: 361132706}
 --- !u!20 &1793845694 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,
@@ -936,7 +1017,7 @@ MonoBehaviour:
     type: 2}
   MeshDisplayPrefab: {fileID: 1725104589574558, guid: caee5a0b54f99e34a87ee40b20cfc58b,
     type: 2}
-  WallImageDisplayPrefab: {fileID: 1461467040587286, guid: ad80442e48b39f84c957ac08f1d46647,
+  WallImageDisplayPrefab: {fileID: 1970106677450254, guid: ad80442e48b39f84c957ac08f1d46647,
     type: 2}
   CeilingPrefab: {fileID: 1110854600383252, guid: 794d19ad07a970a44b0dd282b7f15a8a,
     type: 2}
@@ -1062,7 +1143,9 @@ MonoBehaviour:
   xPositionScaler: 0
   zPositionScaler: 0
   player: {fileID: 1675310007}
-  ManageRooms: 0
+  manageRooms: 0
+  drawGraphGizmos: 0
+  drawRoomManagmentUnitGizmos: 0
 --- !u!4 &2104614414
 Transform:
   m_ObjectHideFlags: 0

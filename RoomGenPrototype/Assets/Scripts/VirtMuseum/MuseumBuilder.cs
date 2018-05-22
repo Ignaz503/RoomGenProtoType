@@ -170,7 +170,7 @@ public class MuseumBuilder : MonoBehaviour
                 floor.name = name;
                 roomFloors.Add(floor);
 
-                ceiling.name = name;
+                ceiling.name = name + "  ceiling";
                 pos.y += wallHeight;
                 ceiling.transform.position = pos;
 
