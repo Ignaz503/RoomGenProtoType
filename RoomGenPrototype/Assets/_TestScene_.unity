@@ -236,11 +236,29 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c90f69282e238234abf76ace76419932, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &110708306 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114499767103635588, guid: c90f69282e238234abf76ace76419932,
+    type: 2}
+  m_PrefabInternal: {fileID: 110708305}
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 --- !u!1 &361132706 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1889438308597424, guid: c90f69282e238234abf76ace76419932,
     type: 2}
   m_PrefabInternal: {fileID: 110708305}
+--- !u!114 &361132707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 361132706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bca6fca50c1c2d4291350dcb5fabae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 110708306}
 --- !u!1001 &434298619
 Prefab:
   m_ObjectHideFlags: 0
@@ -822,7 +840,7 @@ MonoBehaviour:
   PlayerCam: {fileID: 1793845694}
   rayCastMaxDist: 7.5
   interactKey: 101
-  interactionPrompt: {fileID: 361132706}
+  interactionPrompt: {fileID: 361132707}
 --- !u!20 &1793845694 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,

@@ -340,6 +340,7 @@
     <Compile Include="Assets\Scripts\Utility\BoundingSphere.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IWallValidator.cs" />
+    <Compile Include="Assets\Scripts\Utility\PopUpText\InteractionPrompt.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\MueseumRequest.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\Museum.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\MuseumBuilder.cs" />
