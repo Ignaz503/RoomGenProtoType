@@ -74,7 +74,7 @@ public class MeshDisplay : Display {
 
     public override void Interact(Player player)
     {   
-
         Debug.Log("Hello");
+
     }
 }

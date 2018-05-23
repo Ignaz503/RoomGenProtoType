@@ -338,6 +338,7 @@
     <Compile Include="Assets\Scripts\ResourceManager\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\RoomManagement\RoomManagmentUnit.cs" />
     <Compile Include="Assets\Scripts\Utility\BoundingSphere.cs" />
+    <Compile Include="Assets\Scripts\Utility\ExtensionMethods\TransformExtensionMethods.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IWallValidator.cs" />
