@@ -231,7 +231,7 @@ Prefab:
       objectReference: {fileID: 1793845694}
     - target: {fileID: 1889438308597424, guid: c90f69282e238234abf76ace76419932, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c90f69282e238234abf76ace76419932, type: 2}
@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 110708306}
+  player: {fileID: 1675310008}
 --- !u!1001 &434298619
 Prefab:
   m_ObjectHideFlags: 0

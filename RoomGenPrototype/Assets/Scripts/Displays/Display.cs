@@ -35,6 +35,11 @@ public abstract class Display : MonoBehaviour, IInteractable {
 
     virtual public void Interact(Player player)
     {
+        player.OnInteractionEnd += OnInteractionEnded;
+    }
+
+    virtual public void OnInteractionEnded(PlayerInteractionEventArgs arg)
+    {
         throw new System.NotImplementedException();
     }
 }

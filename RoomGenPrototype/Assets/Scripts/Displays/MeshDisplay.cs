@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Utility;
 
 public class MeshDisplay : Display {
 
     public static float XPosScale;
     public static float XPosModifier;
+
+    public Type InteractionBehaviour = typeof(ObjectInHandInteraction);
 
     public MeshFilter ParentMesh;
     public MeshFilter ChildMesh;
@@ -73,8 +76,35 @@ public class MeshDisplay : Display {
     }
 
     public override void Interact(Player player)
-    {   
-        Debug.Log("Hello");
+    {
+        base.Interact(player);
 
+        dynamic interaction = player.gameObject.AddComponent(InteractionBehaviour);
+
+        interaction.StartInteraction(player, ChildMesh.gameObject.transform);
+
+        gameObject.GetComponent<AutoMoveAndRotate>().enabled = false;
+    }
+
+    public override void OnInteractionEnded(PlayerInteractionEventArgs arg)
+    {
+        if(arg.InteractionType == PlayerInteractionEventArgs.InteractingWith.Display)
+        {
+            Debug.Log("this be working");
+            PlayerDisplayInteractionEventArgs dispArgs = arg as PlayerDisplayInteractionEventArgs;
+
+            //check if we are this
+            if(dispArgs.DisplayInteractedWith == this)
+            {
+                Destroy(arg.InteractingPlayer.gameObject.GetComponent<ObjectInHandInteraction>());
+            }
+
+            ChildMesh.transform.localEulerAngles = Vector3.zero;
+            gameObject.GetComponent<AutoMoveAndRotate>().enabled = true;
+
+            //remove self from event
+            arg.InteractingPlayer.OnInteractionEnd -= OnInteractionEnded;
+
+        }
     }
 }

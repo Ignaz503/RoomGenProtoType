@@ -6,6 +6,26 @@ using TMPro;
 public class InteractionPrompt : MonoBehaviour {
 
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] Player player;
+    private void Start()
+    {
+
+        if(player != null)
+        {
+            player.OnInInteractionRange += (args) => 
+            {
+                PlaceBetweenAndRotateTowardsFirst(args.PlayerCamera.transform, args.ObjectTransform, .5f); SetActive(true);
+            };
+
+            player.OnOutOfInteractionRange += () => { SetActive(false); };
+        }
+        else
+        {
+            Debug.Log("No Player was found");
+        }
+
+        SetActive(false);
+    }
 
     public void SetActive(bool state)
     {
