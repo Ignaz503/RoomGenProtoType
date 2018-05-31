@@ -17,7 +17,7 @@ public abstract class Display : MonoBehaviour, IInteractable {
     /// Applies a resource to a display
     /// </summary>
     /// <param name="obj"></param>
-    public abstract void ApplyResource(UnityEngine.Object obj);
+    public abstract void ApplyResource(Resource resource);
 
     public virtual void ApplyMetadata(string metadata)
     {

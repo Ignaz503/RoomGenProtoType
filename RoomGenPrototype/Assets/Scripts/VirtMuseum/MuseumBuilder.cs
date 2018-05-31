@@ -27,7 +27,7 @@ public class MuseumBuilder : MonoBehaviour
     #endregion
 
     public MeshFilter[] TestMesh;
-    public Texture[] TestTextures;
+    public Texture2D[] TestTextures;
 
     public float FloorXPosScale;
     public float FloorZPosScale;
@@ -61,6 +61,7 @@ public class MuseumBuilder : MonoBehaviour
         FloorZPosScale = FloorPrefab.transform.localScale.z;
 
         wallHeight = WallPrefab.transform.localScale.y + (.5f * CeilingPrefab.transform.localScale.y);
+
     }
 
     private void Start()
@@ -302,10 +303,15 @@ public class MuseumBuilder : MonoBehaviour
         switch (disp.Type)
         {
             case Display.DisplayType.MeshDisplay:
-                disp.ApplyResource(Instantiate(TestMesh[rng.Next(2)]));
+                int rngNum = rng.Next(2);
+                GameObject obj = Instantiate(TestMesh[rngNum].gameObject);
+                Mesh mesh = obj.GetComponent<MeshFilter>().sharedMesh;
+                Material mat = obj.GetComponent<MeshRenderer>().material;
+                disp.ApplyResource(new MeshResource(mesh, mat));
+                Destroy(obj);
                 break;
             case Display.DisplayType.ImageDisplay:
-                disp.ApplyResource(TestTextures[currIdx++ % TestTextSize]);
+                disp.ApplyResource(new ImageResource(TestTextures[currIdx++ % TestTextSize]));
                 break;
         }
     }
@@ -320,12 +326,12 @@ public class MuseumBuilder : MonoBehaviour
             Debug.LogError($"Could Not find associated room in mamangment units for: {objToAdd.name}");
     }
 
-    private void OnDrawGizmos()
-    {
-        if(virtMuse != null)
-        {
+    //private void OnDrawGizmos()
+    //{
+    //    if(virtMuse != null)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 }
 

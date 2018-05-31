@@ -57,30 +57,33 @@ public class Player : MonoBehaviour {
 
     void HandleDisplayRaycast()
     {
-        Vector3 screenPoint = PlayerCam.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
-        centerRay = PlayerCam.ScreenPointToRay(screenPoint);
-        RaycastHit hit;
-        if (Physics.Raycast(centerRay, out hit, rayCastMaxDist, LayerMask.GetMask(new string[] { "Display" })))
+        if(playerState != State.Interacting)
         {
-            //TODO: MAKE SURE NO WALL BETWEEN PLAYER AND DISPLAY
-            Display disp = hit.transform.gameObject.GetComponentInChildren<Display>();
-            if (disp != null)
+            Vector3 screenPoint = PlayerCam.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+            centerRay = PlayerCam.ScreenPointToRay(screenPoint);
+            RaycastHit hit;
+            if (Physics.Raycast(centerRay, out hit, rayCastMaxDist, LayerMask.GetMask(new string[] { "Display" })))
             {
-                lastDisplayHit = disp;
-                if(disp is IInteractable)
+                //TODO: MAKE SURE NO WALL BETWEEN PLAYER AND DISPLAY
+                Display disp = hit.transform.gameObject.GetComponentInChildren<Display>();
+                if (disp != null)
                 {
-                    OnInInteractionRange?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
-                }
-            }// end if disp null
-        }// end if raycast hit
-        else
-        {
-            //no hit
-            if(lastDisplayHit != null)
+                    lastDisplayHit = disp;
+                    if(disp is IInteractable)
+                    {
+                        OnInInteractionRange?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
+                    }
+                }// end if disp null
+            }// end if raycast hit
+            else
             {
-                OnOutOfInteractionRange?.Invoke();
+                //no hit
+                if(lastDisplayHit != null)
+                {
+                    OnOutOfInteractionRange?.Invoke();
+                }
+                lastDisplayHit = null;
             }
-            lastDisplayHit = null;
         }
     }
 
@@ -92,14 +95,15 @@ public class Player : MonoBehaviour {
             {
                 OnInteractionEnd?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
                 playerState = State.Moving;
-                firstPersonController.enabled = true;
+                firstPersonController.SetMouseLookStopOnKey(KeyCode.None);
             } else {
                 if(lastDisplayHit != null)
                 {
                     //do stuff
                     // eg. load scene
                     // put display mesh gameobject into "hand"   
-                    firstPersonController.enabled = !firstPersonController.enabled;
+                    //firstPersonController.enabled = !firstPersonController.enabled;
+                    firstPersonController.SetMouseLookStopOnKey(KeyCode.Mouse0);
                     if (lastDisplayHit is IInteractable)
                     {
                         OnInteractionStart?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));

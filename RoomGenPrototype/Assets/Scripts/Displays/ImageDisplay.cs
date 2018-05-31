@@ -20,21 +20,11 @@ public class ImageDisplay : Display {
 
     }
 
-    public override void ApplyResource(UnityEngine.Object obj)
+    public override void ApplyResource(Resource resource)
     {
-        if (obj is Texture)
-        {
-            Material mat = new Material(materialPrefab)
-            {
-                mainTexture = obj as Texture
-            };
-
-            meshRenderer.material = mat;
-            //TODO
-            //scale x and y a bit depending on size of texture
-        }
-        else
-            throw new System.Exception("Trying to apply wrong resource to ImgaeDisplay");
+        resource.ApplyToGameobject(meshRenderer.gameObject);
+        //TODO
+        //scale x and y a bit depending on size of texture
     }
 
     public override void SetUp(MuseumDisplayInfo dispInfo, GameObject parent)

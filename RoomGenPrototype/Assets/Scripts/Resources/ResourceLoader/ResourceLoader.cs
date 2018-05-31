@@ -26,12 +26,12 @@ public class ResourceLoader : MonoBehaviour
     public struct RequestResult
     {
         public Display disp;
-        public UnityEngine.Object obj;
+        public Resource res;
 
-        public RequestResult(Display display, UnityEngine.Object objectToDisplay)
+        public RequestResult(Display display, Resource toApply)
         {
             disp = display;
-            obj = objectToDisplay;
+            res = toApply;
         }
 
     }
@@ -75,7 +75,7 @@ public class ResourceLoader : MonoBehaviour
             if (LoadedResources.Count > 0)
             {
                 RequestResult res = LoadedResources.Dequeue();
-                res.disp.ApplyResource(res.obj);
+                res.disp.ApplyResource(res.res);
             }
         }
 

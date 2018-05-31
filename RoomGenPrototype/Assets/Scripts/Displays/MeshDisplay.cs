@@ -17,6 +17,13 @@ public class MeshDisplay : Display {
     private void Awake()
     {
         Type = DisplayType.MeshDisplay;
+
+        GameObject obj = new GameObject();
+        ChildMesh = obj.AddComponent<MeshFilter>();
+
+        obj.transform.SetParent(ParentMesh.transform);
+        obj.AddComponent<MeshRenderer>();
+        obj.transform.localPosition = Vector3.zero;
     }
 
     public void ScaleChildToFitParent()
@@ -49,18 +56,11 @@ public class MeshDisplay : Display {
 
     }
 
-    public override void ApplyResource(UnityEngine.Object obj)
+    public override void ApplyResource(Resource resource)
     {
-        if ((obj is MeshFilter))
-        {
-            ChildMesh = obj as MeshFilter;
-            ChildMesh.transform.SetParent(ParentMesh.transform);
-            ChildMesh.transform.localPosition =  Vector3.zero;
-            ScaleChildToFitParent();
-            SetUpMeshRendererOptions();
-        }
-        else
-            throw new Exception("Trying to apply non valid resource to MeshDisplay");
+        resource.ApplyToGameobject(ChildMesh.gameObject);
+        ScaleChildToFitParent();
+        SetUpMeshRendererOptions();
     }
 
     public override void SetUp(MuseumDisplayInfo dispInfo, GameObject parent)

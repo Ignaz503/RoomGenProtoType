@@ -14,7 +14,6 @@ public class CenterImageDisplay : Display
         Type = DisplayType.ImageDisplay;
 
         displayMeshRenderes = new MeshRenderer[transform.childCount];
-        int debug = 0;
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject child = transform.GetChild(i).gameObject;
@@ -24,28 +23,16 @@ public class CenterImageDisplay : Display
             if(re != null)
             {
                 displayMeshRenderes[i] = re;
-                debug++;
             }
         }
     }
 
-    public override void ApplyResource(Object obj)
+    public override void ApplyResource(Resource resource)
     {
-        if(obj is Texture)
+        foreach (MeshRenderer re in displayMeshRenderes)
         {
-            Texture textToApply = obj as Texture;
-            Material mat = new Material(MaterialPrefab)
-            {
-                mainTexture = textToApply
-            };
-
-            foreach (MeshRenderer re in displayMeshRenderes)
-            {
-                re.material = mat;
-            }
+            resource.ApplyToGameobject(re.gameObject);
         }
-        else
-            throw new System.Exception($"Trying to apply wrong resource to {GetType()}. Resourece need is Texture, trying to apply {obj.GetType()}");
     }
 
     public override void SetUp(MuseumDisplayInfo dispInfo, GameObject parent)

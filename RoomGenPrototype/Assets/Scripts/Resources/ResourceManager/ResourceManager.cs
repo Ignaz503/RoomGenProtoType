@@ -11,7 +11,7 @@ public sealed class ResourceManager
 {
     private static ResourceManager _Instance;
 
-    string ResourcePath;
+    string resourcePath;
     HashSet<string> MuseumTypes;
 
     string ResourceEnding = ".res";
@@ -21,6 +21,7 @@ public sealed class ResourceManager
     {
         //TODO: Load info not new list
         MuseumTypes = new HashSet<string>();
+
     }
 
     public static ResourceManager Instance
@@ -38,7 +39,7 @@ public sealed class ResourceManager
         if (MuseumTypes.Contains(newType))
             throw new Exception($"Museum Type: {newType} already exits");
 
-        Directory.CreateDirectory(ResourcePath + newType);
+        Directory.CreateDirectory(resourcePath + newType);
 
         MuseumTypes.Add(newType);  
     }
@@ -65,7 +66,7 @@ public sealed class ResourceManager
         }
         //TODO create resource locator
         string resoureceLocator = "";
-        string path = ResourcePath + type + @"\" + resoureceLocator + ResourceEnding;
+        string path = resourcePath + type + @"\" + resoureceLocator + ResourceEnding;
         if (File.Exists(path))
         {
             throw new Exception("Resource already exists");
@@ -87,7 +88,7 @@ public sealed class ResourceManager
         if (!MuseumTypes.Contains(type))
             throw new Exception($"Museum Type: {type} does not exist");
 
-        string[] files = Directory.GetFiles(ResourcePath + type);
+        string[] files = Directory.GetFiles(resourcePath + type);
         return files.Length;
     }
     

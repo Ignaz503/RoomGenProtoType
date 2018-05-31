@@ -8,9 +8,14 @@ public class ObjectInHandInteraction : MonoBehaviour
     Transform objectToRotate;
     [SerializeField] KeyCode rotationKey = KeyCode.Mouse0;
 
-    Vector3 camStartPos;
+    Vector3 initCamLocPos;
     float currentT = 0f;
     Vector3 vel;
+
+    private void Start()
+    {
+        Debug.Log("Just a test to see what happens");
+    }
 
     private void Update()
     {
@@ -34,7 +39,10 @@ public class ObjectInHandInteraction : MonoBehaviour
         {
             currentT += zoom;
             currentT = Mathf.Clamp(currentT, 0f, .9f);
-            Vector3 newPos = Vector3.Lerp(camStartPos, objectToRotate.position, currentT);
+            Vector3 newPos =Vector3.Lerp(
+                playerHoldingObject.transform.position + initCamLocPos, objectToRotate.position,
+                  currentT);
+
             playerHoldingObject.PlayerCam.transform.position = Vector3.SmoothDamp(playerHoldingObject.PlayerCam.transform.position, newPos, ref vel, Time.deltaTime);
         }
     }
@@ -46,7 +54,7 @@ public class ObjectInHandInteraction : MonoBehaviour
     {
         playerHoldingObject = p;
         objectToRotate = objToRot;
-        camStartPos = p.PlayerCam.transform.position;
+        initCamLocPos = p.PlayerCam.transform.localPosition;
     }
 
 }
