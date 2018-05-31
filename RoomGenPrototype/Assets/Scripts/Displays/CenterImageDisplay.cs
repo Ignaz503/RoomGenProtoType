@@ -40,4 +40,9 @@ public class CenterImageDisplay : Display
         transform.parent.SetParent(parent.transform);
         transform.parent.localPosition = Vector3.zero;
     }
+
+    protected override void SetToDefaultInteractionBehaviour()
+    {
+        InteractionBehaviour = null;
+    }
 }

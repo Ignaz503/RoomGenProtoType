@@ -265,6 +265,7 @@ public class MuseumBuilder : MonoBehaviour
             Display display = disp.GetComponentInChildren<Display>();
 
             display.SetUp(dispInf, associatedFloorGameobjects[i]);
+            display.SetInteractionBehaviour("");
 
             if (display != null)
                 LoadResource(display, "test");
@@ -287,6 +288,7 @@ public class MuseumBuilder : MonoBehaviour
             disp.name = w.Rotation + " " + display.GetType() +" "+ dispInf.AssociatedRoomID;
 
             display.SetUp(dispInf, wallObj);
+            display.SetInteractionBehaviour("");
 
             if (display != null)
                 LoadResource(display, "test");

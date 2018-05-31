@@ -19,7 +19,7 @@ public class Wall
         Horizontal
     }
 
-    Museum VirtMuse;
+    //Museum VirtMuse;
     int TileIndexForXPositionModifierCalc = 0;
 
     [DataMember]
@@ -40,7 +40,7 @@ public class Wall
 
     public Wall(WallType t, Vector2[] location,float posMod , Vector2Int associatedTile,uint associatedRoomID, WallRotation rot, Museum virt)
     {
-        VirtMuse = virt;
+        //VirtMuse = virt;
         Type = t;
         Location = location;
         PositionModifier = posMod; 
@@ -180,6 +180,10 @@ public class Wall
 
     }
 
+    /// <summary>
+    /// Merges Wall given into wall called on
+    /// </summary>
+    /// <param name="w"></param>
     public void MergeWalls(Wall w)
     {
         if(Tiles.Count < 2)
@@ -188,7 +192,6 @@ public class Wall
             AssociatedRoomIDs.Add(w.AssociatedRoomIDs[0]);
         }
     }
-
 }
 
 

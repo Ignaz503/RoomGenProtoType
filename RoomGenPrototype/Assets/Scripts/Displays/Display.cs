@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public abstract class Display : MonoBehaviour, IInteractable {
 
     public DisplayType Type { get; protected set; }
     string Metadata = "All speech is free speech";
+    protected Type InteractionBehaviour;
 
     /// <summary>
     /// Applies a resource to a display
@@ -32,6 +34,30 @@ public abstract class Display : MonoBehaviour, IInteractable {
     }
 
     public abstract void SetUp(MuseumDisplayInfo dispInfo, GameObject parent);
+
+    protected abstract void SetToDefaultInteractionBehaviour();
+
+    public void SetInteractionBehaviour(string wanted_behaviour)
+    {
+        Type t = System.Type.GetType("wanted_behaviour");
+
+        if (t == null || !(t.IsSubclassOf(typeof(Component))))
+        {
+            SetToDefaultInteractionBehaviour();
+            return;
+        }
+        InteractionBehaviour = t;
+    }
+
+    public void SetInteractionBehaviour(Type t)
+    {
+        if(!t.IsSubclassOf(typeof(Component)))
+        {
+            SetToDefaultInteractionBehaviour();
+            return;
+        }
+        InteractionBehaviour = t;
+    }
 
     virtual public void Interact(Player player)
     {

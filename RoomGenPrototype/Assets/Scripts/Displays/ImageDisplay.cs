@@ -37,4 +37,9 @@ public class ImageDisplay : Display {
         transform.localEulerAngles = new Vector3(Rotation.x,Rotation.y * dispInfo.PositionModifier.x,Rotation.z);
         transform.localScale = new Vector3(Scale * .75f, Scale, 0.01f);
     }
+
+    protected override void SetToDefaultInteractionBehaviour()
+    {
+        InteractionBehaviour = null;
+    }
 }

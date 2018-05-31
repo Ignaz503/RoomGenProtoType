@@ -9,8 +9,6 @@ public class MeshDisplay : Display {
     public static float XPosScale;
     public static float XPosModifier;
 
-    public Type InteractionBehaviour = typeof(ObjectInHandInteraction);
-
     public MeshFilter ParentMesh;
     public MeshFilter ChildMesh;
 
@@ -24,6 +22,7 @@ public class MeshDisplay : Display {
         obj.transform.SetParent(ParentMesh.transform);
         obj.AddComponent<MeshRenderer>();
         obj.transform.localPosition = Vector3.zero;
+
     }
 
     public void ScaleChildToFitParent()
@@ -106,5 +105,10 @@ public class MeshDisplay : Display {
             arg.InteractingPlayer.OnInteractionEnd -= OnInteractionEnded;
 
         }
+    }
+
+    protected override void SetToDefaultInteractionBehaviour()
+    {
+        InteractionBehaviour = typeof(ObjectInHandInteraction);
     }
 }
