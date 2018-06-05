@@ -7,6 +7,7 @@ public class InteractionPrompt : MonoBehaviour {
 
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] Player player;
+    [SerializeField] GameObject obj;
     private void Start()
     {
 
@@ -14,10 +15,19 @@ public class InteractionPrompt : MonoBehaviour {
         {
             player.OnInInteractionRange += (args) => 
             {
-                PlaceBetweenAndRotateTowardsFirst(args.PlayerCamera.transform, args.ObjectTransform, .5f); SetActive(true);
+                PlaceBetweenAndRotateTowardsFirst(args.PlayerCamera.transform, args.ObjectTransform, .5f); obj = args.ObjectInteractedWith; player = args.InteractingPlayer; SetActive(true);
             };
 
             player.OnOutOfInteractionRange += () => { SetActive(false); };
+
+            player.OnInteractionStart += (disp) => { SetActive(false); };
+            player.OnInteractionEnd += (disp) =>
+            {
+                if ((player.transform.position - disp.ObjectTransform.position).magnitude <= player.RayCastMaxDist)
+                {
+                    SetActive(true);
+                }
+            };
         }
         else
         {
@@ -25,6 +35,11 @@ public class InteractionPrompt : MonoBehaviour {
         }
 
         SetActive(false);
+    }
+
+    private void LateUpdate()
+    {
+        PlaceBetweenAndRotateTowardsFirst(player.PlayerCam.transform, obj.transform, .5f);
     }
 
     public void SetActive(bool state)
@@ -52,7 +67,7 @@ public class InteractionPrompt : MonoBehaviour {
     {
         transform.position = Vector3.Lerp(pos1, pos2, t);
     }
-    
+
     public void PlaceBetweenAndRotateTowardsFirst(Transform first,Transform second,float t)
     {
         PlaceBetween(first.position, second.position, t);

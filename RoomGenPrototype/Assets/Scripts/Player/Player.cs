@@ -33,10 +33,11 @@ public class Player : MonoBehaviour {
 
     public Camera PlayerCam;
     Ray centerRay;
-    [SerializeField][Range(0.5f,100f)] float rayCastMaxDist;
+    [SerializeField][Range(0.5f, 100f)] float rayCasMaxDist;
+    public float RayCastMaxDist { get { return rayCasMaxDist; } protected set { rayCasMaxDist = value; } }
     [SerializeField] KeyCode interactKey;
     [SerializeField] InteractionPrompt interactionPrompt;
-    [SerializeField] FirstPersonController firstPersonController;
+    public FirstPersonController FirstPersonController;
     [SerializeField] State playerState;
 
     Display lastDisplayHit;
@@ -57,24 +58,29 @@ public class Player : MonoBehaviour {
 
     void HandleDisplayRaycast()
     {
-        if(playerState != State.Interacting)
+        if(playerState == State.Moving)
         {
             Vector3 screenPoint = PlayerCam.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
             centerRay = PlayerCam.ScreenPointToRay(screenPoint);
-            RaycastHit hit;
-            if (Physics.Raycast(centerRay, out hit, rayCastMaxDist, LayerMask.GetMask(new string[] { "Display" })))
+            RaycastHit[] hits =
+            Physics.RaycastAll(centerRay, RayCastMaxDist, LayerMask.GetMask(new string[] { "Wall", "Display" }));
+            if(hits.Length >0)
             {
-                //TODO: MAKE SURE NO WALL BETWEEN PLAYER AND DISPLAY
-                Display disp = hit.transform.gameObject.GetComponentInChildren<Display>();
-                if (disp != null)
+                //check if first hit is display
+                if(hits[0].transform.gameObject.layer == LayerMask.NameToLayer("Display"))
                 {
-                    lastDisplayHit = disp;
-                    if(disp is IInteractable)
+                    //TODO: MAKE SURE NO WALL BETWEEN PLAYER AND DISPLAY
+                    Display disp = hits[0].transform.gameObject.GetComponentInChildren<Display>();
+                    if (disp != null)
                     {
-                        OnInInteractionRange?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
-                    }
-                }// end if disp null
-            }// end if raycast hit
+                        lastDisplayHit = disp;
+                        if (disp is IInteractable)
+                        {
+                            OnInInteractionRange?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
+                        }
+                    }// end if disp null
+                }//end if 
+            }// end if hit more than 0
             else
             {
                 //no hit
@@ -95,7 +101,6 @@ public class Player : MonoBehaviour {
             {
                 OnInteractionEnd?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
                 playerState = State.Moving;
-                firstPersonController.SetMouseLookStopOnKey(KeyCode.None);
             } else {
                 if(lastDisplayHit != null)
                 {
@@ -103,7 +108,6 @@ public class Player : MonoBehaviour {
                     // eg. load scene
                     // put display mesh gameobject into "hand"   
                     //firstPersonController.enabled = !firstPersonController.enabled;
-                    firstPersonController.SetMouseLookStopOnKey(KeyCode.Mouse0);
                     if (lastDisplayHit is IInteractable)
                     {
                         OnInteractionStart?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));

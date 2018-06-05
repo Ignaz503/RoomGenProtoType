@@ -839,10 +839,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCam: {fileID: 1793845694}
-  rayCastMaxDist: 7.5
+  rayCasMaxDist: 7.5
   interactKey: 101
   interactionPrompt: {fileID: 361132707}
-  firstPersonController: {fileID: 1675310011}
+  FirstPersonController: {fileID: 1675310011}
+  playerState: 0
 --- !u!114 &1675310011 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0,

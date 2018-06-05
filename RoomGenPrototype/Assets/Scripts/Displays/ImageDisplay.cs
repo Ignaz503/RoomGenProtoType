@@ -22,6 +22,7 @@ public class ImageDisplay : Display {
 
     public override void ApplyResource(Resource resource)
     {
+        base.ApplyResource(resource);
         resource.ApplyToGameobject(meshRenderer.gameObject);
         //TODO
         //scale x and y a bit depending on size of texture
@@ -38,8 +39,8 @@ public class ImageDisplay : Display {
         transform.localScale = new Vector3(Scale * .75f, Scale, 0.01f);
     }
 
-    protected override void SetToDefaultInteractionBehaviour()
+    protected override System.Type SetToDefaultInteractionBehaviour()
     {
-        InteractionBehaviour = null;
+        return null;
     }
 }

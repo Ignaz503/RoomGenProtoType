@@ -29,6 +29,7 @@ public class CenterImageDisplay : Display
 
     public override void ApplyResource(Resource resource)
     {
+        base.ApplyResource(resource);
         foreach (MeshRenderer re in displayMeshRenderes)
         {
             resource.ApplyToGameobject(re.gameObject);
@@ -41,8 +42,8 @@ public class CenterImageDisplay : Display
         transform.parent.localPosition = Vector3.zero;
     }
 
-    protected override void SetToDefaultInteractionBehaviour()
+    protected override System.Type SetToDefaultInteractionBehaviour()
     {
-        InteractionBehaviour = null;
+        return null;
     }
 }

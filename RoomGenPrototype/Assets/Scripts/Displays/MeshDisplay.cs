@@ -57,6 +57,7 @@ public class MeshDisplay : Display {
 
     public override void ApplyResource(Resource resource)
     {
+        base.ApplyResource(resource);
         resource.ApplyToGameobject(ChildMesh.gameObject);
         ScaleChildToFitParent();
         SetUpMeshRendererOptions();
@@ -78,11 +79,7 @@ public class MeshDisplay : Display {
     {
         base.Interact(player);
 
-        dynamic interaction = player.gameObject.AddComponent(InteractionBehaviour);
-
-        interaction.StartInteraction(player, ChildMesh.gameObject.transform);
-
-        gameObject.GetComponent<AutoMoveAndRotate>().enabled = false;
+        interactionContainer.ApplyAndStartInteraction(player.gameObject, gameObject);
     }
 
     public override void OnInteractionEnded(PlayerInteractionEventArgs arg)
@@ -95,7 +92,7 @@ public class MeshDisplay : Display {
             //check if we are this
             if(dispArgs.DisplayInteractedWith == this)
             {
-                Destroy(arg.InteractingPlayer.gameObject.GetComponent<ObjectInHandInteraction>());
+                interactionContainer.EndInteraction();
             }
 
             ChildMesh.transform.localEulerAngles = Vector3.zero;
@@ -103,12 +100,11 @@ public class MeshDisplay : Display {
 
             //remove self from event
             arg.InteractingPlayer.OnInteractionEnd -= OnInteractionEnded;
-
         }
     }
 
-    protected override void SetToDefaultInteractionBehaviour()
+    protected override Type SetToDefaultInteractionBehaviour()
     {
-        InteractionBehaviour = typeof(ObjectInHandInteraction);
+        return typeof(ObjectInHandInteraction);
     }
 }

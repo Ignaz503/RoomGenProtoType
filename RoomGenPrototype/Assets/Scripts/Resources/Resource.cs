@@ -7,6 +7,8 @@ public abstract class Resource
     public string ResourecID { get; protected set; }
     public MetaData MetaData { get; protected set; }
     public string ResrourceType { get; protected set; }
+    //TODO Interaction behaviour
+    public string InteractionBehaviour = "";
 
     public abstract void ApplyToGameobject(GameObject obj);
 }

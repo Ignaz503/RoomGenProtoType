@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectInHandInteraction : MonoBehaviour
+[InteractionAttribute(typeof(ActivatorSideInteractionContainer))]
+public class ObjectInHandInteraction : Interaction
 {
     Player playerHoldingObject;
     Transform objectToRotate;
@@ -11,11 +12,6 @@ public class ObjectInHandInteraction : MonoBehaviour
     Vector3 initCamLocPos;
     float currentT = 0f;
     Vector3 vel;
-
-    private void Start()
-    {
-        Debug.Log("Just a test to see what happens");
-    }
 
     private void Update()
     {
@@ -55,6 +51,16 @@ public class ObjectInHandInteraction : MonoBehaviour
         playerHoldingObject = p;
         objectToRotate = objToRot;
         initCamLocPos = p.PlayerCam.transform.localPosition;
+        playerHoldingObject.FirstPersonController.enabled = false;
     }
 
+    private void OnDestroy()
+    {
+        playerHoldingObject.FirstPersonController.enabled = true;
+    }
+
+    public override void StartInteraction(GameObject activator, GameObject interactedUpon)
+    {
+        StartInteraction(activator.GetComponent<Player>(), interactedUpon.GetComponent<MeshDisplay>().ChildMesh.transform);
+    }
 }
