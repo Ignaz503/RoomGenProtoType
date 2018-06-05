@@ -348,6 +348,7 @@
     <Compile Include="Assets\Scripts\Utility\Interfaces\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IWallValidator.cs" />
+    <Compile Include="Assets\Scripts\Utility\PlayerHand.cs" />
     <Compile Include="Assets\Scripts\Utility\PopUpText\InteractionPrompt.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\MueseumRequest.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\Museum.cs" />

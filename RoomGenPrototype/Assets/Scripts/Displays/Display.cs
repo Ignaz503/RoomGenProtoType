@@ -12,7 +12,7 @@ public abstract class Display : MonoBehaviour, IInteractable {
     };
 
     public DisplayType Type { get; protected set; }
-    string metadata = "All speech is free speech";
+    string metadata = "All Speech is free speech";
     protected BaseInteractionContainer interactionContainer;
 
     /// <summary>
@@ -22,13 +22,10 @@ public abstract class Display : MonoBehaviour, IInteractable {
     public virtual void ApplyResource(Resource resource)
     {
         interactionContainer = InteractionFactory.Instance.BuildInteractionContainer(resource.InteractionBehaviour, SetToDefaultInteractionBehaviour);
-    }
-
-    public virtual void ApplyMetadata(string metadata)
-    {
-        this.metadata = metadata;
-        //TEMP
-        this.metadata = "Metadata pending";
+        //TODO
+        //metadata = resource.MetaData.ToString();
+        if(GetType() != typeof(CenterMeshDisplay))
+            metadata = GetType().ToString();
     }
 
     public string GetMetadata()

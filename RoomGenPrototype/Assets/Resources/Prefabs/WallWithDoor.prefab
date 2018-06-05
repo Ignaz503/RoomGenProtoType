@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23632685729460316}
   - component: {fileID: 65648333050300794}
   - component: {fileID: 114435487101291628}
+  - component: {fileID: 114337374627358322}
   m_Layer: 0
   m_Name: SlidingDoor
   m_TagString: Untagged
@@ -226,6 +227,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3633668, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114337374627358322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057991336049572}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0224ec0e73ab4a54c923403bf84a3a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 2
+  movementSpeed: 0.2
+  targetYRotation: 90
 --- !u!114 &114373547918163858
 MonoBehaviour:
   m_ObjectHideFlags: 1
