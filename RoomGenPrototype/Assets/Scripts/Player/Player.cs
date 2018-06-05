@@ -33,8 +33,8 @@ public class Player : MonoBehaviour {
 
     public Camera PlayerCam;
     Ray centerRay;
-    [SerializeField][Range(0.5f, 100f)] float rayCasMaxDist;
-    public float RayCastMaxDist { get { return rayCasMaxDist; } protected set { rayCasMaxDist = value; } }
+    [SerializeField][Range(0.5f, 100f)] float rayCastMaxDist;
+    public float RayCastMaxDist { get { return rayCastMaxDist; } protected set { rayCastMaxDist = value; } }
     [SerializeField] KeyCode interactKey;
     [SerializeField] InteractionPrompt interactionPrompt;
     public FirstPersonController FirstPersonController;
