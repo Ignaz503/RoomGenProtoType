@@ -75,36 +75,18 @@ public class MeshDisplay : Display {
         transform.parent.localPosition = new Vector3(xLocalPos * dispInfo.PositionModifier.x, yLocalPos, dispInfo.PositionModifier.y);
     }
 
-    public override void Interact(Player player)
+    protected  override void InteractionStarted()
     {
-        base.Interact(player);
-
-        interactionContainer.ApplyAndStartInteraction(player.gameObject, gameObject);
+        gameObject.GetComponent<AutoMoveAndRotate>().enabled = false;
     }
 
-    public override void OnInteractionEnded(PlayerInteractionEventArgs arg)
+    protected override void InteractionEnded()
     {
-        if(arg.InteractionType == PlayerInteractionEventArgs.InteractingWith.Display)
-        {
-            Debug.Log("this be working");
-            PlayerDisplayInteractionEventArgs dispArgs = arg as PlayerDisplayInteractionEventArgs;
-
-            //check if we are this
-            if(dispArgs.DisplayInteractedWith == this)
-            {
-                interactionContainer.EndInteraction();
-            }
-
-            ChildMesh.transform.localEulerAngles = Vector3.zero;
-            gameObject.GetComponent<AutoMoveAndRotate>().enabled = true;
-
-            //remove self from event
-            arg.InteractingPlayer.OnInteractionEnd -= OnInteractionEnded;
-        }
+        gameObject.GetComponent<AutoMoveAndRotate>().enabled = true;
     }
 
     protected override Type SetToDefaultInteractionBehaviour()
     {
-        return typeof(ObjectInHandInteraction);
+        return typeof(ObejctInHandInteraction);
     }
 }

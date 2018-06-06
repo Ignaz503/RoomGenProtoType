@@ -46,4 +46,14 @@ public class CenterImageDisplay : Display
     {
         return null;
     }
+
+    protected override void InteractionStarted()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void InteractionEnded()
+    {
+        throw new System.NotImplementedException();
+    }
 }

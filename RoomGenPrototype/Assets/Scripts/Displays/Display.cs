@@ -13,7 +13,8 @@ public abstract class Display : MonoBehaviour, IInteractable {
 
     public DisplayType Type { get; protected set; }
     string metadata = "All Speech is free speech";
-    protected BaseInteractionContainer interactionContainer;
+    protected Type interactionType;
+    Interaction interaction;
 
     /// <summary>
     /// Applies a resource to a display
@@ -21,11 +22,34 @@ public abstract class Display : MonoBehaviour, IInteractable {
     /// <param name="obj"></param>
     public virtual void ApplyResource(Resource resource)
     {
-        interactionContainer = InteractionFactory.Instance.BuildInteractionContainer(resource.InteractionBehaviour, SetToDefaultInteractionBehaviour);
+        SetInteractionType(resource.InteractionBehaviour);
         //TODO
         //metadata = resource.MetaData.ToString();
-        if(GetType() != typeof(CenterMeshDisplay))
+        if (GetType() != typeof(CenterMeshDisplay))
             metadata = GetType().ToString();
+        else
+            metadata = LoremIpsum.IpsumLorem;
+    }
+
+    private void SetInteractionType(string wanted_behaviour)
+    {
+        Type t = System.Type.GetType(wanted_behaviour);
+
+        if (t == null || !(t.IsSubclassOf(typeof(Interaction))))
+        {
+            //defaul behaviour it is
+            Type def = SetToDefaultInteractionBehaviour();
+            if (def == null)
+                interactionType = null;
+            else
+            {
+                interactionType = def;
+            }
+        }
+        else
+        {
+            interactionType = t;
+        }
     }
 
     public string GetMetadata()
@@ -35,15 +59,37 @@ public abstract class Display : MonoBehaviour, IInteractable {
 
     public abstract void SetUp(MuseumDisplayInfo dispInfo, GameObject parent);
 
+    protected abstract void InteractionStarted();
+
+    protected abstract void InteractionEnded();
+
     protected abstract Type SetToDefaultInteractionBehaviour();
 
-    virtual public void Interact(Player player)
+    public void Interact(Player player)
     {
         player.OnInteractionEnd += OnInteractionEnded;
+        if(interactionType != null)
+        {
+            interaction = ScriptableObject.CreateInstance(interactionType) as Interaction;
+            interaction.StartInteraction(player.gameObject, gameObject);
+            InteractionStarted();
+        }
     }
 
-    virtual public void OnInteractionEnded(PlayerInteractionEventArgs arg)
+    public void OnInteractionEnded(PlayerInteractionEventArgs arg)
     {
-        throw new System.NotImplementedException();
+        if (arg.InteractionType == PlayerInteractionEventArgs.InteractingWith.Display)
+        {
+            PlayerDisplayInteractionEventArgs dispArgs = arg as PlayerDisplayInteractionEventArgs;
+
+            //check if we are this
+            if (dispArgs.DisplayInteractedWith == this)
+            {
+                interaction.EndInteraction();
+            }
+            InteractionEnded();
+            //remove self from event
+            arg.InteractingPlayer.OnInteractionEnd -= OnInteractionEnded;
+        }
     }
 }

@@ -1,9 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
-[InteractionAttribute(typeof(ActivatorSideInteractionContainer))]
-public class ObjectInHandInteraction : Interaction
+
+public class ObejctInHandInteraction : Interaction
+{
+    ObjectInHandComponent comp;
+
+    public override void StartInteraction(GameObject activator, GameObject interactedUpon)
+    {
+        comp = activator.AddComponent<ObjectInHandComponent>();
+        comp.StartInteraction(activator, interactedUpon);
+    }
+
+    public override void EndInteraction()
+    {
+        Destroy(comp);
+    }
+}
+
+public class ObjectInHandComponent : InteractionComponent
 {
     Player playerHoldingObject;
     Transform objectToRotate;
@@ -54,7 +71,7 @@ public class ObjectInHandInteraction : Interaction
         playerHoldingObject.FirstPersonController.enabled = false;
     }
 
-    private void OnDestroy()
+    protected override void Destroy()
     {
         playerHoldingObject.FirstPersonController.enabled = true;
     }

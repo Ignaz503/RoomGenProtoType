@@ -35,7 +35,6 @@ public class PlayerHand : MonoBehaviour {
         {
             if (args.InteractionType == PlayerInteractionEventArgs.InteractingWith.Display)
             {
-                Debug.Log("Poss interaction with display");
                 PlayerDisplayInteractionEventArgs disArgs = args as PlayerDisplayInteractionEventArgs;
                 displayText.text = disArgs.DisplayInteractedWith.GetMetadata();
             }

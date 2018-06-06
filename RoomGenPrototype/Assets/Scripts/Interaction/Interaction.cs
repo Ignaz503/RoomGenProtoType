@@ -4,34 +4,51 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Base Class for any interaction that should be possible between two gameobjects
-/// the child class needs to define a InteractionAttribute 
-/// with one of the InteractionContainer types as its type or it won't be found
+/// This is the base class for any interaction
+/// any class inhereting from this should 
 /// </summary>
-public abstract class Interaction : MonoBehaviour
+public abstract class Interaction : ScriptableObject
 {
+    /// <summary>
+    /// Function that should be called on interact
+    /// This Function should apply the InteractionComponents
+    /// </summary>
+    /// <param name="activator"></param>
+    /// <param name="interactedUpon"></param>
     public abstract void StartInteraction(GameObject activator, GameObject interactedUpon);
+
+    /// <summary>
+    /// function called on end of interaction
+    /// should cleanup any components added to any gamobject 
+    /// </summary>
+    public abstract void EndInteraction();
+
 }
 
-[AttributeUsage(AttributeTargets.Class)]
-public class InteractionAttribute : Attribute
+/// <summary>
+/// Base Component class for any interaction that should be possible between 
+/// two gameobjects
+/// </summary>
+public abstract class InteractionComponent : MonoBehaviour
 {
-    public Type ContainerType { get; protected set; }
 
-    public InteractionAttribute(Type containerType)
+    /// <summary>
+    /// called from the OnDestroy event of the base class
+    /// should cleanup after the object if any other components on any of the
+    /// interacting object where disabled and reenable them
+    /// </summary>
+    protected abstract void Destroy();
+
+    /// <summary>
+    /// This functions is called after the component was added to the gameobject
+    /// it is applied to
+    /// </summary>
+    /// <param name="activator"></param>
+    /// <param name="interactedUpon"></param>
+    public abstract void StartInteraction(GameObject activator, GameObject interactedUpon);
+    
+    private void OnDestroy()
     {
-        ContainerType = containerType;
+        Destroy();
     }
-
-    public override int GetHashCode()
-    {
-        return ContainerType.GetHashCode();
-    }
-
-    public override string ToString()
-    {
-        return ContainerType.ToString();
-    }
-
 }
-

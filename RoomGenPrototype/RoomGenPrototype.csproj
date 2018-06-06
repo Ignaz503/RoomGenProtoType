@@ -332,8 +332,6 @@
     <Compile Include="Assets\Scripts\Door\SingleHingeDoor.cs" />
     <Compile Include="Assets\Scripts\Door\SlidingDoor.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interaction.cs" />
-    <Compile Include="Assets\Scripts\Interaction\InteractionContainers\InteractionContainer.cs" />
-    <Compile Include="Assets\Scripts\Interaction\InteractionContainers\InteractionFactory.cs" />
     <Compile Include="Assets\Scripts\Interaction\ObjectInHandInteraction.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaData.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaDataDisplayStyles.cs" />
@@ -348,6 +346,7 @@
     <Compile Include="Assets\Scripts\Utility\Interfaces\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IWallValidator.cs" />
+    <Compile Include="Assets\Scripts\Utility\LoremIpsum.cs" />
     <Compile Include="Assets\Scripts\Utility\PlayerHand.cs" />
     <Compile Include="Assets\Scripts\Utility\PopUpText\InteractionPrompt.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\MueseumRequest.cs" />

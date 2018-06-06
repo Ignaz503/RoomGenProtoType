@@ -69,7 +69,6 @@ public class Player : MonoBehaviour {
                 //check if first hit is display
                 if(hits[0].transform.gameObject.layer == LayerMask.NameToLayer("Display"))
                 {
-                    Debug.Log("hi after check");
                     //TODO: MAKE SURE NO WALL BETWEEN PLAYER AND DISPLAY
                     Display disp = hits[0].transform.gameObject.GetComponentInChildren<Display>();
                     if (disp != null)
