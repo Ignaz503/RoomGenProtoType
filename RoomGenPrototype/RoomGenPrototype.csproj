@@ -319,8 +319,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Controllers\MetadataController.cs" />
-    <Compile Include="Assets\Scripts\Controllers\MetadataStyleController.cs" />
     <Compile Include="Assets\Scripts\Controllers\MuseumController.cs" />
     <Compile Include="Assets\Scripts\Displays\CenterImageDisplay.cs" />
     <Compile Include="Assets\Scripts\Displays\CenterMeshDisplay.cs" />
@@ -334,8 +332,9 @@
     <Compile Include="Assets\Scripts\Interaction\Interaction.cs" />
     <Compile Include="Assets\Scripts\Interaction\ObjectInHandInteraction.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaData.cs" />
-    <Compile Include="Assets\Scripts\MetaData\MetaDataDisplayStyles.cs" />
+    <Compile Include="Assets\Scripts\MetaData\MetaDataDisplay.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerHand.cs" />
     <Compile Include="Assets\Scripts\Resources\Resource.cs" />
     <Compile Include="Assets\Scripts\Resources\ResourceLoader\ResourceLoader.cs" />
     <Compile Include="Assets\Scripts\Resources\ResourceManager\ResourceManager.cs" />
@@ -347,7 +346,6 @@
     <Compile Include="Assets\Scripts\Utility\Interfaces\IRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IWallValidator.cs" />
     <Compile Include="Assets\Scripts\Utility\LoremIpsum.cs" />
-    <Compile Include="Assets\Scripts\Utility\PlayerHand.cs" />
     <Compile Include="Assets\Scripts\Utility\PopUpText\InteractionPrompt.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\MueseumRequest.cs" />
     <Compile Include="Assets\Scripts\VirtMuseum\Museum.cs" />
