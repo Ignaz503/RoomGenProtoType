@@ -239,7 +239,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 
-
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             Rigidbody body = hit.collider.attachedRigidbody;
@@ -259,6 +258,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public void SetMouseLookStopOnKey(KeyCode key)
         {
             m_MouseLook.StopOnKey = key;
+        }
+
+        public void SetCursorLock(bool val)
+        {
+            m_MouseLook.SetCursorLock(val);
+            if (val)
+                m_MouseLook.UpdateCursorLock();
         }
     }
 }

@@ -12,6 +12,15 @@ public abstract class Display : MonoBehaviour, IInteractable {
     };
 
     public DisplayType Type { get; protected set; }
+
+    public GameObject Object
+    {
+        get
+        {
+            return gameObject;
+        }
+    }
+
     string metadata = "All Speech is free speech";
     protected Type interactionType;
     Interaction interaction;
@@ -83,7 +92,7 @@ public abstract class Display : MonoBehaviour, IInteractable {
             PlayerDisplayInteractionEventArgs dispArgs = arg as PlayerDisplayInteractionEventArgs;
 
             //check if we are this
-            if (dispArgs.DisplayInteractedWith == this)
+            if (dispArgs.DisplayInteractedWith == this && interaction != null)
             {
                 interaction.EndInteraction();
             }

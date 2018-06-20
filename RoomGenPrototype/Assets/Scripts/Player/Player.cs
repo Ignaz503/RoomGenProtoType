@@ -44,6 +44,10 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //PlayerCam = Camera.main;
+
+        //TODO REMOVE
+        FirstPersonController.SetCursorLock(false);
+
         playerState = State.Moving;
         interactionPrompt.SetText($"Press {interactKey} to itneract");
     }

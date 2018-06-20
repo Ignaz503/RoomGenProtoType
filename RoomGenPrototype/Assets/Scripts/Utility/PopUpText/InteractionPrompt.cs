@@ -40,7 +40,6 @@ public class InteractionPrompt : MonoBehaviour {
     private void LateUpdate()
     {
         PlaceBetweenAndRotateTowardsFirst(player.PlayerCam.transform, obj.transform, .5f);
-        Debug.Log(text.textBounds);
     }
 
     public void SetActive(bool state)

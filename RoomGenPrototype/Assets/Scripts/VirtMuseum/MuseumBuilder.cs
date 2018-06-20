@@ -132,7 +132,8 @@ public class MuseumBuilder : MonoBehaviour
             {
                 GameObject floor = Instantiate(FloorPrefab);
                 GameObject ceiling = Instantiate(CeilingPrefab);
-
+                //TODO REMOVE
+                ceiling.SetActive(false);
                 AddToRoomManagmentUnit(r.RoomID, floor);
                 AddToRoomManagmentUnit(r.RoomID, ceiling);
 

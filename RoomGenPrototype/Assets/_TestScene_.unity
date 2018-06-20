@@ -233,6 +233,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114499767103635588, guid: c90f69282e238234abf76ace76419932,
+        type: 2}
+      propertyPath: m_textAlignment
+      value: 514
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c90f69282e238234abf76ace76419932, type: 2}
   m_IsPrefabParent: 0
@@ -1313,7 +1318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FloorPrefab: {fileID: 1469860450624284, guid: f959feedadc256941a44bdc8aad88d1a,
     type: 2}
-  WallPrefab: {fileID: 1122957230001198, guid: eecd628831ab99844818c821a1229216, type: 2}
+  WallPrefab: {fileID: 1862789299515010, guid: 9f2afedb1d39018489b53804b0879ce2, type: 2}
   WallWithDoorPrefab: {fileID: 1356208461315344, guid: ea891563980e83c4fa26bfaae1ad3bd2,
     type: 2}
   CenterImageDisplayPrefab: {fileID: 1412343219314506, guid: a3a42cd89462965428a1ac26d7e4ad11,

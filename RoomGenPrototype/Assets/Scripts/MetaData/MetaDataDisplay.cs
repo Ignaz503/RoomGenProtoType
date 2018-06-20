@@ -31,6 +31,7 @@ public class MetaDataDisplay : MonoBehaviour {
             }// end if att != null
         }// end foreach
         displayBaseCanvas.gameObject.SetActive(false);
+
 	}
 
     void SetupButtonPrefabCorrectly(int numFields)
@@ -43,6 +44,7 @@ public class MetaDataDisplay : MonoBehaviour {
         elem.preferredHeight = 1.0f / numFields;
     }
 
+    bool test = true;
     void CreateMetadataDisplay(MetaDataAttribute attribute)
     {
         GameObject btnObj = Instantiate(metadataButtonsPrefab);
@@ -88,8 +90,12 @@ public class MetaDataDisplay : MonoBehaviour {
         {
             if(text.gameObject.name == "Content")
             {
-                Debug.Log("Found content text display");
                 contentDisplays.Add(new Tuple<TextMeshProUGUI, string>(text,attribute.Type));
+
+                if(test)
+                {
+                    test = false;
+                }
             }
         }
 
@@ -104,18 +110,24 @@ public class MetaDataDisplay : MonoBehaviour {
     {
         foreach(Tuple<TextMeshProUGUI,string> contDisp in contentDisplays)
         {
+            float height = 0f;
+            string text_to_apply = "";
             if(contDisp.Item2 == "FurtherInfo")
             {
                 //TODO IMPLEMENT PROFICENCY
-                contDisp.Item1.text = meta.GetFieldWithAttributeTypeAsString(contDisp.Item2, 1);
+                text_to_apply = meta.GetFieldWithAttributeTypeAsString(contDisp.Item2, 1);
+                height = contDisp.Item1.GetPreferredValues(text_to_apply).y;
             }
             else
             {
-                contDisp.Item1.text = meta.GetFieldWithAttributeTypeAsString(contDisp.Item2);
+                text_to_apply = meta.GetFieldWithAttributeTypeAsString(contDisp.Item2);
+                height = contDisp.Item1.GetPreferredValues(text_to_apply).y;
             }
+            contDisp.Item1.text = text_to_apply;
             contDisp.Item1.ForceMeshUpdate();
-            (contDisp.Item1.gameObject.transform as RectTransform).SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
-                Camera.main.ScreenToWorldPoint(new Vector2(0,contDisp.Item1.preferredHeight)).y);
+            (contDisp.Item1.rectTransform).SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
+                contDisp.Item1.GetRenderedValues().y);
+
         }// end foreach
     }
 

@@ -73,7 +73,8 @@
     <Compile Include="Assets\Scripts\MetaData\MetaData.cs" />
     <Compile Include="Assets\Scripts\MetaData\MetaDataDisplay.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerHand.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerHand\PCPlayerHand.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerHand\PlayerHand.cs" />
     <Compile Include="Assets\Scripts\Resources\Resource.cs" />
     <Compile Include="Assets\Scripts\Resources\ResourceLoader\ResourceLoader.cs" />
     <Compile Include="Assets\Scripts\Resources\ResourceManager\ResourceManager.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\Utility\BoundingSphere.cs" />
     <Compile Include="Assets\Scripts\Utility\EventArgs\PlayerInteractionEventArgs.cs" />
     <Compile Include="Assets\Scripts\Utility\ExtensionMethods\TransformExtensionMethods.cs" />
+    <Compile Include="Assets\Scripts\Utility\Interfaces\IHoldableObject.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IRoomPlacableChecker.cs" />
     <Compile Include="Assets\Scripts\Utility\Interfaces\IWallValidator.cs" />
