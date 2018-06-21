@@ -11,6 +11,10 @@ using UnityEngine;
 /// </summary>
 public class ResourceLoader : MonoBehaviour
 {
+    /// <summary>
+    /// struct for a request from the museum builder to get a certain resource from
+    /// the server
+    /// </summary>
     public struct Request
     {
         public Display disp;
@@ -23,6 +27,9 @@ public class ResourceLoader : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// the result of a request after it was revieved from the server
+    /// </summary>
     public struct RequestResult
     {
         public Display disp;
@@ -40,6 +47,9 @@ public class ResourceLoader : MonoBehaviour
 
     Queue<Request> LoadRequests;
 
+    /// <summary>
+    /// sets a request for a resource
+    /// </summary>
     public void RequestResource(Display disp, string ResourceLocator)
     {
         lock(LoadRequests)
@@ -48,6 +58,10 @@ public class ResourceLoader : MonoBehaviour
         };
     }
 
+    /// <summary>
+    /// function to retrieve a result of a request
+    /// </summary>
+    /// <returns></returns>
     public RequestResult RetriveResult()
     {
         RequestResult res;

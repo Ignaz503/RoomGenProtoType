@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Box collider trigger that opens and closes a door it is responsible for
+/// </summary>
 public class DoorTrigger : MonoBehaviour {
 
     [SerializeField] BaseDoor door;

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// class that contains all gamobjects that are in a certain room
+/// und will manage unloading and loading for it
+/// </summary>
 public class RoomManagmentUnit
 {
     uint ManagedRoomID;

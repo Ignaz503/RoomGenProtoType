@@ -10,6 +10,9 @@ using System.Runtime.Serialization;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// metadata related to resource containt further information
+/// </summary>
 [DataContract]
 public class MetaData
 {

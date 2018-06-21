@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class ImageDisplay : Display {
 
+    /// <summary>
+    /// scales the x pos when setuping
+    /// </summary>
     public static float XPosScale = .55f;
+    
+    /// <summary>
+    /// the rotation of the image display
+    /// </summary>
     public static Vector3 Rotation = new Vector3(0, -90f, 180);
+    /// <summary>
+    /// scale of the image
+    /// </summary>
     public static float Scale = 0.2f;
+
+    /// <summary>
+    /// local y position of the image
+    /// </summary>
     public static float YPos = -.3f;
 
+    /// <summary>
+    /// the material prefab that is used to apply an image to this mesh
+    /// </summary>
     [SerializeField] Material materialPrefab;
+
+    /// <summary>
+    /// the mseh render that displays the image
+    /// </summary>
     MeshRenderer meshRenderer;
 
     private void Awake()

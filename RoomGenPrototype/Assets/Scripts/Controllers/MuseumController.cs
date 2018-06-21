@@ -4,22 +4,61 @@ using UnityEngine;
 
 public class MuseumController : MonoBehaviour {
 
+    /// <summary>
+    /// the instance of the controller
+    /// </summary>
     public static MuseumController Instance;
 
+    /// <summary>
+    /// scaler to convert from world to museum coords
+    /// </summary>
     [SerializeField] float xPositionScaler;
+    /// <summary>
+    /// scaler to convert from world to museum coords
+    /// </summary>
     [SerializeField] float zPositionScaler;
+    /// <summary>
+    /// the transform of the player gameobject
+    /// </summary>
     [SerializeField] Transform player;
+    /// <summary>
+    /// flag to decide if rooms should be managed ro not
+    /// </summary>
     [SerializeField] bool manageRooms;
+    /// <summary>
+    /// flag to decide if gizmos should be drawn
+    /// </summary>
     [SerializeField] bool drawGraphGizmos;
+    /// <summary>
+    /// flag to decide if room managment gizmos should be drawn
+    /// </summary>
     [SerializeField] bool drawRoomManagmentUnitGizmos;
 
+    /// <summary>
+    /// the graph of room conectivity for a museum
+    /// </summary>
     MuseumGraph virtMuseGraph;
+    /// <summary>
+    /// the size of the museum
+    /// </summary>
     int museumSize;
 
+    /// <summary>
+    /// dictionary mapping from room id to room mamangment unit
+    /// </summary>
     Dictionary<uint, RoomManagmentUnit> roomManagmentMap;
     //temp
+    /// <summary>
+    /// temp dictionary that maps from room id to room
+    /// </summary>
     Dictionary<uint, Room> roomDictionary;
+    /// <summary>
+    /// grid with size of museum that has refrence to which room this tile belongs too
+    /// </summary>
     Room[,] roomMap;
+    /// <summary>
+    /// the room the player is currently in
+    /// </summary>
     Room roomPlayerIsIn;
       
     private void Awake()
@@ -79,6 +118,11 @@ public class MuseumController : MonoBehaviour {
         }// end if graph not null
 	}
 
+    /// <summary>
+    /// Loads a room and it's direct neighbors according to the museum graph
+    /// Load currently means set gamobject active^^
+    /// </summary>
+    /// <param name="rToLoad">The room that needs loading</param>
     void LoadRoomAndNeighbors(Room rToLoad)
     {
         if (roomManagmentMap.ContainsKey(rToLoad.RoomID))
@@ -93,6 +137,11 @@ public class MuseumController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// unloads a room and it's immediate neighbors according to the museum graph
+    /// unload currently means set gamobject inactive^^
+    /// </summary>
+    /// <param name="rToUnload">the room that needs unloading</param>
     void UnloadRoomAndNeighbors(Room rToUnload)
     {
         if (roomManagmentMap.ContainsKey(rToUnload.RoomID))
@@ -107,6 +156,10 @@ public class MuseumController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Sets the museum that needs controlling creating the room managment units
+    /// </summary>
+    /// <param name="virMus">the museum that needs controlling</param>
     public void SetMuseumToControl(Museum virMus)
     {
         virtMuseGraph = virMus.MuseumsGraph;
@@ -125,6 +178,12 @@ public class MuseumController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// checks if cords are in bound of the room grid
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <returns></returns>
     bool InBounds(int x, int y)
     {
         return x >= 0 && x < museumSize && y >= 0 && y < museumSize;
@@ -150,6 +209,9 @@ public class MuseumController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// draws the museum graph as gizmos
+    /// </summary>
     void DrawMuseumGraph()
     {
         foreach (MuseumGraph.Node n in virtMuseGraph.Nodes)
@@ -175,6 +237,11 @@ public class MuseumController : MonoBehaviour {
         }// end foreach virtmuse graph node
     }
 
+    /// <summary>
+    /// returns room managment unit that belongs to this room id
+    /// </summary>
+    /// <param name="r">the room id</param>
+    /// <returns>the room managment unit</returns>
     public RoomManagmentUnit GetRoomManagmentUnitForRoom(uint r)
     {
         if (roomManagmentMap.ContainsKey(r))
@@ -182,6 +249,10 @@ public class MuseumController : MonoBehaviour {
         return null;
     }
 
+    /// <summary>
+    /// logs a room managment unit for a given room id
+    /// </summary>
+    /// <param name="roomID">the room id of the room that needs logging</param>
     public void LogRoomManagmentUnitForRoom(uint roomID)
     {
         if (roomManagmentMap.ContainsKey(roomID))

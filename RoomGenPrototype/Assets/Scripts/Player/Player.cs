@@ -26,30 +26,79 @@ public class Player : MonoBehaviour {
     /// </summary>
     public event Action<PlayerInteractionEventArgs> OnInteractionEnd;
 
+    /// <summary>
+    /// called once for any display when the player moves in range to interact with it
+    /// WARNING: CURRENTLY CALLED EVERY FRAME UNTIL TODO IS DONE
+    /// </summary>
     public event Action<PlayerInteractionEventArgs> OnInInteractionRange;
+
+ /// <summary>
+    /// called the frame when player moves out of interaction range when the interacable object in the previous fame was not null
+    /// </summary>
     public event Action OnOutOfInteractionRange;
     //maybe on Interrupt?
     #endregion
 
+    /// <summary>
+    /// The camera that is the player head so to speek
+    /// </summary>
     public Camera PlayerCam;
+
+    /// <summary>
+    /// ray that is cent throught the center of the screen to see if anything interactable is hit
+    /// </summary>
     Ray centerRay;
+
+    /// <summary>
+    /// limits the distance the ray that checks for anything interactbale hit
+    /// </summary>
     [SerializeField][Range(0.5f, 100f)] float rayCastMaxDist;
     public float RayCastMaxDist { get { return rayCastMaxDist; } protected set { rayCastMaxDist = value; } }
+
+    /// <summary>
+    /// the key that needs to be pressed to start an interaction if possible
+    /// </summary>
     [SerializeField] KeyCode interactKey;
+
+    /// <summary>
+    /// the prompt that appear when an interaction is possible
+    /// should probably be removed
+    /// </summary>
     [SerializeField] InteractionPrompt interactionPrompt;
+
+    /// <summary>
+    /// The first person controller of the std unity assets
+    /// </summary>
     public FirstPersonController FirstPersonController;
+
+    /// <summary>
+    /// The state of the player
+    /// </summary>
     [SerializeField] State playerState;
 
-    Display lastDisplayHit;
-	// Use this for initialization
-	void Start () {
-        //PlayerCam = Camera.main;
+    /// <summary>
+    /// The player hand
+    /// </summary>
+    [SerializeField] PlayerHand pHand;
 
-        //TODO REMOVE
-        FirstPersonController.SetCursorLock(false);
+    /// <summary>
+    /// The display that was hit last, can be null
+    /// should probaly be IInteractable
+    /// </summary>
+    IInteractable lastInteractableHit;
+
+    private void Awake()
+    {
+        pHand.OwningPlayer = this;
+    }
+
+    // Use this for initialization
+    void Start () {
+        //PlayerCam = Camera.main;
 
         playerState = State.Moving;
         interactionPrompt.SetText($"Press {interactKey} to itneract");
+
     }
 	
 	// Update is called once per frame
@@ -60,6 +109,10 @@ public class Player : MonoBehaviour {
         HandleInteraction();
 	}
 
+    /// <summary>
+    /// handles the raycast to see if we can interact with anything
+    /// and calls appropriate evetns
+    /// </summary>
     void HandleDisplayRaycast()
     {
         if(playerState == State.Moving)
@@ -77,10 +130,12 @@ public class Player : MonoBehaviour {
                     Display disp = hits[0].transform.gameObject.GetComponentInChildren<Display>();
                     if (disp != null)
                     {
-                        lastDisplayHit = disp;
+                        //TODO make sure that display is not same as last frame
+                        //before calling events
+                        lastInteractableHit = disp;
                         if (disp is IInteractable)
                         {
-                            OnInInteractionRange?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
+                            OnInInteractionRange?.Invoke(new PlayerDisplayInteractionEventArgs(this, disp));
                         }
                     }// end if disp null
                 }//end if 
@@ -88,37 +143,40 @@ public class Player : MonoBehaviour {
             else
             {
                 //no hit
-                if(lastDisplayHit != null)
+                if(lastInteractableHit != null)
                 {
                     OnOutOfInteractionRange?.Invoke();
                 }
-                lastDisplayHit = null;
+                lastInteractableHit = null;
             }
         }
     }
 
+    /// <summary>
+    /// handles the possibility of the player interacting with somthing
+    /// if he is in range and calls appropriate events
+    /// </summary>
     void HandleInteraction()
     {
         if (Input.GetKeyDown(interactKey))
         {
             if(playerState == State.Interacting)
             {
-                OnInteractionEnd?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
+                //TODO interactions events shouldn't focus ondisplays
+                OnInteractionEnd?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastInteractableHit as Display));
                 playerState = State.Moving;
             } else {
-                if(lastDisplayHit != null)
+                if(lastInteractableHit != null)
                 {
                     //do stuff
                     // eg. load scene
                     // put display mesh gameobject into "hand"   
                     //firstPersonController.enabled = !firstPersonController.enabled;
-                    if (lastDisplayHit is IInteractable)
-                    {
-                        OnInteractionStart?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastDisplayHit));
 
-                        playerState = State.Interacting;
-                        (lastDisplayHit as IInteractable).Interact(this);
-                    }// end if is IInteractabele
+                    OnInteractionStart?.Invoke(new PlayerDisplayInteractionEventArgs(this, lastInteractableHit as Display));
+
+                    playerState = State.Interacting;
+                    lastInteractableHit.Interact(this);
                 }// end if lastDispHit != null
             }// end if else state == interacting
         }// end if key down

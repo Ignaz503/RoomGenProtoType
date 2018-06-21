@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class CenterImageDisplay : Display
 {
+    /// <summary>
+    /// Material prefab used to apply texture
+    /// </summary>
     [SerializeField] Material MaterialPrefab;
+
+    /// <summary>
+    /// the mesh renderes on all sides of the pillar
+    /// </summary>
     MeshRenderer[] displayMeshRenderes;
 
     //TODO: Maybe scale a bit depending on texture that is applied

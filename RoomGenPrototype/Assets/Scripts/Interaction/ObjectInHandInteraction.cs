@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-
+/// <summary>
+/// TODO FIX
+/// </summary>
 public class ObejctInHandInteraction : Interaction
 {
+    /// <summary>
+    /// the component behaviour when an object is in hand and rotated
+    /// </summary>
     ObjectInHandComponent comp;
 
     public override void StartInteraction(GameObject activator, GameObject interactedUpon)
@@ -20,14 +25,39 @@ public class ObejctInHandInteraction : Interaction
     }
 }
 
+/// <summary>
+/// the bahaviour that allows to rotate an obnject that is held with the mouse
+/// </summary>
 public class ObjectInHandComponent : InteractionComponent
 {
+    /// <summary>
+    /// the player holding the object
+    /// </summary>
     Player playerHoldingObject;
+
+    /// <summary>
+    /// transform of the object that need rotating
+    /// </summary>
     Transform objectToRotate;
+
+    /// <summary>
+    /// key that need pressing to rotate the object
+    /// </summary>
     [SerializeField] KeyCode rotationKey = KeyCode.Mouse0;
 
+    /// <summary>
+    /// the initial camera position for zoom reasons
+    /// </summary>
     Vector3 initCamLocPos;
+
+    /// <summary>
+    /// current T for lerping of zoom level
+    /// </summary>
     float currentT = 0f;
+
+    /// <summary>
+    /// velocity vector used by smooth damp
+    /// </summary>
     Vector3 vel;
 
     private void Update()
@@ -36,6 +66,9 @@ public class ObjectInHandComponent : InteractionComponent
         HandleZoom();
     }
 
+    /// <summary>
+    /// Handles rotation of the object
+    /// </summary>
     void HandleRotation()
     {
         if (Input.GetKey(rotationKey))
@@ -44,6 +77,9 @@ public class ObjectInHandComponent : InteractionComponent
         }
     }
 
+    /// <summary>
+    /// handles the zoom of camera
+    /// </summary>
     void HandleZoom()
     {
         float zoom = Input.GetAxis("Mouse ScrollWheel");
@@ -71,11 +107,19 @@ public class ObjectInHandComponent : InteractionComponent
         playerHoldingObject.FirstPersonController.enabled = false;
     }
 
+    /// <summary>
+    /// cleanup funciton after interaction was ended
+    /// </summary>
     protected override void Destroy()
     {
         playerHoldingObject.FirstPersonController.enabled = true;
     }
 
+    /// <summary>
+    /// setup function when interaction starts
+    /// </summary>
+    /// <param name="activator">obj activating interaction</param>
+    /// <param name="interactedUpon">object that is interacted upon</param>
     public override void StartInteraction(GameObject activator, GameObject interactedUpon)
     {
         StartInteraction(activator.GetComponent<Player>(), interactedUpon.GetComponent<MeshDisplay>().ChildMesh.transform);

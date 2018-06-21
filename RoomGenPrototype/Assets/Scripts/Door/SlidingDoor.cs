@@ -3,12 +3,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// door that slides open to one side
+/// </summary>
 public class SlidingDoor : BaseDoor
 {
+    /// <summary>
+    /// local position when door is closed
+    /// </summary>
     float defaultClosePosition;
+
+    /// <summary>
+    /// maximum movment to the side the door needs to do to be open
+    /// </summary>
     float maxMovement;
+
+    /// <summary>
+    /// the current movement of the door when opening or closing
+    /// </summary>
     float currentMovement;
+
+    /// <summary>
+    /// coroutine ref when openeing
+    /// </summary>
     Coroutine openCoroutine;
+
+    /// <summary>
+    /// coroutine ref when closing
+    /// </summary>
     Coroutine closeCoroutine;
 
     private void Awake()
@@ -81,6 +103,10 @@ public class SlidingDoor : BaseDoor
     }
 
     #region coroutines
+
+    /// <summary>
+    /// coroutine to open sliding door
+    /// </summary>
     IEnumerator OpenCorutine()
     {
         Vector3 locPos = Vector3.zero;
@@ -101,6 +127,10 @@ public class SlidingDoor : BaseDoor
         OnDoorOpen();
     }
 
+    /// <summary>
+    /// coroutine to close the door 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator CloseCorutine()
     {
         Vector3 localPos = Vector3.zero;

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// base class for resource
+/// </summary>
 public abstract class Resource
 {
     public string ResourecID { get; protected set; }
@@ -13,6 +16,9 @@ public abstract class Resource
     public abstract void ApplyToGameobject(GameObject obj);
 }
 
+/// <summary>
+/// a resource that is a mesh
+/// </summary>
 public class MeshResource : Resource
 {
     Mesh mesh;
@@ -41,6 +47,9 @@ public class MeshResource : Resource
     }
 }
 
+/// <summary>
+/// resource that is a image
+/// </summary>
 public class ImageResource : Resource
 {
     Texture2D image;

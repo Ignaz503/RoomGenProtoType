@@ -9,7 +9,14 @@ public class MeshDisplay : Display {
     public static float XPosScale;
     public static float XPosModifier;
 
+    /// <summary>
+    /// mesh of the glass sphere holding the mesh to display
+    /// </summary>
     public MeshFilter ParentMesh;
+
+    /// <summary>
+    /// the mseh that is displayed in this display
+    /// </summary>
     public MeshFilter ChildMesh;
 
     private void Awake()
@@ -25,6 +32,10 @@ public class MeshDisplay : Display {
 
     }
 
+    /// <summary>
+    /// scales the mesh that needs displaying to a size so that is fits into
+    /// the glass sphere
+    /// </summary>
     public void ScaleChildToFitParent()
     {
 
@@ -46,6 +57,9 @@ public class MeshDisplay : Display {
         ChildMesh.gameObject.transform.localScale *= scale;
     }
 
+    /// <summary>
+    /// setsup the meshrenderer options of the child
+    /// </summary>
     void SetUpMeshRendererOptions()
     {
 

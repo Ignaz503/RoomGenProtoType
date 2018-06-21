@@ -7,6 +7,9 @@ using System.Runtime.Serialization;
 using UnityEngine;
 
 
+/// <summary>
+/// protypte resource manager that should be run on the server
+/// </summary>
 public sealed class ResourceManager
 {
     private static ResourceManager _Instance;

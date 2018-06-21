@@ -2,18 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// single hinged door that rotates open on a single corner
+/// </summary>
 public class SingleHingeDoor : BaseDoor
 {
-    //TODO maybe set to no collisions during turning of door
+    
+    /// <summary>
+    /// transform of the parent
+    /// </summary>
     Transform parentTrans;
+    
+    /// <summary>
+    /// rotation of door when close 
+    /// </summary>
     Vector3 baseRotation;
+
+    /// <summary>
+    /// rotation that door has when open
+    /// </summary>
     [SerializeField] float targetYRotation;
+
+    /// <summary>
+    /// current rotation of the door
+    /// </summary>
     float currentYRotation;
+    
+    /// <summary>
+    /// the point the door rotates around
+    /// </summary>
     Vector3 PointToRotateAround;
 
+    /// <summary>
+    /// corutine ref when door is opening
+    /// </summary>
     Coroutine openCoroutine;
+
+    /// <summary>
+    /// coroutine ref when door is closing
+    /// </summary>
     Coroutine closeCoroutine;
 
+    /// <summary>
+    /// the doors box collider disabled whilst opening or closing active when open or closed
+    /// </summary>
     BoxCollider boxCollider;
     // Use this for initialization
     void Start()
@@ -98,6 +130,10 @@ public class SingleHingeDoor : BaseDoor
     }
 
     #region Coroutines
+
+    /// <summary>
+    /// coroutine that opens the door
+    /// </summary>
     IEnumerator OpenCoroutine()
     {
         transform.SetParent(null);
@@ -115,6 +151,9 @@ public class SingleHingeDoor : BaseDoor
         OnDoorOpen();
     }
 
+    /// <summary>
+    /// coroutine to close the door
+    /// </summary>
     IEnumerator CloseCoroutine()
     {
         transform.SetParent(null);

@@ -8,8 +8,19 @@ public enum RotateRelative
     Local
 }
 
+/// <summary>
+/// extension methods for Unity transform class
+/// </summary>
 public static class TransformExtensionMethods
 {
+    /// <summary>
+    /// rotates a transform rleative to a camera
+    /// </summary>
+    /// <param name="objToRotate">object to rotate</param>
+    /// <param name="camRelativeTo">camera the object need relative rotating to</param>
+    /// <param name="rotateLeftRight"> left right rotation</param>
+    /// <param name="rotateUpDown">up down rotation</param>
+    /// <param name="relative">decide if world or local rotation modified</param>
     public static void RotateRelativeToCamera(this Transform objToRotate, Camera camRelativeTo, float rotateLeftRight, float rotateUpDown, RotateRelative relative)
     {
         Vector3 relativeUp = camRelativeTo.transform.TransformDirection(Vector3.up);
