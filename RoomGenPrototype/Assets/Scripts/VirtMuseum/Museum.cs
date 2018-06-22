@@ -8,9 +8,13 @@ using System.Text;
 using System.Linq;
 using UnityEngine;
 
+
 [DataContract]
 public class Museum
 {
+    /// <summary>
+    /// helper dictionary that maps from room type to placable checker of this room
+    /// </summary>
     static Dictionary<RoomType, IRoomPlacableChecker> roomTypeToPlaceableChecker = new Dictionary<RoomType, IRoomPlacableChecker>()
     {
             { RoomType.Normal, new BaseRoomTypePlacableCheker(RoomType.Normal) },
@@ -19,18 +23,40 @@ public class Museum
             { RoomType.L, new BaseRoomTypePlacableCheker(RoomType.L) }
     };
 
+    /// <summary>
+    /// defines size of museum 
+    /// they currently are always same width and height
+    /// </summary>
     [DataMember]
     public int Size { get; set; }
 
+    /// <summary>
+    /// map of all the tiles in the museum and which room type is placed in this tile
+    /// -1 if there is currently no room on this tile
+    /// </summary>
     public int[,] RoomMap { get; protected set; }
 
+    /// <summary>
+    /// list of all the rooms that build this museum
+    /// </summary>
     [DataMember]
     public List<Room> Rooms { get; protected set; }
+
+    /// <summary>
+    /// list of all the walls in the museum
+    /// </summary>
     [DataMember]
     public List<Wall> Walls { get; protected set; }
+
+    /// <summary>
+    /// a graph that defines the connectivty of the rooms with each other
+    /// </summary>
     [DataMember]
     public MuseumGraph MuseumsGraph { get; protected set; }
 
+    /// <summary>
+    /// the current number of doors in the museum
+    /// </summary>
     //[DataMember]
     public int CurrentNumberOfDoors
     {
@@ -46,6 +72,9 @@ public class Museum
         }
     }
 
+    /// <summary>
+    /// the current number of displays in the museum
+    /// </summary>
     //[DataMember]
     public int NumberOfDisplays
     {
@@ -80,6 +109,17 @@ public class Museum
 
     /// <summary>
     /// Generates a Museum
+    /// baisc algortihm:
+    /// 1. palce random 1x1 room as start 
+    /// 2. get outline around this room
+    /// 3. choose random tile from outline
+    /// 4. find out what rooms can be placed at this tile
+    /// 5. place one of the possible rooms
+    /// 6. connect new room to already existing rooms
+    /// 7. update outline
+    /// 8. repeat from step 3. until no more tiles in outline
+    /// 9. fill all the displays that are in the museum
+    /// 10. build museum graph
     /// </summary>
     /// <param name="seed"></param>
     public void Generate(string seed, bool buildMuseumsGraph = true)
@@ -345,6 +385,7 @@ public class Museum
     /// otherwise returns the index of the wall that already exists
     /// (2 rooms share one wall in that case)
     /// </summary>
+    /// <returns>the location of the wall in the museum walls array</returns>
     public int AddWall(Wall w)
     {
         for (int i = 0; i < Walls.Count; i++)
@@ -410,6 +451,12 @@ public class Museum
         return museum;
     }
 
+    /// <summary>
+    /// adds a new room placable checker
+    /// </summary>
+    /// <param name="t">new room type</param>
+    /// <param name="checker">the placable checker for this type</param>
+    /// <param name="overrideExisting">flag if already existing placable checker should be overwritten</param>
     public static void AddNewRoomPlacableChecker(RoomType t, IRoomPlacableChecker checker, bool overrideExisting)
     {
         if (roomTypeToPlaceableChecker.ContainsKey(t) && overrideExisting)

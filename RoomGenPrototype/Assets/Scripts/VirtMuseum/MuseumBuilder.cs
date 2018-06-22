@@ -6,8 +6,14 @@ using UnityEngine;
 
 public class MuseumBuilder : MonoBehaviour
 {
-
+    /// <summary>
+    /// instance of the builder
+    /// </summary>
     public static MuseumBuilder Instance;
+
+    /// <summary>
+    /// temp queue for testing
+    /// </summary>
     public static Queue<string> MuseumData = new Queue<string>();
 
     #region Prefabs
@@ -26,22 +32,47 @@ public class MuseumBuilder : MonoBehaviour
 
     #endregion
 
+    /// <summary>
+    /// temp test meshes
+    /// </summary>
     public MeshFilter[] TestMesh;
+    /// <summary>
+    /// temp mesh textures
+    /// </summary>
     public Texture2D[] TestTextures;
 
+    /// <summary>
+    /// scaling of position in x direction
+    /// </summary>
     public float FloorXPosScale;
+    /// <summary>
+    /// caling of floor position in z direction
+    /// </summary>
     public float FloorZPosScale;
 
+    /// <summary>
+    /// height of walls in the msuem
+    /// </summary>
     float wallHeight;
 
     //Temp
     int TestTextSize;
+    //temp
     int currIdx = 0;
 
+    /// <summary>
+    /// the museum being built
+    /// </summary>
     Museum virtMuse = null;
 
+    /// <summary>
+    /// temp
+    /// </summary>
     public bool DisableAfterRequest;
 
+    /// <summary>
+    /// instance of the museum controller
+    /// </summary>
     MuseumController _MusemControllerInstance;
 
     private void Awake()

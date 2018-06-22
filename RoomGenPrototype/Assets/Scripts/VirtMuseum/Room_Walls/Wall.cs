@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
+/// <summary>
+/// A wall that seperates two rooms of a museum or is an outer wall of the museum
+/// </summary>
 [DataContract]
 public class Wall
 {
@@ -20,21 +23,51 @@ public class Wall
     }
 
     //Museum VirtMuse;
+    /// <summary>
+    /// helper var for deciding on where to put the displays of the wall
+    /// when walls are merged
+    /// </summary>
     int TileIndexForXPositionModifierCalc = 0;
 
+    /// <summary>
+    /// the type of wall (solid or door)
+    /// </summary>
     [DataMember]
     public WallType Type { get; protected set; }
     //Used for equaality checking
+    /// <summary>
+    /// the location of the wall defined as the two vertices where the wall is inbetween
+    /// vertices are room corners
+    /// </summary>
     public Vector2[] Location { get; protected set; }
+
+    /// <summary>
+    /// position modifier when placing the wall gamobject for the museum
+    /// </summary>
     [DataMember]
     public float PositionModifier { get; protected set; }
+    /// <summary>
+    /// tiles that are seperated from this wall
+    /// </summary>
     [DataMember]
     public List<Vector2Int> Tiles { get; protected set; }
+
+    /// <summary>
+    /// defines if wall is vertical wall or horizontal wall in museum
+    /// influneces y rotation of gamobject
+    /// </summary>
     [DataMember]
     public WallRotation Rotation { get; protected set; }
+
+    /// <summary>
+    /// info for all the displays that this wall has
+    /// </summary>
     [DataMember]
     public List<MuseumDisplayInfo> DisplayInfos { get; protected set; }
 
+    /// <summary>
+    /// IDs of all the rooms that are spaerated by this wall
+    /// </summary>
     [DataMember]
     public List<uint> AssociatedRoomIDs { get; protected set; }
 

@@ -11,9 +11,15 @@ public class MuseumGraph
     [DataContract]
     public class Node
     {
+        /// <summary>
+        /// Unique id of node in this graph
+        /// </summary>
         [DataMember]
         public uint NodeID { get; protected set; } 
 
+        /// <summary>
+        /// list of node ids where this node has edges to
+        /// </summary>
         [DataMember]
         public HashSet<uint> Edges { get; protected set; }
 
@@ -23,11 +29,19 @@ public class MuseumGraph
             Edges = new HashSet<uint>();
         }
 
+        /// <summary>
+        /// adss an edge to this node
+        /// </summary>
+        /// <param name="newEdge">the id of the node where the new edge goes to</param>
+        /// <returns></returns>
         public bool AddEdge(uint newEdge)
         {
             return Edges.Add(newEdge);
         }
 
+        /// <summary>
+        /// creates edges between two nodes
+        /// </summary>
         public static void ConnectNodes(Node a, Node b)
         {
             a.AddEdge(b.NodeID);
@@ -55,9 +69,15 @@ public class MuseumGraph
         }
     }
 
+    /// <summary>
+    /// map that maps from node id to ref
+    /// </summary>
     [DataMember]
     Dictionary<uint, Node> NodeMap;
 
+    /// <summary>
+    /// list of all the nodes in the graph
+    /// </summary>
     public List<Node> Nodes { get { return NodeMap.Values.ToList(); } }
 
     public MuseumGraph()
@@ -65,6 +85,12 @@ public class MuseumGraph
         NodeMap = new Dictionary<uint, Node>();
     }
 
+    /// <summary>
+    /// builds a graph of the museum
+    /// nodes are rooms
+    /// edges are when two rooms have a door between each other
+    /// </summary>
+    /// <param name="virtMuse">the museum the graph should be built for</param>
     public void BuildMuseumGraph(Museum virtMuse)
     {
         //create nodes for all rooms
@@ -89,6 +115,9 @@ public class MuseumGraph
         }
     }
 
+    /// <summary>
+    /// gets a museum node that represents this room
+    /// </summary>
     public Node GetNodeForRoom(Room r)
     {
         if (NodeMap.ContainsKey(r.RoomID))

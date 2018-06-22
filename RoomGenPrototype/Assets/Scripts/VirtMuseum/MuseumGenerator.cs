@@ -8,27 +8,60 @@ using UnityEngine;
 
 public class MuseumGenerator : MonoBehaviour {
 
+    /// <summary>
+    /// instance
+    /// </summary>
     public static MuseumGenerator Instance;
 
+    /// <summary>
+    /// temp queue for testing
+    /// </summary>
     static Queue<Tuple<MuseumRequest,Queue<string>>> museumRequests = new Queue<Tuple<MuseumRequest, Queue<string>>>();
 
+    /// <summary>
+    /// temp size selector of museum
+    /// </summary>
     [Range(1, 10)]
     public int SIZE;
 
+    /// <summary>
+    /// debug color array for room types
+    /// </summary>
     public Color[] RoomTypeColors;
+    
+    /// <summary>
+    /// seed used to gnerate museum
+    /// </summary>
     public string Seed = "";
 
-
+    /// <summary>
+    /// debug cube prefab for debug outuput
+    /// </summary>
     public GameObject cubePrefab;
 
+    /// <summary>
+    /// debug helper to only draw walls for this room type
+    /// </summary>
     public RoomType tpyeToDrawWallsFor;
 
+    /// <summary>
+    /// flag if all walls should be drawn or not
+    /// </summary>
     public bool DrawAllWalls;
 
+    /// <summary>
+    /// flag if gizmos should be drawn or not
+    /// </summary>
     public bool DrawGizmos;
 
+    /// <summary>
+    /// museum being generated
+    /// </summary>
     public Museum VirtMuse = null;
 
+    /// <summary>
+    /// flag if debug output should be gnerated
+    /// </summary>
     public bool CreateDebugGameobject;
 
     private void OnEnable()

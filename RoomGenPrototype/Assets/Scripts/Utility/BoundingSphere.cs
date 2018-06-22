@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class BoundingSphere
 {
+    /// <summary>
+    /// center of the bounding sphre
+    /// </summary>
     public Vector3 center;
+
+    /// <summary>
+    /// radius of bounding sphere
+    /// </summary>
     public float radius;
+
     public BoundingSphere(Vector3 aCenter, float aRadius)
     {
         center = aCenter;
         radius = aRadius;
     }
 
+    /// <summary>
+    /// calculates a bounding sphrere for a given list of vertices
+    /// </summary>
+    /// <param name="aPoints">the list of vertices for whom the bounding sphere should be calculated</param>
+    /// <returns>the bounding sphere</returns>
     public static BoundingSphere Calculate(IEnumerable<Vector3> aPoints)
     {
         Vector3 xMin, xMax, yMin, yMax, zMin, zMax;

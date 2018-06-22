@@ -16,11 +16,23 @@ public enum MuseumSize
 [DataContract]
 public class MuseumRequest{
 
+    /// <summary>
+    /// defines what type of musem 
+    /// eg. art sciences and so on
+    /// </summary>
     [DataMember]
     public string MuseumType { get; set; }
+
+    /// <summary>
+    /// defines size of museum limiting displays and rooms
+    /// </summary>
     [DataMember]
     public MuseumSize Size { get; set; }
 
+    /// <summary>
+    /// serializes it to xml
+    /// </summary>
+    /// <returns></returns>
     public string Serialize()
     {
         MemoryStream stream = new MemoryStream();
@@ -38,6 +50,9 @@ public class MuseumRequest{
         return data;
     }
 
+    /// <summary>
+    /// from xml to museum request
+    /// </summary>
     public static MuseumRequest Deserialize(string data)
     {
         MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(data));
@@ -46,5 +61,4 @@ public class MuseumRequest{
         stream.Close();
         return request;
     }
-
 }

@@ -19,10 +19,17 @@ public enum RoomType
     L,
     Big,
 }
+
+/// <summary>
+/// defines a room in a virtual museum
+/// </summary>
 [DataContract]
 public class Room
 {
     #region Static Memebers
+    /// <summary>
+    /// helper array to calculate corners of room with center coord given
+    /// </summary>
     static readonly Vector2[] cornerOffsets = new Vector2[]
     {
         new Vector2(.5f, .5f),//upper right
@@ -31,6 +38,9 @@ public class Room
         new Vector2(-.5f, -.5f)//lower left
     };
 
+    /// <summary>
+    /// helper dictonary that maps from room type to wall validator of this type
+    /// </summary>
     static Dictionary<RoomType, IWallValidator> wallValidators = new Dictionary<RoomType, IWallValidator>()
     {
         {RoomType.Normal, new NormalRoomWallValidator() },
@@ -40,20 +50,46 @@ public class Room
 
     };
 
+    /// <summary>
+    /// id gen for all rooms
+    /// </summary>
     static uint RoomIDGen = 0;
 
     #endregion
 
+    /// <summary>
+    /// the virtual museum this room belongs to
+    /// </summary>
     Museum virtMuse;
 
+    /// <summary>
+    /// the ID of this room
+    /// </summary>
     [DataMember]
     public uint RoomID { get; protected set; }
+
+    /// <summary>
+    /// The type of this room
+    /// </summary>
     [DataMember]
     public RoomType Type { get; protected set; }
+
+    /// <summary>
+    /// all the tiles of the museum that make up this room
+    /// </summary>
     [DataMember]
     public List<Vector2Int> RoomTiles { get; protected set; }
+
+    /// <summary>
+    /// list of indices of walls in the virt musem wall list, of all the walls that are part of this room
+    /// </summary>
     [DataMember]
     public List<int> Walls;
+
+    /// <summary>
+    /// display information for all the displays that this room has
+    /// wall displays are not counted as displays for this room
+    /// </summary>
     [DataMember]
     public MuseumDisplayInfo[] CenterDisplayInfos { get; protected set; }
 
@@ -243,6 +279,12 @@ public class Room
         return addedOneDoor;
     }
 
+    /// <summary>
+    /// adds new wall vaildator to the helper dictinary
+    /// </summary>
+    /// <param name="t">the new room type</param>
+    /// <param name="val">the valdiator for this room type</param>
+    /// <param name="overrideExisting">flag if any already existing one for this type should be overwritten</param>
     public static void AddNewWallValidator(RoomType t, IWallValidator val, bool overrideExisting = false)
     {
         if (wallValidators.ContainsKey(t) && !overrideExisting)
