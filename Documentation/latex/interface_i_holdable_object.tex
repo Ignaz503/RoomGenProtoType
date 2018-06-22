@@ -1,0 +1,280 @@
+\hypertarget{interface_i_holdable_object}{}\section{I\+Holdable\+Object Interface Reference}
+\label{interface_i_holdable_object}\index{I\+Holdable\+Object@{I\+Holdable\+Object}}
+
+
+Inheritance diagram for I\+Holdable\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{interface_i_holdable_object__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_i_holdable_object_a6f63fec8fb8f715ad5cdd08aa5ec0ea5}{On\+Held\+Infront\+Of\+Face}} ()
+\begin{DoxyCompactList}\small\item\em called when hand reaches infront of face position right after state was set to infront of face \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_i_holdable_object_abe7c5e5ed97fb5c908c91da5b8714f0e}{On\+Put\+Away}} ()
+\item 
+void \mbox{\hyperlink{interface_i_holdable_object_af5dcdd5524539104706dadd8a0e15e08}{On\+Started\+Move\+Infront\+Of\+Face}} ()
+\begin{DoxyCompactList}\small\item\em called when hand starts moving towards the infront of face position right after the state is set to Moving\+Infrontof\+Face \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_i_holdable_object_a75f802a9736db51e5e8d1568689dd11c}{On\+Started\+Move\+Away\+From\+Face}} ()
+\item 
+void \mbox{\hyperlink{interface_i_holdable_object_a3fe2e7a7d0740225142053583f438333}{Position\+Object\+In\+Hand}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
+\begin{DoxyCompactList}\small\item\em used to probably parent obj to hand gamobjt and set local position called by grab object of the hand \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_i_holdable_object_a7b8a42a0c12a26b1668c4dd904f38355}{On\+Grabed}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
+\item 
+void \mbox{\hyperlink{interface_i_holdable_object_a19523673c41505d8533aa50b957e95a1}{On\+Dropped}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
+\item 
+bool \mbox{\hyperlink{interface_i_holdable_object_a0356d534c17ab4e04fba00b42abeea77}{Is\+Interested\+In\+Interactable\+Objects}} ()
+\item 
+void \mbox{\hyperlink{interface_i_holdable_object_aeb32a55273b99d16f9fb5b86f6a73f80}{Set\+Interacted\+Object}} (\mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} i\+Obj)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{interface_i_holdable_object_a99b6760e4f5c71c79d8b084673a3818b}{Object}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the gameobject this interface(actually mono behav implementign it but don\textquotesingle{}t sweat it) is attached to \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_i_holdable_object_a0356d534c17ab4e04fba00b42abeea77}\label{interface_i_holdable_object_a0356d534c17ab4e04fba00b42abeea77}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!Is\+Interested\+In\+Interactable\+Objects@{Is\+Interested\+In\+Interactable\+Objects}}
+\index{Is\+Interested\+In\+Interactable\+Objects@{Is\+Interested\+In\+Interactable\+Objects}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{Is\+Interested\+In\+Interactable\+Objects()}{IsInterestedInInteractableObjects()}}
+{\footnotesize\ttfamily bool I\+Holdable\+Object.\+Is\+Interested\+In\+Interactable\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+this functions defines iof the held object gets information about an interactable object forwarded to him 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_a6aa943864ef85667977a13c895c2ce23}{Meta\+Data\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_i_holdable_object_a0356d534c17ab4e04fba00b42abeea77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interface_i_holdable_object_a19523673c41505d8533aa50b957e95a1}\label{interface_i_holdable_object_a19523673c41505d8533aa50b957e95a1}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!On\+Dropped@{On\+Dropped}}
+\index{On\+Dropped@{On\+Dropped}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{On\+Dropped()}{OnDropped()}}
+{\footnotesize\ttfamily void I\+Holdable\+Object.\+On\+Dropped (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_hand}{Player\+Hand}}}]{hand }\end{DoxyParamCaption})}
+
+
+
+
+
+Called the frame this object is dropped by a hand can be seen as a destroy/cleanup function for the opbject when called the hand does not hold the object anyomre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & the hand that held the object\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_a274478924e6a4df19484a469ae2869ce}{Meta\+Data\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_i_holdable_object_a19523673c41505d8533aa50b957e95a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interface_i_holdable_object_a7b8a42a0c12a26b1668c4dd904f38355}\label{interface_i_holdable_object_a7b8a42a0c12a26b1668c4dd904f38355}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!On\+Grabed@{On\+Grabed}}
+\index{On\+Grabed@{On\+Grabed}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{On\+Grabed()}{OnGrabed()}}
+{\footnotesize\ttfamily void I\+Holdable\+Object.\+On\+Grabed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_hand}{Player\+Hand}}}]{hand }\end{DoxyParamCaption})}
+
+
+
+
+
+Called the frame this object is grabbed can be seen as an initializer function for when the obj is grabbed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & the hand that grabed this object\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_a7d639d7bc58c9340a7f5274884bbc11d}{Meta\+Data\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_i_holdable_object_a7b8a42a0c12a26b1668c4dd904f38355_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interface_i_holdable_object_a6f63fec8fb8f715ad5cdd08aa5ec0ea5}\label{interface_i_holdable_object_a6f63fec8fb8f715ad5cdd08aa5ec0ea5}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!On\+Held\+Infront\+Of\+Face@{On\+Held\+Infront\+Of\+Face}}
+\index{On\+Held\+Infront\+Of\+Face@{On\+Held\+Infront\+Of\+Face}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{On\+Held\+Infront\+Of\+Face()}{OnHeldInfrontOfFace()}}
+{\footnotesize\ttfamily void I\+Holdable\+Object.\+On\+Held\+Infront\+Of\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+called when hand reaches infront of face position right after state was set to infront of face 
+
+
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_ab91c62e23ca6af27f8a30859d5a172c9}{Meta\+Data\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_i_holdable_object_a6f63fec8fb8f715ad5cdd08aa5ec0ea5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interface_i_holdable_object_abe7c5e5ed97fb5c908c91da5b8714f0e}\label{interface_i_holdable_object_abe7c5e5ed97fb5c908c91da5b8714f0e}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!On\+Put\+Away@{On\+Put\+Away}}
+\index{On\+Put\+Away@{On\+Put\+Away}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{On\+Put\+Away()}{OnPutAway()}}
+{\footnotesize\ttfamily void I\+Holdable\+Object.\+On\+Put\+Away (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+Called when the hand reaches it\textquotesingle{}s rest positon right after the state is set to Rest\+Position 
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_a55888c6c3e3e224d89d95b6c63652762}{Meta\+Data\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_i_holdable_object_abe7c5e5ed97fb5c908c91da5b8714f0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interface_i_holdable_object_a75f802a9736db51e5e8d1568689dd11c}\label{interface_i_holdable_object_a75f802a9736db51e5e8d1568689dd11c}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!On\+Started\+Move\+Away\+From\+Face@{On\+Started\+Move\+Away\+From\+Face}}
+\index{On\+Started\+Move\+Away\+From\+Face@{On\+Started\+Move\+Away\+From\+Face}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{On\+Started\+Move\+Away\+From\+Face()}{OnStartedMoveAwayFromFace()}}
+{\footnotesize\ttfamily void I\+Holdable\+Object.\+On\+Started\+Move\+Away\+From\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+called when the hand starts moving away from the face right after the hand state is set to Moving\+To\+Rest\+Position 
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_a98518b3d82ffd1e428cab9a2328fb018}{Meta\+Data\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_i_holdable_object_a75f802a9736db51e5e8d1568689dd11c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interface_i_holdable_object_af5dcdd5524539104706dadd8a0e15e08}\label{interface_i_holdable_object_af5dcdd5524539104706dadd8a0e15e08}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!On\+Started\+Move\+Infront\+Of\+Face@{On\+Started\+Move\+Infront\+Of\+Face}}
+\index{On\+Started\+Move\+Infront\+Of\+Face@{On\+Started\+Move\+Infront\+Of\+Face}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{On\+Started\+Move\+Infront\+Of\+Face()}{OnStartedMoveInfrontOfFace()}}
+{\footnotesize\ttfamily void I\+Holdable\+Object.\+On\+Started\+Move\+Infront\+Of\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+called when hand starts moving towards the infront of face position right after the state is set to Moving\+Infrontof\+Face 
+
+
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_aa0a9b9ca8243943104c82602e69a0541}{Meta\+Data\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_i_holdable_object_af5dcdd5524539104706dadd8a0e15e08_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interface_i_holdable_object_a3fe2e7a7d0740225142053583f438333}\label{interface_i_holdable_object_a3fe2e7a7d0740225142053583f438333}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!Position\+Object\+In\+Hand@{Position\+Object\+In\+Hand}}
+\index{Position\+Object\+In\+Hand@{Position\+Object\+In\+Hand}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{Position\+Object\+In\+Hand()}{PositionObjectInHand()}}
+{\footnotesize\ttfamily void I\+Holdable\+Object.\+Position\+Object\+In\+Hand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_hand}{Player\+Hand}}}]{hand }\end{DoxyParamCaption})}
+
+
+
+used to probably parent obj to hand gamobjt and set local position called by grab object of the hand 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_a1ecbc336a25464fc9999120066263e2a}{Meta\+Data\+Display}}.
+
+\mbox{\Hypertarget{interface_i_holdable_object_aeb32a55273b99d16f9fb5b86f6a73f80}\label{interface_i_holdable_object_aeb32a55273b99d16f9fb5b86f6a73f80}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!Set\+Interacted\+Object@{Set\+Interacted\+Object}}
+\index{Set\+Interacted\+Object@{Set\+Interacted\+Object}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{Set\+Interacted\+Object()}{SetInteractedObject()}}
+{\footnotesize\ttfamily void I\+Holdable\+Object.\+Set\+Interacted\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_interactable}{I\+Interactable}}}]{i\+Obj }\end{DoxyParamCaption})}
+
+
+
+
+
+function get\textquotesingle{}s called by hand if the held object is interessted in interacted objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Obj} & the object the player interacted with\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_meta_data_display_a29b7b1ec6193b73606dc7da89c387529}{Meta\+Data\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_i_holdable_object_aeb32a55273b99d16f9fb5b86f6a73f80_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{interface_i_holdable_object_a99b6760e4f5c71c79d8b084673a3818b}\label{interface_i_holdable_object_a99b6760e4f5c71c79d8b084673a3818b}} 
+\index{I\+Holdable\+Object@{I\+Holdable\+Object}!Object@{Object}}
+\index{Object@{Object}!I\+Holdable\+Object@{I\+Holdable\+Object}}
+\subsubsection{\texorpdfstring{Object}{Object}}
+{\footnotesize\ttfamily Game\+Object I\+Holdable\+Object.\+Object\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+the gameobject this interface(actually mono behav implementign it but don\textquotesingle{}t sweat it) is attached to 
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Utility/\+Interfaces/\mbox{\hyperlink{_i_holdable_object_8cs}{I\+Holdable\+Object.\+cs}}\end{DoxyCompactItemize}

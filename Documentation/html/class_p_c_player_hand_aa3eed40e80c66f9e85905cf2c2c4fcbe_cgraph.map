@@ -1,0 +1,4 @@
+<map id="PCPlayerHand.Start" name="PCPlayerHand.Start">
+<area shape="rect" id="node2" href="$class_p_c_player_hand.html#a08da28b459501727d269733569559c24" title="subscribes object to all relevent events and calles on obj grabbed " alt="" coords="195,5,372,32"/>
+<area shape="rect" id="node3" href="$class_player_hand.html#a886f7afd66af7f0dc59696953aaed4b4" title="invokes event InRestingPosition " alt="" coords="192,57,375,98"/>
+</map>

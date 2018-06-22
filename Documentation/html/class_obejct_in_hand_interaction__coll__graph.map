@@ -1,0 +1,10 @@
+<map id="ObejctInHandInteraction" name="ObejctInHandInteraction">
+<area shape="rect" id="node2" href="$class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="23,285,106,312"/>
+<area shape="rect" id="node4" href="$class_object_in_hand_component.html" title="the bahaviour that allows to rotate an obnject that is held with the mouse " alt="" coords="131,285,297,312"/>
+<area shape="rect" id="node5" href="$class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="117,145,265,172"/>
+<area shape="rect" id="node7" href="$class_player.html" title="Player" alt="" coords="383,196,442,223"/>
+<area shape="rect" id="node8" href="$class_interaction_prompt.html" title="InteractionPrompt" alt="" coords="396,285,520,312"/>
+<area shape="rect" id="node9" href="$class_player_hand.html" title="PlayerHand" alt="" coords="371,95,460,121"/>
+<area shape="rect" id="node10" href="$interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="56,5,169,32"/>
+<area shape="rect" id="node11" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="251,95,343,121"/>
+</map>

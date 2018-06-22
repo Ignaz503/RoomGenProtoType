@@ -1,0 +1,279 @@
+\hypertarget{class_interaction_prompt}{}\section{Interaction\+Prompt Class Reference}
+\label{class_interaction_prompt}\index{Interaction\+Prompt@{Interaction\+Prompt}}
+
+
+Inheritance diagram for Interaction\+Prompt\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_interaction_prompt__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Interaction\+Prompt\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_prompt__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_interaction_prompt_a409ac8c36942c10be65238a7281932c2}{Set\+Active}} (bool state)
+\begin{DoxyCompactList}\small\item\em sets gamobject active or inactive \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_prompt_a86cfcd9a578717260de54c04a51d6175}{Place\+At\+And\+Rotate}} (Vector3 position, Quaternion rotation)
+\begin{DoxyCompactList}\small\item\em sets location and rotation of gamobject(world position) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_prompt_affe2190bb7ca5e5476074dbbbb846b3c}{Place\+At}} (Vector3 positon)
+\begin{DoxyCompactList}\small\item\em sets world potsition of gameobject \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_prompt_a88851b5b82c1413a6aad2c02d24708f6}{Set\+Rotation}} (Quaternion rot)
+\begin{DoxyCompactList}\small\item\em sets world rotation of gameobject \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_prompt_a85caeb27db4542f995d8704966beefc1}{Place\+Between}} (Vector3 pos1, Vector3 pos2, float t)
+\begin{DoxyCompactList}\small\item\em places gamobject between two world positions with linear interpolation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_prompt_a98a4e4f01398f5d5f5e56802e67cffd2}{Place\+Between\+And\+Rotate\+Towards\+First}} (Transform first, Transform second, float t)
+\begin{DoxyCompactList}\small\item\em Places gamobject between two other gamobjects and rotates it so that it looks at the first param \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_prompt_ac68329e8bcb18bc4556695f506d5b410}{Set\+Text}} (string new\+\_\+text)
+\begin{DoxyCompactList}\small\item\em sets the text and forces a mesh update of the T\+M\+Pro object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_interaction_prompt_ada65c2aa759ea18aa2ccf6ba8cd3843b}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_interaction_prompt_abdf8e29663a41a36dc2db027f3187c49}{Late\+Update}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Mesh\+Pro\+U\+G\+UI \mbox{\hyperlink{class_interaction_prompt_a4636f2a267626c679099028ef84aecf7}{text}}
+\begin{DoxyCompactList}\small\item\em text field where text should be displayed \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_interaction_prompt_a4fbdf117c9d51678d8e74c32b04e206a}{player}}
+\begin{DoxyCompactList}\small\item\em the player for to whom the text should appear infront of \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_interaction_prompt_a2ede1aad42e153f5b4a3fafe4233e8be}{obj}}
+\begin{DoxyCompactList}\small\item\em the gamobject where between the player and it, the pop up text should appear \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_interaction_prompt_abdf8e29663a41a36dc2db027f3187c49}\label{class_interaction_prompt_abdf8e29663a41a36dc2db027f3187c49}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Late\+Update@{Late\+Update}}
+\index{Late\+Update@{Late\+Update}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Late\+Update()}{LateUpdate()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Late\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_prompt_abdf8e29663a41a36dc2db027f3187c49_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_interaction_prompt_affe2190bb7ca5e5476074dbbbb846b3c}\label{class_interaction_prompt_affe2190bb7ca5e5476074dbbbb846b3c}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Place\+At@{Place\+At}}
+\index{Place\+At@{Place\+At}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Place\+At()}{PlaceAt()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Place\+At (\begin{DoxyParamCaption}\item[{Vector3}]{positon }\end{DoxyParamCaption})}
+
+
+
+sets world potsition of gameobject 
+
+
+\begin{DoxyParams}{Parameters}
+{\em positon} & the world position\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_interaction_prompt_a86cfcd9a578717260de54c04a51d6175}\label{class_interaction_prompt_a86cfcd9a578717260de54c04a51d6175}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Place\+At\+And\+Rotate@{Place\+At\+And\+Rotate}}
+\index{Place\+At\+And\+Rotate@{Place\+At\+And\+Rotate}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Place\+At\+And\+Rotate()}{PlaceAtAndRotate()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Place\+At\+And\+Rotate (\begin{DoxyParamCaption}\item[{Vector3}]{position,  }\item[{Quaternion}]{rotation }\end{DoxyParamCaption})}
+
+
+
+sets location and rotation of gamobject(world position) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the world position of the gameobject\\
+\hline
+{\em rotation} & the world rotation of the gameobject\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_interaction_prompt_a85caeb27db4542f995d8704966beefc1}\label{class_interaction_prompt_a85caeb27db4542f995d8704966beefc1}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Place\+Between@{Place\+Between}}
+\index{Place\+Between@{Place\+Between}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Place\+Between()}{PlaceBetween()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Place\+Between (\begin{DoxyParamCaption}\item[{Vector3}]{pos1,  }\item[{Vector3}]{pos2,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+
+
+places gamobject between two world positions with linear interpolation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos1} & first position in world coords\\
+\hline
+{\em pos2} & second position in world coords\\
+\hline
+{\em t} & time param of linear interpolation\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_prompt_a85caeb27db4542f995d8704966beefc1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_interaction_prompt_a98a4e4f01398f5d5f5e56802e67cffd2}\label{class_interaction_prompt_a98a4e4f01398f5d5f5e56802e67cffd2}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Place\+Between\+And\+Rotate\+Towards\+First@{Place\+Between\+And\+Rotate\+Towards\+First}}
+\index{Place\+Between\+And\+Rotate\+Towards\+First@{Place\+Between\+And\+Rotate\+Towards\+First}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Place\+Between\+And\+Rotate\+Towards\+First()}{PlaceBetweenAndRotateTowardsFirst()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Place\+Between\+And\+Rotate\+Towards\+First (\begin{DoxyParamCaption}\item[{Transform}]{first,  }\item[{Transform}]{second,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+
+
+Places gamobject between two other gamobjects and rotates it so that it looks at the first param 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & transform of g\+Obj which should be looked at\\
+\hline
+{\em second} & transform of g\+Obj where it should be placed between with first\\
+\hline
+{\em t} & time param of linear interpolation\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_prompt_a98a4e4f01398f5d5f5e56802e67cffd2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_prompt_a98a4e4f01398f5d5f5e56802e67cffd2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_interaction_prompt_a409ac8c36942c10be65238a7281932c2}\label{class_interaction_prompt_a409ac8c36942c10be65238a7281932c2}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Set\+Active@{Set\+Active}}
+\index{Set\+Active@{Set\+Active}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Set\+Active()}{SetActive()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+sets gamobject active or inactive 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the active state\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_prompt_a409ac8c36942c10be65238a7281932c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_interaction_prompt_a88851b5b82c1413a6aad2c02d24708f6}\label{class_interaction_prompt_a88851b5b82c1413a6aad2c02d24708f6}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Set\+Rotation@{Set\+Rotation}}
+\index{Set\+Rotation@{Set\+Rotation}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Set\+Rotation()}{SetRotation()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Set\+Rotation (\begin{DoxyParamCaption}\item[{Quaternion}]{rot }\end{DoxyParamCaption})}
+
+
+
+sets world rotation of gameobject 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rot} & world rotation\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_interaction_prompt_ac68329e8bcb18bc4556695f506d5b410}\label{class_interaction_prompt_ac68329e8bcb18bc4556695f506d5b410}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Set\+Text@{Set\+Text}}
+\index{Set\+Text@{Set\+Text}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Set\+Text()}{SetText()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Set\+Text (\begin{DoxyParamCaption}\item[{string}]{new\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+sets the text and forces a mesh update of the T\+M\+Pro object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+text} & the new text that should be displayed\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_interaction_prompt_ac68329e8bcb18bc4556695f506d5b410_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_interaction_prompt_ada65c2aa759ea18aa2ccf6ba8cd3843b}\label{class_interaction_prompt_ada65c2aa759ea18aa2ccf6ba8cd3843b}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!Start@{Start}}
+\index{Start@{Start}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Interaction\+Prompt.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_prompt_ada65c2aa759ea18aa2ccf6ba8cd3843b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_interaction_prompt_a2ede1aad42e153f5b4a3fafe4233e8be}\label{class_interaction_prompt_a2ede1aad42e153f5b4a3fafe4233e8be}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!obj@{obj}}
+\index{obj@{obj}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{obj}{obj}}
+{\footnotesize\ttfamily Game\+Object Interaction\+Prompt.\+obj\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the gamobject where between the player and it, the pop up text should appear 
+
+\mbox{\Hypertarget{class_interaction_prompt_a4fbdf117c9d51678d8e74c32b04e206a}\label{class_interaction_prompt_a4fbdf117c9d51678d8e74c32b04e206a}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!player@{player}}
+\index{player@{player}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} Interaction\+Prompt.\+player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the player for to whom the text should appear infront of 
+
+\mbox{\Hypertarget{class_interaction_prompt_a4636f2a267626c679099028ef84aecf7}\label{class_interaction_prompt_a4636f2a267626c679099028ef84aecf7}} 
+\index{Interaction\+Prompt@{Interaction\+Prompt}!text@{text}}
+\index{text@{text}!Interaction\+Prompt@{Interaction\+Prompt}}
+\subsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Interaction\+Prompt.\+text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+text field where text should be displayed 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Utility/\+Pop\+Up\+Text/\mbox{\hyperlink{_interaction_prompt_8cs}{Interaction\+Prompt.\+cs}}\end{DoxyCompactItemize}

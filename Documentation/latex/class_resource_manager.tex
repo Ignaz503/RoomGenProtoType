@@ -1,0 +1,146 @@
+\hypertarget{class_resource_manager}{}\section{Resource\+Manager Class Reference}
+\label{class_resource_manager}\index{Resource\+Manager@{Resource\+Manager}}
+
+
+protypte resource manager that should be run on the server  
+
+
+
+
+Collaboration diagram for Resource\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_resource_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_resource_manager_ad36cc6bc6286e385b6b51cca3a3284a2}{Add\+New\+Museum\+Type}} (string new\+Type)
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_resource_manager_a72e9243fdaf77f0fb479f0cf4070ea22}{Get\+Possible\+Museum\+Types}} ()
+\item 
+void \mbox{\hyperlink{class_resource_manager_a00d051848c81ffb1dbb180861895b127}{Add\+New\+Resource\+For\+Type}} (string type, Unity\+Engine.\+Object obj, Func$<$ Unity\+Engine.\+Object, byte\mbox{[}$\,$\mbox{]}$>$Serialize)
+\begin{DoxyCompactList}\small\item\em Saves a unity engine object to the corretct location \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_resource_manager_a9ed8a67faa621d30d9790c0847f45a72}{Get\+Number\+Of\+Resources\+For\+Type}} (string type)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_resource_manager}{Resource\+Manager}} \mbox{\hyperlink{class_resource_manager_a5980d46bdd1e2e1b4961ef63cc82d0cb}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_resource_manager_a735c18a05da5cee46ddd367f2ea2cbaa}{Resource\+Manager}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_resource_manager_a96bd19ebc1522ce7902e65246890b302}{resource\+Path}}
+\item 
+Hash\+Set$<$ string $>$ \mbox{\hyperlink{class_resource_manager_a85a0c1cff1b6a05750826a2f0efcbd6d}{Museum\+Types}}
+\item 
+string \mbox{\hyperlink{class_resource_manager_a01dc42a70cb973472fd9c2df8330f35a}{Resource\+Ending}} = \char`\"{}.res\char`\"{}
+\item 
+string \mbox{\hyperlink{class_resource_manager_a9577139e032703d0f36ef980dcd303ad}{Meta\+Data\+Ending}} = \char`\"{}.meta\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_resource_manager}{Resource\+Manager}} \mbox{\hyperlink{class_resource_manager_ad2220b6e0d46489a5ad32c6faf624b2e}{\+\_\+\+Instance}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+protypte resource manager that should be run on the server 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_resource_manager_a735c18a05da5cee46ddd367f2ea2cbaa}\label{class_resource_manager_a735c18a05da5cee46ddd367f2ea2cbaa}} 
+\index{Resource\+Manager@{Resource\+Manager}!Resource\+Manager@{Resource\+Manager}}
+\index{Resource\+Manager@{Resource\+Manager}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Resource\+Manager()}{ResourceManager()}}
+{\footnotesize\ttfamily Resource\+Manager.\+Resource\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_resource_manager_ad36cc6bc6286e385b6b51cca3a3284a2}\label{class_resource_manager_ad36cc6bc6286e385b6b51cca3a3284a2}} 
+\index{Resource\+Manager@{Resource\+Manager}!Add\+New\+Museum\+Type@{Add\+New\+Museum\+Type}}
+\index{Add\+New\+Museum\+Type@{Add\+New\+Museum\+Type}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Add\+New\+Museum\+Type()}{AddNewMuseumType()}}
+{\footnotesize\ttfamily void Resource\+Manager.\+Add\+New\+Museum\+Type (\begin{DoxyParamCaption}\item[{string}]{new\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_resource_manager_a00d051848c81ffb1dbb180861895b127}\label{class_resource_manager_a00d051848c81ffb1dbb180861895b127}} 
+\index{Resource\+Manager@{Resource\+Manager}!Add\+New\+Resource\+For\+Type@{Add\+New\+Resource\+For\+Type}}
+\index{Add\+New\+Resource\+For\+Type@{Add\+New\+Resource\+For\+Type}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Add\+New\+Resource\+For\+Type()}{AddNewResourceForType()}}
+{\footnotesize\ttfamily void Resource\+Manager.\+Add\+New\+Resource\+For\+Type (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{Unity\+Engine.\+Object}]{obj,  }\item[{Func$<$ Unity\+Engine.\+Object, byte\mbox{[}$\,$\mbox{]}$>$}]{Serialize }\end{DoxyParamCaption})}
+
+
+
+Saves a unity engine object to the corretct location 
+
+\mbox{\Hypertarget{class_resource_manager_a9ed8a67faa621d30d9790c0847f45a72}\label{class_resource_manager_a9ed8a67faa621d30d9790c0847f45a72}} 
+\index{Resource\+Manager@{Resource\+Manager}!Get\+Number\+Of\+Resources\+For\+Type@{Get\+Number\+Of\+Resources\+For\+Type}}
+\index{Get\+Number\+Of\+Resources\+For\+Type@{Get\+Number\+Of\+Resources\+For\+Type}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Number\+Of\+Resources\+For\+Type()}{GetNumberOfResourcesForType()}}
+{\footnotesize\ttfamily int Resource\+Manager.\+Get\+Number\+Of\+Resources\+For\+Type (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_resource_manager_a72e9243fdaf77f0fb479f0cf4070ea22}\label{class_resource_manager_a72e9243fdaf77f0fb479f0cf4070ea22}} 
+\index{Resource\+Manager@{Resource\+Manager}!Get\+Possible\+Museum\+Types@{Get\+Possible\+Museum\+Types}}
+\index{Get\+Possible\+Museum\+Types@{Get\+Possible\+Museum\+Types}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Possible\+Museum\+Types()}{GetPossibleMuseumTypes()}}
+{\footnotesize\ttfamily List$<$string$>$ Resource\+Manager.\+Get\+Possible\+Museum\+Types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_resource_manager_ad2220b6e0d46489a5ad32c6faf624b2e}\label{class_resource_manager_ad2220b6e0d46489a5ad32c6faf624b2e}} 
+\index{Resource\+Manager@{Resource\+Manager}!\+\_\+\+Instance@{\+\_\+\+Instance}}
+\index{\+\_\+\+Instance@{\+\_\+\+Instance}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+Instance}{\_Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_resource_manager}{Resource\+Manager}} Resource\+Manager.\+\_\+\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_resource_manager_a9577139e032703d0f36ef980dcd303ad}\label{class_resource_manager_a9577139e032703d0f36ef980dcd303ad}} 
+\index{Resource\+Manager@{Resource\+Manager}!Meta\+Data\+Ending@{Meta\+Data\+Ending}}
+\index{Meta\+Data\+Ending@{Meta\+Data\+Ending}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Meta\+Data\+Ending}{MetaDataEnding}}
+{\footnotesize\ttfamily string Resource\+Manager.\+Meta\+Data\+Ending = \char`\"{}.meta\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_resource_manager_a85a0c1cff1b6a05750826a2f0efcbd6d}\label{class_resource_manager_a85a0c1cff1b6a05750826a2f0efcbd6d}} 
+\index{Resource\+Manager@{Resource\+Manager}!Museum\+Types@{Museum\+Types}}
+\index{Museum\+Types@{Museum\+Types}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Museum\+Types}{MuseumTypes}}
+{\footnotesize\ttfamily Hash\+Set$<$string$>$ Resource\+Manager.\+Museum\+Types\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_resource_manager_a01dc42a70cb973472fd9c2df8330f35a}\label{class_resource_manager_a01dc42a70cb973472fd9c2df8330f35a}} 
+\index{Resource\+Manager@{Resource\+Manager}!Resource\+Ending@{Resource\+Ending}}
+\index{Resource\+Ending@{Resource\+Ending}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Resource\+Ending}{ResourceEnding}}
+{\footnotesize\ttfamily string Resource\+Manager.\+Resource\+Ending = \char`\"{}.res\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_resource_manager_a96bd19ebc1522ce7902e65246890b302}\label{class_resource_manager_a96bd19ebc1522ce7902e65246890b302}} 
+\index{Resource\+Manager@{Resource\+Manager}!resource\+Path@{resource\+Path}}
+\index{resource\+Path@{resource\+Path}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{resource\+Path}{resourcePath}}
+{\footnotesize\ttfamily string Resource\+Manager.\+resource\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_resource_manager_a5980d46bdd1e2e1b4961ef63cc82d0cb}\label{class_resource_manager_a5980d46bdd1e2e1b4961ef63cc82d0cb}} 
+\index{Resource\+Manager@{Resource\+Manager}!Instance@{Instance}}
+\index{Instance@{Instance}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_resource_manager}{Resource\+Manager}} Resource\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Resources/\+Resource\+Manager/\mbox{\hyperlink{_resource_manager_8cs}{Resource\+Manager.\+cs}}\end{DoxyCompactItemize}

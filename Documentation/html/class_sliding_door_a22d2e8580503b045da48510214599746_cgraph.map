@@ -1,0 +1,4 @@
+<map id="SlidingDoor.Close" name="SlidingDoor.Close">
+<area shape="rect" id="node2" href="$class_sliding_door.html#adcfa4000b6eafa6ec8b6ec335dbd5efe" title="coroutine to close the door " alt="" coords="179,5,352,32"/>
+<area shape="rect" id="node3" href="$class_base_door.html#a3ce14aa6aca622f9d18e7054e76ec8d2" title="wrapper function to invoke event from sub classes " alt="" coords="400,5,560,32"/>
+</map>

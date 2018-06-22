@@ -1,0 +1,4 @@
+<map id="Museum.TransformTileCoordIntoOneD" name="Museum.TransformTileCoordIntoOneD">
+<area shape="rect" id="node2" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="240,13,369,39"/>
+<area shape="rect" id="node3" href="$class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="417,13,592,39"/>
+</map>

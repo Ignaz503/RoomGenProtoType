@@ -1,0 +1,5 @@
+<map id="InteractionPrompt.PlaceBetween" name="InteractionPrompt.PlaceBetween">
+<area shape="rect" id="node2" href="$class_interaction_prompt.html#a98a4e4f01398f5d5f5e56802e67cffd2" title="Places gamobject between two other gamobjects and rotates it so that it looks at the first param ..." alt="" coords="264,23,475,65"/>
+<area shape="rect" id="node3" href="$class_interaction_prompt.html#ada65c2aa759ea18aa2ccf6ba8cd3843b" title="InteractionPrompt.Start" alt="" coords="542,5,698,32"/>
+<area shape="rect" id="node4" href="$class_interaction_prompt.html#abdf8e29663a41a36dc2db027f3187c49" title="InteractionPrompt.LateUpdate" alt="" coords="523,56,717,83"/>
+</map>

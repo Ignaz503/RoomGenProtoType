@@ -1,0 +1,100 @@
+\hypertarget{class_base_room_type_placable_cheker}{}\section{Base\+Room\+Type\+Placable\+Cheker Class Reference}
+\label{class_base_room_type_placable_cheker}\index{Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}}
+
+
+checks for the room types defined by me if they are placable at a certain location in the musem  
+
+
+
+
+Inheritance diagram for Base\+Room\+Type\+Placable\+Cheker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_base_room_type_placable_cheker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\+Room\+Type\+Placable\+Cheker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_base_room_type_placable_cheker__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_room_type_placable_cheker_a5d13e7de140af3ba2a4aa12e3724f333}{Base\+Room\+Type\+Placable\+Cheker}} (\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} type)
+\item 
+virtual bool \mbox{\hyperlink{class_base_room_type_placable_cheker_a1081710d512b5f2496d390ece6cdbadd}{Check\+If\+Placable}} (Vector2\+Int origin, out List$<$ Vector2\+Int\mbox{[}$\,$\mbox{]}$>$ possible\+Sequences, \mbox{\hyperlink{class_museum}{Museum}} virt\+Muse)
+\begin{DoxyCompactList}\small\item\em function that checks if a room is placable at this location in the museum when the musem is gnerated \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Vector2\+Int\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_base_room_type_placable_cheker_aa1c2ec3105266167905e9be9af7a82be}{step\+Sequences}}
+\begin{DoxyCompactList}\small\item\em the type for which this placable checker has been defined \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+checks for the room types defined by me if they are placable at a certain location in the musem 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_base_room_type_placable_cheker_a5d13e7de140af3ba2a4aa12e3724f333}\label{class_base_room_type_placable_cheker_a5d13e7de140af3ba2a4aa12e3724f333}} 
+\index{Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}!Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}}
+\index{Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}!Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}}
+\subsubsection{\texorpdfstring{Base\+Room\+Type\+Placable\+Cheker()}{BaseRoomTypePlacableCheker()}}
+{\footnotesize\ttfamily Base\+Room\+Type\+Placable\+Cheker.\+Base\+Room\+Type\+Placable\+Cheker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_room_type_placable_cheker_a1081710d512b5f2496d390ece6cdbadd}\label{class_base_room_type_placable_cheker_a1081710d512b5f2496d390ece6cdbadd}} 
+\index{Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}!Check\+If\+Placable@{Check\+If\+Placable}}
+\index{Check\+If\+Placable@{Check\+If\+Placable}!Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}}
+\subsubsection{\texorpdfstring{Check\+If\+Placable()}{CheckIfPlacable()}}
+{\footnotesize\ttfamily virtual bool Base\+Room\+Type\+Placable\+Cheker.\+Check\+If\+Placable (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{origin,  }\item[{out List$<$ Vector2\+Int\mbox{[}$\,$\mbox{]}$>$}]{possible\+Sequences,  }\item[{\mbox{\hyperlink{class_museum}{Museum}}}]{virt\+Muse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function that checks if a room is placable at this location in the museum when the musem is gnerated 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & the origin position of the room\\
+\hline
+{\em possible\+Sequences} & out of all the poss directions of steps to build this room type\\
+\hline
+{\em virt\+Muse} & the virtual museum the room should be placed in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ture if room is placable, false if not
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_i_room_placable_checker_ab4a1591854373fc3b48619dbeb1e2755}{I\+Room\+Placable\+Checker}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_base_room_type_placable_cheker_aa1c2ec3105266167905e9be9af7a82be}\label{class_base_room_type_placable_cheker_aa1c2ec3105266167905e9be9af7a82be}} 
+\index{Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}!step\+Sequences@{step\+Sequences}}
+\index{step\+Sequences@{step\+Sequences}!Base\+Room\+Type\+Placable\+Cheker@{Base\+Room\+Type\+Placable\+Cheker}}
+\subsubsection{\texorpdfstring{step\+Sequences}{stepSequences}}
+{\footnotesize\ttfamily List$<$Vector2\+Int\mbox{[}$\,$\mbox{]}$>$ Base\+Room\+Type\+Placable\+Cheker.\+step\+Sequences\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the type for which this placable checker has been defined 
+
+the possible steps one can take from the base tile we want to place the room at that can be taken to build this rom shape 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\+Room\+\_\+\+Walls/\+Room\+Placable\+Checkers/\mbox{\hyperlink{_base_room_placable_checker_8cs}{Base\+Room\+Placable\+Checker.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,335 @@
+\hypertarget{class_single_hinge_door}{}\section{Single\+Hinge\+Door Class Reference}
+\label{class_single_hinge_door}\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+
+
+single hinged door that rotates open on a single corner  
+
+
+
+
+Inheritance diagram for Single\+Hinge\+Door\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_single_hinge_door__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Single\+Hinge\+Door\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_single_hinge_door__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_single_hinge_door_a19848e36fb259f92594916d1af76d3b4}{Close}} ()
+\begin{DoxyCompactList}\small\item\em function called to close door \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_single_hinge_door_a329ff33388675ec531996bdb33dd0c70}{Lock}} (string key)
+\begin{DoxyCompactList}\small\item\em function called to lock a door closed \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_single_hinge_door_aea7072ec0a9ea4fc80f24dc400681478}{Lock\+Open}} ()
+\begin{DoxyCompactList}\small\item\em function to lock a door open and stop it from closing \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_single_hinge_door_ad48e670701a9e9d35f97de3b8ff36208}{Open}} ()
+\begin{DoxyCompactList}\small\item\em function called to open the door \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_single_hinge_door_a130d674b08d4b9e8028b08ef2084ab77}{Unlock}} (string key)
+\begin{DoxyCompactList}\small\item\em function to unlock a door if it is locked \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_single_hinge_door_a5e5785f02f35b8b109d4c50d3f912013}{Unlock\+Open}} ()
+\begin{DoxyCompactList}\small\item\em function to unlock a door from it\textquotesingle{}s forced open state \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_single_hinge_door_a66856e16ddf504f379a4ee5601f295c6}{Start}} ()
+\item 
+I\+Enumerator \mbox{\hyperlink{class_single_hinge_door_ae0aa0776b9f80616a0b2a35d968101ad}{Open\+Coroutine}} ()
+\begin{DoxyCompactList}\small\item\em coroutine that opens the door \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_single_hinge_door_a6b1760cbc6ac5ed4c0e9d7ecb10d2606}{Close\+Coroutine}} ()
+\begin{DoxyCompactList}\small\item\em coroutine to close the door \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_single_hinge_door_a11558ae80f3e4b73b10872c16e37d411}{parent\+Trans}}
+\begin{DoxyCompactList}\small\item\em transform of the parent \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_single_hinge_door_af4ee5d93ff333b25ba9e9555ae6911b7}{base\+Rotation}}
+\begin{DoxyCompactList}\small\item\em rotation of door when close \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_single_hinge_door_ad7088149f79d6d1834f30b63634a7794}{target\+Y\+Rotation}}
+\begin{DoxyCompactList}\small\item\em rotation that door has when open \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_single_hinge_door_ab99dc842767a0d88cdf75137d51161eb}{current\+Y\+Rotation}}
+\begin{DoxyCompactList}\small\item\em current rotation of the door \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_single_hinge_door_a19b06c100fb6addbc4581a4b8e1ac82a}{Point\+To\+Rotate\+Around}}
+\begin{DoxyCompactList}\small\item\em the point the door rotates around \end{DoxyCompactList}\item 
+Coroutine \mbox{\hyperlink{class_single_hinge_door_a5a60ac7c32f52c7c698543a9ab961078}{open\+Coroutine}}
+\begin{DoxyCompactList}\small\item\em corutine ref when door is opening \end{DoxyCompactList}\item 
+Coroutine \mbox{\hyperlink{class_single_hinge_door_aa313b783db03dc2ca95a49dfcb001d64}{close\+Coroutine}}
+\begin{DoxyCompactList}\small\item\em coroutine ref when door is closing \end{DoxyCompactList}\item 
+Box\+Collider \mbox{\hyperlink{class_single_hinge_door_ab70e6007764e1391e7b8be75b988dadd}{box\+Collider}}
+\begin{DoxyCompactList}\small\item\em the doors box collider disabled whilst opening or closing active when open or closed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+single hinged door that rotates open on a single corner 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_single_hinge_door_a19848e36fb259f92594916d1af76d3b4}\label{class_single_hinge_door_a19848e36fb259f92594916d1af76d3b4}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Close@{Close}}
+\index{Close@{Close}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily override void Single\+Hinge\+Door.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function called to close door 
+
+
+
+Implements \mbox{\hyperlink{class_base_door_a94151e5cbf90bd3d2b55f339b87916c7}{Base\+Door}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_single_hinge_door_a19848e36fb259f92594916d1af76d3b4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_single_hinge_door_a6b1760cbc6ac5ed4c0e9d7ecb10d2606}\label{class_single_hinge_door_a6b1760cbc6ac5ed4c0e9d7ecb10d2606}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Close\+Coroutine@{Close\+Coroutine}}
+\index{Close\+Coroutine@{Close\+Coroutine}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Close\+Coroutine()}{CloseCoroutine()}}
+{\footnotesize\ttfamily I\+Enumerator Single\+Hinge\+Door.\+Close\+Coroutine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+coroutine to close the door 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_single_hinge_door_a6b1760cbc6ac5ed4c0e9d7ecb10d2606_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_single_hinge_door_a6b1760cbc6ac5ed4c0e9d7ecb10d2606_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_single_hinge_door_a329ff33388675ec531996bdb33dd0c70}\label{class_single_hinge_door_a329ff33388675ec531996bdb33dd0c70}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Lock@{Lock}}
+\index{Lock@{Lock}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Lock()}{Lock()}}
+{\footnotesize\ttfamily override void Single\+Hinge\+Door.\+Lock (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function called to lock a door closed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key needed to lock the door\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_base_door_a2b616c52626299f25ac25f7deab44dc4}{Base\+Door}}.
+
+\mbox{\Hypertarget{class_single_hinge_door_aea7072ec0a9ea4fc80f24dc400681478}\label{class_single_hinge_door_aea7072ec0a9ea4fc80f24dc400681478}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Lock\+Open@{Lock\+Open}}
+\index{Lock\+Open@{Lock\+Open}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Lock\+Open()}{LockOpen()}}
+{\footnotesize\ttfamily override void Single\+Hinge\+Door.\+Lock\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function to lock a door open and stop it from closing 
+
+
+
+Implements \mbox{\hyperlink{class_base_door_a9a851525c3b6e878bec459992ac75408}{Base\+Door}}.
+
+\mbox{\Hypertarget{class_single_hinge_door_ad48e670701a9e9d35f97de3b8ff36208}\label{class_single_hinge_door_ad48e670701a9e9d35f97de3b8ff36208}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Open@{Open}}
+\index{Open@{Open}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily override void Single\+Hinge\+Door.\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function called to open the door 
+
+
+
+Implements \mbox{\hyperlink{class_base_door_a418df6f73cc5c56b6989c0512a6a909b}{Base\+Door}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_single_hinge_door_ad48e670701a9e9d35f97de3b8ff36208_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_single_hinge_door_ae0aa0776b9f80616a0b2a35d968101ad}\label{class_single_hinge_door_ae0aa0776b9f80616a0b2a35d968101ad}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Open\+Coroutine@{Open\+Coroutine}}
+\index{Open\+Coroutine@{Open\+Coroutine}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Open\+Coroutine()}{OpenCoroutine()}}
+{\footnotesize\ttfamily I\+Enumerator Single\+Hinge\+Door.\+Open\+Coroutine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+coroutine that opens the door 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_single_hinge_door_ae0aa0776b9f80616a0b2a35d968101ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_single_hinge_door_ae0aa0776b9f80616a0b2a35d968101ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_single_hinge_door_a66856e16ddf504f379a4ee5601f295c6}\label{class_single_hinge_door_a66856e16ddf504f379a4ee5601f295c6}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Start@{Start}}
+\index{Start@{Start}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Single\+Hinge\+Door.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_single_hinge_door_a130d674b08d4b9e8028b08ef2084ab77}\label{class_single_hinge_door_a130d674b08d4b9e8028b08ef2084ab77}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Unlock()}{Unlock()}}
+{\footnotesize\ttfamily override void Single\+Hinge\+Door.\+Unlock (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function to unlock a door if it is locked 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key needed to unlock it\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_base_door_a1fe85317a4742aec4d03deb7c0d52fd2}{Base\+Door}}.
+
+\mbox{\Hypertarget{class_single_hinge_door_a5e5785f02f35b8b109d4c50d3f912013}\label{class_single_hinge_door_a5e5785f02f35b8b109d4c50d3f912013}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Unlock\+Open@{Unlock\+Open}}
+\index{Unlock\+Open@{Unlock\+Open}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Unlock\+Open()}{UnlockOpen()}}
+{\footnotesize\ttfamily override void Single\+Hinge\+Door.\+Unlock\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function to unlock a door from it\textquotesingle{}s forced open state 
+
+
+
+Implements \mbox{\hyperlink{class_base_door_aae09177b7a5578ede6d44f758551684e}{Base\+Door}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_single_hinge_door_af4ee5d93ff333b25ba9e9555ae6911b7}\label{class_single_hinge_door_af4ee5d93ff333b25ba9e9555ae6911b7}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!base\+Rotation@{base\+Rotation}}
+\index{base\+Rotation@{base\+Rotation}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{base\+Rotation}{baseRotation}}
+{\footnotesize\ttfamily Vector3 Single\+Hinge\+Door.\+base\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+rotation of door when close 
+
+\mbox{\Hypertarget{class_single_hinge_door_ab70e6007764e1391e7b8be75b988dadd}\label{class_single_hinge_door_ab70e6007764e1391e7b8be75b988dadd}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!box\+Collider@{box\+Collider}}
+\index{box\+Collider@{box\+Collider}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{box\+Collider}{boxCollider}}
+{\footnotesize\ttfamily Box\+Collider Single\+Hinge\+Door.\+box\+Collider\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the doors box collider disabled whilst opening or closing active when open or closed 
+
+\mbox{\Hypertarget{class_single_hinge_door_aa313b783db03dc2ca95a49dfcb001d64}\label{class_single_hinge_door_aa313b783db03dc2ca95a49dfcb001d64}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!close\+Coroutine@{close\+Coroutine}}
+\index{close\+Coroutine@{close\+Coroutine}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{close\+Coroutine}{closeCoroutine}}
+{\footnotesize\ttfamily Coroutine Single\+Hinge\+Door.\+close\+Coroutine\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+coroutine ref when door is closing 
+
+\mbox{\Hypertarget{class_single_hinge_door_ab99dc842767a0d88cdf75137d51161eb}\label{class_single_hinge_door_ab99dc842767a0d88cdf75137d51161eb}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!current\+Y\+Rotation@{current\+Y\+Rotation}}
+\index{current\+Y\+Rotation@{current\+Y\+Rotation}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{current\+Y\+Rotation}{currentYRotation}}
+{\footnotesize\ttfamily float Single\+Hinge\+Door.\+current\+Y\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current rotation of the door 
+
+\mbox{\Hypertarget{class_single_hinge_door_a5a60ac7c32f52c7c698543a9ab961078}\label{class_single_hinge_door_a5a60ac7c32f52c7c698543a9ab961078}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!open\+Coroutine@{open\+Coroutine}}
+\index{open\+Coroutine@{open\+Coroutine}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{open\+Coroutine}{openCoroutine}}
+{\footnotesize\ttfamily Coroutine Single\+Hinge\+Door.\+open\+Coroutine\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+corutine ref when door is opening 
+
+\mbox{\Hypertarget{class_single_hinge_door_a11558ae80f3e4b73b10872c16e37d411}\label{class_single_hinge_door_a11558ae80f3e4b73b10872c16e37d411}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!parent\+Trans@{parent\+Trans}}
+\index{parent\+Trans@{parent\+Trans}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{parent\+Trans}{parentTrans}}
+{\footnotesize\ttfamily Transform Single\+Hinge\+Door.\+parent\+Trans\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+transform of the parent 
+
+\mbox{\Hypertarget{class_single_hinge_door_a19b06c100fb6addbc4581a4b8e1ac82a}\label{class_single_hinge_door_a19b06c100fb6addbc4581a4b8e1ac82a}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!Point\+To\+Rotate\+Around@{Point\+To\+Rotate\+Around}}
+\index{Point\+To\+Rotate\+Around@{Point\+To\+Rotate\+Around}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{Point\+To\+Rotate\+Around}{PointToRotateAround}}
+{\footnotesize\ttfamily Vector3 Single\+Hinge\+Door.\+Point\+To\+Rotate\+Around\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the point the door rotates around 
+
+\mbox{\Hypertarget{class_single_hinge_door_ad7088149f79d6d1834f30b63634a7794}\label{class_single_hinge_door_ad7088149f79d6d1834f30b63634a7794}} 
+\index{Single\+Hinge\+Door@{Single\+Hinge\+Door}!target\+Y\+Rotation@{target\+Y\+Rotation}}
+\index{target\+Y\+Rotation@{target\+Y\+Rotation}!Single\+Hinge\+Door@{Single\+Hinge\+Door}}
+\subsubsection{\texorpdfstring{target\+Y\+Rotation}{targetYRotation}}
+{\footnotesize\ttfamily float Single\+Hinge\+Door.\+target\+Y\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+rotation that door has when open 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Door/\mbox{\hyperlink{_single_hinge_door_8cs}{Single\+Hinge\+Door.\+cs}}\end{DoxyCompactItemize}

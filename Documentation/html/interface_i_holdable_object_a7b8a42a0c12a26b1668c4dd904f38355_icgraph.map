@@ -1,0 +1,3 @@
+<map id="IHoldableObject.OnGrabed" name="IHoldableObject.OnGrabed">
+<area shape="rect" id="node2" href="$class_player_hand.html#a64a86af904a77f4a0b92d72bd5fdf43c" title="subscribes object to all relevent events and calles on obj grabbed " alt="" coords="229,5,388,32"/>
+</map>

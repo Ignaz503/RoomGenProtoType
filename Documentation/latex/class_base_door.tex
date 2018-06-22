@@ -1,0 +1,314 @@
+\hypertarget{class_base_door}{}\section{Base\+Door Class Reference}
+\label{class_base_door}\index{Base\+Door@{Base\+Door}}
+
+
+Inheritance diagram for Base\+Door\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{class_base_door__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\+Door\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_base_door__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43}{Door\+State}} \{ \newline
+\mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43ac3bf447eabe632720a3aa1a7ce401274}{Door\+State.\+Open}}, 
+\mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43a9bd99a0beea48f10663fc4a7d7a33140}{Door\+State.\+Opening}}, 
+\mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43a03f4a47830f97377a35321051685071e}{Door\+State.\+Closed}}, 
+\mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43a5c8de6f894682fdb1786037b2040a26e}{Door\+State.\+Closing}}, 
+\newline
+\mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43a79e87b5071e987722119d21ac38e9b0b}{Door\+State.\+Locked\+Close}}, 
+\mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43ac3c271ab63e95ff3d1b0e1eac01c9e90}{Door\+State.\+Locked\+Open}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_base_door_a418df6f73cc5c56b6989c0512a6a909b}{Open}} ()
+\begin{DoxyCompactList}\small\item\em function called to open the door \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_base_door_a94151e5cbf90bd3d2b55f339b87916c7}{Close}} ()
+\begin{DoxyCompactList}\small\item\em function called to close door \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_base_door_a2b616c52626299f25ac25f7deab44dc4}{Lock}} (string key)
+\begin{DoxyCompactList}\small\item\em function called to lock a door closed \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_base_door_a1fe85317a4742aec4d03deb7c0d52fd2}{Unlock}} (string key)
+\begin{DoxyCompactList}\small\item\em function to unlock a door if it is locked \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_base_door_a9a851525c3b6e878bec459992ac75408}{Lock\+Open}} ()
+\begin{DoxyCompactList}\small\item\em function to lock a door open and stop it from closing \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_base_door_aae09177b7a5578ede6d44f758551684e}{Unlock\+Open}} ()
+\begin{DoxyCompactList}\small\item\em function to unlock a door from it\textquotesingle{}s forced open state \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_base_door_af53bd804dcee24b1f2019c2d2e8e03c6}{On\+Door\+Open}} ()
+\begin{DoxyCompactList}\small\item\em wrapper class to invoke event from sub classes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_door_a3ce14aa6aca622f9d18e7054e76ec8d2}{On\+Door\+Close}} ()
+\begin{DoxyCompactList}\small\item\em wrapper function to invoke event from sub classes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43}{Door\+State}} \mbox{\hyperlink{class_base_door_a79de3a0eaae4ea2749f384224dce6692}{current\+State}}
+\begin{DoxyCompactList}\small\item\em the current state of the door \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_base_door_aace8dcf06aaae9d78ebd0d55931ab3e3}{movement\+Speed}}
+\begin{DoxyCompactList}\small\item\em the movement speed of the door when opening and closing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ \mbox{\hyperlink{class_base_door}{Base\+Door}} $>$ \mbox{\hyperlink{class_base_door_a88b84b3eafa96f6a3290b0aa5b55d9c0}{On\+Open}}
+\begin{DoxyCompactList}\small\item\em event invoked when the door reaches open state \end{DoxyCompactList}\item 
+Action$<$ \mbox{\hyperlink{class_base_door}{Base\+Door}} $>$ \mbox{\hyperlink{class_base_door_a382fd7054c500c9075ef67792f39eab5}{On\+Close}}
+\begin{DoxyCompactList}\small\item\em event invoked when the door reaches closed state \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_base_door_a22e038571daf23b362eb8aaedc78cb43}\label{class_base_door_a22e038571daf23b362eb8aaedc78cb43}} 
+\index{Base\+Door@{Base\+Door}!Door\+State@{Door\+State}}
+\index{Door\+State@{Door\+State}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{Door\+State}{DoorState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43}{Base\+Door.\+Door\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Open@{Open}!Base\+Door@{Base\+Door}}\index{Base\+Door@{Base\+Door}!Open@{Open}}}\mbox{\Hypertarget{class_base_door_a22e038571daf23b362eb8aaedc78cb43ac3bf447eabe632720a3aa1a7ce401274}\label{class_base_door_a22e038571daf23b362eb8aaedc78cb43ac3bf447eabe632720a3aa1a7ce401274}} 
+Open&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Opening@{Opening}!Base\+Door@{Base\+Door}}\index{Base\+Door@{Base\+Door}!Opening@{Opening}}}\mbox{\Hypertarget{class_base_door_a22e038571daf23b362eb8aaedc78cb43a9bd99a0beea48f10663fc4a7d7a33140}\label{class_base_door_a22e038571daf23b362eb8aaedc78cb43a9bd99a0beea48f10663fc4a7d7a33140}} 
+Opening&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Closed@{Closed}!Base\+Door@{Base\+Door}}\index{Base\+Door@{Base\+Door}!Closed@{Closed}}}\mbox{\Hypertarget{class_base_door_a22e038571daf23b362eb8aaedc78cb43a03f4a47830f97377a35321051685071e}\label{class_base_door_a22e038571daf23b362eb8aaedc78cb43a03f4a47830f97377a35321051685071e}} 
+Closed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Closing@{Closing}!Base\+Door@{Base\+Door}}\index{Base\+Door@{Base\+Door}!Closing@{Closing}}}\mbox{\Hypertarget{class_base_door_a22e038571daf23b362eb8aaedc78cb43a5c8de6f894682fdb1786037b2040a26e}\label{class_base_door_a22e038571daf23b362eb8aaedc78cb43a5c8de6f894682fdb1786037b2040a26e}} 
+Closing&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Locked\+Close@{Locked\+Close}!Base\+Door@{Base\+Door}}\index{Base\+Door@{Base\+Door}!Locked\+Close@{Locked\+Close}}}\mbox{\Hypertarget{class_base_door_a22e038571daf23b362eb8aaedc78cb43a79e87b5071e987722119d21ac38e9b0b}\label{class_base_door_a22e038571daf23b362eb8aaedc78cb43a79e87b5071e987722119d21ac38e9b0b}} 
+Locked\+Close&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Locked\+Open@{Locked\+Open}!Base\+Door@{Base\+Door}}\index{Base\+Door@{Base\+Door}!Locked\+Open@{Locked\+Open}}}\mbox{\Hypertarget{class_base_door_a22e038571daf23b362eb8aaedc78cb43ac3c271ab63e95ff3d1b0e1eac01c9e90}\label{class_base_door_a22e038571daf23b362eb8aaedc78cb43ac3c271ab63e95ff3d1b0e1eac01c9e90}} 
+Locked\+Open&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_door_a94151e5cbf90bd3d2b55f339b87916c7}\label{class_base_door_a94151e5cbf90bd3d2b55f339b87916c7}} 
+\index{Base\+Door@{Base\+Door}!Close@{Close}}
+\index{Close@{Close}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily abstract void Base\+Door.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function called to close door 
+
+
+
+Implemented in \mbox{\hyperlink{class_single_hinge_door_a19848e36fb259f92594916d1af76d3b4}{Single\+Hinge\+Door}}, and \mbox{\hyperlink{class_sliding_door_a22d2e8580503b045da48510214599746}{Sliding\+Door}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_base_door_a94151e5cbf90bd3d2b55f339b87916c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_door_a2b616c52626299f25ac25f7deab44dc4}\label{class_base_door_a2b616c52626299f25ac25f7deab44dc4}} 
+\index{Base\+Door@{Base\+Door}!Lock@{Lock}}
+\index{Lock@{Lock}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{Lock()}{Lock()}}
+{\footnotesize\ttfamily abstract void Base\+Door.\+Lock (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function called to lock a door closed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key needed to lock the door\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_single_hinge_door_a329ff33388675ec531996bdb33dd0c70}{Single\+Hinge\+Door}}, and \mbox{\hyperlink{class_sliding_door_a2b21b6ea3181ac95520e0490c900d1a6}{Sliding\+Door}}.
+
+\mbox{\Hypertarget{class_base_door_a9a851525c3b6e878bec459992ac75408}\label{class_base_door_a9a851525c3b6e878bec459992ac75408}} 
+\index{Base\+Door@{Base\+Door}!Lock\+Open@{Lock\+Open}}
+\index{Lock\+Open@{Lock\+Open}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{Lock\+Open()}{LockOpen()}}
+{\footnotesize\ttfamily abstract void Base\+Door.\+Lock\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function to lock a door open and stop it from closing 
+
+
+
+Implemented in \mbox{\hyperlink{class_single_hinge_door_aea7072ec0a9ea4fc80f24dc400681478}{Single\+Hinge\+Door}}, and \mbox{\hyperlink{class_sliding_door_aca96469919dc50b5b3cc77cd6f4fc7d2}{Sliding\+Door}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_base_door_a9a851525c3b6e878bec459992ac75408_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_door_a3ce14aa6aca622f9d18e7054e76ec8d2}\label{class_base_door_a3ce14aa6aca622f9d18e7054e76ec8d2}} 
+\index{Base\+Door@{Base\+Door}!On\+Door\+Close@{On\+Door\+Close}}
+\index{On\+Door\+Close@{On\+Door\+Close}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{On\+Door\+Close()}{OnDoorClose()}}
+{\footnotesize\ttfamily void Base\+Door.\+On\+Door\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+wrapper function to invoke event from sub classes 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_door_a3ce14aa6aca622f9d18e7054e76ec8d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_door_af53bd804dcee24b1f2019c2d2e8e03c6}\label{class_base_door_af53bd804dcee24b1f2019c2d2e8e03c6}} 
+\index{Base\+Door@{Base\+Door}!On\+Door\+Open@{On\+Door\+Open}}
+\index{On\+Door\+Open@{On\+Door\+Open}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{On\+Door\+Open()}{OnDoorOpen()}}
+{\footnotesize\ttfamily void Base\+Door.\+On\+Door\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+wrapper class to invoke event from sub classes 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_door_af53bd804dcee24b1f2019c2d2e8e03c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_door_a418df6f73cc5c56b6989c0512a6a909b}\label{class_base_door_a418df6f73cc5c56b6989c0512a6a909b}} 
+\index{Base\+Door@{Base\+Door}!Open@{Open}}
+\index{Open@{Open}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily abstract void Base\+Door.\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function called to open the door 
+
+
+
+Implemented in \mbox{\hyperlink{class_single_hinge_door_ad48e670701a9e9d35f97de3b8ff36208}{Single\+Hinge\+Door}}, and \mbox{\hyperlink{class_sliding_door_aaf090e96cc143eb5ed3eaf875045efc9}{Sliding\+Door}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_base_door_a418df6f73cc5c56b6989c0512a6a909b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_door_a1fe85317a4742aec4d03deb7c0d52fd2}\label{class_base_door_a1fe85317a4742aec4d03deb7c0d52fd2}} 
+\index{Base\+Door@{Base\+Door}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{Unlock()}{Unlock()}}
+{\footnotesize\ttfamily abstract void Base\+Door.\+Unlock (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function to unlock a door if it is locked 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key needed to unlock it\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_single_hinge_door_a130d674b08d4b9e8028b08ef2084ab77}{Single\+Hinge\+Door}}, and \mbox{\hyperlink{class_sliding_door_a259817872880d475d54ba9721a6db5cc}{Sliding\+Door}}.
+
+\mbox{\Hypertarget{class_base_door_aae09177b7a5578ede6d44f758551684e}\label{class_base_door_aae09177b7a5578ede6d44f758551684e}} 
+\index{Base\+Door@{Base\+Door}!Unlock\+Open@{Unlock\+Open}}
+\index{Unlock\+Open@{Unlock\+Open}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{Unlock\+Open()}{UnlockOpen()}}
+{\footnotesize\ttfamily abstract void Base\+Door.\+Unlock\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+function to unlock a door from it\textquotesingle{}s forced open state 
+
+
+
+Implemented in \mbox{\hyperlink{class_single_hinge_door_a5e5785f02f35b8b109d4c50d3f912013}{Single\+Hinge\+Door}}, and \mbox{\hyperlink{class_sliding_door_af3b93ba6356b95277be1913224ad1415}{Sliding\+Door}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_base_door_a79de3a0eaae4ea2749f384224dce6692}\label{class_base_door_a79de3a0eaae4ea2749f384224dce6692}} 
+\index{Base\+Door@{Base\+Door}!current\+State@{current\+State}}
+\index{current\+State@{current\+State}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{current\+State}{currentState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_base_door_a22e038571daf23b362eb8aaedc78cb43}{Door\+State}} Base\+Door.\+current\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the current state of the door 
+
+\mbox{\Hypertarget{class_base_door_aace8dcf06aaae9d78ebd0d55931ab3e3}\label{class_base_door_aace8dcf06aaae9d78ebd0d55931ab3e3}} 
+\index{Base\+Door@{Base\+Door}!movement\+Speed@{movement\+Speed}}
+\index{movement\+Speed@{movement\+Speed}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{movement\+Speed}{movementSpeed}}
+{\footnotesize\ttfamily float Base\+Door.\+movement\+Speed\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the movement speed of the door when opening and closing 
+
+
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_base_door_a382fd7054c500c9075ef67792f39eab5}\label{class_base_door_a382fd7054c500c9075ef67792f39eab5}} 
+\index{Base\+Door@{Base\+Door}!On\+Close@{On\+Close}}
+\index{On\+Close@{On\+Close}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{On\+Close}{OnClose}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_base_door}{Base\+Door}}$>$ Base\+Door.\+On\+Close}
+
+
+
+event invoked when the door reaches closed state 
+
+\mbox{\Hypertarget{class_base_door_a88b84b3eafa96f6a3290b0aa5b55d9c0}\label{class_base_door_a88b84b3eafa96f6a3290b0aa5b55d9c0}} 
+\index{Base\+Door@{Base\+Door}!On\+Open@{On\+Open}}
+\index{On\+Open@{On\+Open}!Base\+Door@{Base\+Door}}
+\subsubsection{\texorpdfstring{On\+Open}{OnOpen}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_base_door}{Base\+Door}}$>$ Base\+Door.\+On\+Open}
+
+
+
+event invoked when the door reaches open state 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Door/\mbox{\hyperlink{_base_door_8cs}{Base\+Door.\+cs}}\end{DoxyCompactItemize}

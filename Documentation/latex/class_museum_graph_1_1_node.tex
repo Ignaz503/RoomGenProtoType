@@ -1,0 +1,153 @@
+\hypertarget{class_museum_graph_1_1_node}{}\section{Museum\+Graph.\+Node Class Reference}
+\label{class_museum_graph_1_1_node}\index{Museum\+Graph.\+Node@{Museum\+Graph.\+Node}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_museum_graph_1_1_node_a917a203c77b5aa5e65c7293ba896d2c1}{Node}} (uint node\+ID)
+\item 
+bool \mbox{\hyperlink{class_museum_graph_1_1_node_adecbc3b471d15c5480d4c13e9502ac27}{Add\+Edge}} (uint new\+Edge)
+\begin{DoxyCompactList}\small\item\em adss an edge to this node \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_museum_graph_1_1_node_a341a560512b816a8af059813480ef9da}{Equals}} (object obj)
+\item 
+override int \mbox{\hyperlink{class_museum_graph_1_1_node_adcc32750b64d61121c1431ffc41b0f8d}{Get\+Hash\+Code}} ()
+\item 
+override string \mbox{\hyperlink{class_museum_graph_1_1_node_a3bfacc4d5a119f353c81b197ad6a4642}{To\+String}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_museum_graph_1_1_node_afc85f1140ee37f6365863f34ac3482bc}{Connect\+Nodes}} (\mbox{\hyperlink{class_museum_graph_1_1_node}{Node}} a, \mbox{\hyperlink{class_museum_graph_1_1_node}{Node}} b)
+\begin{DoxyCompactList}\small\item\em creates edges between two nodes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+uint \mbox{\hyperlink{class_museum_graph_1_1_node_a6d459bfb4115130070c796f1179c27b2}{Node\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Unique id of node in this graph \end{DoxyCompactList}\item 
+Hash\+Set$<$ uint $>$ \mbox{\hyperlink{class_museum_graph_1_1_node_a1442b10b52f4d1819db3b035d9aa0dd5}{Edges}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em list of node ids where this node has edges to \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_museum_graph_1_1_node_a917a203c77b5aa5e65c7293ba896d2c1}\label{class_museum_graph_1_1_node_a917a203c77b5aa5e65c7293ba896d2c1}} 
+\index{Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}!Node@{Node}}
+\index{Node@{Node}!Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily Museum\+Graph.\+Node.\+Node (\begin{DoxyParamCaption}\item[{uint}]{node\+ID }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_graph_1_1_node_a917a203c77b5aa5e65c7293ba896d2c1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_museum_graph_1_1_node_adecbc3b471d15c5480d4c13e9502ac27}\label{class_museum_graph_1_1_node_adecbc3b471d15c5480d4c13e9502ac27}} 
+\index{Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}!Add\+Edge@{Add\+Edge}}
+\index{Add\+Edge@{Add\+Edge}!Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}}
+\subsubsection{\texorpdfstring{Add\+Edge()}{AddEdge()}}
+{\footnotesize\ttfamily bool Museum\+Graph.\+Node.\+Add\+Edge (\begin{DoxyParamCaption}\item[{uint}]{new\+Edge }\end{DoxyParamCaption})}
+
+
+
+adss an edge to this node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Edge} & the id of the node where the new edge goes to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_graph_1_1_node_adecbc3b471d15c5480d4c13e9502ac27_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_graph_1_1_node_afc85f1140ee37f6365863f34ac3482bc}\label{class_museum_graph_1_1_node_afc85f1140ee37f6365863f34ac3482bc}} 
+\index{Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}!Connect\+Nodes@{Connect\+Nodes}}
+\index{Connect\+Nodes@{Connect\+Nodes}!Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}}
+\subsubsection{\texorpdfstring{Connect\+Nodes()}{ConnectNodes()}}
+{\footnotesize\ttfamily static void Museum\+Graph.\+Node.\+Connect\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_museum_graph_1_1_node}{Node}}}]{a,  }\item[{\mbox{\hyperlink{class_museum_graph_1_1_node}{Node}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+creates edges between two nodes 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_graph_1_1_node_afc85f1140ee37f6365863f34ac3482bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_graph_1_1_node_afc85f1140ee37f6365863f34ac3482bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_graph_1_1_node_a341a560512b816a8af059813480ef9da}\label{class_museum_graph_1_1_node_a341a560512b816a8af059813480ef9da}} 
+\index{Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}!Equals@{Equals}}
+\index{Equals@{Equals}!Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}}
+\subsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily override bool Museum\+Graph.\+Node.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_graph_1_1_node_a341a560512b816a8af059813480ef9da_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_graph_1_1_node_adcc32750b64d61121c1431ffc41b0f8d}\label{class_museum_graph_1_1_node_adcc32750b64d61121c1431ffc41b0f8d}} 
+\index{Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}}
+\subsubsection{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}
+{\footnotesize\ttfamily override int Museum\+Graph.\+Node.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_museum_graph_1_1_node_a3bfacc4d5a119f353c81b197ad6a4642}\label{class_museum_graph_1_1_node_a3bfacc4d5a119f353c81b197ad6a4642}} 
+\index{Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily override string Museum\+Graph.\+Node.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_museum_graph_1_1_node_a1442b10b52f4d1819db3b035d9aa0dd5}\label{class_museum_graph_1_1_node_a1442b10b52f4d1819db3b035d9aa0dd5}} 
+\index{Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}!Edges@{Edges}}
+\index{Edges@{Edges}!Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}}
+\subsubsection{\texorpdfstring{Edges}{Edges}}
+{\footnotesize\ttfamily Hash\+Set$<$uint$>$ Museum\+Graph.\+Node.\+Edges\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+list of node ids where this node has edges to 
+
+\mbox{\Hypertarget{class_museum_graph_1_1_node_a6d459bfb4115130070c796f1179c27b2}\label{class_museum_graph_1_1_node_a6d459bfb4115130070c796f1179c27b2}} 
+\index{Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}!Node\+ID@{Node\+ID}}
+\index{Node\+ID@{Node\+ID}!Museum\+Graph\+::\+Node@{Museum\+Graph\+::\+Node}}
+\subsubsection{\texorpdfstring{Node\+ID}{NodeID}}
+{\footnotesize\ttfamily uint Museum\+Graph.\+Node.\+Node\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Unique id of node in this graph 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\mbox{\hyperlink{_museum_graph_8cs}{Museum\+Graph.\+cs}}\end{DoxyCompactItemize}

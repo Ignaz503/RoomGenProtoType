@@ -1,0 +1,401 @@
+\hypertarget{class_display}{}\section{Display Class Reference}
+\label{class_display}\index{Display@{Display}}
+
+
+The base class for displaying resources  
+
+
+
+
+Inheritance diagram for Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_display__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_display_a7f7abc559192ef7e8f4a03382d3492d7}{Display\+Type}} \{ \mbox{\hyperlink{class_display_a7f7abc559192ef7e8f4a03382d3492d7a6465642df623349960f917dcf68ba989}{Display\+Type.\+Mesh\+Display}}, 
+\mbox{\hyperlink{class_display_a7f7abc559192ef7e8f4a03382d3492d7a6790a36b5a0528029d4ed43891266fcb}{Display\+Type.\+Image\+Display}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_display_aa1d23e0e870c59c63e2f040e84ef0121}{Apply\+Resource}} (\mbox{\hyperlink{class_resource}{Resource}} resource)
+\begin{DoxyCompactList}\small\item\em Applies a resource to a display \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_display_a293687a976cbe23a09b7c6ddef36a48d}{Get\+Metadata}} ()
+\item 
+abstract void \mbox{\hyperlink{class_display_a57325251fbeac943cd48520e50f0bec4}{Set\+Up}} (\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} disp\+Info, Game\+Object parent)
+\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_display_a43fc2a6f19bbf2f1bdb676392b37e921}{Interact}} (\mbox{\hyperlink{class_player}{Player}} player)
+\begin{DoxyCompactList}\small\item\em called when the player interacts with this display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_display_a29f45efdf15e97219d2c8a614d699da8}{On\+Interaction\+Ended}} (\mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}} arg)
+\begin{DoxyCompactList}\small\item\em called from event when the interction is ended \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_display_a21c51fcf185403197a78a5acfd2065de}{Interaction\+Started}} ()
+\begin{DoxyCompactList}\small\item\em called when interaction with this display started used to maybe disable anything on the display gamobject if needed \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_display_a6fd38485267e1b78f1d1dfb589ec4ae0}{Interaction\+Ended}} ()
+\begin{DoxyCompactList}\small\item\em called when an interaction ends used to reactivate any component deactivated during the interaction \end{DoxyCompactList}\item 
+abstract \mbox{\hyperlink{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}{Type}} \mbox{\hyperlink{class_display_a81f07350cf50b3924f4fe269e1b4cf17}{Set\+To\+Default\+Interaction\+Behaviour}} ()
+\begin{DoxyCompactList}\small\item\em if the wanted behaviour is not possible or not exitent the behaviour will be set to this default \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}{Type}} \mbox{\hyperlink{class_display_aab913d6cfa4e9631e8129ed131e79196}{interaction\+Type}}
+\begin{DoxyCompactList}\small\item\em System type of the interaction the display provides \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_display_a7f7abc559192ef7e8f4a03382d3492d7}{Display\+Type}} \mbox{\hyperlink{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}{Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Type of display \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_display_a32b9644a140d330a9c51cfdbb6f6093c}{Object}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_meta_data}{Meta\+Data}} \mbox{\hyperlink{class_display_a9ae693bcb1553822aed7ae887a65591c}{Meta\+Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the metadata that further describes the resource held by the display \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_display_af8aa8a663725645f431095397ad802e6}{Set\+Interaction\+Type}} (string wanted\+\_\+behaviour)
+\begin{DoxyCompactList}\small\item\em sets the interaction type of this display \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_display_a76e9b246ebdd9a5799de8df52279f05e}{metadata}} = \char`\"{}All Speech is free speech\char`\"{}
+\begin{DoxyCompactList}\small\item\em old metadata string used for testing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_interaction}{Interaction}} \mbox{\hyperlink{class_display_af35594f083ed6dd4279183215719583f}{interaction}}
+\begin{DoxyCompactList}\small\item\em the interaction that is currently taking place \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class for displaying resources 
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_display_a7f7abc559192ef7e8f4a03382d3492d7}\label{class_display_a7f7abc559192ef7e8f4a03382d3492d7}} 
+\index{Display@{Display}!Display\+Type@{Display\+Type}}
+\index{Display\+Type@{Display\+Type}!Display@{Display}}
+\subsubsection{\texorpdfstring{Display\+Type}{DisplayType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_display_a7f7abc559192ef7e8f4a03382d3492d7}{Display.\+Display\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mesh\+Display@{Mesh\+Display}!Display@{Display}}\index{Display@{Display}!Mesh\+Display@{Mesh\+Display}}}\mbox{\Hypertarget{class_display_a7f7abc559192ef7e8f4a03382d3492d7a6465642df623349960f917dcf68ba989}\label{class_display_a7f7abc559192ef7e8f4a03382d3492d7a6465642df623349960f917dcf68ba989}} 
+Mesh\+Display&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Image\+Display@{Image\+Display}!Display@{Display}}\index{Display@{Display}!Image\+Display@{Image\+Display}}}\mbox{\Hypertarget{class_display_a7f7abc559192ef7e8f4a03382d3492d7a6790a36b5a0528029d4ed43891266fcb}\label{class_display_a7f7abc559192ef7e8f4a03382d3492d7a6790a36b5a0528029d4ed43891266fcb}} 
+Image\+Display&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_display_aa1d23e0e870c59c63e2f040e84ef0121}\label{class_display_aa1d23e0e870c59c63e2f040e84ef0121}} 
+\index{Display@{Display}!Apply\+Resource@{Apply\+Resource}}
+\index{Apply\+Resource@{Apply\+Resource}!Display@{Display}}
+\subsubsection{\texorpdfstring{Apply\+Resource()}{ApplyResource()}}
+{\footnotesize\ttfamily virtual void Display.\+Apply\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_resource}{Resource}}}]{resource }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Applies a resource to a display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_mesh_display_aff3b19b74dd530fdf299b4feee319691}{Mesh\+Display}}, \mbox{\hyperlink{class_image_display_a733a86ef960e7836442e858b5d52dbec}{Image\+Display}}, and \mbox{\hyperlink{class_center_image_display_aca1aaf14b20d538cafb0c7731b8be2bb}{Center\+Image\+Display}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_aa1d23e0e870c59c63e2f040e84ef0121_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_aa1d23e0e870c59c63e2f040e84ef0121_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_a293687a976cbe23a09b7c6ddef36a48d}\label{class_display_a293687a976cbe23a09b7c6ddef36a48d}} 
+\index{Display@{Display}!Get\+Metadata@{Get\+Metadata}}
+\index{Get\+Metadata@{Get\+Metadata}!Display@{Display}}
+\subsubsection{\texorpdfstring{Get\+Metadata()}{GetMetadata()}}
+{\footnotesize\ttfamily string Display.\+Get\+Metadata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_display_a43fc2a6f19bbf2f1bdb676392b37e921}\label{class_display_a43fc2a6f19bbf2f1bdb676392b37e921}} 
+\index{Display@{Display}!Interact@{Interact}}
+\index{Interact@{Interact}!Display@{Display}}
+\subsubsection{\texorpdfstring{Interact()}{Interact()}}
+{\footnotesize\ttfamily void Display.\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}}]{player }\end{DoxyParamCaption})}
+
+
+
+called when the player interacts with this display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_a736e28381ac0e7ca60f5fae2feb95afe}{I\+Interactable}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_a43fc2a6f19bbf2f1bdb676392b37e921_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_a6fd38485267e1b78f1d1dfb589ec4ae0}\label{class_display_a6fd38485267e1b78f1d1dfb589ec4ae0}} 
+\index{Display@{Display}!Interaction\+Ended@{Interaction\+Ended}}
+\index{Interaction\+Ended@{Interaction\+Ended}!Display@{Display}}
+\subsubsection{\texorpdfstring{Interaction\+Ended()}{InteractionEnded()}}
+{\footnotesize\ttfamily abstract void Display.\+Interaction\+Ended (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+called when an interaction ends used to reactivate any component deactivated during the interaction 
+
+
+
+Implemented in \mbox{\hyperlink{class_mesh_display_a23f7ab8b0f48536940ad1cc2145297b3}{Mesh\+Display}}, \mbox{\hyperlink{class_image_display_a94c5928ef81449c37740d0bd0a8f4062}{Image\+Display}}, and \mbox{\hyperlink{class_center_image_display_ac78f5ea36aa445bb3d12124f1baf814d}{Center\+Image\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_a6fd38485267e1b78f1d1dfb589ec4ae0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_a21c51fcf185403197a78a5acfd2065de}\label{class_display_a21c51fcf185403197a78a5acfd2065de}} 
+\index{Display@{Display}!Interaction\+Started@{Interaction\+Started}}
+\index{Interaction\+Started@{Interaction\+Started}!Display@{Display}}
+\subsubsection{\texorpdfstring{Interaction\+Started()}{InteractionStarted()}}
+{\footnotesize\ttfamily abstract void Display.\+Interaction\+Started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+called when interaction with this display started used to maybe disable anything on the display gamobject if needed 
+
+
+
+Implemented in \mbox{\hyperlink{class_mesh_display_aa4affc65c23027c877f511fc2b8aaeb8}{Mesh\+Display}}, \mbox{\hyperlink{class_image_display_a1fdf91b09cd5329059d38033f1330ffb}{Image\+Display}}, and \mbox{\hyperlink{class_center_image_display_a2944541a38bcc65b7fff15200c9f0fc3}{Center\+Image\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_display_a21c51fcf185403197a78a5acfd2065de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_a29f45efdf15e97219d2c8a614d699da8}\label{class_display_a29f45efdf15e97219d2c8a614d699da8}} 
+\index{Display@{Display}!On\+Interaction\+Ended@{On\+Interaction\+Ended}}
+\index{On\+Interaction\+Ended@{On\+Interaction\+Ended}!Display@{Display}}
+\subsubsection{\texorpdfstring{On\+Interaction\+Ended()}{OnInteractionEnded()}}
+{\footnotesize\ttfamily void Display.\+On\+Interaction\+Ended (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}}}]{arg }\end{DoxyParamCaption})}
+
+
+
+called from event when the interction is ended 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & event arguments\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_a29f45efdf15e97219d2c8a614d699da8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_display_a29f45efdf15e97219d2c8a614d699da8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_af8aa8a663725645f431095397ad802e6}\label{class_display_af8aa8a663725645f431095397ad802e6}} 
+\index{Display@{Display}!Set\+Interaction\+Type@{Set\+Interaction\+Type}}
+\index{Set\+Interaction\+Type@{Set\+Interaction\+Type}!Display@{Display}}
+\subsubsection{\texorpdfstring{Set\+Interaction\+Type()}{SetInteractionType()}}
+{\footnotesize\ttfamily void Display.\+Set\+Interaction\+Type (\begin{DoxyParamCaption}\item[{string}]{wanted\+\_\+behaviour }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sets the interaction type of this display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wanted\+\_\+behaviour} & the wanted behaviour\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_af8aa8a663725645f431095397ad802e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_af8aa8a663725645f431095397ad802e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_a81f07350cf50b3924f4fe269e1b4cf17}\label{class_display_a81f07350cf50b3924f4fe269e1b4cf17}} 
+\index{Display@{Display}!Set\+To\+Default\+Interaction\+Behaviour@{Set\+To\+Default\+Interaction\+Behaviour}}
+\index{Set\+To\+Default\+Interaction\+Behaviour@{Set\+To\+Default\+Interaction\+Behaviour}!Display@{Display}}
+\subsubsection{\texorpdfstring{Set\+To\+Default\+Interaction\+Behaviour()}{SetToDefaultInteractionBehaviour()}}
+{\footnotesize\ttfamily abstract \mbox{\hyperlink{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}{Type}} Display.\+Set\+To\+Default\+Interaction\+Behaviour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+if the wanted behaviour is not possible or not exitent the behaviour will be set to this default 
+
+
+
+Implemented in \mbox{\hyperlink{class_mesh_display_a8cd58e07cb9d64598c3bbc6701515d1d}{Mesh\+Display}}, \mbox{\hyperlink{class_image_display_ae975595939d76dd1db32e6f029f53ab6}{Image\+Display}}, and \mbox{\hyperlink{class_center_image_display_ac6ddf9c8df99ff76c0f508ba4e45a217}{Center\+Image\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_a81f07350cf50b3924f4fe269e1b4cf17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_a57325251fbeac943cd48520e50f0bec4}\label{class_display_a57325251fbeac943cd48520e50f0bec4}} 
+\index{Display@{Display}!Set\+Up@{Set\+Up}}
+\index{Set\+Up@{Set\+Up}!Display@{Display}}
+\subsubsection{\texorpdfstring{Set\+Up()}{SetUp()}}
+{\footnotesize\ttfamily abstract void Display.\+Set\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}}}]{disp\+Info,  }\item[{Game\+Object}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set up the display in the museum, position and rotation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disp\+Info} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_mesh_display_adb19ca4d076a93df64d1c035663fce0f}{Mesh\+Display}}, \mbox{\hyperlink{class_image_display_a28fead7caeeb12490d26fae943da6a1e}{Image\+Display}}, \mbox{\hyperlink{class_center_image_display_a3da996020c7d8abcd24f35660945703a}{Center\+Image\+Display}}, and \mbox{\hyperlink{class_center_mesh_display_a9d14ccee557aa886938d1d86ee016930}{Center\+Mesh\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_a57325251fbeac943cd48520e50f0bec4_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_display_af35594f083ed6dd4279183215719583f}\label{class_display_af35594f083ed6dd4279183215719583f}} 
+\index{Display@{Display}!interaction@{interaction}}
+\index{interaction@{interaction}!Display@{Display}}
+\subsubsection{\texorpdfstring{interaction}{interaction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_interaction}{Interaction}} Display.\+interaction\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the interaction that is currently taking place 
+
+\mbox{\Hypertarget{class_display_aab913d6cfa4e9631e8129ed131e79196}\label{class_display_aab913d6cfa4e9631e8129ed131e79196}} 
+\index{Display@{Display}!interaction\+Type@{interaction\+Type}}
+\index{interaction\+Type@{interaction\+Type}!Display@{Display}}
+\subsubsection{\texorpdfstring{interaction\+Type}{interactionType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}{Type}} Display.\+interaction\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+System type of the interaction the display provides 
+
+\mbox{\Hypertarget{class_display_a76e9b246ebdd9a5799de8df52279f05e}\label{class_display_a76e9b246ebdd9a5799de8df52279f05e}} 
+\index{Display@{Display}!metadata@{metadata}}
+\index{metadata@{metadata}!Display@{Display}}
+\subsubsection{\texorpdfstring{metadata}{metadata}}
+{\footnotesize\ttfamily string Display.\+metadata = \char`\"{}All Speech is free speech\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+old metadata string used for testing 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_display_a9ae693bcb1553822aed7ae887a65591c}\label{class_display_a9ae693bcb1553822aed7ae887a65591c}} 
+\index{Display@{Display}!Meta\+Data@{Meta\+Data}}
+\index{Meta\+Data@{Meta\+Data}!Display@{Display}}
+\subsubsection{\texorpdfstring{Meta\+Data}{MetaData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_meta_data}{Meta\+Data}} Display.\+Meta\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+the metadata that further describes the resource held by the display 
+
+\mbox{\Hypertarget{class_display_a32b9644a140d330a9c51cfdbb6f6093c}\label{class_display_a32b9644a140d330a9c51cfdbb6f6093c}} 
+\index{Display@{Display}!Object@{Object}}
+\index{Object@{Object}!Display@{Display}}
+\subsubsection{\texorpdfstring{Object}{Object}}
+{\footnotesize\ttfamily Game\+Object Display.\+Object\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}\label{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}} 
+\index{Display@{Display}!Type@{Type}}
+\index{Type@{Type}!Display@{Display}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_display_a7f7abc559192ef7e8f4a03382d3492d7}{Display\+Type}} Display.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Type of display 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Displays/\mbox{\hyperlink{_display_8cs}{Display.\+cs}}\end{DoxyCompactItemize}

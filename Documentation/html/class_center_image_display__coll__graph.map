@@ -1,0 +1,5 @@
+<map id="CenterImageDisplay" name="CenterImageDisplay">
+<area shape="rect" id="node2" href="$class_display.html" title="The base class for displaying resources " alt="" coords="153,171,219,197"/>
+<area shape="rect" id="node4" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="140,81,232,108"/>
+<area shape="rect" id="node5" href="$class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="257,81,339,108"/>
+</map>

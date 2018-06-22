@@ -1,0 +1,4 @@
+<map id="MuseumBuilder.AddToRoomManagmentUnit" name="MuseumBuilder.AddToRoomManagmentUnit">
+<area shape="rect" id="node2" href="$class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="343,5,530,47"/>
+<area shape="rect" id="node3" href="$class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="332,71,541,112"/>
+</map>

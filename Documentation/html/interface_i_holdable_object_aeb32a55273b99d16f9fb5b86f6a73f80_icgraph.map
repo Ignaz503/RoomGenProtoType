@@ -1,0 +1,5 @@
+<map id="IHoldableObject.SetInteractedObject" name="IHoldableObject.SetInteractedObject">
+<area shape="rect" id="node2" href="$class_player_hand.html#a67095e4c1db1e3369c435dd1fe1ebec5" title="Forwards the IInteractable information to the held object if it is intersted in so that not all objec..." alt="" coords="248,23,455,65"/>
+<area shape="rect" id="node3" href="$class_player_hand.html#a64a86af904a77f4a0b92d72bd5fdf43c" title="subscribes object to all relevent events and calles on obj grabbed " alt="" coords="503,5,661,32"/>
+<area shape="rect" id="node4" href="$class_player_hand.html#a3b127b846b420ef37cba3a3a8de68e78" title="drops any held object, unssubscribes this object from all events " alt="" coords="503,56,661,83"/>
+</map>

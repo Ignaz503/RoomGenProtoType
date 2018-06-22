@@ -1,0 +1,6 @@
+<map id="BaseDoor.OnDoorClose" name="BaseDoor.OnDoorClose">
+<area shape="rect" id="node2" href="$class_single_hinge_door.html#a6b1760cbc6ac5ed4c0e9d7ecb10d2606" title="coroutine to close the door " alt="" coords="213,5,424,32"/>
+<area shape="rect" id="node4" href="$class_sliding_door.html#adcfa4000b6eafa6ec8b6ec335dbd5efe" title="coroutine to close the door " alt="" coords="232,56,405,83"/>
+<area shape="rect" id="node3" href="$class_single_hinge_door.html#a19848e36fb259f92594916d1af76d3b4" title="function called to close door " alt="" coords="472,5,627,32"/>
+<area shape="rect" id="node5" href="$class_sliding_door.html#a22d2e8580503b045da48510214599746" title="function called to close door " alt="" coords="487,56,612,83"/>
+</map>

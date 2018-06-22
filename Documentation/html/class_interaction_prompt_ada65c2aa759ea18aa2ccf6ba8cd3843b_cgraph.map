@@ -1,0 +1,5 @@
+<map id="InteractionPrompt.Start" name="InteractionPrompt.Start">
+<area shape="rect" id="node2" href="$class_interaction_prompt.html#a98a4e4f01398f5d5f5e56802e67cffd2" title="Places gamobject between two other gamobjects and rotates it so that it looks at the first param ..." alt="" coords="209,5,420,47"/>
+<area shape="rect" id="node4" href="$class_interaction_prompt.html#a409ac8c36942c10be65238a7281932c2" title="sets gamobject active or inactive " alt="" coords="223,71,406,98"/>
+<area shape="rect" id="node3" href="$class_interaction_prompt.html#a85caeb27db4542f995d8704966beefc1" title="places gamobject between two world positions with linear interpolation " alt="" coords="468,13,679,39"/>
+</map>

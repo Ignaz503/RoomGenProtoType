@@ -1,0 +1,6 @@
+<map id="MuseumController.Update" name="MuseumController.Update">
+<area shape="rect" id="node2" href="$class_museum_controller.html#a5b242d5604840f35efb90e4b645829fe" title="checks if cords are in bound of the room grid " alt="" coords="235,5,421,32"/>
+<area shape="rect" id="node3" href="$class_museum_controller.html#a8f4312e1b672427e94e590e499d2ca8d" title="Loads a room and it&#39;s direct neighbors according to the museum graph Load currently means set gamobje..." alt="" coords="231,57,425,98"/>
+<area shape="rect" id="node5" href="$class_museum_controller.html#aa65b2ea9f99d62431282233f0582fc4a" title="unloads a room and it&#39;s immediate neighbors according to the museum graph unload currently means set ..." alt="" coords="225,122,431,163"/>
+<area shape="rect" id="node4" href="$class_museum_graph.html#a82509a5eb8dd2020aaee17261bedb974" title="gets a museum node that represents this room " alt="" coords="479,97,693,124"/>
+</map>

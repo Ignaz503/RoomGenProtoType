@@ -1,0 +1,229 @@
+\hypertarget{class_image_display}{}\section{Image\+Display Class Reference}
+\label{class_image_display}\index{Image\+Display@{Image\+Display}}
+
+
+Inheritance diagram for Image\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_image_display__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Image\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_image_display__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_image_display_a733a86ef960e7836442e858b5d52dbec}{Apply\+Resource}} (\mbox{\hyperlink{class_resource}{Resource}} resource)
+\begin{DoxyCompactList}\small\item\em Applies a resource to a display \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_image_display_a28fead7caeeb12490d26fae943da6a1e}{Set\+Up}} (\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} disp\+Info, Game\+Object parent)
+\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_image_display_ae1044419b2f9dfa64d75329e48e312de}{X\+Pos\+Scale}} = .\+55f
+\begin{DoxyCompactList}\small\item\em scales the x pos when setuping \end{DoxyCompactList}\item 
+static Vector3 \mbox{\hyperlink{class_image_display_a8ecd7f162065170c3f5cbcf906b11873}{Rotation}} = new Vector3(0, -\/90f, 180)
+\begin{DoxyCompactList}\small\item\em the rotation of the image display \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_image_display_aac7ba9a36c272ad5c6873119b521ed5e}{Scale}} = 0.\+2f
+\begin{DoxyCompactList}\small\item\em scale of the image \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_image_display_ac0ef458ef2e417549068a631e35f39d6}{Y\+Pos}} = -\/.\+3f
+\begin{DoxyCompactList}\small\item\em local y position of the image \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override System.\+Type \mbox{\hyperlink{class_image_display_ae975595939d76dd1db32e6f029f53ab6}{Set\+To\+Default\+Interaction\+Behaviour}} ()
+\begin{DoxyCompactList}\small\item\em if the wanted behaviour is not possible or not exitent the behaviour will be set to this default \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_image_display_a1fdf91b09cd5329059d38033f1330ffb}{Interaction\+Started}} ()
+\begin{DoxyCompactList}\small\item\em called when interaction with this display started used to maybe disable anything on the display gamobject if needed \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_image_display_a94c5928ef81449c37740d0bd0a8f4062}{Interaction\+Ended}} ()
+\begin{DoxyCompactList}\small\item\em called when an interaction ends used to reactivate any component deactivated during the interaction \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_image_display_a3dfa32d33641e56a6623265150b8ddba}{Awake}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Material \mbox{\hyperlink{class_image_display_a19b3e5d9b9fba307ab9f4529808b7768}{material\+Prefab}}
+\begin{DoxyCompactList}\small\item\em the material prefab that is used to apply an image to this mesh \end{DoxyCompactList}\item 
+Mesh\+Renderer \mbox{\hyperlink{class_image_display_ab96891e8a9d31e5fd90bff26b8485287}{mesh\+Renderer}}
+\begin{DoxyCompactList}\small\item\em the mseh render that displays the image \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_image_display_a733a86ef960e7836442e858b5d52dbec}\label{class_image_display_a733a86ef960e7836442e858b5d52dbec}} 
+\index{Image\+Display@{Image\+Display}!Apply\+Resource@{Apply\+Resource}}
+\index{Apply\+Resource@{Apply\+Resource}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Resource()}{ApplyResource()}}
+{\footnotesize\ttfamily override void Image\+Display.\+Apply\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_resource}{Resource}}}]{resource }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Applies a resource to a display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_display_aa1d23e0e870c59c63e2f040e84ef0121}{Display}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_image_display_a733a86ef960e7836442e858b5d52dbec_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_image_display_a3dfa32d33641e56a6623265150b8ddba}\label{class_image_display_a3dfa32d33641e56a6623265150b8ddba}} 
+\index{Image\+Display@{Image\+Display}!Awake@{Awake}}
+\index{Awake@{Awake}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Image\+Display.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_image_display_a94c5928ef81449c37740d0bd0a8f4062}\label{class_image_display_a94c5928ef81449c37740d0bd0a8f4062}} 
+\index{Image\+Display@{Image\+Display}!Interaction\+Ended@{Interaction\+Ended}}
+\index{Interaction\+Ended@{Interaction\+Ended}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Interaction\+Ended()}{InteractionEnded()}}
+{\footnotesize\ttfamily override void Image\+Display.\+Interaction\+Ended (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+called when an interaction ends used to reactivate any component deactivated during the interaction 
+
+
+
+Implements \mbox{\hyperlink{class_display_a6fd38485267e1b78f1d1dfb589ec4ae0}{Display}}.
+
+\mbox{\Hypertarget{class_image_display_a1fdf91b09cd5329059d38033f1330ffb}\label{class_image_display_a1fdf91b09cd5329059d38033f1330ffb}} 
+\index{Image\+Display@{Image\+Display}!Interaction\+Started@{Interaction\+Started}}
+\index{Interaction\+Started@{Interaction\+Started}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Interaction\+Started()}{InteractionStarted()}}
+{\footnotesize\ttfamily override void Image\+Display.\+Interaction\+Started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+called when interaction with this display started used to maybe disable anything on the display gamobject if needed 
+
+
+
+Implements \mbox{\hyperlink{class_display_a21c51fcf185403197a78a5acfd2065de}{Display}}.
+
+\mbox{\Hypertarget{class_image_display_ae975595939d76dd1db32e6f029f53ab6}\label{class_image_display_ae975595939d76dd1db32e6f029f53ab6}} 
+\index{Image\+Display@{Image\+Display}!Set\+To\+Default\+Interaction\+Behaviour@{Set\+To\+Default\+Interaction\+Behaviour}}
+\index{Set\+To\+Default\+Interaction\+Behaviour@{Set\+To\+Default\+Interaction\+Behaviour}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Set\+To\+Default\+Interaction\+Behaviour()}{SetToDefaultInteractionBehaviour()}}
+{\footnotesize\ttfamily override System.\+Type Image\+Display.\+Set\+To\+Default\+Interaction\+Behaviour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if the wanted behaviour is not possible or not exitent the behaviour will be set to this default 
+
+
+
+Implements \mbox{\hyperlink{class_display_a81f07350cf50b3924f4fe269e1b4cf17}{Display}}.
+
+\mbox{\Hypertarget{class_image_display_a28fead7caeeb12490d26fae943da6a1e}\label{class_image_display_a28fead7caeeb12490d26fae943da6a1e}} 
+\index{Image\+Display@{Image\+Display}!Set\+Up@{Set\+Up}}
+\index{Set\+Up@{Set\+Up}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Set\+Up()}{SetUp()}}
+{\footnotesize\ttfamily override void Image\+Display.\+Set\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}}}]{disp\+Info,  }\item[{Game\+Object}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set up the display in the museum, position and rotation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disp\+Info} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_display_a57325251fbeac943cd48520e50f0bec4}{Display}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_image_display_a19b3e5d9b9fba307ab9f4529808b7768}\label{class_image_display_a19b3e5d9b9fba307ab9f4529808b7768}} 
+\index{Image\+Display@{Image\+Display}!material\+Prefab@{material\+Prefab}}
+\index{material\+Prefab@{material\+Prefab}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{material\+Prefab}{materialPrefab}}
+{\footnotesize\ttfamily Material Image\+Display.\+material\+Prefab\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the material prefab that is used to apply an image to this mesh 
+
+\mbox{\Hypertarget{class_image_display_ab96891e8a9d31e5fd90bff26b8485287}\label{class_image_display_ab96891e8a9d31e5fd90bff26b8485287}} 
+\index{Image\+Display@{Image\+Display}!mesh\+Renderer@{mesh\+Renderer}}
+\index{mesh\+Renderer@{mesh\+Renderer}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{mesh\+Renderer}{meshRenderer}}
+{\footnotesize\ttfamily Mesh\+Renderer Image\+Display.\+mesh\+Renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the mseh render that displays the image 
+
+\mbox{\Hypertarget{class_image_display_a8ecd7f162065170c3f5cbcf906b11873}\label{class_image_display_a8ecd7f162065170c3f5cbcf906b11873}} 
+\index{Image\+Display@{Image\+Display}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Rotation}{Rotation}}
+{\footnotesize\ttfamily Vector3 Image\+Display.\+Rotation = new Vector3(0, -\/90f, 180)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+the rotation of the image display 
+
+\mbox{\Hypertarget{class_image_display_aac7ba9a36c272ad5c6873119b521ed5e}\label{class_image_display_aac7ba9a36c272ad5c6873119b521ed5e}} 
+\index{Image\+Display@{Image\+Display}!Scale@{Scale}}
+\index{Scale@{Scale}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Scale}{Scale}}
+{\footnotesize\ttfamily float Image\+Display.\+Scale = 0.\+2f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+scale of the image 
+
+\mbox{\Hypertarget{class_image_display_ae1044419b2f9dfa64d75329e48e312de}\label{class_image_display_ae1044419b2f9dfa64d75329e48e312de}} 
+\index{Image\+Display@{Image\+Display}!X\+Pos\+Scale@{X\+Pos\+Scale}}
+\index{X\+Pos\+Scale@{X\+Pos\+Scale}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{X\+Pos\+Scale}{XPosScale}}
+{\footnotesize\ttfamily float Image\+Display.\+X\+Pos\+Scale = .\+55f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+scales the x pos when setuping 
+
+\mbox{\Hypertarget{class_image_display_ac0ef458ef2e417549068a631e35f39d6}\label{class_image_display_ac0ef458ef2e417549068a631e35f39d6}} 
+\index{Image\+Display@{Image\+Display}!Y\+Pos@{Y\+Pos}}
+\index{Y\+Pos@{Y\+Pos}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Y\+Pos}{YPos}}
+{\footnotesize\ttfamily float Image\+Display.\+Y\+Pos = -\/.\+3f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+local y position of the image 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Displays/\mbox{\hyperlink{_image_display_8cs}{Image\+Display.\+cs}}\end{DoxyCompactItemize}

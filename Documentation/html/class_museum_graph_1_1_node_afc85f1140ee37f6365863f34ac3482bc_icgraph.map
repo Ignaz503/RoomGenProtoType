@@ -1,0 +1,5 @@
+<map id="MuseumGraph.Node.ConnectNodes" name="MuseumGraph.Node.ConnectNodes">
+<area shape="rect" id="node2" href="$class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="247,13,472,39"/>
+<area shape="rect" id="node3" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="520,13,649,39"/>
+<area shape="rect" id="node4" href="$class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="697,13,872,39"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ObjectInHandComponent.StartInteraction" name="ObjectInHandComponent.StartInteraction">
+<area shape="rect" id="node2" href="$class_obejct_in_hand_interaction.html#a9046df053628946f7ce5f4e484097482" title="Function that should be called on interact This Function should apply the InteractionComponents ..." alt="" coords="269,5,433,47"/>
+<area shape="rect" id="node3" href="$class_object_in_hand_component.html#aed115a3a0f70c23370cab4428454025c" title="setup function when interaction starts " alt="" coords="252,71,451,112"/>
+</map>

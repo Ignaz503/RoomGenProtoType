@@ -1,0 +1,17 @@
+<map id="MuseumBuilder.Update" name="MuseumBuilder.Update">
+<area shape="rect" id="node2" href="$class_museum.html#a1b4fb627a19112e3ba3d25e8108de2c3" title="creates a museum from an xml string " alt="" coords="241,5,381,32"/>
+<area shape="rect" id="node4" href="$class_museum_controller.html#a276d26ec047cda4e6f36b29fb673d968" title="Sets the museum that needs controlling creating the room managment units " alt="" coords="211,57,412,98"/>
+<area shape="rect" id="node5" href="$class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="221,173,402,200"/>
+<area shape="rect" id="node15" href="$class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="219,123,404,149"/>
+<area shape="rect" id="node3" href="$class_museum.html#aa946df02a55ba522f7a39ac688648733" title="Museum.Museum" alt="" coords="498,5,625,32"/>
+<area shape="rect" id="node6" href="$class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="711,141,989,168"/>
+<area shape="rect" id="node9" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="466,257,657,298"/>
+<area shape="rect" id="node7" href="$class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="1049,135,1235,177"/>
+<area shape="rect" id="node8" href="$class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="1037,70,1247,111"/>
+<area shape="rect" id="node10" href="$class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="797,260,903,287"/>
+<area shape="rect" id="node11" href="$class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec" title="Loads Resource for a dsiplay " alt="" coords="751,203,949,229"/>
+<area shape="rect" id="node12" href="$class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="1063,203,1221,229"/>
+<area shape="rect" id="node13" href="$class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1295,203,1472,229"/>
+<area shape="rect" id="node14" href="$class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1520,195,1723,237"/>
+<area shape="rect" id="node16" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="460,191,663,233"/>
+</map>

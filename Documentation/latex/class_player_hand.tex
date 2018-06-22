@@ -1,0 +1,346 @@
+\hypertarget{class_player_hand}{}\section{Player\+Hand Class Reference}
+\label{class_player_hand}\index{Player\+Hand@{Player\+Hand}}
+
+
+Inheritance diagram for Player\+Hand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_player_hand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Player\+Hand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_player_hand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}} \{ \mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0eae9472019d82c6986ba42e1c6c9ddd812}{Hand\+State.\+In\+Resting\+Position}}, 
+\mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0ea0ffcf44fe0ab61c236ab3692a7cb3a22}{Hand\+State.\+Infront\+Of\+Face}}, 
+\mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0eae19d086cff66ea84fd45f01a2122af60}{Hand\+State.\+Moving\+Toward\+Resting\+Position}}, 
+\mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0eac9696ab2c297170cfe81d7ace9f096a6}{Hand\+State.\+Moving\+Infront\+Of\+Face}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_player_hand_a64a86af904a77f4a0b92d72bd5fdf43c}{Grab\+Object}} (\mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}} hold\+Obj)
+\begin{DoxyCompactList}\small\item\em subscribes object to all relevent events and calles on obj grabbed \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_player_hand_a3b127b846b420ef37cba3a3a8de68e78}{Drop\+Object}} ()
+\begin{DoxyCompactList}\small\item\em drops any held object, unssubscribes this object from all events \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_hand_a67095e4c1db1e3369c435dd1fe1ebec5}{Forward\+Interactable\+Object}} (\mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}} interact\+Obj)
+\begin{DoxyCompactList}\small\item\em Forwards the \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} information to the held object if it is intersted in so that not all object need to know about the player makes sure that the I\+Interacteable is not null or it wont be called so that the held obj doesn\textquotesingle{}t need to worry about it \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_hand_a886f7afd66af7f0dc59696953aaed4b4}{Invoke\+In\+Resting\+Position}} ()
+\begin{DoxyCompactList}\small\item\em invokes event In\+Resting\+Position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_hand_aa2accfa8b13a70b78b1cd4029cdaaa1e}{Invoke\+On\+Reached\+Infront\+Of\+Face\+Position}} ()
+\begin{DoxyCompactList}\small\item\em invokes invent On\+Reached\+In\+Front\+Of\+Face\+Position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_hand_a2c861364aaf53271c0e3dc1e42ee5e47}{Invoke\+On\+Start\+Moving\+To\+Rest\+Position}} ()
+\begin{DoxyCompactList}\small\item\em invokes On\+Start\+Moving\+To\+Rest\+Position event \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_hand_a1f8cc0ae3bc7e9d3c4d21943eb09852e}{Invoke\+On\+Start\+Moving\+Infront\+Of\+Face}} ()
+\begin{DoxyCompactList}\small\item\em invokes On\+Start\+Moving\+Infront\+O\+F\+Face event \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}} \mbox{\hyperlink{class_player_hand_a043a1be665181f9e3c9d00cd18e4c4fe}{object\+In\+Hand}}
+\begin{DoxyCompactList}\small\item\em the object currently held by the hand \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}} \mbox{\hyperlink{class_player_hand_a6eb1eff28793294622f4037a0aa7afeb}{Current\+State}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The current state of the hand \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_player_hand_a0d33095483c291ac3dd5b5350974b626}{Owning\+Player}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The player this hand belongs to \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \mbox{\hyperlink{class_player_hand_a3a8432e3dbd04a1c12c95ca0c0fd186b}{In\+Resting\+Position}}
+\begin{DoxyCompactList}\small\item\em called after state is set to rest position \end{DoxyCompactList}\item 
+Action \mbox{\hyperlink{class_player_hand_a9f27078422ba536d94e6fb76e093cf7c}{On\+Reached\+Infron\+Of\+Face\+Position}}
+\begin{DoxyCompactList}\small\item\em called after state is set to Infront\+Of\+Face \end{DoxyCompactList}\item 
+Action \mbox{\hyperlink{class_player_hand_ac82ac43be97123cde5f02f5811a63397}{On\+Start\+Moving\+To\+Rest\+Position}}
+\begin{DoxyCompactList}\small\item\em called after state is set to Moving\+Toward\+Resting\+Position \end{DoxyCompactList}\item 
+Action \mbox{\hyperlink{class_player_hand_ab33d70a8efd0adeed59aa3f5a5747349}{On\+Start\+Moving\+Infront\+Of\+Face}}
+\begin{DoxyCompactList}\small\item\em called after state is set to Moving\+Infront\+Of\+Face \end{DoxyCompactList}\item 
+Action$<$ \mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}}, \mbox{\hyperlink{class_player_hand}{Player\+Hand}} $>$ \mbox{\hyperlink{class_player_hand_af3875f350ce765612b5af99e8e9d5837}{On\+Grab\+Object}}
+\begin{DoxyCompactList}\small\item\em called after(same frame) object\+In\+Hand is set and object was subscribed to all hand events it needs to know \end{DoxyCompactList}\item 
+Action$<$ \mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}}, \mbox{\hyperlink{class_player_hand}{Player\+Hand}} $>$ \mbox{\hyperlink{class_player_hand_ac22e288fe18167393a51eec5ad0cbfc0}{On\+Drop\+Object}}
+\begin{DoxyCompactList}\small\item\em called the frame the object is dropped, when the obj was unsbscribed from all events, and the object\+In\+Hand was set to null \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}} \mbox{\hyperlink{class_player_hand_ab038075d9d0b60c19a1c80f6baebfa58}{\+\_\+current\+State}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}\label{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}} 
+\index{Player\+Hand@{Player\+Hand}!Hand\+State@{Hand\+State}}
+\index{Hand\+State@{Hand\+State}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Hand\+State}{HandState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Player\+Hand.\+Hand\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{In\+Resting\+Position@{In\+Resting\+Position}!Player\+Hand@{Player\+Hand}}\index{Player\+Hand@{Player\+Hand}!In\+Resting\+Position@{In\+Resting\+Position}}}\mbox{\Hypertarget{class_player_hand_a1af76750da713cbc88856161d8d5ac0eae9472019d82c6986ba42e1c6c9ddd812}\label{class_player_hand_a1af76750da713cbc88856161d8d5ac0eae9472019d82c6986ba42e1c6c9ddd812}} 
+In\+Resting\+Position&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Infront\+Of\+Face@{Infront\+Of\+Face}!Player\+Hand@{Player\+Hand}}\index{Player\+Hand@{Player\+Hand}!Infront\+Of\+Face@{Infront\+Of\+Face}}}\mbox{\Hypertarget{class_player_hand_a1af76750da713cbc88856161d8d5ac0ea0ffcf44fe0ab61c236ab3692a7cb3a22}\label{class_player_hand_a1af76750da713cbc88856161d8d5ac0ea0ffcf44fe0ab61c236ab3692a7cb3a22}} 
+Infront\+Of\+Face&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Moving\+Toward\+Resting\+Position@{Moving\+Toward\+Resting\+Position}!Player\+Hand@{Player\+Hand}}\index{Player\+Hand@{Player\+Hand}!Moving\+Toward\+Resting\+Position@{Moving\+Toward\+Resting\+Position}}}\mbox{\Hypertarget{class_player_hand_a1af76750da713cbc88856161d8d5ac0eae19d086cff66ea84fd45f01a2122af60}\label{class_player_hand_a1af76750da713cbc88856161d8d5ac0eae19d086cff66ea84fd45f01a2122af60}} 
+Moving\+Toward\+Resting\+Position&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Moving\+Infront\+Of\+Face@{Moving\+Infront\+Of\+Face}!Player\+Hand@{Player\+Hand}}\index{Player\+Hand@{Player\+Hand}!Moving\+Infront\+Of\+Face@{Moving\+Infront\+Of\+Face}}}\mbox{\Hypertarget{class_player_hand_a1af76750da713cbc88856161d8d5ac0eac9696ab2c297170cfe81d7ace9f096a6}\label{class_player_hand_a1af76750da713cbc88856161d8d5ac0eac9696ab2c297170cfe81d7ace9f096a6}} 
+Moving\+Infront\+Of\+Face&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_hand_a3b127b846b420ef37cba3a3a8de68e78}\label{class_player_hand_a3b127b846b420ef37cba3a3a8de68e78}} 
+\index{Player\+Hand@{Player\+Hand}!Drop\+Object@{Drop\+Object}}
+\index{Drop\+Object@{Drop\+Object}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Drop\+Object()}{DropObject()}}
+{\footnotesize\ttfamily virtual void Player\+Hand.\+Drop\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+drops any held object, unssubscribes this object from all events 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_p_c_player_hand_a42c7ffd95f8493901c93e2c1e4576585}{P\+C\+Player\+Hand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_hand_a3b127b846b420ef37cba3a3a8de68e78_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_hand_a67095e4c1db1e3369c435dd1fe1ebec5}\label{class_player_hand_a67095e4c1db1e3369c435dd1fe1ebec5}} 
+\index{Player\+Hand@{Player\+Hand}!Forward\+Interactable\+Object@{Forward\+Interactable\+Object}}
+\index{Forward\+Interactable\+Object@{Forward\+Interactable\+Object}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Forward\+Interactable\+Object()}{ForwardInteractableObject()}}
+{\footnotesize\ttfamily void Player\+Hand.\+Forward\+Interactable\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}}}]{interact\+Obj }\end{DoxyParamCaption})}
+
+
+
+Forwards the \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} information to the held object if it is intersted in so that not all object need to know about the player makes sure that the I\+Interacteable is not null or it wont be called so that the held obj doesn\textquotesingle{}t need to worry about it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interact\+Obj} & the interacteb object interaction event params\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_hand_a67095e4c1db1e3369c435dd1fe1ebec5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_hand_a67095e4c1db1e3369c435dd1fe1ebec5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_hand_a64a86af904a77f4a0b92d72bd5fdf43c}\label{class_player_hand_a64a86af904a77f4a0b92d72bd5fdf43c}} 
+\index{Player\+Hand@{Player\+Hand}!Grab\+Object@{Grab\+Object}}
+\index{Grab\+Object@{Grab\+Object}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Grab\+Object()}{GrabObject()}}
+{\footnotesize\ttfamily virtual void Player\+Hand.\+Grab\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}}}]{hold\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+subscribes object to all relevent events and calles on obj grabbed 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_p_c_player_hand_a08da28b459501727d269733569559c24}{P\+C\+Player\+Hand}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_hand_a64a86af904a77f4a0b92d72bd5fdf43c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_hand_a886f7afd66af7f0dc59696953aaed4b4}\label{class_player_hand_a886f7afd66af7f0dc59696953aaed4b4}} 
+\index{Player\+Hand@{Player\+Hand}!Invoke\+In\+Resting\+Position@{Invoke\+In\+Resting\+Position}}
+\index{Invoke\+In\+Resting\+Position@{Invoke\+In\+Resting\+Position}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Invoke\+In\+Resting\+Position()}{InvokeInRestingPosition()}}
+{\footnotesize\ttfamily void Player\+Hand.\+Invoke\+In\+Resting\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+invokes event In\+Resting\+Position 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_hand_a886f7afd66af7f0dc59696953aaed4b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_hand_aa2accfa8b13a70b78b1cd4029cdaaa1e}\label{class_player_hand_aa2accfa8b13a70b78b1cd4029cdaaa1e}} 
+\index{Player\+Hand@{Player\+Hand}!Invoke\+On\+Reached\+Infront\+Of\+Face\+Position@{Invoke\+On\+Reached\+Infront\+Of\+Face\+Position}}
+\index{Invoke\+On\+Reached\+Infront\+Of\+Face\+Position@{Invoke\+On\+Reached\+Infront\+Of\+Face\+Position}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Invoke\+On\+Reached\+Infront\+Of\+Face\+Position()}{InvokeOnReachedInfrontOfFacePosition()}}
+{\footnotesize\ttfamily void Player\+Hand.\+Invoke\+On\+Reached\+Infront\+Of\+Face\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+invokes invent On\+Reached\+In\+Front\+Of\+Face\+Position 
+
+\mbox{\Hypertarget{class_player_hand_a1f8cc0ae3bc7e9d3c4d21943eb09852e}\label{class_player_hand_a1f8cc0ae3bc7e9d3c4d21943eb09852e}} 
+\index{Player\+Hand@{Player\+Hand}!Invoke\+On\+Start\+Moving\+Infront\+Of\+Face@{Invoke\+On\+Start\+Moving\+Infront\+Of\+Face}}
+\index{Invoke\+On\+Start\+Moving\+Infront\+Of\+Face@{Invoke\+On\+Start\+Moving\+Infront\+Of\+Face}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Invoke\+On\+Start\+Moving\+Infront\+Of\+Face()}{InvokeOnStartMovingInfrontOfFace()}}
+{\footnotesize\ttfamily void Player\+Hand.\+Invoke\+On\+Start\+Moving\+Infront\+Of\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+invokes On\+Start\+Moving\+Infront\+O\+F\+Face event 
+
+\mbox{\Hypertarget{class_player_hand_a2c861364aaf53271c0e3dc1e42ee5e47}\label{class_player_hand_a2c861364aaf53271c0e3dc1e42ee5e47}} 
+\index{Player\+Hand@{Player\+Hand}!Invoke\+On\+Start\+Moving\+To\+Rest\+Position@{Invoke\+On\+Start\+Moving\+To\+Rest\+Position}}
+\index{Invoke\+On\+Start\+Moving\+To\+Rest\+Position@{Invoke\+On\+Start\+Moving\+To\+Rest\+Position}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Invoke\+On\+Start\+Moving\+To\+Rest\+Position()}{InvokeOnStartMovingToRestPosition()}}
+{\footnotesize\ttfamily void Player\+Hand.\+Invoke\+On\+Start\+Moving\+To\+Rest\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+invokes On\+Start\+Moving\+To\+Rest\+Position event 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_player_hand_ab038075d9d0b60c19a1c80f6baebfa58}\label{class_player_hand_ab038075d9d0b60c19a1c80f6baebfa58}} 
+\index{Player\+Hand@{Player\+Hand}!\+\_\+current\+State@{\+\_\+current\+State}}
+\index{\+\_\+current\+State@{\+\_\+current\+State}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{\+\_\+current\+State}{\_currentState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}} Player\+Hand.\+\_\+current\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_player_hand_a043a1be665181f9e3c9d00cd18e4c4fe}\label{class_player_hand_a043a1be665181f9e3c9d00cd18e4c4fe}} 
+\index{Player\+Hand@{Player\+Hand}!object\+In\+Hand@{object\+In\+Hand}}
+\index{object\+In\+Hand@{object\+In\+Hand}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{object\+In\+Hand}{objectInHand}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}} Player\+Hand.\+object\+In\+Hand\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the object currently held by the hand 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_player_hand_a6eb1eff28793294622f4037a0aa7afeb}\label{class_player_hand_a6eb1eff28793294622f4037a0aa7afeb}} 
+\index{Player\+Hand@{Player\+Hand}!Current\+State@{Current\+State}}
+\index{Current\+State@{Current\+State}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Current\+State}{CurrentState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}} Player\+Hand.\+Current\+State\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+The current state of the hand 
+
+\mbox{\Hypertarget{class_player_hand_a0d33095483c291ac3dd5b5350974b626}\label{class_player_hand_a0d33095483c291ac3dd5b5350974b626}} 
+\index{Player\+Hand@{Player\+Hand}!Owning\+Player@{Owning\+Player}}
+\index{Owning\+Player@{Owning\+Player}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{Owning\+Player}{OwningPlayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} Player\+Hand.\+Owning\+Player\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The player this hand belongs to 
+
+
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_player_hand_a3a8432e3dbd04a1c12c95ca0c0fd186b}\label{class_player_hand_a3a8432e3dbd04a1c12c95ca0c0fd186b}} 
+\index{Player\+Hand@{Player\+Hand}!In\+Resting\+Position@{In\+Resting\+Position}}
+\index{In\+Resting\+Position@{In\+Resting\+Position}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{In\+Resting\+Position}{InRestingPosition}}
+{\footnotesize\ttfamily Action Player\+Hand.\+In\+Resting\+Position}
+
+
+
+called after state is set to rest position 
+
+\mbox{\Hypertarget{class_player_hand_ac22e288fe18167393a51eec5ad0cbfc0}\label{class_player_hand_ac22e288fe18167393a51eec5ad0cbfc0}} 
+\index{Player\+Hand@{Player\+Hand}!On\+Drop\+Object@{On\+Drop\+Object}}
+\index{On\+Drop\+Object@{On\+Drop\+Object}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{On\+Drop\+Object}{OnDropObject}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}}, \mbox{\hyperlink{class_player_hand}{Player\+Hand}}$>$ Player\+Hand.\+On\+Drop\+Object}
+
+
+
+called the frame the object is dropped, when the obj was unsbscribed from all events, and the object\+In\+Hand was set to null 
+
+\mbox{\Hypertarget{class_player_hand_af3875f350ce765612b5af99e8e9d5837}\label{class_player_hand_af3875f350ce765612b5af99e8e9d5837}} 
+\index{Player\+Hand@{Player\+Hand}!On\+Grab\+Object@{On\+Grab\+Object}}
+\index{On\+Grab\+Object@{On\+Grab\+Object}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{On\+Grab\+Object}{OnGrabObject}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}}, \mbox{\hyperlink{class_player_hand}{Player\+Hand}}$>$ Player\+Hand.\+On\+Grab\+Object}
+
+
+
+called after(same frame) object\+In\+Hand is set and object was subscribed to all hand events it needs to know 
+
+\mbox{\Hypertarget{class_player_hand_a9f27078422ba536d94e6fb76e093cf7c}\label{class_player_hand_a9f27078422ba536d94e6fb76e093cf7c}} 
+\index{Player\+Hand@{Player\+Hand}!On\+Reached\+Infron\+Of\+Face\+Position@{On\+Reached\+Infron\+Of\+Face\+Position}}
+\index{On\+Reached\+Infron\+Of\+Face\+Position@{On\+Reached\+Infron\+Of\+Face\+Position}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{On\+Reached\+Infron\+Of\+Face\+Position}{OnReachedInfronOfFacePosition}}
+{\footnotesize\ttfamily Action Player\+Hand.\+On\+Reached\+Infron\+Of\+Face\+Position}
+
+
+
+called after state is set to Infront\+Of\+Face 
+
+\mbox{\Hypertarget{class_player_hand_ab33d70a8efd0adeed59aa3f5a5747349}\label{class_player_hand_ab33d70a8efd0adeed59aa3f5a5747349}} 
+\index{Player\+Hand@{Player\+Hand}!On\+Start\+Moving\+Infront\+Of\+Face@{On\+Start\+Moving\+Infront\+Of\+Face}}
+\index{On\+Start\+Moving\+Infront\+Of\+Face@{On\+Start\+Moving\+Infront\+Of\+Face}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{On\+Start\+Moving\+Infront\+Of\+Face}{OnStartMovingInfrontOfFace}}
+{\footnotesize\ttfamily Action Player\+Hand.\+On\+Start\+Moving\+Infront\+Of\+Face}
+
+
+
+called after state is set to Moving\+Infront\+Of\+Face 
+
+\mbox{\Hypertarget{class_player_hand_ac82ac43be97123cde5f02f5811a63397}\label{class_player_hand_ac82ac43be97123cde5f02f5811a63397}} 
+\index{Player\+Hand@{Player\+Hand}!On\+Start\+Moving\+To\+Rest\+Position@{On\+Start\+Moving\+To\+Rest\+Position}}
+\index{On\+Start\+Moving\+To\+Rest\+Position@{On\+Start\+Moving\+To\+Rest\+Position}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{On\+Start\+Moving\+To\+Rest\+Position}{OnStartMovingToRestPosition}}
+{\footnotesize\ttfamily Action Player\+Hand.\+On\+Start\+Moving\+To\+Rest\+Position}
+
+
+
+called after state is set to Moving\+Toward\+Resting\+Position 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Player/\+Player\+Hand/\mbox{\hyperlink{_player_hand_8cs}{Player\+Hand.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,332 @@
+\hypertarget{class_wall}{}\section{Wall Class Reference}
+\label{class_wall}\index{Wall@{Wall}}
+
+
+A wall that seperates two rooms of a museum or is an outer wall of the museum  
+
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall\+Type}} \{ \mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638daf44e14d49cd011d1e873d9fe0c4624f1}{Wall\+Type.\+Door}}, 
+\mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638dae41480b6bbfbf7407974a88d3d34f4fa}{Wall\+Type.\+Solid}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97}{Wall\+Rotation}} \{ \mbox{\hyperlink{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97a06ce2a25e5d12c166a36f654dbea6012}{Wall\+Rotation.\+Vertical}}, 
+\mbox{\hyperlink{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97ac1b5fa03ecdb95d4a45dd1c40b02527f}{Wall\+Rotation.\+Horizontal}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wall_a4c5f79551eaa6006ef8d243c6cb4407f}{Wall}} (\mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall\+Type}} t, Vector2\mbox{[}$\,$\mbox{]} location, float pos\+Mod, Vector2\+Int associated\+Tile, uint associated\+Room\+ID, \mbox{\hyperlink{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97}{Wall\+Rotation}} rot, \mbox{\hyperlink{class_museum}{Museum}} virt)
+\item 
+override bool \mbox{\hyperlink{class_wall_a1f2892cd73109765a83ddeda382309eb}{Equals}} (object obj)
+\item 
+override int \mbox{\hyperlink{class_wall_a4c40b2b1afaf636c50cc2ff7597442e9}{Get\+Hash\+Code}} ()
+\item 
+bool \mbox{\hyperlink{class_wall_a268f71deeceb999a03235e62b43421c2}{Contains\+Point}} (Vector2 p)
+\item 
+void \mbox{\hyperlink{class_wall_aaed262c3f6b37525136f3278ca2e80cb}{Add\+New\+Display\+Info}} (uint associated\+Room\+ID)
+\begin{DoxyCompactList}\small\item\em Adds a new display to this wall if possible and sets the local position of this display correctly \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wall_afe665d38b06894cc2d3e1e091d977ecb}{Change\+Wall\+Type}} (\mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall\+Type}} t)
+\begin{DoxyCompactList}\small\item\em Changes the type of the wall to t ensures that display\+Infos are kept correctly \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wall_a8104353e14b558c07aaef0a26f246418}{Merge\+Walls}} (\mbox{\hyperlink{class_wall}{Wall}} w)
+\begin{DoxyCompactList}\small\item\em Merges \mbox{\hyperlink{class_wall}{Wall}} given into wall called on \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_wall_a0eaebc195033f236c71d8c812b6a0256}{operator==}} (\mbox{\hyperlink{class_wall}{Wall}} lhs, \mbox{\hyperlink{class_wall}{Wall}} rhs)
+\item 
+static bool \mbox{\hyperlink{class_wall_a12a6667a52ef86d8678ecb3cd21972e2}{operator!=}} (\mbox{\hyperlink{class_wall}{Wall}} lhs, \mbox{\hyperlink{class_wall}{Wall}} rhs)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall\+Type}} \mbox{\hyperlink{class_wall_ade4c1924f35fd33637a3cdfa31566af0}{Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the type of wall (solid or door) \end{DoxyCompactList}\item 
+Vector2 \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_wall_ac7769d0a497da7e7ae3a11c813645b7a}{Location}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the location of the wall defined as the two vertices where the wall is inbetween vertices are room corners \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_wall_ae056b7b9068536491c1ac441a25824a0}{Position\+Modifier}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em position modifier when placing the wall gamobject for the museum \end{DoxyCompactList}\item 
+List$<$ Vector2\+Int $>$ \mbox{\hyperlink{class_wall_a1e5fab93aa7e8676dd65a61a26b28513}{Tiles}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em tiles that are seperated from this wall \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97}{Wall\+Rotation}} \mbox{\hyperlink{class_wall_aa2d6c86c7ccabbb5e317b9ccac62e99e}{Rotation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em defines if wall is vertical wall or horizontal wall in museum influneces y rotation of gamobject \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} $>$ \mbox{\hyperlink{class_wall_a5fc68c5010cd944a5103f84a749e87f7}{Display\+Infos}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em info for all the displays that this wall has \end{DoxyCompactList}\item 
+List$<$ uint $>$ \mbox{\hyperlink{class_wall_aa49042aeda37b3ad734a101f1df834eb}{Associated\+Room\+I\+Ds}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em I\+Ds of all the rooms that are spaerated by this wall \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_wall_a2c2ccc6de461b4979816536859ef591c}{Add\+Display\+To\+Wall}} (uint associated\+Room\+ID, float Ypos\+Mod\+Sign=1f)
+\begin{DoxyCompactList}\small\item\em adds a new display \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_wall_a0923767dab07b7c3018ce3a6ceacd306}{Tile\+Index\+For\+X\+Position\+Modifier\+Calc}} = 0
+\begin{DoxyCompactList}\small\item\em helper var for deciding on where to put the displays of the wall when walls are merged \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wall that seperates two rooms of a museum or is an outer wall of the museum 
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97}\label{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97}} 
+\index{Wall@{Wall}!Wall\+Rotation@{Wall\+Rotation}}
+\index{Wall\+Rotation@{Wall\+Rotation}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Wall\+Rotation}{WallRotation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97}{Wall.\+Wall\+Rotation}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vertical@{Vertical}!Wall@{Wall}}\index{Wall@{Wall}!Vertical@{Vertical}}}\mbox{\Hypertarget{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97a06ce2a25e5d12c166a36f654dbea6012}\label{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97a06ce2a25e5d12c166a36f654dbea6012}} 
+Vertical&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Horizontal@{Horizontal}!Wall@{Wall}}\index{Wall@{Wall}!Horizontal@{Horizontal}}}\mbox{\Hypertarget{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97ac1b5fa03ecdb95d4a45dd1c40b02527f}\label{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97ac1b5fa03ecdb95d4a45dd1c40b02527f}} 
+Horizontal&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_wall_a1366d94ac70428624a6703d7db89638d}\label{class_wall_a1366d94ac70428624a6703d7db89638d}} 
+\index{Wall@{Wall}!Wall\+Type@{Wall\+Type}}
+\index{Wall\+Type@{Wall\+Type}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Wall\+Type}{WallType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall.\+Wall\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Door@{Door}!Wall@{Wall}}\index{Wall@{Wall}!Door@{Door}}}\mbox{\Hypertarget{class_wall_a1366d94ac70428624a6703d7db89638daf44e14d49cd011d1e873d9fe0c4624f1}\label{class_wall_a1366d94ac70428624a6703d7db89638daf44e14d49cd011d1e873d9fe0c4624f1}} 
+Door&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Solid@{Solid}!Wall@{Wall}}\index{Wall@{Wall}!Solid@{Solid}}}\mbox{\Hypertarget{class_wall_a1366d94ac70428624a6703d7db89638dae41480b6bbfbf7407974a88d3d34f4fa}\label{class_wall_a1366d94ac70428624a6703d7db89638dae41480b6bbfbf7407974a88d3d34f4fa}} 
+Solid&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wall_a4c5f79551eaa6006ef8d243c6cb4407f}\label{class_wall_a4c5f79551eaa6006ef8d243c6cb4407f}} 
+\index{Wall@{Wall}!Wall@{Wall}}
+\index{Wall@{Wall}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Wall()}{Wall()}}
+{\footnotesize\ttfamily Wall.\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall\+Type}}}]{t,  }\item[{Vector2 \mbox{[}$\,$\mbox{]}}]{location,  }\item[{float}]{pos\+Mod,  }\item[{Vector2\+Int}]{associated\+Tile,  }\item[{uint}]{associated\+Room\+ID,  }\item[{\mbox{\hyperlink{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97}{Wall\+Rotation}}}]{rot,  }\item[{\mbox{\hyperlink{class_museum}{Museum}}}]{virt }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_wall_a4c5f79551eaa6006ef8d243c6cb4407f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wall_a2c2ccc6de461b4979816536859ef591c}\label{class_wall_a2c2ccc6de461b4979816536859ef591c}} 
+\index{Wall@{Wall}!Add\+Display\+To\+Wall@{Add\+Display\+To\+Wall}}
+\index{Add\+Display\+To\+Wall@{Add\+Display\+To\+Wall}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Add\+Display\+To\+Wall()}{AddDisplayToWall()}}
+{\footnotesize\ttfamily void Wall.\+Add\+Display\+To\+Wall (\begin{DoxyParamCaption}\item[{uint}]{associated\+Room\+ID,  }\item[{float}]{Ypos\+Mod\+Sign = {\ttfamily 1f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+adds a new display 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_wall_a2c2ccc6de461b4979816536859ef591c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_wall_aaed262c3f6b37525136f3278ca2e80cb}\label{class_wall_aaed262c3f6b37525136f3278ca2e80cb}} 
+\index{Wall@{Wall}!Add\+New\+Display\+Info@{Add\+New\+Display\+Info}}
+\index{Add\+New\+Display\+Info@{Add\+New\+Display\+Info}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Add\+New\+Display\+Info()}{AddNewDisplayInfo()}}
+{\footnotesize\ttfamily void Wall.\+Add\+New\+Display\+Info (\begin{DoxyParamCaption}\item[{uint}]{associated\+Room\+ID }\end{DoxyParamCaption})}
+
+
+
+Adds a new display to this wall if possible and sets the local position of this display correctly 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_wall_aaed262c3f6b37525136f3278ca2e80cb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_wall_aaed262c3f6b37525136f3278ca2e80cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_wall_afe665d38b06894cc2d3e1e091d977ecb}\label{class_wall_afe665d38b06894cc2d3e1e091d977ecb}} 
+\index{Wall@{Wall}!Change\+Wall\+Type@{Change\+Wall\+Type}}
+\index{Change\+Wall\+Type@{Change\+Wall\+Type}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Change\+Wall\+Type()}{ChangeWallType()}}
+{\footnotesize\ttfamily void Wall.\+Change\+Wall\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall\+Type}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Changes the type of the wall to t ensures that display\+Infos are kept correctly 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_wall_a268f71deeceb999a03235e62b43421c2}\label{class_wall_a268f71deeceb999a03235e62b43421c2}} 
+\index{Wall@{Wall}!Contains\+Point@{Contains\+Point}}
+\index{Contains\+Point@{Contains\+Point}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Contains\+Point()}{ContainsPoint()}}
+{\footnotesize\ttfamily bool Wall.\+Contains\+Point (\begin{DoxyParamCaption}\item[{Vector2}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_wall_a1f2892cd73109765a83ddeda382309eb}\label{class_wall_a1f2892cd73109765a83ddeda382309eb}} 
+\index{Wall@{Wall}!Equals@{Equals}}
+\index{Equals@{Equals}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily override bool Wall.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_wall_a1f2892cd73109765a83ddeda382309eb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_wall_a4c40b2b1afaf636c50cc2ff7597442e9}\label{class_wall_a4c40b2b1afaf636c50cc2ff7597442e9}} 
+\index{Wall@{Wall}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}
+{\footnotesize\ttfamily override int Wall.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_wall_a8104353e14b558c07aaef0a26f246418}\label{class_wall_a8104353e14b558c07aaef0a26f246418}} 
+\index{Wall@{Wall}!Merge\+Walls@{Merge\+Walls}}
+\index{Merge\+Walls@{Merge\+Walls}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Merge\+Walls()}{MergeWalls()}}
+{\footnotesize\ttfamily void Wall.\+Merge\+Walls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{w }\end{DoxyParamCaption})}
+
+
+
+Merges \mbox{\hyperlink{class_wall}{Wall}} given into wall called on 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_wall_a12a6667a52ef86d8678ecb3cd21972e2}\label{class_wall_a12a6667a52ef86d8678ecb3cd21972e2}} 
+\index{Wall@{Wall}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily static bool Wall.\+operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{lhs,  }\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_wall_a0eaebc195033f236c71d8c812b6a0256}\label{class_wall_a0eaebc195033f236c71d8c812b6a0256}} 
+\index{Wall@{Wall}!operator==@{operator==}}
+\index{operator==@{operator==}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily static bool Wall.\+operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{lhs,  }\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_wall_a0923767dab07b7c3018ce3a6ceacd306}\label{class_wall_a0923767dab07b7c3018ce3a6ceacd306}} 
+\index{Wall@{Wall}!Tile\+Index\+For\+X\+Position\+Modifier\+Calc@{Tile\+Index\+For\+X\+Position\+Modifier\+Calc}}
+\index{Tile\+Index\+For\+X\+Position\+Modifier\+Calc@{Tile\+Index\+For\+X\+Position\+Modifier\+Calc}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Tile\+Index\+For\+X\+Position\+Modifier\+Calc}{TileIndexForXPositionModifierCalc}}
+{\footnotesize\ttfamily int Wall.\+Tile\+Index\+For\+X\+Position\+Modifier\+Calc = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+helper var for deciding on where to put the displays of the wall when walls are merged 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_wall_aa49042aeda37b3ad734a101f1df834eb}\label{class_wall_aa49042aeda37b3ad734a101f1df834eb}} 
+\index{Wall@{Wall}!Associated\+Room\+I\+Ds@{Associated\+Room\+I\+Ds}}
+\index{Associated\+Room\+I\+Ds@{Associated\+Room\+I\+Ds}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Associated\+Room\+I\+Ds}{AssociatedRoomIDs}}
+{\footnotesize\ttfamily List$<$uint$>$ Wall.\+Associated\+Room\+I\+Ds\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+I\+Ds of all the rooms that are spaerated by this wall 
+
+\mbox{\Hypertarget{class_wall_a5fc68c5010cd944a5103f84a749e87f7}\label{class_wall_a5fc68c5010cd944a5103f84a749e87f7}} 
+\index{Wall@{Wall}!Display\+Infos@{Display\+Infos}}
+\index{Display\+Infos@{Display\+Infos}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Display\+Infos}{DisplayInfos}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}}$>$ Wall.\+Display\+Infos\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+info for all the displays that this wall has 
+
+\mbox{\Hypertarget{class_wall_ac7769d0a497da7e7ae3a11c813645b7a}\label{class_wall_ac7769d0a497da7e7ae3a11c813645b7a}} 
+\index{Wall@{Wall}!Location@{Location}}
+\index{Location@{Location}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Location}{Location}}
+{\footnotesize\ttfamily Vector2 \mbox{[}$\,$\mbox{]} Wall.\+Location\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+the location of the wall defined as the two vertices where the wall is inbetween vertices are room corners 
+
+\mbox{\Hypertarget{class_wall_ae056b7b9068536491c1ac441a25824a0}\label{class_wall_ae056b7b9068536491c1ac441a25824a0}} 
+\index{Wall@{Wall}!Position\+Modifier@{Position\+Modifier}}
+\index{Position\+Modifier@{Position\+Modifier}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Position\+Modifier}{PositionModifier}}
+{\footnotesize\ttfamily float Wall.\+Position\+Modifier\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+position modifier when placing the wall gamobject for the museum 
+
+\mbox{\Hypertarget{class_wall_aa2d6c86c7ccabbb5e317b9ccac62e99e}\label{class_wall_aa2d6c86c7ccabbb5e317b9ccac62e99e}} 
+\index{Wall@{Wall}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Rotation}{Rotation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wall_a0ff16a0e73bfc8f0d89c5fd6849e3a97}{Wall\+Rotation}} Wall.\+Rotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+defines if wall is vertical wall or horizontal wall in museum influneces y rotation of gamobject 
+
+\mbox{\Hypertarget{class_wall_a1e5fab93aa7e8676dd65a61a26b28513}\label{class_wall_a1e5fab93aa7e8676dd65a61a26b28513}} 
+\index{Wall@{Wall}!Tiles@{Tiles}}
+\index{Tiles@{Tiles}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Tiles}{Tiles}}
+{\footnotesize\ttfamily List$<$Vector2\+Int$>$ Wall.\+Tiles\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+tiles that are seperated from this wall 
+
+\mbox{\Hypertarget{class_wall_ade4c1924f35fd33637a3cdfa31566af0}\label{class_wall_ade4c1924f35fd33637a3cdfa31566af0}} 
+\index{Wall@{Wall}!Type@{Type}}
+\index{Type@{Type}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall\+Type}} Wall.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+the type of wall (solid or door) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\+Room\+\_\+\+Walls/\mbox{\hyperlink{_wall_8cs}{Wall.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,24 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node2" href="$class_meta_data_display.html" title="The display for all the metadata TODO: make interactable and define pickup interaction ..." alt="" coords="180,5,301,32"/>
+<area shape="rect" id="node3" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="16,56,108,83"/>
+<area shape="rect" id="node4" href="$class_display.html" title="The base class for displaying resources " alt="" coords="208,56,273,83"/>
+<area shape="rect" id="node5" href="$class_center_image_display.html" title="CenterImageDisplay" alt="" coords="377,5,515,32"/>
+<area shape="rect" id="node6" href="$class_image_display.html" title="ImageDisplay" alt="" coords="396,56,496,83"/>
+<area shape="rect" id="node7" href="$class_mesh_display.html" title="MeshDisplay" alt="" coords="397,107,495,133"/>
+<area shape="rect" id="node8" href="$class_center_mesh_display.html" title="CenterMeshDisplay" alt="" coords="577,107,712,133"/>
+<area shape="rect" id="node10" href="$class_base_door.html" title="BaseDoor" alt="" coords="201,411,280,437"/>
+<area shape="rect" id="node13" href="$class_door_trigger.html" title="Box collider trigger that opens and closes a door it is responsible for " alt="" coords="197,461,285,488"/>
+<area shape="rect" id="node14" href="$class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="167,512,315,539"/>
+<area shape="rect" id="node16" href="$class_interaction_prompt.html" title="InteractionPrompt" alt="" coords="179,563,303,589"/>
+<area shape="rect" id="node17" href="$class_museum_builder.html" title="MuseumBuilder" alt="" coords="185,107,297,133"/>
+<area shape="rect" id="node18" href="$class_museum_controller.html" title="MuseumController" alt="" coords="177,157,304,184"/>
+<area shape="rect" id="node19" href="$class_museum_generator.html" title="MuseumGenerator" alt="" coords="176,208,305,235"/>
+<area shape="rect" id="node20" href="$class_player.html" title="Player" alt="" coords="211,259,270,285"/>
+<area shape="rect" id="node21" href="$class_player_hand.html" title="PlayerHand" alt="" coords="196,309,285,336"/>
+<area shape="rect" id="node23" href="$class_resource_loader.html" title="Manages the loading of resources for the client WARNING NOT IMPLEMENTED CURRENTLY SHOULD BE SEEN AS A..." alt="" coords="183,360,299,387"/>
+<area shape="rect" id="node11" href="$class_single_hinge_door.html" title="single hinged door that rotates open on a single corner " alt="" coords="387,385,505,412"/>
+<area shape="rect" id="node12" href="$class_sliding_door.html" title="door that slides open to one side " alt="" coords="402,436,490,463"/>
+<area shape="rect" id="node15" href="$class_object_in_hand_component.html" title="the bahaviour that allows to rotate an obnject that is held with the mouse " alt="" coords="363,512,529,539"/>
+<area shape="rect" id="node22" href="$class_p_c_player_hand.html" title="PCPlayerHand" alt="" coords="393,309,499,336"/>
+</map>

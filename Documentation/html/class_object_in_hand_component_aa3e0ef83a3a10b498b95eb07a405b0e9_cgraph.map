@@ -1,0 +1,4 @@
+<map id="ObjectInHandComponent.Update" name="ObjectInHandComponent.Update">
+<area shape="rect" id="node2" href="$class_object_in_hand_component.html#aa00e6e5af513b7c24e36e7e74b1f7ae4" title="Handles rotation of the object " alt="" coords="280,5,491,47"/>
+<area shape="rect" id="node3" href="$class_object_in_hand_component.html#a01fb8169d53ed7176d1aae0729f7caa1" title="handles the zoom of camera " alt="" coords="264,71,507,98"/>
+</map>

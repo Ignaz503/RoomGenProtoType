@@ -1,0 +1,4 @@
+<map id="Display.OnInteractionEnded" name="Display.OnInteractionEnded">
+<area shape="rect" id="node2" href="$class_interaction.html#a13c7d99dbecf8e0d61973fd23de6400c" title="function called on end of interaction should cleanup any components added to any gamobject ..." alt="" coords="236,5,405,32"/>
+<area shape="rect" id="node3" href="$class_display.html#a6fd38485267e1b78f1d1dfb589ec4ae0" title="called when an interaction ends used to reactivate any component deactivated during the interaction ..." alt="" coords="237,56,404,83"/>
+</map>

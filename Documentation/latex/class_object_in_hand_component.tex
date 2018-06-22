@@ -1,0 +1,250 @@
+\hypertarget{class_object_in_hand_component}{}\section{Object\+In\+Hand\+Component Class Reference}
+\label{class_object_in_hand_component}\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+
+
+the bahaviour that allows to rotate an obnject that is held with the mouse  
+
+
+
+
+Inheritance diagram for Object\+In\+Hand\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_object_in_hand_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Object\+In\+Hand\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_in_hand_component__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_in_hand_component_a3399bcee7bffea9b599f1dd8d6e2a93c}{Start\+Interaction}} (\mbox{\hyperlink{class_player}{Player}} p, Transform obj\+To\+Rot)
+\begin{DoxyCompactList}\small\item\em sets the object and player that are itneracting \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_object_in_hand_component_aed115a3a0f70c23370cab4428454025c}{Start\+Interaction}} (Game\+Object activator, Game\+Object interacted\+Upon)
+\begin{DoxyCompactList}\small\item\em setup function when interaction starts \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_object_in_hand_component_a932b69c4977ec0836389b71a6aa1366c}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em cleanup funciton after interaction was ended \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_in_hand_component_aa3e0ef83a3a10b498b95eb07a405b0e9}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_object_in_hand_component_aa00e6e5af513b7c24e36e7e74b1f7ae4}{Handle\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Handles rotation of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_in_hand_component_a01fb8169d53ed7176d1aae0729f7caa1}{Handle\+Zoom}} ()
+\begin{DoxyCompactList}\small\item\em handles the zoom of camera \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_object_in_hand_component_add0e2bed573b54275914fc48c37b958c}{player\+Holding\+Object}}
+\begin{DoxyCompactList}\small\item\em the player holding the object \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_object_in_hand_component_adbeb015fd1ac714798d886db0b6f940a}{object\+To\+Rotate}}
+\begin{DoxyCompactList}\small\item\em transform of the object that need rotating \end{DoxyCompactList}\item 
+Key\+Code \mbox{\hyperlink{class_object_in_hand_component_aa84650b4fd81b0c4aa0bc91d2a371625}{rotation\+Key}} = Key\+Code.\+Mouse0
+\begin{DoxyCompactList}\small\item\em key that need pressing to rotate the object \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_object_in_hand_component_a002cb792e31eb3f99e15c126a07fa67b}{init\+Cam\+Loc\+Pos}}
+\begin{DoxyCompactList}\small\item\em the initial camera position for zoom reasons \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_object_in_hand_component_a173143fff5ee217d1148281e49f26e10}{currentT}} = 0f
+\begin{DoxyCompactList}\small\item\em current T for lerping of zoom level \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_object_in_hand_component_abbcf3780d099790d8d2e799ab4447ec6}{vel}}
+\begin{DoxyCompactList}\small\item\em velocity vector used by smooth damp \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the bahaviour that allows to rotate an obnject that is held with the mouse 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_object_in_hand_component_a932b69c4977ec0836389b71a6aa1366c}\label{class_object_in_hand_component_a932b69c4977ec0836389b71a6aa1366c}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily override void Object\+In\+Hand\+Component.\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+cleanup funciton after interaction was ended 
+
+
+
+Implements \mbox{\hyperlink{class_interaction_component_aa28f5c9f92b342c3d52f8b0b251fb4fa}{Interaction\+Component}}.
+
+\mbox{\Hypertarget{class_object_in_hand_component_aa00e6e5af513b7c24e36e7e74b1f7ae4}\label{class_object_in_hand_component_aa00e6e5af513b7c24e36e7e74b1f7ae4}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!Handle\+Rotation@{Handle\+Rotation}}
+\index{Handle\+Rotation@{Handle\+Rotation}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{Handle\+Rotation()}{HandleRotation()}}
+{\footnotesize\ttfamily void Object\+In\+Hand\+Component.\+Handle\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles rotation of the object 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_in_hand_component_aa00e6e5af513b7c24e36e7e74b1f7ae4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_in_hand_component_a01fb8169d53ed7176d1aae0729f7caa1}\label{class_object_in_hand_component_a01fb8169d53ed7176d1aae0729f7caa1}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!Handle\+Zoom@{Handle\+Zoom}}
+\index{Handle\+Zoom@{Handle\+Zoom}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{Handle\+Zoom()}{HandleZoom()}}
+{\footnotesize\ttfamily void Object\+In\+Hand\+Component.\+Handle\+Zoom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the zoom of camera 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_in_hand_component_a01fb8169d53ed7176d1aae0729f7caa1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_in_hand_component_a3399bcee7bffea9b599f1dd8d6e2a93c}\label{class_object_in_hand_component_a3399bcee7bffea9b599f1dd8d6e2a93c}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!Start\+Interaction@{Start\+Interaction}}
+\index{Start\+Interaction@{Start\+Interaction}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{Start\+Interaction()}{StartInteraction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Object\+In\+Hand\+Component.\+Start\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}}]{p,  }\item[{Transform}]{obj\+To\+Rot }\end{DoxyParamCaption})}
+
+
+
+sets the object and player that are itneracting 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_in_hand_component_a3399bcee7bffea9b599f1dd8d6e2a93c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_in_hand_component_aed115a3a0f70c23370cab4428454025c}\label{class_object_in_hand_component_aed115a3a0f70c23370cab4428454025c}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!Start\+Interaction@{Start\+Interaction}}
+\index{Start\+Interaction@{Start\+Interaction}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{Start\+Interaction()}{StartInteraction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override void Object\+In\+Hand\+Component.\+Start\+Interaction (\begin{DoxyParamCaption}\item[{Game\+Object}]{activator,  }\item[{Game\+Object}]{interacted\+Upon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setup function when interaction starts 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activator} & obj activating interaction\\
+\hline
+{\em interacted\+Upon} & object that is interacted upon\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_interaction_component_a80d4c2288af453dd9611bbea092843e5}{Interaction\+Component}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_in_hand_component_aed115a3a0f70c23370cab4428454025c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_in_hand_component_aa3e0ef83a3a10b498b95eb07a405b0e9}\label{class_object_in_hand_component_aa3e0ef83a3a10b498b95eb07a405b0e9}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!Update@{Update}}
+\index{Update@{Update}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Object\+In\+Hand\+Component.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_in_hand_component_aa3e0ef83a3a10b498b95eb07a405b0e9_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_object_in_hand_component_a173143fff5ee217d1148281e49f26e10}\label{class_object_in_hand_component_a173143fff5ee217d1148281e49f26e10}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!currentT@{currentT}}
+\index{currentT@{currentT}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{currentT}{currentT}}
+{\footnotesize\ttfamily float Object\+In\+Hand\+Component.\+currentT = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current T for lerping of zoom level 
+
+\mbox{\Hypertarget{class_object_in_hand_component_a002cb792e31eb3f99e15c126a07fa67b}\label{class_object_in_hand_component_a002cb792e31eb3f99e15c126a07fa67b}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!init\+Cam\+Loc\+Pos@{init\+Cam\+Loc\+Pos}}
+\index{init\+Cam\+Loc\+Pos@{init\+Cam\+Loc\+Pos}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{init\+Cam\+Loc\+Pos}{initCamLocPos}}
+{\footnotesize\ttfamily Vector3 Object\+In\+Hand\+Component.\+init\+Cam\+Loc\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the initial camera position for zoom reasons 
+
+\mbox{\Hypertarget{class_object_in_hand_component_adbeb015fd1ac714798d886db0b6f940a}\label{class_object_in_hand_component_adbeb015fd1ac714798d886db0b6f940a}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!object\+To\+Rotate@{object\+To\+Rotate}}
+\index{object\+To\+Rotate@{object\+To\+Rotate}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{object\+To\+Rotate}{objectToRotate}}
+{\footnotesize\ttfamily Transform Object\+In\+Hand\+Component.\+object\+To\+Rotate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+transform of the object that need rotating 
+
+\mbox{\Hypertarget{class_object_in_hand_component_add0e2bed573b54275914fc48c37b958c}\label{class_object_in_hand_component_add0e2bed573b54275914fc48c37b958c}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!player\+Holding\+Object@{player\+Holding\+Object}}
+\index{player\+Holding\+Object@{player\+Holding\+Object}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{player\+Holding\+Object}{playerHoldingObject}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} Object\+In\+Hand\+Component.\+player\+Holding\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the player holding the object 
+
+\mbox{\Hypertarget{class_object_in_hand_component_aa84650b4fd81b0c4aa0bc91d2a371625}\label{class_object_in_hand_component_aa84650b4fd81b0c4aa0bc91d2a371625}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!rotation\+Key@{rotation\+Key}}
+\index{rotation\+Key@{rotation\+Key}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{rotation\+Key}{rotationKey}}
+{\footnotesize\ttfamily Key\+Code Object\+In\+Hand\+Component.\+rotation\+Key = Key\+Code.\+Mouse0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+key that need pressing to rotate the object 
+
+\mbox{\Hypertarget{class_object_in_hand_component_abbcf3780d099790d8d2e799ab4447ec6}\label{class_object_in_hand_component_abbcf3780d099790d8d2e799ab4447ec6}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!vel@{vel}}
+\index{vel@{vel}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{vel}{vel}}
+{\footnotesize\ttfamily Vector3 Object\+In\+Hand\+Component.\+vel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+velocity vector used by smooth damp 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Interaction/\mbox{\hyperlink{_object_in_hand_interaction_8cs}{Object\+In\+Hand\+Interaction.\+cs}}\end{DoxyCompactItemize}

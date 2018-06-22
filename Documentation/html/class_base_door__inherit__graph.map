@@ -1,0 +1,4 @@
+<map id="BaseDoor" name="BaseDoor">
+<area shape="rect" id="node3" href="$class_single_hinge_door.html" title="single hinged door that rotates open on a single corner " alt="" coords="5,155,124,181"/>
+<area shape="rect" id="node4" href="$class_sliding_door.html" title="door that slides open to one side " alt="" coords="149,155,237,181"/>
+</map>

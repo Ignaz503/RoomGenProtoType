@@ -1,0 +1,196 @@
+\hypertarget{class_room_managment_unit}{}\section{Room\+Managment\+Unit Class Reference}
+\label{class_room_managment_unit}\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+
+
+class that contains all gamobjects that are in a certain room und will manage unloading and loading for it  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_room_managment_unit_ad9c4cf6c496f32f6e0edbe47a4bf0295}{Room\+Managment\+Unit}} (uint room\+ID, bool loaded\+State)
+\item 
+void \mbox{\hyperlink{class_room_managment_unit_a7f34dfb62166ebcbd2a314f0bcdb61e9}{Load\+Room}} ()
+\item 
+void \mbox{\hyperlink{class_room_managment_unit_a45c039de8a79db7ada5831e0abeda972}{Unload\+Room}} ()
+\item 
+void \mbox{\hyperlink{class_room_managment_unit_a6043074719f8d67150cbfcff4c7a4cec}{Toggle\+Room}} ()
+\item 
+void \mbox{\hyperlink{class_room_managment_unit_ac7f3f62eb0e6f9f0bb239266796a323a}{Add\+Game\+Object}} (Game\+Object obj)
+\item 
+override int \mbox{\hyperlink{class_room_managment_unit_ad76ae60e41c36a71934ff9cccca60039}{Get\+Hash\+Code}} ()
+\item 
+override bool \mbox{\hyperlink{class_room_managment_unit_a663946fa33bad407b32d75aea8e7d5d9}{Equals}} (object obj)
+\item 
+override string \mbox{\hyperlink{class_room_managment_unit_af1299b6fbb2496cc4cb0e14a95cc2b9c}{To\+String}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_room_managment_unit_afb66a8eafa5ec0399e83b670ed2db21f}{Gameobjects\+In\+Room}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_room_managment_unit_a221d94b284d9888e753699938f9e7809}{Is\+Loaded}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_managment_unit_ae39467cac522f23c198693c215968ad7}{Set\+Gameobjects\+Active\+To}} (bool state)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint \mbox{\hyperlink{class_room_managment_unit_a3a8836466231ec4cc95a2328cf246a75}{Managed\+Room\+ID}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that contains all gamobjects that are in a certain room und will manage unloading and loading for it 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_room_managment_unit_ad9c4cf6c496f32f6e0edbe47a4bf0295}\label{class_room_managment_unit_ad9c4cf6c496f32f6e0edbe47a4bf0295}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Room\+Managment\+Unit()}{RoomManagmentUnit()}}
+{\footnotesize\ttfamily Room\+Managment\+Unit.\+Room\+Managment\+Unit (\begin{DoxyParamCaption}\item[{uint}]{room\+ID,  }\item[{bool}]{loaded\+State }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_managment_unit_ad9c4cf6c496f32f6e0edbe47a4bf0295_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_room_managment_unit_ac7f3f62eb0e6f9f0bb239266796a323a}\label{class_room_managment_unit_ac7f3f62eb0e6f9f0bb239266796a323a}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Add\+Game\+Object@{Add\+Game\+Object}}
+\index{Add\+Game\+Object@{Add\+Game\+Object}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Add\+Game\+Object()}{AddGameObject()}}
+{\footnotesize\ttfamily void Room\+Managment\+Unit.\+Add\+Game\+Object (\begin{DoxyParamCaption}\item[{Game\+Object}]{obj }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_managment_unit_ac7f3f62eb0e6f9f0bb239266796a323a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_managment_unit_a663946fa33bad407b32d75aea8e7d5d9}\label{class_room_managment_unit_a663946fa33bad407b32d75aea8e7d5d9}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Equals@{Equals}}
+\index{Equals@{Equals}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily override bool Room\+Managment\+Unit.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_managment_unit_a663946fa33bad407b32d75aea8e7d5d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_managment_unit_ad76ae60e41c36a71934ff9cccca60039}\label{class_room_managment_unit_ad76ae60e41c36a71934ff9cccca60039}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}
+{\footnotesize\ttfamily override int Room\+Managment\+Unit.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_managment_unit_a7f34dfb62166ebcbd2a314f0bcdb61e9}\label{class_room_managment_unit_a7f34dfb62166ebcbd2a314f0bcdb61e9}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Load\+Room@{Load\+Room}}
+\index{Load\+Room@{Load\+Room}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Load\+Room()}{LoadRoom()}}
+{\footnotesize\ttfamily void Room\+Managment\+Unit.\+Load\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_managment_unit_a7f34dfb62166ebcbd2a314f0bcdb61e9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_managment_unit_ae39467cac522f23c198693c215968ad7}\label{class_room_managment_unit_ae39467cac522f23c198693c215968ad7}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Set\+Gameobjects\+Active\+To@{Set\+Gameobjects\+Active\+To}}
+\index{Set\+Gameobjects\+Active\+To@{Set\+Gameobjects\+Active\+To}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Set\+Gameobjects\+Active\+To()}{SetGameobjectsActiveTo()}}
+{\footnotesize\ttfamily void Room\+Managment\+Unit.\+Set\+Gameobjects\+Active\+To (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_managment_unit_ae39467cac522f23c198693c215968ad7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_managment_unit_a6043074719f8d67150cbfcff4c7a4cec}\label{class_room_managment_unit_a6043074719f8d67150cbfcff4c7a4cec}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Toggle\+Room@{Toggle\+Room}}
+\index{Toggle\+Room@{Toggle\+Room}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Toggle\+Room()}{ToggleRoom()}}
+{\footnotesize\ttfamily void Room\+Managment\+Unit.\+Toggle\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_managment_unit_a6043074719f8d67150cbfcff4c7a4cec_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_managment_unit_af1299b6fbb2496cc4cb0e14a95cc2b9c}\label{class_room_managment_unit_af1299b6fbb2496cc4cb0e14a95cc2b9c}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily override string Room\+Managment\+Unit.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_managment_unit_a45c039de8a79db7ada5831e0abeda972}\label{class_room_managment_unit_a45c039de8a79db7ada5831e0abeda972}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Unload\+Room@{Unload\+Room}}
+\index{Unload\+Room@{Unload\+Room}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Unload\+Room()}{UnloadRoom()}}
+{\footnotesize\ttfamily void Room\+Managment\+Unit.\+Unload\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_managment_unit_a45c039de8a79db7ada5831e0abeda972_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_room_managment_unit_afb66a8eafa5ec0399e83b670ed2db21f}\label{class_room_managment_unit_afb66a8eafa5ec0399e83b670ed2db21f}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Gameobjects\+In\+Room@{Gameobjects\+In\+Room}}
+\index{Gameobjects\+In\+Room@{Gameobjects\+In\+Room}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Gameobjects\+In\+Room}{GameobjectsInRoom}}
+{\footnotesize\ttfamily List$<$Game\+Object$>$ Room\+Managment\+Unit.\+Gameobjects\+In\+Room}
+
+\mbox{\Hypertarget{class_room_managment_unit_a3a8836466231ec4cc95a2328cf246a75}\label{class_room_managment_unit_a3a8836466231ec4cc95a2328cf246a75}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Managed\+Room\+ID@{Managed\+Room\+ID}}
+\index{Managed\+Room\+ID@{Managed\+Room\+ID}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Managed\+Room\+ID}{ManagedRoomID}}
+{\footnotesize\ttfamily uint Room\+Managment\+Unit.\+Managed\+Room\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_room_managment_unit_a221d94b284d9888e753699938f9e7809}\label{class_room_managment_unit_a221d94b284d9888e753699938f9e7809}} 
+\index{Room\+Managment\+Unit@{Room\+Managment\+Unit}!Is\+Loaded@{Is\+Loaded}}
+\index{Is\+Loaded@{Is\+Loaded}!Room\+Managment\+Unit@{Room\+Managment\+Unit}}
+\subsubsection{\texorpdfstring{Is\+Loaded}{IsLoaded}}
+{\footnotesize\ttfamily bool Room\+Managment\+Unit.\+Is\+Loaded\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Room\+Management/\mbox{\hyperlink{_room_managment_unit_8cs}{Room\+Managment\+Unit.\+cs}}\end{DoxyCompactItemize}

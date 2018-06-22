@@ -1,0 +1,4 @@
+<map id="BaseDoor.Open" name="BaseDoor.Open">
+<area shape="rect" id="node2" href="$class_door_trigger.html#a3b079888a26feb3139b6a0507b89c65c" title="DoorTrigger.Start" alt="" coords="197,5,317,32"/>
+<area shape="rect" id="node3" href="$class_door_trigger.html#a9cad842a8527ec462aae682c8c50b118" title="DoorTrigger.OnTriggerEnter" alt="" coords="168,56,347,83"/>
+</map>

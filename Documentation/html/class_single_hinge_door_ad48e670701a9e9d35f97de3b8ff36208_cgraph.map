@@ -1,0 +1,4 @@
+<map id="SingleHingeDoor.Open" name="SingleHingeDoor.Open">
+<area shape="rect" id="node2" href="$class_single_hinge_door.html#ae0aa0776b9f80616a0b2a35d968101ad" title="coroutine that opens the door " alt="" coords="207,5,415,32"/>
+<area shape="rect" id="node3" href="$class_base_door.html#af53bd804dcee24b1f2019c2d2e8e03c6" title="wrapper class to invoke event from sub classes " alt="" coords="463,5,621,32"/>
+</map>

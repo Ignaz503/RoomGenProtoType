@@ -1,0 +1,12 @@
+<map id="MuseumGenerator.Update" name="MuseumGenerator.Update">
+<area shape="rect" id="node2" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="257,123,386,149"/>
+<area shape="rect" id="node10" href="$class_museum_generator.html#a1b9419222535f317005ca9fe1fe757f3" title="gnerates a temp display of the museum but onyl floor walls handled by draw gizmos ..." alt="" coords="228,174,415,215"/>
+<area shape="rect" id="node11" href="$class_museum.html#ac956bb7d7454f99944af157c79f695b8" title="Serilaizes a museum to an xml string " alt="" coords="258,240,385,267"/>
+<area shape="rect" id="node3" href="$class_museum.html#af5b732fe3a0821d02852171a73cf8f8b" title="returns the sourrounding tiles for a given position " alt="" coords="475,5,675,32"/>
+<area shape="rect" id="node4" href="$class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="482,57,669,98"/>
+<area shape="rect" id="node5" href="$class_room.html#a294bb89a25ac765eca25106ccb4d1955" title="Creats a single door between two rooms " alt="" coords="467,123,683,149"/>
+<area shape="rect" id="node6" href="$class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4" title="Fills the displas that exist in the museum WARNING: CURRENTLY TEMP IMPLEMENTATION ..." alt="" coords="504,173,647,200"/>
+<area shape="rect" id="node7" href="$class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="463,224,688,251"/>
+<area shape="rect" id="node8" href="$class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="736,217,929,258"/>
+<area shape="rect" id="node9" href="$class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="977,224,1176,251"/>
+</map>

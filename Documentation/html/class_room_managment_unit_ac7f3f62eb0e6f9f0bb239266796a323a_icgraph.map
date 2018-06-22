@@ -1,0 +1,8 @@
+<map id="RoomManagmentUnit.AddGameObject" name="RoomManagmentUnit.AddGameObject">
+<area shape="rect" id="node2" href="$class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="263,64,541,91"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="842,35,1023,62"/>
+<area shape="rect" id="node5" href="$class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="840,94,1025,120"/>
+<area shape="rect" id="node6" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="595,28,786,69"/>
+<area shape="rect" id="node7" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="589,145,792,186"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="1073,64,1231,91"/>
+</map>

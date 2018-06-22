@@ -1,0 +1,4 @@
+<map id="Museum.AddWall" name="Museum.AddWall">
+<area shape="rect" id="node2" href="$class_wall.html#aaed262c3f6b37525136f3278ca2e80cb" title="Adds a new display to this wall if possible and sets the local position of this display correctly ..." alt="" coords="179,5,341,32"/>
+<area shape="rect" id="node3" href="$class_wall.html#a2c2ccc6de461b4979816536859ef591c" title="adds a new display " alt="" coords="389,5,548,32"/>
+</map>

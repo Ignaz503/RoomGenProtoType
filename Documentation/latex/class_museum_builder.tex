@@ -1,0 +1,462 @@
+\hypertarget{class_museum_builder}{}\section{Museum\+Builder Class Reference}
+\label{class_museum_builder}\index{Museum\+Builder@{Museum\+Builder}}
+
+
+Inheritance diagram for Museum\+Builder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_museum_builder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Museum\+Builder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_a357c5b16bf4a1b1a10eacfec75bf2869}{Floor\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_adede3b195361b0b02def8c0c26ccb5d0}{Wall\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_a9494f3d21dd268b7d542ece9901e6b7c}{Wall\+With\+Door\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_a1a8a4b93806cc0edfc74a9b94750e96c}{Center\+Image\+Display\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_acb0c15557dd0d3151d42e7b28b57ee31}{Center\+Mesh\+Display}}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_adc42d6478ee13f86e50fd0be210d9a4e}{Mesh\+Display\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_ad898a0067b63d2386284e0130849bf9a}{Wall\+Image\+Display\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_a9966f9ce8cc1117cb72e3aa42ea1a490}{Ceiling\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_a57f709574a50b97bb8f44f0d53606c44}{Player}}
+\item 
+Mesh\+Filter \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_museum_builder_aac70b019fbefe1d65a4853448eed0609}{Test\+Mesh}}
+\begin{DoxyCompactList}\small\item\em temp test meshes \end{DoxyCompactList}\item 
+Texture2D \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_museum_builder_a002d66342d0fc72765e89a6f78bd312f}{Test\+Textures}}
+\begin{DoxyCompactList}\small\item\em temp mesh textures \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_museum_builder_a754d766babff00a827e99b8bc51ff716}{Floor\+X\+Pos\+Scale}}
+\begin{DoxyCompactList}\small\item\em scaling of position in x direction \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_museum_builder_a221fec90b7a551d41df9a6593b649c51}{Floor\+Z\+Pos\+Scale}}
+\begin{DoxyCompactList}\small\item\em caling of floor position in z direction \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_museum_builder_a13b0442ec3a7b4aededb9a7d90572c70}{Disable\+After\+Request}}
+\begin{DoxyCompactList}\small\item\em temp \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_museum_builder}{Museum\+Builder}} \mbox{\hyperlink{class_museum_builder_a072af37ad11eefd26fbac2f98e9414bf}{Instance}}
+\begin{DoxyCompactList}\small\item\em instance of the builder \end{DoxyCompactList}\item 
+static Queue$<$ string $>$ \mbox{\hyperlink{class_museum_builder_ab659e7b1adaace5d5c8dec90df493483}{Museum\+Data}} = new Queue$<$string$>$()
+\begin{DoxyCompactList}\small\item\em temp queue for testing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_museum_builder_a846546ea2e9bf91bba2a166dc2b01e2d}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1}{Set\+Up\+Floor}} (List$<$ Game\+Object $>$ floors)
+\item 
+void \mbox{\hyperlink{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913}{Set\+Up\+Walls}} (List$<$ Game\+Object $>$ floors)
+\begin{DoxyCompactList}\small\item\em Sets up wall gameobjects for a museum \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a159e037415aaf348d5a0af9561be8560}{Set\+Up\+Center\+Displays\+For\+Room}} (\mbox{\hyperlink{class_room}{Room}} r, List$<$ Game\+Object $>$ associated\+Floor\+Gameobjects)
+\begin{DoxyCompactList}\small\item\em Creates the center displays for a room List used for correct parenting of gamobject \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5}{Set\+Up\+Displays\+For\+Wall}} (\mbox{\hyperlink{class_wall}{Wall}} w, Game\+Object wall\+Obj)
+\begin{DoxyCompactList}\small\item\em Creates wall displays for museum \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a2c456481ed3350f0113041111d63d0ec}{Load\+Resource}} (\mbox{\hyperlink{class_display}{Display}} disp, string resource\+Locator)
+\begin{DoxyCompactList}\small\item\em Loads \mbox{\hyperlink{class_resource}{Resource}} for a dsiplay \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8}{Add\+To\+Room\+Managment\+Unit}} (uint room\+ID, Game\+Object obj\+To\+Add)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_museum_builder_ae878fab80ac14114029e1fe78877f26a}{wall\+Height}}
+\begin{DoxyCompactList}\small\item\em height of walls in the msuem \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_builder_ade9354ab3c65386fb3ba9c5d5db94a1d}{Test\+Text\+Size}}
+\item 
+int \mbox{\hyperlink{class_museum_builder_aa8b616ce266d39591cc20f6cc884333b}{curr\+Idx}} = 0
+\item 
+\mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_museum_builder_a353644d408300bbadf427e0a0971d039}{virt\+Muse}} = null
+\begin{DoxyCompactList}\small\item\em the museum being built \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum_controller}{Museum\+Controller}} \mbox{\hyperlink{class_museum_builder_ab63ff4582a395d2172a05542dbca8341}{\+\_\+\+Musem\+Controller\+Instance}}
+\begin{DoxyCompactList}\small\item\em instance of the museum controller \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8}\label{class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8}} 
+\index{Museum\+Builder@{Museum\+Builder}!Add\+To\+Room\+Managment\+Unit@{Add\+To\+Room\+Managment\+Unit}}
+\index{Add\+To\+Room\+Managment\+Unit@{Add\+To\+Room\+Managment\+Unit}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Add\+To\+Room\+Managment\+Unit()}{AddToRoomManagmentUnit()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Add\+To\+Room\+Managment\+Unit (\begin{DoxyParamCaption}\item[{uint}]{room\+ID,  }\item[{Game\+Object}]{obj\+To\+Add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a846546ea2e9bf91bba2a166dc2b01e2d}\label{class_museum_builder_a846546ea2e9bf91bba2a166dc2b01e2d}} 
+\index{Museum\+Builder@{Museum\+Builder}!Awake@{Awake}}
+\index{Awake@{Awake}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_builder_a2c456481ed3350f0113041111d63d0ec}\label{class_museum_builder_a2c456481ed3350f0113041111d63d0ec}} 
+\index{Museum\+Builder@{Museum\+Builder}!Load\+Resource@{Load\+Resource}}
+\index{Load\+Resource@{Load\+Resource}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Load\+Resource()}{LoadResource()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Load\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_display}{Display}}}]{disp,  }\item[{string}]{resource\+Locator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads \mbox{\hyperlink{class_resource}{Resource}} for a dsiplay 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a2c456481ed3350f0113041111d63d0ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a2c456481ed3350f0113041111d63d0ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a159e037415aaf348d5a0af9561be8560}\label{class_museum_builder_a159e037415aaf348d5a0af9561be8560}} 
+\index{Museum\+Builder@{Museum\+Builder}!Set\+Up\+Center\+Displays\+For\+Room@{Set\+Up\+Center\+Displays\+For\+Room}}
+\index{Set\+Up\+Center\+Displays\+For\+Room@{Set\+Up\+Center\+Displays\+For\+Room}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Set\+Up\+Center\+Displays\+For\+Room()}{SetUpCenterDisplaysForRoom()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Set\+Up\+Center\+Displays\+For\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room}{Room}}}]{r,  }\item[{List$<$ Game\+Object $>$}]{associated\+Floor\+Gameobjects }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates the center displays for a room List used for correct parenting of gamobject 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a159e037415aaf348d5a0af9561be8560_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5}\label{class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5}} 
+\index{Museum\+Builder@{Museum\+Builder}!Set\+Up\+Displays\+For\+Wall@{Set\+Up\+Displays\+For\+Wall}}
+\index{Set\+Up\+Displays\+For\+Wall@{Set\+Up\+Displays\+For\+Wall}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Set\+Up\+Displays\+For\+Wall()}{SetUpDisplaysForWall()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Set\+Up\+Displays\+For\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{w,  }\item[{Game\+Object}]{wall\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates wall displays for museum 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1}\label{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1}} 
+\index{Museum\+Builder@{Museum\+Builder}!Set\+Up\+Floor@{Set\+Up\+Floor}}
+\index{Set\+Up\+Floor@{Set\+Up\+Floor}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Set\+Up\+Floor()}{SetUpFloor()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Set\+Up\+Floor (\begin{DoxyParamCaption}\item[{List$<$ Game\+Object $>$}]{floors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+
+Sets up the floor for a museum fills list of gameobjects used for parenting information when setting up walls Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913}\label{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913}} 
+\index{Museum\+Builder@{Museum\+Builder}!Set\+Up\+Walls@{Set\+Up\+Walls}}
+\index{Set\+Up\+Walls@{Set\+Up\+Walls}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Set\+Up\+Walls()}{SetUpWalls()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Set\+Up\+Walls (\begin{DoxyParamCaption}\item[{List$<$ Game\+Object $>$}]{floors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets up wall gameobjects for a museum 
+
+
+\begin{DoxyParams}{Parameters}
+{\em floors} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8}\label{class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8}} 
+\index{Museum\+Builder@{Museum\+Builder}!Start@{Start}}
+\index{Start@{Start}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c}\label{class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c}} 
+\index{Museum\+Builder@{Museum\+Builder}!Update@{Update}}
+\index{Update@{Update}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_museum_builder_ab63ff4582a395d2172a05542dbca8341}\label{class_museum_builder_ab63ff4582a395d2172a05542dbca8341}} 
+\index{Museum\+Builder@{Museum\+Builder}!\+\_\+\+Musem\+Controller\+Instance@{\+\_\+\+Musem\+Controller\+Instance}}
+\index{\+\_\+\+Musem\+Controller\+Instance@{\+\_\+\+Musem\+Controller\+Instance}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{\+\_\+\+Musem\+Controller\+Instance}{\_MusemControllerInstance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_controller}{Museum\+Controller}} Museum\+Builder.\+\_\+\+Musem\+Controller\+Instance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+instance of the museum controller 
+
+\mbox{\Hypertarget{class_museum_builder_a9966f9ce8cc1117cb72e3aa42ea1a490}\label{class_museum_builder_a9966f9ce8cc1117cb72e3aa42ea1a490}} 
+\index{Museum\+Builder@{Museum\+Builder}!Ceiling\+Prefab@{Ceiling\+Prefab}}
+\index{Ceiling\+Prefab@{Ceiling\+Prefab}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Ceiling\+Prefab}{CeilingPrefab}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Ceiling\+Prefab}
+
+\mbox{\Hypertarget{class_museum_builder_a1a8a4b93806cc0edfc74a9b94750e96c}\label{class_museum_builder_a1a8a4b93806cc0edfc74a9b94750e96c}} 
+\index{Museum\+Builder@{Museum\+Builder}!Center\+Image\+Display\+Prefab@{Center\+Image\+Display\+Prefab}}
+\index{Center\+Image\+Display\+Prefab@{Center\+Image\+Display\+Prefab}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Center\+Image\+Display\+Prefab}{CenterImageDisplayPrefab}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Center\+Image\+Display\+Prefab}
+
+\mbox{\Hypertarget{class_museum_builder_acb0c15557dd0d3151d42e7b28b57ee31}\label{class_museum_builder_acb0c15557dd0d3151d42e7b28b57ee31}} 
+\index{Museum\+Builder@{Museum\+Builder}!Center\+Mesh\+Display@{Center\+Mesh\+Display}}
+\index{Center\+Mesh\+Display@{Center\+Mesh\+Display}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Center\+Mesh\+Display}{CenterMeshDisplay}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Center\+Mesh\+Display}
+
+\mbox{\Hypertarget{class_museum_builder_aa8b616ce266d39591cc20f6cc884333b}\label{class_museum_builder_aa8b616ce266d39591cc20f6cc884333b}} 
+\index{Museum\+Builder@{Museum\+Builder}!curr\+Idx@{curr\+Idx}}
+\index{curr\+Idx@{curr\+Idx}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{curr\+Idx}{currIdx}}
+{\footnotesize\ttfamily int Museum\+Builder.\+curr\+Idx = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_builder_a13b0442ec3a7b4aededb9a7d90572c70}\label{class_museum_builder_a13b0442ec3a7b4aededb9a7d90572c70}} 
+\index{Museum\+Builder@{Museum\+Builder}!Disable\+After\+Request@{Disable\+After\+Request}}
+\index{Disable\+After\+Request@{Disable\+After\+Request}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Disable\+After\+Request}{DisableAfterRequest}}
+{\footnotesize\ttfamily bool Museum\+Builder.\+Disable\+After\+Request}
+
+
+
+temp 
+
+\mbox{\Hypertarget{class_museum_builder_a357c5b16bf4a1b1a10eacfec75bf2869}\label{class_museum_builder_a357c5b16bf4a1b1a10eacfec75bf2869}} 
+\index{Museum\+Builder@{Museum\+Builder}!Floor\+Prefab@{Floor\+Prefab}}
+\index{Floor\+Prefab@{Floor\+Prefab}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Floor\+Prefab}{FloorPrefab}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Floor\+Prefab}
+
+\mbox{\Hypertarget{class_museum_builder_a754d766babff00a827e99b8bc51ff716}\label{class_museum_builder_a754d766babff00a827e99b8bc51ff716}} 
+\index{Museum\+Builder@{Museum\+Builder}!Floor\+X\+Pos\+Scale@{Floor\+X\+Pos\+Scale}}
+\index{Floor\+X\+Pos\+Scale@{Floor\+X\+Pos\+Scale}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Floor\+X\+Pos\+Scale}{FloorXPosScale}}
+{\footnotesize\ttfamily float Museum\+Builder.\+Floor\+X\+Pos\+Scale}
+
+
+
+scaling of position in x direction 
+
+\mbox{\Hypertarget{class_museum_builder_a221fec90b7a551d41df9a6593b649c51}\label{class_museum_builder_a221fec90b7a551d41df9a6593b649c51}} 
+\index{Museum\+Builder@{Museum\+Builder}!Floor\+Z\+Pos\+Scale@{Floor\+Z\+Pos\+Scale}}
+\index{Floor\+Z\+Pos\+Scale@{Floor\+Z\+Pos\+Scale}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Floor\+Z\+Pos\+Scale}{FloorZPosScale}}
+{\footnotesize\ttfamily float Museum\+Builder.\+Floor\+Z\+Pos\+Scale}
+
+
+
+caling of floor position in z direction 
+
+\mbox{\Hypertarget{class_museum_builder_a072af37ad11eefd26fbac2f98e9414bf}\label{class_museum_builder_a072af37ad11eefd26fbac2f98e9414bf}} 
+\index{Museum\+Builder@{Museum\+Builder}!Instance@{Instance}}
+\index{Instance@{Instance}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_builder}{Museum\+Builder}} Museum\+Builder.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+instance of the builder 
+
+\mbox{\Hypertarget{class_museum_builder_adc42d6478ee13f86e50fd0be210d9a4e}\label{class_museum_builder_adc42d6478ee13f86e50fd0be210d9a4e}} 
+\index{Museum\+Builder@{Museum\+Builder}!Mesh\+Display\+Prefab@{Mesh\+Display\+Prefab}}
+\index{Mesh\+Display\+Prefab@{Mesh\+Display\+Prefab}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Mesh\+Display\+Prefab}{MeshDisplayPrefab}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Mesh\+Display\+Prefab}
+
+\mbox{\Hypertarget{class_museum_builder_ab659e7b1adaace5d5c8dec90df493483}\label{class_museum_builder_ab659e7b1adaace5d5c8dec90df493483}} 
+\index{Museum\+Builder@{Museum\+Builder}!Museum\+Data@{Museum\+Data}}
+\index{Museum\+Data@{Museum\+Data}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Museum\+Data}{MuseumData}}
+{\footnotesize\ttfamily Queue$<$string$>$ Museum\+Builder.\+Museum\+Data = new Queue$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+temp queue for testing 
+
+\mbox{\Hypertarget{class_museum_builder_a57f709574a50b97bb8f44f0d53606c44}\label{class_museum_builder_a57f709574a50b97bb8f44f0d53606c44}} 
+\index{Museum\+Builder@{Museum\+Builder}!Player@{Player}}
+\index{Player@{Player}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Player}
+
+\mbox{\Hypertarget{class_museum_builder_aac70b019fbefe1d65a4853448eed0609}\label{class_museum_builder_aac70b019fbefe1d65a4853448eed0609}} 
+\index{Museum\+Builder@{Museum\+Builder}!Test\+Mesh@{Test\+Mesh}}
+\index{Test\+Mesh@{Test\+Mesh}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Test\+Mesh}{TestMesh}}
+{\footnotesize\ttfamily Mesh\+Filter \mbox{[}$\,$\mbox{]} Museum\+Builder.\+Test\+Mesh}
+
+
+
+temp test meshes 
+
+\mbox{\Hypertarget{class_museum_builder_ade9354ab3c65386fb3ba9c5d5db94a1d}\label{class_museum_builder_ade9354ab3c65386fb3ba9c5d5db94a1d}} 
+\index{Museum\+Builder@{Museum\+Builder}!Test\+Text\+Size@{Test\+Text\+Size}}
+\index{Test\+Text\+Size@{Test\+Text\+Size}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Test\+Text\+Size}{TestTextSize}}
+{\footnotesize\ttfamily int Museum\+Builder.\+Test\+Text\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_builder_a002d66342d0fc72765e89a6f78bd312f}\label{class_museum_builder_a002d66342d0fc72765e89a6f78bd312f}} 
+\index{Museum\+Builder@{Museum\+Builder}!Test\+Textures@{Test\+Textures}}
+\index{Test\+Textures@{Test\+Textures}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Test\+Textures}{TestTextures}}
+{\footnotesize\ttfamily Texture2D \mbox{[}$\,$\mbox{]} Museum\+Builder.\+Test\+Textures}
+
+
+
+temp mesh textures 
+
+\mbox{\Hypertarget{class_museum_builder_a353644d408300bbadf427e0a0971d039}\label{class_museum_builder_a353644d408300bbadf427e0a0971d039}} 
+\index{Museum\+Builder@{Museum\+Builder}!virt\+Muse@{virt\+Muse}}
+\index{virt\+Muse@{virt\+Muse}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{virt\+Muse}{virtMuse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum}{Museum}} Museum\+Builder.\+virt\+Muse = null\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the museum being built 
+
+\mbox{\Hypertarget{class_museum_builder_ae878fab80ac14114029e1fe78877f26a}\label{class_museum_builder_ae878fab80ac14114029e1fe78877f26a}} 
+\index{Museum\+Builder@{Museum\+Builder}!wall\+Height@{wall\+Height}}
+\index{wall\+Height@{wall\+Height}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{wall\+Height}{wallHeight}}
+{\footnotesize\ttfamily float Museum\+Builder.\+wall\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+height of walls in the msuem 
+
+\mbox{\Hypertarget{class_museum_builder_ad898a0067b63d2386284e0130849bf9a}\label{class_museum_builder_ad898a0067b63d2386284e0130849bf9a}} 
+\index{Museum\+Builder@{Museum\+Builder}!Wall\+Image\+Display\+Prefab@{Wall\+Image\+Display\+Prefab}}
+\index{Wall\+Image\+Display\+Prefab@{Wall\+Image\+Display\+Prefab}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Wall\+Image\+Display\+Prefab}{WallImageDisplayPrefab}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Wall\+Image\+Display\+Prefab}
+
+\mbox{\Hypertarget{class_museum_builder_adede3b195361b0b02def8c0c26ccb5d0}\label{class_museum_builder_adede3b195361b0b02def8c0c26ccb5d0}} 
+\index{Museum\+Builder@{Museum\+Builder}!Wall\+Prefab@{Wall\+Prefab}}
+\index{Wall\+Prefab@{Wall\+Prefab}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Wall\+Prefab}{WallPrefab}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Wall\+Prefab}
+
+\mbox{\Hypertarget{class_museum_builder_a9494f3d21dd268b7d542ece9901e6b7c}\label{class_museum_builder_a9494f3d21dd268b7d542ece9901e6b7c}} 
+\index{Museum\+Builder@{Museum\+Builder}!Wall\+With\+Door\+Prefab@{Wall\+With\+Door\+Prefab}}
+\index{Wall\+With\+Door\+Prefab@{Wall\+With\+Door\+Prefab}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Wall\+With\+Door\+Prefab}{WallWithDoorPrefab}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Wall\+With\+Door\+Prefab}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\mbox{\hyperlink{_museum_builder_8cs}{Museum\+Builder.\+cs}}\end{DoxyCompactItemize}

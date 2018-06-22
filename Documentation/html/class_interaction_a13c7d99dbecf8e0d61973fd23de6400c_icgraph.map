@@ -1,0 +1,4 @@
+<map id="Interaction.EndInteraction" name="Interaction.EndInteraction">
+<area shape="rect" id="node2" href="$class_display.html#a29f45efdf15e97219d2c8a614d699da8" title="called from event when the interction is ended " alt="" coords="223,5,405,32"/>
+<area shape="rect" id="node3" href="$class_display.html#a43fc2a6f19bbf2f1bdb676392b37e921" title="called when the player interacts with this display " alt="" coords="453,5,565,32"/>
+</map>

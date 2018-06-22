@@ -1,0 +1,5 @@
+<map id="Player.Update" name="Player.Update">
+<area shape="rect" id="node2" href="$class_player.html#a5f5cd09ca02aa4a73fb2df2828671596" title="handles the raycast to see if we can interact with anything and calls appropriate evetns ..." alt="" coords="157,5,352,32"/>
+<area shape="rect" id="node3" href="$class_player.html#a377a703ca99ceaf80d62874b2585c745" title="handles the possibility of the player interacting with somthing if he is in range and calls appropria..." alt="" coords="173,56,336,83"/>
+<area shape="rect" id="node4" href="$interface_i_interactable.html#a736e28381ac0e7ca60f5fae2feb95afe" title="function called when an interaction is started by a player " alt="" coords="400,56,539,83"/>
+</map>

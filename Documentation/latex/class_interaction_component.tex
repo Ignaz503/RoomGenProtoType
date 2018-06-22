@@ -1,0 +1,112 @@
+\hypertarget{class_interaction_component}{}\section{Interaction\+Component Class Reference}
+\label{class_interaction_component}\index{Interaction\+Component@{Interaction\+Component}}
+
+
+Base Component class for any interaction that should be possible between two gameobjects  
+
+
+
+
+Inheritance diagram for Interaction\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_interaction_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Interaction\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{class_interaction_component__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_interaction_component_a80d4c2288af453dd9611bbea092843e5}{Start\+Interaction}} (Game\+Object activator, Game\+Object interacted\+Upon)
+\begin{DoxyCompactList}\small\item\em This functions is called after the component was added to the gameobject it is applied to \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_interaction_component_aa28f5c9f92b342c3d52f8b0b251fb4fa}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em called from the On\+Destroy event of the base class should cleanup after the object if any other components on any of the interacting object where disabled and reenable them \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_interaction_component_a3add77b0cb9df6b962ea2c66d317fa46}{On\+Destroy}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base Component class for any interaction that should be possible between two gameobjects 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_interaction_component_aa28f5c9f92b342c3d52f8b0b251fb4fa}\label{class_interaction_component_aa28f5c9f92b342c3d52f8b0b251fb4fa}} 
+\index{Interaction\+Component@{Interaction\+Component}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Interaction\+Component@{Interaction\+Component}}
+\subsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily abstract void Interaction\+Component.\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+called from the On\+Destroy event of the base class should cleanup after the object if any other components on any of the interacting object where disabled and reenable them 
+
+
+
+Implemented in \mbox{\hyperlink{class_object_in_hand_component_a932b69c4977ec0836389b71a6aa1366c}{Object\+In\+Hand\+Component}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_component_aa28f5c9f92b342c3d52f8b0b251fb4fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_interaction_component_a3add77b0cb9df6b962ea2c66d317fa46}\label{class_interaction_component_a3add77b0cb9df6b962ea2c66d317fa46}} 
+\index{Interaction\+Component@{Interaction\+Component}!On\+Destroy@{On\+Destroy}}
+\index{On\+Destroy@{On\+Destroy}!Interaction\+Component@{Interaction\+Component}}
+\subsubsection{\texorpdfstring{On\+Destroy()}{OnDestroy()}}
+{\footnotesize\ttfamily void Interaction\+Component.\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interaction_component_a3add77b0cb9df6b962ea2c66d317fa46_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_interaction_component_a80d4c2288af453dd9611bbea092843e5}\label{class_interaction_component_a80d4c2288af453dd9611bbea092843e5}} 
+\index{Interaction\+Component@{Interaction\+Component}!Start\+Interaction@{Start\+Interaction}}
+\index{Start\+Interaction@{Start\+Interaction}!Interaction\+Component@{Interaction\+Component}}
+\subsubsection{\texorpdfstring{Start\+Interaction()}{StartInteraction()}}
+{\footnotesize\ttfamily abstract void Interaction\+Component.\+Start\+Interaction (\begin{DoxyParamCaption}\item[{Game\+Object}]{activator,  }\item[{Game\+Object}]{interacted\+Upon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This functions is called after the component was added to the gameobject it is applied to 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activator} & \\
+\hline
+{\em interacted\+Upon} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_object_in_hand_component_aed115a3a0f70c23370cab4428454025c}{Object\+In\+Hand\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Interaction/\mbox{\hyperlink{_interaction_8cs}{Interaction.\+cs}}\end{DoxyCompactItemize}
