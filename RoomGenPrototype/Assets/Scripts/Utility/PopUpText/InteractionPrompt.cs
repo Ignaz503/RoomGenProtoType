@@ -18,6 +18,7 @@ public class InteractionPrompt : MonoBehaviour {
     /// the gamobject where between the player and it, the pop up text should appear
     /// </summary>
     [SerializeField] GameObject obj;
+
     private void Start()
     {
 
@@ -30,7 +31,8 @@ public class InteractionPrompt : MonoBehaviour {
 
             player.OnOutOfInteractionRange += () => { SetActive(false); };
 
-            player.OnInteractionStart += (disp) => { SetActive(false); };
+            player.OnInteractionStart += (disp) => { SetActive(false);  };
+
             player.OnInteractionEnd += (disp) =>
             {
                 if ((player.transform.position - disp.ObjectTransform.position).magnitude <= player.RayCastMaxDist)
@@ -38,6 +40,17 @@ public class InteractionPrompt : MonoBehaviour {
                     SetActive(true);
                 }
             };
+
+            player.PHand.OnStartMovingInfrontOfFace += () =>
+            {
+                SetActive(false);
+            };
+
+            player.PHand.OnStartMovingToRestPosition += () =>
+            {
+                 SetActive(true);
+            };
+
         }
         else
         {

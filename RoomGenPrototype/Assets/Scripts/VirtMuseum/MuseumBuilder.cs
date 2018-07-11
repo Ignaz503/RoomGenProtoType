@@ -194,7 +194,6 @@ public class MuseumBuilder : MonoBehaviour
                         break;
                 }
 
-
                 Vector3 pos = new Vector3(FloorXPosScale * tile.x, FloorPrefab.transform.position.y, FloorZPosScale * tile.y);
 
                 string name = r.RoomID + " " + r.Type.ToString() + " " + tile.ToString();
@@ -225,8 +224,6 @@ public class MuseumBuilder : MonoBehaviour
             #region Wall gamobject setup
             GameObject wallObj = w.Type == Wall.WallType.Solid ? Instantiate(WallPrefab) : Instantiate(WallWithDoorPrefab);
 
-
-
             //position parenting
             GameObject parent = floors.Where((obj) => { return obj.name.Contains(w.Tiles[0].ToString()); }).First();
             if (parent != null)
@@ -249,7 +246,7 @@ public class MuseumBuilder : MonoBehaviour
 
             wallObj.transform.eulerAngles = newRot;
 
-            wallObj.name =  w.Rotation.ToString() + " " + w.Tiles[0].ToString();
+            wallObj.name =  w.WallID + " " + w.Rotation.ToString() + " " + w.Tiles[0].ToString();
 
             //name
             if(w.AssociatedRoomIDs.Count < 2)

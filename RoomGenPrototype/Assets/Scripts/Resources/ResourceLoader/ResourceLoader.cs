@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using System.Text;
 using UnityEngine;
+using WebSocketSharp;
 
 /// <summary>
 /// Manages the loading of resources for the client
@@ -11,12 +13,14 @@ using UnityEngine;
 /// </summary>
 public class ResourceLoader : MonoBehaviour
 {
+
     /// <summary>
     /// struct for a request from the museum builder to get a certain resource from
     /// the server
     /// </summary>
     public struct Request
     {
+        //TODO remove disp add callback action
         public Display disp;
         public string ResourceLocator;
 
@@ -43,9 +47,46 @@ public class ResourceLoader : MonoBehaviour
 
     }
 
-    Queue<RequestResult> LoadedResources;
+    Queue<RequestResult> LoadedResources = new Queue<RequestResult>();
 
-    Queue<Request> LoadRequests;
+    Queue<Request> LoadRequests = new Queue<Request>();
+
+    public string url = "ws://localhost:#";
+    WebSocket ws;
+
+    public string responestring = "";
+
+    private void Awake()
+    {
+        ws = new WebSocket(url);
+
+        ws.OnMessage += (sender, e) =>
+        {
+            Debug.Log("Recieved message");
+            responestring = e.Data;
+        };
+
+        ws.OnOpen += (sender, e) =>
+        {
+            Debug.Log("open");
+            ws.SendAsync("Test", OIWSA);
+        };
+
+        ws.ConnectAsync();
+
+        Debug.Log("hi");
+    }
+
+    void OIWSA(bool b)
+    {
+        Debug.Log(b);
+    }
+
+    private void OnDestroy()
+    {
+        ws.Close();
+    }
+
 
     /// <summary>
     /// sets a request for a resource
@@ -74,25 +115,26 @@ public class ResourceLoader : MonoBehaviour
 
     private void Update()
     {
-        lock (LoadRequests)
-        {
-            if(LoadRequests.Count > 0)
-            {
-                Request req = LoadRequests.Dequeue();
-                Thread t = new Thread(()=> LoadResource(req));
-                t.Start();
-            }
-        }
+        //lock (LoadRequests)
+        //{
+        //    if(LoadRequests.Count > 0)
+        //    {
+        //        Request req = LoadRequests.Dequeue();
+        //        Thread t = new Thread(()=> LoadResource(req));
+        //        t.Start();
+        //    }
+        //}
 
-        lock (LoadedResources)
-        {
-            if (LoadedResources.Count > 0)
-            {
-                RequestResult res = LoadedResources.Dequeue();
-                res.disp.ApplyResource(res.res);
-            }
-        }
+        //lock (LoadedResources)
+        //{
+        //    if (LoadedResources.Count > 0)
+        //    {
+        //        RequestResult res = LoadedResources.Dequeue();
+        //        res.disp.ApplyResource(res.res);
+        //    }
+        //}
 
+        Debug.Log(responestring);
     }
 
     void LoadResource(Request req)
@@ -100,4 +142,10 @@ public class ResourceLoader : MonoBehaviour
         // TODO IMPLEMENT
         // IS RUN IN SEPERATE THREADS
     }
+
+    void TestRequest()
+    {
+
+    }
+
 }

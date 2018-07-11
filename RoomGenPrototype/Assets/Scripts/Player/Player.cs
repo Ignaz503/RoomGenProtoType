@@ -79,7 +79,7 @@ public class Player : MonoBehaviour {
     /// <summary>
     /// The player hand
     /// </summary>
-    [SerializeField] PlayerHand pHand;
+    public  PlayerHand PHand;
 
     /// <summary>
     /// The display that was hit last, can be null
@@ -89,15 +89,25 @@ public class Player : MonoBehaviour {
 
     private void Awake()
     {
-        pHand.OwningPlayer = this;
+        PHand.OwningPlayer = this;
     }
 
     // Use this for initialization
     void Start () {
         //PlayerCam = Camera.main;
-
+       
         playerState = State.Moving;
-        interactionPrompt.SetText($"Press {interactKey} to itneract");
+
+        if(PHand is PCPlayerHand)
+        {
+            PCPlayerHand pcHand = PHand as PCPlayerHand;
+            interactionPrompt.SetText($"Press {interactKey} to itneract\nPress {pcHand.MoveHandKey} to get out the Information Display");
+        }
+        else
+        {
+            //TODO vr hand tracking
+            interactionPrompt.SetText($"Press {interactKey} to itneract");
+        }
 
     }
 	

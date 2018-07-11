@@ -266,6 +266,7 @@ public class Museum
 
     /// <summary>
     /// Fills the displas that exist in the museum
+    /// also creates texture info for walls
     /// WARNING: CURRENTLY TEMP IMPLEMENTATION
     /// </summary>
     void FillDisplays(System.Random rng)
@@ -279,10 +280,50 @@ public class Museum
             {
                 dispInf.Type = (rng.Next(0, 2) > 0) ? Display.DisplayType.MeshDisplay : Display.DisplayType.ImageDisplay;
             }
+
+            r.FloorTexture = new MuseumTextureInfo()
+            {
+                AssociatedID = r.RoomID.ToString(),
+                PositionModifier = 0
+            };
+
+            r.CeilingTexture = new MuseumTextureInfo()
+            {
+                AssociatedID = r.RoomID.ToString(),
+                PositionModifier = 0
+            };
+            //TODO: fill associated resource locator
         }
 
         foreach(Wall w in Walls)
         {
+            foreach(Vector2 tile in w.Tiles)
+            {
+                MuseumTextureInfo info = new MuseumTextureInfo()
+                {
+                    AssociatedID = w.WallID,
+                };
+                //figure out position modifier
+                //0 means texture from 0 to 0.5
+                //1 means texture from 0.5 to 1
+                // (everything in uv coords)
+                switch (w.Rotation)
+                {
+                    case Wall.WallRotation.Horizontal:
+                        if (Mathf.Sign(tile.y - w.Location[0].y) < 0f)
+                            info.PositionModifier = 0;
+                        else
+                            info.PositionModifier = 1;
+                        break;
+                    case Wall.WallRotation.Vertical:
+                        if (Mathf.Sign(tile.y - w.Location[0].y) < 0f)
+                            info.PositionModifier = 1;
+                        else
+                            info.PositionModifier = 0;
+                        break;
+                }// end switch
+                //TODO: FILL Associated resource locator
+            }// end foreach tile associated with wall
             if (w.Type == Wall.WallType.Door)
                 continue;
 
@@ -291,7 +332,17 @@ public class Museum
                 dispInf.Type = (rng.Next(0, 2) > 0) ? Display.DisplayType.MeshDisplay : Display.DisplayType.ImageDisplay;
             }
 
-        }
+        }// end foreach wall
+    }
+
+    /// <summary>
+    /// Finds a room via the ID of it
+    /// </summary>
+    /// <param name="RoomID">the room ID of the room we are looking for</param>
+    /// <returns>The room with the ID</returns>
+    public Room GetRoomByID(uint RoomID)
+    {
+        return Rooms.First(i => { return i.RoomID == RoomID; });
     }
 
     /// <summary>

@@ -61,6 +61,6 @@ public class CenterImageDisplay : Display
 
     protected override void InteractionEnded()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }

@@ -12,7 +12,7 @@ public class ObejctInHandInteraction : Interaction
     /// the component behaviour when an object is in hand and rotated
     /// </summary>
     ObjectInHandComponent comp;
-
+ 
     public override void StartInteraction(GameObject activator, GameObject interactedUpon)
     {
         comp = activator.AddComponent<ObjectInHandComponent>();
@@ -59,6 +59,11 @@ public class ObjectInHandComponent : InteractionComponent
     /// velocity vector used by smooth damp
     /// </summary>
     Vector3 vel;
+
+    /// <summary>
+    /// The Rotation of the object when the interaction starts
+    /// </summary>
+    Quaternion initialObjectRotation;
 
     private void Update()
     {
@@ -112,6 +117,7 @@ public class ObjectInHandComponent : InteractionComponent
     /// </summary>
     protected override void Destroy()
     {
+        objectToRotate.transform.localRotation = initialObjectRotation;
         playerHoldingObject.FirstPersonController.enabled = true;
     }
 

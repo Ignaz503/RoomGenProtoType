@@ -30,6 +30,20 @@ public class Wall
     int TileIndexForXPositionModifierCalc = 0;
 
     /// <summary>
+    /// Wall ID, uniquze string for this wall of the museum
+    /// built via associated room IDS
+    /// eg: wall between room 1 and 2 -> "1,2"
+    /// if wall only associated with one room then -1 is second number
+    /// </summary>
+    public string WallID
+    {
+        get
+        {
+            return "" + AssociatedRoomIDs[0] + "," + ((AssociatedRoomIDs.Count == 2) ? AssociatedRoomIDs[1] : -1u);
+        }
+    }
+
+    /// <summary>
     /// the type of wall (solid or door)
     /// </summary>
     [DataMember]
@@ -46,6 +60,7 @@ public class Wall
     /// </summary>
     [DataMember]
     public float PositionModifier { get; protected set; }
+
     /// <summary>
     /// tiles that are seperated from this wall
     /// </summary>
@@ -64,6 +79,14 @@ public class Wall
     /// </summary>
     [DataMember]
     public List<MuseumDisplayInfo> DisplayInfos { get; protected set; }
+
+    /// <summary>
+    /// Info about what textures this wall will have
+    /// Every wall seperaates at max 2 rooms
+    /// so it has a size of 2, when only one room is adjacent it only has one member
+    /// </summary>
+    [DataMember]
+    public List<MuseumTextureInfo> TextureInfos { get; protected set; }
 
     /// <summary>
     /// IDs of all the rooms that are spaerated by this wall
@@ -89,6 +112,8 @@ public class Wall
         {
             associatedRoomID
         };
+
+        TextureInfos = new List<MuseumTextureInfo>();
     }
 
     public override bool Equals(object obj)

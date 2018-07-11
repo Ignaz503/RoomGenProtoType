@@ -308,7 +308,7 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
     /// <param name="locEuler">local angle to rotate towards</param>
     IEnumerator RotateTo(Vector3 locEuler)
     {
-        while ((transform.localEulerAngles - locEuler).magnitude >= 0)
+        while ((transform.localEulerAngles - locEuler).magnitude >= 1)
         {
             transform.localEulerAngles = Vector3.SmoothDamp(transform.localEulerAngles, locEuler, ref vel, secondsToRotate);
             yield return null;

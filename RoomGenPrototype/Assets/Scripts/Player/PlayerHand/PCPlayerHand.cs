@@ -17,7 +17,7 @@ public class PCPlayerHand : PlayerHand
     /// <summary>
     /// the key that starts the process of moving the hand eiter into rest or infront of face position
     /// </summary>
-    [SerializeField] KeyCode moveHandKey;
+    public KeyCode MoveHandKey;
 
     /// <summary>
     /// used so that player shows up in editor
@@ -76,7 +76,7 @@ public class PCPlayerHand : PlayerHand
     /// </summary>
     void HandleMovement()
     {
-        if (Input.GetKeyDown(moveHandKey))
+        if (Input.GetKeyDown(MoveHandKey))
         {
             switch (CurrentState)
             {
@@ -116,7 +116,6 @@ public class PCPlayerHand : PlayerHand
             yield return null;
         }
         //done
-        Debug.Log("Done with moving towards");
         CurrentState = nextState;
         transform.localPosition = position;
         velocity = Vector3.zero;
