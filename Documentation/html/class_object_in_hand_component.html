@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -105,22 +105,22 @@ Inheritance diagram for ObjectInHandComponent:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_object_in_hand_component__inherit__graph.png" border="0" usemap="#_object_in_hand_component_inherit__map" alt="Inheritance graph"/></div>
 <map name="_object_in_hand_component_inherit__map" id="_object_in_hand_component_inherit__map">
-<area shape="rect" id="node2" href="class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="15,80,163,107"/>
+<area shape="rect" id="node2" href="class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="15,131,163,237"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for ObjectInHandComponent:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_object_in_hand_component__coll__graph.png" border="0" usemap="#_object_in_hand_component_coll__map" alt="Collaboration graph"/></div>
 <map name="_object_in_hand_component_coll__map" id="_object_in_hand_component_coll__map">
-<area shape="rect" id="node2" href="class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="380,145,528,172"/>
-<area shape="rect" id="node4" href="class_player.html" title="Player" alt="" coords="134,196,193,223"/>
-<area shape="rect" id="node5" href="class_interaction_prompt.html" title="InteractionPrompt" alt="" coords="85,285,209,312"/>
-<area shape="rect" id="node6" href="class_player_hand.html" title="PlayerHand" alt="" coords="31,95,120,121"/>
-<area shape="rect" id="node7" href="interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="19,5,132,32"/>
-<area shape="rect" id="node8" href="interface_i_interactable.html" title="IInteractable" alt="" coords="144,95,236,121"/>
+<area shape="rect" id="node2" href="class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="464,540,612,647"/>
+<area shape="rect" id="node4" href="class_player.html" title="{Player\n|+ PlayerCam\l+ FirstPersonController\l+ RayCastMaxDist\l&#45; centerRay\l&#45; rayCastMaxDist\l&#45; interactKey\l&#45; playerState\l|&#45; Awake()\l&#45; Start()\l&#45; Update()\l&#45; HandleDisplayRaycast()\l&#45; HandleInteraction()\l}" alt="" coords="156,671,325,895"/>
+<area shape="rect" id="node5" href="class_interaction_prompt.html" title="{InteractionPrompt\n|&#45; text\l&#45; obj\l|+ SetActive()\l+ PlaceAtAndRotate()\l+ PlaceAt()\l+ SetRotation()\l+ PlaceBetween()\l+ PlaceBetweenAndRotateTowards\lFirst()\l+ SetText()\l&#45; Start()\l&#45; LateUpdate()\l}" alt="" coords="110,957,337,1181"/>
+<area shape="rect" id="node6" href="class_player_hand.html" title="{PlayerHand\n|+ CurrentState\l+ OwningPlayer\l&#45; _currentState\l|+ GrabObject()\l+ DropObject()\l+ ForwardInteractableObject()\l# InvokeInRestingPosition()\l# InvokeOnReachedInfrontOf\lFacePosition()\l# InvokeOnStartMovingToRest\lPosition()\l# InvokeOnStartMovingInfront\lOfFace()\l}" alt="" coords="19,277,214,516"/>
+<area shape="rect" id="node7" href="interface_i_holdable_object.html" title="{IHoldableObject\n|+ Object\l|+ OnHeldInfrontOfFace()\l+ OnPutAway()\l+ OnStartedMoveInfrontOfFace()\l+ OnStartedMoveAwayFromFace()\l+ PositionObjectInHand()\l+ OnGrabed()\l+ OnDropped()\l+ IsInterestedInInteractable\lObjects()\l+ SetInteractedObject()\l}" alt="" coords="5,5,228,215"/>
+<area shape="rect" id="node8" href="interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="239,358,331,435"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -168,6 +168,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:abbcf3780d099790d8d2e799ab4447ec6"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object_in_hand_component.html#abbcf3780d099790d8d2e799ab4447ec6">vel</a></td></tr>
 <tr class="memdesc:abbcf3780d099790d8d2e799ab4447ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">velocity vector used by smooth damp  <a href="#abbcf3780d099790d8d2e799ab4447ec6">More...</a><br /></td></tr>
 <tr class="separator:abbcf3780d099790d8d2e799ab4447ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcb3b1519006abc8524c6d913069292"><td class="memItemLeft" align="right" valign="top">Quaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object_in_hand_component.html#a0dcb3b1519006abc8524c6d913069292">initialObjectRotation</a></td></tr>
+<tr class="memdesc:a0dcb3b1519006abc8524c6d913069292"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Rotation of the object when the interaction starts  <a href="#a0dcb3b1519006abc8524c6d913069292">More...</a><br /></td></tr>
+<tr class="separator:a0dcb3b1519006abc8524c6d913069292"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>the bahaviour that allows to rotate an obnject that is held with the mouse </p>
@@ -445,6 +448,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>the initial camera position for zoom reasons </p>
+
+</div>
+</div>
+<a id="a0dcb3b1519006abc8524c6d913069292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dcb3b1519006abc8524c6d913069292">&#9670;&nbsp;</a></span>initialObjectRotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Quaternion ObjectInHandComponent.initialObjectRotation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Rotation of the object when the interaction starts </p>
 
 </div>
 </div>

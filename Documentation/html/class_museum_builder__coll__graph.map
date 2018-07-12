@@ -1,6 +1,6 @@
 <map id="MuseumBuilder" name="MuseumBuilder">
-<area shape="rect" id="node3" href="$class_museum_controller.html" title="MuseumController" alt="" coords="128,199,255,225"/>
-<area shape="rect" id="node4" href="$class_room.html" title="defines a room in a virtual museum " alt="" coords="292,95,348,121"/>
-<area shape="rect" id="node5" href="$class_museum.html" title="Museum" alt="" coords="45,5,117,32"/>
-<area shape="rect" id="node6" href="$class_museum_graph.html" title="MuseumGraph" alt="" coords="161,95,268,121"/>
+<area shape="rect" id="node3" href="$class_museum_controller.html" title="{MuseumController\n|&#45; xPositionScaler\l&#45; zPositionScaler\l&#45; player\l&#45; manageRooms\l&#45; drawGraphGizmos\l&#45; drawRoomManagmentUnitGizmos\l&#45; museumSize\l&#45; roomManagmentMap\l&#45; roomDictionary\l|+ SetMuseumToControl()\l+ GetRoomManagmentUnitForRoom()\l+ LogRoomManagmentUnitForRoom()\l&#45; Awake()\l&#45; Start()\l&#45; Update()\l&#45; LoadRoomAndNeighbors()\l&#45; UnloadRoomAndNeighbors()\l&#45; InBounds()\l&#45; OnDrawGizmos()\l&#45; DrawMuseumGraph()\l}" alt="" coords="151,799,392,1140"/>
+<area shape="rect" id="node4" href="$class_room.html" title="defines a room in a virtual museum " alt="" coords="373,439,572,721"/>
+<area shape="rect" id="node5" href="$class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; TransformTileCoordIntoOneD()\l&#45; TransformOneDCoordIntoTwoD()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="33,5,256,376"/>
+<area shape="rect" id="node6" href="$class_museum_graph.html" title="{MuseumGraph\n|+ Nodes\l&#45; NodeMap\l|+ MuseumGraph()\l+ BuildMuseumGraph()\l+ GetNodeForRoom()\l}" alt="" coords="193,519,349,641"/>
 </map>

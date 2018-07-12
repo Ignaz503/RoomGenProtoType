@@ -1,5 +1,0 @@
-<map id="MuseumBuilder.LoadResource" name="MuseumBuilder.LoadResource">
-<area shape="rect" id="node2" href="$class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="252,13,409,39"/>
-<area shape="rect" id="node3" href="$class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="457,13,635,39"/>
-<area shape="rect" id="node4" href="$class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="683,5,885,47"/>
-</map>

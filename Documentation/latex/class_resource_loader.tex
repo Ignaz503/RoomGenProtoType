@@ -12,7 +12,7 @@ Inheritance diagram for Resource\+Loader\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=167pt]{class_resource_loader__inherit__graph}
+\includegraphics[width=189pt]{class_resource_loader__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -22,7 +22,7 @@ Collaboration diagram for Resource\+Loader\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=167pt]{class_resource_loader__coll__graph}
+\includegraphics[width=189pt]{class_resource_loader__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -35,23 +35,37 @@ struct \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Resu
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_resource_loader_af8914b966c0734e7f5fb3a81a9a968fa}{Request\+Resource}} (\mbox{\hyperlink{class_display}{Display}} disp, string Resource\+Locator)
+void \mbox{\hyperlink{class_resource_loader_a901b6c5f5391cb35d69d0917ea4a2b5a}{Request\+Resource}} (Action$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$ callback, string Resource\+Locator, string res\+Type)
 \begin{DoxyCompactList}\small\item\em sets a request for a resource \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} \mbox{\hyperlink{class_resource_loader_ae0f219fead6e05415dc2523529d81561}{Retrive\+Result}} ()
 \begin{DoxyCompactList}\small\item\em function to retrieve a result of a request \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_resource_loader_adeb4ddafee015e2630ed66e26ec4a4ae}{responestring}} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_resource_loader}{Resource\+Loader}} \mbox{\hyperlink{class_resource_loader_a66d4b7f32938dad50d13f48e362b7b76}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_resource_loader_ad258acc6c5c963d5ca93dbe36e243d20}{Awake}} ()
 \item 
 void \mbox{\hyperlink{class_resource_loader_a20a1036648a453863c96b51d33edfa11}{Update}} ()
 \item 
 void \mbox{\hyperlink{class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d}{Load\+Resource}} (\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}} req)
+\item 
+void \mbox{\hyperlink{class_resource_loader_a39eb6b54c79c44d103b0aedfcdc69f81}{Test\+Request}} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Queue$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$ \mbox{\hyperlink{class_resource_loader_aac461f634dc821609293616d32e7288e}{Loaded\+Resources}}
+Queue$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$ \mbox{\hyperlink{class_resource_loader_aac461f634dc821609293616d32e7288e}{Loaded\+Resources}} = new Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}$>$()
 \item 
-Queue$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}} $>$ \mbox{\hyperlink{class_resource_loader_acd6d1957bdc4e0212991af05e3454633}{Load\+Requests}}
+Queue$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}} $>$ \mbox{\hyperlink{class_resource_loader_acd6d1957bdc4e0212991af05e3454633}{Load\+Requests}} = new Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}$>$()
 \end{DoxyCompactItemize}
 
 
@@ -61,6 +75,12 @@ Manages the loading of resources for the client W\+A\+R\+N\+I\+NG N\+OT I\+M\+P\
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_resource_loader_ad258acc6c5c963d5ca93dbe36e243d20}\label{class_resource_loader_ad258acc6c5c963d5ca93dbe36e243d20}} 
+\index{Resource\+Loader@{Resource\+Loader}!Awake@{Awake}}
+\index{Awake@{Awake}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Resource\+Loader.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d}\label{class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d}} 
 \index{Resource\+Loader@{Resource\+Loader}!Load\+Resource@{Load\+Resource}}
 \index{Load\+Resource@{Load\+Resource}!Resource\+Loader@{Resource\+Loader}}
@@ -75,11 +95,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_resource_loader_af8914b966c0734e7f5fb3a81a9a968fa}\label{class_resource_loader_af8914b966c0734e7f5fb3a81a9a968fa}} 
+\mbox{\Hypertarget{class_resource_loader_a901b6c5f5391cb35d69d0917ea4a2b5a}\label{class_resource_loader_a901b6c5f5391cb35d69d0917ea4a2b5a}} 
 \index{Resource\+Loader@{Resource\+Loader}!Request\+Resource@{Request\+Resource}}
 \index{Request\+Resource@{Request\+Resource}!Resource\+Loader@{Resource\+Loader}}
 \subsubsection{\texorpdfstring{Request\+Resource()}{RequestResource()}}
-{\footnotesize\ttfamily void Resource\+Loader.\+Request\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_display}{Display}}}]{disp,  }\item[{string}]{Resource\+Locator }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Resource\+Loader.\+Request\+Resource (\begin{DoxyParamCaption}\item[{Action$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$}]{callback,  }\item[{string}]{Resource\+Locator,  }\item[{string}]{res\+Type }\end{DoxyParamCaption})}
 
 
 
@@ -98,6 +118,12 @@ function to retrieve a result of a request
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_resource_loader_a39eb6b54c79c44d103b0aedfcdc69f81}\label{class_resource_loader_a39eb6b54c79c44d103b0aedfcdc69f81}} 
+\index{Resource\+Loader@{Resource\+Loader}!Test\+Request@{Test\+Request}}
+\index{Test\+Request@{Test\+Request}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{Test\+Request()}{TestRequest()}}
+{\footnotesize\ttfamily void Resource\+Loader.\+Test\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_resource_loader_a20a1036648a453863c96b51d33edfa11}\label{class_resource_loader_a20a1036648a453863c96b51d33edfa11}} 
 \index{Resource\+Loader@{Resource\+Loader}!Update@{Update}}
 \index{Update@{Update}!Resource\+Loader@{Resource\+Loader}}
@@ -119,13 +145,28 @@ Here is the call graph for this function\+:
 \index{Resource\+Loader@{Resource\+Loader}!Loaded\+Resources@{Loaded\+Resources}}
 \index{Loaded\+Resources@{Loaded\+Resources}!Resource\+Loader@{Resource\+Loader}}
 \subsubsection{\texorpdfstring{Loaded\+Resources}{LoadedResources}}
-{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}$>$ Resource\+Loader.\+Loaded\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}$>$ Resource\+Loader.\+Loaded\+Resources = new Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{class_resource_loader_acd6d1957bdc4e0212991af05e3454633}\label{class_resource_loader_acd6d1957bdc4e0212991af05e3454633}} 
 \index{Resource\+Loader@{Resource\+Loader}!Load\+Requests@{Load\+Requests}}
 \index{Load\+Requests@{Load\+Requests}!Resource\+Loader@{Resource\+Loader}}
 \subsubsection{\texorpdfstring{Load\+Requests}{LoadRequests}}
-{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}$>$ Resource\+Loader.\+Load\+Requests\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}$>$ Resource\+Loader.\+Load\+Requests = new Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_resource_loader_adeb4ddafee015e2630ed66e26ec4a4ae}\label{class_resource_loader_adeb4ddafee015e2630ed66e26ec4a4ae}} 
+\index{Resource\+Loader@{Resource\+Loader}!responestring@{responestring}}
+\index{responestring@{responestring}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{responestring}{responestring}}
+{\footnotesize\ttfamily string Resource\+Loader.\+responestring = \char`\"{}\char`\"{}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_resource_loader_a66d4b7f32938dad50d13f48e362b7b76}\label{class_resource_loader_a66d4b7f32938dad50d13f48e362b7b76}} 
+\index{Resource\+Loader@{Resource\+Loader}!Instance@{Instance}}
+\index{Instance@{Instance}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_resource_loader}{Resource\+Loader}} Resource\+Loader.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [protected set]}}
 
 
 

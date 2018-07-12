@@ -6,6 +6,7 @@ var class_museum =
     [ "Deserialize", "class_museum.html#a1b4fb627a19112e3ba3d25e8108de2c3", null ],
     [ "FillDisplays", "class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4", null ],
     [ "Generate", "class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81", null ],
+    [ "GetRoomByID", "class_museum.html#a31c3e63a3a1e2edf6e219cb1f04b9515", null ],
     [ "GetSourroundingTiles", "class_museum.html#af5b732fe3a0821d02852171a73cf8f8b", null ],
     [ "LogMap", "class_museum.html#a6a161feedcbb8a471eb0e68b7e3e4027", null ],
     [ "LogOutline", "class_museum.html#a237d1ccf7cb53c4db64647b6addc6576", null ],

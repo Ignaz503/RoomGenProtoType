@@ -7,7 +7,7 @@ Inheritance diagram for Museum\+Generator\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=177pt]{class_museum_generator__inherit__graph}
+\includegraphics[width=230pt]{class_museum_generator__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -17,14 +17,14 @@ Collaboration diagram for Museum\+Generator\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=271pt]{class_museum_generator__coll__graph}
+\includegraphics[height=550pt]{class_museum_generator__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_museum_generator_a5ead852effaa81309fe98b4d61fe9759}{Request\+New\+Museum}} (string request, Queue$<$ string $>$ requester)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em enqueues a new museum request \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,7 +36,7 @@ string \mbox{\hyperlink{class_museum_generator_a79420e442fa719cbcbceb76df5659209
 \begin{DoxyCompactList}\small\item\em seed used to gnerate museum \end{DoxyCompactList}\item 
 Game\+Object \mbox{\hyperlink{class_museum_generator_ae7a748c64ae256fdc85e29a79a2fc0a8}{cube\+Prefab}}
 \begin{DoxyCompactList}\small\item\em debug cube prefab for debug outuput \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} \mbox{\hyperlink{class_museum_generator_aba3c9dafe2095b617ca22049f2b83b5f}{tpye\+To\+Draw\+Walls\+For}}
+\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} \mbox{\hyperlink{class_museum_generator_afba388daa5228b0542ebdf7799521ca9}{type\+To\+Draw\+Walls\+For}}
 \begin{DoxyCompactList}\small\item\em debug helper to only draw walls for this room type \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_museum_generator_a3a354ad136bc8f11fce23708625ccfde}{Draw\+All\+Walls}}
 \begin{DoxyCompactList}\small\item\em flag if all walls should be drawn or not \end{DoxyCompactList}\item 
@@ -55,13 +55,13 @@ static \mbox{\hyperlink{class_museum_generator}{Museum\+Generator}} \mbox{\hyper
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_museum_generator_abc3127d3a23107a350064fc49c5495c1}{On\+Enable}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em sets Instance of generator \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e}{Update}} ()
 \item 
 void \mbox{\hyperlink{class_museum_generator_a65ac409691646fa2f92ee9b84294ac57}{Generate\+Temp\+Room\+Display}} (int height, Hash\+Set$<$ int $>$ outline)
 \item 
 void \mbox{\hyperlink{class_museum_generator_a1b9419222535f317005ca9fe1fe757f3}{Generate\+Temp\+Room\+Display}} ()
-\begin{DoxyCompactList}\small\item\em gnerates a temp display of the museum but onyl floor walls handled by draw gizmos \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em gnerates a temp display of the museum but only floor walls handled by draw gizmos \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_museum_generator_a7c219625d39af0857271734995728a10}{On\+Draw\+Gizmos}} ()
 \begin{DoxyCompactList}\small\item\em gnerates walls for museum in editor and color codes them depending on type \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
@@ -86,7 +86,7 @@ static Queue$<$ Tuple$<$ \mbox{\hyperlink{class_museum_request}{Museum\+Request}
 
 
 
-gnerates a temp display of the museum but onyl floor walls handled by draw gizmos 
+gnerates a temp display of the museum but only floor walls handled by draw gizmos 
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -112,12 +112,27 @@ gnerates walls for museum in editor and color codes them depending on type
 \subsubsection{\texorpdfstring{On\+Enable()}{OnEnable()}}
 {\footnotesize\ttfamily void Museum\+Generator.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+sets Instance of generator 
+
 \mbox{\Hypertarget{class_museum_generator_a5ead852effaa81309fe98b4d61fe9759}\label{class_museum_generator_a5ead852effaa81309fe98b4d61fe9759}} 
 \index{Museum\+Generator@{Museum\+Generator}!Request\+New\+Museum@{Request\+New\+Museum}}
 \index{Request\+New\+Museum@{Request\+New\+Museum}!Museum\+Generator@{Museum\+Generator}}
 \subsubsection{\texorpdfstring{Request\+New\+Museum()}{RequestNewMuseum()}}
 {\footnotesize\ttfamily void Museum\+Generator.\+Request\+New\+Museum (\begin{DoxyParamCaption}\item[{string}]{request,  }\item[{Queue$<$ string $>$}]{requester }\end{DoxyParamCaption})}
 
+
+
+enqueues a new museum request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & the request as a xml string\\
+\hline
+{\em requester} & queue where respone should go??? no idea-\/$>$ yes indeed\\
+\hline
+\end{DoxyParams}
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -241,11 +256,11 @@ seed used to gnerate museum
 
 temp size selector of museum 
 
-\mbox{\Hypertarget{class_museum_generator_aba3c9dafe2095b617ca22049f2b83b5f}\label{class_museum_generator_aba3c9dafe2095b617ca22049f2b83b5f}} 
-\index{Museum\+Generator@{Museum\+Generator}!tpye\+To\+Draw\+Walls\+For@{tpye\+To\+Draw\+Walls\+For}}
-\index{tpye\+To\+Draw\+Walls\+For@{tpye\+To\+Draw\+Walls\+For}!Museum\+Generator@{Museum\+Generator}}
-\subsubsection{\texorpdfstring{tpye\+To\+Draw\+Walls\+For}{tpyeToDrawWallsFor}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} Museum\+Generator.\+tpye\+To\+Draw\+Walls\+For}
+\mbox{\Hypertarget{class_museum_generator_afba388daa5228b0542ebdf7799521ca9}\label{class_museum_generator_afba388daa5228b0542ebdf7799521ca9}} 
+\index{Museum\+Generator@{Museum\+Generator}!type\+To\+Draw\+Walls\+For@{type\+To\+Draw\+Walls\+For}}
+\index{type\+To\+Draw\+Walls\+For@{type\+To\+Draw\+Walls\+For}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{type\+To\+Draw\+Walls\+For}{typeToDrawWallsFor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} Museum\+Generator.\+type\+To\+Draw\+Walls\+For}
 
 
 

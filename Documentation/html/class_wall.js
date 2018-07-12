@@ -24,6 +24,8 @@ var class_wall =
     [ "Location", "class_wall.html#ac7769d0a497da7e7ae3a11c813645b7a", null ],
     [ "PositionModifier", "class_wall.html#ae056b7b9068536491c1ac441a25824a0", null ],
     [ "Rotation", "class_wall.html#aa2d6c86c7ccabbb5e317b9ccac62e99e", null ],
+    [ "TextureInfos", "class_wall.html#adc37331462fd06077dbef80e89f5be89", null ],
     [ "Tiles", "class_wall.html#a1e5fab93aa7e8676dd65a61a26b28513", null ],
-    [ "Type", "class_wall.html#ade4c1924f35fd33637a3cdfa31566af0", null ]
+    [ "Type", "class_wall.html#ade4c1924f35fd33637a3cdfa31566af0", null ],
+    [ "WallID", "class_wall.html#a44f8ec4294e23148d51bcd33206a78c7", null ]
 ];

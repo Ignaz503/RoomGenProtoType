@@ -4,7 +4,7 @@ var class_display =
       [ "MeshDisplay", "class_display.html#a7f7abc559192ef7e8f4a03382d3492d7a6465642df623349960f917dcf68ba989", null ],
       [ "ImageDisplay", "class_display.html#a7f7abc559192ef7e8f4a03382d3492d7a6790a36b5a0528029d4ed43891266fcb", null ]
     ] ],
-    [ "ApplyResource", "class_display.html#aa1d23e0e870c59c63e2f040e84ef0121", null ],
+    [ "ApplyResource", "class_display.html#a811157ddb42ae4d72f690457a08711d3", null ],
     [ "GetMetadata", "class_display.html#a293687a976cbe23a09b7c6ddef36a48d", null ],
     [ "Interact", "class_display.html#a43fc2a6f19bbf2f1bdb676392b37e921", null ],
     [ "InteractionEnded", "class_display.html#a6fd38485267e1b78f1d1dfb589ec4ae0", null ],

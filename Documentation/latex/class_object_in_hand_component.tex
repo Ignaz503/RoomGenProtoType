@@ -22,7 +22,7 @@ Collaboration diagram for Object\+In\+Hand\+Component\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_object_in_hand_component__coll__graph}
+\includegraphics[height=550pt]{class_object_in_hand_component__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -60,7 +60,9 @@ Vector3 \mbox{\hyperlink{class_object_in_hand_component_a002cb792e31eb3f99e15c12
 float \mbox{\hyperlink{class_object_in_hand_component_a173143fff5ee217d1148281e49f26e10}{currentT}} = 0f
 \begin{DoxyCompactList}\small\item\em current T for lerping of zoom level \end{DoxyCompactList}\item 
 Vector3 \mbox{\hyperlink{class_object_in_hand_component_abbcf3780d099790d8d2e799ab4447ec6}{vel}}
-\begin{DoxyCompactList}\small\item\em velocity vector used by smooth damp \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em velocity vector used by smooth damp \end{DoxyCompactList}\item 
+Quaternion \mbox{\hyperlink{class_object_in_hand_component_a0dcb3b1519006abc8524c6d913069292}{initial\+Object\+Rotation}}
+\begin{DoxyCompactList}\small\item\em The Rotation of the object when the interaction starts \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -202,6 +204,16 @@ current T for lerping of zoom level
 
 
 the initial camera position for zoom reasons 
+
+\mbox{\Hypertarget{class_object_in_hand_component_a0dcb3b1519006abc8524c6d913069292}\label{class_object_in_hand_component_a0dcb3b1519006abc8524c6d913069292}} 
+\index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!initial\+Object\+Rotation@{initial\+Object\+Rotation}}
+\index{initial\+Object\+Rotation@{initial\+Object\+Rotation}!Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}}
+\subsubsection{\texorpdfstring{initial\+Object\+Rotation}{initialObjectRotation}}
+{\footnotesize\ttfamily Quaternion Object\+In\+Hand\+Component.\+initial\+Object\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Rotation of the object when the interaction starts 
 
 \mbox{\Hypertarget{class_object_in_hand_component_adbeb015fd1ac714798d886db0b6f940a}\label{class_object_in_hand_component_adbeb015fd1ac714798d886db0b6f940a}} 
 \index{Object\+In\+Hand\+Component@{Object\+In\+Hand\+Component}!object\+To\+Rotate@{object\+To\+Rotate}}

@@ -1,7 +1,9 @@
 var searchData=
 [
+  ['basedisplayresource',['BaseDisplayResource',['../class_base_display_resource.html',1,'']]],
   ['basedoor',['BaseDoor',['../class_base_door.html',1,'']]],
   ['basedoor_2ecs',['BaseDoor.cs',['../_base_door_8cs.html',1,'']]],
+  ['baseresource',['BaseResource',['../class_base_resource.html',1,'']]],
   ['baseroomplacablechecker_2ecs',['BaseRoomPlacableChecker.cs',['../_base_room_placable_checker_8cs.html',1,'']]],
   ['baseroomtypeplacablecheker',['BaseRoomTypePlacableCheker',['../class_base_room_type_placable_cheker.html',1,'BaseRoomTypePlacableCheker'],['../class_base_room_type_placable_cheker.html#a5d13e7de140af3ba2a4aa12e3724f333',1,'BaseRoomTypePlacableCheker.BaseRoomTypePlacableCheker()']]],
   ['baserotation',['baseRotation',['../class_single_hinge_door.html#af4ee5d93ff333b25ba9e9555ae6911b7',1,'SingleHingeDoor']]],

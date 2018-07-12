@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -104,19 +104,20 @@ Inheritance diagram for MuseumGenerator:</div>
 <div class="center"><img src="class_museum_generator__inherit__graph.png" border="0" usemap="#_museum_generator_inherit__map" alt="Inheritance graph"/></div>
 <map name="_museum_generator_inherit__map" id="_museum_generator_inherit__map">
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for MuseumGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_generator__coll__graph.png" border="0" usemap="#_museum_generator_coll__map" alt="Collaboration graph"/></div>
 <map name="_museum_generator_coll__map" id="_museum_generator_coll__map">
-<area shape="rect" id="node3" href="class_museum.html" title="Museum" alt="" coords="141,5,213,32"/>
+<area shape="rect" id="node3" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; TransformTileCoordIntoOneD()\l&#45; TransformOneDCoordIntoTwoD()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="140,5,363,376"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ead852effaa81309fe98b4d61fe9759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a5ead852effaa81309fe98b4d61fe9759">RequestNewMuseum</a> (string request, Queue&lt; string &gt; requester)</td></tr>
+<tr class="memdesc:a5ead852effaa81309fe98b4d61fe9759"><td class="mdescLeft">&#160;</td><td class="mdescRight">enqueues a new museum request  <a href="#a5ead852effaa81309fe98b4d61fe9759">More...</a><br /></td></tr>
 <tr class="separator:a5ead852effaa81309fe98b4d61fe9759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -133,9 +134,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ae7a748c64ae256fdc85e29a79a2fc0a8"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#ae7a748c64ae256fdc85e29a79a2fc0a8">cubePrefab</a></td></tr>
 <tr class="memdesc:ae7a748c64ae256fdc85e29a79a2fc0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">debug cube prefab for debug outuput  <a href="#ae7a748c64ae256fdc85e29a79a2fc0a8">More...</a><br /></td></tr>
 <tr class="separator:ae7a748c64ae256fdc85e29a79a2fc0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba3c9dafe2095b617ca22049f2b83b5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#aba3c9dafe2095b617ca22049f2b83b5f">tpyeToDrawWallsFor</a></td></tr>
-<tr class="memdesc:aba3c9dafe2095b617ca22049f2b83b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">debug helper to only draw walls for this room type  <a href="#aba3c9dafe2095b617ca22049f2b83b5f">More...</a><br /></td></tr>
-<tr class="separator:aba3c9dafe2095b617ca22049f2b83b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba388daa5228b0542ebdf7799521ca9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#afba388daa5228b0542ebdf7799521ca9">typeToDrawWallsFor</a></td></tr>
+<tr class="memdesc:afba388daa5228b0542ebdf7799521ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">debug helper to only draw walls for this room type  <a href="#afba388daa5228b0542ebdf7799521ca9">More...</a><br /></td></tr>
+<tr class="separator:afba388daa5228b0542ebdf7799521ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a354ad136bc8f11fce23708625ccfde"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a3a354ad136bc8f11fce23708625ccfde">DrawAllWalls</a></td></tr>
 <tr class="memdesc:a3a354ad136bc8f11fce23708625ccfde"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag if all walls should be drawn or not  <a href="#a3a354ad136bc8f11fce23708625ccfde">More...</a><br /></td></tr>
 <tr class="separator:a3a354ad136bc8f11fce23708625ccfde"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,13 +159,14 @@ Static Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:abc3127d3a23107a350064fc49c5495c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1">OnEnable</a> ()</td></tr>
+<tr class="memdesc:abc3127d3a23107a350064fc49c5495c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets Instance of generator  <a href="#abc3127d3a23107a350064fc49c5495c1">More...</a><br /></td></tr>
 <tr class="separator:abc3127d3a23107a350064fc49c5495c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa0b7c3e8ab1bccedc4c7828cbf4724e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e">Update</a> ()</td></tr>
 <tr class="separator:afa0b7c3e8ab1bccedc4c7828cbf4724e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65ac409691646fa2f92ee9b84294ac57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a65ac409691646fa2f92ee9b84294ac57">GenerateTempRoomDisplay</a> (int height, HashSet&lt; int &gt; outline)</td></tr>
 <tr class="separator:a65ac409691646fa2f92ee9b84294ac57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b9419222535f317005ca9fe1fe757f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a1b9419222535f317005ca9fe1fe757f3">GenerateTempRoomDisplay</a> ()</td></tr>
-<tr class="memdesc:a1b9419222535f317005ca9fe1fe757f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">gnerates a temp display of the museum but onyl floor walls handled by draw gizmos  <a href="#a1b9419222535f317005ca9fe1fe757f3">More...</a><br /></td></tr>
+<tr class="memdesc:a1b9419222535f317005ca9fe1fe757f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">gnerates a temp display of the museum but only floor walls handled by draw gizmos  <a href="#a1b9419222535f317005ca9fe1fe757f3">More...</a><br /></td></tr>
 <tr class="separator:a1b9419222535f317005ca9fe1fe757f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c219625d39af0857271734995728a10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a7c219625d39af0857271734995728a10">OnDrawGizmos</a> ()</td></tr>
 <tr class="memdesc:a7c219625d39af0857271734995728a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">gnerates walls for museum in editor and color codes them depending on type  <a href="#a7c219625d39af0857271734995728a10">More...</a><br /></td></tr>
@@ -236,7 +238,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>gnerates a temp display of the museum but onyl floor walls handled by draw gizmos </p>
+<p>gnerates a temp display of the museum but only floor walls handled by draw gizmos </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -298,6 +300,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>sets Instance of generator </p>
+
 </div>
 </div>
 <a id="a5ead852effaa81309fe98b4d61fe9759"></a>
@@ -325,6 +329,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>enqueues a new museum request </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>the request as a xml string</td></tr>
+    <tr><td class="paramname">requester</td><td>queue where respone should go??? no idea-&gt; yes indeed</td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -372,12 +385,12 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e_cgraph.png" border="0" usemap="#class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e_cgraph" alt=""/></div>
 <map name="class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e_cgraph" id="class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e_cgraph">
 <area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="257,123,386,149"/>
-<area shape="rect" id="node10" href="class_museum_generator.html#a1b9419222535f317005ca9fe1fe757f3" title="gnerates a temp display of the museum but onyl floor walls handled by draw gizmos ..." alt="" coords="228,174,415,215"/>
+<area shape="rect" id="node10" href="class_museum_generator.html#a1b9419222535f317005ca9fe1fe757f3" title="gnerates a temp display of the museum but only floor walls handled by draw gizmos ..." alt="" coords="228,174,415,215"/>
 <area shape="rect" id="node11" href="class_museum.html#ac956bb7d7454f99944af157c79f695b8" title="Serilaizes a museum to an xml string " alt="" coords="258,240,385,267"/>
 <area shape="rect" id="node3" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b" title="returns the sourrounding tiles for a given position " alt="" coords="475,5,675,32"/>
 <area shape="rect" id="node4" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="482,57,669,98"/>
 <area shape="rect" id="node5" href="class_room.html#a294bb89a25ac765eca25106ccb4d1955" title="Creats a single door between two rooms " alt="" coords="467,123,683,149"/>
-<area shape="rect" id="node6" href="class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4" title="Fills the displas that exist in the museum WARNING: CURRENTLY TEMP IMPLEMENTATION ..." alt="" coords="504,173,647,200"/>
+<area shape="rect" id="node6" href="class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4" title="Fills the displas that exist in the museum also creates texture info for walls WARNING: CURRENTLY TEM..." alt="" coords="504,173,647,200"/>
 <area shape="rect" id="node7" href="class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="463,224,688,251"/>
 <area shape="rect" id="node8" href="class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="736,217,929,258"/>
 <area shape="rect" id="node9" href="class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="977,224,1176,251"/>
@@ -547,14 +560,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aba3c9dafe2095b617ca22049f2b83b5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba3c9dafe2095b617ca22049f2b83b5f">&#9670;&nbsp;</a></span>tpyeToDrawWallsFor</h2>
+<a id="afba388daa5228b0542ebdf7799521ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba388daa5228b0542ebdf7799521ca9">&#9670;&nbsp;</a></span>typeToDrawWallsFor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a> MuseumGenerator.tpyeToDrawWallsFor</td>
+          <td class="memname"><a class="el" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a> MuseumGenerator.typeToDrawWallsFor</td>
         </tr>
       </table>
 </div><div class="memdoc">

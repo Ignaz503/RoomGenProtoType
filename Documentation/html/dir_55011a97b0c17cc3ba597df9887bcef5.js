@@ -17,5 +17,8 @@ var dir_55011a97b0c17cc3ba597df9887bcef5 =
     [ "MuseumGraph.cs", "_museum_graph_8cs.html", [
       [ "MuseumGraph", "class_museum_graph.html", "class_museum_graph" ],
       [ "Node", "class_museum_graph_1_1_node.html", "class_museum_graph_1_1_node" ]
+    ] ],
+    [ "MuseumWallTextureInfo.cs", "_museum_wall_texture_info_8cs.html", [
+      [ "MuseumTextureInfo", "class_museum_texture_info.html", "class_museum_texture_info" ]
     ] ]
 ];

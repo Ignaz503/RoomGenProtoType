@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -98,6 +98,13 @@ $(document).ready(function(){initNavTree('class_museum.html','');});
 <div class="title">Museum Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for Museum:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum__coll__graph.png" border="0" usemap="#_museum_coll__map" alt="Collaboration graph"/></div>
+<map name="_museum_coll__map" id="_museum_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -106,6 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a301b4e27f35da164ffa03b3d3d7e81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81">Generate</a> (string seed, bool buildMuseumsGraph=true)</td></tr>
 <tr class="memdesc:a2a301b4e27f35da164ffa03b3d3d7e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a <a class="el" href="class_museum.html">Museum</a> baisc algortihm:  <a href="#a2a301b4e27f35da164ffa03b3d3d7e81">More...</a><br /></td></tr>
 <tr class="separator:a2a301b4e27f35da164ffa03b3d3d7e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c3e63a3a1e2edf6e219cb1f04b9515"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_room.html">Room</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a31c3e63a3a1e2edf6e219cb1f04b9515">GetRoomByID</a> (uint RoomID)</td></tr>
+<tr class="memdesc:a31c3e63a3a1e2edf6e219cb1f04b9515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a room via the ID of it  <a href="#a31c3e63a3a1e2edf6e219cb1f04b9515">More...</a><br /></td></tr>
+<tr class="separator:a31c3e63a3a1e2edf6e219cb1f04b9515"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e441db98efeaa314ae974222aea08e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a6e441db98efeaa314ae974222aea08e6">AddWall</a> (<a class="el" href="class_wall.html">Wall</a> w)</td></tr>
 <tr class="memdesc:a6e441db98efeaa314ae974222aea08e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a wall to the walls container if the wall doesn't exist otherwise returns the index of the wall that already exists (2 rooms share one wall in that case)  <a href="#a6e441db98efeaa314ae974222aea08e6">More...</a><br /></td></tr>
 <tr class="separator:a6e441db98efeaa314ae974222aea08e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,7 +159,7 @@ Properties</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ae07741bc8fd7f97c84fed0050e18c3c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4">FillDisplays</a> (System.Random rng)</td></tr>
-<tr class="memdesc:ae07741bc8fd7f97c84fed0050e18c3c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the displas that exist in the museum WARNING: CURRENTLY TEMP IMPLEMENTATION  <a href="#ae07741bc8fd7f97c84fed0050e18c3c4">More...</a><br /></td></tr>
+<tr class="memdesc:ae07741bc8fd7f97c84fed0050e18c3c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the displas that exist in the museum also creates texture info for walls WARNING: CURRENTLY TEMP IMPLEMENTATION  <a href="#ae07741bc8fd7f97c84fed0050e18c3c4">More...</a><br /></td></tr>
 <tr class="separator:ae07741bc8fd7f97c84fed0050e18c3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5b732fe3a0821d02852171a73cf8f8b"><td class="memItemLeft" align="right" valign="top">List&lt; Vector2Int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b">GetSourroundingTiles</a> (Vector2Int pos)</td></tr>
 <tr class="memdesc:af5b732fe3a0821d02852171a73cf8f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the sourrounding tiles for a given position  <a href="#af5b732fe3a0821d02852171a73cf8f8b">More...</a><br /></td></tr>
@@ -369,7 +379,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Fills the displas that exist in the museum WARNING: CURRENTLY TEMP IMPLEMENTATION </p>
+<p>Fills the displas that exist in the museum also creates texture info for walls WARNING: CURRENTLY TEMP IMPLEMENTATION </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -435,7 +445,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node2" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b" title="returns the sourrounding tiles for a given position " alt="" coords="195,5,395,32"/>
 <area shape="rect" id="node3" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="202,57,389,98"/>
 <area shape="rect" id="node4" href="class_room.html#a294bb89a25ac765eca25106ccb4d1955" title="Creats a single door between two rooms " alt="" coords="187,123,403,149"/>
-<area shape="rect" id="node5" href="class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4" title="Fills the displas that exist in the museum WARNING: CURRENTLY TEMP IMPLEMENTATION ..." alt="" coords="224,173,367,200"/>
+<area shape="rect" id="node5" href="class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4" title="Fills the displas that exist in the museum also creates texture info for walls WARNING: CURRENTLY TEM..." alt="" coords="224,173,367,200"/>
 <area shape="rect" id="node6" href="class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="183,224,408,251"/>
 <area shape="rect" id="node7" href="class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="456,217,649,258"/>
 <area shape="rect" id="node8" href="class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="697,224,896,251"/>
@@ -449,6 +459,33 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node2" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="183,5,357,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a31c3e63a3a1e2edf6e219cb1f04b9515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c3e63a3a1e2edf6e219cb1f04b9515">&#9670;&nbsp;</a></span>GetRoomByID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_room.html">Room</a> Museum.GetRoomByID </td>
+          <td>(</td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>RoomID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds a room via the ID of it </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RoomID</td><td>the room ID of the room we are looking for</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The room with the ID</dd></dl>
 
 </div>
 </div>

@@ -12,21 +12,23 @@ Collaboration diagram for Resource\+Loader.\+Request\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=344pt]{struct_resource_loader_1_1_request__coll__graph}
+\includegraphics[width=206pt]{struct_resource_loader_1_1_request__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_resource_loader_1_1_request_a3427794aa15130e022643f9a89a8b433}{Request}} (\mbox{\hyperlink{class_display}{Display}} display, string resourece\+Locator)
+\mbox{\hyperlink{struct_resource_loader_1_1_request_a0eed476349c6e00847f857b251696bb5}{Request}} (Action$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$ display, string resourece\+Locator, string resource\+Type)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_display}{Display}} \mbox{\hyperlink{struct_resource_loader_1_1_request_ae29b4b250dc743adb48015484cf31697}{disp}}
-\item 
+Action$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$ \mbox{\hyperlink{struct_resource_loader_1_1_request_a9181d63264ecb18ff27bfd27eb1eeaf6}{request\+Callback}}
+\begin{DoxyCompactList}\small\item\em callback to whoever created request \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{struct_resource_loader_1_1_request_aa5c217683710db8ab1f700365acb8d19}{Resource\+Locator}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em resource locator for server to find resource \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{struct_resource_loader_1_1_request_a349cfa36f1c8a461d5475f073a5afccb}{Resource\+Type}}
+\begin{DoxyCompactList}\small\item\em The type of resource that is requested needed to build correct response \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -35,26 +37,44 @@ struct for a request from the museum builder to get a certain resource from the 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{struct_resource_loader_1_1_request_a3427794aa15130e022643f9a89a8b433}\label{struct_resource_loader_1_1_request_a3427794aa15130e022643f9a89a8b433}} 
+\mbox{\Hypertarget{struct_resource_loader_1_1_request_a0eed476349c6e00847f857b251696bb5}\label{struct_resource_loader_1_1_request_a0eed476349c6e00847f857b251696bb5}} 
 \index{Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}!Request@{Request}}
 \index{Request@{Request}!Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}}
 \subsubsection{\texorpdfstring{Request()}{Request()}}
-{\footnotesize\ttfamily Resource\+Loader.\+Request.\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_display}{Display}}}]{display,  }\item[{string}]{resourece\+Locator }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Resource\+Loader.\+Request.\+Request (\begin{DoxyParamCaption}\item[{Action$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$}]{display,  }\item[{string}]{resourece\+Locator,  }\item[{string}]{resource\+Type }\end{DoxyParamCaption})}
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{struct_resource_loader_1_1_request_ae29b4b250dc743adb48015484cf31697}\label{struct_resource_loader_1_1_request_ae29b4b250dc743adb48015484cf31697}} 
-\index{Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}!disp@{disp}}
-\index{disp@{disp}!Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}}
-\subsubsection{\texorpdfstring{disp}{disp}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_display}{Display}} Resource\+Loader.\+Request.\+disp}
+\mbox{\Hypertarget{struct_resource_loader_1_1_request_a9181d63264ecb18ff27bfd27eb1eeaf6}\label{struct_resource_loader_1_1_request_a9181d63264ecb18ff27bfd27eb1eeaf6}} 
+\index{Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}!request\+Callback@{request\+Callback}}
+\index{request\+Callback@{request\+Callback}!Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}}
+\subsubsection{\texorpdfstring{request\+Callback}{requestCallback}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}$>$ Resource\+Loader.\+Request.\+request\+Callback}
+
+
+
+callback to whoever created request 
 
 \mbox{\Hypertarget{struct_resource_loader_1_1_request_aa5c217683710db8ab1f700365acb8d19}\label{struct_resource_loader_1_1_request_aa5c217683710db8ab1f700365acb8d19}} 
 \index{Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}!Resource\+Locator@{Resource\+Locator}}
 \index{Resource\+Locator@{Resource\+Locator}!Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}}
 \subsubsection{\texorpdfstring{Resource\+Locator}{ResourceLocator}}
 {\footnotesize\ttfamily string Resource\+Loader.\+Request.\+Resource\+Locator}
+
+
+
+resource locator for server to find resource 
+
+\mbox{\Hypertarget{struct_resource_loader_1_1_request_a349cfa36f1c8a461d5475f073a5afccb}\label{struct_resource_loader_1_1_request_a349cfa36f1c8a461d5475f073a5afccb}} 
+\index{Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}!Resource\+Type@{Resource\+Type}}
+\index{Resource\+Type@{Resource\+Type}!Resource\+Loader\+::\+Request@{Resource\+Loader\+::\+Request}}
+\subsubsection{\texorpdfstring{Resource\+Type}{ResourceType}}
+{\footnotesize\ttfamily string Resource\+Loader.\+Request.\+Resource\+Type}
+
+
+
+The type of resource that is requested needed to build correct response 
 
 
 

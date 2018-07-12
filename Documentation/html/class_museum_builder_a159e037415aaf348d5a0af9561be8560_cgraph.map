@@ -1,10 +1,10 @@
 <map id="MuseumBuilder.SetUpCenterDisplaysForRoom" name="MuseumBuilder.SetUpCenterDisplaysForRoom">
-<area shape="rect" id="node2" href="$class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="244,57,523,83"/>
-<area shape="rect" id="node5" href="$class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="331,107,436,134"/>
-<area shape="rect" id="node6" href="$class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec" title="Loads Resource for a dsiplay " alt="" coords="284,158,483,185"/>
+<area shape="rect" id="node2" href="$class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="244,53,523,79"/>
+<area shape="rect" id="node5" href="$class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="331,103,436,130"/>
+<area shape="rect" id="node6" href="$class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="290,155,477,196"/>
 <area shape="rect" id="node3" href="$class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="582,5,769,47"/>
 <area shape="rect" id="node4" href="$class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="571,71,780,112"/>
-<area shape="rect" id="node7" href="$class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="597,158,754,185"/>
-<area shape="rect" id="node8" href="$class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="828,158,1005,185"/>
-<area shape="rect" id="node9" href="$class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1053,151,1256,192"/>
+<area shape="rect" id="node7" href="$class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="597,162,754,189"/>
+<area shape="rect" id="node8" href="$class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="828,162,1005,189"/>
+<area shape="rect" id="node9" href="$class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1053,155,1256,196"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="BoundingSphere.BoundingSphere" name="BoundingSphere.BoundingSphere">
 <area shape="rect" id="node2" href="$class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="269,13,444,39"/>
 <area shape="rect" id="node3" href="$class_mesh_display.html#a94176ce6e76cc683336051b49573ab1f" title="scales the mesh that needs displaying to a size so that is fits into the glass sphere ..." alt="" coords="492,5,669,47"/>
-<area shape="rect" id="node4" href="$class_mesh_display.html#aff3b19b74dd530fdf299b4feee319691" title="Applies a resource to a display " alt="" coords="717,13,907,39"/>
+<area shape="rect" id="node4" href="$class_mesh_display.html#ab9a24f407a8ff995658097a98242095e" title="Applies a resource to a display " alt="" coords="717,13,907,39"/>
 </map>

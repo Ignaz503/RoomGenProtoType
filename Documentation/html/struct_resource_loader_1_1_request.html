@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -103,29 +103,31 @@ Collaboration diagram for ResourceLoader.Request:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_resource_loader_1_1_request__coll__graph.png" border="0" usemap="#_resource_loader_8_request_coll__map" alt="Collaboration graph"/></div>
 <map name="_resource_loader_8_request_coll__map" id="_resource_loader_8_request_coll__map">
-<area shape="rect" id="node2" href="class_display.html" title="The base class for displaying resources " alt="" coords="153,171,219,197"/>
-<area shape="rect" id="node4" href="interface_i_interactable.html" title="IInteractable" alt="" coords="140,81,232,108"/>
-<area shape="rect" id="node5" href="class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="257,81,339,108"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3427794aa15130e022643f9a89a8b433"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_resource_loader_1_1_request.html#a3427794aa15130e022643f9a89a8b433">Request</a> (<a class="el" href="class_display.html">Display</a> display, string resoureceLocator)</td></tr>
-<tr class="separator:a3427794aa15130e022643f9a89a8b433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eed476349c6e00847f857b251696bb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_resource_loader_1_1_request.html#a0eed476349c6e00847f857b251696bb5">Request</a> (Action&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt; display, string resoureceLocator, string resourceType)</td></tr>
+<tr class="separator:a0eed476349c6e00847f857b251696bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae29b4b250dc743adb48015484cf31697"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_display.html">Display</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_resource_loader_1_1_request.html#ae29b4b250dc743adb48015484cf31697">disp</a></td></tr>
-<tr class="separator:ae29b4b250dc743adb48015484cf31697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9181d63264ecb18ff27bfd27eb1eeaf6"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_resource_loader_1_1_request.html#a9181d63264ecb18ff27bfd27eb1eeaf6">requestCallback</a></td></tr>
+<tr class="memdesc:a9181d63264ecb18ff27bfd27eb1eeaf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">callback to whoever created request  <a href="#a9181d63264ecb18ff27bfd27eb1eeaf6">More...</a><br /></td></tr>
+<tr class="separator:a9181d63264ecb18ff27bfd27eb1eeaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5c217683710db8ab1f700365acb8d19"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_resource_loader_1_1_request.html#aa5c217683710db8ab1f700365acb8d19">ResourceLocator</a></td></tr>
+<tr class="memdesc:aa5c217683710db8ab1f700365acb8d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">resource locator for server to find resource  <a href="#aa5c217683710db8ab1f700365acb8d19">More...</a><br /></td></tr>
 <tr class="separator:aa5c217683710db8ab1f700365acb8d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349cfa36f1c8a461d5475f073a5afccb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_resource_loader_1_1_request.html#a349cfa36f1c8a461d5475f073a5afccb">ResourceType</a></td></tr>
+<tr class="memdesc:a349cfa36f1c8a461d5475f073a5afccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of resource that is requested needed to build correct response  <a href="#a349cfa36f1c8a461d5475f073a5afccb">More...</a><br /></td></tr>
+<tr class="separator:a349cfa36f1c8a461d5475f073a5afccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>struct for a request from the museum builder to get a certain resource from the server </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3427794aa15130e022643f9a89a8b433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3427794aa15130e022643f9a89a8b433">&#9670;&nbsp;</a></span>Request()</h2>
+<a id="a0eed476349c6e00847f857b251696bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eed476349c6e00847f857b251696bb5">&#9670;&nbsp;</a></span>Request()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,14 +135,20 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">ResourceLoader.Request.Request </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_display.html">Display</a>&#160;</td>
+          <td class="paramtype">Action&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt;&#160;</td>
           <td class="paramname"><em>display</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>resoureceLocator</em>&#160;</td>
+          <td class="paramname"><em>resoureceLocator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>resourceType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -153,17 +161,19 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae29b4b250dc743adb48015484cf31697"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae29b4b250dc743adb48015484cf31697">&#9670;&nbsp;</a></span>disp</h2>
+<a id="a9181d63264ecb18ff27bfd27eb1eeaf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9181d63264ecb18ff27bfd27eb1eeaf6">&#9670;&nbsp;</a></span>requestCallback</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_display.html">Display</a> ResourceLoader.Request.disp</td>
+          <td class="memname">Action&lt;<a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&gt; ResourceLoader.Request.requestCallback</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>callback to whoever created request </p>
 
 </div>
 </div>
@@ -178,6 +188,24 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>resource locator for server to find resource </p>
+
+</div>
+</div>
+<a id="a349cfa36f1c8a461d5475f073a5afccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349cfa36f1c8a461d5475f073a5afccb">&#9670;&nbsp;</a></span>ResourceType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ResourceLoader.Request.ResourceType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type of resource that is requested needed to build correct response </p>
 
 </div>
 </div>

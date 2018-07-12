@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -89,6 +89,7 @@ $(document).ready(function(){initNavTree('class_p_c_player_hand.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -102,19 +103,19 @@ Inheritance diagram for PCPlayerHand:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_p_c_player_hand__inherit__graph.png" border="0" usemap="#_p_c_player_hand_inherit__map" alt="Inheritance graph"/></div>
 <map name="_p_c_player_hand_inherit__map" id="_p_c_player_hand_inherit__map">
-<area shape="rect" id="node2" href="class_player_hand.html" title="PlayerHand" alt="" coords="16,80,105,107"/>
+<area shape="rect" id="node2" href="class_player_hand.html" title="{PlayerHand\n|+ CurrentState\l+ OwningPlayer\l# objectInHand\l&#45; _currentState\l|+ GrabObject()\l+ DropObject()\l+ ForwardInteractableObject()\l# InvokeInRestingPosition()\l# InvokeOnReachedInfrontOf\lFacePosition()\l# InvokeOnStartMovingToRest\lPosition()\l# InvokeOnStartMovingInfront\lOfFace()\l}" alt="" coords="5,131,200,384"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for PCPlayerHand:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_p_c_player_hand__coll__graph.png" border="0" usemap="#_p_c_player_hand_coll__map" alt="Collaboration graph"/></div>
 <map name="_p_c_player_hand_coll__map" id="_p_c_player_hand_coll__map">
-<area shape="rect" id="node2" href="class_player_hand.html" title="PlayerHand" alt="" coords="24,95,113,121"/>
-<area shape="rect" id="node5" href="class_meta_data_display.html" title="The display for all the metadata TODO: make interactable and define pickup interaction ..." alt="" coords="137,95,259,121"/>
-<area shape="rect" id="node4" href="interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="152,5,265,32"/>
+<area shape="rect" id="node2" href="class_player_hand.html" title="{PlayerHand\n|+ CurrentState\l+ OwningPlayer\l&#45; _currentState\l|+ GrabObject()\l+ DropObject()\l+ ForwardInteractableObject()\l# InvokeInRestingPosition()\l# InvokeOnReachedInfrontOf\lFacePosition()\l# InvokeOnStartMovingToRest\lPosition()\l# InvokeOnStartMovingInfront\lOfFace()\l}" alt="" coords="5,380,200,619"/>
+<area shape="rect" id="node5" href="class_meta_data_display.html" title="The display for all the metadata TODO: make interactable and define pickup interaction ..." alt="" coords="225,277,447,721"/>
+<area shape="rect" id="node4" href="interface_i_holdable_object.html" title="{IHoldableObject\n|+ Object\l|+ OnHeldInfrontOfFace()\l+ OnPutAway()\l+ OnStartedMoveInfrontOfFace()\l+ OnStartedMoveAwayFromFace()\l+ PositionObjectInHand()\l+ OnGrabed()\l+ OnDropped()\l+ IsInterestedInInteractable\lObjects()\l+ SetInteractedObject()\l}" alt="" coords="211,5,434,215"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -128,6 +129,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a67095e4c1db1e3369c435dd1fe1ebec5 inherit pub_methods_class_player_hand"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#a67095e4c1db1e3369c435dd1fe1ebec5">ForwardInteractableObject</a> (<a class="el" href="class_player_interaction_event_args.html">PlayerInteractionEventArgs</a> interactObj)</td></tr>
 <tr class="memdesc:a67095e4c1db1e3369c435dd1fe1ebec5 inherit pub_methods_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards the <a class="el" href="interface_i_interactable.html">IInteractable</a> information to the held object if it is intersted in so that not all object need to know about the player makes sure that the IInteracteable is not null or it wont be called so that the held obj doesn't need to worry about it  <a href="class_player_hand.html#a67095e4c1db1e3369c435dd1fe1ebec5">More...</a><br /></td></tr>
 <tr class="separator:a67095e4c1db1e3369c435dd1fe1ebec5 inherit pub_methods_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4d757a10aeef1d8b06d19687218584f0"><td class="memItemLeft" align="right" valign="top">KeyCode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_player_hand.html#a4d757a10aeef1d8b06d19687218584f0">MoveHandKey</a></td></tr>
+<tr class="memdesc:a4d757a10aeef1d8b06d19687218584f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">the key that starts the process of moving the hand eiter into rest or infront of face position  <a href="#a4d757a10aeef1d8b06d19687218584f0">More...</a><br /></td></tr>
+<tr class="separator:a4d757a10aeef1d8b06d19687218584f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -165,9 +172,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a25ff91db9893158f5185b4826d563e60"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_player_hand.html#a25ff91db9893158f5185b4826d563e60">infrontOfFacePosition</a></td></tr>
 <tr class="memdesc:a25ff91db9893158f5185b4826d563e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">the position the hand has when held infront of the face  <a href="#a25ff91db9893158f5185b4826d563e60">More...</a><br /></td></tr>
 <tr class="separator:a25ff91db9893158f5185b4826d563e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f0649f12dc9268301b87757fab97873"><td class="memItemLeft" align="right" valign="top">KeyCode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_player_hand.html#a3f0649f12dc9268301b87757fab97873">moveHandKey</a></td></tr>
-<tr class="memdesc:a3f0649f12dc9268301b87757fab97873"><td class="mdescLeft">&#160;</td><td class="mdescRight">the key that starts the process of moving the hand eiter into rest or infront of face position  <a href="#a3f0649f12dc9268301b87757fab97873">More...</a><br /></td></tr>
-<tr class="separator:a3f0649f12dc9268301b87757fab97873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a132e4dc18579e0b2b561857fafaca912"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_meta_data_display.html">MetaDataDisplay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_player_hand.html#a132e4dc18579e0b2b561857fafaca912">metaDisplay</a></td></tr>
 <tr class="memdesc:a132e4dc18579e0b2b561857fafaca912"><td class="mdescLeft">&#160;</td><td class="mdescRight">the meta display held from the start  <a href="#a132e4dc18579e0b2b561857fafaca912">More...</a><br /></td></tr>
 <tr class="separator:a132e4dc18579e0b2b561857fafaca912"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,18 +209,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a043a1be665181f9e3c9d00cd18e4c4fe inherit pro_attribs_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">the object currently held by the hand  <a href="class_player_hand.html#a043a1be665181f9e3c9d00cd18e4c4fe">More...</a><br /></td></tr>
 <tr class="separator:a043a1be665181f9e3c9d00cd18e4c4fe inherit pro_attribs_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header events_class_player_hand"><td colspan="2" onclick="javascript:toggleInherit('events_class_player_hand')"><img src="closed.png" alt="-"/>&#160;Events inherited from <a class="el" href="class_player_hand.html">PlayerHand</a></td></tr>
-<tr class="memitem:a3a8432e3dbd04a1c12c95ca0c0fd186b inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#a3a8432e3dbd04a1c12c95ca0c0fd186b">InRestingPosition</a></td></tr>
-<tr class="memdesc:a3a8432e3dbd04a1c12c95ca0c0fd186b inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after state is set to rest position  <a href="class_player_hand.html#a3a8432e3dbd04a1c12c95ca0c0fd186b">More...</a><br /></td></tr>
-<tr class="separator:a3a8432e3dbd04a1c12c95ca0c0fd186b inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f27078422ba536d94e6fb76e093cf7c inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#a9f27078422ba536d94e6fb76e093cf7c">OnReachedInfronOfFacePosition</a></td></tr>
-<tr class="memdesc:a9f27078422ba536d94e6fb76e093cf7c inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after state is set to InfrontOfFace  <a href="class_player_hand.html#a9f27078422ba536d94e6fb76e093cf7c">More...</a><br /></td></tr>
-<tr class="separator:a9f27078422ba536d94e6fb76e093cf7c inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82ac43be97123cde5f02f5811a63397 inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#ac82ac43be97123cde5f02f5811a63397">OnStartMovingToRestPosition</a></td></tr>
-<tr class="memdesc:ac82ac43be97123cde5f02f5811a63397 inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after state is set to MovingTowardRestingPosition  <a href="class_player_hand.html#ac82ac43be97123cde5f02f5811a63397">More...</a><br /></td></tr>
-<tr class="separator:ac82ac43be97123cde5f02f5811a63397 inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab33d70a8efd0adeed59aa3f5a5747349 inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#ab33d70a8efd0adeed59aa3f5a5747349">OnStartMovingInfrontOfFace</a></td></tr>
-<tr class="memdesc:ab33d70a8efd0adeed59aa3f5a5747349 inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after state is set to MovingInfrontOfFace  <a href="class_player_hand.html#ab33d70a8efd0adeed59aa3f5a5747349">More...</a><br /></td></tr>
-<tr class="separator:ab33d70a8efd0adeed59aa3f5a5747349 inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb1dc8370e71ba7b9965ffa0d4a2532 inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">System.Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#aebb1dc8370e71ba7b9965ffa0d4a2532">InRestingPosition</a></td></tr>
+<tr class="memdesc:aebb1dc8370e71ba7b9965ffa0d4a2532 inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after state is set to rest position  <a href="class_player_hand.html#aebb1dc8370e71ba7b9965ffa0d4a2532">More...</a><br /></td></tr>
+<tr class="separator:aebb1dc8370e71ba7b9965ffa0d4a2532 inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b8dd996d175659c87dbea8266ff095 inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">System.Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#a60b8dd996d175659c87dbea8266ff095">OnReachedInfronOfFacePosition</a></td></tr>
+<tr class="memdesc:a60b8dd996d175659c87dbea8266ff095 inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after state is set to InfrontOfFace  <a href="class_player_hand.html#a60b8dd996d175659c87dbea8266ff095">More...</a><br /></td></tr>
+<tr class="separator:a60b8dd996d175659c87dbea8266ff095 inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e94ca5bad6ece9013cd872dcf373074 inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">System.Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#a4e94ca5bad6ece9013cd872dcf373074">OnStartMovingToRestPosition</a></td></tr>
+<tr class="memdesc:a4e94ca5bad6ece9013cd872dcf373074 inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after state is set to MovingTowardRestingPosition  <a href="class_player_hand.html#a4e94ca5bad6ece9013cd872dcf373074">More...</a><br /></td></tr>
+<tr class="separator:a4e94ca5bad6ece9013cd872dcf373074 inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144ea34305e5efa1ffae73c9d1f5fd9d inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">System.Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#a144ea34305e5efa1ffae73c9d1f5fd9d">OnStartMovingInfrontOfFace</a></td></tr>
+<tr class="memdesc:a144ea34305e5efa1ffae73c9d1f5fd9d inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after state is set to MovingInfrontOfFace  <a href="class_player_hand.html#a144ea34305e5efa1ffae73c9d1f5fd9d">More...</a><br /></td></tr>
+<tr class="separator:a144ea34305e5efa1ffae73c9d1f5fd9d inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3875f350ce765612b5af99e8e9d5837 inherit events_class_player_hand"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="interface_i_holdable_object.html">IHoldableObject</a>, <a class="el" href="class_player_hand.html">PlayerHand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_hand.html#af3875f350ce765612b5af99e8e9d5837">OnGrabObject</a></td></tr>
 <tr class="memdesc:af3875f350ce765612b5af99e8e9d5837 inherit events_class_player_hand"><td class="mdescLeft">&#160;</td><td class="mdescRight">called after(same frame) objectInHand is set and object was subscribed to all hand events it needs to know  <a href="class_player_hand.html#af3875f350ce765612b5af99e8e9d5837">More...</a><br /></td></tr>
 <tr class="separator:af3875f350ce765612b5af99e8e9d5837 inherit events_class_player_hand"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -531,24 +535,16 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a3f0649f12dc9268301b87757fab97873"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f0649f12dc9268301b87757fab97873">&#9670;&nbsp;</a></span>moveHandKey</h2>
+<a id="a4d757a10aeef1d8b06d19687218584f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d757a10aeef1d8b06d19687218584f0">&#9670;&nbsp;</a></span>MoveHandKey</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">KeyCode PCPlayerHand.moveHandKey</td>
+          <td class="memname">KeyCode PCPlayerHand.MoveHandKey</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>the key that starts the process of moving the hand eiter into rest or infront of face position </p>

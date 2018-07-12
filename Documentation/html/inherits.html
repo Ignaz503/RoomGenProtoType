@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -120,24 +120,33 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
 <area shape="rect" id="node22" href="class_p_c_player_hand.html" title="PCPlayerHand" alt="" coords="393,309,499,336"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#_bounding_sphere"/>
+<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#_base_resource"/>
+<map name="_base_resource" id="_base_resource">
+<area shape="rect" id="node1" href="class_base_resource.html" title="base class for any resource be it display resource or other " alt="" coords="5,56,112,83"/>
+<area shape="rect" id="node2" href="class_base_display_resource.html" title="base class for resource " alt="" coords="160,31,311,57"/>
+<area shape="rect" id="node5" href="class_texture_resource.html" title="resource that is a texture " alt="" coords="175,81,295,108"/>
+<area shape="rect" id="node3" href="class_display_image_resource.html" title="resource that is a image that needs to be displayed " alt="" coords="359,5,513,32"/>
+<area shape="rect" id="node4" href="class_display_mesh_resource.html" title="a resource that is a mesh " alt="" coords="360,56,512,83"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#_bounding_sphere"/>
 <map name="_bounding_sphere" id="_bounding_sphere">
 <area shape="rect" id="node1" href="class_bounding_sphere.html" title="BoundingSphere" alt="" coords="5,5,123,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#_interaction"/>
+<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#_interaction"/>
 <map name="_interaction" id="_interaction">
 <area shape="rect" id="node2" href="class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="172,5,255,32"/>
 <area shape="rect" id="node3" href="class_obejct_in_hand_interaction.html" title="TODO FIX " alt="" coords="303,5,463,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#_i_room_placable_checker"/>
+<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#_i_room_placable_checker"/>
 <map name="_i_room_placable_checker" id="_i_room_placable_checker">
 <area shape="rect" id="node1" href="interface_i_room_placable_checker.html" title="IRoomPlacableChecker" alt="" coords="5,5,163,32"/>
 <area shape="rect" id="node2" href="class_base_room_type_placable_cheker.html" title="checks for the room types defined by me if they are placable at a certain location in the musem ..." alt="" coords="211,5,416,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#_i_wall_validator"/>
+<tr><td><img src="inherit_graph_5.png" border="0" alt="" usemap="#_i_wall_validator"/>
 <map name="_i_wall_validator" id="_i_wall_validator">
 <area shape="rect" id="node1" href="interface_i_wall_validator.html" title="IWallValidator" alt="" coords="5,81,108,108"/>
 <area shape="rect" id="node2" href="class_big_room_wall_validator.html" title="wall validator for 2x2 rooms " alt="" coords="167,5,319,32"/>
@@ -146,90 +155,93 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
 <area shape="rect" id="node5" href="class_normal_room_wall_validator.html" title="wall validator for 1x1 rooms " alt="" coords="156,157,331,184"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" alt="" usemap="#_lorem_ipsum"/>
+<tr><td><img src="inherit_graph_6.png" border="0" alt="" usemap="#_lorem_ipsum"/>
 <map name="_lorem_ipsum" id="_lorem_ipsum">
 <area shape="rect" id="node1" href="class_lorem_ipsum.html" title="defines a lorem ipsum text for testing purposes " alt="" coords="5,5,99,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" alt="" usemap="#_meta_data"/>
+<tr><td><img src="inherit_graph_7.png" border="0" alt="" usemap="#_meta_data"/>
 <map name="_meta_data" id="_meta_data">
 <area shape="rect" id="node1" href="class_meta_data.html" title="metadata related to resource containt further information " alt="" coords="5,5,84,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_7.png" border="0" alt="" usemap="#_meta_data_attribute"/>
+<tr><td><img src="inherit_graph_8.png" border="0" alt="" usemap="#_meta_data_attribute"/>
 <map name="_meta_data_attribute" id="_meta_data_attribute">
 <area shape="rect" id="node2" href="class_meta_data_attribute.html" title="MetaDataAttribute" alt="" coords="124,5,251,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" alt="" usemap="#_museum"/>
+<tr><td><img src="inherit_graph_9.png" border="0" alt="" usemap="#_museum"/>
 <map name="_museum" id="_museum">
 <area shape="rect" id="node1" href="class_museum.html" title="Museum" alt="" coords="5,5,77,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_9.png" border="0" alt="" usemap="#_museum_display_info"/>
+<tr><td><img src="inherit_graph_10.png" border="0" alt="" usemap="#_museum_display_info"/>
 <map name="_museum_display_info" id="_museum_display_info">
 <area shape="rect" id="node1" href="class_museum_display_info.html" title="MuseumDisplayInfo" alt="" coords="5,5,140,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_10.png" border="0" alt="" usemap="#_museum_graph"/>
+<tr><td><img src="inherit_graph_11.png" border="0" alt="" usemap="#_museum_graph"/>
 <map name="_museum_graph" id="_museum_graph">
 <area shape="rect" id="node1" href="class_museum_graph.html" title="MuseumGraph" alt="" coords="5,5,112,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_11.png" border="0" alt="" usemap="#_museum_graph_8_node"/>
+<tr><td><img src="inherit_graph_12.png" border="0" alt="" usemap="#_museum_graph_8_node"/>
 <map name="_museum_graph_8_node" id="_museum_graph_8_node">
 <area shape="rect" id="node1" href="class_museum_graph_1_1_node.html" title="MuseumGraph.Node" alt="" coords="5,5,147,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_12.png" border="0" alt="" usemap="#_museum_request"/>
+<tr><td><img src="inherit_graph_13.png" border="0" alt="" usemap="#_museum_request"/>
 <map name="_museum_request" id="_museum_request">
 <area shape="rect" id="node1" href="class_museum_request.html" title="MuseumRequest" alt="" coords="5,5,125,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_13.png" border="0" alt="" usemap="#_player_interaction_event_args"/>
+<tr><td><img src="inherit_graph_14.png" border="0" alt="" usemap="#_museum_texture_info"/>
+<map name="_museum_texture_info" id="_museum_texture_info">
+<area shape="rect" id="node1" href="class_museum_texture_info.html" title="MuseumTextureInfo" alt="" coords="5,5,140,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_15.png" border="0" alt="" usemap="#_player_interaction_event_args"/>
 <map name="_player_interaction_event_args" id="_player_interaction_event_args">
 <area shape="rect" id="node1" href="class_player_interaction_event_args.html" title="base event arguments when a player interacts with somthing interactable " alt="" coords="5,13,184,39"/>
 <area shape="rect" id="node2" href="class_player_display_interaction_event_args.html" title="event arguments when player is interacting with a dispaly " alt="" coords="232,5,395,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_14.png" border="0" alt="" usemap="#_resource"/>
-<map name="_resource" id="_resource">
-<area shape="rect" id="node1" href="class_resource.html" title="base class for resource " alt="" coords="5,31,83,57"/>
-<area shape="rect" id="node2" href="class_image_resource.html" title="resource that is a image " alt="" coords="131,5,243,32"/>
-<area shape="rect" id="node3" href="class_mesh_resource.html" title="a resource that is a mesh " alt="" coords="132,56,241,83"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_15.png" border="0" alt="" usemap="#_resource_loader_8_request"/>
+<tr><td><img src="inherit_graph_16.png" border="0" alt="" usemap="#_resource_loader_8_request"/>
 <map name="_resource_loader_8_request" id="_resource_loader_8_request">
 <area shape="rect" id="node1" href="struct_resource_loader_1_1_request.html" title="struct for a request from the museum builder to get a certain resource from the server ..." alt="" coords="5,5,173,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_16.png" border="0" alt="" usemap="#_resource_loader_8_request_result"/>
+<tr><td><img src="inherit_graph_17.png" border="0" alt="" usemap="#_resource_loader_8_request_result"/>
 <map name="_resource_loader_8_request_result" id="_resource_loader_8_request_result">
 <area shape="rect" id="node1" href="struct_resource_loader_1_1_request_result.html" title="the result of a request after it was revieved from the server " alt="" coords="5,5,211,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_17.png" border="0" alt="" usemap="#_resource_manager"/>
+<tr><td><img src="inherit_graph_18.png" border="0" alt="" usemap="#_resource_manager"/>
 <map name="_resource_manager" id="_resource_manager">
 <area shape="rect" id="node1" href="class_resource_manager.html" title="protypte resource manager that should be run on the server " alt="" coords="5,5,132,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_18.png" border="0" alt="" usemap="#_room"/>
+<tr><td><img src="inherit_graph_19.png" border="0" alt="" usemap="#_room"/>
 <map name="_room" id="_room">
 <area shape="rect" id="node1" href="class_room.html" title="defines a room in a virtual museum " alt="" coords="5,5,61,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_19.png" border="0" alt="" usemap="#_room_managment_unit"/>
+<tr><td><img src="inherit_graph_20.png" border="0" alt="" usemap="#_room_managment_unit"/>
 <map name="_room_managment_unit" id="_room_managment_unit">
 <area shape="rect" id="node1" href="class_room_managment_unit.html" title="class that contains all gamobjects that are in a certain room und will manage unloading and loading f..." alt="" coords="5,5,152,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_20.png" border="0" alt="" usemap="#_transform_extension_methods"/>
+<tr><td><img src="inherit_graph_21.png" border="0" alt="" usemap="#_transform_extension_methods"/>
 <map name="_transform_extension_methods" id="_transform_extension_methods">
 <area shape="rect" id="node1" href="class_transform_extension_methods.html" title="extension methods for Unity transform class " alt="" coords="5,5,192,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_21.png" border="0" alt="" usemap="#_wall"/>
+<tr><td><img src="inherit_graph_22.png" border="0" alt="" usemap="#_unity_test_8_test_script"/>
+<map name="_unity_test_8_test_script" id="_unity_test_8_test_script">
+<area shape="rect" id="node1" href="class_unity_test_1_1_test_script.html" title="UnityTest.TestScript" alt="" coords="5,5,145,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_23.png" border="0" alt="" usemap="#_wall"/>
 <map name="_wall" id="_wall">
 <area shape="rect" id="node1" href="class_wall.html" title="A wall that seperates two rooms of a museum or is an outer wall of the museum " alt="" coords="5,5,53,32"/>
 </map>

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -105,18 +105,18 @@ Inheritance diagram for Player:</div>
 <div class="center"><img src="class_player__inherit__graph.png" border="0" usemap="#_player_inherit__map" alt="Inheritance graph"/></div>
 <map name="_player_inherit__map" id="_player_inherit__map">
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for Player:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_player__coll__graph.png" border="0" usemap="#_player_coll__map" alt="Collaboration graph"/></div>
 <map name="_player_coll__map" id="_player_coll__map">
-<area shape="rect" id="node3" href="class_interaction_prompt.html" title="InteractionPrompt" alt="" coords="20,273,144,300"/>
-<area shape="rect" id="node4" href="class_player_hand.html" title="PlayerHand" alt="" coords="127,95,216,121"/>
-<area shape="rect" id="node5" href="interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="140,5,253,32"/>
-<area shape="rect" id="node6" href="interface_i_interactable.html" title="IInteractable" alt="" coords="240,95,332,121"/>
+<area shape="rect" id="node3" href="class_interaction_prompt.html" title="{InteractionPrompt\n|&#45; text\l&#45; obj\l|+ SetActive()\l+ PlaceAtAndRotate()\l+ PlaceAt()\l+ SetRotation()\l+ PlaceBetween()\l+ PlaceBetweenAndRotateTowards\lFirst()\l+ SetText()\l&#45; Start()\l&#45; LateUpdate()\l}" alt="" coords="5,865,232,1089"/>
+<area shape="rect" id="node4" href="class_player_hand.html" title="{PlayerHand\n|+ CurrentState\l+ OwningPlayer\l&#45; _currentState\l|+ GrabObject()\l+ DropObject()\l+ ForwardInteractableObject()\l# InvokeInRestingPosition()\l# InvokeOnReachedInfrontOf\lFacePosition()\l# InvokeOnStartMovingToRest\lPosition()\l# InvokeOnStartMovingInfront\lOfFace()\l}" alt="" coords="163,277,357,516"/>
+<area shape="rect" id="node5" href="interface_i_holdable_object.html" title="{IHoldableObject\n|+ Object\l|+ OnHeldInfrontOfFace()\l+ OnPutAway()\l+ OnStartedMoveInfrontOfFace()\l+ OnStartedMoveAwayFromFace()\l+ PositionObjectInHand()\l+ OnGrabed()\l+ OnDropped()\l+ IsInterestedInInteractable\lObjects()\l+ SetInteractedObject()\l}" alt="" coords="179,5,402,215"/>
+<area shape="rect" id="node6" href="interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="382,358,474,435"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -133,6 +133,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2b1dcb2e1f53c780a7501dbc6f89a174"><td class="memItemLeft" align="right" valign="top">FirstPersonController&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2b1dcb2e1f53c780a7501dbc6f89a174">FirstPersonController</a></td></tr>
 <tr class="memdesc:a2b1dcb2e1f53c780a7501dbc6f89a174"><td class="mdescLeft">&#160;</td><td class="mdescRight">The first person controller of the std unity assets  <a href="#a2b1dcb2e1f53c780a7501dbc6f89a174">More...</a><br /></td></tr>
 <tr class="separator:a2b1dcb2e1f53c780a7501dbc6f89a174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add63756ae44fffede30732d219ed0410"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_hand.html">PlayerHand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#add63756ae44fffede30732d219ed0410">PHand</a></td></tr>
+<tr class="memdesc:add63756ae44fffede30732d219ed0410"><td class="mdescLeft">&#160;</td><td class="mdescRight">The player hand  <a href="#add63756ae44fffede30732d219ed0410">More...</a><br /></td></tr>
+<tr class="separator:add63756ae44fffede30732d219ed0410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -150,8 +153,8 @@ Events</h2></td></tr>
 <tr class="memitem:a6da2c61e5e06e970835852ed3d65157c"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="class_player_interaction_event_args.html">PlayerInteractionEventArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6da2c61e5e06e970835852ed3d65157c">OnInInteractionRange</a></td></tr>
 <tr class="memdesc:a6da2c61e5e06e970835852ed3d65157c"><td class="mdescLeft">&#160;</td><td class="mdescRight">called once for any display when the player moves in range to interact with it WARNING: CURRENTLY CALLED EVERY FRAME UNTIL TODO IS DONE  <a href="#a6da2c61e5e06e970835852ed3d65157c">More...</a><br /></td></tr>
 <tr class="separator:a6da2c61e5e06e970835852ed3d65157c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad50fff09d9eef70c9884f232010cb859"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad50fff09d9eef70c9884f232010cb859">OnOutOfInteractionRange</a></td></tr>
-<tr class="separator:ad50fff09d9eef70c9884f232010cb859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319e807c138700dc247ebbba9579899e"><td class="memItemLeft" align="right" valign="top">System.Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a319e807c138700dc247ebbba9579899e">OnOutOfInteractionRange</a></td></tr>
+<tr class="separator:a319e807c138700dc247ebbba9579899e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -185,9 +188,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8b94069330ce05b42769d5cc61c6f00a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player.html#aa3b6104791d642173caf761cf81f8c08">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8b94069330ce05b42769d5cc61c6f00a">playerState</a></td></tr>
 <tr class="memdesc:a8b94069330ce05b42769d5cc61c6f00a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state of the player  <a href="#a8b94069330ce05b42769d5cc61c6f00a">More...</a><br /></td></tr>
 <tr class="separator:a8b94069330ce05b42769d5cc61c6f00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b9d29fbeb7400d02b9bb148b2629f34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_hand.html">PlayerHand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a0b9d29fbeb7400d02b9bb148b2629f34">pHand</a></td></tr>
-<tr class="memdesc:a0b9d29fbeb7400d02b9bb148b2629f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">The player hand  <a href="#a0b9d29fbeb7400d02b9bb148b2629f34">More...</a><br /></td></tr>
-<tr class="separator:a0b9d29fbeb7400d02b9bb148b2629f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac05f1557fc411c88274df512abb865ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_i_interactable.html">IInteractable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac05f1557fc411c88274df512abb865ac">lastInteractableHit</a></td></tr>
 <tr class="memdesc:ac05f1557fc411c88274df512abb865ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The display that was hit last, can be null should probaly be <a class="el" href="interface_i_interactable.html">IInteractable</a>  <a href="#ac05f1557fc411c88274df512abb865ac">More...</a><br /></td></tr>
 <tr class="separator:ac05f1557fc411c88274df512abb865ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -504,24 +504,16 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a0b9d29fbeb7400d02b9bb148b2629f34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b9d29fbeb7400d02b9bb148b2629f34">&#9670;&nbsp;</a></span>pHand</h2>
+<a id="add63756ae44fffede30732d219ed0410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add63756ae44fffede30732d219ed0410">&#9670;&nbsp;</a></span>PHand</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_player_hand.html">PlayerHand</a> Player.pHand</td>
+          <td class="memname"><a class="el" href="class_player_hand.html">PlayerHand</a> Player.PHand</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>The player hand </p>
@@ -664,14 +656,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ad50fff09d9eef70c9884f232010cb859"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad50fff09d9eef70c9884f232010cb859">&#9670;&nbsp;</a></span>OnOutOfInteractionRange</h2>
+<a id="a319e807c138700dc247ebbba9579899e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319e807c138700dc247ebbba9579899e">&#9670;&nbsp;</a></span>OnOutOfInteractionRange</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Action Player.OnOutOfInteractionRange</td>
+          <td class="memname">System.Action Player.OnOutOfInteractionRange</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('class_resource_loader.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_resource_loader-members.html">List of all members</a>  </div>
@@ -106,14 +108,14 @@ Inheritance diagram for ResourceLoader:</div>
 <div class="center"><img src="class_resource_loader__inherit__graph.png" border="0" usemap="#_resource_loader_inherit__map" alt="Inheritance graph"/></div>
 <map name="_resource_loader_inherit__map" id="_resource_loader_inherit__map">
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for ResourceLoader:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_resource_loader__coll__graph.png" border="0" usemap="#_resource_loader_coll__map" alt="Collaboration graph"/></div>
 <map name="_resource_loader_coll__map" id="_resource_loader_coll__map">
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -126,30 +128,69 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af8914b966c0734e7f5fb3a81a9a968fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#af8914b966c0734e7f5fb3a81a9a968fa">RequestResource</a> (<a class="el" href="class_display.html">Display</a> disp, string ResourceLocator)</td></tr>
-<tr class="memdesc:af8914b966c0734e7f5fb3a81a9a968fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets a request for a resource  <a href="#af8914b966c0734e7f5fb3a81a9a968fa">More...</a><br /></td></tr>
-<tr class="separator:af8914b966c0734e7f5fb3a81a9a968fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901b6c5f5391cb35d69d0917ea4a2b5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a901b6c5f5391cb35d69d0917ea4a2b5a">RequestResource</a> (Action&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt; callback, string ResourceLocator, string resType)</td></tr>
+<tr class="memdesc:a901b6c5f5391cb35d69d0917ea4a2b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets a request for a resource  <a href="#a901b6c5f5391cb35d69d0917ea4a2b5a">More...</a><br /></td></tr>
+<tr class="separator:a901b6c5f5391cb35d69d0917ea4a2b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0f219fead6e05415dc2523529d81561"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#ae0f219fead6e05415dc2523529d81561">RetriveResult</a> ()</td></tr>
 <tr class="memdesc:ae0f219fead6e05415dc2523529d81561"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to retrieve a result of a request  <a href="#ae0f219fead6e05415dc2523529d81561">More...</a><br /></td></tr>
 <tr class="separator:ae0f219fead6e05415dc2523529d81561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:adeb4ddafee015e2630ed66e26ec4a4ae"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#adeb4ddafee015e2630ed66e26ec4a4ae">responestring</a> = &quot;&quot;</td></tr>
+<tr class="separator:adeb4ddafee015e2630ed66e26ec4a4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a66d4b7f32938dad50d13f48e362b7b76"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_resource_loader.html">ResourceLoader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a66d4b7f32938dad50d13f48e362b7b76">Instance</a><code> [get, protected set]</code></td></tr>
+<tr class="separator:a66d4b7f32938dad50d13f48e362b7b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:ad258acc6c5c963d5ca93dbe36e243d20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#ad258acc6c5c963d5ca93dbe36e243d20">Awake</a> ()</td></tr>
+<tr class="separator:ad258acc6c5c963d5ca93dbe36e243d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20a1036648a453863c96b51d33edfa11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a20a1036648a453863c96b51d33edfa11">Update</a> ()</td></tr>
 <tr class="separator:a20a1036648a453863c96b51d33edfa11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a088ef33ee82be6e64028b6b5512fad5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a088ef33ee82be6e64028b6b5512fad5d">LoadResource</a> (<a class="el" href="struct_resource_loader_1_1_request.html">Request</a> req)</td></tr>
 <tr class="separator:a088ef33ee82be6e64028b6b5512fad5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39eb6b54c79c44d103b0aedfcdc69f81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a39eb6b54c79c44d103b0aedfcdc69f81">TestRequest</a> ()</td></tr>
+<tr class="separator:a39eb6b54c79c44d103b0aedfcdc69f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aac461f634dc821609293616d32e7288e"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#aac461f634dc821609293616d32e7288e">LoadedResources</a></td></tr>
+<tr class="memitem:aac461f634dc821609293616d32e7288e"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#aac461f634dc821609293616d32e7288e">LoadedResources</a> = new Queue&lt;<a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&gt;()</td></tr>
 <tr class="separator:aac461f634dc821609293616d32e7288e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd6d1957bdc4e0212991af05e3454633"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="struct_resource_loader_1_1_request.html">Request</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#acd6d1957bdc4e0212991af05e3454633">LoadRequests</a></td></tr>
+<tr class="memitem:acd6d1957bdc4e0212991af05e3454633"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="struct_resource_loader_1_1_request.html">Request</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#acd6d1957bdc4e0212991af05e3454633">LoadRequests</a> = new Queue&lt;<a class="el" href="struct_resource_loader_1_1_request.html">Request</a>&gt;()</td></tr>
 <tr class="separator:acd6d1957bdc4e0212991af05e3454633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the loading of resources for the client WARNING NOT IMPLEMENTED CURRENTLY SHOULD BE SEEN AS A WHAT TO EXPECT </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad258acc6c5c963d5ca93dbe36e243d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad258acc6c5c963d5ca93dbe36e243d20">&#9670;&nbsp;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ResourceLoader.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a088ef33ee82be6e64028b6b5512fad5d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a088ef33ee82be6e64028b6b5512fad5d">&#9670;&nbsp;</a></span>LoadResource()</h2>
 
@@ -184,8 +225,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af8914b966c0734e7f5fb3a81a9a968fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8914b966c0734e7f5fb3a81a9a968fa">&#9670;&nbsp;</a></span>RequestResource()</h2>
+<a id="a901b6c5f5391cb35d69d0917ea4a2b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a901b6c5f5391cb35d69d0917ea4a2b5a">&#9670;&nbsp;</a></span>RequestResource()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,14 +234,20 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void ResourceLoader.RequestResource </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_display.html">Display</a>&#160;</td>
-          <td class="paramname"><em>disp</em>, </td>
+          <td class="paramtype">Action&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt;&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>ResourceLocator</em>&#160;</td>
+          <td class="paramname"><em>ResourceLocator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>resType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -234,6 +281,31 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a39eb6b54c79c44d103b0aedfcdc69f81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39eb6b54c79c44d103b0aedfcdc69f81">&#9670;&nbsp;</a></span>TestRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ResourceLoader.TestRequest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a20a1036648a453863c96b51d33edfa11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20a1036648a453863c96b51d33edfa11">&#9670;&nbsp;</a></span>Update()</h2>
 
@@ -262,9 +334,6 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="class_resource_loader_a20a1036648a453863c96b51d33edfa11_cgraph.png" border="0" usemap="#class_resource_loader_a20a1036648a453863c96b51d33edfa11_cgraph" alt=""/></div>
 <map name="class_resource_loader_a20a1036648a453863c96b51d33edfa11_cgraph" id="class_resource_loader_a20a1036648a453863c96b51d33edfa11_cgraph">
 <area shape="rect" id="node2" href="class_resource_loader.html#a088ef33ee82be6e64028b6b5512fad5d" title="ResourceLoader.LoadResource" alt="" coords="215,5,417,32"/>
-<area shape="rect" id="node3" href="class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="237,56,395,83"/>
-<area shape="rect" id="node4" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="465,56,643,83"/>
-<area shape="rect" id="node5" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="691,49,893,90"/>
 </map>
 </div>
 
@@ -281,7 +350,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Queue&lt;<a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&gt; ResourceLoader.LoadedResources</td>
+          <td class="memname">Queue&lt;<a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&gt; ResourceLoader.LoadedResources = new Queue&lt;<a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&gt;()</td>
         </tr>
       </table>
   </td>
@@ -303,12 +372,49 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Queue&lt;<a class="el" href="struct_resource_loader_1_1_request.html">Request</a>&gt; ResourceLoader.LoadRequests</td>
+          <td class="memname">Queue&lt;<a class="el" href="struct_resource_loader_1_1_request.html">Request</a>&gt; ResourceLoader.LoadRequests = new Queue&lt;<a class="el" href="struct_resource_loader_1_1_request.html">Request</a>&gt;()</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adeb4ddafee015e2630ed66e26ec4a4ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb4ddafee015e2630ed66e26ec4a4ae">&#9670;&nbsp;</a></span>responestring</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ResourceLoader.responestring = &quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a66d4b7f32938dad50d13f48e362b7b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d4b7f32938dad50d13f48e362b7b76">&#9670;&nbsp;</a></span>Instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_resource_loader.html">ResourceLoader</a> ResourceLoader.Instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

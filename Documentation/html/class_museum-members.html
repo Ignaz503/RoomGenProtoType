@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -100,21 +100,22 @@ $(document).ready(function(){initNavTree('class_museum.html','');});
   <tr><td class="entry"><a class="el" href="class_museum.html#a1b4fb627a19112e3ba3d25e8108de2c3">Deserialize</a>(string data)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4">FillDisplays</a>(System.Random rng)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81">Generate</a>(string seed, bool buildMuseumsGraph=true)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b">GetSourroundingTiles</a>(Vector2Int pos)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_museum.html#a6a161feedcbb8a471eb0e68b7e3e4027">LogMap</a>()</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#a237d1ccf7cb53c4db64647b6addc6576">LogOutline</a>(HashSet&lt; int &gt; outline)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_museum.html#aa946df02a55ba522f7a39ac688648733">Museum</a>(int size)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#abdd7abe1cc5b4de86c868edb9f3ca177">MuseumsGraph</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_museum.html#ac6942612f3be979812b450ee9140caf1">NumberOfDisplays</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#a6b395af086d9773720b1cb5536f405a8">RemoveWallsContainigPoint</a>(Vector2 p)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_museum.html#add7cf92391f0c501eaf2ebb76ddd54f6">RoomMap</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#afbe49bbdcf1b263d32fd0ae323289e7d">Rooms</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_museum.html#af3826f71fcb80bd1bf30f5fbf75b5e28">roomTypeToPlaceableChecker</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#ac956bb7d7454f99944af157c79f695b8">Serialize</a>()</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_museum.html#a954b0f1a64a26af54502b46c4058d99d">Size</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#a72e9020ee5d8406df0fc41fc4295727f">TransformOneDCoordIntoTwoD</a>(int coord)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_museum.html#a405e60db962417dde46d46180cbf81df">TransformTileCoordIntoOneD</a>(Vector2Int coord)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#a4851cdf10f162bbf4b26c757874031da">Walls</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#a31c3e63a3a1e2edf6e219cb1f04b9515">GetRoomByID</a>(uint RoomID)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b">GetSourroundingTiles</a>(Vector2Int pos)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#a6a161feedcbb8a471eb0e68b7e3e4027">LogMap</a>()</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_museum.html#a237d1ccf7cb53c4db64647b6addc6576">LogOutline</a>(HashSet&lt; int &gt; outline)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#aa946df02a55ba522f7a39ac688648733">Museum</a>(int size)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_museum.html#abdd7abe1cc5b4de86c868edb9f3ca177">MuseumsGraph</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#ac6942612f3be979812b450ee9140caf1">NumberOfDisplays</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_museum.html#a6b395af086d9773720b1cb5536f405a8">RemoveWallsContainigPoint</a>(Vector2 p)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#add7cf92391f0c501eaf2ebb76ddd54f6">RoomMap</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_museum.html#afbe49bbdcf1b263d32fd0ae323289e7d">Rooms</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#af3826f71fcb80bd1bf30f5fbf75b5e28">roomTypeToPlaceableChecker</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_museum.html#ac956bb7d7454f99944af157c79f695b8">Serialize</a>()</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#a954b0f1a64a26af54502b46c4058d99d">Size</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_museum.html#a72e9020ee5d8406df0fc41fc4295727f">TransformOneDCoordIntoTwoD</a>(int coord)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_museum.html#a405e60db962417dde46d46180cbf81df">TransformTileCoordIntoOneD</a>(Vector2Int coord)</td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_museum.html#a4851cdf10f162bbf4b26c757874031da">Walls</a></td><td class="entry"><a class="el" href="class_museum.html">Museum</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

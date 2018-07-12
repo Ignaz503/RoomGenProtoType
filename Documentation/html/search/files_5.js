@@ -9,5 +9,6 @@ var searchData=
   ['museumcontroller_2ecs',['MuseumController.cs',['../_museum_controller_8cs.html',1,'']]],
   ['museumdisplayinfo_2ecs',['MuseumDisplayInfo.cs',['../_museum_display_info_8cs.html',1,'']]],
   ['museumgenerator_2ecs',['MuseumGenerator.cs',['../_museum_generator_8cs.html',1,'']]],
-  ['museumgraph_2ecs',['MuseumGraph.cs',['../_museum_graph_8cs.html',1,'']]]
+  ['museumgraph_2ecs',['MuseumGraph.cs',['../_museum_graph_8cs.html',1,'']]],
+  ['museumwalltextureinfo_2ecs',['MuseumWallTextureInfo.cs',['../_museum_wall_texture_info_8cs.html',1,'']]]
 ];

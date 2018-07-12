@@ -24,6 +24,9 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "VirtMuse", "index.html", [
+    [ "Packages", "namespaces.html", [
+      [ "Packages", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -50,8 +53,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_base_door_8cs.html",
-"class_museum.html#ac6942612f3be979812b450ee9140caf1",
-"class_room_managment_unit.html#a663946fa33bad407b32d75aea8e7d5d9"
+"class_museum.html#a31c3e63a3a1e2edf6e219cb1f04b9515",
+"class_room.html#a415866d8fd49a481729fa9782f348d8d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
