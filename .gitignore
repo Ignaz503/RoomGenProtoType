@@ -45,3 +45,40 @@ RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_PhoneNumberVa
 RoomGenPrototype/Assembly-CSharp.csproj
 RoomGenPrototype/Assembly-CSharp-firstpass.csproj
 RoomGenPrototype/Assembly-CSharp-Editor-firstpass.csproj
+RoomGenPrototype/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
+RoomGenPrototype/Assets/TextMesh Pro/Sprites/EmojiOne.png
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF.asset
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Sprites/Default Sprites.png.meta
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/TMPro_InstructionOverlay.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_UiFrameRateCounter.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventHandler.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventCheck.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_FrameRateCounter.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scenes/20 - Input Field with Scrollbar.unity
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scenes/12a - Text Interactions.unity
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scenes/09 - Margin Tag Example.unity
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scenes/07 - Superscript & Subscript Example.unity
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Soft Mask.mat
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF.asset
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMP_Sprite.shader
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF.shader
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Overlay.shader
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Masking.shader
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF Overlay.shader
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap.shader
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Mobile.shader
+RoomGenPrototype/Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+RoomGenPrototype/Assets/TextMesh Pro/Plugins/Runtime DLL.meta
+RoomGenPrototype/Assets/TextMesh Pro/Plugins/Editor DLL.meta
+RoomGenPrototype/Assets/TextMesh Pro/Plugins/64 Bit Plugins/TMPro_Plugin.dll
+RoomGenPrototype/Assets/TextMesh Pro/Plugins/64 Bit Plugins/TMPro_Plugin.bundle
+RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Sprites/DropCap Numbers.psd.meta
+RoomGenPrototype/Assets/TextMesh Pro.meta
