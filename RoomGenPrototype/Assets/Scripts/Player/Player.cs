@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
  /// <summary>
     /// called the frame when player moves out of interaction range when the interacable object in the previous fame was not null
     /// </summary>
-    public event Action OnOutOfInteractionRange;
+    public event System.Action OnOutOfInteractionRange;
     //maybe on Interrupt?
     #endregion
 

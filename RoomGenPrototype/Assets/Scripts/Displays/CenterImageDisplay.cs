@@ -34,7 +34,7 @@ public class CenterImageDisplay : Display
         }
     }
 
-    public override void ApplyResource(Resource resource)
+    public override void ApplyResource(BaseDisplayResource resource)
     {
         base.ApplyResource(resource);
         foreach (MeshRenderer re in displayMeshRenderes)

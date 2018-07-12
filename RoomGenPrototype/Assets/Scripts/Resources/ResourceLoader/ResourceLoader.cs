@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Text;
 using UnityEngine;
-using WebSocketSharp;
+//using WebSocketSharp;
 
 /// <summary>
 /// Manages the loading of resources for the client
@@ -20,14 +20,27 @@ public class ResourceLoader : MonoBehaviour
     /// </summary>
     public struct Request
     {
-        //TODO remove disp add callback action
-        public Display disp;
+        /// <summary>
+        /// callback to whoever  created request
+        /// </summary>
+        public Action<RequestResult> requestCallback;
+
+        /// <summary>
+        /// resource locator for server to find resource
+        /// </summary>
         public string ResourceLocator;
 
-        public Request(Display display,string resoureceLocator)
+        /// <summary>
+        /// The type of resource that is requested
+        /// needed to build correct response
+        /// </summary>
+        public string ResourceType;
+
+        public Request(Action<RequestResult> display,string resoureceLocator, string resourceType)
         {
-            disp = display;
+            requestCallback = display;
             ResourceLocator = resoureceLocator;
+            ResourceType = resourceType;
         }
     }
 
@@ -36,66 +49,76 @@ public class ResourceLoader : MonoBehaviour
     /// </summary>
     public struct RequestResult
     {
-        public Display disp;
-        public Resource res;
+        /// <summary>
+        /// callback to resource requester, called by main unity thread
+        /// eg safe that callback touches gamobjects(sensually ofc)
+        /// </summary>
+        public Action<RequestResult> requestCallBack;
+        public BaseResource res;
 
-        public RequestResult(Display display, Resource toApply)
+        public RequestResult(Action<RequestResult> display, BaseResource toApply)
         {
-            disp = display;
+            requestCallBack = display;
             res = toApply;
         }
 
     }
 
+    public static ResourceLoader Instance { get; protected set; }
+
     Queue<RequestResult> LoadedResources = new Queue<RequestResult>();
 
     Queue<Request> LoadRequests = new Queue<Request>();
 
-    public string url = "ws://localhost:#";
-    WebSocket ws;
+    //public string url = "ws://localhost:#";
+    //WebSocket ws;
 
     public string responestring = "";
 
     private void Awake()
     {
-        ws = new WebSocket(url);
-
-        ws.OnMessage += (sender, e) =>
+        if(Instance != null)
         {
-            Debug.Log("Recieved message");
-            responestring = e.Data;
-        };
+            throw new Exception("there already exists a resource loader");
+        }
+        Instance = this;
 
-        ws.OnOpen += (sender, e) =>
-        {
-            Debug.Log("open");
-            ws.SendAsync("Test", OIWSA);
-        };
+    //    ws = new WebSocket(url);
 
-        ws.ConnectAsync();
+    //    ws.OnMessage += (sender, e) =>
+    //    {
+    //        Debug.Log("Recieved message");
+    //        responestring = e.Data;
+    //    };
 
-        Debug.Log("hi");
+    //    ws.OnOpen += (sender, e) =>
+    //    {
+    //        Debug.Log("open");
+    //        ws.SendAsync("Test", OIWSA);
+    //    };
+
+    //    ws.ConnectAsync();
     }
 
-    void OIWSA(bool b)
-    {
-        Debug.Log(b);
-    }
+    //void OIWSA(bool b)
+    //{
+    //    Debug.Log(b);
+    //}
 
-    private void OnDestroy()
-    {
-        ws.Close();
-    }
+    //private void OnDestroy()
+    //{
+    //    //ws.Close();
+    //}
 
 
     /// <summary>
     /// sets a request for a resource
     /// </summary>
-    public void RequestResource(Display disp, string ResourceLocator)
+    public void RequestResource(Action<RequestResult> callback, string ResourceLocator, string resType)
     {
         lock(LoadRequests)
         {
-            LoadRequests.Enqueue(new Request(disp,ResourceLocator));
+            LoadRequests.Enqueue(new Request(callback,ResourceLocator,resType));
         };
     }
 
@@ -115,24 +138,24 @@ public class ResourceLoader : MonoBehaviour
 
     private void Update()
     {
-        //lock (LoadRequests)
-        //{
-        //    if(LoadRequests.Count > 0)
-        //    {
-        //        Request req = LoadRequests.Dequeue();
-        //        Thread t = new Thread(()=> LoadResource(req));
-        //        t.Start();
-        //    }
-        //}
+        lock (LoadRequests)
+        {
+            if (LoadRequests.Count > 0)
+            {
+                Request req = LoadRequests.Dequeue();
+                Thread t = new Thread(() => LoadResource(req));
+                t.Start();
+            }
+        }
 
-        //lock (LoadedResources)
-        //{
-        //    if (LoadedResources.Count > 0)
-        //    {
-        //        RequestResult res = LoadedResources.Dequeue();
-        //        res.disp.ApplyResource(res.res);
-        //    }
-        //}
+        lock (LoadedResources)
+        {
+            if (LoadedResources.Count > 0)
+            {
+                RequestResult res = LoadedResources.Dequeue();
+                res.requestCallBack?.Invoke(res);
+            }
+        }
 
         Debug.Log(responestring);
     }
@@ -140,7 +163,8 @@ public class ResourceLoader : MonoBehaviour
     void LoadResource(Request req)
     {
         // TODO IMPLEMENT
-        // IS RUN IN SEPERATE THREADS
+        // IS Maybe RUN IN SEPERATE THREADS
+        //IF SO DO NOT CALL THE CALLBACK FROM HERE
     }
 
     void TestRequest()

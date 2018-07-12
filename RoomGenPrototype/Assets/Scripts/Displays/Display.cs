@@ -51,7 +51,7 @@ public abstract class Display : MonoBehaviour, IInteractable {
     /// Applies a resource to a display
     /// </summary>
     /// <param name="obj"></param>
-    public virtual void ApplyResource(Resource resource)
+    public virtual void ApplyResource(BaseDisplayResource resource)
     {
         SetInteractionType(resource.InteractionBehaviour);
         //TODO

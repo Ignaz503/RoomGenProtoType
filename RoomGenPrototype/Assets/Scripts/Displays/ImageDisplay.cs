@@ -41,7 +41,7 @@ public class ImageDisplay : Display {
 
     }
 
-    public override void ApplyResource(Resource resource)
+    public override void ApplyResource(BaseDisplayResource resource)
     {
         base.ApplyResource(resource);
         resource.ApplyToGameobject(meshRenderer.gameObject);

@@ -40,7 +40,7 @@ public class MuseumGenerator : MonoBehaviour {
     /// <summary>
     /// debug helper to only draw walls for this room type
     /// </summary>
-    public RoomType tpyeToDrawWallsFor;
+    public RoomType typeToDrawWallsFor;
 
     /// <summary>
     /// flag if all walls should be drawn or not
@@ -62,6 +62,9 @@ public class MuseumGenerator : MonoBehaviour {
     /// </summary>
     public bool CreateDebugGameobject;
 
+    /// <summary>
+    /// sets Instance of generator
+    /// </summary>
     private void OnEnable()
     {
         Instance = this;
@@ -96,6 +99,11 @@ public class MuseumGenerator : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// enqueues a new museum request
+    /// </summary>
+    /// <param name="request">the request as a xml string</param>
+    /// <param name="requester">queue where respone should go??? no idea-> yes indeed</param>
     public void RequestNewMuseum(string request, Queue<string> requester)
     {
         museumRequests.Enqueue(new Tuple<MuseumRequest, Queue<string>>(
@@ -131,7 +139,7 @@ public class MuseumGenerator : MonoBehaviour {
     }
 
     /// <summary>
-    /// gnerates a temp display of the museum but onyl floor
+    /// gnerates a temp display of the museum but only floor
     /// walls handled by draw gizmos
     /// </summary>
     private void GenerateTempRoomDisplay()
@@ -163,7 +171,7 @@ public class MuseumGenerator : MonoBehaviour {
         {
             foreach (Room r in VirtMuse.Rooms)
             {
-                if(r.Type == tpyeToDrawWallsFor || DrawAllWalls)
+                if(r.Type == typeToDrawWallsFor || DrawAllWalls)
                 {
                     foreach (int wallIdx in r.Walls)
                     {

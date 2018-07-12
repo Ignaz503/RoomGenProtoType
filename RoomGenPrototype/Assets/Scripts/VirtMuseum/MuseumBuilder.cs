@@ -206,6 +206,24 @@ public class MuseumBuilder : MonoBehaviour
                 pos.y += wallHeight;
                 ceiling.transform.position = pos;
 
+                //load floor texture#
+                //TODO UNCOMMENT WHEN TESTING RESOURCE LOADER
+                //ResourceLoader.Instance.RequestResource(
+                //    res =>
+                //    {
+                //        res.res.ApplyToGameobject(floor);
+                //    },
+                //    r.FloorTexture.AssociatedResourceLocators,
+                //    typeof(TextureResource).ToString()
+                //    );
+                //ResourceLoader.Instance.RequestResource(
+                //    res =>
+                //    {
+                //        res.res.ApplyToGameobject(ceiling);
+                //    },
+                //    r.CeilingTexture.AssociatedResourceLocators,
+                //    typeof(TextureResource).ToString()
+                //    );
             }
             #endregion
 
@@ -271,6 +289,39 @@ public class MuseumBuilder : MonoBehaviour
 
             wallObj.transform.SetParent(null);
 
+            //request wall texture
+            MeshRenderer re = wallObj.GetComponent<MeshRenderer>();
+            //ResourceLoader.Instance.RequestResource(
+            //    res =>{
+            //        //TODO CHECK IF RES IS TEXTURE RESOURCE
+            //        TextureResource texRes = res.res as TextureResource;
+            //        if(re.material.mainTexture != null && re.material.mainTexture.width == 2 * texRes.Image.width)
+            //        {
+            //            Texture2D tex = new Texture2D(re.material.mainTexture.width,re.material.mainTexture.height);
+
+            //            tex.SetPixels((re.material.mainTexture as Texture2D).GetPixels(0,0,re.material.mainTexture.width,re.material.mainTexture.height));
+            //            //texture already big enough set texture depending on position modifier
+            //            //start from 0 if pos mod 0 else from half width
+            //            int xStart = (int)(re.material.mainTexture.width * (w.TextureInfos[0].PositionModifier * 0.5f));
+            //            //loop to end if pos mod is 1 else to halfe width
+            //            int xEnd = (int)(re.material.mainTexture.width * (w.TextureInfos[0].PositionModifier > 0 ? 1f : 0.5f));
+            //            //TODO CHECK IF xEND calc needs +1 if only to half width
+            //            //Probably not
+            //            for(int x = xStart;x < xEnd; x++)
+            //            {
+            //                for(int y = 0; y < texRes.Image.height; y++)
+            //                {
+            //                    //TODO set texture pixels of new texture
+            //                    tex.SetPixel(x, y, tex.GetPixel(x - xStart, y));
+            //                }
+            //            }
+            //        }
+            //    },
+            //    w.TextureInfos[0].AssociatedResourceLocators,
+            //    typeof(TextureResource).ToString()
+            //    );
+            //TODO TEXTURE LOADING FOR associated wall texutre [1]
+
         }
     }
 
@@ -280,6 +331,7 @@ public class MuseumBuilder : MonoBehaviour
     /// </summary>
     void SetUpCenterDisplaysForRoom(Room r, List<GameObject> associatedFloorGameobjects)
     {
+        //used to get associated floor gamobjects
         int i = 0;
         foreach(MuseumDisplayInfo dispInf in r.CenterDisplayInfos)
         {
@@ -297,7 +349,7 @@ public class MuseumBuilder : MonoBehaviour
 
 
             if (display != null)
-                LoadResource(display, "test");
+                LoadDisplayResource(display, "test");
             i++;
         }
     }
@@ -320,31 +372,49 @@ public class MuseumBuilder : MonoBehaviour
 
 
             if (display != null)
-                LoadResource(display, "test");
+                LoadDisplayResource(display, "test");
         }
     }
 
     /// <summary>
-    /// Loads Resource for a dsiplay
+    /// TEMPORARY IMPLEMENTATION
+    /// Loads Resource for a dsiplay 
     /// </summary>
-    void LoadResource(Display disp, string resourceLocator)
+    void LoadDisplayResource(Display objInNeedOfResource, string resourceLocator)
     {
         System.Random rng = new System.Random((int)DateTime.Now.Ticks);
-        //TODO start thread that gets the resource and applies it to the display
-        switch (disp.Type)
+
+        switch (objInNeedOfResource.Type)
         {
             case Display.DisplayType.MeshDisplay:
                 int rngNum = rng.Next(2);
                 GameObject obj = Instantiate(TestMesh[rngNum].gameObject);
                 Mesh mesh = obj.GetComponent<MeshFilter>().sharedMesh;
                 Material mat = obj.GetComponent<MeshRenderer>().material;
-                disp.ApplyResource(new MeshResource(mesh, mat));
+                objInNeedOfResource.ApplyResource(new DisplayMeshResource(mesh, mat));
                 Destroy(obj);
                 break;
             case Display.DisplayType.ImageDisplay:
-                disp.ApplyResource(new ImageResource(TestTextures[currIdx++ % TestTextSize]));
+                objInNeedOfResource.ApplyResource(new DisplayImageResource(TestTextures[currIdx++ % TestTextSize]));
                 break;
         }
+        //actual implementation
+        //ResourceLoader.Instance.RequestResource(
+        //    res =>
+        //    {
+        //        if (res.res is BaseDisplayResource)
+        //        {
+        //            res.res.ApplyToGameobject(objInNeedOfResource.gameObject);
+        //            objInNeedOfResource.ApplyResource(res.res as BaseDisplayResource);
+        //        }
+        //        else
+        //        {
+        //            throw new Exception("Trying to assign non display resource to display");
+        //        }
+        //    },
+        //    resourceLocator,
+        //    objInNeedOfResource.Type.ToString()
+        //    );
     }
 
     void AddToRoomManagmentUnit(uint roomID,GameObject objToAdd)

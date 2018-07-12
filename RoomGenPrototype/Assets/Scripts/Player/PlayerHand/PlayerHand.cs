@@ -18,20 +18,20 @@ public abstract class PlayerHand : MonoBehaviour {
     /// <summary>
     /// called after state is set to rest position
     /// </summary>
-    public event Action InRestingPosition;
+    public event System.Action InRestingPosition;
     /// <summary>
     /// called after state is set to InfrontOfFace
     /// </summary>
-    public event Action OnReachedInfronOfFacePosition;
+    public event System.Action OnReachedInfronOfFacePosition;
     /// <summary>
     /// called after state is set to MovingTowardRestingPosition
     /// </summary>
-    public event Action OnStartMovingToRestPosition;
+    public event System.Action OnStartMovingToRestPosition;
     /// <summary>
     /// called after state is set to MovingInfrontOfFace
 
     /// </summary>
-    public event Action OnStartMovingInfrontOfFace;
+    public event System.Action OnStartMovingInfrontOfFace;
 
     /// <summary>
     /// called after(same frame) objectInHand is set and object was subscribed to all hand events it needs to know

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
-
-public class MuseumTextureInfo : MonoBehaviour {
+[DataContract]
+public class MuseumTextureInfo
+{
 
     /// <summary>
     /// The resource locator to get the texture from the server
