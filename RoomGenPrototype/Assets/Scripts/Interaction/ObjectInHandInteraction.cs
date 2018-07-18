@@ -108,6 +108,7 @@ public class ObjectInHandComponent : InteractionComponent
     {
         playerHoldingObject = p;
         objectToRotate = objToRot;
+        initialObjectRotation = objToRot.rotation;
         initCamLocPos = p.PlayerCam.transform.localPosition;
         playerHoldingObject.FirstPersonController.enabled = false;
     }

@@ -170,11 +170,11 @@ public class MuseumBuilder : MonoBehaviour
             foreach (Vector2Int tile in r.RoomTiles)
             {
                 GameObject floor = Instantiate(FloorPrefab);
-                GameObject ceiling = Instantiate(CeilingPrefab);
+                //GameObject ceiling = Instantiate(CeilingPrefab);
                 //TODO REMOVE
                 //ceiling.SetActive(false);
                 AddToRoomManagmentUnit(r.RoomID, floor);
-                AddToRoomManagmentUnit(r.RoomID, ceiling);
+                //AddToRoomManagmentUnit(r.RoomID, ceiling);
 
                 //MeshRenderer rend = floor.GetComponent<MeshRenderer>();
                 //MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
@@ -210,9 +210,9 @@ public class MuseumBuilder : MonoBehaviour
                 floor.name = name;
                 roomFloors.Add(floor);
 
-                ceiling.name = name + "  ceiling";
-                pos.y += wallHeight;
-                ceiling.transform.position = pos;
+                //ceiling.name = name + "  ceiling";
+                //pos.y += wallHeight;
+                //ceiling.transform.position = pos;
 
                 //load floor texture#
                 //TODO UNCOMMENT WHEN TESTING RESOURCE LOADER
@@ -233,7 +233,7 @@ public class MuseumBuilder : MonoBehaviour
                 //    typeof(TextureResource).ToString()
                 //    );
                 TEMPApplyTextureToNonWalls(r.FloorTexture.AssociatedResourceLocators, floor);
-                TEMPApplyTextureToNonWalls(r.CeilingTexture.AssociatedResourceLocators, ceiling);
+                //TEMPApplyTextureToNonWalls(r.CeilingTexture.AssociatedResourceLocators, ceiling);
             }
             #endregion
 
@@ -482,7 +482,8 @@ public class MuseumBuilder : MonoBehaviour
         MeshRenderer re = obj.GetComponent<MeshRenderer>();
         if (w.TextureInfos.Count > 1)
         {
-            if (!existingWallTexture.ContainsKey(w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators))
+            float sign = w.Rotation == Wall.WallRotation.Vertical ? Mathf.Sign(w.Tiles[0].x - w.Tiles[1].x) : Mathf.Sign(w.Tiles[0].y - w.Tiles[1].y);
+            if (!existingWallTexture.ContainsKey(w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators + w.Rotation + sign))
             {
                 //different wall textures
                 Texture2D[] textures = new Texture2D[2];
@@ -504,12 +505,13 @@ public class MuseumBuilder : MonoBehaviour
                 }
 
                 tex.Apply();
-                existingWallTexture.Add(w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators, tex);
+                existingWallTexture.Add(w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators + w.Rotation + sign, tex);
                 re.material.mainTexture = tex;
             }
             else
             {
-                re.material.mainTexture = existingWallTexture[w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators];
+                Debug.Log("hi");
+                re.material.mainTexture = existingWallTexture[w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators+w.Rotation + sign];
             }
         }
         else

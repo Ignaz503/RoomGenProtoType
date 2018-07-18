@@ -271,7 +271,7 @@ public class Museum
     /// </summary>
     void FillDisplays(System.Random rng)
     {
-        System.Random styleRng = new System.Random();
+        System.Random styleRng = new System.Random(MuseumGenerator.Instance.Seed.GetHashCode());
         //TODO fill displays with info from resource manager
 
         //TEMP
