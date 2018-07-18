@@ -35,6 +35,12 @@ public class MuseumBuilder : MonoBehaviour
     #endregion
 
     /// <summary>
+    /// temp dictionary containing already gnerated wall texture
+    /// to speed up start up
+    /// </summary>
+    Dictionary<string, Texture2D> existingWallTexture = new Dictionary<string, Texture2D>();
+
+    /// <summary>
     /// temp test meshes
     /// </summary>
     public MeshFilter[] TestMesh;
@@ -476,29 +482,35 @@ public class MuseumBuilder : MonoBehaviour
         MeshRenderer re = obj.GetComponent<MeshRenderer>();
         if (w.TextureInfos.Count > 1)
         {
-            Debug.Log(w.TextureInfos[0].AssociatedResourceLocators + " and " + w.TextureInfos[1].AssociatedResourceLocators);
-
-            //different wall textures
-            Texture2D[] textures = new Texture2D[2];
-            textures[w.TextureInfos[0].PositionModifier] = GetTexture(w.TextureInfos[0].AssociatedResourceLocators);
-            textures[w.TextureInfos[1].PositionModifier] = GetTexture(w.TextureInfos[1].AssociatedResourceLocators);
-
-            Texture2D tex = new Texture2D(2 * textures[0].width, textures[0].height);
-
-            for (int x = 0; x < tex.width/2; x++)
+            if (!existingWallTexture.ContainsKey(w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators))
             {
-                for(int y = 0; y < tex.height; y++)
+                //different wall textures
+                Texture2D[] textures = new Texture2D[2];
+                textures[w.TextureInfos[0].PositionModifier] = GetTexture(w.TextureInfos[0].AssociatedResourceLocators);
+                textures[w.TextureInfos[1].PositionModifier] = GetTexture(w.TextureInfos[1].AssociatedResourceLocators);
+
+                Texture2D tex = new Texture2D(2 * textures[0].width, textures[0].height);
+
+                for (int x = 0; x < tex.width/2; x++)
                 {
-                    Color t1 = textures[0].GetPixel(x, y);
-                    Color t2 = textures[1].GetPixel(x, y);
+                    for(int y = 0; y < tex.height; y++)
+                    {
+                        Color t1 = textures[0].GetPixel(x, y);
+                        Color t2 = textures[1].GetPixel(x, y);
 
-                    tex.SetPixel(x, y, t1);
-                    tex.SetPixel(x + (tex.width / 2), y, t2);
+                        tex.SetPixel(x, y, t1);
+                        tex.SetPixel(x + (tex.width / 2), y, t2);
+                    }
                 }
-            }
 
-            tex.Apply();
-            re.material.mainTexture = tex;
+                tex.Apply();
+                existingWallTexture.Add(w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators, tex);
+                re.material.mainTexture = tex;
+            }
+            else
+            {
+                re.material.mainTexture = existingWallTexture[w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators];
+            }
         }
         else
         {
