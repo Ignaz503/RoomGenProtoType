@@ -1,6 +1,6 @@
 <map id="Player" name="Player">
-<area shape="rect" id="node3" href="$class_interaction_prompt.html" title="InteractionPrompt" alt="" coords="20,273,144,300"/>
-<area shape="rect" id="node4" href="$class_player_hand.html" title="PlayerHand" alt="" coords="127,95,216,121"/>
-<area shape="rect" id="node5" href="$interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="140,5,253,32"/>
-<area shape="rect" id="node6" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="240,95,332,121"/>
+<area shape="rect" id="node3" href="$class_interaction_prompt.html" title="{InteractionPrompt\n|&#45; text\l&#45; obj\l|+ SetActive()\l+ PlaceAtAndRotate()\l+ PlaceAt()\l+ SetRotation()\l+ PlaceBetween()\l+ PlaceBetweenAndRotateTowards\lFirst()\l+ SetText()\l&#45; Start()\l&#45; LateUpdate()\l}" alt="" coords="5,865,232,1089"/>
+<area shape="rect" id="node4" href="$class_player_hand.html" title="{PlayerHand\n|+ CurrentState\l+ OwningPlayer\l&#45; _currentState\l|+ GrabObject()\l+ DropObject()\l+ ForwardInteractableObject()\l# InvokeInRestingPosition()\l# InvokeOnReachedInfrontOf\lFacePosition()\l# InvokeOnStartMovingToRest\lPosition()\l# InvokeOnStartMovingInfront\lOfFace()\l}" alt="" coords="163,277,357,516"/>
+<area shape="rect" id="node5" href="$interface_i_holdable_object.html" title="{IHoldableObject\n|+ Object\l|+ OnHeldInfrontOfFace()\l+ OnPutAway()\l+ OnStartedMoveInfrontOfFace()\l+ OnStartedMoveAwayFromFace()\l+ PositionObjectInHand()\l+ OnGrabed()\l+ OnDropped()\l+ IsInterestedInInteractable\lObjects()\l+ SetInteractedObject()\l}" alt="" coords="179,5,402,215"/>
+<area shape="rect" id="node6" href="$interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="382,358,474,435"/>
 </map>

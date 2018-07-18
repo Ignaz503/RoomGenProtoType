@@ -1,5 +1,15 @@
 \hypertarget{class_museum}{}\section{Museum Class Reference}
 \label{class_museum}\index{Museum@{Museum}}
+
+
+Collaboration diagram for Museum\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_museum__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -7,6 +17,8 @@
 \item 
 void \mbox{\hyperlink{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81}{Generate}} (string seed, bool build\+Museums\+Graph=true)
 \begin{DoxyCompactList}\small\item\em Generates a \mbox{\hyperlink{class_museum}{Museum}} baisc algortihm\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room}{Room}} \mbox{\hyperlink{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}{Get\+Room\+By\+ID}} (uint Room\+ID)
+\begin{DoxyCompactList}\small\item\em Finds a room via the ID of it \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_museum_a6e441db98efeaa314ae974222aea08e6}{Add\+Wall}} (\mbox{\hyperlink{class_wall}{Wall}} w)
 \begin{DoxyCompactList}\small\item\em Adds a wall to the walls container if the wall doesn\textquotesingle{}t exist otherwise returns the index of the wall that already exists (2 rooms share one wall in that case) \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_museum_ac956bb7d7454f99944af157c79f695b8}{Serialize}} ()
@@ -39,7 +51,7 @@ int \mbox{\hyperlink{class_museum_ac6942612f3be979812b450ee9140caf1}{Number\+Of\
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_museum_ae07741bc8fd7f97c84fed0050e18c3c4}{Fill\+Displays}} (System.\+Random rng)
-\begin{DoxyCompactList}\small\item\em Fills the displas that exist in the museum W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY T\+E\+MP I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fills the displas that exist in the museum also creates texture info for walls W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY T\+E\+MP I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON \end{DoxyCompactList}\item 
 List$<$ Vector2\+Int $>$ \mbox{\hyperlink{class_museum_af5b732fe3a0821d02852171a73cf8f8b}{Get\+Sourrounding\+Tiles}} (Vector2\+Int pos)
 \begin{DoxyCompactList}\small\item\em returns the sourrounding tiles for a given position \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_museum_a405e60db962417dde46d46180cbf81df}{Transform\+Tile\+Coord\+Into\+OneD}} (Vector2\+Int coord)
@@ -167,7 +179,7 @@ Here is the caller graph for this function\+:
 
 
 
-Fills the displas that exist in the museum W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY T\+E\+MP I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON 
+Fills the displas that exist in the museum also creates texture info for walls W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY T\+E\+MP I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON 
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -222,6 +234,24 @@ Here is the caller graph for this function\+:
 \includegraphics[width=344pt]{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}\label{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}} 
+\index{Museum@{Museum}!Get\+Room\+By\+ID@{Get\+Room\+By\+ID}}
+\index{Get\+Room\+By\+ID@{Get\+Room\+By\+ID}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Get\+Room\+By\+I\+D()}{GetRoomByID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room}{Room}} Museum.\+Get\+Room\+By\+ID (\begin{DoxyParamCaption}\item[{uint}]{Room\+ID }\end{DoxyParamCaption})}
+
+
+
+Finds a room via the ID of it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Room\+ID} & the room ID of the room we are looking for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The room with the ID
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_museum_af5b732fe3a0821d02852171a73cf8f8b}\label{class_museum_af5b732fe3a0821d02852171a73cf8f8b}} 
 \index{Museum@{Museum}!Get\+Sourrounding\+Tiles@{Get\+Sourrounding\+Tiles}}
 \index{Get\+Sourrounding\+Tiles@{Get\+Sourrounding\+Tiles}!Museum@{Museum}}

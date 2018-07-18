@@ -1,11 +1,10 @@
 <map id="Display.SetToDefaultInteractionBehaviour" name="Display.SetToDefaultInteractionBehaviour">
-<area shape="rect" id="node2" href="$class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="256,31,433,57"/>
-<area shape="rect" id="node3" href="$class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="481,31,639,57"/>
-<area shape="rect" id="node4" href="$class_resource_loader.html#a20a1036648a453863c96b51d33edfa11" title="ResourceLoader.Update" alt="" coords="705,5,867,32"/>
-<area shape="rect" id="node5" href="$class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec" title="Loads Resource for a dsiplay " alt="" coords="687,56,885,83"/>
-<area shape="rect" id="node6" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="939,15,1130,57"/>
-<area shape="rect" id="node9" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="933,81,1136,122"/>
-<area shape="rect" id="node7" href="$class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="1186,27,1367,53"/>
-<area shape="rect" id="node8" href="$class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="1417,55,1575,81"/>
-<area shape="rect" id="node10" href="$class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="1184,81,1369,108"/>
+<area shape="rect" id="node2" href="$class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="256,46,433,73"/>
+<area shape="rect" id="node3" href="$class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="481,46,639,73"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="687,39,873,80"/>
+<area shape="rect" id="node5" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="927,5,1118,47"/>
+<area shape="rect" id="node8" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="921,71,1124,112"/>
+<area shape="rect" id="node6" href="$class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="1174,17,1355,43"/>
+<area shape="rect" id="node7" href="$class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="1405,45,1563,71"/>
+<area shape="rect" id="node9" href="$class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="1172,71,1357,98"/>
 </map>

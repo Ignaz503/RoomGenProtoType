@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['imageresource',['ImageResource',['../class_image_resource.html#a2c520197f5e544579eab32d23167b317',1,'ImageResource']]],
   ['inbounds',['InBounds',['../class_museum_controller.html#a5b242d5604840f35efb90e4b645829fe',1,'MuseumController']]],
   ['interact',['Interact',['../class_display.html#a43fc2a6f19bbf2f1bdb676392b37e921',1,'Display.Interact()'],['../interface_i_interactable.html#a736e28381ac0e7ca60f5fae2feb95afe',1,'IInteractable.Interact()']]],
   ['interactionended',['InteractionEnded',['../class_center_image_display.html#ac78f5ea36aa445bb3d12124f1baf814d',1,'CenterImageDisplay.InteractionEnded()'],['../class_display.html#a6fd38485267e1b78f1d1dfb589ec4ae0',1,'Display.InteractionEnded()'],['../class_image_display.html#a94c5928ef81449c37740d0bd0a8f4062',1,'ImageDisplay.InteractionEnded()'],['../class_mesh_display.html#a23f7ab8b0f48536940ad1cc2145297b3',1,'MeshDisplay.InteractionEnded()']]],

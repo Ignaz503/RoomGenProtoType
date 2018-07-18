@@ -8,6 +8,7 @@ var class_object_in_hand_component =
     [ "Update", "class_object_in_hand_component.html#aa3e0ef83a3a10b498b95eb07a405b0e9", null ],
     [ "currentT", "class_object_in_hand_component.html#a173143fff5ee217d1148281e49f26e10", null ],
     [ "initCamLocPos", "class_object_in_hand_component.html#a002cb792e31eb3f99e15c126a07fa67b", null ],
+    [ "initialObjectRotation", "class_object_in_hand_component.html#a0dcb3b1519006abc8524c6d913069292", null ],
     [ "objectToRotate", "class_object_in_hand_component.html#adbeb015fd1ac714798d886db0b6f940a", null ],
     [ "playerHoldingObject", "class_object_in_hand_component.html#add0e2bed573b54275914fc48c37b958c", null ],
     [ "rotationKey", "class_object_in_hand_component.html#aa84650b4fd81b0c4aa0bc91d2a371625", null ],

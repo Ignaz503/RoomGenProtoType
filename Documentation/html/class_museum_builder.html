@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1</span>
+   &#160;<span id="projectnumber">.1.02</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -103,18 +103,18 @@ Inheritance diagram for MuseumBuilder:</div>
 <div class="center"><img src="class_museum_builder__inherit__graph.png" border="0" usemap="#_museum_builder_inherit__map" alt="Inheritance graph"/></div>
 <map name="_museum_builder_inherit__map" id="_museum_builder_inherit__map">
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for MuseumBuilder:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder__coll__graph.png" border="0" usemap="#_museum_builder_coll__map" alt="Collaboration graph"/></div>
 <map name="_museum_builder_coll__map" id="_museum_builder_coll__map">
-<area shape="rect" id="node3" href="class_museum_controller.html" title="MuseumController" alt="" coords="128,199,255,225"/>
-<area shape="rect" id="node4" href="class_room.html" title="defines a room in a virtual museum " alt="" coords="292,95,348,121"/>
-<area shape="rect" id="node5" href="class_museum.html" title="Museum" alt="" coords="45,5,117,32"/>
-<area shape="rect" id="node6" href="class_museum_graph.html" title="MuseumGraph" alt="" coords="161,95,268,121"/>
+<area shape="rect" id="node3" href="class_museum_controller.html" title="{MuseumController\n|&#45; xPositionScaler\l&#45; zPositionScaler\l&#45; player\l&#45; manageRooms\l&#45; drawGraphGizmos\l&#45; drawRoomManagmentUnitGizmos\l&#45; museumSize\l&#45; roomManagmentMap\l&#45; roomDictionary\l|+ SetMuseumToControl()\l+ GetRoomManagmentUnitForRoom()\l+ LogRoomManagmentUnitForRoom()\l&#45; Awake()\l&#45; Start()\l&#45; Update()\l&#45; LoadRoomAndNeighbors()\l&#45; UnloadRoomAndNeighbors()\l&#45; InBounds()\l&#45; OnDrawGizmos()\l&#45; DrawMuseumGraph()\l}" alt="" coords="151,799,392,1140"/>
+<area shape="rect" id="node4" href="class_room.html" title="defines a room in a virtual museum " alt="" coords="373,439,572,721"/>
+<area shape="rect" id="node5" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; TransformTileCoordIntoOneD()\l&#45; TransformOneDCoordIntoTwoD()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="33,5,256,376"/>
+<area shape="rect" id="node6" href="class_museum_graph.html" title="{MuseumGraph\n|+ Nodes\l&#45; NodeMap\l|+ MuseumGraph()\l+ BuildMuseumGraph()\l+ GetNodeForRoom()\l}" alt="" coords="193,519,349,641"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -180,9 +180,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:adbfb12c00a855fe0f816bc18a51a72e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5">SetUpDisplaysForWall</a> (<a class="el" href="class_wall.html">Wall</a> w, GameObject wallObj)</td></tr>
 <tr class="memdesc:adbfb12c00a855fe0f816bc18a51a72e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates wall displays for museum  <a href="#adbfb12c00a855fe0f816bc18a51a72e5">More...</a><br /></td></tr>
 <tr class="separator:adbfb12c00a855fe0f816bc18a51a72e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c456481ed3350f0113041111d63d0ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec">LoadResource</a> (<a class="el" href="class_display.html">Display</a> disp, string resourceLocator)</td></tr>
-<tr class="memdesc:a2c456481ed3350f0113041111d63d0ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads <a class="el" href="class_resource.html" title="base class for resource ">Resource</a> for a dsiplay  <a href="#a2c456481ed3350f0113041111d63d0ec">More...</a><br /></td></tr>
-<tr class="separator:a2c456481ed3350f0113041111d63d0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895b10deac965d8d7b936dd76d82484d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d">LoadDisplayResource</a> (<a class="el" href="class_display.html">Display</a> objInNeedOfResource, string resourceLocator)</td></tr>
+<tr class="memdesc:a895b10deac965d8d7b936dd76d82484d"><td class="mdescLeft">&#160;</td><td class="mdescRight">TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay  <a href="#a895b10deac965d8d7b936dd76d82484d">More...</a><br /></td></tr>
+<tr class="separator:a895b10deac965d8d7b936dd76d82484d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1991ecd1258a2eb6d020d3c429ad9c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8">AddToRoomManagmentUnit</a> (uint roomID, GameObject objToAdd)</td></tr>
 <tr class="separator:ad1991ecd1258a2eb6d020d3c429ad9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -285,8 +285,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a2c456481ed3350f0113041111d63d0ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c456481ed3350f0113041111d63d0ec">&#9670;&nbsp;</a></span>LoadResource()</h2>
+<a id="a895b10deac965d8d7b936dd76d82484d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a895b10deac965d8d7b936dd76d82484d">&#9670;&nbsp;</a></span>LoadDisplayResource()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,10 +295,10 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MuseumBuilder.LoadResource </td>
+          <td class="memname">void MuseumBuilder.LoadDisplayResource </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_display.html">Display</a>&#160;</td>
-          <td class="paramname"><em>disp</em>, </td>
+          <td class="paramname"><em>objInNeedOfResource</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -319,27 +319,27 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Loads <a class="el" href="class_resource.html" title="base class for resource ">Resource</a> for a dsiplay </p>
+<p>TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a2c456481ed3350f0113041111d63d0ec_cgraph.png" border="0" usemap="#class_museum_builder_a2c456481ed3350f0113041111d63d0ec_cgraph" alt=""/></div>
-<map name="class_museum_builder_a2c456481ed3350f0113041111d63d0ec_cgraph" id="class_museum_builder_a2c456481ed3350f0113041111d63d0ec_cgraph">
-<area shape="rect" id="node2" href="class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="252,13,409,39"/>
-<area shape="rect" id="node3" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="457,13,635,39"/>
-<area shape="rect" id="node4" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="683,5,885,47"/>
+<div class="center"><img src="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph.png" border="0" usemap="#class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph" alt=""/></div>
+<map name="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph" id="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph">
+<area shape="rect" id="node2" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="240,13,397,39"/>
+<area shape="rect" id="node3" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="445,13,623,39"/>
+<area shape="rect" id="node4" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="671,5,873,47"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a2c456481ed3350f0113041111d63d0ec_icgraph.png" border="0" usemap="#class_museum_builder_a2c456481ed3350f0113041111d63d0ec_icgraph" alt=""/></div>
-<map name="class_museum_builder_a2c456481ed3350f0113041111d63d0ec_icgraph" id="class_museum_builder_a2c456481ed3350f0113041111d63d0ec_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="258,5,449,47"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="252,71,455,112"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="505,17,686,43"/>
-<area shape="rect" id="node4" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="736,45,893,71"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="503,71,688,98"/>
+<div class="center"><img src="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph.png" border="0" usemap="#class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph" alt=""/></div>
+<map name="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph" id="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="246,5,437,47"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="240,71,443,112"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="493,17,674,43"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="724,45,881,71"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="491,71,676,98"/>
 </map>
 </div>
 
@@ -385,14 +385,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph.png" border="0" usemap="#class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph" alt=""/></div>
 <map name="class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph" id="class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="244,57,523,83"/>
-<area shape="rect" id="node5" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="331,107,436,134"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec" title="Loads Resource for a dsiplay " alt="" coords="284,158,483,185"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="244,53,523,79"/>
+<area shape="rect" id="node5" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="331,103,436,130"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="290,155,477,196"/>
 <area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="582,5,769,47"/>
 <area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="571,71,780,112"/>
-<area shape="rect" id="node7" href="class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="597,158,754,185"/>
-<area shape="rect" id="node8" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="828,158,1005,185"/>
-<area shape="rect" id="node9" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1053,151,1256,192"/>
+<area shape="rect" id="node7" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="597,162,754,189"/>
+<area shape="rect" id="node8" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="828,162,1005,189"/>
+<area shape="rect" id="node9" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1053,155,1256,196"/>
 </map>
 </div>
 <div class="dynheader">
@@ -447,14 +447,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph.png" border="0" usemap="#class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph" alt=""/></div>
 <map name="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph" id="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="256,57,535,83"/>
-<area shape="rect" id="node5" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="343,107,448,134"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec" title="Loads Resource for a dsiplay " alt="" coords="296,158,495,185"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="256,53,535,79"/>
+<area shape="rect" id="node5" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="343,103,448,130"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="302,155,489,196"/>
 <area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="594,5,781,47"/>
 <area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="583,71,792,112"/>
-<area shape="rect" id="node7" href="class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="609,158,766,185"/>
-<area shape="rect" id="node8" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="840,158,1017,185"/>
-<area shape="rect" id="node9" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1065,151,1268,192"/>
+<area shape="rect" id="node7" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="609,162,766,189"/>
+<area shape="rect" id="node8" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="840,162,1017,189"/>
+<area shape="rect" id="node9" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1065,155,1268,196"/>
 </map>
 </div>
 <div class="dynheader">
@@ -500,15 +500,15 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph.png" border="0" usemap="#class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph" alt=""/></div>
 <map name="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph" id="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="473,53,752,79"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="235,103,425,144"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="473,49,752,75"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="235,99,425,140"/>
 <area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="811,5,998,47"/>
 <area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="800,71,1009,112"/>
-<area shape="rect" id="node6" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="560,107,665,134"/>
-<area shape="rect" id="node7" href="class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec" title="Loads Resource for a dsiplay " alt="" coords="513,158,712,185"/>
-<area shape="rect" id="node8" href="class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="826,158,983,185"/>
-<area shape="rect" id="node9" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1057,158,1235,185"/>
-<area shape="rect" id="node10" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1283,151,1485,192"/>
+<area shape="rect" id="node6" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="560,103,665,130"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="519,155,706,196"/>
+<area shape="rect" id="node8" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="826,162,983,189"/>
+<area shape="rect" id="node9" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1057,162,1235,189"/>
+<area shape="rect" id="node10" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1283,155,1485,196"/>
 </map>
 </div>
 <div class="dynheader">
@@ -558,15 +558,15 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph.png" border="0" usemap="#class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph" alt=""/></div>
 <map name="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph" id="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="489,53,768,79"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="239,103,441,144"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="489,49,768,75"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="239,99,441,140"/>
 <area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="827,5,1014,47"/>
 <area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="816,71,1025,112"/>
-<area shape="rect" id="node6" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="576,107,681,134"/>
-<area shape="rect" id="node7" href="class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec" title="Loads Resource for a dsiplay " alt="" coords="529,158,728,185"/>
-<area shape="rect" id="node8" href="class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="842,158,999,185"/>
-<area shape="rect" id="node9" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1073,158,1251,185"/>
-<area shape="rect" id="node10" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1299,151,1501,192"/>
+<area shape="rect" id="node6" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="576,103,681,130"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="535,155,722,196"/>
+<area shape="rect" id="node8" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="842,162,999,189"/>
+<area shape="rect" id="node9" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1073,162,1251,189"/>
+<area shape="rect" id="node10" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1299,155,1501,196"/>
 </map>
 </div>
 <div class="dynheader">
@@ -607,7 +607,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph.png" border="0" usemap="#class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph" alt=""/></div>
 <map name="class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph" id="class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph">
-<area shape="rect" id="node2" href="class_museum_generator.html#a5ead852effaa81309fe98b4d61fe9759" title="MuseumGenerator.RequestNew\lMuseum" alt="" coords="197,5,404,47"/>
+<area shape="rect" id="node2" href="class_museum_generator.html#a5ead852effaa81309fe98b4d61fe9759" title="enqueues a new museum request " alt="" coords="197,5,404,47"/>
 <area shape="rect" id="node3" href="class_museum_request.html#abd551a45744c8387841c20e5ef46d420" title="from xml to museum request " alt="" coords="452,13,640,39"/>
 </map>
 </div>
@@ -650,9 +650,9 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node9" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="466,257,657,298"/>
 <area shape="rect" id="node7" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="1049,135,1235,177"/>
 <area shape="rect" id="node8" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="1037,70,1247,111"/>
-<area shape="rect" id="node10" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="797,260,903,287"/>
-<area shape="rect" id="node11" href="class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec" title="Loads Resource for a dsiplay " alt="" coords="751,203,949,229"/>
-<area shape="rect" id="node12" href="class_display.html#aa1d23e0e870c59c63e2f040e84ef0121" title="Applies a resource to a display " alt="" coords="1063,203,1221,229"/>
+<area shape="rect" id="node10" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="797,263,903,289"/>
+<area shape="rect" id="node11" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="757,195,943,237"/>
+<area shape="rect" id="node12" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="1063,203,1221,229"/>
 <area shape="rect" id="node13" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1295,203,1472,229"/>
 <area shape="rect" id="node14" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1520,195,1723,237"/>
 <area shape="rect" id="node16" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="460,191,663,233"/>

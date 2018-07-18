@@ -7,7 +7,7 @@ Inheritance diagram for Player\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_player__inherit__graph}
+\includegraphics[width=207pt]{class_player__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -17,7 +17,7 @@ Collaboration diagram for Player\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_player__coll__graph}
+\includegraphics[height=550pt]{class_player__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
@@ -33,7 +33,9 @@ enum \mbox{\hyperlink{class_player_aa3b6104791d642173caf761cf81f8c08}{State}} \{
 Camera \mbox{\hyperlink{class_player_af09423c3841ebcb3c1e77cf3fa1b0084}{Player\+Cam}}
 \begin{DoxyCompactList}\small\item\em The camera that is the player head so to speek \end{DoxyCompactList}\item 
 First\+Person\+Controller \mbox{\hyperlink{class_player_a2b1dcb2e1f53c780a7501dbc6f89a174}{First\+Person\+Controller}}
-\begin{DoxyCompactList}\small\item\em The first person controller of the std unity assets \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The first person controller of the std unity assets \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_hand}{Player\+Hand}} \mbox{\hyperlink{class_player_add63756ae44fffede30732d219ed0410}{P\+Hand}}
+\begin{DoxyCompactList}\small\item\em The player hand \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,7 +50,7 @@ Action$<$ \mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interact
 \begin{DoxyCompactList}\small\item\em Called right befor playerstate is set to not interacting, the frame where the cancel interaction button is pressed \end{DoxyCompactList}\item 
 Action$<$ \mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}} $>$ \mbox{\hyperlink{class_player_a6da2c61e5e06e970835852ed3d65157c}{On\+In\+Interaction\+Range}}
 \begin{DoxyCompactList}\small\item\em called once for any display when the player moves in range to interact with it W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY C\+A\+L\+L\+ED E\+V\+E\+RY F\+R\+A\+ME U\+N\+T\+IL T\+O\+DO IS D\+O\+NE \end{DoxyCompactList}\item 
-Action \mbox{\hyperlink{class_player_ad50fff09d9eef70c9884f232010cb859}{On\+Out\+Of\+Interaction\+Range}}
+System.\+Action \mbox{\hyperlink{class_player_a319e807c138700dc247ebbba9579899e}{On\+Out\+Of\+Interaction\+Range}}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -76,8 +78,6 @@ Key\+Code \mbox{\hyperlink{class_player_ad17e0e6b44972e1c99a08fbaa38b0672}{inter
 \begin{DoxyCompactList}\small\item\em the prompt that appear when an interaction is possible should probably be removed \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_player_aa3b6104791d642173caf761cf81f8c08}{State}} \mbox{\hyperlink{class_player_a8b94069330ce05b42769d5cc61c6f00a}{player\+State}}
 \begin{DoxyCompactList}\small\item\em The state of the player \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_player_hand}{Player\+Hand}} \mbox{\hyperlink{class_player_a0b9d29fbeb7400d02b9bb148b2629f34}{p\+Hand}}
-\begin{DoxyCompactList}\small\item\em The player hand \end{DoxyCompactList}\item 
 \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} \mbox{\hyperlink{class_player_ac05f1557fc411c88274df512abb865ac}{last\+Interactable\+Hit}}
 \begin{DoxyCompactList}\small\item\em The display that was hit last, can be null should probaly be \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -233,11 +233,11 @@ the key that needs to be pressed to start an interaction if possible
 
 The display that was hit last, can be null should probaly be \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} 
 
-\mbox{\Hypertarget{class_player_a0b9d29fbeb7400d02b9bb148b2629f34}\label{class_player_a0b9d29fbeb7400d02b9bb148b2629f34}} 
-\index{Player@{Player}!p\+Hand@{p\+Hand}}
-\index{p\+Hand@{p\+Hand}!Player@{Player}}
-\subsubsection{\texorpdfstring{p\+Hand}{pHand}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_player_hand}{Player\+Hand}} Player.\+p\+Hand\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_player_add63756ae44fffede30732d219ed0410}\label{class_player_add63756ae44fffede30732d219ed0410}} 
+\index{Player@{Player}!P\+Hand@{P\+Hand}}
+\index{P\+Hand@{P\+Hand}!Player@{Player}}
+\subsubsection{\texorpdfstring{P\+Hand}{PHand}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player_hand}{Player\+Hand}} Player.\+P\+Hand}
 
 
 
@@ -315,11 +315,11 @@ Called right befor playerstate is set to not interacting, the frame where the ca
 
 called right before I\+Interacttable function called and player state set to interacting same frame as interact button is pressed 
 
-\mbox{\Hypertarget{class_player_ad50fff09d9eef70c9884f232010cb859}\label{class_player_ad50fff09d9eef70c9884f232010cb859}} 
+\mbox{\Hypertarget{class_player_a319e807c138700dc247ebbba9579899e}\label{class_player_a319e807c138700dc247ebbba9579899e}} 
 \index{Player@{Player}!On\+Out\+Of\+Interaction\+Range@{On\+Out\+Of\+Interaction\+Range}}
 \index{On\+Out\+Of\+Interaction\+Range@{On\+Out\+Of\+Interaction\+Range}!Player@{Player}}
 \subsubsection{\texorpdfstring{On\+Out\+Of\+Interaction\+Range}{OnOutOfInteractionRange}}
-{\footnotesize\ttfamily Action Player.\+On\+Out\+Of\+Interaction\+Range}
+{\footnotesize\ttfamily System.\+Action Player.\+On\+Out\+Of\+Interaction\+Range}
 
 
 

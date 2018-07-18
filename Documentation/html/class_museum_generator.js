@@ -15,6 +15,6 @@ var class_museum_generator =
     [ "RoomTypeColors", "class_museum_generator.html#abc5bc077cf9c07228ecc90887c534373", null ],
     [ "Seed", "class_museum_generator.html#a79420e442fa719cbcbceb76df5659209", null ],
     [ "SIZE", "class_museum_generator.html#a3274560824ac1574cf5b23b70c93f549", null ],
-    [ "tpyeToDrawWallsFor", "class_museum_generator.html#aba3c9dafe2095b617ca22049f2b83b5f", null ],
+    [ "typeToDrawWallsFor", "class_museum_generator.html#afba388daa5228b0542ebdf7799521ca9", null ],
     [ "VirtMuse", "class_museum_generator.html#abd9c3bf24730c6ad36b0ae78838ffaa8", null ]
 ];

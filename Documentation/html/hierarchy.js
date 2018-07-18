@@ -3,6 +3,13 @@ var hierarchy =
     [ "Attribute", null, [
       [ "MetaDataAttribute", "class_meta_data_attribute.html", null ]
     ] ],
+    [ "BaseResource", "class_base_resource.html", [
+      [ "BaseDisplayResource", "class_base_display_resource.html", [
+        [ "DisplayImageResource", "class_display_image_resource.html", null ],
+        [ "DisplayMeshResource", "class_display_mesh_resource.html", null ]
+      ] ],
+      [ "TextureResource", "class_texture_resource.html", null ]
+    ] ],
     [ "BoundingSphere", "class_bounding_sphere.html", null ],
     [ "IHoldableObject", "interface_i_holdable_object.html", [
       [ "MetaDataDisplay", "class_meta_data_display.html", null ]
@@ -52,16 +59,13 @@ var hierarchy =
     [ "MuseumDisplayInfo", "class_museum_display_info.html", null ],
     [ "MuseumGraph", "class_museum_graph.html", null ],
     [ "MuseumRequest", "class_museum_request.html", null ],
+    [ "MuseumTextureInfo", "class_museum_texture_info.html", null ],
     [ "MuseumGraph.Node", "class_museum_graph_1_1_node.html", null ],
     [ "PlayerInteractionEventArgs", "class_player_interaction_event_args.html", [
       [ "PlayerDisplayInteractionEventArgs", "class_player_display_interaction_event_args.html", null ]
     ] ],
     [ "ResourceLoader.Request", "struct_resource_loader_1_1_request.html", null ],
     [ "ResourceLoader.RequestResult", "struct_resource_loader_1_1_request_result.html", null ],
-    [ "Resource", "class_resource.html", [
-      [ "ImageResource", "class_image_resource.html", null ],
-      [ "MeshResource", "class_mesh_resource.html", null ]
-    ] ],
     [ "ResourceManager", "class_resource_manager.html", null ],
     [ "Room", "class_room.html", null ],
     [ "RoomManagmentUnit", "class_room_managment_unit.html", null ],
@@ -70,6 +74,7 @@ var hierarchy =
         [ "ObejctInHandInteraction", "class_obejct_in_hand_interaction.html", null ]
       ] ]
     ] ],
+    [ "UnityTest.TestScript", "class_unity_test_1_1_test_script.html", null ],
     [ "TransformExtensionMethods", "class_transform_extension_methods.html", null ],
     [ "Wall", "class_wall.html", null ]
 ];

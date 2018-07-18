@@ -2,6 +2,7 @@ var searchData=
 [
   ['calculate',['Calculate',['../class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6',1,'BoundingSphere']]],
   ['ceilingprefab',['CeilingPrefab',['../class_museum_builder.html#a9966f9ce8cc1117cb72e3aa42ea1a490',1,'MuseumBuilder']]],
+  ['ceilingtexture',['CeilingTexture',['../class_room.html#a415866d8fd49a481729fa9782f348d8d',1,'Room']]],
   ['center',['center',['../class_bounding_sphere.html#a0996d0f450c5e7fcca8446ebbd8ddc20',1,'BoundingSphere']]],
   ['centerdisplayinfos',['CenterDisplayInfos',['../class_room.html#ab7a1da4fa70bf843d643391bdbaa1fb5',1,'Room']]],
   ['centerimagedisplay',['CenterImageDisplay',['../class_center_image_display.html',1,'']]],

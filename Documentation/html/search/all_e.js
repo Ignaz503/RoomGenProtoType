@@ -5,7 +5,7 @@ var searchData=
   ['parenttrans',['parentTrans',['../class_single_hinge_door.html#a11558ae80f3e4b73b10872c16e37d411',1,'SingleHingeDoor']]],
   ['pcplayerhand',['PCPlayerHand',['../class_p_c_player_hand.html',1,'']]],
   ['pcplayerhand_2ecs',['PCPlayerHand.cs',['../_p_c_player_hand_8cs.html',1,'']]],
-  ['phand',['pHand',['../class_player.html#a0b9d29fbeb7400d02b9bb148b2629f34',1,'Player']]],
+  ['phand',['PHand',['../class_player.html#add63756ae44fffede30732d219ed0410',1,'Player']]],
   ['placeat',['PlaceAt',['../class_interaction_prompt.html#affe2190bb7ca5e5476074dbbbb846b3c',1,'InteractionPrompt']]],
   ['placeatandrotate',['PlaceAtAndRotate',['../class_interaction_prompt.html#a86cfcd9a578717260de54c04a51d6175',1,'InteractionPrompt']]],
   ['placebetween',['PlaceBetween',['../class_interaction_prompt.html#a85caeb27db4542f995d8704966beefc1',1,'InteractionPrompt']]],
@@ -24,6 +24,6 @@ var searchData=
   ['playerstate',['playerState',['../class_player.html#a8b94069330ce05b42769d5cc61c6f00a',1,'Player']]],
   ['playertransform',['PlayerTransform',['../class_player_interaction_event_args.html#a0e71620f6280954cb8307bb10f519763',1,'PlayerInteractionEventArgs']]],
   ['pointtorotatearound',['PointToRotateAround',['../class_single_hinge_door.html#a19b06c100fb6addbc4581a4b8e1ac82a',1,'SingleHingeDoor']]],
-  ['positionmodifier',['PositionModifier',['../class_museum_display_info.html#ab51b43a4fad77be4256ee61a957bfbfb',1,'MuseumDisplayInfo.PositionModifier()'],['../class_wall.html#ae056b7b9068536491c1ac441a25824a0',1,'Wall.PositionModifier()']]],
+  ['positionmodifier',['PositionModifier',['../class_museum_display_info.html#ab51b43a4fad77be4256ee61a957bfbfb',1,'MuseumDisplayInfo.PositionModifier()'],['../class_museum_texture_info.html#aaa15a48a616e6212ead2dd506f452974',1,'MuseumTextureInfo.PositionModifier()'],['../class_wall.html#ae056b7b9068536491c1ac441a25824a0',1,'Wall.PositionModifier()']]],
   ['positionobjectinhand',['PositionObjectInHand',['../class_meta_data_display.html#a1ecbc336a25464fc9999120066263e2a',1,'MetaDataDisplay.PositionObjectInHand()'],['../interface_i_holdable_object.html#a3fe2e7a7d0740225142053583f438333',1,'IHoldableObject.PositionObjectInHand()']]]
 ];

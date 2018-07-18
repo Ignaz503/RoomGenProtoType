@@ -1,3 +1,3 @@
 <map id="LongRoomWallValidator" name="LongRoomWallValidator">
-<area shape="rect" id="node2" href="$interface_i_wall_validator.html" title="IWallValidator" alt="" coords="35,5,137,32"/>
+<area shape="rect" id="node2" href="$interface_i_wall_validator.html" title="{IWallValidator\n||+ WallNeedsRemoval()\l}" alt="" coords="9,5,163,83"/>
 </map>

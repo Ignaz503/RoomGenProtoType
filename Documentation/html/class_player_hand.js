@@ -17,10 +17,10 @@ var class_player_hand =
     [ "objectInHand", "class_player_hand.html#a043a1be665181f9e3c9d00cd18e4c4fe", null ],
     [ "CurrentState", "class_player_hand.html#a6eb1eff28793294622f4037a0aa7afeb", null ],
     [ "OwningPlayer", "class_player_hand.html#a0d33095483c291ac3dd5b5350974b626", null ],
-    [ "InRestingPosition", "class_player_hand.html#a3a8432e3dbd04a1c12c95ca0c0fd186b", null ],
+    [ "InRestingPosition", "class_player_hand.html#aebb1dc8370e71ba7b9965ffa0d4a2532", null ],
     [ "OnDropObject", "class_player_hand.html#ac22e288fe18167393a51eec5ad0cbfc0", null ],
     [ "OnGrabObject", "class_player_hand.html#af3875f350ce765612b5af99e8e9d5837", null ],
-    [ "OnReachedInfronOfFacePosition", "class_player_hand.html#a9f27078422ba536d94e6fb76e093cf7c", null ],
-    [ "OnStartMovingInfrontOfFace", "class_player_hand.html#ab33d70a8efd0adeed59aa3f5a5747349", null ],
-    [ "OnStartMovingToRestPosition", "class_player_hand.html#ac82ac43be97123cde5f02f5811a63397", null ]
+    [ "OnReachedInfronOfFacePosition", "class_player_hand.html#a60b8dd996d175659c87dbea8266ff095", null ],
+    [ "OnStartMovingInfrontOfFace", "class_player_hand.html#a144ea34305e5efa1ffae73c9d1f5fd9d", null ],
+    [ "OnStartMovingToRestPosition", "class_player_hand.html#a4e94ca5bad6ece9013cd872dcf373074", null ]
 ];

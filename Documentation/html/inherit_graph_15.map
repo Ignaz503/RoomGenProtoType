@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$struct_resource_loader_1_1_request.html" title="struct for a request from the museum builder to get a certain resource from the server ..." alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node1" href="$class_player_interaction_event_args.html" title="base event arguments when a player interacts with somthing interactable " alt="" coords="5,13,184,39"/>
+<area shape="rect" id="node2" href="$class_player_display_interaction_event_args.html" title="event arguments when player is interacting with a dispaly " alt="" coords="232,5,395,47"/>
 </map>

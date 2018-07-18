@@ -2,7 +2,7 @@ var class_museum_builder =
 [
     [ "AddToRoomManagmentUnit", "class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8", null ],
     [ "Awake", "class_museum_builder.html#a846546ea2e9bf91bba2a166dc2b01e2d", null ],
-    [ "LoadResource", "class_museum_builder.html#a2c456481ed3350f0113041111d63d0ec", null ],
+    [ "LoadDisplayResource", "class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d", null ],
     [ "SetUpCenterDisplaysForRoom", "class_museum_builder.html#a159e037415aaf348d5a0af9561be8560", null ],
     [ "SetUpDisplaysForWall", "class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5", null ],
     [ "SetUpFloor", "class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1", null ],

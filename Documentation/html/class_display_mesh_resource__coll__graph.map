@@ -1,0 +1,4 @@
+<map id="DisplayMeshResource" name="DisplayMeshResource">
+<area shape="rect" id="node2" href="$class_base_display_resource.html" title="base class for resource " alt="" coords="16,145,167,237"/>
+<area shape="rect" id="node3" href="$class_base_resource.html" title="base class for any resource be it display resource or other " alt="" coords="12,5,171,97"/>
+</map>

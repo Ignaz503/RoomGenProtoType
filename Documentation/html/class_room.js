@@ -11,7 +11,9 @@ var class_room =
     [ "virtMuse", "class_room.html#a7b3cf4bdc95a8c1bf69ae4ff71b4f02a", null ],
     [ "Walls", "class_room.html#a22669d53756bbfecb106f4f6c9529bb9", null ],
     [ "wallValidators", "class_room.html#a274899cf7b41ac5190fb7754817510d6", null ],
+    [ "CeilingTexture", "class_room.html#a415866d8fd49a481729fa9782f348d8d", null ],
     [ "CenterDisplayInfos", "class_room.html#ab7a1da4fa70bf843d643391bdbaa1fb5", null ],
+    [ "FloorTexture", "class_room.html#a53b139a4a9f372914e9c574b42f0a8b2", null ],
     [ "RoomID", "class_room.html#a499df97242b8996b66cc22737159f59c", null ],
     [ "RoomTiles", "class_room.html#aed67349f7f161cb2214111eff3e51018", null ],
     [ "Type", "class_room.html#a55dc5c580ea31562a0aa6f11b4b8f462", null ]

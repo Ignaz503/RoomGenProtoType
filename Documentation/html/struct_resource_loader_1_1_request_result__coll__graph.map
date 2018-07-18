@@ -1,6 +1,3 @@
 <map id="ResourceLoader.RequestResult" name="ResourceLoader.RequestResult">
-<area shape="rect" id="node2" href="$class_resource.html" title="base class for resource " alt="" coords="51,171,129,197"/>
-<area shape="rect" id="node3" href="$class_display.html" title="The base class for displaying resources " alt="" coords="153,171,219,197"/>
-<area shape="rect" id="node5" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="140,81,232,108"/>
-<area shape="rect" id="node6" href="$class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="257,81,339,108"/>
+<area shape="rect" id="node2" href="$class_base_resource.html" title="base class for any resource be it display resource or other " alt="" coords="29,5,187,97"/>
 </map>

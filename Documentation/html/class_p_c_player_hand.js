@@ -9,7 +9,7 @@ var class_p_c_player_hand =
     [ "Update", "class_p_c_player_hand.html#a1fec11a83fbd674a2a0ff6790704a847", null ],
     [ "infrontOfFacePosition", "class_p_c_player_hand.html#a25ff91db9893158f5185b4826d563e60", null ],
     [ "metaDisplay", "class_p_c_player_hand.html#a132e4dc18579e0b2b561857fafaca912", null ],
-    [ "moveHandKey", "class_p_c_player_hand.html#a3f0649f12dc9268301b87757fab97873", null ],
+    [ "MoveHandKey", "class_p_c_player_hand.html#a4d757a10aeef1d8b06d19687218584f0", null ],
     [ "movementTime", "class_p_c_player_hand.html#aaa5dc972ddaedd270c6f4c19a4c4f61b", null ],
     [ "restPosition", "class_p_c_player_hand.html#a67a82329e791c5fce99188ba601e229d", null ],
     [ "velocity", "class_p_c_player_hand.html#a15c7717a137aa7790c06f2bdf9b247a1", null ],

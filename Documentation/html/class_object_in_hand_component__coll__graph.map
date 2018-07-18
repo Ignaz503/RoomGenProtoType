@@ -1,8 +1,8 @@
 <map id="ObjectInHandComponent" name="ObjectInHandComponent">
-<area shape="rect" id="node2" href="$class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="380,145,528,172"/>
-<area shape="rect" id="node4" href="$class_player.html" title="Player" alt="" coords="134,196,193,223"/>
-<area shape="rect" id="node5" href="$class_interaction_prompt.html" title="InteractionPrompt" alt="" coords="85,285,209,312"/>
-<area shape="rect" id="node6" href="$class_player_hand.html" title="PlayerHand" alt="" coords="31,95,120,121"/>
-<area shape="rect" id="node7" href="$interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="19,5,132,32"/>
-<area shape="rect" id="node8" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="144,95,236,121"/>
+<area shape="rect" id="node2" href="$class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="464,540,612,647"/>
+<area shape="rect" id="node4" href="$class_player.html" title="{Player\n|+ PlayerCam\l+ FirstPersonController\l+ RayCastMaxDist\l&#45; centerRay\l&#45; rayCastMaxDist\l&#45; interactKey\l&#45; playerState\l|&#45; Awake()\l&#45; Start()\l&#45; Update()\l&#45; HandleDisplayRaycast()\l&#45; HandleInteraction()\l}" alt="" coords="156,671,325,895"/>
+<area shape="rect" id="node5" href="$class_interaction_prompt.html" title="{InteractionPrompt\n|&#45; text\l&#45; obj\l|+ SetActive()\l+ PlaceAtAndRotate()\l+ PlaceAt()\l+ SetRotation()\l+ PlaceBetween()\l+ PlaceBetweenAndRotateTowards\lFirst()\l+ SetText()\l&#45; Start()\l&#45; LateUpdate()\l}" alt="" coords="110,957,337,1181"/>
+<area shape="rect" id="node6" href="$class_player_hand.html" title="{PlayerHand\n|+ CurrentState\l+ OwningPlayer\l&#45; _currentState\l|+ GrabObject()\l+ DropObject()\l+ ForwardInteractableObject()\l# InvokeInRestingPosition()\l# InvokeOnReachedInfrontOf\lFacePosition()\l# InvokeOnStartMovingToRest\lPosition()\l# InvokeOnStartMovingInfront\lOfFace()\l}" alt="" coords="19,277,214,516"/>
+<area shape="rect" id="node7" href="$interface_i_holdable_object.html" title="{IHoldableObject\n|+ Object\l|+ OnHeldInfrontOfFace()\l+ OnPutAway()\l+ OnStartedMoveInfrontOfFace()\l+ OnStartedMoveAwayFromFace()\l+ PositionObjectInHand()\l+ OnGrabed()\l+ OnDropped()\l+ IsInterestedInInteractable\lObjects()\l+ SetInteractedObject()\l}" alt="" coords="5,5,228,215"/>
+<area shape="rect" id="node8" href="$interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="239,358,331,435"/>
 </map>

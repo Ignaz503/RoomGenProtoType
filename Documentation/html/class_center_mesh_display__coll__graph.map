@@ -1,6 +1,6 @@
 <map id="CenterMeshDisplay" name="CenterMeshDisplay">
-<area shape="rect" id="node2" href="$class_mesh_display.html" title="MeshDisplay" alt="" coords="137,247,235,273"/>
-<area shape="rect" id="node3" href="$class_display.html" title="The base class for displaying resources " alt="" coords="153,171,219,197"/>
-<area shape="rect" id="node5" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="140,81,232,108"/>
-<area shape="rect" id="node6" href="$class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="257,81,339,108"/>
+<area shape="rect" id="node2" href="$class_mesh_display.html" title="{MeshDisplay\n|+ ParentMesh\l+ ChildMesh\l+ XPosScale\l+ XPosModifier\l|+ ScaleChildToFitParent()\l+ ApplyResource()\l+ SetUp()\l# InteractionStarted()\l# InteractionEnded()\l# SetToDefaultInteractionBehaviour()\l&#45; Awake()\l&#45; SetUpMeshRendererOptions()\l}" alt="" coords="71,589,301,813"/>
+<area shape="rect" id="node3" href="$class_display.html" title="The base class for displaying resources " alt="" coords="71,287,301,540"/>
+<area shape="rect" id="node5" href="$interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="140,139,232,217"/>
+<area shape="rect" id="node6" href="$class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="257,132,387,224"/>
 </map>

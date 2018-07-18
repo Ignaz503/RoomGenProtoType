@@ -12,7 +12,7 @@ Collaboration diagram for Room\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=147pt]{class_room__coll__graph}
+\includegraphics[height=550pt]{class_room__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -41,6 +41,10 @@ uint \mbox{\hyperlink{class_room_a499df97242b8996b66cc22737159f59c}{Room\+ID}}\h
 \begin{DoxyCompactList}\small\item\em The type of this room \end{DoxyCompactList}\item 
 List$<$ Vector2\+Int $>$ \mbox{\hyperlink{class_room_aed67349f7f161cb2214111eff3e51018}{Room\+Tiles}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em all the tiles of the museum that make up this room \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum_texture_info}{Museum\+Texture\+Info}} \mbox{\hyperlink{class_room_a53b139a4a9f372914e9c574b42f0a8b2}{Floor\+Texture}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The texture info for the floor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum_texture_info}{Museum\+Texture\+Info}} \mbox{\hyperlink{class_room_a415866d8fd49a481729fa9782f348d8d}{Ceiling\+Texture}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The texture for the ceiling of the room \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_room_ab7a1da4fa70bf843d643391bdbaa1fb5}{Center\+Display\+Infos}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em display information for all the displays that this room has wall displays are not counted as displays for this room \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
@@ -283,6 +287,16 @@ helper dictonary that maps from room type to wall validator of this type
 
 
 \subsection{Property Documentation}
+\mbox{\Hypertarget{class_room_a415866d8fd49a481729fa9782f348d8d}\label{class_room_a415866d8fd49a481729fa9782f348d8d}} 
+\index{Room@{Room}!Ceiling\+Texture@{Ceiling\+Texture}}
+\index{Ceiling\+Texture@{Ceiling\+Texture}!Room@{Room}}
+\subsubsection{\texorpdfstring{Ceiling\+Texture}{CeilingTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_texture_info}{Museum\+Texture\+Info}} Room.\+Ceiling\+Texture\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The texture for the ceiling of the room 
+
 \mbox{\Hypertarget{class_room_ab7a1da4fa70bf843d643391bdbaa1fb5}\label{class_room_ab7a1da4fa70bf843d643391bdbaa1fb5}} 
 \index{Room@{Room}!Center\+Display\+Infos@{Center\+Display\+Infos}}
 \index{Center\+Display\+Infos@{Center\+Display\+Infos}!Room@{Room}}
@@ -292,6 +306,16 @@ helper dictonary that maps from room type to wall validator of this type
 
 
 display information for all the displays that this room has wall displays are not counted as displays for this room 
+
+\mbox{\Hypertarget{class_room_a53b139a4a9f372914e9c574b42f0a8b2}\label{class_room_a53b139a4a9f372914e9c574b42f0a8b2}} 
+\index{Room@{Room}!Floor\+Texture@{Floor\+Texture}}
+\index{Floor\+Texture@{Floor\+Texture}!Room@{Room}}
+\subsubsection{\texorpdfstring{Floor\+Texture}{FloorTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_texture_info}{Museum\+Texture\+Info}} Room.\+Floor\+Texture\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The texture info for the floor 
 
 \mbox{\Hypertarget{class_room_a499df97242b8996b66cc22737159f59c}\label{class_room_a499df97242b8996b66cc22737159f59c}} 
 \index{Room@{Room}!Room\+ID@{Room\+ID}}

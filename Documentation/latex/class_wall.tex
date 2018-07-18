@@ -5,6 +5,16 @@
 A wall that seperates two rooms of a museum or is an outer wall of the museum  
 
 
+
+
+Collaboration diagram for Wall\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{class_wall__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,6 +53,8 @@ static bool \mbox{\hyperlink{class_wall_a12a6667a52ef86d8678ecb3cd21972e2}{opera
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
+string \mbox{\hyperlink{class_wall_a44f8ec4294e23148d51bcd33206a78c7}{Wall\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_wall}{Wall}} ID, uniquze string for this wall of the museum built via associated room I\+DS eg\+: wall between room 1 and 2 -\/$>$ \char`\"{}1,2\char`\"{} if wall only associated with one room then -\/1 is second number \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_wall_a1366d94ac70428624a6703d7db89638d}{Wall\+Type}} \mbox{\hyperlink{class_wall_ade4c1924f35fd33637a3cdfa31566af0}{Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em the type of wall (solid or door) \end{DoxyCompactList}\item 
 Vector2 \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_wall_ac7769d0a497da7e7ae3a11c813645b7a}{Location}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
@@ -55,6 +67,8 @@ List$<$ Vector2\+Int $>$ \mbox{\hyperlink{class_wall_a1e5fab93aa7e8676dd65a61a26
 \begin{DoxyCompactList}\small\item\em defines if wall is vertical wall or horizontal wall in museum influneces y rotation of gamobject \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} $>$ \mbox{\hyperlink{class_wall_a5fc68c5010cd944a5103f84a749e87f7}{Display\+Infos}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em info for all the displays that this wall has \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_museum_texture_info}{Museum\+Texture\+Info}} $>$ \mbox{\hyperlink{class_wall_adc37331462fd06077dbef80e89f5be89}{Texture\+Infos}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Info about what textures this wall will have Every wall seperaates at max 2 rooms so it has a size of 2, when only one room is adjacent it only has one member \end{DoxyCompactList}\item 
 List$<$ uint $>$ \mbox{\hyperlink{class_wall_aa49042aeda37b3ad734a101f1df834eb}{Associated\+Room\+I\+Ds}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em I\+Ds of all the rooms that are spaerated by this wall \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
@@ -305,6 +319,16 @@ position modifier when placing the wall gamobject for the museum
 
 defines if wall is vertical wall or horizontal wall in museum influneces y rotation of gamobject 
 
+\mbox{\Hypertarget{class_wall_adc37331462fd06077dbef80e89f5be89}\label{class_wall_adc37331462fd06077dbef80e89f5be89}} 
+\index{Wall@{Wall}!Texture\+Infos@{Texture\+Infos}}
+\index{Texture\+Infos@{Texture\+Infos}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Texture\+Infos}{TextureInfos}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_museum_texture_info}{Museum\+Texture\+Info}}$>$ Wall.\+Texture\+Infos\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Info about what textures this wall will have Every wall seperaates at max 2 rooms so it has a size of 2, when only one room is adjacent it only has one member 
+
 \mbox{\Hypertarget{class_wall_a1e5fab93aa7e8676dd65a61a26b28513}\label{class_wall_a1e5fab93aa7e8676dd65a61a26b28513}} 
 \index{Wall@{Wall}!Tiles@{Tiles}}
 \index{Tiles@{Tiles}!Wall@{Wall}}
@@ -324,6 +348,16 @@ tiles that are seperated from this wall
 
 
 the type of wall (solid or door) 
+
+\mbox{\Hypertarget{class_wall_a44f8ec4294e23148d51bcd33206a78c7}\label{class_wall_a44f8ec4294e23148d51bcd33206a78c7}} 
+\index{Wall@{Wall}!Wall\+ID@{Wall\+ID}}
+\index{Wall\+ID@{Wall\+ID}!Wall@{Wall}}
+\subsubsection{\texorpdfstring{Wall\+ID}{WallID}}
+{\footnotesize\ttfamily string Wall.\+Wall\+ID\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{class_wall}{Wall}} ID, uniquze string for this wall of the museum built via associated room I\+DS eg\+: wall between room 1 and 2 -\/$>$ \char`\"{}1,2\char`\"{} if wall only associated with one room then -\/1 is second number 
 
 
 

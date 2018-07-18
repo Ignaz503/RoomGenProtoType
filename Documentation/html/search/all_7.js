@@ -9,6 +9,7 @@ var searchData=
   ['getnodeforroom',['GetNodeForRoom',['../class_museum_graph.html#a82509a5eb8dd2020aaee17261bedb974',1,'MuseumGraph']]],
   ['getnumberofresourcesfortype',['GetNumberOfResourcesForType',['../class_resource_manager.html#a9ed8a67faa621d30d9790c0847f45a72',1,'ResourceManager']]],
   ['getpossiblemuseumtypes',['GetPossibleMuseumTypes',['../class_resource_manager.html#a72e9243fdaf77f0fb479f0cf4070ea22',1,'ResourceManager']]],
+  ['getroombyid',['GetRoomByID',['../class_museum.html#a31c3e63a3a1e2edf6e219cb1f04b9515',1,'Museum']]],
   ['getroommanagmentunitforroom',['GetRoomManagmentUnitForRoom',['../class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418',1,'MuseumController']]],
   ['getsourroundingtiles',['GetSourroundingTiles',['../class_museum.html#af5b732fe3a0821d02852171a73cf8f8b',1,'Museum']]],
   ['grabobject',['GrabObject',['../class_p_c_player_hand.html#a08da28b459501727d269733569559c24',1,'PCPlayerHand.GrabObject()'],['../class_player_hand.html#a64a86af904a77f4a0b92d72bd5fdf43c',1,'PlayerHand.GrabObject()']]]

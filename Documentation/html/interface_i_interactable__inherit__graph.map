@@ -1,7 +1,7 @@
 <map id="IInteractable" name="IInteractable">
-<area shape="rect" id="node2" href="$class_display.html" title="The base class for displaying resources " alt="" coords="186,80,251,107"/>
-<area shape="rect" id="node3" href="$class_center_image_display.html" title="CenterImageDisplay" alt="" coords="5,155,144,181"/>
-<area shape="rect" id="node4" href="$class_image_display.html" title="ImageDisplay" alt="" coords="169,155,269,181"/>
-<area shape="rect" id="node5" href="$class_mesh_display.html" title="MeshDisplay" alt="" coords="293,155,390,181"/>
-<area shape="rect" id="node6" href="$class_center_mesh_display.html" title="CenterMeshDisplay" alt="" coords="274,229,409,256"/>
+<area shape="rect" id="node2" href="$class_display.html" title="The base class for displaying resources " alt="" coords="260,131,491,399"/>
+<area shape="rect" id="node3" href="$class_center_image_display.html" title="{CenterImageDisplay\n|&#45; MaterialPrefab\l&#45; displayMeshRenderes\l|+ ApplyResource()\l+ SetUp()\l# SetToDefaultInteractionBehaviour()\l# InteractionStarted()\l# InteractionEnded()\l&#45; Awake()\l}" alt="" coords="5,476,236,641"/>
+<area shape="rect" id="node4" href="$class_image_display.html" title="{ImageDisplay\n|+ XPosScale\l+ Rotation\l+ Scale\l+ YPos\l&#45; materialPrefab\l&#45; meshRenderer\l|+ ApplyResource()\l+ SetUp()\l# SetToDefaultInteractionBehaviour()\l# InteractionStarted()\l# InteractionEnded()\l&#45; Awake()\l}" alt="" coords="260,447,491,671"/>
+<area shape="rect" id="node5" href="$class_mesh_display.html" title="{MeshDisplay\n|+ ParentMesh\l+ ChildMesh\l+ XPosScale\l+ XPosModifier\l|+ ScaleChildToFitParent()\l+ ApplyResource()\l+ SetUp()\l# InteractionStarted()\l# InteractionEnded()\l# SetToDefaultInteractionBehaviour()\l&#45; Awake()\l&#45; SetUpMeshRendererOptions()\l}" alt="" coords="515,447,745,671"/>
+<area shape="rect" id="node6" href="$class_center_mesh_display.html" title="{CenterMeshDisplay\n||+ SetUp()\l}" alt="" coords="563,719,697,796"/>
 </map>

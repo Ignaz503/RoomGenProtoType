@@ -1,7 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interface_i_wall_validator.html" title="IWallValidator" alt="" coords="5,81,108,108"/>
-<area shape="rect" id="node2" href="$class_big_room_wall_validator.html" title="wall validator for 2x2 rooms " alt="" coords="167,5,319,32"/>
-<area shape="rect" id="node3" href="$class_long_room_wall_validator.html" title="wall validator for 1x2 rooms " alt="" coords="163,56,324,83"/>
-<area shape="rect" id="node4" href="$class_l_room_wall_vaildator.html" title="wall validator for L&#45;shaped rooms(2x2 &#45;1 rooms) " alt="" coords="173,107,313,133"/>
-<area shape="rect" id="node5" href="$class_normal_room_wall_validator.html" title="wall validator for 1x1 rooms " alt="" coords="156,157,331,184"/>
+<area shape="rect" id="node1" href="$interface_i_room_placable_checker.html" title="IRoomPlacableChecker" alt="" coords="5,5,163,32"/>
+<area shape="rect" id="node2" href="$class_base_room_type_placable_cheker.html" title="checks for the room types defined by me if they are placable at a certain location in the musem ..." alt="" coords="211,5,416,32"/>
 </map>
