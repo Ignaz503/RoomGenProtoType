@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace VirtMuseWeb.Models
 {
@@ -16,6 +19,7 @@ namespace VirtMuseWeb.Models
         public int ID { get; set; }
         public ResourceType ResourceType { get; set; }
 
+        [Required]
         public MetaData MetaData { get; set; }
         public string InteractionBehaviour { get; set; }
         //TODO currently just IP make actuall user login

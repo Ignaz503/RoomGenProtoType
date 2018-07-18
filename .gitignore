@@ -45,3 +45,7 @@ RoomGenPrototype/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_PhoneNumberVa
 RoomGenPrototype/Assembly-CSharp.csproj
 RoomGenPrototype/Assembly-CSharp-firstpass.csproj
 RoomGenPrototype/Assembly-CSharp-Editor-firstpass.csproj
+VirtMuseWeb/node_modules/
+VirtMuseWeb/VirtMuseWeb/graph.dgml
+VirtMuseWeb/VirtMuseWeb/node_modules/
+VirtMuseWeb/VirtMuseWeb/scripts/

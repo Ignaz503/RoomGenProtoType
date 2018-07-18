@@ -994,10 +994,17 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 1, a: 1}
   Seed: uhhhhhhhhh
   cubePrefab: {fileID: 1045344282460108, guid: 38eb3c64bbf85bb409663f5210dd7a5c, type: 2}
-  tpyeToDrawWallsFor: 0
+  typeToDrawWallsFor: 0
   DrawAllWalls: 0
   DrawGizmos: 0
   CreateDebugGameobject: 0
+  RoomStyles:
+  - floorTexture: {fileID: 2800000, guid: ca75d43764bb46844be80a4ec2eebe55, type: 3}
+    ceilingTexture: {fileID: 2800000, guid: ca75d43764bb46844be80a4ec2eebe55, type: 3}
+    wallTexture: {fileID: 2800000, guid: 7a5cf51e721e62b47a03ec97cdff2d6b, type: 3}
+  - floorTexture: {fileID: 2800000, guid: 7b97c4f6c5616dd4a86fe7d37a1bd620, type: 3}
+    ceilingTexture: {fileID: 2800000, guid: 7b97c4f6c5616dd4a86fe7d37a1bd620, type: 3}
+    wallTexture: {fileID: 2800000, guid: f56fcb0037cbf9048b6129a0078bf4c4, type: 3}
 --- !u!4 &1911351489
 Transform:
   m_ObjectHideFlags: 0
@@ -1067,6 +1074,11 @@ MonoBehaviour:
   CeilingPrefab: {fileID: 1110854600383252, guid: 794d19ad07a970a44b0dd282b7f15a8a,
     type: 2}
   Player: {fileID: 1675310006}
+  texturePrefabs:
+  - {fileID: 2800000, guid: ca75d43764bb46844be80a4ec2eebe55, type: 3}
+  - {fileID: 2800000, guid: 7b97c4f6c5616dd4a86fe7d37a1bd620, type: 3}
+  - {fileID: 2800000, guid: 7a5cf51e721e62b47a03ec97cdff2d6b, type: 3}
+  - {fileID: 2800000, guid: f56fcb0037cbf9048b6129a0078bf4c4, type: 3}
   TestMesh:
   - {fileID: 3300000, guid: 6a7c427473b4d03439b149a811ac1644, type: 3}
   - {fileID: 3300000, guid: a9ce92e3f8bb6224fa1e92b7adec8c65, type: 3}

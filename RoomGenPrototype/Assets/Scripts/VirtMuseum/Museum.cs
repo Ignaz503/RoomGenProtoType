@@ -271,11 +271,15 @@ public class Museum
     /// </summary>
     void FillDisplays(System.Random rng)
     {
+        System.Random styleRng = new System.Random();
         //TODO fill displays with info from resource manager
 
         //TEMP
         foreach(Room r in Rooms)
         {
+            //TEMPORARY ROOMSTYLE CHOOSING for showcase
+            RoomStyle s = MuseumGenerator.Instance.RoomStyles[styleRng.Next(0, MuseumGenerator.Instance.RoomStyles.Count)];
+
             foreach(MuseumDisplayInfo dispInf in r.CenterDisplayInfos)
             {
                 dispInf.Type = (rng.Next(0, 2) > 0) ? Display.DisplayType.MeshDisplay : Display.DisplayType.ImageDisplay;
@@ -284,44 +288,53 @@ public class Museum
             r.FloorTexture = new MuseumTextureInfo()
             {
                 AssociatedID = r.RoomID.ToString(),
-                PositionModifier = 0
+                PositionModifier = 0,
+                AssociatedResourceLocators = s.floorTexture.name
             };
 
             r.CeilingTexture = new MuseumTextureInfo()
             {
                 AssociatedID = r.RoomID.ToString(),
-                PositionModifier = 0
+                PositionModifier = 0,
+                AssociatedResourceLocators = s.ceilingTexture.name
             };
+
+            foreach(int wID in r.Walls)
+            {
+                Wall w = Walls[wID];
+                w.TextureInfos.Add(new MuseumTextureInfo() { AssociatedResourceLocators = s.wallTexture.name });
+            }
             //TODO: fill associated resource locator
         }
 
         foreach(Wall w in Walls)
         {
+            int i = 0;
             foreach(Vector2 tile in w.Tiles)
             {
-                MuseumTextureInfo info = new MuseumTextureInfo()
-                {
-                    AssociatedID = w.WallID,
-                };
                 //figure out position modifier
                 //0 means texture from 0 to 0.5
                 //1 means texture from 0.5 to 1
                 // (everything in uv coords)
+                int posMod = 0;
                 switch (w.Rotation)
                 {
                     case Wall.WallRotation.Horizontal:
                         if (Mathf.Sign(tile.y - w.Location[0].y) < 0f)
-                            info.PositionModifier = 0;
+                            posMod = 1;
                         else
-                            info.PositionModifier = 1;
+                            posMod = 0;
                         break;
                     case Wall.WallRotation.Vertical:
-                        if (Mathf.Sign(tile.y - w.Location[0].y) < 0f)
-                            info.PositionModifier = 1;
+                        if (Mathf.Sign(tile.x - w.Location[0].x) < 0f)
+                            posMod = 0;
                         else
-                            info.PositionModifier = 0;
+                            posMod = 1;
                         break;
-                }// end switch
+            }// end switch
+            w.TextureInfos[i].PositionModifier = posMod;
+                w.TextureInfos[i].AssociatedID = w.WallID;
+                i++;
                 //TODO: FILL Associated resource locator
             }// end foreach tile associated with wall
             if (w.Type == Wall.WallType.Door)

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace VirtMuseWeb.Models
 {
+
     public class ResourceBinding
     {
         public Resource Resource { get; set; }

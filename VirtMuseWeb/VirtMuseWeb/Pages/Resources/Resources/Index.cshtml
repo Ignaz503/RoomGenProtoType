@@ -1,0 +1,54 @@
+﻿@page
+@model VirtMuseWeb.Pages.Resources.Resources.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Resource[0].ResourceType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Resource[0].InteractionBehaviour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Resource[0].User)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Resource[0].PostTime)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Resource) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResourceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InteractionBehaviour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostTime)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

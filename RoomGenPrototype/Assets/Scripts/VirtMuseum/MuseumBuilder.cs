@@ -30,6 +30,8 @@ public class MuseumBuilder : MonoBehaviour
 
     public GameObject Player;
 
+    public List<Texture2D> texturePrefabs;
+
     #endregion
 
     /// <summary>
@@ -146,7 +148,7 @@ public class MuseumBuilder : MonoBehaviour
         }
     }
 
- /// <summary>
+    /// <summary>
     /// Sets up the floor for a museum
     /// fills list of gameobjects used for parenting information
     /// when setting up walls
@@ -168,31 +170,31 @@ public class MuseumBuilder : MonoBehaviour
                 AddToRoomManagmentUnit(r.RoomID, floor);
                 AddToRoomManagmentUnit(r.RoomID, ceiling);
 
-                MeshRenderer rend = floor.GetComponent<MeshRenderer>();
-                MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
+                //MeshRenderer rend = floor.GetComponent<MeshRenderer>();
+                //MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
                 floors.Add(floor);
 
                 //TEMP
                 //TODO REMOVE
-                switch (r.Type)
-                {
-                    case RoomType.Normal:
-                        rend.material.color = Color.yellow;
-                        ceilRend.material.color = Color.yellow;
-                        break;
-                    case RoomType.Long:
-                        rend.material.color = Color.red;
-                        ceilRend.material.color = Color.red;
-                        break;
-                    case RoomType.Big:
-                        rend.material.color = Color.green;
-                        ceilRend.material.color = Color.green;
-                        break;
-                    case RoomType.L:
-                        rend.material.color = Color.blue;
-                        ceilRend.material.color = Color.blue;
-                        break;
-                }
+                //switch (r.Type)
+                //{
+                //    case RoomType.Normal:
+                //        rend.material.color = Color.yellow;
+                //        ceilRend.material.color = Color.yellow;
+                //        break;
+                //    case RoomType.Long:
+                //        rend.material.color = Color.red;
+                //        ceilRend.material.color = Color.red;
+                //        break;
+                //    case RoomType.Big:
+                //        rend.material.color = Color.green;
+                //        ceilRend.material.color = Color.green;
+                //        break;
+                //    case RoomType.L:
+                //        rend.material.color = Color.blue;
+                //        ceilRend.material.color = Color.blue;
+                //        break;
+                //}
 
                 Vector3 pos = new Vector3(FloorXPosScale * tile.x, FloorPrefab.transform.position.y, FloorZPosScale * tile.y);
 
@@ -224,6 +226,8 @@ public class MuseumBuilder : MonoBehaviour
                 //    r.CeilingTexture.AssociatedResourceLocators,
                 //    typeof(TextureResource).ToString()
                 //    );
+                TEMPApplyTextureToNonWalls(r.FloorTexture.AssociatedResourceLocators, floor);
+                TEMPApplyTextureToNonWalls(r.CeilingTexture.AssociatedResourceLocators, ceiling);
             }
             #endregion
 
@@ -289,8 +293,9 @@ public class MuseumBuilder : MonoBehaviour
 
             wallObj.transform.SetParent(null);
 
+            TEMPApplyTextureToWall(w, wallObj);
             //request wall texture
-            MeshRenderer re = wallObj.GetComponent<MeshRenderer>();
+            //MeshRenderer re = wallObj.GetComponent<MeshRenderer>();
             //ResourceLoader.Instance.RequestResource(
             //    res =>{
             //        //TODO CHECK IF RES IS TEXTURE RESOURCE
@@ -417,6 +422,11 @@ public class MuseumBuilder : MonoBehaviour
         //    );
     }
 
+    /// <summary>
+    /// adds a room gamobject to a room managment unit
+    /// </summary>
+    /// <param name="roomID">the room id this gameobject is associated with</param>
+    /// <param name="objToAdd">the object to add</param>
     void AddToRoomManagmentUnit(uint roomID,GameObject objToAdd)
     {
         RoomManagmentUnit rManage = _MusemControllerInstance.GetRoomManagmentUnitForRoom(roomID);
@@ -427,12 +437,75 @@ public class MuseumBuilder : MonoBehaviour
             Debug.LogError($"Could Not find associated room in mamangment units for: {objToAdd.name}");
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    if(virtMuse != null)
-    //    {
+    /// <summary>
+    /// TEMPORARY function to showcase room styles
+    /// returns first hit in prefab list with same name as param name
+    /// </summary>
+    /// <param name="name">the name of the texture</param>
+    /// <returns>the texutre with the name</returns>
+    Texture2D GetTexture(string name)
+    {
+        Texture2D te = texturePrefabs.First((t) => { return t.name == name; });
+        if(te == null)
+        {
+            throw new Exception("somthing wrong texture man");
+        }
+        return te;
+    }
 
-    //    }
-    //}
+    /// <summary>
+    /// TEMPORAARY function that is used to showcase room styles
+    /// applies a texture to this gamobject
+    /// </summary>
+    /// <param name="name">name of the texture</param>
+    /// <param name="obj">gmaobject to apply to</param>
+    void TEMPApplyTextureToNonWalls(string name, GameObject obj)
+    {
+        MeshRenderer re = obj.GetComponent<MeshRenderer>();
+
+        re.material.mainTexture = GetTexture(name);
+    }
+
+    /// <summary>
+    /// TEMPORARY function to showcase room styles
+    /// </summary>
+    /// <param name="w">the wall for which the texure is</param>
+    /// <param name="obj">gamobject of this wall</param>
+    void TEMPApplyTextureToWall(Wall w, GameObject obj)
+    {
+        MeshRenderer re = obj.GetComponent<MeshRenderer>();
+        if (w.TextureInfos.Count > 1)
+        {
+            Debug.Log(w.TextureInfos[0].AssociatedResourceLocators + " and " + w.TextureInfos[1].AssociatedResourceLocators);
+
+            //different wall textures
+            Texture2D[] textures = new Texture2D[2];
+            textures[w.TextureInfos[0].PositionModifier] = GetTexture(w.TextureInfos[0].AssociatedResourceLocators);
+            textures[w.TextureInfos[1].PositionModifier] = GetTexture(w.TextureInfos[1].AssociatedResourceLocators);
+
+            Texture2D tex = new Texture2D(2 * textures[0].width, textures[0].height);
+
+            for (int x = 0; x < tex.width/2; x++)
+            {
+                for(int y = 0; y < tex.height; y++)
+                {
+                    Color t1 = textures[0].GetPixel(x, y);
+                    Color t2 = textures[1].GetPixel(x, y);
+
+                    tex.SetPixel(x, y, t1);
+                    tex.SetPixel(x + (tex.width / 2), y, t2);
+                }
+            }
+
+            tex.Apply();
+            re.material.mainTexture = tex;
+        }
+        else
+        {
+            //same texture
+            re.material.mainTexture = GetTexture(w.TextureInfos[0].AssociatedResourceLocators);
+        }
+    }
+
 }
 

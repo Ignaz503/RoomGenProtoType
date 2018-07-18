@@ -63,6 +63,12 @@ public class MuseumGenerator : MonoBehaviour {
     public bool CreateDebugGameobject;
 
     /// <summary>
+    /// Tempory list of room styles that helps showcase the
+    /// functionality of styled rooms
+    /// </summary>
+    public List<RoomStyle> RoomStyles;
+
+    /// <summary>
     /// sets Instance of generator
     /// </summary>
     private void OnEnable()

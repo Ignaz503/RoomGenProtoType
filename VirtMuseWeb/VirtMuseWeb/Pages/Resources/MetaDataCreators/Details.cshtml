@@ -1,0 +1,31 @@
+﻿@page
+@model VirtMuseWeb.Pages.Resources.MetaDataCreators.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MetaDataCreator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDataCreator.Creator)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MetaDataCreator.Creator.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDataCreator.MetaData)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MetaDataCreator.MetaData.ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-page="./Index">Back to List</a>
+</div>

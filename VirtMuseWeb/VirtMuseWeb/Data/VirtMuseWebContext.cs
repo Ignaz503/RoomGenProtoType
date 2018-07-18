@@ -34,17 +34,17 @@ namespace VirtMuseWeb.Models
             //MetaDataCreator m to n join table
             modelBuilder.Entity<MetaDataCreator>().HasKey(mk => new { mk.MetaDataID, mk.CreatorID });
 
-            modelBuilder.Entity<MetaDataCreator>().HasOne(mk => mk.MetaData).WithMany(m => m.Creators).HasForeignKey(mc => mc.MetaDataID);
+            //modelBuilder.Entity<MetaDataCreator>().HasOne(mk => mk.MetaData).WithMany(m => m.Creators).HasForeignKey(mc => mc.MetaDataID);
 
-            modelBuilder.Entity<MetaDataCreator>().HasOne(ck => ck.Creator).WithMany(c => c.PiecesCreated).HasForeignKey(ck => ck.CreatorID);
+            //modelBuilder.Entity<MetaDataCreator>().HasOne(ck => ck.Creator).WithMany(c => c.PiecesCreated).HasForeignKey(ck => ck.CreatorID);
 
 
             //METADATASOURCE m to n relation ship join table
             modelBuilder.Entity<MetaDataSource>().HasKey(mk => new { mk.MetaDataID, mk.SourceID });
 
-            modelBuilder.Entity<MetaDataSource>().HasOne(mk => mk.MetaData).WithMany(m => m.Sources).HasForeignKey(mk => mk.MetaDataID);
+            //modelBuilder.Entity<MetaDataSource>().HasOne(mk => mk.MetaData).WithMany(m => m.Sources).HasForeignKey(mk => mk.MetaDataID);
 
-            modelBuilder.Entity<MetaDataSource>().HasOne(sk => sk.Source).WithMany(s => s.SourceFor).HasForeignKey(sk => sk.SourceID);
+            //modelBuilder.Entity<MetaDataSource>().HasOne(sk => sk.Source).WithMany(s => s.SourceFor).HasForeignKey(sk => sk.SourceID);
         }
     }
 }

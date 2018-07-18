@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace VirtMuseWeb.Models
 {
+
     public class MetaDataCreator
     {
         //public int ID { get; set; }
