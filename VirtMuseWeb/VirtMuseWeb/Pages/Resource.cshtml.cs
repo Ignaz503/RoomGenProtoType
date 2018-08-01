@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace VirtMuseWeb.Pages
 {
-    public class IndexModel : PageModel
+    public class ResourceModel : PageModel
     {
         public void OnGet()
         {

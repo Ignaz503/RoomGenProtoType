@@ -30,17 +30,20 @@ public class ResourceLoader : MonoBehaviour
         /// </summary>
         public string ResourceLocator;
 
+        public Func<RequestResult, RequestResult> preProcessing;
+       
         /// <summary>
         /// The type of resource that is requested
         /// needed to build correct response
         /// </summary>
         public string ResourceType;
 
-        public Request(Action<RequestResult> display,string resoureceLocator, string resourceType)
+        public Request(Action<RequestResult> display,string resoureceLocator, string resourceType, Func<RequestResult,RequestResult> preProcess)
         {
             requestCallback = display;
             ResourceLocator = resoureceLocator;
             ResourceType = resourceType;
+            preProcessing = preProcess;
         }
     }
 
@@ -54,12 +57,19 @@ public class ResourceLoader : MonoBehaviour
         /// eg safe that callback touches gamobjects(sensually ofc)
         /// </summary>
         public Action<RequestResult> requestCallBack;
+
+        /// <summary>
+        /// The resource that has been gotten from the server
+        /// </summary>
         public BaseResource res;
 
-        public RequestResult(Action<RequestResult> display, BaseResource toApply)
+        PreProcessingGameObjectInformation GameObjectInformation;
+
+        public RequestResult(Action<RequestResult> display, BaseResource toApply, PreProcessingGameObjectInformation obj)
         {
             requestCallBack = display;
             res = toApply;
+            GameObjectInformation = obj;
         }
 
     }
@@ -114,11 +124,11 @@ public class ResourceLoader : MonoBehaviour
     /// <summary>
     /// sets a request for a resource
     /// </summary>
-    public void RequestResource(Action<RequestResult> callback, string ResourceLocator, string resType)
+    public void RequestResource(Action<RequestResult> callback, string ResourceLocator, string resType,Func<RequestResult,RequestResult> preProcessing)
     {
         lock(LoadRequests)
         {
-            LoadRequests.Enqueue(new Request(callback,ResourceLocator,resType));
+            LoadRequests.Enqueue(new Request(callback,ResourceLocator,resType, preProcessing));
         };
     }
 
@@ -165,6 +175,10 @@ public class ResourceLoader : MonoBehaviour
         // TODO IMPLEMENT
         // IS Maybe RUN IN SEPERATE THREADS
         //IF SO DO NOT CALL THE CALLBACK FROM HERE
+
+        //TODO Set Request result to retrived resource
+        RequestResult result = new RequestResult(req.requestCallback, null, PreProcessingGameObjectInformation.Neutral());
+        req.preProcessing?.Invoke(result);
     }
 
     void TestRequest()

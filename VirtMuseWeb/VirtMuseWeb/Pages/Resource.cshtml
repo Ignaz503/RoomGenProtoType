@@ -1,0 +1,115 @@
+﻿@page
+@model VirtMuseWeb.Pages.ResourceModel
+@{
+    ViewData["Title"] = "Resource";
+}
+
+<h2>Create a Resource</h2>
+
+<!--Name, date, and type-->
+<div data-bind="with: resource">
+    <h4>Name of piece: <input data-bind="value: MetaData.NameOfPiece" /></h4>
+    <h4>Type of Resource:<select data-bind="options: $root.resType, value: Type, optionsText: 'name',optionsValue: 'num'"></select></h4>
+    <h4>Date of Creaion: <input data-bind="value: MetaData.DateOfCreation" type="date"></h4>
+</div>
+
+<!--Creators-->
+<div>
+    <h4>Creators:</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name:
+                </th>
+                <th>
+                    Date of Birth:
+                </th>
+                <th>
+                    Date of Death:
+                </th>
+                <th>
+                    Is Dead:
+                </th>
+            </tr>
+        </thead>
+
+        <tbody data-bind="foreach: creators">
+            <tr>
+                <td><input data-bind="value: creator.Name" /></td>
+                <td><input data-bind="value: creator.DateOfBirth" type="date" /></td>
+                <td><input data-bind="value: creator.DateOfDeath, visible: isDead" type="date" /></td>
+                <td><input data-bind="checked: isDead" type="checkbox" /></td>
+                <td><a href="#" data-bind="click: $root.removeCreator">Remove</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <button data-bind="click: addCreator">Add Creator</button>
+</div>
+
+<!--FurtherInfo-->
+<div data-bind="with: resource">
+    <h4>Further Information</h4>
+    <input data-bind="value: MetaData.FurtherInformation" type="text" />
+</div>
+
+<!--Source-->
+<div>
+    <h4>Sources:</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name:
+                </th>
+                <th>
+                    URL:
+                </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: sources">
+            <tr>
+                <td><input data-bind="value: Name" type="text"></td>
+                <td><input data-bind="value: URL" type="text"></td>
+                <td><a href="#" data-bind="click: $root.removeSource">Remove</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <button data-bind="click: $root.addSource">Add Source</button>
+</div>
+
+<!--License-->
+<div data-bind="with: resource">
+    <h4>License:</h4>
+    <input data-bind="value: MetaData.License" type="text"/>
+</div>
+
+<!--File-->
+<div>
+    <h4>Choose File To Upload</h4>
+    <input type="file" accept="image/*|.obj" data-bind="event: {change: $root.openFile}"/>
+</div>
+
+<button data-bind="click: $root.upload">Upload Resource</button>
+
+@section scripts{
+    <script>
+        requirejs.config({
+            paths:
+            {
+                jquery: "/lib/jquery/dist/jquery",
+            },
+            shim:
+            {
+                resource:
+                {
+                    deps: ['jquery']
+                }
+            }
+        });
+    </script>
+
+    <script>
+        require(["lib/jquery/dist/jquery", "js/resource"]);
+    </script>
+}

@@ -3,11 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-    <script src="~/scripts/lib/knockout-latest.js"></script>
-    <script src="~/scripts/lib/require.js"></script>
-
     <title>@ViewData["Title"] - VirtMuseWeb</title>
 
     <environment include="Development">
@@ -20,6 +15,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -38,23 +34,15 @@
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/About">About</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
-                    <li><a asp-page="/Resources/Resources/Index">Resource</a></li>
-                    <li><a asp-page="/Resources/MetaDatas/Index">MetaData</a></li>
-                    <li><a asp-page="/Resources/Creators/Index">Creator</a></li>
-                    <li><a asp-page="/Resources/Sources/Index">Source</a></li>
-                    <li><a asp-page="/Resources/ResourceDatas/Index">Resource Data</a></li>
-                    <li><a asp-page="/Resources/MetaDataSources/Index">Meta Data Sources</a></li>
-                    <li><a asp-page="/Resources/MetaDataCreators/Index">Meta Data Creators</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - VirtMuseWeb</p>
+            <p>&copy; 2017 - VirtMuseWeb</p>
         </footer>
     </div>
 
@@ -78,7 +66,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
+    <script src="~/lib/requirejs/require.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

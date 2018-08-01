@@ -3,10 +3,10 @@
   "name": "asp.net",
   "private": true,
     "devDependencies": {
-        "gulp": "3.9.0",
-        "del": "2.2.0",
         "knockout": "3.4.2",
         "@types/knockout": "3.4.58",
-        "requirejs": "2.3.5"
+        "requirejs": "2.3.5",
+        "@types/jquery": "3.3.5",
+        "@types/requirejs": "2.1.31"
     }
 }
