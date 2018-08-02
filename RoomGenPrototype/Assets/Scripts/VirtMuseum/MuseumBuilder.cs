@@ -510,7 +510,6 @@ public class MuseumBuilder : MonoBehaviour
             }
             else
             {
-                Debug.Log("hi");
                 re.material.mainTexture = existingWallTexture[w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators+w.Rotation + sign];
             }
         }

@@ -107,7 +107,8 @@ public class Room
 
     public Room(RoomType t, List<Vector2Int> Tiles, Museum virtMuse)
     {
-        RoomID = RoomIDGen++;
+        //RoomID = RoomIDGen++;
+        RoomID = (uint)virtMuse.TransformTileCoordIntoOneD(Tiles[0]);
         Type = t;
         RoomTiles = Tiles;
         this.virtMuse = virtMuse;

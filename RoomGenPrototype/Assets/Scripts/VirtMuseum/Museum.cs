@@ -398,7 +398,7 @@ public class Museum
     /// </summary>
     /// <param name="coord"></param>
     /// <returns></returns>
-    int TransformTileCoordIntoOneD(Vector2Int coord)
+    public int TransformTileCoordIntoOneD(Vector2Int coord)
     {
         return coord.x + (coord.y * Size);
     }
