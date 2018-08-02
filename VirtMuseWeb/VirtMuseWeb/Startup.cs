@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using VirtMuseWeb.Models;
+using VirtMuseWeb.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace VirtMuseWeb
 {
@@ -23,10 +25,25 @@ namespace VirtMuseWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<VirtMuseWebContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            VirtMuseWebContext context = services.First(serv =>
+            {
+                return serv.ServiceType == typeof(VirtMuseWebContext);
+            }).ImplementationInstance as VirtMuseWebContext;
+
             services.AddMvc();
 
-            services.AddDbContext<VirtMuseWebContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("VirtMuseWebContext")));
+            services.AddLogging();
+
+            services.AddTransient<IMailService, MailService>();
+
+            services.AddTransient<IResourceService, ResourceService>(
+                (serv) => {
+                    return new ResourceService(serv.GetService<IHostingEnvironment>(), serv.GetService<VirtMuseWebContext>()
+                       );
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +60,6 @@ namespace VirtMuseWeb
             }
 
             app.UseStaticFiles();
-
             app.UseMvc();
         }
     }

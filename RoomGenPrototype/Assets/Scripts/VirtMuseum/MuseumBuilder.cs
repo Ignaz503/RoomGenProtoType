@@ -220,6 +220,7 @@ public class MuseumBuilder : MonoBehaviour
                 //    res =>
                 //    {
                 //        res.res.ApplyToGameobject(floor);
+                //TODO apply PreProcessingGameobject information
                 //    },
                 //    r.FloorTexture.AssociatedResourceLocators,
                 //    typeof(TextureResource).ToString()
@@ -228,6 +229,7 @@ public class MuseumBuilder : MonoBehaviour
                 //    res =>
                 //    {
                 //        res.res.ApplyToGameobject(ceiling);
+                //TODO apply PreProcessingGameobject information
                 //    },
                 //    r.CeilingTexture.AssociatedResourceLocators,
                 //    typeof(TextureResource).ToString()

@@ -1,11 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.9</TypeScriptToolsVersion>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="graph.dgml" />
-    <None Remove="scripts\app.ts" />
+    <Content Remove="wwwroot\js\CreatorModel.ts" />
+    <Content Remove="wwwroot\js\MetaDataModel.ts" />
+    <Content Remove="wwwroot\js\Models.ts" />
+    <Content Remove="wwwroot\js\resource.ts" />
+    <Content Remove="wwwroot\js\ResourceModel.ts" />
+    <Content Remove="wwwroot\js\SourceModel.ts" />
+    <Content Remove="wwwroot\js\webmail.ts" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
@@ -15,9 +20,16 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <TypeScriptCompile Include="wwwroot\js\CreatorModel.ts" />
+    <TypeScriptCompile Include="wwwroot\js\MetaDataModel.ts" />
+    <TypeScriptCompile Include="wwwroot\js\Models.ts" />
+    <TypeScriptCompile Include="wwwroot\js\resource.ts" />
+    <TypeScriptCompile Include="wwwroot\js\ResourceModel.ts" />
+    <TypeScriptCompile Include="wwwroot\js\SourceModel.ts" />
+    <TypeScriptCompile Include="wwwroot\js\webmail.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="scripts\app.ts" />
+    <Folder Include="wwwroot\lib\knockout\" />
+    <Folder Include="wwwroot\lib\requirejs\" />
   </ItemGroup>
 </Project>
