@@ -23,9 +23,9 @@ namespace VirtMuseWeb.Controllers
         }
 
         [HttpGet, Route("getmuseum")]
-        public string getmuseum([FromBody]JObject request)
+        public string getmuseum(string request)
         {
-            return _museumservice.GetMuseum(request.ToObject<MuseumRequest>());
+            return _museumservice.GetMuseum(JsonConvert.DeserializeObject<MuseumRequest>(request));
         }
     }
 }

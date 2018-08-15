@@ -166,18 +166,9 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
             };
             this.test = () => {
                 console.log("Hi");
-                alert("Hi");
-                $.ajax({
-                    url: "/api/museum/getmuseum",
-                    type: "POST",
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: "json",
-                    data: JSON.stringify({ "MuseumType": "just anything really", "Size": 5 }),
-                    success: (data) => { console.log(data); },
-                    error: (xhr, resp, text) => {
-                        console.log(xhr, resp, text);
-                    }
-                });
+                fetch(`/api/museum/getmuseum?request=${JSON.stringify({ "MuseumType": "just anything really", "Size": 5 })}`).then(function (response) {
+                    return response.json();
+                }).then(console.log);
             };
         }
     }

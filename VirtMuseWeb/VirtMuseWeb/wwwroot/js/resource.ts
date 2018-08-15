@@ -109,36 +109,30 @@ class ResourceViewModel {
         };
 
         this.addCreator = () => {
-            this.creators.push({ creator: new CreatorModel.Creator("", "", ""), isDead:new ko.observable(false) });
-        }
+            this.creators.push({ creator: new CreatorModel.Creator("", "", ""), isDead: new ko.observable(false) });
+        };
 
-        this.removeCreator = (creator) =>
-        {
-            if (this.creators().length == 1)
-            {
+        this.removeCreator = (creator) => {
+            if (this.creators().length == 1) {
                 alert("you need at least one creator");
                 return;
             }
             this.creators.remove(creator);
-        } 
+        }; 
 
-        this.addSource = () =>
-        {
+        this.addSource = () => {
             this.sources.push(new SourceModel.Source("", ""));
-        }
+        };
 
-        this.removeSource = (src) =>
-        {
-            if (this.sources().length == 1)
-            {
+        this.removeSource = (src) => {
+            if (this.sources().length == 1) {
                 alert("You need at leaste one source");
                 return;//at atleast one ressources
             }
             this.sources.remove(src);
-        }
+        };
 
-        this.openFile = (insertIdx: number, element, event) =>
-        {
+        this.openFile = (insertIdx: number, element, event) => {
             var file = event.target.files[0];
             var f = new FileReader();
 
@@ -158,8 +152,7 @@ class ResourceViewModel {
             if (file) {
                 f.readAsDataURL(file);
             }
-           
-        }
+        };
 
         this.validateInput = () => {
             var i: number = 0;// loop var
@@ -228,57 +221,42 @@ class ResourceViewModel {
 
         this.typeChange = (val) => { this.type(val.Type); };
 
-        this.openImage = (element, event) =>
-        {
+        this.openImage = (element, event) => {
             this.openFile(0, element, event);
-        }
+        };
             
-        this.openMesh = (element, event) =>
-        {
+        this.openMesh = (element, event) => {
             this.openFile(0, element, event);
-        }
+        };
 
-        this.openMaterial = (element, event) =>
-        {
+        this.openMaterial = (element, event) => {
             this.openFile(1, element, event);
-        }
+        };
 
-        this.openTexture = (element, event) =>
-        {
+        this.openTexture = (element, event) => {
             this.openFile(2, element, event);
-        }
+        };
 
-        this.openFloorTexture = (element, event) =>
-        {
+        this.openFloorTexture = (element, event) => {
             this.openFile(0, element, event);
-        }
+        };
 
-        this.openCeilingTexture = (element, event) =>
-        {
+        this.openCeilingTexture = (element, event) => {
             this.openFile(1, element, event);
-        }
+        };
 
-        this.openWallTexture = (element, event) =>
-        {
+        this.openWallTexture = (element, event) => {
             this.openFile(2, element, event);
-        }
+        };
 
         this.test = () => {
             console.log("Hi");
-            alert("Hi");
-            $.ajax(
-                {
-                    url: "/api/museum/getmuseum",
-                    type: "POST",
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: "json",
-                    data: JSON.stringify({ "MuseumType": "just anything really", "Size": 5 }),
-                    success: (data) => { console.log(data); },
-                    error: (xhr, resp, text) => {
-                        console.log(xhr, resp, text);
-                    }
-                });
+            fetch(`/api/museum/getmuseum?request=${JSON.stringify({ "MuseumType": "just anything really", "Size": 5 })}`).then(
+                function (response) {
+                    return response.json();
+                }).then(console.log);
         }
+
     }
 }
 
