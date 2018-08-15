@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <TypeScriptToolsVersion>2.9</TypeScriptToolsVersion>
@@ -10,7 +10,6 @@
     <Content Remove="wwwroot\js\resource.ts" />
     <Content Remove="wwwroot\js\ResourceModel.ts" />
     <Content Remove="wwwroot\js\SourceModel.ts" />
-    <Content Remove="wwwroot\js\webmail.ts" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
@@ -26,10 +25,18 @@
     <TypeScriptCompile Include="wwwroot\js\resource.ts" />
     <TypeScriptCompile Include="wwwroot\js\ResourceModel.ts" />
     <TypeScriptCompile Include="wwwroot\js\SourceModel.ts" />
-    <TypeScriptCompile Include="wwwroot\js\webmail.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Utility\VirtMuseum\Interfaces\" />
     <Folder Include="wwwroot\lib\knockout\" />
     <Folder Include="wwwroot\lib\requirejs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\Neuer Ordner\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\..\..\Neuer Ordner\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,25 +25,22 @@ namespace VirtMuseWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<VirtMuseWebContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            VirtMuseWebContext context = services.First(serv =>
-            {
-                return serv.ServiceType == typeof(VirtMuseWebContext);
-            }).ImplementationInstance as VirtMuseWebContext;
+            services.AddDbContext<VirtMuseWebContext>(options => { 
+                    options.UseSqlServer(Configuration.GetConnectionString("VirtMuseWebContext")); options.EnableSensitiveDataLogging(true);
+            });
 
             services.AddMvc();
 
             services.AddLogging();
 
-            services.AddTransient<IMailService, MailService>();
-
-            services.AddTransient<IResourceService, ResourceService>(
+            services.AddScoped<IResourceService, ResourceService>(
                 (serv) => {
-                    return new ResourceService(serv.GetService<IHostingEnvironment>(), serv.GetService<VirtMuseWebContext>()
+                    return new ResourceService(serv.GetService<IHostingEnvironment>(), serv.GetService<VirtMuseWebContext>(), serv.GetService<ILogger<Program>>()
                        );
                 });
 
+            services.AddTransient<IMuseumService, MuseumService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

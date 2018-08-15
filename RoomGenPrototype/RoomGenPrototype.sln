@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomGenPrototype", "Assembly-CSharp.csproj", "{964E9339-6D78-38A6-7CB4-8D4CD697E4C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{964E9339-6D78-38A6-7CB4-8D4CD697E4C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomGenPrototype", "Assembly-CSharp-firstpass.csproj", "{006F63AA-E6CE-0A78-1375-A8446932DEF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{006F63AA-E6CE-0A78-1375-A8446932DEF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomGenPrototype", "Assembly-CSharp-Editor-firstpass.csproj", "{7357E651-315E-82AA-7EAA-B2C1398FEFDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{7357E651-315E-82AA-7EAA-B2C1398FEFDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

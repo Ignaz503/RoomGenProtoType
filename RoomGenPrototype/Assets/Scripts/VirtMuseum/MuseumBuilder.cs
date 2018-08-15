@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class MuseumBuilder : MonoBehaviour
 {
@@ -512,7 +513,7 @@ public class MuseumBuilder : MonoBehaviour
             }
             else
             {
-                Debug.Log("hi");
+                //Debug.Log("hi");
                 re.material.mainTexture = existingWallTexture[w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators+w.Rotation + sign];
             }
         }

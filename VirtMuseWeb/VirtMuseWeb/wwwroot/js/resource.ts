@@ -3,10 +3,13 @@ import $ = require("jquery");
 import Model = require('../js/ResourceModel');
 import CreatorModel = require('../js/CreatorModel');
 import SourceModel = require('../js/SourceModel');
+import { Type } from "../js/ResourceModel";
 
 class ResourceViewModel {
-    resType: { num: number, name: string }[] = [{ num: Model.Type.Image.valueOf(), name: 'Image' },
-    { num: Model.Type.Mesh.valueOf(), name: 'Mesh' }];
+    resType: { num: number, name: string }[] =
+        [{ num: Model.Type.Image.valueOf(), name: 'Image' },
+            { num: Model.Type.Mesh.valueOf(), name: 'Mesh' },
+            { num: Model.Type.RoomStyle.valueOf(),name:"Room Style" }];
 
     resource: KnockoutObservable<Model.Resource> = new ko.observable();
 
@@ -18,19 +21,39 @@ class ResourceViewModel {
 
     file: KnockoutObservable<string> = new ko.observable();
 
-    upload: () => void;
+    type: KnockoutObservable<number> = new ko.observable();
 
-    addCreator: () => void;
+    upload: () => void;//uploads file via ajax post, validates input, adds sources and creators to resource 
 
-    removeCreator: (creator) => void;
+    addCreator: () => void;//adds creator to ko observable creators
 
-    addSource: () => void;
+    removeCreator: (creator) => void; // removes creator from creators ko observable
 
-    removeSource: (src) => void;
+    addSource: () => void;//adds a source to ko observable
 
-    openFile: (element, event) => void;
+    removeSource: (src) => void;//removes a source from sources ko observable
 
-    validateInput: () => boolean;
+    openFile: (insertIdx: number, element, event) => void;//opens any file and adds to resource data
+
+    openImage: (element, event) => void;//oepns an image
+
+    openMesh: (element, event) => void;//oepns a .obj file
+
+    openMaterial: (element, event) => void;//opens a material for a mesh
+
+    openTexture: (element, event) => void;//opens a texture for a mesh
+
+    openFloorTexture: (element, event) => void;//opens a texture for a mesh
+
+    openCeilingTexture: (element, event) => void;//opens a texture for a mesh
+
+    openWallTexture: (element, event) => void;//opens a texture for a mesh
+
+    validateInput: () => boolean;//validates the user input TODO: sql injection check
+
+    typeChange: (val) => void; // event for upload type change that updates ko observable
+
+    test: () => void;
 
     constructor()
     {
@@ -43,16 +66,17 @@ class ResourceViewModel {
                 DateOfCreation: "",
                 Creators: [],
                 FurtherInformation: "",
-                License:"",
+                License: "",
                 Sources: [],
             },
-            Data : null
-        });
+            Data: []
+        }); //initialize resource
+
+        this.type(0);//initialize type
 
         this.upload = () => {
 
             var i: number;
-            //var c: string = "";
             for (i = 0; i < this.creators().length; i++)
             {
                 if (!this.creators()[i].isDead())
@@ -60,46 +84,28 @@ class ResourceViewModel {
                     this.creators()[i].creator.DateOfDeath = "";
                 }
                 this.resource().MetaData.Creators.push(this.creators()[i].creator);
-                //c += this.creators()[i].creator.name + "\n";
+
             }
 
-            //var srces: string = "";
             for (i = 0; i < this.sources().length; i++)
             {
                 this.resource().MetaData.Sources.push(this.sources()[i]);
-                //srces += this.sources()[i].name + "\n";
             }
 
             if (!this.validateInput())
                 return;
-
-            //alert("uplod pressed " + this.resource().metaData.nameOfPiece
-            //       + " " + this.resource().type + "\n"
-            //    + this.resource().metaData.dateOfCreation + "\n" + c
-            //    + "\n"+ srces
-            //);
-
-            alert(JSON.stringify(this.resource()));
-
             $.ajax(
                 {
                     url: "/api/resource/postresource",
                     type: "POST",
-                    data: this.resource(),
                     contentType: 'application/json; charset=utf-8',
                     dataType: "json",
-                    success: (data) => { alert(data); }
+                    data: JSON.stringify(this.resource()),
+                    success: (data) => { alert(data); },
+                    error: (xhr, resp, text) => {
+                        console.log(xhr, resp, text);
+                    }
                 });
-
-            //fetch("/api/resource/postresource/", {
-            //    method: "POST",
-            //    mode: "cors",
-            //    cache: "no-cache",
-            //    headers: {
-            //        "Content-Type":"application/json; charset=utf-8"
-            //    },
-            //    body: JSON.stringify(this.resource()),
-            //}).then(data => alert(data.text()));
         };
 
         this.addCreator = () => {
@@ -108,6 +114,11 @@ class ResourceViewModel {
 
         this.removeCreator = (creator) =>
         {
+            if (this.creators().length == 1)
+            {
+                alert("you need at least one creator");
+                return;
+            }
             this.creators.remove(creator);
         } 
 
@@ -118,19 +129,24 @@ class ResourceViewModel {
 
         this.removeSource = (src) =>
         {
+            if (this.sources().length == 1)
+            {
+                alert("You need at leaste one source");
+                return;//at atleast one ressources
+            }
             this.sources.remove(src);
         }
 
-        this.openFile = (element, event) =>
+        this.openFile = (insertIdx: number, element, event) =>
         {
             var file = event.target.files[0];
             var f = new FileReader();
 
             f.onload = (e) => {
-                var res = f.result;
-                //alert("hello" + res.length);
-
-                this.resource().Data = Array.from(new Uint8Array(res));
+                var res: string = f.result;
+                //remove data:*/*;base64, aaat the start of string
+                res = res.slice(res.indexOf(",") + 1, res.length);
+                this.resource().Data.splice(insertIdx, 0, res);
             };
             f.onerror = (e) => {
                 alert("Somthing went wrong whilst reading the file, pleas try again\n" +
@@ -140,35 +156,129 @@ class ResourceViewModel {
                 //TODO progress update
             };
             if (file) {
-                f.readAsArrayBuffer(file);
+                f.readAsDataURL(file);
             }
-
+           
         }
 
         this.validateInput = () => {
+            var i: number = 0;// loop var
 
-            if (this.resource().MetaData.Creators.length < 1)
+            if (this.resource().Type != Type.RoomStyle)
             {
-                alert("Please enter at least one creator");
-                return false;
+                if (this.resource().MetaData.Creators.length < 1) {
+                    alert("Please enter at least one creator");
+                    return false;
+                } 
+                for (i = 0; i < this.resource().MetaData.Creators.length; i++)
+                {
+                    if (this.resource().MetaData.Creators[i].Name == "")
+                    {
+                        alert("Please give every creator a name!");
+                        return false;
+                    }
+                }
             }
-            if (this.resource().MetaData.Sources.length < 1) {
+
+            if (this.resource().MetaData.Sources.length < 1)
+            {
                 alert("Pleas enter at least one source");
                 return false;
             }
+            for (i = 0; i < this.resource().MetaData.Sources.length; i++)
+            {
+                if (this.resource().MetaData.Sources[i].Name == "")
+                {
+                    alert("Please at least all name your resources");
+                    return false;
+                }
+            }
+
             if (this.resource().MetaData.License == "")
             {
-                alert("Please enter the license under which this resource stands");
+                alert("Please enter the license under which this/these resource/s stand(s)");
                 return false;
             }
             if (this.resource().Data == null)
             {
-                alert("Please choose a file to upload");
+                if (this.resource().Type == Type.Image) alert("Please choose a image to upload");
+                else if (this.resource().Type == Type.Mesh) alert("Please choos at least a mesh to upload");
+                else if (this.resource().Type == Type.RoomStyle) alert("Please choose 3 images to upload");
                 return false;
             }
+
+            //mesh check
+            if (this.resource().Data[0] == "")
+            {
+                alert("You need to choose a mesh to upload");
+                return false;
+            }
+
+            //style echck
+            if (this.resource().Data[0] == "" ||
+                this.resource().Data[1] == "" ||
+                this.resource().Data[2] == "")
+            {
+                alert("All three images must be chosen");
+                return false;
+            }
+
             return true;
         };
 
+        this.typeChange = (val) => { this.type(val.Type); };
+
+        this.openImage = (element, event) =>
+        {
+            this.openFile(0, element, event);
+        }
+            
+        this.openMesh = (element, event) =>
+        {
+            this.openFile(0, element, event);
+        }
+
+        this.openMaterial = (element, event) =>
+        {
+            this.openFile(1, element, event);
+        }
+
+        this.openTexture = (element, event) =>
+        {
+            this.openFile(2, element, event);
+        }
+
+        this.openFloorTexture = (element, event) =>
+        {
+            this.openFile(0, element, event);
+        }
+
+        this.openCeilingTexture = (element, event) =>
+        {
+            this.openFile(1, element, event);
+        }
+
+        this.openWallTexture = (element, event) =>
+        {
+            this.openFile(2, element, event);
+        }
+
+        this.test = () => {
+            console.log("Hi");
+            alert("Hi");
+            $.ajax(
+                {
+                    url: "/api/museum/getmuseum",
+                    type: "POST",
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: "json",
+                    data: JSON.stringify({ "MuseumType": "just anything really", "Size": 5 }),
+                    success: (data) => { console.log(data); },
+                    error: (xhr, resp, text) => {
+                        console.log(xhr, resp, text);
+                    }
+                });
+        }
     }
 }
 

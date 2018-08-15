@@ -12,7 +12,7 @@ using VirtMuseWeb.Services;
 
 namespace VirtMuseWeb.Controllers
 {
-    //[Produces("application/json")]
+    [Produces("application/json")]
     [Route("api/resource")]
     public class ResourceController : Controller
     {
@@ -24,21 +24,21 @@ namespace VirtMuseWeb.Controllers
         }
 
         [HttpGet, Route("getres")]
-        public Resource GetResource()
+        public ResourceModel GetResource(int id)
         {
-            return _resourceService.GetResource(0);
+            return _resourceService.GetResource(id);
         }
 
         [HttpPost, Route("postresource")]
-        public string PostResource(Resource res)
+        public async Task<StatusCodeResult> PostResource([FromBody]JObject res)
         {
             if(res== null)
             {
-                return "null";
+                return BadRequest() ;
             }
-            _resourceService.PostResource(res);
-            return "success";
-        }
 
+            await _resourceService.PostResource(res.ToObject<Resource<byte>>());
+            return Ok();
+        }
     }
 }

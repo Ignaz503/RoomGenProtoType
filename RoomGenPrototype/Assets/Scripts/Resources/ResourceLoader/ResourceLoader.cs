@@ -93,6 +93,10 @@ public class ResourceLoader : MonoBehaviour
         }
         Instance = this;
 
+        Material m = new Material(Shader.Find(""));
+
+        
+
     //    ws = new WebSocket(url);
 
     //    ws.OnMessage += (sender, e) =>

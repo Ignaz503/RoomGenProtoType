@@ -7,25 +7,24 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using VirtMuseWeb.Models;
-
+using VirtMuseWeb.Utility;
+using UnityEngine;
 
 namespace VirtMuseWeb.Services
 {
     public interface IResourceService
     {
-        Resource GetResource(int ID);
-        Creator GetCreator(int ID);
-        MetaData GetMetaData(int ID);
-        Source GetSource(int ID);
-        void PostResource(Resource res);
+        ResourceModel GetResource(int ID);
+        Task PostResource(Resource<byte> res);
     }
 
     public class ResourceService : IResourceService
     {
         IHostingEnvironment _env;
         VirtMuseWebContext _context;
+        ILogger<Program> _logger;
 
-        public ResourceService(IHostingEnvironment env, VirtMuseWebContext context)
+        public ResourceService(IHostingEnvironment env, VirtMuseWebContext context, ILogger<Program> logger)
         {
             _env = env;
 
@@ -36,31 +35,68 @@ namespace VirtMuseWeb.Services
 
             if (context == null)
                 throw new Exception("Context was null");
+
+            if (_context.Database == null)
+                throw new Exception("The Database is null");
+
+
+            _logger = logger;
+            if (logger == null)
+                throw new Exception("Logger is null");
+
         }
 
-        public Creator GetCreator(int ID)
+        public ResourceModel GetResource(int ID)
         {
-            throw new NotImplementedException();
+            return _context.Resource.First(r =>  r.ID == ID);
         }
-
-        public MetaData GetMetaData(int ID)
+       
+        /// <summary>
+        /// creates task that transforms float resource to binary resource
+        /// and adds it to the DB
+        /// </summary>
+        /// <param name="bRes"></param>
+        public async Task PostResource(Resource<byte> bRes)
         {
-            throw new NotImplementedException();
-        }
+            FastObjImporter imp = new FastObjImporter();
+            ResourceModel resModel = new ResourceModel()
+            {
+                ID = bRes.ID,
+                MetaDataJSON =JsonConvert.SerializeObject(bRes.MetaData),
+                Type = bRes.Type
+            };
 
-        public Resource GetResource(int ID)
-        {
-            throw new NotImplementedException();
-        }
+            if (bRes.Type == ResourceType.Mesh)
+            {
+                //make unity mesh if type mesh
+                string mesh = System.Text.Encoding.Default.GetString(bRes.Data[0]);
+                UnityMeshData mData = imp.BuildMesh(mesh);
+                if(bRes.Data.Length == 3)
+                    mData.Texture = bRes.Data[2];
+                //TODO: resource model not bResData 0
+                resModel.Data = mData.Serialize();
+            }
+            else if (bRes.Type == ResourceType.RoomStyle)
+            {
+                Utility.RoomStyle rS = new Utility.RoomStyle(bRes.Data);
+                resModel.Data = rS.Serialize();
+            }
+            else
+            {
+                //image 
+                //just set resource model to byte array
+                resModel.Data = bRes.Data[0];
+            }
 
-        public Source GetSource(int ID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void PostResource(Resource res)
-        {
-            throw new NotImplementedException(res.Data.Length.ToString());
+            try
+            {
+                resModel.ID = 0;
+                var entry = _context.Resource.Add(new ResourceModel());
+                entry.CurrentValues.SetValues(resModel);
+                await _context.SaveChangesAsync();
+            }catch(Exception e){
+                _logger.LogError("Something went wrong whilst adding to the DB" + e);
+            }
         }
     }
 }

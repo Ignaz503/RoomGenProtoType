@@ -62,7 +62,8 @@ public class InteractionPrompt : MonoBehaviour {
 
     private void LateUpdate()
     {
-        PlaceBetweenAndRotateTowardsFirst(player.PlayerCam.transform, obj.transform, .5f);
+        if(obj != null)
+            PlaceBetweenAndRotateTowardsFirst(player.PlayerCam.transform, obj.transform, .5f);
     }
     
     /// <summary>

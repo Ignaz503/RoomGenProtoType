@@ -2,12 +2,13 @@
 
 export enum Type {
     Image = 0,
-    Mesh = 1
+    Mesh = 1,
+    RoomStyle = 2
 };
 
 export class Resource {
     ID: number;
     Type: Type;
     MetaData: MetaDataModel.MetaData;
-    Data: any[];
+    Data: string[];
 }

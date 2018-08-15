@@ -302,7 +302,8 @@ public class Museum
             foreach(int wID in r.Walls)
             {
                 Wall w = Walls[wID];
-                w.TextureInfos.Add(new MuseumTextureInfo() { AssociatedResourceLocators = s.wallTexture.name });
+                w.TextureInfos.Add(new MuseumTextureInfo() { AssociatedResourceLocators = s.wallTexture.name 
+                });
             }
             //TODO: fill associated resource locator
         }
