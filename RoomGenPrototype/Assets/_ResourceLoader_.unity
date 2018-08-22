@@ -486,7 +486,7 @@ MonoBehaviour:
   ImageDisplay: {fileID: 590836661}
   MeshDisplay: {fileID: 681124401}
   Wall: {fileID: 706161871}
-  ResourceIDs: 01000000040000000500000008000000
+  ResourceIDs: f0030000040000000500000008000000
   NumWorkableRequestsSameTime: 5
   BaseURL: http://localhost:52765
   ResourceRoute:

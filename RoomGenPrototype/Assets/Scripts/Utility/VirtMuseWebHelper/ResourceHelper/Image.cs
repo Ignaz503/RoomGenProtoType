@@ -95,15 +95,15 @@ namespace VirtMuseWeb.Utility
         /// Image as a 1D color array
         /// </summary>
         [SerializeField]
-        Color32[] color;
+        Color32[,] color;
 
-        public Color32 this[int x, int y] { get { return color[y * Width + x]; } set { color[y * Width + x] = value; } }
+        public Color32 this[int x, int y] { get { return color[x,y]; } set { color[x,y] = value; } }
 
         public Image(int w, int h)
         {
             Width = w;
             Height = h;
-            color = new Color32[Width * Height];
+            color = new Color32[Width,Height];
         }
 
         /// <summary>
@@ -130,15 +130,19 @@ namespace VirtMuseWeb.Utility
         {
             w.Write((Int32)Width);
             w.Write((Int32)Height);
-            foreach (Color32 c in color)
+            for (int x = 0; x < Width; x++)
             {
-                w.Write(c.A);
-                w.Write(c.R);
-                w.Write(c.G);
-                w.Write(c.B);
+                for (int y = 0; y < Height; y++)
+                {
+                    Color32 c = color[x, y];
+                    w.Write(c.A);
+                    w.Write(c.R);
+                    w.Write(c.G);
+                    w.Write(c.B);
+                }
             }
-        }
 
+        }
         /// <summary>
         /// serializes image into already existing binary writer
         /// </summary>

@@ -126,7 +126,7 @@ public class ResourceLoader : MonoBehaviour
 
     void TestImageRequest()
     {
-        DisplayResourceRequest<DisplayImageResource> req = new DisplayResourceRequest<DisplayImageResource>(1, ImageDisplay, null);
+        DisplayResourceRequest<DisplayImageResource> req = new DisplayResourceRequest<DisplayImageResource>(ResourceIDs[0], ImageDisplay, null);
 
         PostRequest(req, RequestType.Other);
 
