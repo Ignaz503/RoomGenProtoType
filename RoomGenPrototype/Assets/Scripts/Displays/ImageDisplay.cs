@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ImageDisplay : Display {
 
     /// <summary>
@@ -73,5 +74,10 @@ public class ImageDisplay : Display {
     protected override void InteractionEnded()
     {
         //throw new System.NotImplementedException();
+    }
+
+    public override void ApplyPreProcessingInformation(PreProcessingGameObjectInformation info)
+    {
+        info.ApplyScale(meshRenderer.transform);
     }
 }

@@ -28,11 +28,6 @@ public abstract class Display : MonoBehaviour, IInteractable {
     }
 
     /// <summary>
-    /// old metadata string used for testing
-    /// </summary>
-    [Obsolete]
-    string metadata = "All Speech is free speech";
-    /// <summary>
     /// the metadata that further describes the resource held by the display
     /// </summary>
     public MetaData MetaData { get; private set; }
@@ -56,12 +51,9 @@ public abstract class Display : MonoBehaviour, IInteractable {
         SetInteractionType(resource.InteractionBehaviour);
         //TODO
         MetaData = resource.MetaData;
-        if (GetType() != typeof(CenterMeshDisplay))
-            metadata = GetType().ToString();
-        else
-            metadata = LoremIpsum.IpsumLorem;
     }
 
+    public abstract void ApplyPreProcessingInformation(PreProcessingGameObjectInformation info);
     /// <summary>
     /// sets the interaction type of this display
     /// </summary>
@@ -85,12 +77,6 @@ public abstract class Display : MonoBehaviour, IInteractable {
         {
             interactionType = t;
         }
-    }
-
-    [Obsolete]
-    public string GetMetadata()
-    {
-        return metadata;
     }
 
     /// <summary>

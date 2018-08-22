@@ -34,13 +34,16 @@ namespace VirtMuseWeb
 
             services.AddLogging();
 
-            services.AddScoped<IResourceService, ResourceService>(
-                (serv) => {
+            services.AddScoped<IResourceService, ResourceService>((serv) => {
                     return new ResourceService(serv.GetService<IHostingEnvironment>(), serv.GetService<VirtMuseWebContext>(), serv.GetService<ILogger<Program>>()
                        );
                 });
 
-            services.AddTransient<IMuseumService, MuseumService>();
+            services.AddScoped<IMuseumService, MuseumService>((serv) =>
+            {
+                return new MuseumService(serv.GetService<IHostingEnvironment>(), serv.GetService<VirtMuseWebContext>(), serv.GetService<ILogger<Program>>()
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

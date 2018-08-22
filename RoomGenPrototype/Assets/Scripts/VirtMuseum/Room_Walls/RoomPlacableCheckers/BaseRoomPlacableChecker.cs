@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
 /// <summary>
 /// checks for the room types defined by me if they are placable at a certain location
 /// in the musem
@@ -13,7 +11,7 @@ public class BaseRoomTypePlacableCheker : IRoomPlacableChecker
     /// the type for which this placable checker has been defined
     /// </summary>
     //RoomType type;
-    
+
     /// <summary>
     /// the possible steps one can take from the base tile we want to place the room at
     /// that can be taken to build this rom shape

@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MuseumGenerator : MonoBehaviour {
 
     /// <summary>
@@ -14,7 +15,7 @@ public class MuseumGenerator : MonoBehaviour {
     /// <summary>
     /// temp queue for testing
     /// </summary>
-    static Queue<Tuple<MuseumRequest,Queue<string>>> museumRequests = new Queue<Tuple<MuseumRequest, Queue<string>>>();
+    static Queue<Tuple<MuseumRequestData,Queue<string>>> museumRequests = new Queue<Tuple<MuseumRequestData, Queue<string>>>();
 
     /// <summary>
     /// temp size selector of museum
@@ -81,7 +82,7 @@ public class MuseumGenerator : MonoBehaviour {
         if(museumRequests.Count > 0)
         {
             //TODO Move away from update
-            Tuple<MuseumRequest,Queue<string>> req = null;
+            Tuple<MuseumRequestData,Queue<string>> req = null;
             if ((req = museumRequests.Dequeue())!= null)
             {
                 Museum virt = new Museum((int)req.Item1.Size);
@@ -112,8 +113,8 @@ public class MuseumGenerator : MonoBehaviour {
     /// <param name="requester">queue where respone should go??? no idea-> yes indeed</param>
     public void RequestNewMuseum(string request, Queue<string> requester)
     {
-        museumRequests.Enqueue(new Tuple<MuseumRequest, Queue<string>>(
-                                    MuseumRequest.Deserialize(request),
+        museumRequests.Enqueue(new Tuple<MuseumRequestData, Queue<string>>(
+                                    MuseumRequestData.Deserialize(request),
                                     requester));
     }
 

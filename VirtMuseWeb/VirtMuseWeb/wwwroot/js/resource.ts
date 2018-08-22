@@ -53,8 +53,6 @@ class ResourceViewModel {
 
     typeChange: (val) => void; // event for upload type change that updates ko observable
 
-    test: () => void;
-
     constructor()
     {
         this.resource({
@@ -106,6 +104,21 @@ class ResourceViewModel {
                         console.log(xhr, resp, text);
                     }
                 });
+            this.resource({
+                ID: -1,
+                Type: Model.Type.Image,
+                MetaData: {
+                    ResourceID: -1,
+                    NameOfPiece: "",
+                    DateOfCreation: "",
+                    Creators: [],
+                    FurtherInformation: "",
+                    License: "",
+                    Sources: [],
+                },
+                Data: []
+            }); //initialize resource
+            this.typeChange(0);
         };
 
         this.addCreator = () => {
@@ -138,7 +151,7 @@ class ResourceViewModel {
 
             f.onload = (e) => {
                 var res: string = f.result;
-                //remove data:*/*;base64, aaat the start of string
+                //remove data:*/*;base64, at the start of string
                 res = res.slice(res.indexOf(",") + 1, res.length);
                 this.resource().Data.splice(insertIdx, 0, res);
             };
@@ -248,14 +261,6 @@ class ResourceViewModel {
         this.openWallTexture = (element, event) => {
             this.openFile(2, element, event);
         };
-
-        this.test = () => {
-            console.log("Hi");
-            fetch(`/api/museum/getmuseum?request=${JSON.stringify({ "MuseumType": "just anything really", "Size": 5 })}`).then(
-                function (response) {
-                    return response.json();
-                }).then(console.log);
-        }
 
     }
 }

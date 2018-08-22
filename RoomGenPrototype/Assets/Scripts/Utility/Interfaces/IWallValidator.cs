@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public interface IWallValidator
 {
     /// <summary>
@@ -12,4 +13,3 @@ public interface IWallValidator
     /// <returns>true if wall is to be kept, false otherwise</returns>
     bool WallNeedsRemoval(uint cornerOneCount, uint cornerTwoCount);
 }
-

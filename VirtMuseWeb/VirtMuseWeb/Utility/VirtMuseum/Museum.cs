@@ -7,6 +7,8 @@ using System.Xml;
 using System.Text;
 using System.Linq;
 using UnityEngine;
+using VirtMuseWeb.Models;
+
 namespace VirtMuseWeb.Utility
 {
     public enum DisplayType
@@ -20,13 +22,22 @@ namespace VirtMuseWeb.Utility
         /// <summary>
         /// helper dictionary that maps from room type to placable checker of this room
         /// </summary>
-        static Dictionary<RoomType, IRoomPlacableChecker> roomTypeToPlaceableChecker = new Dictionary<RoomType, IRoomPlacableChecker>()
-    {
-            { RoomType.Normal, new BaseRoomTypePlacableCheker(RoomType.Normal) },
-            { RoomType.Long, new BaseRoomTypePlacableCheker(RoomType.Long) },
-            { RoomType.Big, new BaseRoomTypePlacableCheker(RoomType.Big) },
-            { RoomType.L, new BaseRoomTypePlacableCheker(RoomType.L) }
-    };
+        Dictionary<RoomType, IRoomPlacableChecker> roomTypeToPlaceableChecker;
+
+        /// <summary>
+        /// all possible resources for this museum
+        /// </summary>
+        List<(int,ResourceType)> possibleResourceIDs;
+
+        /// <summary>
+        /// all possible room styles for this museum
+        /// </summary>
+        List<int> possibleRoomStyleIDs;
+
+        /// <summary>
+        /// event called after a room is created, placed in museum grid, and has doors
+        /// </summary>
+        public event Action<Room> OnRoomCreated;
 
         /// <summary>
         /// defines size of museum 
@@ -78,6 +89,12 @@ namespace VirtMuseWeb.Utility
         }
 
         /// <summary>
+        /// Flag if Initialize has been called or not
+        /// can only generate if initialize was called beforehand
+        /// </summary>
+        bool IsInitialized { get; set; }
+
+        /// <summary>
         /// the current number of displays in the museum
         /// </summary>
         //[DataMember]
@@ -110,9 +127,29 @@ namespace VirtMuseWeb.Utility
             Rooms = new List<Room>();
             Walls = new List<Wall>();
             MuseumsGraph = new MuseumGraph();
+            roomTypeToPlaceableChecker = new Dictionary<RoomType, IRoomPlacableChecker>();
+            possibleResourceIDs = new List<(int,ResourceType)>();
+            possibleRoomStyleIDs = new List<int>();
+            IsInitialized = false;
         }
 
         /// <summary>
+        /// Initializes museum with placeable room types 
+        /// </summary>
+        /// <param name="possRoomTypes"></param>
+        public void Initialize(List<(RoomType, IRoomPlacableChecker)> possRoomTypes, List<(int,ResourceType)> possResources, List<int> possRoomstyles)
+        {
+            foreach ((RoomType, IRoomPlacableChecker) pair in possRoomTypes)
+            {
+                AddNewRoomPlacableChecker(pair.Item1, pair.Item2, true);
+            }
+            possibleRoomStyleIDs = possRoomstyles;
+            possibleResourceIDs = possResources;
+            IsInitialized = true;
+        }
+
+        /// <summary>
+        /// throws exception if museum wasn't initialized beforehand
         /// Generates a Museum
         /// baisc algortihm:
         /// 1. palce random 1x1 room as start 
@@ -129,6 +166,8 @@ namespace VirtMuseWeb.Utility
         /// <param name="seed"></param>
         public void Generate(string seed, bool buildMuseumsGraph = true)
         {
+            if (!IsInitialized)
+                throw new Exception("Need to initialize museum before generating");
             //TODO add resourcemanager get numb resources for type
             System.Random rng = new System.Random(seed.GetHashCode());
 
@@ -242,7 +281,7 @@ namespace VirtMuseWeb.Utility
                     }
                     #endregion
 
-                    #region creating room obj and adding doors
+                    #region creating room obj and adding doors call event
                     Room r = new Room(typeToPlace, RoomTiles, this);
                     int CreatedDoor = 0;
                     foreach (Room otherRoom in Rooms)
@@ -256,6 +295,7 @@ namespace VirtMuseWeb.Utility
                     }
 
                     Rooms.Add(r);
+                    OnRoomCreated?.Invoke(r);
                     #endregion
 
                     //LogMap();
@@ -283,25 +323,29 @@ namespace VirtMuseWeb.Utility
             foreach (Room r in Rooms)
             {
                 //TEMPORARY ROOMSTYLE CHOOSING for showcase
-                //RoomStyle s = MuseumGenerator.Instance.RoomStyles[styleRng.Next(0, MuseumGenerator.Instance.RoomStyles.Count)];
+                int stlyeID = possibleRoomStyleIDs[styleRng.Next(possibleRoomStyleIDs.Count)];
 
                 foreach (MuseumDisplayInfo dispInf in r.CenterDisplayInfos)
                 {
-                    dispInf.Type = (rng.Next(0, 2) > 0) ? DisplayType.MeshDisplay : DisplayType.ImageDisplay;
+                    int resIdx = rng.Next(possibleResourceIDs.Count);
+                    (int,ResourceType) resource = possibleResourceIDs[resIdx];
+                    possibleResourceIDs.RemoveAt(resIdx);
+
+                    dispInf.AssociatedResourceLocator = $"{resource.Item1}";
+                    dispInf.Type = (resource.Item2 == ResourceType.Mesh) ? DisplayType.MeshDisplay : DisplayType.ImageDisplay;
                 }
 
                 r.FloorTexture = new MuseumTextureInfo()
                 {
                     AssociatedID = r.RoomID.ToString(),
                     PositionModifier = 0,
-                    AssociatedResourceLocators = ""//s.floorTexture.name
+                    AssociatedResourceLocators = stlyeID//s.floorTexture.name
                 };
-
                 r.CeilingTexture = new MuseumTextureInfo()
                 {
                     AssociatedID = r.RoomID.ToString(),
                     PositionModifier = 0,
-                    AssociatedResourceLocators = ""//s.ceilingTexture.name
+                    AssociatedResourceLocators = stlyeID//s.ceilingTexture.name
                 };
 
                 foreach (int wID in r.Walls)
@@ -309,7 +353,7 @@ namespace VirtMuseWeb.Utility
                     Wall w = Walls[wID];
                     w.TextureInfos.Add(new MuseumTextureInfo()
                     {
-                        AssociatedResourceLocators = ""//s.wallTexture.name 
+                        AssociatedResourceLocators = stlyeID//s.wallTexture.name 
                     });
                 }
                 //TODO: fill associated resource locator
@@ -350,7 +394,12 @@ namespace VirtMuseWeb.Utility
 
                 foreach (MuseumDisplayInfo dispInf in w.DisplayInfos)
                 {
-                    dispInf.Type = (rng.Next(0, 2) > 0) ? DisplayType.MeshDisplay : DisplayType.ImageDisplay;
+                    int resIdx = rng.Next(possibleResourceIDs.Count);
+                    (int, ResourceType) resource = possibleResourceIDs[resIdx];
+                    possibleResourceIDs.RemoveAt(resIdx);
+
+                    dispInf.AssociatedResourceLocator = $"{resource.Item1}";
+                    dispInf.Type = (resource.Item2 == ResourceType.Mesh) ? DisplayType.MeshDisplay : DisplayType.ImageDisplay;
                 }
 
             }// end foreach wall
@@ -529,11 +578,13 @@ namespace VirtMuseWeb.Utility
         /// <param name="t">new room type</param>
         /// <param name="checker">the placable checker for this type</param>
         /// <param name="overrideExisting">flag if already existing placable checker should be overwritten</param>
-        public static void AddNewRoomPlacableChecker(RoomType t, IRoomPlacableChecker checker, bool overrideExisting)
+        public void AddNewRoomPlacableChecker(RoomType t, IRoomPlacableChecker checker, bool overrideExisting)
         {
             if (roomTypeToPlaceableChecker.ContainsKey(t) && overrideExisting)
             {
-                roomTypeToPlaceableChecker[t] = checker;
+                if(roomTypeToPlaceableChecker[t].NeedsRoomCreationUpdates)
+                    OnRoomCreated -= roomTypeToPlaceableChecker[t].OnRoomCreated;
+                roomTypeToPlaceableChecker[t] = checker; 
             }
             else if (!roomTypeToPlaceableChecker.ContainsKey(t))
             {
@@ -541,6 +592,9 @@ namespace VirtMuseWeb.Utility
             }
             else
                 throw new Exception("There already exits a placable checker for this type");
+
+            if (checker.NeedsRoomCreationUpdates)
+                OnRoomCreated += checker.OnRoomCreated;
         }
 
     }

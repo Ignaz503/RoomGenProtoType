@@ -2,192 +2,153 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using System.Text;
 using UnityEngine;
-//using WebSocketSharp;
 
-/// <summary>
-/// Manages the loading of resources for the client
-/// WARNING NOT IMPLEMENTED CURRENTLY
-/// SHOULD BE SEEN AS A WHAT TO EXPECT
-/// </summary>
 public class ResourceLoader : MonoBehaviour
 {
-
-    /// <summary>
-    /// struct for a request from the museum builder to get a certain resource from
-    /// the server
-    /// </summary>
-    public struct Request
+    public enum RequestType
     {
-        /// <summary>
-        /// callback to whoever  created request
-        /// </summary>
-        public Action<RequestResult> requestCallback;
-
-        /// <summary>
-        /// resource locator for server to find resource
-        /// </summary>
-        public string ResourceLocator;
-
-        public Func<RequestResult, RequestResult> preProcessing;
-       
-        /// <summary>
-        /// The type of resource that is requested
-        /// needed to build correct response
-        /// </summary>
-        public string ResourceType;
-
-        public Request(Action<RequestResult> display,string resoureceLocator, string resourceType, Func<RequestResult,RequestResult> preProcess)
-        {
-            requestCallback = display;
-            ResourceLocator = resoureceLocator;
-            ResourceType = resourceType;
-            preProcessing = preProcess;
-        }
+        MuseumRequest,
+        Other
     }
 
+    #region Debugging
+    public Display ImageDisplay;
+    public Display MeshDisplay;
+    public GameObject Wall;
+
+    public int[] ResourceIDs;
+    #endregion
+
+
     /// <summary>
-    /// the result of a request after it was revieved from the server
+    /// Instance of resource loader
     /// </summary>
-    public struct RequestResult
-    {
-        /// <summary>
-        /// callback to resource requester, called by main unity thread
-        /// eg safe that callback touches gamobjects(sensually ofc)
-        /// </summary>
-        public Action<RequestResult> requestCallBack;
-
-        /// <summary>
-        /// The resource that has been gotten from the server
-        /// </summary>
-        public BaseResource res;
-
-        PreProcessingGameObjectInformation GameObjectInformation;
-
-        public RequestResult(Action<RequestResult> display, BaseResource toApply, PreProcessingGameObjectInformation obj)
-        {
-            requestCallBack = display;
-            res = toApply;
-            GameObjectInformation = obj;
-        }
-
-    }
-
     public static ResourceLoader Instance { get; protected set; }
+    /// <summary>
+    /// number of request it is possible to work on at the same time
+    /// </summary>
+    [SerializeField] [Range(1, 20)] int NumWorkableRequestsSameTime;
+    /// <summary>
+    /// base url to server
+    /// eg: http://localhost:52536
+    /// </summary>
+    [SerializeField] string BaseURL;
 
-    Queue<RequestResult> LoadedResources = new Queue<RequestResult>();
+    /// <summary>
+    /// sub route to resource eg /api/resource/getres?id=
+    /// </summary>
+    [SerializeField] string[] ResourceRoute;
 
-    Queue<Request> LoadRequests = new Queue<Request>();
+    int numCurrentRequestsWorkingOn = 0;
+    Queue<IResourceRequest> requestQueue;
+    Queue<IResourceRequest> requestsWorkingOn;
 
-    //public string url = "ws://localhost:#";
-    //WebSocket ws;
-
-    public string responestring = "";
-
-    private void Awake()
+    public void Awake()
     {
-        if(Instance != null)
-        {
-            throw new Exception("there already exists a resource loader");
-        }
+        if (Instance != null)
+            throw new Exception("There already exists a ResourceLoader");
+
+        DontDestroyOnLoad(this);
         Instance = this;
-
-        Material m = new Material(Shader.Find(""));
-
-        
-
-    //    ws = new WebSocket(url);
-
-    //    ws.OnMessage += (sender, e) =>
-    //    {
-    //        Debug.Log("Recieved message");
-    //        responestring = e.Data;
-    //    };
-
-    //    ws.OnOpen += (sender, e) =>
-    //    {
-    //        Debug.Log("open");
-    //        ws.SendAsync("Test", OIWSA);
-    //    };
-
-    //    ws.ConnectAsync();
+        RoomStyleManager.Instantiate();
+        requestQueue = new Queue<IResourceRequest>();
+        requestsWorkingOn = new Queue<IResourceRequest>();
     }
 
-    //void OIWSA(bool b)
-    //{
-    //    Debug.Log(b);
-    //}
 
-    //private void OnDestroy()
-    //{
-    //    //ws.Close();
-    //}
-
-
-    /// <summary>
-    /// sets a request for a resource
-    /// </summary>
-    public void RequestResource(Action<RequestResult> callback, string ResourceLocator, string resType,Func<RequestResult,RequestResult> preProcessing)
+    public void Start()
     {
-        lock(LoadRequests)
-        {
-            LoadRequests.Enqueue(new Request(callback,ResourceLocator,resType, preProcessing));
-        };
+        //TestMeshRequest();
+        TestImageRequest();
     }
 
     /// <summary>
-    /// function to retrieve a result of a request
+    /// first checks if we can start a new request, when there is space
+    /// and we have request posted
+    /// after that, checks if any request finished
+    /// at the end checks if it can go to sleep
+    /// when there are no requests worked on and no requests posted
     /// </summary>
-    /// <returns></returns>
-    public RequestResult RetriveResult()
-    {
-        RequestResult res;
-        lock (LoadedResources)
-        {
-            res = LoadedResources.Dequeue();
-        }
-        return res;
-    }
-
     private void Update()
     {
-        lock (LoadRequests)
+        //see if possible to start work on new request
+        if(numCurrentRequestsWorkingOn < NumWorkableRequestsSameTime)
         {
-            if (LoadRequests.Count > 0)
+            //can start new request
+            if(requestQueue.Count >0)
             {
-                Request req = LoadRequests.Dequeue();
-                Thread t = new Thread(() => LoadResource(req));
-                t.Start();
+                IResourceRequest req = requestQueue.Dequeue();
+                numCurrentRequestsWorkingOn++;//increas number of worked on request
+                requestsWorkingOn.Enqueue(req);//staart tracking worked on request
+                StartCoroutine(req.StartWorkRequest());//start working request
             }
         }
 
-        lock (LoadedResources)
+        Queue<IResourceRequest> unfinishedRequests = new Queue<IResourceRequest>();
+        while(requestsWorkingOn.Count > 0)
         {
-            if (LoadedResources.Count > 0)
+            IResourceRequest req = requestsWorkingOn.Dequeue();
+            //check if requst done, if so complete
+            // else reenqueue
+            if (req.IsDone)
             {
-                RequestResult res = LoadedResources.Dequeue();
-                res.requestCallBack?.Invoke(res);
+                req.WhenDone();
+                numCurrentRequestsWorkingOn--;//decrease num working on
+            }
+            else
+            {
+                unfinishedRequests.Enqueue(req);
             }
         }
+        requestsWorkingOn = unfinishedRequests;
 
-        Debug.Log(responestring);
+        //check if we can sleep
+        // when no requests worked on or no request in queue
+        if (requestsWorkingOn.Count == 0 && requestQueue.Count == 0)
+            gameObject.SetActive(false);//goto sleep
+
     }
 
-    void LoadResource(Request req)
+    /// <summary>
+    /// posts request to request queue
+    /// and wakes up gameobject
+    /// </summary>
+    /// <param name="req">the request that is posted</param>
+    /// <param name="reqType">reqest type, to figure out routing on server</param>
+    public void PostRequest(IResourceRequest req,RequestType reqType)
     {
-        // TODO IMPLEMENT
-        // IS Maybe RUN IN SEPERATE THREADS
-        //IF SO DO NOT CALL THE CALLBACK FROM HERE
+        req.BaseURL = BaseURL + ResourceRoute[(int)reqType];//set url for request to download
+        requestQueue.Enqueue(req);
+        gameObject.SetActive(true);//wake up
+    }
+    
 
-        //TODO Set Request result to retrived resource
-        RequestResult result = new RequestResult(req.requestCallback, null, PreProcessingGameObjectInformation.Neutral());
-        req.preProcessing?.Invoke(result);
+    void TestImageRequest()
+    {
+        DisplayResourceRequest<DisplayImageResource> req = new DisplayResourceRequest<DisplayImageResource>(1, ImageDisplay, null);
+
+        PostRequest(req, RequestType.Other);
+
     }
 
-    void TestRequest()
+    void TestMeshRequest()
     {
+        DisplayResourceRequest<DisplayMeshResource> req = new DisplayResourceRequest<DisplayMeshResource>(4, MeshDisplay,
+            (res) => 
+            {
+                BoundingSphere boundsChild = BoundingSphere.Calculate(res.Mesh.vertices);
+                BoundingSphere boundsParent = BoundingSphere.Calculate((MeshDisplay as MeshDisplay).ParentMesh.sharedMesh.vertices);
+                
+                float avg = (MeshDisplay.transform.localScale.x + MeshDisplay.transform.localScale.y + MeshDisplay.transform.localScale.z) / 3f;
+                float scale = ((boundsParent.radius / boundsChild.radius) * avg);
 
+                return new PreProcessingGameObjectInformation() { Scale = new Vector3(scale, scale, scale) };
+            }          
+            
+            );
+
+        PostRequest(req, RequestType.Other);
     }
 
 }

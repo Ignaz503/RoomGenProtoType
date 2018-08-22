@@ -73,7 +73,7 @@ public class MeshDisplay : Display {
     {
         base.ApplyResource(resource);
         resource.ApplyToGameobject(ChildMesh.gameObject);
-        ScaleChildToFitParent();
+        //ScaleChildToFitParent();
         SetUpMeshRendererOptions();
     }
 
@@ -102,5 +102,10 @@ public class MeshDisplay : Display {
     protected override Type SetToDefaultInteractionBehaviour()
     {
         return typeof(ObejctInHandInteraction);
+    }
+
+    public override void ApplyPreProcessingInformation(PreProcessingGameObjectInformation info)
+    {
+        info.ApplyScale(ChildMesh.transform, Space.Self);
     }
 }

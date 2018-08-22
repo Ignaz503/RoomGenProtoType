@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 using System.Xml;
 using UnityEngine;
 
+
 [DataContract]
 public class MuseumDisplayInfo
 {
@@ -11,7 +12,7 @@ public class MuseumDisplayInfo
     /// type of display
     /// </summary>
     [DataMember]
-    public Display.DisplayType Type;
+    public DisplayType Type;
     /// <summary>
     /// locator to this resource so that server can send it to client
     /// </summary>
@@ -31,5 +32,5 @@ public class MuseumDisplayInfo
     public Vector2 PositionModifier;
 
     public MuseumDisplayInfo()
-    {}
+    { }
 }

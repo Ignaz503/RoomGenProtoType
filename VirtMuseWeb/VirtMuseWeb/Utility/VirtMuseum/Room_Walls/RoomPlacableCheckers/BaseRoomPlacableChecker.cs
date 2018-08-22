@@ -54,6 +54,8 @@ namespace VirtMuseWeb.Utility
             }
         }
 
+        public bool NeedsRoomCreationUpdates => false;
+
         public virtual bool CheckIfPlacable(Vector2Int origin, out List<Vector2Int[]> possibleSequences, Museum virtMuse)
         {
             possibleSequences = new List<Vector2Int[]>();
@@ -83,5 +85,8 @@ namespace VirtMuseWeb.Utility
             else
                 return false;
         }
+
+        public void OnRoomCreated(Room r)
+        {}
     }
 }

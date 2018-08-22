@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
+
 /// <summary>
 /// A wall that seperates two rooms of a museum or is an outer wall of the museum
 /// </summary>
@@ -94,24 +95,24 @@ public class Wall
     [DataMember]
     public List<uint> AssociatedRoomIDs { get; protected set; }
 
-    public Wall(WallType t, Vector2[] location,float posMod , Vector2Int associatedTile,uint associatedRoomID, WallRotation rot, Museum virt)
+    public Wall(WallType t, Vector2[] location, float posMod, Vector2Int associatedTile, uint associatedRoomID, WallRotation rot, Museum virt)
     {
         //VirtMuse = virt;
         Type = t;
         Location = location;
-        PositionModifier = posMod; 
+        PositionModifier = posMod;
         Tiles = new List<Vector2Int>(2)
-        {
-            associatedTile
-        };
+    {
+        associatedTile
+    };
         Rotation = rot;
 
-        DisplayInfos = new List<MuseumDisplayInfo>(Type == WallType.Solid? 4 :0);
+        DisplayInfos = new List<MuseumDisplayInfo>(Type == WallType.Solid ? 4 : 0);
 
         AssociatedRoomIDs = new List<uint>(2)
-        {
-            associatedRoomID
-        };
+    {
+        associatedRoomID
+    };
 
         TextureInfos = new List<MuseumTextureInfo>();
     }
@@ -162,9 +163,9 @@ public class Wall
     public static bool operator ==(Wall lhs, Wall rhs)
     {
         int i = 0;
-        foreach(Vector2 loc in lhs.Location)
+        foreach (Vector2 loc in lhs.Location)
         {
-            foreach(Vector2 lo in rhs.Location)
+            foreach (Vector2 lo in rhs.Location)
             {
                 if (loc.x == lo.x && loc.y == lo.y)
                     i++;
@@ -192,7 +193,7 @@ public class Wall
             throw new System.Exception($"Can only have {DisplayInfos.Capacity} displays on wall of type {Type}");
 
         AddDisplayToWall(associatedRoomID);
-        AddDisplayToWall(associatedRoomID,- 1f);
+        AddDisplayToWall(associatedRoomID, -1f);
 
         TileIndexForXPositionModifierCalc++;
     }
@@ -200,7 +201,7 @@ public class Wall
     /// <summary>
     /// adds a new display
     /// </summary>
-    void AddDisplayToWall(uint associatedRoomID,float YposModSign =1f)
+    void AddDisplayToWall(uint associatedRoomID, float YposModSign = 1f)
     {
         MuseumDisplayInfo displayInfo = new MuseumDisplayInfo()
         {
@@ -211,10 +212,10 @@ public class Wall
 
         displayInfo.PositionModifier.y = .25f * YposModSign;
 
-        if(Rotation == WallRotation.Vertical)
+        if (Rotation == WallRotation.Vertical)
             displayInfo.PositionModifier.x = Mathf.Sign(Tiles[TileIndexForXPositionModifierCalc].x - Location[0].x);
         else
-            displayInfo.PositionModifier.x = Mathf.Sign(Tiles[TileIndexForXPositionModifierCalc].y - Location[0].y)*-1f;
+            displayInfo.PositionModifier.x = Mathf.Sign(Tiles[TileIndexForXPositionModifierCalc].y - Location[0].y) * -1f;
 
 
         DisplayInfos.Add(displayInfo);
@@ -244,13 +245,10 @@ public class Wall
     /// <param name="w"></param>
     public void MergeWalls(Wall w)
     {
-        if(Tiles.Count < 2)
+        if (Tiles.Count < 2)
         {
             Tiles.Add(w.Tiles[0]);
             AssociatedRoomIDs.Add(w.AssociatedRoomIDs[0]);
         }
     }
 }
-
-
-

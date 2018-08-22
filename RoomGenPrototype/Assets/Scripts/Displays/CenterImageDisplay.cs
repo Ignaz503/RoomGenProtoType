@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CenterImageDisplay : Display
 {
     /// <summary>
@@ -62,5 +63,12 @@ public class CenterImageDisplay : Display
     protected override void InteractionEnded()
     {
         //throw new System.NotImplementedException();
+    }
+
+    public override void ApplyPreProcessingInformation(PreProcessingGameObjectInformation info)
+    {
+        //maybe scale? maybe scale everything even gameobject base
+        foreach (MeshRenderer re in displayMeshRenderes)
+            info.ApplyScale(re.transform);
     }
 }

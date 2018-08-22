@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
+
 [DataContract]
 public class MuseumGraph
 {
@@ -15,7 +16,7 @@ public class MuseumGraph
         /// Unique id of node in this graph
         /// </summary>
         [DataMember]
-        public uint NodeID { get; protected set; } 
+        public uint NodeID { get; protected set; }
 
         /// <summary>
         /// list of node ids where this node has edges to
@@ -50,7 +51,7 @@ public class MuseumGraph
 
         public override bool Equals(object obj)
         {
-            if(obj is Node)
+            if (obj is Node)
             {
                 Node o = obj as Node;
                 return NodeID == o.NodeID;
@@ -65,7 +66,7 @@ public class MuseumGraph
 
         public override string ToString()
         {
-            return ""+NodeID;
+            return "" + NodeID;
         }
     }
 
@@ -94,23 +95,23 @@ public class MuseumGraph
     public void BuildMuseumGraph(Museum virtMuse)
     {
         //create nodes for all rooms
-        foreach(Room r in virtMuse.Rooms)
+        foreach (Room r in virtMuse.Rooms)
         {
             NodeMap.Add(r.RoomID, new Node(r.RoomID));
         }
 
         //loop frough all walls if door get associated rooms create
         //Connection between nodes
-        foreach(Wall w in virtMuse.Walls)
+        foreach (Wall w in virtMuse.Walls)
         {
-            if(w.Type == Wall.WallType.Door)
+            if (w.Type == Wall.WallType.Door)
             {
                 if (w.AssociatedRoomIDs.Count == 2)
                 {
                     Node a = NodeMap[w.AssociatedRoomIDs[0]];
                     Node b = NodeMap[w.AssociatedRoomIDs[1]];
                     Node.ConnectNodes(a, b);
-                }                
+                }
             }
         }
     }
@@ -123,6 +124,6 @@ public class MuseumGraph
         if (NodeMap.ContainsKey(r.RoomID))
             return NodeMap[r.RoomID];
         else
-            return null; 
+            return null;
     }
 }

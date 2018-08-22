@@ -16,37 +16,43 @@ using TMPro;
 [DataContract]
 public class MetaData
 {
-    [DataMember]
-    public string ResourceID;
+    public MetaData()
+    {
+        FurterInformationAccordingToLOD = new Dictionary<int, string>();
+        Sources = new List<string>();
+        Creators = new List<string>();
+    }
 
     [DataMember]
-    public List<string> associatedResourceIDs;
+    public string ResourceID { get; set; }
+
+    [DataMember]
+    public List<string> associatedResourceIDs { get; set; }
 
     [DataMember]
     [MetaDataAttribute("Name", MetaDataAttribute.MetaDataDisplayType.FirstPage)]
-    public string NameOfPiece;
+    public string NameOfPiece { get; set; }
 
     [DataMember]
     [MetaDataAttribute("Creator",MetaDataAttribute.MetaDataDisplayType.FirstPage)]
-    public List<string> Creators;
+    public List<string> Creators { get; set; }
 
     [DataMember]
     [MetaDataAttribute("Date", MetaDataAttribute.MetaDataDisplayType.FirstPage)]
-    public string DateOfCreation;
+    public string DateOfCreation { get; set; }
 
 
     [DataMember]
     [MetaDataAttribute("FurtherInfo", MetaDataAttribute.MetaDataDisplayType.NewPage)]
-    public Dictionary<int, string> FurterInformationAccordingToLOD;
-
+    public Dictionary<int, string> FurterInformationAccordingToLOD { get; set; }
 
     [DataMember]
     [MetaDataAttribute("Sources", MetaDataAttribute.MetaDataDisplayType.NewPage)]
-    public List<string> Sources;
-     
+    public List<string> Sources { get; set; }
+
     [DataMember]
     [MetaDataAttribute("License", MetaDataAttribute.MetaDataDisplayType.NewPage)]
-    public string License;
+    public string License { get; set; }
 
     #region Gamification
     //[DataMember]

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using TMPro;
+
 
 public class MuseumBuilder : MonoBehaviour
 {
@@ -122,7 +122,7 @@ public class MuseumBuilder : MonoBehaviour
 
         //requesting museum (simulate comunication with server^^)
         //for testing of serialization of museum and deserialization
-        MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequest()
+        MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequestData()
         {
             MuseumType = "TestMuseum",
             Size = MuseumSize.Large
@@ -235,7 +235,7 @@ public class MuseumBuilder : MonoBehaviour
                 //    r.CeilingTexture.AssociatedResourceLocators,
                 //    typeof(TextureResource).ToString()
                 //    );
-                TEMPApplyTextureToNonWalls(r.FloorTexture.AssociatedResourceLocators, floor);
+                //TEMPApplyTextureToNonWalls(r.FloorTexture.AssociatedResourceLocators, floor);
                 //TEMPApplyTextureToNonWalls(r.CeilingTexture.AssociatedResourceLocators, ceiling);
             }
             #endregion
@@ -349,7 +349,7 @@ public class MuseumBuilder : MonoBehaviour
         int i = 0;
         foreach(MuseumDisplayInfo dispInf in r.CenterDisplayInfos)
         {
-            GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ?
+            GameObject disp = ((int)dispInf.Type == (int)Display.DisplayType.ImageDisplay) ?
                 Instantiate(CenterImageDisplayPrefab) :
                 Instantiate(CenterMeshDisplay);
 
@@ -375,7 +375,7 @@ public class MuseumBuilder : MonoBehaviour
     {
         foreach(MuseumDisplayInfo dispInf in w.DisplayInfos)
         {
-            GameObject disp = (dispInf.Type == Display.DisplayType.ImageDisplay) ?
+            GameObject disp = (dispInf.Type == DisplayType.ImageDisplay) ?
                 Instantiate(WallImageDisplayPrefab) : Instantiate(MeshDisplayPrefab);
             AddToRoomManagmentUnit(dispInf.AssociatedRoomID, disp);
 
@@ -486,12 +486,12 @@ public class MuseumBuilder : MonoBehaviour
         if (w.TextureInfos.Count > 1)
         {
             float sign = w.Rotation == Wall.WallRotation.Vertical ? Mathf.Sign(w.Tiles[0].x - w.Tiles[1].x) : Mathf.Sign(w.Tiles[0].y - w.Tiles[1].y);
-            if (!existingWallTexture.ContainsKey(w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators + w.Rotation + sign))
+            if (!existingWallTexture.ContainsKey(w.TextureInfos[0].AssociatedResourceLocators.ToString() + w.TextureInfos[1].AssociatedResourceLocators.ToString() + w.Rotation + sign))
             {
                 //different wall textures
                 Texture2D[] textures = new Texture2D[2];
-                textures[w.TextureInfos[0].PositionModifier] = GetTexture(w.TextureInfos[0].AssociatedResourceLocators);
-                textures[w.TextureInfos[1].PositionModifier] = GetTexture(w.TextureInfos[1].AssociatedResourceLocators);
+                textures[w.TextureInfos[0].PositionModifier] = GetTexture(w.TextureInfos[0].AssociatedResourceLocators.ToString());
+                textures[w.TextureInfos[1].PositionModifier] = GetTexture(w.TextureInfos[1].AssociatedResourceLocators.ToString());
 
                 Texture2D tex = new Texture2D(2 * textures[0].width, textures[0].height);
 
@@ -508,19 +508,19 @@ public class MuseumBuilder : MonoBehaviour
                 }
 
                 tex.Apply();
-                existingWallTexture.Add(w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators + w.Rotation + sign, tex);
+                existingWallTexture.Add(w.TextureInfos[0].AssociatedResourceLocators.ToString() + w.TextureInfos[1].AssociatedResourceLocators.ToString() + w.Rotation + sign, tex);
                 re.material.mainTexture = tex;
             }
             else
             {
                 //Debug.Log("hi");
-                re.material.mainTexture = existingWallTexture[w.TextureInfos[0].AssociatedResourceLocators + w.TextureInfos[1].AssociatedResourceLocators+w.Rotation + sign];
+                re.material.mainTexture = existingWallTexture[w.TextureInfos[0].AssociatedResourceLocators.ToString() + w.TextureInfos[1].AssociatedResourceLocators.ToString() +w.Rotation + sign];
             }
         }
         else
         {
             //same texture
-            re.material.mainTexture = GetTexture(w.TextureInfos[0].AssociatedResourceLocators);
+            re.material.mainTexture = GetTexture(w.TextureInfos[0].AssociatedResourceLocators.ToString());
         }
     }
 

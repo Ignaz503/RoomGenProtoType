@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VirtMuseWeb.Models;
 
 /// <summary>
 /// base class for any resource be it display resource or other
@@ -10,17 +11,17 @@ public abstract class BaseResource
     /// <summary>
     /// The resource ID
     /// </summary>
-    public string ResourecID { get; protected set; }
+    public int ResourecID { get; set; }
 
     /// <summary>
     /// The type of resource
     /// currently:
-    ///     MeshDisplay
-    ///     ImageDisplay
-    ///     Texture
+    ///     Image
+    ///     Mesh
+    ///     RoomStyle
     /// </summary>
-    public string ResrourceType { get; protected set; }
-
+    public  ResourceType ResrourceType { get; set; }
+    
     /// <summary>
     /// function that applies a resource to a gamobject
     /// </summary>
@@ -37,7 +38,7 @@ public abstract class BaseDisplayResource : BaseResource
     /// <summary>
     /// The Metadata associated with this display resource
     /// </summary>
-    public MetaData MetaData { get; protected set; }
+    public MetaData MetaData { get; set; }
 
     /// <summary>
     /// The interaction behaviour the display wants to provide
@@ -75,7 +76,10 @@ public class DisplayMeshResource : BaseDisplayResource
 
         MeshRenderer re = obj.GetComponent<MeshRenderer>();
         if(re == null)
+        {
             re = obj.AddComponent<MeshRenderer>();
+            re.material = new Material(Shader.Find("Standard"));
+        }
 
         re.material = Mat;
     }
@@ -118,6 +122,7 @@ public class DisplayImageResource : BaseDisplayResource
         if(re == null)
         {
             re = obj.AddComponent<MeshRenderer>();
+            re.material = new Material(Shader.Find("Standard"));
         }
 
         Material mat = new Material(Shader.Find("Sprites/Default"))
@@ -131,28 +136,32 @@ public class DisplayImageResource : BaseDisplayResource
 }
 
 /// <summary>
-/// resource that is a texture
+/// resource that is a roomstyle
 /// </summary>
-public class TextureResource : BaseResource
+public class RoomStyleResource
 {
-    /// <summary>
-    /// The texture that should be applied to a mesh
-    /// </summary>
-    public Texture2D Image { get; set; }
+    public enum TextureToApply { Floor,Ceiling,Wall}
+
+    public int ResourceID { get; set; }    
+    public Texture2D Floor { get; set; }
+    public Texture2D Ceiling { get; set; }
+    public Texture2D Wall { get; set; }
 
     /// <summary>
     /// No param ctor that doens't initialize anything
     /// </summary>
-    public TextureResource()
+    public RoomStyleResource()
     {}
 
     /// <summary>
     /// Ctor that sets the Image of this resource
     /// </summary>
     /// <param name="image"></param>
-    public TextureResource(Texture2D image)
+    public RoomStyleResource(Texture2D floor, Texture2D ceil, Texture2D wall)
     {
-        Image = image;
+        Floor = floor;
+        Ceiling = ceil;
+        Wall = wall;
     }
 
     /// <summary>
@@ -160,15 +169,30 @@ public class TextureResource : BaseResource
     /// sets the material texture to Image
     /// if created Material created will have Standard shader
     /// </summary>
-    /// <param name="obj"></param>
-    public override void ApplyToGameobject(GameObject obj)
+    /// <param name="obj">obj to apply to</param>
+    /// <param name="texToApl">what texture to apply</param>
+    public void ApplyToGameobject(GameObject obj,TextureToApply texToApl )
     {
         MeshRenderer re = obj.GetComponent<MeshRenderer>();
         if(re == null)
         {
             re = obj.AddComponent<MeshRenderer>();
+            re.material = new Material(Shader.Find("Standard"));
         }
 
-        re.material.mainTexture = Image;
+        switch (texToApl)
+        {
+            case TextureToApply.Floor:
+                re.material.mainTexture = Floor;
+                break;
+            case TextureToApply.Ceiling:
+                re.material.mainTexture = Ceiling;
+                break;
+            case TextureToApply.Wall:
+                re.material.mainTexture = Wall;
+                break;
+                
+        }
+
     }
 }

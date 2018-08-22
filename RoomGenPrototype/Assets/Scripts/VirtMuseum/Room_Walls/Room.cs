@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
+
 public enum CornerIndex
 {
     UpperRight,
@@ -107,8 +108,7 @@ public class Room
 
     public Room(RoomType t, List<Vector2Int> Tiles, Museum virtMuse)
     {
-        //RoomID = RoomIDGen++;
-        RoomID = (uint)virtMuse.TransformTileCoordIntoOneD(Tiles[0]);
+        RoomID = RoomIDGen++;
         Type = t;
         RoomTiles = Tiles;
         this.virtMuse = virtMuse;
@@ -309,3 +309,4 @@ public class Room
     }
 
 }
+

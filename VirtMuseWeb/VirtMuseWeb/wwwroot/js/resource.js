@@ -50,6 +50,21 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
                         console.log(xhr, resp, text);
                     }
                 });
+                this.resource({
+                    ID: -1,
+                    Type: Model.Type.Image,
+                    MetaData: {
+                        ResourceID: -1,
+                        NameOfPiece: "",
+                        DateOfCreation: "",
+                        Creators: [],
+                        FurtherInformation: "",
+                        License: "",
+                        Sources: [],
+                    },
+                    Data: []
+                }); //initialize resource
+                this.typeChange(0);
             };
             this.addCreator = () => {
                 this.creators.push({ creator: new CreatorModel.Creator("", "", ""), isDead: new ko.observable(false) });
@@ -76,7 +91,7 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
                 var f = new FileReader();
                 f.onload = (e) => {
                     var res = f.result;
-                    //remove data:*/*;base64, aaat the start of string
+                    //remove data:*/*;base64, at the start of string
                     res = res.slice(res.indexOf(",") + 1, res.length);
                     this.resource().Data.splice(insertIdx, 0, res);
                 };
@@ -163,12 +178,6 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
             };
             this.openWallTexture = (element, event) => {
                 this.openFile(2, element, event);
-            };
-            this.test = () => {
-                console.log("Hi");
-                fetch(`/api/museum/getmuseum?request=${JSON.stringify({ "MuseumType": "just anything really", "Size": 5 })}`).then(function (response) {
-                    return response.json();
-                }).then(console.log);
             };
         }
     }

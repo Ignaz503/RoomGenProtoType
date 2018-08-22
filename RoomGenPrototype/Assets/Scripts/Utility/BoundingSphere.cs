@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Created By: Bunny83 · Nov 20, 2014 
+/// User Page: https://answers.unity.com/users/6612/bunny83.html
+/// Thread algorithm found: https://answers.unity.com/questions/836915/smallest-bounding-sphere.html
+/// C# Adaptatipo of Ritters Alpgortitm
+/// </summary>
 public class BoundingSphere
 {
     /// <summary>

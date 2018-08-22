@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using VirtMuseWeb.Models;
 using VirtMuseWeb.Utility;
 using UnityEngine;
+using System.Drawing;
 
 namespace VirtMuseWeb.Services
 {
@@ -71,8 +72,15 @@ namespace VirtMuseWeb.Services
                 //make unity mesh if type mesh
                 string mesh = System.Text.Encoding.Default.GetString(bRes.Data[0]);
                 UnityMeshData mData = imp.BuildMesh(mesh);
-                if(bRes.Data.Length == 3)
-                    mData.Texture = bRes.Data[2];
+
+                if (bRes.Data.Length == 3)
+                {
+                    _logger.LogInformation("Texture from sent data");
+                    mData.Texture = ImageHelper.GetImage(bRes.Data[2]);
+                }
+                else
+                    mData.Texture = Utility.Image.White(1, 1);// set white texture if no texture given
+
                 //TODO: resource model not bResData 0
                 resModel.Data = mData.Serialize();
             }
@@ -85,9 +93,8 @@ namespace VirtMuseWeb.Services
             {
                 //image 
                 //just set resource model to byte array
-                resModel.Data = bRes.Data[0];
+                resModel.Data = ImageHelper.GetImage(bRes.Data[0]).Serialize();
             }
-
             try
             {
                 resModel.ID = 0;
@@ -95,7 +102,7 @@ namespace VirtMuseWeb.Services
                 entry.CurrentValues.SetValues(resModel);
                 await _context.SaveChangesAsync();
             }catch(Exception e){
-                _logger.LogError("Something went wrong whilst adding to the DB" + e);
+                _logger.LogError("Something went wrong whilst adding to the DB\n" + e);
             }
         }
     }

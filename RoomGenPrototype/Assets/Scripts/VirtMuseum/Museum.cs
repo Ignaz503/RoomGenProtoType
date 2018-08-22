@@ -8,7 +8,11 @@ using System.Text;
 using System.Linq;
 using UnityEngine;
 
-
+public enum DisplayType
+{
+    MeshDisplay,
+    ImageDisplay,
+};
 [DataContract]
 public class Museum
 {
@@ -16,12 +20,12 @@ public class Museum
     /// helper dictionary that maps from room type to placable checker of this room
     /// </summary>
     static Dictionary<RoomType, IRoomPlacableChecker> roomTypeToPlaceableChecker = new Dictionary<RoomType, IRoomPlacableChecker>()
-    {
-            { RoomType.Normal, new BaseRoomTypePlacableCheker(RoomType.Normal) },
-            { RoomType.Long, new BaseRoomTypePlacableCheker(RoomType.Long) },
-            { RoomType.Big, new BaseRoomTypePlacableCheker(RoomType.Big) },
-            { RoomType.L, new BaseRoomTypePlacableCheker(RoomType.L) }
-    };
+{
+        { RoomType.Normal, new BaseRoomTypePlacableCheker(RoomType.Normal) },
+        { RoomType.Long, new BaseRoomTypePlacableCheker(RoomType.Long) },
+        { RoomType.Big, new BaseRoomTypePlacableCheker(RoomType.Big) },
+        { RoomType.L, new BaseRoomTypePlacableCheker(RoomType.L) }
+};
 
     /// <summary>
     /// defines size of museum 
@@ -133,7 +137,7 @@ public class Museum
 
         RoomMap[xStart, yStart] = (int)RoomType.Normal;
 
-        Rooms.Add(new Room(RoomType.Normal, new List<Vector2Int> { new Vector2Int(xStart, yStart) },this));
+        Rooms.Add(new Room(RoomType.Normal, new List<Vector2Int> { new Vector2Int(xStart, yStart) }, this));
 
         List<Vector2Int> startSourrounding = GetSourroundingTiles(new Vector2Int(xStart, yStart));
 
@@ -161,7 +165,7 @@ public class Museum
                 List<Vector2Int[]> possibleSequencesForType;
                 if (roomTypeToPlaceableChecker.ContainsKey(t))
                 {
-                    if (roomTypeToPlaceableChecker[t].CheckIfPlacable(newRoomOrigin, out possibleSequencesForType,this))
+                    if (roomTypeToPlaceableChecker[t].CheckIfPlacable(newRoomOrigin, out possibleSequencesForType, this))
                     {
                         typeToPossStepSequences.Add(t, possibleSequencesForType);
                     }
@@ -238,7 +242,7 @@ public class Museum
                 #endregion
 
                 #region creating room obj and adding doors
-                Room r = new Room(typeToPlace, RoomTiles,this);
+                Room r = new Room(typeToPlace, RoomTiles, this);
                 int CreatedDoor = 0;
                 foreach (Room otherRoom in Rooms)
                 {
@@ -271,47 +275,49 @@ public class Museum
     /// </summary>
     void FillDisplays(System.Random rng)
     {
-        System.Random styleRng = new System.Random(MuseumGenerator.Instance.Seed.GetHashCode());
+        System.Random styleRng = new System.Random((int)DateTime.Now.Ticks);
         //TODO fill displays with info from resource manager
 
         //TEMP
-        foreach(Room r in Rooms)
+        foreach (Room r in Rooms)
         {
             //TEMPORARY ROOMSTYLE CHOOSING for showcase
             RoomStyle s = MuseumGenerator.Instance.RoomStyles[styleRng.Next(0, MuseumGenerator.Instance.RoomStyles.Count)];
 
-            foreach(MuseumDisplayInfo dispInf in r.CenterDisplayInfos)
+            foreach (MuseumDisplayInfo dispInf in r.CenterDisplayInfos)
             {
-                dispInf.Type = (rng.Next(0, 2) > 0) ? Display.DisplayType.MeshDisplay : Display.DisplayType.ImageDisplay;
+                dispInf.Type = (rng.Next(0, 2) > 0) ? DisplayType.MeshDisplay : DisplayType.ImageDisplay;
             }
 
             r.FloorTexture = new MuseumTextureInfo()
             {
                 AssociatedID = r.RoomID.ToString(),
                 PositionModifier = 0,
-                AssociatedResourceLocators = s.floorTexture.name
+                //AssociatedResourceLocators = s.floorTexture.name
             };
 
             r.CeilingTexture = new MuseumTextureInfo()
             {
                 AssociatedID = r.RoomID.ToString(),
                 PositionModifier = 0,
-                AssociatedResourceLocators = s.ceilingTexture.name
+                //AssociatedResourceLocators = s.ceilingTexture.name
             };
 
-            foreach(int wID in r.Walls)
+            foreach (int wID in r.Walls)
             {
                 Wall w = Walls[wID];
-                w.TextureInfos.Add(new MuseumTextureInfo() { AssociatedResourceLocators = s.wallTexture.name 
+                w.TextureInfos.Add(new MuseumTextureInfo()
+                {
+                    //AssociatedResourceLocators = s.wallTexture.name 
                 });
             }
             //TODO: fill associated resource locator
         }
 
-        foreach(Wall w in Walls)
+        foreach (Wall w in Walls)
         {
             int i = 0;
-            foreach(Vector2 tile in w.Tiles)
+            foreach (Vector2 tile in w.Tiles)
             {
                 //figure out position modifier
                 //0 means texture from 0 to 0.5
@@ -332,8 +338,8 @@ public class Museum
                         else
                             posMod = 1;
                         break;
-            }// end switch
-            w.TextureInfos[i].PositionModifier = posMod;
+                }// end switch
+                w.TextureInfos[i].PositionModifier = posMod;
                 w.TextureInfos[i].AssociatedID = w.WallID;
                 i++;
                 //TODO: FILL Associated resource locator
@@ -343,9 +349,8 @@ public class Museum
 
             foreach (MuseumDisplayInfo dispInf in w.DisplayInfos)
             {
-                dispInf.Type = (rng.Next(0, 2) > 0) ? Display.DisplayType.MeshDisplay : Display.DisplayType.ImageDisplay;
+                dispInf.Type = (rng.Next(0, 2) > 0) ? DisplayType.MeshDisplay : DisplayType.ImageDisplay;
             }
-
         }// end foreach wall
     }
 
@@ -399,7 +404,7 @@ public class Museum
     /// </summary>
     /// <param name="coord"></param>
     /// <returns></returns>
-    public int TransformTileCoordIntoOneD(Vector2Int coord)
+    int TransformTileCoordIntoOneD(Vector2Int coord)
     {
         return coord.x + (coord.y * Size);
     }
@@ -410,7 +415,7 @@ public class Museum
     /// item1 in tuple = x 
     /// item2 in tuple = y 
     /// </summary>
-    Tuple<int,int> TransformOneDCoordIntoTwoD(int coord)
+    Tuple<int, int> TransformOneDCoordIntoTwoD(int coord)
     {
         return new Tuple<int, int>(coord % Size, coord / Size);
     }

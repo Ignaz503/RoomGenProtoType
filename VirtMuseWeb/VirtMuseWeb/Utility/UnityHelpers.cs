@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -22,15 +23,21 @@ using UnityEngine;
 */
 namespace VirtMuseWeb.Utility
 {
+    public interface ISerializable
+    {
+        byte[] Serialize();
+        void Serialize(BinaryWriter w);
+    }
+
     [Serializable]
-    public class UnityMeshData
+    public class UnityMeshData : ISerializable
     {
 
-        public int[] Triangles { get; set; }
-        public Vector3[] Vertices { get; set; }
-        public Vector2[] UVs { get; set; }
-        public Vector3[] Normals { get; set; }
-        public byte[] Texture { get; set; }
+        [SerializeField] public int[] Triangles { get; set; }
+        [SerializeField] public Vec3[] Vertices { get; set; }
+        [SerializeField] public Vec2[] UVs { get; set; }
+        [SerializeField] public Vec3[] Normals { get; set; }
+        [SerializeField] public Utility.Image Texture { get; set; }
 
         public override string ToString()
         {
@@ -45,12 +52,58 @@ namespace VirtMuseWeb.Utility
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                BinaryFormatter bF = new BinaryFormatter();
-                bF.Serialize(ms, this);
-                return ms.ToArray();
+                using (BinaryWriter w = new BinaryWriter(ms))
+                {
+                    WriteTo(w);
+                    return ms.ToArray();                    
+                }
             }
         }
 
+        void WriteTo(BinaryWriter w)
+        {
+            w.Write((Int32)Triangles.Length);
+            foreach (int t in Triangles)
+            {
+                w.Write(t);
+            }
+            w.Write((Int32)Vertices.Length);
+            foreach (Vec3 v in Vertices)
+            {
+                w.Write(v.X);
+                w.Write(v.Y);
+                w.Write(v.Z);
+            }
+            w.Write(UVs.Length);
+            for (int i = 0; i < UVs.Length; i++)
+            {
+                Vec2 v = UVs[i];
+                if(v == null)
+                {
+                    w.Write(0.0f);
+                    w.Write(0.0f);
+                }
+                else
+                {
+                    w.Write(v.X);
+                    w.Write(v.Y);
+                }
+            }
+            w.Write((Int32)Normals.Length);
+            foreach (Vec3 v in Normals)
+            {
+                w.Write(v.X);
+                w.Write(v.Y);
+                w.Write(v.Z);
+            }
+            Texture.Serialize(w);
+        }
+
+        public void Serialize(BinaryWriter w)
+        {
+            WriteTo(w);
+        }
+        
         /// <summary>
         /// deserializes unity mesh data objects
         /// doesn't care if correctly or not
@@ -59,13 +112,221 @@ namespace VirtMuseWeb.Utility
         /// <returns>the desserialized object</returns>
         public static UnityMeshData Deserialize(byte[] obj)
         {
+            using (MemoryStream ms = new MemoryStream(obj))
+            {
+                using (BinaryReader r = new BinaryReader(ms))
+                {
+                    return ReadFrom(r);
+                }
+            }
+        }
+
+        public static UnityMeshData Deserialize(BinaryReader r)
+        {
+            return ReadFrom(r);
+        }
+
+        static UnityMeshData ReadFrom(BinaryReader r)
+        {
+            int triLength = r.ReadInt32();
+            int[] triangles = new int[triLength];
+            for (int i = 0; i < triLength; i++)
+            {
+                int triIdx = r.ReadInt32();
+                triangles[i] = triIdx;
+            }
+
+            int vertLength = r.ReadInt32();
+            Vec3[] vertices = new Vec3[vertLength];
+            for(int i = 0; i < vertLength; i++)
+            {
+                float x = r.ReadSingle();
+                float y = r.ReadSingle();
+                float z = r.ReadSingle();
+                vertices[i] = new Vec3(x, y, z);
+            }
+
+            int uvLength = r.ReadInt32();
+            Vec2[] uvs = new Vec2[uvLength];
+            for (int i = 0; i < uvLength; i++)
+            {
+                float x = r.ReadSingle();
+                float y = r.ReadSingle();
+                uvs[i] = new Vec2(x, y);
+            }
+
+            int normLength = r.ReadInt32();
+            Vec3[] normals = new Vec3[normLength];
+            for (int i = 0; i < normLength; i++)
+            {
+                float x = r.ReadSingle();
+                float y = r.ReadSingle();
+                float z = r.ReadSingle();
+
+                normals[i] = new Vec3(x, y, z);
+            }
+            Image tex = Image.Deserialize(r);
+
+            return new UnityMeshData() { Triangles = triangles, Vertices = vertices, UVs = uvs, Normals = normals, Texture = tex };
+        }
+    }
+
+    [Serializable]
+    public class Image : ISerializable
+    {
+        [Serializable]
+        public struct Color32
+        {
+            [SerializeField] public byte R { get; set; }
+            [SerializeField] public byte G { get; set; }
+            [SerializeField] public byte B { get; set; }
+            [SerializeField] public byte A { get; set; }
+            public Color32(int Argb)
+            {
+                byte[] bytes = BitConverter.GetBytes(Argb);
+
+                if (BitConverter.IsLittleEndian)
+                {
+                    A = bytes[3];
+                    R = bytes[2];
+                    G = bytes[1];
+                    B = bytes[0];
+                }
+                else
+                {
+                    A = bytes[0];
+                    R = bytes[3];
+                    G = bytes[2];
+                    B = bytes[1];
+                }
+
+            }
+            public Color32(byte a, byte r, byte g, byte b)
+            {
+                A = a;
+                R = r;
+                G = g;
+                B = b;
+            }
+            public static explicit operator int(Color32 c)
+            {
+                return BitConverter.ToInt32(
+                    BitConverter.IsLittleEndian ? new byte[] { c.B, c.G, c.R, c.A } : new byte[] { c.A, c.B, c.G, c.R },
+                    0
+                    );
+            }
+            public static implicit operator UnityEngine.Color32(Color32 c)
+            {
+                return new UnityEngine.Color32(c.R, c.G, c.B, c.A);
+            }
+            public static Color32 White { get { return new Color32(255, 255, 255, 255); } }
+            public static Color32 Black { get { return new Color32(255, 0, 0, 0); } }
+        }
+
+        [SerializeField]
+        public int Width { get; set; }
+        [SerializeField]
+        public int Height { get; set; }
+        [SerializeField]
+        Color32[] color;
+
+        public Color32 this[int x, int y] { get { return color[y * Width + x]; } set { color[y * Width + x] = value; } }
+
+        public Image(int w, int h)
+        {
+            Width = w;
+            Height = h;
+            color = new Color32[Width * Height];
+        }
+
+        public byte[] Serialize()
+        {
             using (MemoryStream ms = new MemoryStream())
             {
-                BinaryFormatter bf = new BinaryFormatter();
-                ms.Write(obj, 0, obj.Length);
-                ms.Seek(0, SeekOrigin.Begin);
-                return bf.Deserialize(ms) as UnityMeshData;
+                using (BinaryWriter w = new BinaryWriter(ms))
+                {
+                    WriteTo(w);
+                    return ms.ToArray();
+                }
             }
+        }
+
+        void WriteTo(BinaryWriter w)
+        {
+            w.Write((Int32)Width);
+            w.Write((Int32)Height);
+            foreach(Color32 c in color)
+            {
+                w.Write(c.A);
+                w.Write(c.R);
+                w.Write(c.G);
+                w.Write(c.B);
+            }
+        }
+        public void Serialize(BinaryWriter w)
+        {
+            WriteTo(w);
+        }
+
+        public static Image Deserialize(byte[] obj)
+        {
+            using (MemoryStream ms = new MemoryStream(obj))
+            {
+                using (BinaryReader r = new BinaryReader
+                    (ms))
+                {
+                    return ReadFrom(r);
+                }
+            }
+        }
+
+        static Image ReadFrom(BinaryReader r)
+        {
+            int width = r.ReadInt32();
+            int height = r.ReadInt32();
+            Image img = new Image(width, height);
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    byte A = r.ReadByte();
+                    byte R = r.ReadByte();
+                    byte G = r.ReadByte();
+                    byte B = r.ReadByte();
+                    img[x, y] = new Color32(A, R, G, B);
+                }
+            }
+            return img;
+        }
+
+        public static Image Deserialize(BinaryReader r)
+        {
+            return ReadFrom(r);
+        }
+       
+        public static Image Black(int width, int height)
+        {
+            Image img = new Image(width, height);
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    img[x, y] = Color32.Black;
+                }
+            }
+            return img;
+        }
+        public static Image White(int width, int height)
+        {
+            Image img = new Image(width, height);
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    img[x, y] = Color32.White;
+                }
+            }
+            return img;
         }
     }
 
@@ -73,9 +334,9 @@ namespace VirtMuseWeb.Utility
     {
         //TODO not file but string already
         private List<int> triangles;
-        private List<Vector3> vertices;
-        private List<Vector2> uv;
-        private List<Vector3> normals;
+        private List<Vec3> vertices;
+        private List<Vec2> uv;
+        private List<Vec3> normals;
         private List<Vec3Int> faceData;
         private List<int> intArray;
 
@@ -88,17 +349,17 @@ namespace VirtMuseWeb.Utility
         public UnityMeshData BuildMesh(string OBJString)
         {
             triangles = new List<int>();
-            vertices = new List<Vector3>();
-            uv = new List<Vector2>();
-            normals = new List<Vector3>();
+            vertices = new List<Vec3>();
+            uv = new List<Vec2>();
+            normals = new List<Vec3>();
             faceData = new List<Vec3Int>();
             intArray = new List<int>();
 
             LoadMeshData(OBJString);
 
-            Vector3[] newVerts = new Vector3[faceData.Count];
-            Vector2[] newUVs = new Vector2[faceData.Count];
-            Vector3[] newNormals = new Vector3[faceData.Count];
+            Vec3[] newVerts = new Vec3[faceData.Count];
+            Vec2[] newUVs = new Vec2[faceData.Count];
+            Vec3[] newNormals = new Vec3[faceData.Count];
 
             /* The following foreach loops through the facedata and assigns the appropriate vertex, uv, or normal
              * for the appropriate Unity mesh array.
@@ -160,21 +421,21 @@ namespace VirtMuseWeb.Utility
                     {
                         int splitStart = 2;
 
-                        vertices.Add(new Vector3(GetFloat(sb, ref splitStart, ref sbFloat),
+                        vertices.Add(new Vec3(GetFloat(sb, ref splitStart, ref sbFloat),
                             GetFloat(sb, ref splitStart, ref sbFloat), GetFloat(sb, ref splitStart, ref sbFloat)));
                     }
                     else if (sb[0] == 'v' && sb[1] == 't' && sb[2] == ' ') // UV
                     {
                         int splitStart = 3;
 
-                        uv.Add(new Vector2(GetFloat(sb, ref splitStart, ref sbFloat),
+                        uv.Add(new Vec2(GetFloat(sb, ref splitStart, ref sbFloat),
                             GetFloat(sb, ref splitStart, ref sbFloat)));
                     }
                     else if (sb[0] == 'v' && sb[1] == 'n' && sb[2] == ' ') // Normals
                     {
                         int splitStart = 3;
 
-                        normals.Add(new Vector3(GetFloat(sb, ref splitStart, ref sbFloat),
+                        normals.Add(new Vec3(GetFloat(sb, ref splitStart, ref sbFloat),
                             GetFloat(sb, ref splitStart, ref sbFloat), GetFloat(sb, ref splitStart, ref sbFloat)));
                     }
                     else if (sb[0] == 'f' && sb[1] == ' ')
@@ -284,11 +545,11 @@ namespace VirtMuseWeb.Utility
     }
 
     [Serializable]
-    public class RoomStyle
+    public class RoomStyle :ISerializable
     {
-        public byte[] Floor { get; set; }
-        public byte[] Ceiling { get; set; }
-        public byte[] Wall { get; set; }
+        [SerializeField]public Image Floor { get; set; }
+        [SerializeField] public Image Ceiling { get; set; }
+        [SerializeField] public Image Wall { get; set; }
         /// <summary>
         /// creates room style
         /// </summary>
@@ -303,32 +564,69 @@ namespace VirtMuseWeb.Utility
             if (data.Length != 3)
                 throw new Exception($"Not correct data to build roomstyle, need 3 byte arrays, got {data.Length}");
 
-            Floor = data[0];
-            Ceiling = data[1];
-            Wall = data[2];
+            Floor = ImageHelper.GetImage(data[0]);
+            Ceiling = ImageHelper.GetImage(data[1]);
+            Wall = ImageHelper.GetImage(data[2]);
+        }
+
+        private RoomStyle()
+        {
+
         }
 
         public byte[] Serialize()
         {
-            BinaryFormatter bF = new BinaryFormatter();
             using (MemoryStream ms = new MemoryStream())
             {
-                bF.Serialize(ms, this);
-                return ms.ToArray();
+                using (BinaryWriter w = new BinaryWriter(ms))
+                {
+                    WriteTo(w);
+                    return ms.ToArray();
+                }
             }
+        }
+
+        void WriteTo(BinaryWriter w)
+        {
+            Floor.Serialize(w);
+            Ceiling.Serialize(w);
+            Wall.Serialize(w);
+        }
+
+        public void Serialize(BinaryWriter w)
+        {
+            WriteTo(w);
         }
 
         public static RoomStyle Deserialize(byte[] rS)
         {
-            using (MemoryStream ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream(rS))
             {
-                BinaryFormatter bf = new BinaryFormatter();
-                ms.Write(rS, 0, rS.Length);
-                ms.Seek(0, SeekOrigin.Begin);
-                return bf.Deserialize(ms) as RoomStyle;
+                using (BinaryReader r = new BinaryReader(ms))
+                {
+                    return ReadFrom(r);
+                }
             }
         }
 
+        static RoomStyle ReadFrom(BinaryReader r)
+        {
+            RoomStyle rS = new RoomStyle();
+
+            Image f = Image.Deserialize(r);
+            Image c = Image.Deserialize(r);
+            Image w = Image.Deserialize(r);
+
+            rS.Wall = w;
+            rS.Floor = f;
+            rS.Ceiling = c;
+            return rS;
+        }
+
+        public static RoomStyle Deserialize(BinaryReader r)
+        {
+            return ReadFrom(r);
+        }
     }
 
 }

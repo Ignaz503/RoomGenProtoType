@@ -25,7 +25,7 @@ public class PreProcessingGameObjectInformation
     /// The scaling that needs to be applied to the gameobject
     /// caan be local or global (same as position or rotation)
     /// </summary>
-    public Vector3 Scale { protected get; set; }
+    public Vector3 Scale { get; set; }
 
     /// <summary>
     /// Applies the position value to a transform
@@ -73,13 +73,21 @@ public class PreProcessingGameObjectInformation
     /// <param name="space">if local or lossy global</param>
     public void ApplyScale(Transform t, Space space = Space.Self)
     {
+        Vector3 nscale = Vector3.zero;
+
         switch (space)
         {
             case Space.Self:
-                t.localScale.Scale(Scale);
+                nscale.x = t.localScale.x * Scale.x;
+                nscale.y = t.localScale.y * Scale.y;
+                nscale.z = t.localScale.z * Scale.z;
+                t.localScale = nscale;
                 break;
             case Space.World:
-                t.lossyScale.Scale(Scale);
+                nscale.x = t.lossyScale.x * Scale.x;
+                nscale.y = t.lossyScale.y * Scale.y;
+                nscale.z = t.lossyScale.z * Scale.z;
+                t.lossyScale.Set(nscale.x,nscale.y,nscale.z);
                 break;
         }
     }
