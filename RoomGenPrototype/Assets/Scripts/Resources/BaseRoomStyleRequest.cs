@@ -41,6 +41,8 @@ public abstract class BaseRoomStyleRequest : IResourceRequest
             if (RoomStyleManager.Instance.CheckIfDownloading(ResourceLocator))
             {
                 //woke up
+                while (RoomStyleManager.Instance.CheckIfDownloading(ResourceLocator))
+                    yield return null;
                 Response =  RoomStyleManager.Instance.GetStyle(ResourceLocator);
             }
             else

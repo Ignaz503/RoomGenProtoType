@@ -7,27 +7,23 @@ using UnityEngine;
 
 /// <summary>
 /// Manages downloaded roomstyles, as to not download them multiple times
-/// is thread safe
+/// is thread safeish
 /// </summary>
 public sealed class RoomStyleManager
 {
+    public static RoomStyleManager _Instance;
     /// <summary>
     /// Instance of the manager
     /// </summary>
-    public static RoomStyleManager Instance { get; private set; }
-
-    /// <summary>
-    /// instantiates new instance
-    /// called by resource loader at start
-    /// WARNING: should only be called once, by main unity thread
-    /// somewhere early on
-    /// to keep thread saftey
-    /// </summary>
-    public static void Instantiate()
+    public static RoomStyleManager Instance
     {
-        Instance = new RoomStyleManager();
+        get
+        {
+            if (_Instance == null)//possibly not thread safe
+                _Instance = new RoomStyleManager();
+            return _Instance;
+        }
     }
-
 
 /// <summary>
     /// thread safe dictionary of all roomstyles, maps from

@@ -75,12 +75,26 @@ public class SlidingDoor : BaseDoor
 
     public override void Lock(string key)
     {
-        throw new System.NotImplementedException();
+        if(currentState != DoorState.Closed)
+        {
+            //TODO: feedback
+            throw new Exception("Door needs to be closed to lock, try LockOpen if you want to keep it from closing");
+        }
+        currentState = DoorState.LockedClose;
+        currentMovement = 0f;
+        transform.localPosition = new Vector3(transform.localPosition.x,transform.localPosition.y,defaultClosePosition);
+        currentMovement = 0f;
     }
 
     public override void Unlock(string key)
     {
-        throw new System.NotImplementedException();
+        //TODO: key comparison and so on
+        if (currentState != DoorState.LockedClose)
+        {
+            Debug.Log("Door isn't locekd");
+            return;
+        }
+        currentState = DoorState.Closed;
     }
 
     public override void LockOpen()

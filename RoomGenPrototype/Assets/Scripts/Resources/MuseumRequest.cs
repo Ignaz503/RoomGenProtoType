@@ -28,34 +28,25 @@ public class MuseumRequest : IResourceRequest
     {
         RequestData = data;
         CallBack = callback;
-        if (callback == null)
-            throw new Exception("museum request callback cann't be null");
         IsDone = false;
     }
 
     public IEnumerator StartWorkRequest()
     {
-        Thread t = new Thread(() => GetMuseum());
-        t.Start();
-        yield return null;
+        WWW reqReply = new WWW(BaseURL + JsonConvert.SerializeObject(RequestData));
+
+        while (!reqReply.isDone)
+            yield return null;
+
+        //TODO: FIX SERVER SIDE AS WELL
+        string s = JsonConvert.DeserializeObject<string>(reqReply.text);
+        Debug.Log(s);
+        Response = Museum.Deserialize(s);
+        IsDone = true;
     }
 
     public void WhenDone()
     {
-        CallBack(Response);
+        CallBack?.Invoke(Response);
     }
-
-    public void GetMuseum()
-    {
-        WWW reqReply = new WWW(BaseURL + JsonConvert.SerializeObject(RequestData));
-
-        while (!reqReply.isDone)
-            Thread.Sleep(25);
-
-        //TODO: FIX SERVER SIDE AS WELL
-        string s = JsonConvert.DeserializeObject<string>(reqReply.text);
-        Response =  Museum.Deserialize(s);
-        IsDone = true;
-    }
-
 }

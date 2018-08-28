@@ -13,7 +13,7 @@ public class ImageDisplay : Display {
     /// <summary>
     /// the rotation of the image display
     /// </summary>
-    public static Vector3 Rotation = new Vector3(0, -90f, 180);
+    public static Vector3 Rotation = new Vector3(0, -90f, 0);
     /// <summary>
     /// scale of the image
     /// </summary>

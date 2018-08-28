@@ -289,18 +289,11 @@ public class Museum
                 dispInf.Type = (rng.Next(0, 2) > 0) ? DisplayType.MeshDisplay : DisplayType.ImageDisplay;
             }
 
-            r.FloorTexture = new MuseumTextureInfo()
+            r.StyleInfo = new MuseumTextureInfo()
             {
                 AssociatedID = r.RoomID.ToString(),
                 PositionModifier = 0,
                 //AssociatedResourceLocators = s.floorTexture.name
-            };
-
-            r.CeilingTexture = new MuseumTextureInfo()
-            {
-                AssociatedID = r.RoomID.ToString(),
-                PositionModifier = 0,
-                //AssociatedResourceLocators = s.ceilingTexture.name
             };
 
             foreach (int wID in r.Walls)
@@ -404,7 +397,7 @@ public class Museum
     /// </summary>
     /// <param name="coord"></param>
     /// <returns></returns>
-    int TransformTileCoordIntoOneD(Vector2Int coord)
+    public int TransformTileCoordIntoOneD(Vector2Int coord)
     {
         return coord.x + (coord.y * Size);
     }
@@ -415,9 +408,9 @@ public class Museum
     /// item1 in tuple = x 
     /// item2 in tuple = y 
     /// </summary>
-    Tuple<int, int> TransformOneDCoordIntoTwoD(int coord)
+    public Vector2Int TransformOneDCoordIntoTwoD(int coord)
     {
-        return new Tuple<int, int>(coord % Size, coord / Size);
+        return new Vector2Int(coord % Size, coord / Size);
     }
 
     [Obsolete]

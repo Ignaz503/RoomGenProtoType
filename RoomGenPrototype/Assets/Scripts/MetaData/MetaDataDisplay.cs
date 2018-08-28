@@ -83,20 +83,20 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
 
     // Use this for initialization
     void Awake () {
-
         Type t = typeof(MetaData);
-        FieldInfo[] fields = t.GetFields();
+        PropertyInfo[] fields = t.GetProperties(); ;
 
         SetupButtonPrefabCorrectly(fields.Length);
 
-        foreach (FieldInfo field in fields)
+        foreach (PropertyInfo field in fields)
         {
+
             MetaDataAttribute att = field.GetCustomAttribute<MetaDataAttribute>() as MetaDataAttribute;
             if (att != null)
             {
-                //Debug.Log(field.Name);
                 CreateMetadataDisplay(att);
             }// end if att != null
+
         }// end foreach
         displayBaseCanvas.gameObject.SetActive(false);
 	}

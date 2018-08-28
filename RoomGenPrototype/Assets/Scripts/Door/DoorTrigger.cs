@@ -9,15 +9,19 @@ using UnityEngine;
 public class DoorTrigger : MonoBehaviour {
 
     [SerializeField] BaseDoor door;
+    [SerializeField] bool openOnStart = true;
 
     private void Start()
     {
-        //Temp
-        Action<BaseDoor> lockOpen = null;
-        lockOpen = (tmepDoor) => { door.LockOpen(); door.OnOpen -= lockOpen; };
-        door.OnOpen += lockOpen;
+        if (openOnStart)
+        {
+            //Temp
+            Action<BaseDoor> lockOpen = null;
+            lockOpen = (tmepDoor) => { door.LockOpen(); door.OnOpen -= lockOpen; };
+            door.OnOpen += lockOpen;
 
-        door.Open();
+            door.Open();
+        }
     }
 
 

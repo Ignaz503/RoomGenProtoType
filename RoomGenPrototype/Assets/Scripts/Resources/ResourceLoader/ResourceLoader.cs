@@ -13,11 +13,91 @@ public class ResourceLoader : MonoBehaviour
     }
 
     #region Debugging
-    public Display ImageDisplay;
-    public Display MeshDisplay;
-    public GameObject Wall;
+    //public Display ImageDisplay;
+    //public Display MeshDisplay;
+    //public GameObject Wall1;
+    //public GameObject Wall2;
 
-    public int[] ResourceIDs;
+    //public int[] ResourceIDs;
+
+    //void TestImageRequest()
+    //{
+    //DisplayResourceRequest<DisplayImageResource> req = new DisplayResourceRequest<DisplayImageResource>(ResourceIDs[0], ImageDisplay, null);
+
+    //PostRequest(req, RequestType.Other);
+
+    //}
+
+    //void TestMeshRequest()
+    //{
+    //    DisplayResourceRequest<DisplayMeshResource> req = new DisplayResourceRequest<DisplayMeshResource>(4, MeshDisplay,
+    //        (res) =>
+    //        {
+    //            BoundingSphere boundsChild = BoundingSphere.Calculate(res.Mesh.vertices);
+    //            BoundingSphere boundsParent = BoundingSphere.Calculate((MeshDisplay as MeshDisplay).ParentMesh.sharedMesh.vertices);
+
+    //            float avg = (MeshDisplay.transform.localScale.x + MeshDisplay.transform.localScale.y + MeshDisplay.transform.localScale.z) / 3f;
+    //            float scale = ((boundsParent.radius / boundsChild.radius) * avg);
+
+    //            return new PreProcessingGameObjectInformation() { Scale = new Vector3(scale, scale, scale) };
+    //        }
+
+    //        );
+
+    //    PostRequest(req, RequestType.Other);
+    //}
+
+    //void TestWallSingle()
+    //{
+    //    SingleWallTextureRequest req = new SingleWallTextureRequest(ResourceIDs[3], Wall1);
+    //    PostRequest(req, RequestType.Other);
+    //}
+
+    //void TestMultiWall1()
+    //{
+    //    Wall w = new Wall(Wall.WallType.Solid, new Vector2[] { Vector2.zero, Vector2.zero }, -1f, Vector2Int.zero, 0, Wall.WallRotation.Vertical, null);
+
+    //    w.TextureInfos.Add(new MuseumTextureInfo() { AssociatedResourceLocators = ResourceIDs[2], PositionModifier = 0 });
+    //    w.TextureInfos.Add(new MuseumTextureInfo() { AssociatedResourceLocators = ResourceIDs[3], PositionModifier = 1 });
+
+
+    //    MultiWallTextureRequest req = new MultiWallTextureRequest(w, Wall1);
+    //    PostRequest(req, RequestType.Other);
+    //}
+
+    //void TestMultiWall2()
+    //{
+    //    Wall w = new Wall(Wall.WallType.Solid, new Vector2[] { Vector2.zero, Vector2.zero }, -1f, Vector2Int.zero, 0, Wall.WallRotation.Vertical, null);
+
+    //    w.TextureInfos.Add(new MuseumTextureInfo() { AssociatedResourceLocators = ResourceIDs[3], PositionModifier = 0 });
+    //    w.TextureInfos.Add(new MuseumTextureInfo() { AssociatedResourceLocators = ResourceIDs[2], PositionModifier = 1 });
+
+
+    //    MultiWallTextureRequest req = new MultiWallTextureRequest(w, Wall2);
+    //    PostRequest(req, RequestType.Other);
+    //}
+
+    //void TestSameTexture()
+    //{
+    //    TestMultiWall2();
+    //    Action<Type> a = null;
+    //    a = (t) => { TestWallSingle(); OnResourceDownloaded -= a; };
+    //    OnResourceDownloaded += a;
+    //}
+
+    /// <summary>
+    /// Debug start
+    /// </summary>
+    //public void Start()
+    //{
+    //    //TestMeshRequest();
+    //    //TestImageRequest();
+    //    //TestWallSingle();
+    //    //TestMultiWall1();
+    //    //TestMultiWall2();
+    //    //TestSameTexture();
+    //}
+
     #endregion
 
 
@@ -28,21 +108,46 @@ public class ResourceLoader : MonoBehaviour
     /// <summary>
     /// number of request it is possible to work on at the same time
     /// </summary>
-    [SerializeField] [Range(1, 20)] int NumWorkableRequestsSameTime;
+    [SerializeField] [Range(1, 20)] int numWorkableRequestsSameTime;
     /// <summary>
     /// base url to server
     /// eg: http://localhost:52536
     /// </summary>
-    [SerializeField] string BaseURL;
+    [SerializeField] string baseURL;
 
     /// <summary>
     /// sub route to resource eg /api/resource/getres?id=
     /// </summary>
-    [SerializeField] string[] ResourceRoute;
+    [SerializeField] string[] resourceRoute;
 
+    /// <summary>
+    /// event invoked when a resource was downloaded
+    /// informs about what type the request was
+    /// DONT send actuall IResourceRequest someone might unwatingly might tameper with things
+    /// should be seen as info for observers
+    /// </summary>
+    public event Action<Type> OnResourceDownloaded;
+
+    /// <summary>
+    /// number of currently active requests
+    /// </summary>
     int numCurrentRequestsWorkingOn = 0;
+
+    /// <summary>
+    /// queue of request posted
+    /// </summary>
     Queue<IResourceRequest> requestQueue;
+
+    /// <summary>
+    /// queue of requests that are currently being worked on
+    /// </summary>
     Queue<IResourceRequest> requestsWorkingOn;
+
+    /// <summary>
+    /// special request for the museum
+    /// stored for easy storage between scenes 
+    /// </summary>
+    public Museum MuseumToBuild { get; set; }
 
     public void Awake()
     {
@@ -51,19 +156,11 @@ public class ResourceLoader : MonoBehaviour
 
         DontDestroyOnLoad(this);
         Instance = this;
-        RoomStyleManager.Instantiate();
         requestQueue = new Queue<IResourceRequest>();
         requestsWorkingOn = new Queue<IResourceRequest>();
     }
 
-
-    public void Start()
-    {
-        //TestMeshRequest();
-        TestImageRequest();
-    }
-
-    /// <summary>
+/// <summary>
     /// first checks if we can start a new request, when there is space
     /// and we have request posted
     /// after that, checks if any request finished
@@ -73,7 +170,7 @@ public class ResourceLoader : MonoBehaviour
     private void Update()
     {
         //see if possible to start work on new request
-        if(numCurrentRequestsWorkingOn < NumWorkableRequestsSameTime)
+        if(numCurrentRequestsWorkingOn < numWorkableRequestsSameTime)
         {
             //can start new request
             if(requestQueue.Count >0)
@@ -93,6 +190,7 @@ public class ResourceLoader : MonoBehaviour
             // else reenqueue
             if (req.IsDone)
             {
+                OnResourceDownloaded?.Invoke(req.GetType());
                 req.WhenDone();
                 numCurrentRequestsWorkingOn--;//decrease num working on
             }
@@ -118,37 +216,12 @@ public class ResourceLoader : MonoBehaviour
     /// <param name="reqType">reqest type, to figure out routing on server</param>
     public void PostRequest(IResourceRequest req,RequestType reqType)
     {
-        req.BaseURL = BaseURL + ResourceRoute[(int)reqType];//set url for request to download
+        req.BaseURL = baseURL + resourceRoute[(int)reqType];//set url for request to download
+
         requestQueue.Enqueue(req);
-        gameObject.SetActive(true);//wake up
+        //wake up
+        //needed cause loader goes to sleep when no requests in queue or worked on
+        gameObject.SetActive(true);
     }
     
-
-    void TestImageRequest()
-    {
-        DisplayResourceRequest<DisplayImageResource> req = new DisplayResourceRequest<DisplayImageResource>(ResourceIDs[0], ImageDisplay, null);
-
-        PostRequest(req, RequestType.Other);
-
-    }
-
-    void TestMeshRequest()
-    {
-        DisplayResourceRequest<DisplayMeshResource> req = new DisplayResourceRequest<DisplayMeshResource>(4, MeshDisplay,
-            (res) => 
-            {
-                BoundingSphere boundsChild = BoundingSphere.Calculate(res.Mesh.vertices);
-                BoundingSphere boundsParent = BoundingSphere.Calculate((MeshDisplay as MeshDisplay).ParentMesh.sharedMesh.vertices);
-                
-                float avg = (MeshDisplay.transform.localScale.x + MeshDisplay.transform.localScale.y + MeshDisplay.transform.localScale.z) / 3f;
-                float scale = ((boundsParent.radius / boundsChild.radius) * avg);
-
-                return new PreProcessingGameObjectInformation() { Scale = new Vector3(scale, scale, scale) };
-            }          
-            
-            );
-
-        PostRequest(req, RequestType.Other);
-    }
-
 }

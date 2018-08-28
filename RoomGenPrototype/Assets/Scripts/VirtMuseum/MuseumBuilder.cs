@@ -72,8 +72,8 @@ public class MuseumBuilder : MonoBehaviour
     /// <summary>
     /// the museum being built
     /// </summary>
-    Museum virtMuse = null;
-
+    public Museum VirtMuse;
+    
     /// <summary>
     /// temp
     /// </summary>
@@ -84,6 +84,23 @@ public class MuseumBuilder : MonoBehaviour
     /// </summary>
     MuseumController _MusemControllerInstance;
 
+    Dictionary<int, GameObject> oneDTileCoordToFloorGameObjectMapping;
+
+    /// <summary>
+    /// event invoked when the builder received an museum to build
+    /// </summary>
+    public event Action<Museum> OnMuseumGotten;
+
+    /// <summary>
+    ///  event invoked when a wall was built
+    /// </summary>
+    public event Action<Room> OnRoomBuilt;
+
+    /// <summary>
+    /// event invoked when wall was built 
+    /// </summary>
+    public event Action<Wall> OnWallBuilt;
+
     private void Awake()
     {
         if(Instance != null)
@@ -92,8 +109,10 @@ public class MuseumBuilder : MonoBehaviour
             Destroy(this);
             return;
         }
-
+        
         Instance = this;
+
+        oneDTileCoordToFloorGameObjectMapping = new Dictionary<int, GameObject>();
 
         TestTextSize = TestTextures.Length;
 
@@ -122,221 +141,34 @@ public class MuseumBuilder : MonoBehaviour
 
         //requesting museum (simulate comunication with server^^)
         //for testing of serialization of museum and deserialization
-        MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequestData()
-        {
-            MuseumType = "TestMuseum",
-            Size = MuseumSize.Large
-        }).Serialize(),MuseumData);
-        if (DisableAfterRequest)
-            gameObject.SetActive(false);
+        //MuseumGenerator.Instance.RequestNewMuseum((new MuseumRequestData()
+        //{
+        //    MuseumType = "TestMuseum",
+        //    Size = MuseumSize.Large
+        //}).Serialize(),MuseumData);
+        //if (DisableAfterRequest)
+        //    gameObject.SetActive(false);
+        VirtMuse = ResourceLoader.Instance.MuseumToBuild;
+        OnMuseumGotten(VirtMuse);
+        StartCoroutine(BuildMuseum());
     }
 
     private void Update()
     {
-        if(MuseumData.Count > 0)
-        {
-            string data = null;
-            if((data = MuseumData.Dequeue())!= null)
-            {
-                virtMuse = Museum.Deserialize(data);
-                MuseumController.Instance.SetMuseumToControl(virtMuse);
-
-                List<GameObject> floors = new List<GameObject>();
-                SetUpFloor(floors);
-                SetUpWalls(floors);
-
-                //_MusemControllerInstance.LogRoomManagmentUnitForRoom(0);
-                //_MusemControllerInstance.LogRoomManagmentUnitForRoom(17);
-
-                Player.transform.position = new Vector3(floors[0].transform.position.x, 4f, floors[0].transform.position.z);
-                Player.SetActive(true);
-                gameObject.SetActive(false);
-            }
-        }
     }
 
     /// <summary>
-    /// Sets up the floor for a museum
-    /// fills list of gameobjects used for parenting information
-    /// when setting up walls
+    /// Sets player position to the first floor in the museum.
     /// </summary>
-    void SetUpFloor(List<GameObject> floors)
+    public void SetToStartPosition(Transform t)
     {
-        foreach (Room r in virtMuse.Rooms)
-        {
-            //create floor
-            List<GameObject> roomFloors = new List<GameObject>();
-
-            #region Floor Gameobject setup
-            foreach (Vector2Int tile in r.RoomTiles)
-            {
-                GameObject floor = Instantiate(FloorPrefab);
-                //GameObject ceiling = Instantiate(CeilingPrefab);
-                //TODO REMOVE
-                //ceiling.SetActive(false);
-                AddToRoomManagmentUnit(r.RoomID, floor);
-                //AddToRoomManagmentUnit(r.RoomID, ceiling);
-
-                //MeshRenderer rend = floor.GetComponent<MeshRenderer>();
-                //MeshRenderer ceilRend = ceiling.GetComponent<MeshRenderer>();
-                floors.Add(floor);
-
-                //TEMP
-                //TODO REMOVE
-                //switch (r.Type)
-                //{
-                //    case RoomType.Normal:
-                //        rend.material.color = Color.yellow;
-                //        ceilRend.material.color = Color.yellow;
-                //        break;
-                //    case RoomType.Long:
-                //        rend.material.color = Color.red;
-                //        ceilRend.material.color = Color.red;
-                //        break;
-                //    case RoomType.Big:
-                //        rend.material.color = Color.green;
-                //        ceilRend.material.color = Color.green;
-                //        break;
-                //    case RoomType.L:
-                //        rend.material.color = Color.blue;
-                //        ceilRend.material.color = Color.blue;
-                //        break;
-                //}
-
-                Vector3 pos = new Vector3(FloorXPosScale * tile.x, FloorPrefab.transform.position.y, FloorZPosScale * tile.y);
-
-                string name = r.RoomID + " " + r.Type.ToString() + " " + tile.ToString();
-
-                floor.transform.position = pos;
-                floor.name = name;
-                roomFloors.Add(floor);
-
-                //ceiling.name = name + "  ceiling";
-                //pos.y += wallHeight;
-                //ceiling.transform.position = pos;
-
-                //load floor texture#
-                //TODO UNCOMMENT WHEN TESTING RESOURCE LOADER
-                //ResourceLoader.Instance.RequestResource(
-                //    res =>
-                //    {
-                //        res.res.ApplyToGameobject(floor);
-                //TODO apply PreProcessingGameobject information
-                //    },
-                //    r.FloorTexture.AssociatedResourceLocators,
-                //    typeof(TextureResource).ToString()
-                //    );
-                //ResourceLoader.Instance.RequestResource(
-                //    res =>
-                //    {
-                //        res.res.ApplyToGameobject(ceiling);
-                //TODO apply PreProcessingGameobject information
-                //    },
-                //    r.CeilingTexture.AssociatedResourceLocators,
-                //    typeof(TextureResource).ToString()
-                //    );
-                //TEMPApplyTextureToNonWalls(r.FloorTexture.AssociatedResourceLocators, floor);
-                //TEMPApplyTextureToNonWalls(r.CeilingTexture.AssociatedResourceLocators, ceiling);
-            }
-            #endregion
-
-            SetUpCenterDisplaysForRoom(r,roomFloors);
-        }
-    }
-
-    /// <summary>
-    /// Sets up wall gameobjects for a museum
-    /// </summary>
-    /// <param name="floors"></param>
-    void SetUpWalls(List<GameObject> floors)
-    {
-        foreach (Wall w in virtMuse.Walls)
-        {
-            #region Wall gamobject setup
-            GameObject wallObj = w.Type == Wall.WallType.Solid ? Instantiate(WallPrefab) : Instantiate(WallWithDoorPrefab);
-
-            //position parenting
-            GameObject parent = floors.Where((obj) => { return obj.name.Contains(w.Tiles[0].ToString()); }).First();
-            if (parent != null)
-                wallObj.transform.SetParent(parent.transform);
-
-            float yPos = (w.Type == Wall.WallType.Solid ? wallObj.transform.localScale.y * .5f : wallObj.transform.localScale.y)+.5f;
-
-            //rotation
-            //TODO: Remove fixed values
-            if (w.Rotation == Wall.WallRotation.Horizontal)
-            {
-                wallObj.transform.localPosition = new Vector3(0, yPos, .5f *w.PositionModifier);
-            }
-            else
-            {
-                wallObj.transform.localPosition = new Vector3(.5f * w.PositionModifier, yPos, 0);
-            }
-
-            Vector3 newRot = new Vector3(0f, 90f * (int)w.Rotation, 0);
-
-            wallObj.transform.eulerAngles = newRot;
-
-            wallObj.name =  w.WallID + " " + w.Rotation.ToString() + " " + w.Tiles[0].ToString();
-
-            //name
-            if(w.AssociatedRoomIDs.Count < 2)
-            {
-                wallObj.name += " " + w.AssociatedRoomIDs[0];
-            }
-            else
-            {
-                wallObj.name += " "+w.AssociatedRoomIDs[0];
-                wallObj.name += " " + w.AssociatedRoomIDs[1];
-            }
-
-            foreach (uint assIds in w.AssociatedRoomIDs)
-            {
-                AddToRoomManagmentUnit(assIds, wallObj);
-            }
-
-            #endregion
-
-            if (w.Type == Wall.WallType.Solid)
-                SetUpDisplaysForWall(w, wallObj);
-
-            wallObj.transform.SetParent(null);
-
-            TEMPApplyTextureToWall(w, wallObj);
-            //request wall texture
-            //MeshRenderer re = wallObj.GetComponent<MeshRenderer>();
-            //ResourceLoader.Instance.RequestResource(
-            //    res =>{
-            //        //TODO CHECK IF RES IS TEXTURE RESOURCE
-            //        TextureResource texRes = res.res as TextureResource;
-            //        if(re.material.mainTexture != null && re.material.mainTexture.width == 2 * texRes.Image.width)
-            //        {
-            //            Texture2D tex = new Texture2D(re.material.mainTexture.width,re.material.mainTexture.height);
-
-            //            tex.SetPixels((re.material.mainTexture as Texture2D).GetPixels(0,0,re.material.mainTexture.width,re.material.mainTexture.height));
-            //            //texture already big enough set texture depending on position modifier
-            //            //start from 0 if pos mod 0 else from half width
-            //            int xStart = (int)(re.material.mainTexture.width * (w.TextureInfos[0].PositionModifier * 0.5f));
-            //            //loop to end if pos mod is 1 else to halfe width
-            //            int xEnd = (int)(re.material.mainTexture.width * (w.TextureInfos[0].PositionModifier > 0 ? 1f : 0.5f));
-            //            //TODO CHECK IF xEND calc needs +1 if only to half width
-            //            //Probably not
-            //            for(int x = xStart;x < xEnd; x++)
-            //            {
-            //                for(int y = 0; y < texRes.Image.height; y++)
-            //                {
-            //                    //TODO set texture pixels of new texture
-            //                    tex.SetPixel(x, y, tex.GetPixel(x - xStart, y));
-            //                }
-            //            }
-            //        }
-            //    },
-            //    w.TextureInfos[0].AssociatedResourceLocators,
-            //    typeof(TextureResource).ToString()
-            //    );
-            //TODO TEXTURE LOADING FOR associated wall texutre [1]
-
-        }
+        GameObject firstRoomFloorObj = oneDTileCoordToFloorGameObjectMapping[VirtMuse.TransformTileCoordIntoOneD(VirtMuse.Rooms[0].RoomTiles[0])];
+        Transform cParent = t.parent;
+        t.SetParent(firstRoomFloorObj.transform);
+        t.localPosition = new Vector3(.35f, .25f, 0);
+        t.SetParent(cParent);
+        t.gameObject.SetActive(true);//????
+        //gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -361,9 +193,8 @@ public class MuseumBuilder : MonoBehaviour
 
             display.SetUp(dispInf, associatedFloorGameobjects[i]);
 
-
             if (display != null)
-                LoadDisplayResource(display, "test");
+                LoadDisplayResource(display, dispInf.AssociatedResourceLocator);
             i++;
         }
     }
@@ -384,52 +215,11 @@ public class MuseumBuilder : MonoBehaviour
 
             display.SetUp(dispInf, wallObj);
 
-
             if (display != null)
-                LoadDisplayResource(display, "test");
+                LoadDisplayResource(display, dispInf.AssociatedResourceLocator);
         }
     }
 
-    /// <summary>
-    /// TEMPORARY IMPLEMENTATION
-    /// Loads Resource for a dsiplay 
-    /// </summary>
-    void LoadDisplayResource(Display objInNeedOfResource, string resourceLocator)
-    {
-        System.Random rng = new System.Random((int)DateTime.Now.Ticks);
-
-        switch (objInNeedOfResource.Type)
-        {
-            case Display.DisplayType.MeshDisplay:
-                int rngNum = rng.Next(2);
-                GameObject obj = Instantiate(TestMesh[rngNum].gameObject);
-                Mesh mesh = obj.GetComponent<MeshFilter>().sharedMesh;
-                Material mat = obj.GetComponent<MeshRenderer>().material;
-                objInNeedOfResource.ApplyResource(new DisplayMeshResource(mesh, mat));
-                Destroy(obj);
-                break;
-            case Display.DisplayType.ImageDisplay:
-                objInNeedOfResource.ApplyResource(new DisplayImageResource(TestTextures[currIdx++ % TestTextSize]));
-                break;
-        }
-        //actual implementation
-        //ResourceLoader.Instance.RequestResource(
-        //    res =>
-        //    {
-        //        if (res.res is BaseDisplayResource)
-        //        {
-        //            res.res.ApplyToGameobject(objInNeedOfResource.gameObject);
-        //            objInNeedOfResource.ApplyResource(res.res as BaseDisplayResource);
-        //        }
-        //        else
-        //        {
-        //            throw new Exception("Trying to assign non display resource to display");
-        //        }
-        //    },
-        //    resourceLocator,
-        //    objInNeedOfResource.Type.ToString()
-        //    );
-    }
 
     /// <summary>
     /// adds a room gamobject to a room managment unit
@@ -446,6 +236,142 @@ public class MuseumBuilder : MonoBehaviour
             Debug.LogError($"Could Not find associated room in mamangment units for: {objToAdd.name}");
     }
 
+    public GameObject GetGameObjectForTile(Vector2Int t)
+    {
+        return oneDTileCoordToFloorGameObjectMapping[VirtMuse.TransformTileCoordIntoOneD(t)];
+    }
+
+    #region Build Museum
+    
+    /// <summary>
+    /// Places a single room, and it's dilays
+    /// </summary>
+    /// <param name="r"></param>
+    void PlaceRoom(Room r)
+    {
+        //create floor
+        List<GameObject> roomFloors = new List<GameObject>();
+
+        #region Floor Gameobject setup
+        foreach (Vector2Int tile in r.RoomTiles)
+        {
+            GameObject floor = Instantiate(FloorPrefab);
+            GameObject ceiling = Instantiate(CeilingPrefab);
+            //TODO REMOVE
+            //ceiling.SetActive(false);
+            AddToRoomManagmentUnit(r.RoomID, floor);
+            AddToRoomManagmentUnit(r.RoomID, ceiling);
+
+
+            oneDTileCoordToFloorGameObjectMapping.Add(VirtMuse.TransformTileCoordIntoOneD(tile), floor);
+            //floors.Add(floor);
+
+            Vector3 pos = new Vector3(FloorXPosScale * tile.x, FloorPrefab.transform.position.y, FloorZPosScale * tile.y);
+
+            string name = r.RoomID + " " + r.Type.ToString() + " " + tile.ToString();
+
+            floor.transform.position = pos;
+            floor.name = name;
+            roomFloors.Add(floor);
+
+            ceiling.name = name + "  ceiling";
+            pos.y += wallHeight;
+            ceiling.transform.position = pos;
+
+            PostFloorTextureRequest(r, floor);
+            PostCeilingTextureRequest(r, ceiling);
+        }
+        #endregion
+
+        SetUpCenterDisplaysForRoom(r, roomFloors);
+    }
+
+    /// <summary>
+    /// places a singe wall
+    /// </summary>
+    /// <param name="w">the wall to palce</param>
+    void PlaceWall(Wall w)
+    {
+        #region Wall gamobject setup
+        GameObject wallObj = w.Type == Wall.WallType.Solid ? Instantiate(WallPrefab) : Instantiate(WallWithDoorPrefab);
+
+        //position parenting
+        GameObject parent = oneDTileCoordToFloorGameObjectMapping[VirtMuse.TransformTileCoordIntoOneD(w.Tiles[0])];
+        if (parent != null)
+            wallObj.transform.SetParent(parent.transform);
+
+        float yPos = (w.Type == Wall.WallType.Solid ? wallObj.transform.localScale.y * .5f : wallObj.transform.localScale.y) + .5f;
+
+        //rotation
+        //TODO: Remove fixed values
+        if (w.Rotation == Wall.WallRotation.Horizontal)
+        {
+            wallObj.transform.localPosition = new Vector3(0, yPos, .5f * w.PositionModifier);
+        }
+        else
+        {
+            wallObj.transform.localPosition = new Vector3(.5f * w.PositionModifier, yPos, 0);
+        }
+
+        Vector3 newRot = new Vector3(0f, 90f * (int)w.Rotation, 0);
+
+        wallObj.transform.eulerAngles = newRot;
+
+        wallObj.name = w.WallID + " " + w.Rotation.ToString() + " " + w.Tiles[0].ToString();
+
+        //name
+        if (w.AssociatedRoomIDs.Count < 2)
+        {
+            wallObj.name += " " + w.AssociatedRoomIDs[0];
+        }
+        else
+        {
+            wallObj.name += " " + w.AssociatedRoomIDs[0];
+            wallObj.name += " " + w.AssociatedRoomIDs[1];
+        }
+
+        foreach (uint assIds in w.AssociatedRoomIDs)
+        {
+            AddToRoomManagmentUnit(assIds, wallObj);
+        }
+
+        #endregion
+
+        if (w.Type == Wall.WallType.Solid)
+            SetUpDisplaysForWall(w, wallObj);
+
+        wallObj.transform.SetParent(null);
+
+        //TEMPApplyTextureToWall(w, wallObj);
+        PostWallTextureRequest(w, wallObj);
+    }
+
+    /// <summary>
+    /// Builds a Museum, over multiple frames(as a coroutine)
+    /// </summary>
+    /// <param name="M">Museum that needs building</param>
+    IEnumerator BuildMuseum()
+    {
+        foreach(Room r in VirtMuse.Rooms)
+        {
+            //place one room each frame
+            PlaceRoom(r);
+            OnRoomBuilt(r);
+            yield return null;
+        }
+        foreach(Wall w in VirtMuse.Walls)
+        {
+            PlaceWall(w);
+            OnWallBuilt(w);
+            yield return null;
+        }
+        //SetPlayerPositionToStart();
+        gameObject.SetActive(false);
+    }
+
+    #endregion
+    
+    #region TEMP
     /// <summary>
     /// TEMPORARY function to showcase room styles
     /// returns first hit in prefab list with same name as param name
@@ -454,7 +380,7 @@ public class MuseumBuilder : MonoBehaviour
     /// <returns>the texutre with the name</returns>
     Texture2D GetTexture(string name)
     {
-        Texture2D te = texturePrefabs.First((t) => { return t.name == name; });
+        Texture2D te = texturePrefabs[0];
         if(te == null)
         {
             throw new Exception("somthing wrong texture man");
@@ -523,6 +449,96 @@ public class MuseumBuilder : MonoBehaviour
             re.material.mainTexture = GetTexture(w.TextureInfos[0].AssociatedResourceLocators.ToString());
         }
     }
+    #endregion
+
+    /// <summary>
+    /// Loads Resource for a dsiplay 
+    /// </summary>
+    void LoadDisplayResource(Display objInNeedOfResource, int resourceLocator)
+    {
+        switch (objInNeedOfResource.Type)
+        {
+            case Display.DisplayType.MeshDisplay:
+                PostMeshDisplayRequest(objInNeedOfResource as MeshDisplay, resourceLocator);
+                break;
+            case Display.DisplayType.ImageDisplay:
+                PostImageDisplayRequest(objInNeedOfResource, resourceLocator);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// posts a mesh resource request
+    /// </summary>
+    /// <param name="disp">the display that wants the mesh</param>
+    /// <param name="resLoc">the ID of the resource</param>
+    void PostMeshDisplayRequest(MeshDisplay disp, int resLoc)
+    {
+        DisplayResourceRequest<DisplayMeshResource> req = new DisplayResourceRequest<DisplayMeshResource>(resLoc, disp, (res) =>
+        {
+            BoundingSphere boundsChild = BoundingSphere.Calculate(res.Mesh.vertices);
+            BoundingSphere boundsParent = BoundingSphere.Calculate(disp.ParentMesh.sharedMesh.vertices);
+
+            float avg = (disp.transform.localScale.x + disp.transform.localScale.y + disp.transform.localScale.z) / 3f;
+            float scale = ((boundsParent.radius / boundsChild.radius) * avg);
+
+            return new PreProcessingGameObjectInformation() { Scale = new Vector3(scale, scale, scale) };
+        });
+        ResourceLoader.Instance.PostRequest(req, ResourceLoader.RequestType.Other);
+    }
+
+    /// <summary>
+    /// Posts an image request to the resource loader
+    /// </summary>
+    /// <param name="disp">the display taht wants the resource</param>
+    /// <param name="resourceLocator">ID of resource</param>
+    void PostImageDisplayRequest(Display disp, int resourceLocator)
+    {
+        DisplayResourceRequest<DisplayImageResource> req = new DisplayResourceRequest<DisplayImageResource>(resourceLocator, disp, null);
+
+        ResourceLoader.Instance.PostRequest(req, ResourceLoader.RequestType.Other);
+    }
+
+    /// <summary>
+    /// posts a wall texture request to resource loader
+    /// </summary>
+    /// <param name="w">the wall that defines the request</param>
+    /// <param name="wallObj">the gamobject the texture should be applied to</param>
+    private void PostWallTextureRequest(Wall w, GameObject wallObj)
+    {
+        IResourceRequest req = null;
+        if(w.TextureInfos.Count > 1)
+        {
+            req = new MultiWallTextureRequest(w, wallObj);
+        }
+        else
+        {
+            req = new SingleWallTextureRequest(w.TextureInfos[0].AssociatedResourceLocators, wallObj);
+        }
+        ResourceLoader.Instance.PostRequest(req, ResourceLoader.RequestType.Other);
+    }
+
+    /// <summary>
+    /// posts a floor texture request to the resource loader
+    /// </summary>
+    /// <param name="r">the room that defines the room style</param>
+    /// <param name="floor">the gameobjec tthe texture should be applied to</param>
+    void PostFloorTextureRequest(Room r, GameObject floor)
+    {
+        FloorTextureRequest floorReq = new FloorTextureRequest(r.StyleInfo.AssociatedResourceLocators, floor);
+        ResourceLoader.Instance.PostRequest(floorReq, ResourceLoader.RequestType.Other);
+    }
+
+    /// <summary>
+    /// Posts a ceiling texutre requesst to the resource loader
+    /// </summary>
+    /// <param name="r">the room that defines the style</param>
+    /// <param name="ceiling">the gameobject that the texture should be applied to</param>
+    void PostCeilingTextureRequest(Room r, GameObject ceiling)
+    {
+        CeilingTextureRequest ceilReq = new CeilingTextureRequest(r.StyleInfo.AssociatedResourceLocators, ceiling);
+
+        ResourceLoader.Instance.PostRequest(ceilReq, ResourceLoader.RequestType.Other);
+    }
 
 }
-

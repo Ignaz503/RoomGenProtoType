@@ -81,6 +81,9 @@ public class MuseumController : MonoBehaviour {
 
         xPositionScaler = MuseumBuilder.Instance.FloorXPosScale;
         zPositionScaler = MuseumBuilder.Instance.FloorZPosScale;
+
+        MuseumBuilder.Instance.OnMuseumGotten += SetMuseumToControl;
+
     }
 	
 	// Update is called once per frame

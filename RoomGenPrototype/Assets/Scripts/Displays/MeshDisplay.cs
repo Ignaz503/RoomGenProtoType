@@ -73,7 +73,8 @@ public class MeshDisplay : Display {
     {
         base.ApplyResource(resource);
         resource.ApplyToGameobject(ChildMesh.gameObject);
-        //ScaleChildToFitParent();
+        //TODO COMMENT OUT
+        //ScaleChildToFitParent();//TEMP
         SetUpMeshRendererOptions();
     }
 

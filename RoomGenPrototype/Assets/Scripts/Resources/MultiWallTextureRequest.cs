@@ -57,6 +57,8 @@ public class MultiWallTextureRequest : BaseRoomStyleRequest
             //check if someone else is downloading
             if (RoomStyleManager.Instance.CheckIfDownloading(ResourceLocator))
             {
+                while (RoomStyleManager.Instance.CheckIfDownloading(ResourceLocator))
+                    yield return null;
                 //woke up
                 Response = RoomStyleManager.Instance.GetStyle(ResourceLocator);
             }
@@ -87,6 +89,8 @@ public class MultiWallTextureRequest : BaseRoomStyleRequest
             //check if someone else is downloading
             if (RoomStyleManager.Instance.CheckIfDownloading(SecondResourceLocator))
             {
+                while (RoomStyleManager.Instance.CheckIfDownloading(SecondResourceLocator))
+                    yield return null;
                 //woke up
                 SecondResponse = RoomStyleManager.Instance.GetStyle(SecondResourceLocator);
             }
@@ -105,8 +109,7 @@ public class MultiWallTextureRequest : BaseRoomStyleRequest
                 RoomStyleManager.Instance.AddStyle(SecondResponse);
             }// end else not downloaded and noone downloading
         }// end else if downloaded
-        #endregion
-                     
+        #endregion              
        MergeWallTextures();
 
         IsDone = true;

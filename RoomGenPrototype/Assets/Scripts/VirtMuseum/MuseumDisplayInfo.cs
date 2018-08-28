@@ -17,7 +17,7 @@ public class MuseumDisplayInfo
     /// locator to this resource so that server can send it to client
     /// </summary>
     [DataMember]
-    public string AssociatedResourceLocator = "";
+    public int AssociatedResourceLocator;
     /// <summary>
     /// Room ID where dispay is in(even when wall display)
     /// </summary>

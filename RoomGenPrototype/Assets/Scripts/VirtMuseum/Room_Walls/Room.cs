@@ -82,16 +82,10 @@ public class Room
     public List<Vector2Int> RoomTiles { get; protected set; }
 
     /// <summary>
-    /// The texture info for the floor
+    /// The room style information
     /// </summary>
     [DataMember]
-    public MuseumTextureInfo FloorTexture { get; set; }
-    
-    /// <summary>
-    /// The texture for the ceiling of the room
-    /// </summary>
-    [DataMember]
-    public MuseumTextureInfo CeilingTexture { get; set; }
+    public MuseumTextureInfo StyleInfo { get; set; }
 
     /// <summary>
     /// list of indices of walls in the virt musem wall list, of all the walls that are part of this room
