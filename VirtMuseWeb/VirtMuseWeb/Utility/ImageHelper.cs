@@ -73,5 +73,56 @@ namespace VirtMuseWeb.Utility
             return GetImage(Convert.FromBase64String(dataURL));
         }
 
+        public static Utility.Image GetImage(Bitmap map)
+        {
+            Image img = new Image(map.Width, map.Height);
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 0; y < img.Height; y++)
+                {
+                    System.Drawing.Color col = map.GetPixel(x, y);
+                    img[x, y] = new Utility.Image.Color32(col.A, col.R, col.G, col.B);
+                }
+            }
+            return img;
+        }
+
+        /// <summary>
+        /// makes all the images to a certain size
+        /// </summary>
+        /// <param name="images"></param>
+        /// <returns></returns>
+        public static Bitmap[] MakeSameSize(Bitmap[] images, (float, float) dimensions)
+        {
+            foreach(Bitmap map in images)
+            {
+                Resize(map, dimensions);
+            }
+            return images;
+        }
+
+        public static Bitmap Resize(Bitmap map, (float,float) dimensions)
+        {
+            var brush = new SolidBrush(System.Drawing.Color.Black);
+
+            float width = dimensions.Item1;
+            float height = dimensions.Item2;
+            var bmp = new Bitmap((int)width, (int)height);
+            float scale = Math.Min(width / map.Width, height / map.Height);
+            using (var graph = System.Drawing.Graphics.FromImage(bmp))
+            {
+                //higher quality output
+                graph.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.High;
+                graph.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                graph.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                int scaleWidth = (int)(map.Width * scale);
+                int scaleHeight = (int)(map.Height * scale);
+
+                graph.FillRectangle(brush, new RectangleF(0, 0, width, height));
+                graph.DrawImage(map, ((int)width - scaleWidth) / 2, ((int)height - scaleHeight) / 2, scaleWidth, scaleHeight);
+                return bmp;
+            }
+        }
     }
 }

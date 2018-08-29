@@ -186,8 +186,9 @@ namespace VirtMuseWeb.Models
                 {
                     Image.Color32 c = mD.Texture[x, y];
                     tex.SetPixel(x, y, new UnityEngine.Color32(c.R, c.G, c.B, c.A));
-                } 
+                }
             }
+            yield return null;
             tex.Apply();
             mRes.Mat.mainTexture = tex;
         }
@@ -214,6 +215,7 @@ namespace VirtMuseWeb.Models
                     tex.SetPixel(x, y, new UnityEngine.Color32(c.R, c.G, c.B, c.A));
                 }
             }
+            yield return null;
             tex.Apply();
             imgRes.Image = tex;
         }
@@ -237,6 +239,7 @@ namespace VirtMuseWeb.Models
                 }
                 
             }
+            yield return null;
             floor.Apply();
             style.Floor = floor;
             yield return null;
@@ -249,7 +252,9 @@ namespace VirtMuseWeb.Models
                     Image.Color32 c = st.Ceiling[x, y];
                     ceiling.SetPixel((ceiling.width - 1) - y, (ceiling.width - 1) - x, new UnityEngine.Color32(c.R, c.G, c.B, c.A));
                 }
+                
             }
+            yield return null;
             ceiling.Apply();
             style.Ceiling = ceiling;
             yield return null;
@@ -263,6 +268,7 @@ namespace VirtMuseWeb.Models
                     wall.SetPixel((wall.width - 1) - y, (wall.width - 1) - x, new UnityEngine.Color32(c.R, c.G, c.B, c.A));
                 }
             }
+            yield return null;
             wall.Apply();
             style.Wall = wall;
         }

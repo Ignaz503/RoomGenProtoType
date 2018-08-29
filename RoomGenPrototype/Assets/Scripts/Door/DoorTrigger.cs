@@ -11,6 +11,9 @@ public class DoorTrigger : MonoBehaviour {
     [SerializeField] BaseDoor door;
     [SerializeField] bool openOnStart = true;
 
+    public event Action<Collider, BaseDoor> OnColliderEnter;
+    public event Action<Collider, BaseDoor> OnColliderLeave;
+
     private void Start()
     {
         if (openOnStart)
@@ -28,11 +31,13 @@ public class DoorTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         door.Open();
+        OnColliderEnter?.Invoke(other,door);
     }
 
     private void OnTriggerExit(Collider other)
     {
         door.Close();
+        OnColliderLeave?.Invoke(other, door);
     }
 
 

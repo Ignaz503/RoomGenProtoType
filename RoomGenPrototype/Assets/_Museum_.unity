@@ -1635,6 +1635,7 @@ MonoBehaviour:
   entranceClosedOpenText: {fileID: 1968573421}
   doortMaterial: {fileID: 2100000, guid: 4c03d87885971a44d90a40d978c418df, type: 2}
   door: {fileID: 1163399681}
+  doorTrigger: {fileID: 400349583}
   portalCamera: {fileID: 12082152}
 --- !u!4 &876773628 stripped
 Transform:
@@ -1924,7 +1925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 2
-  movementSpeed: 0.2
+  movementSpeed: 0.6
 --- !u!4 &1297398466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4337180231151910, guid: ea891563980e83c4fa26bfaae1ad3bd2,

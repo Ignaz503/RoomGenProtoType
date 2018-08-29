@@ -45,6 +45,11 @@ public class MuseumBuildObserver : MonoBehaviour {
     [SerializeField] BaseDoor door;
 
     /// <summary>
+    /// trigger for the entrance door
+    /// </summary>
+    [SerializeField] DoorTrigger doorTrigger;
+
+    /// <summary>
     /// Camera that renders redner texute, behind entracne door
     /// </summary>
     [SerializeField] Camera portalCamera;
@@ -157,7 +162,14 @@ public class MuseumBuildObserver : MonoBehaviour {
         };
 
         door.OnOpen += (d) => TeleportIfPossible();
-        
+
+        doorTrigger.OnColliderEnter += (other, door) =>
+        {
+            if(CheckDone())
+                firstPersonController.enabled = false;
+        };
+        doorTrigger.OnColliderLeave += (other, door) => firstPersonController.enabled = true;
+
         door.Lock("");
     }
 
@@ -186,7 +198,7 @@ public class MuseumBuildObserver : MonoBehaviour {
     {
         if (CheckDone())
         {
-            Debug.Log("Teleporting");
+            firstPersonController.enabled = true;
             MuseumBuilder.Instance.SetToStartPosition(firstPersonController.transform);
         }
     }
