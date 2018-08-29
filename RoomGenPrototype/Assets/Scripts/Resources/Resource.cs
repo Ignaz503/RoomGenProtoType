@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VirtMuseWeb.Models;
 
 /// <summary>
@@ -118,19 +119,12 @@ public class DisplayImageResource : BaseDisplayResource
     /// <param name="obj"></param>
     public override void ApplyToGameobject(GameObject obj)
     {
-        MeshRenderer re = obj.GetComponent<MeshRenderer>();
+        RawImage re = obj.GetComponent<RawImage>();
         if(re == null)
         {
-            re = obj.AddComponent<MeshRenderer>();
-            re.material = new Material(Shader.Find("Standard"));
+            re = obj.AddComponent<RawImage>();
         }
-
-        Material mat = new Material(Shader.Find("Sprites/Default"))
-        {
-            mainTexture = Image 
-        };
-
-        re.material = mat;
+        re.texture = Image;
     }
 
 }

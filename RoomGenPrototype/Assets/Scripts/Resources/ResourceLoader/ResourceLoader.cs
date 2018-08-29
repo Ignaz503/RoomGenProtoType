@@ -169,6 +169,8 @@ public class ResourceLoader : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        //Debug.Log($"Num requests: {requestQueue.Count}");
+                
         //see if possible to start work on new request
         if(numCurrentRequestsWorkingOn < numWorkableRequestsSameTime)
         {
@@ -177,6 +179,7 @@ public class ResourceLoader : MonoBehaviour
             {
                 IResourceRequest req = requestQueue.Dequeue();
                 numCurrentRequestsWorkingOn++;//increas number of worked on request
+
                 requestsWorkingOn.Enqueue(req);//staart tracking worked on request
                 StartCoroutine(req.StartWorkRequest());//start working request
             }

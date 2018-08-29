@@ -474,16 +474,7 @@ public class MuseumBuilder : MonoBehaviour
     /// <param name="resLoc">the ID of the resource</param>
     void PostMeshDisplayRequest(MeshDisplay disp, int resLoc)
     {
-        DisplayResourceRequest<DisplayMeshResource> req = new DisplayResourceRequest<DisplayMeshResource>(resLoc, disp, (res) =>
-        {
-            BoundingSphere boundsChild = BoundingSphere.Calculate(res.Mesh.vertices);
-            BoundingSphere boundsParent = BoundingSphere.Calculate(disp.ParentMesh.sharedMesh.vertices);
-
-            float avg = (disp.transform.localScale.x + disp.transform.localScale.y + disp.transform.localScale.z) / 3f;
-            float scale = ((boundsParent.radius / boundsChild.radius) * avg);
-
-            return new PreProcessingGameObjectInformation() { Scale = new Vector3(scale, scale, scale) };
-        });
+        DisplayResourceRequest<DisplayMeshResource> req = new DisplayResourceRequest<DisplayMeshResource>(resLoc, disp, MeshPreProcessing);
         ResourceLoader.Instance.PostRequest(req, ResourceLoader.RequestType.Other);
     }
 
@@ -541,4 +532,21 @@ public class MuseumBuilder : MonoBehaviour
         ResourceLoader.Instance.PostRequest(ceilReq, ResourceLoader.RequestType.Other);
     }
 
+    /// <summary>
+    /// Preprocessing helper coroutine for mesh display
+    /// </summary>
+    /// <param name="res">the display resource that needs pre processing</param>
+    /// <param name="preObj">the preprocessing object that is filled</param>
+    /// <param name="display">the displaay that requested the resource</param>
+    IEnumerator MeshPreProcessing(DisplayMeshResource res, PreProcessingGameObjectInformation preObj, Display display)
+    {
+        MeshDisplay disp = display as MeshDisplay;
+        BoundingSphere boundsChild = BoundingSphere.Calculate(res.Mesh.vertices);
+        yield return null;
+        BoundingSphere boundsParent = BoundingSphere.Calculate(disp.ParentMesh.sharedMesh.vertices);
+        float avg = (disp.transform.localScale.x + disp.transform.localScale.y + disp.transform.localScale.z) / 3f;
+        float scale = ((boundsParent.radius / boundsChild.radius) * avg);
+
+        preObj.Scale = new Vector3(scale, scale, scale);
+    }
 }

@@ -111,14 +111,15 @@ public class MuseumBuildObserver : MonoBehaviour {
             maxFloorsAndCeilingsToBuild = m.Rooms.Count;
             maxWallsToBuild = m.Walls.Count;
 
-            //each floor and ceiling seperate is a request
-            //aka: room count * 2 (downloaded only once don't worry)
-            maxResourceToRequest += m.Rooms.Count * 2;//for room style
+
             //each wall is a single resource request
             maxResourceToRequest += m.Walls.Count;//for room style
 
             foreach(Room r in m.Rooms)
             {
+                //every floor and ceiling seperate request
+                //for every room tile
+                maxResourceToRequest += 2 * r.RoomTiles.Count;
                 //every resource
                 maxResourceToRequest += r.CenterDisplayInfos.Length;
             }
@@ -152,8 +153,6 @@ public class MuseumBuildObserver : MonoBehaviour {
         ResourceLoader.Instance.OnResourceDownloaded += (t) =>
         {
             currentResourcesRequested++;
-            if (currentResourcesRequested >= maxResourceToRequest)
-                Debug.Log(t);
             UpdateEntrance();
         };
 

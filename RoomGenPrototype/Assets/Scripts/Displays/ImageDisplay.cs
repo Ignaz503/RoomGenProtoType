@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class ImageDisplay : Display {
 
@@ -25,27 +25,22 @@ public class ImageDisplay : Display {
     public static float YPos = -.3f;
 
     /// <summary>
-    /// the material prefab that is used to apply an image to this mesh
-    /// </summary>
-    [SerializeField] Material materialPrefab;
-
-    /// <summary>
     /// the mseh render that displays the image
     /// </summary>
-    MeshRenderer meshRenderer;
+    [SerializeField] RawImage[] imageDisplays;
 
     private void Awake()
     {
         Type = DisplayType.ImageDisplay;
-
-        meshRenderer = GetComponent<MeshRenderer>();
-
     }
 
     public override void ApplyResource(BaseDisplayResource resource)
     {
         base.ApplyResource(resource);
-        resource.ApplyToGameobject(meshRenderer.gameObject);
+        foreach(RawImage image in imageDisplays)
+        {
+            resource.ApplyToGameobject(image.gameObject);
+        }
         //TODO
         //scale x and y a bit depending on size of texture
     }
@@ -68,7 +63,7 @@ public class ImageDisplay : Display {
 
     protected override void InteractionStarted()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     protected override void InteractionEnded()
@@ -78,6 +73,7 @@ public class ImageDisplay : Display {
 
     public override void ApplyPreProcessingInformation(PreProcessingGameObjectInformation info)
     {
-        info.ApplyScale(meshRenderer.transform);
+        foreach(RawImage img in imageDisplays)
+            info.ApplyScale(img.transform);
     }
 }

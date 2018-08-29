@@ -40,7 +40,6 @@ public class MuseumRequest : IResourceRequest
 
         //TODO: FIX SERVER SIDE AS WELL
         string s = JsonConvert.DeserializeObject<string>(reqReply.text);
-        Debug.Log(s);
         Response = Museum.Deserialize(s);
         IsDone = true;
     }

@@ -72,8 +72,10 @@ public class MultiWallTextureRequest : BaseRoomStyleRequest
                     yield return null;
 
                 ResourceModel m = JsonConvert.DeserializeObject<ResourceModel>(reqRep.text);
+                RoomStyleResource res = new RoomStyleResource();
+                yield return ResourceLoader.Instance.StartCoroutine(m.ToRoomStyleResource(res));
 
-                Response = (RoomStyleResource)m;
+                Response = res;
                 RoomStyleManager.Instance.AddStyle(Response);
             }// end else not downloaded and noone downloading
         }// end else if downloaded
@@ -105,13 +107,15 @@ public class MultiWallTextureRequest : BaseRoomStyleRequest
 
                 ResourceModel m = JsonConvert.DeserializeObject<ResourceModel>(reqRep.text);
 
-                SecondResponse = (RoomStyleResource)m;
+                RoomStyleResource res = new RoomStyleResource();
+                yield return ResourceLoader.Instance.StartCoroutine(m.ToRoomStyleResource(res));
+
+                SecondResponse = res;
                 RoomStyleManager.Instance.AddStyle(SecondResponse);
             }// end else not downloaded and noone downloading
         }// end else if downloaded
         #endregion              
-       MergeWallTextures();
-
+        yield return ResourceLoader.Instance.StartCoroutine(MergeWallTextures());
         IsDone = true;
     }
 
@@ -129,7 +133,7 @@ public class MultiWallTextureRequest : BaseRoomStyleRequest
     /// <summary>
     /// Merges the two wall textures of Response and SecondResponse
     /// </summary>
-    void MergeWallTextures()
+    IEnumerator MergeWallTextures()
     { 
         //place wall textures into array depending on pos mod to merge correctly
         Texture2D[] textures = new Texture2D[2];
@@ -150,6 +154,7 @@ public class MultiWallTextureRequest : BaseRoomStyleRequest
                 MergedTexture.SetPixel(x, y, t1);
                 MergedTexture.SetPixel(x + (MergedTexture.width / 2), y, t2);
             }
+            yield return null;
         }
 
         MergedTexture.Apply();

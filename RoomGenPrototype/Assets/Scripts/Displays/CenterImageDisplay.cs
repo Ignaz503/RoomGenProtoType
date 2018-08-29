@@ -1,44 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class CenterImageDisplay : Display
 {
-    /// <summary>
-    /// Material prefab used to apply texture
-    /// </summary>
-    [SerializeField] Material MaterialPrefab;
 
     /// <summary>
     /// the mesh renderes on all sides of the pillar
     /// </summary>
-    MeshRenderer[] displayMeshRenderes;
+    public RawImage[] displayMeshRenderes;
 
     //TODO: Maybe scale a bit depending on texture that is applied
 
     private void Awake()
     {
         Type = DisplayType.ImageDisplay;
-
-        displayMeshRenderes = new MeshRenderer[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            GameObject child = transform.GetChild(i).gameObject;
-
-            MeshRenderer re = child.GetComponent<MeshRenderer>();
-
-            if(re != null)
-            {
-                displayMeshRenderes[i] = re;
-            }
-        }
     }
 
     public override void ApplyResource(BaseDisplayResource resource)
     {
         base.ApplyResource(resource);
-        foreach (MeshRenderer re in displayMeshRenderes)
+        foreach (RawImage re in displayMeshRenderes)
         {
             resource.ApplyToGameobject(re.gameObject);
         }
@@ -68,7 +52,7 @@ public class CenterImageDisplay : Display
     public override void ApplyPreProcessingInformation(PreProcessingGameObjectInformation info)
     {
         //maybe scale? maybe scale everything even gameobject base
-        foreach (MeshRenderer re in displayMeshRenderes)
+        foreach (RawImage re in displayMeshRenderes)
             info.ApplyScale(re.transform);
     }
 }

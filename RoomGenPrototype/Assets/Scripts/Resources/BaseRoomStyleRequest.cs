@@ -34,6 +34,7 @@ public abstract class BaseRoomStyleRequest : IResourceRequest
         {
             //already downloaded
             Response = RoomStyleManager.Instance.GetStyle(ResourceLocator);
+            IsDone = true;
         }
         else
         {
@@ -42,8 +43,12 @@ public abstract class BaseRoomStyleRequest : IResourceRequest
             {
                 //woke up
                 while (RoomStyleManager.Instance.CheckIfDownloading(ResourceLocator))
+                {
                     yield return null;
+                }
+                
                 Response =  RoomStyleManager.Instance.GetStyle(ResourceLocator);
+                IsDone = true;
             }
             else
             {
@@ -55,9 +60,12 @@ public abstract class BaseRoomStyleRequest : IResourceRequest
                     yield return null;
 
                 ResourceModel m = JsonConvert.DeserializeObject<ResourceModel>(reqRep.text);
+                RoomStyleResource res = new RoomStyleResource();
 
-                Response =  (RoomStyleResource)m;
+                yield return ResourceLoader.Instance.StartCoroutine(m.ToRoomStyleResource(res));
+                Response =  res;
                 RoomStyleManager.Instance.AddStyle(Response);
+                IsDone = true;
             }// end else not downloaded and noone downloading
         }// end else if downloaded
         IsDone = true;
