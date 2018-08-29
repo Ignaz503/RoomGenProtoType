@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using UnityEngine;
+using System.Drawing;
 
 /* FastObjImporter.cs
 * by Marc Kusters (Nighteyes) 
@@ -570,9 +571,31 @@ namespace VirtMuseWeb.Utility
             if (data.Length != 3)
                 throw new Exception($"Not correct data to build roomstyle, need 3 byte arrays, got {data.Length}");
 
-            Floor = ImageHelper.GetImage(data[0]);
-            Ceiling = ImageHelper.GetImage(data[1]);
-            Wall = ImageHelper.GetImage(data[2]);
+            Bitmap floor = ImageHelper.GetBitmap(data[0]);
+            Bitmap ceiling = ImageHelper.GetBitmap(data[1]);
+            Bitmap wall = ImageHelper.GetBitmap(data[2]);
+           
+            if (floor.Width != ceiling.Width ||
+                floor.Width != wall.Width||
+                ceiling.Width != wall.Width ||
+                floor.Height != ceiling.Height ||
+                floor.Height != wall.Height ||
+                ceiling.Height != wall.Height)
+            {
+                Bitmap[] sameSize  = ImageHelper.MakeSameSize(new Bitmap[]
+                {
+                    floor,ceiling,wall
+                }, (512, 512));
+                Floor = ImageHelper.GetImage(sameSize[0]);
+                Ceiling = ImageHelper.GetImage(sameSize[1]);
+                Wall = ImageHelper.GetImage(sameSize[2]);
+            }
+            else
+            {
+                Floor = ImageHelper.GetImage(floor);
+                Ceiling = ImageHelper.GetImage(ceiling);
+                Wall = ImageHelper.GetImage(wall);
+            }
         }
 
         private RoomStyle()

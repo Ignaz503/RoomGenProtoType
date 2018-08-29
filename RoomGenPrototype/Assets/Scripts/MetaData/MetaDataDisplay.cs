@@ -101,7 +101,7 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
         displayBaseCanvas.gameObject.SetActive(false);
 	}
 
- /// <summary>
+    /// <summary>
     /// setsup layout element preferred height for easier more correct 
     /// button set up
     /// </summary>
@@ -162,16 +162,14 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
         });
 
         //remember content textmeshProUGUI
-        TextMeshProUGUI[] texts = metaDisp.GetComponentsInChildren<TextMeshProUGUI>();
-        foreach(TextMeshProUGUI text in texts)
+        TextMeshProUGUI text = metaDisp.transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        if (text != null)
         {
-            if(text.gameObject.name == "Content")
-            {
-                contentDisplays.Add(new Tuple<TextMeshProUGUI, string>(text,attribute.Type));
-
-            }
+            text.name = attribute.Type;
+            contentDisplays.Add(new Tuple<TextMeshProUGUI, string>(text, attribute.Type));
         }
-
+        else
+            Debug.Log("Fuck you haha");
         metaDisp.SetActive(false);
     }
 
@@ -181,6 +179,7 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
     /// <param name="meta">the metadata whose information should be displayed</param>
     void ApplyMetadataToDislplay(MetaData meta)
     {
+
         foreach(Tuple<TextMeshProUGUI,string> contDisp in contentDisplays)
         {
             string text_to_apply = "";
@@ -194,9 +193,12 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
                 text_to_apply = meta.GetFieldWithAttributeTypeAsString(contDisp.Item2);
             }
             contDisp.Item1.text = text_to_apply;
+
             contDisp.Item1.ForceMeshUpdate();
             (contDisp.Item1.rectTransform).SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
                 contDisp.Item1.GetRenderedValues().y);
+            Debug.Log(contDisp.Item1.text);
+            Debug.Log(contDisp.Item1.name);
 
         }// end foreach
     }
@@ -270,7 +272,7 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
     public void SetInteractedObject(IInteractable iObj)
     {
         Display d = iObj.Object.GetComponent<Display>();
-        if(d != null && d.MetaData != null)
+        if (d != null && d.MetaData != null)
         {
             ApplyMetadataToDislplay(d.MetaData);
         }

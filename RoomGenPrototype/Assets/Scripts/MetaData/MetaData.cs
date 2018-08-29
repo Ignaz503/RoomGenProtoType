@@ -90,31 +90,26 @@ public class MetaData
 
     public string GetFieldWithAttributeTypeAsString(string AttributeType, int proficency = -1)
     {
-        if(proficency != -1)
+        switch (AttributeType)
         {
-            if (GetType().GetFields().Where(
-                (inf) =>
-                {
-                    return (inf.GetCustomAttribute<MetaDataAttribute>() as MetaDataAttribute).Type == AttributeType;
-                }) != null)
-            {
-                if (FurterInformationAccordingToLOD.ContainsKey(proficency))
-                {
-                    return FurterInformationAccordingToLOD[proficency];
-                }// end if contains key
-                else
-                {
-                    return FurterInformationAccordingToLOD.Values.First();
-                }// end else
-            }// end attribute type exists
-            else
+            case "Name":
+                return NameOfPiece;
+            case "Creator":
+                string creators = "";
+                foreach (string c in Creators)
+                    creators += c + '\n';
+                return creators;
+            case "Date":
+                return DateOfCreation;
+            case "Sources":
+                string sources = "";
+                foreach (string c in Sources)
+                    sources += c + '\n';
+                return sources;
+            case "License":
+                return License;
+            default:
                 return "";
-        }// end if profincy not equal -1
-        else
-        {
-            return (GetType().GetFields().Where(
-                (inf) => { return (inf.GetCustomAttribute<MetaDataAttribute>() as MetaDataAttribute).Type == AttributeType; }
-                ) as FieldInfo).GetValue(null).ToString();
         }
     }
 

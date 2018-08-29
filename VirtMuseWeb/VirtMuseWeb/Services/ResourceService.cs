@@ -87,6 +87,9 @@ namespace VirtMuseWeb.Services
             else if (bRes.Type == ResourceType.RoomStyle)
             {
                 Utility.RoomStyle rS = new Utility.RoomStyle(bRes.Data);
+                _logger.LogInformation($"Floor size: {rS.Floor.Width} x {rS.Floor.Height}");
+                _logger.LogInformation($"Ceiling size: {rS.Ceiling.Width} x {rS.Ceiling.Height}");
+                _logger.LogInformation($"Wall size: {rS.Wall.Width} x {rS.Wall.Height}");
                 resModel.Data = rS.Serialize();
             }
             else

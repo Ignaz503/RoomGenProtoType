@@ -80,6 +80,12 @@ public abstract class PlayerHand : MonoBehaviour {
     protected IHoldableObject objectInHand;
 
     /// <summary>
+    /// interacted object last frame
+    /// only forwarded if difference between frames
+    /// </summary>
+    IInteractable lastFrameInteractedObj;
+
+    /// <summary>
     /// subscribes object to all relevent events and calles on obj grabbed
     /// </summary>
     public virtual void GrabObject(IHoldableObject holdObj)
@@ -88,7 +94,7 @@ public abstract class PlayerHand : MonoBehaviour {
         OnReachedInfronOfFacePosition += holdObj.OnHeldInfrontOfFace;
         OnStartMovingInfrontOfFace += holdObj.OnStartedMoveInfrontOfFace;
         OnStartMovingToRestPosition += holdObj.OnStartedMoveAwayFromFace;
-
+        lastFrameInteractedObj = null;
         if (holdObj.IsInterestedInInteractableObjects())
         {
             OwningPlayer.OnInInteractionRange += ForwardInteractableObject;
@@ -121,6 +127,7 @@ public abstract class PlayerHand : MonoBehaviour {
         IHoldableObject objHeld = objectInHand;
         objectInHand = null;
         objHeld.OnDropped(this);
+        lastFrameInteractedObj = null;
         OnDropObject(objHeld, this);
     }
 
@@ -133,9 +140,14 @@ public abstract class PlayerHand : MonoBehaviour {
     /// <param name="interactObj">the interacteb object interaction event params</param>
     public void ForwardInteractableObject(PlayerInteractionEventArgs interactObj)
     {
+        
         if(objectInHand != null && interactObj.InteractedObject != null)
         {
-            objectInHand.SetInteractedObject(interactObj.InteractedObject);
+            if(lastFrameInteractedObj != interactObj.InteractedObject)
+            {
+                lastFrameInteractedObj = interactObj.InteractedObject;
+                objectInHand.SetInteractedObject(interactObj.InteractedObject);
+            }
         }
     }
 

@@ -94,11 +94,12 @@ namespace VirtMuseWeb.Utility
         /// <returns></returns>
         public static Bitmap[] MakeSameSize(Bitmap[] images, (float, float) dimensions)
         {
-            foreach(Bitmap map in images)
+            Bitmap[] new_imgs = new Bitmap[images.Length];
+            for (int i = 0; i < images.Length; i++)
             {
-                Resize(map, dimensions);
+                new_imgs[i]= Resize(images[i], dimensions); 
             }
-            return images;
+            return new_imgs;
         }
 
         public static Bitmap Resize(Bitmap map, (float,float) dimensions)
