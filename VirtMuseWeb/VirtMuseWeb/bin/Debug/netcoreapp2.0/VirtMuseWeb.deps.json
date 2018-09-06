@@ -28,8 +28,7 @@
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
           "System.Drawing.Common": "4.5.0",
-          "UnityEngine.ClothModule": "0.0.0.0",
-          "UnityEngine": "0.0.0.0"
+          "UnityEngine.CoreModule": "0.0.0.0"
         },
         "runtime": {
           "VirtMuseWeb.dll": {}
@@ -4682,47 +4681,20 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "UnityEngine.ClothModule/0.0.0.0": {
+      "UnityEngine.CoreModule/0.0.0.0": {
         "runtime": {
-          "UnityEngine.ClothModule.dll": {
+          "UnityEngine.CoreModule.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         },
         "compile": {
-          "UnityEngine.ClothModule.dll": {}
-        }
-      },
-      "UnityEngine/0.0.0.0": {
-        "runtime": {
-          "UnityEngine.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        },
-        "compile": {
-          "UnityEngine.dll": {}
-        }
-      },
-      "UnityEngine.PhysicsModule/0.0.0.0": {
-        "runtime": {
-          "UnityEngine.PhysicsModule.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
+          "UnityEngine.CoreModule.dll": {}
         }
       },
       "UnityEngine.SharedInternalsModule/0.0.0.0": {
         "runtime": {
           "UnityEngine.SharedInternalsModule.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "UnityEngine.CoreModule/0.0.0.0": {
-        "runtime": {
-          "UnityEngine.CoreModule.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -7054,27 +7026,12 @@
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
     },
-    "UnityEngine.ClothModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "UnityEngine/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "UnityEngine.PhysicsModule/0.0.0.0": {
+    "UnityEngine.CoreModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "UnityEngine.SharedInternalsModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "UnityEngine.CoreModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

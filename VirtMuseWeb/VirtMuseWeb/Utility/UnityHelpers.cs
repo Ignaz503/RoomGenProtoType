@@ -10,26 +10,29 @@ using Newtonsoft.Json;
 using UnityEngine;
 using System.Drawing;
 
-/* FastObjImporter.cs
-* by Marc Kusters (Nighteyes) 
-* slightly modified by Lukas Neuhold
-* Modifications: made mutlithreadable, by not making it a singelton
-*                moved from unity Vec3 and so on to own vec3 implementation
-* http://wiki.unity3d.com/index.php/FastObjImporter
-* 
-* Used for loading .obj files exported by Blender
-* Example usage: Mesh myMesh = FastObjImporter.Instance.ImportFile("path_to_obj_file.obj");
-* Content is available under Creative Commons Attribution Share Alike.
-* https://creativecommons.org/licenses/by-sa/3.0/
-*/
+
 namespace VirtMuseWeb.Utility
 {
+    /// <summary>
+    /// interaface to serialize a class
+    /// </summary>
     public interface ISerializable
     {
+        /// <summary>
+        /// serializes obj to byte array
+        /// </summary>
+        /// <returns></returns>
         byte[] Serialize();
+        /// <summary>
+        /// serialize object into exitsing binary writer 
+        /// </summary>
+        /// <param name="w"></param>
         void Serialize(BinaryWriter w);
     }
 
+    /// <summary>
+    /// helper class that holds all information to build a unity mesh, and is serializable
+    /// </summary>
     [Serializable]
     public class UnityMeshData : ISerializable
     {
@@ -172,6 +175,9 @@ namespace VirtMuseWeb.Utility
         }
     }
 
+    /// <summary>
+    /// helper class that holds all information to build a unity Texture , and is serializable
+    /// </summary>
     [Serializable]
     public class Image : ISerializable
     {
@@ -337,6 +343,18 @@ namespace VirtMuseWeb.Utility
         }
     }
 
+    /// FastObjImporter.cs
+    /// by Marc Kusters (Nighteyes)
+    /// slightly modified by Lukas Neuhold
+    /// Modifications: made mutlithreadable, by not making it a singelton
+    ///                moved from unity Vec3 and so on to own vec3 implementation
+    /// http://wiki.unity3d.com/index.php/FastObjImporter
+    ///
+    /// Used for loading .obj files exported by Blender
+    /// Example usage: Mesh myMesh = FastObjImporter.Instance.ImportFile("path_to_obj_file.obj");
+    /// Content is available under Creative Commons Attribution Share Alike.
+    /// https://creativecommons.org/licenses/by-sa/3.0/
+    ///
     public sealed class FastObjImporter
     {
         //TODO not file but string already
@@ -550,7 +568,10 @@ namespace VirtMuseWeb.Utility
             return result;
         }
     }
-
+    
+    /// <summary>
+    /// holds all information for a room style of the museum
+    /// </summary>
     [Serializable]
     public class RoomStyle :ISerializable
     {

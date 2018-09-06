@@ -10,5 +10,6 @@ export class Resource {
     ID: number;
     Type: Type;
     MetaData: MetaDataModel.MetaData;
+    Interaction: string;
     Data: string[];
 }

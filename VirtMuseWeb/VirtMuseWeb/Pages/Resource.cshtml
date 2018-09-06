@@ -6,12 +6,13 @@
 
 <h2>Create a Resource</h2>
 
+<!--Type-->
 <div data-bind="with: resource">
     <h3>What Type of Resource are your trying to upload?</h3>
    <h3><select data-bind="options: $root.resType, value: Type, optionsText: 'name',optionsValue: 'num',event:{change: $root.typeChange}"></select></h3>
 </div>
 
-<!--Name, date, and type-->
+<!--Name, date-->
 <div data-bind="with: resource, visible: type() != 2">
     <h4>Name of piece: <input data-bind="value: MetaData.NameOfPiece" /></h4>
     <h4>Date of Creaion: <input data-bind="value: MetaData.DateOfCreation" type="date"></h4>
@@ -88,13 +89,22 @@
     <input data-bind="value: MetaData.License" type="text" />
 </div>
 
+<!--Interaction-->
+<div data-bind="with: resource, visible: type() != 2">
+    <h4>Choose an interaction that should be possible with this exhibit</h4>
+    <select data-bind="options: $root.interactions, value: Interaction, optionsText: 'name',optionsValue: 'name',optionsCaption:'--!Choose An Interaction!--',event:{change: $root.updateInteractionDescription}"></select>
+    <h5 data-bind="text: $root.interactionDescription"></h5>
+</div>
+
 <!--File-->
+<!--Image-->
 <div data-bind="visible: type() == 0">
     <!--0 is when type image-->
     <h4>Choose Image To Upload</h4>
     <input type="file" accept="image/*" data-bind="event: {change: $root.openImage}" />
 </div>
 
+<!--Mesh-->
 <div data-bind="visible: type() == 1">
     <!--1 is when type mesh-->
     <h4>Choose Mesh To Upload</h4>
@@ -105,6 +115,7 @@
     <input type="file" accept="image/*" data-bind="event: {change: $root.openTexture}" />
 </div>
 
+<!--RoomStyle-->>
 <div data-bind="visible: type() == 2">
     <!--2 is when type RoomStyle-->
     <h4>Choose Floor Texture To Upload</h4>

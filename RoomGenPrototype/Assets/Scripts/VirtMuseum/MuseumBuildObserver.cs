@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using TMPro;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.UI;
 
 /// <summary>
 /// class that tracks the build progress of the museum
@@ -53,6 +54,11 @@ public class MuseumBuildObserver : MonoBehaviour {
     /// Camera that renders redner texute, behind entracne door
     /// </summary>
     [SerializeField] Camera portalCamera;
+
+    /// <summary>
+    /// porgressbar over entrance
+    /// </summary>
+    [SerializeField] Image progressBar;
 
     /// <summary>
     /// max number of floors to buil
@@ -111,6 +117,9 @@ public class MuseumBuildObserver : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        progressBar.fillMethod = Image.FillMethod.Horizontal;
+        progressBar.fillAmount = 0;
+
         MuseumBuilder.Instance.OnMuseumGotten += (m) =>
         {
             maxFloorsAndCeilingsToBuild = m.Rooms.Count;
@@ -183,6 +192,9 @@ public class MuseumBuildObserver : MonoBehaviour {
         return maxFloorsAndCeilingsToBuild <= currentFloorsAndCeilingsBuilt && maxWallsToBuild <= currentWallsBuilt && maxResourceToRequest <= currentResourcesRequested;
     }
 
+    /// <summary>
+    /// updates entrance, and display above
+    /// </summary>
     public void UpdateEntrance()
     {
         if (CheckDone())
@@ -192,8 +204,14 @@ public class MuseumBuildObserver : MonoBehaviour {
             entranceClosedOpenText.color = Color.green;
             door.Unlock("");
         }
+
+        progressBar.fillAmount = (float)(currentFloorsAndCeilingsBuilt + currentWallsBuilt + currentResourcesRequested) / (float)(maxFloorsAndCeilingsToBuild + maxResourceToRequest + maxWallsToBuild);
+
     }
 
+    /// <summary>
+    /// tepelports player if possible
+    /// </summary>
     public void TeleportIfPossible()
     {
         if (CheckDone())

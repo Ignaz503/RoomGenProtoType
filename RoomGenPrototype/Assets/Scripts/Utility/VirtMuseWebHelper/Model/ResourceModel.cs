@@ -35,6 +35,7 @@ namespace VirtMuseWeb.Models
         [DataMember] public int ID { get; set; }
         [DataMember] public ResourceType Type { get; set; }
         [DataMember] public string MetaDataJSON { get; set; }
+        [DataMember] public string Interaction { get; set; }
         [DataMember] public byte[] Data { get; set; }
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace VirtMuseWeb.Models
             bR.ResourecID = ID;
             bR.ResrourceType = Type;
             bR.MetaData = (MetaData)JsonConvert.DeserializeObject<MetaDataModel>(MetaDataJSON);
+            bR.InteractionBehaviour = Interaction;
         }
 
         public static explicit operator DisplayMeshResource(ResourceModel m)

@@ -3,7 +3,7 @@ import $ = require("jquery");
 import Model = require('../js/ResourceModel');
 import CreatorModel = require('../js/CreatorModel');
 import SourceModel = require('../js/SourceModel');
-import { Type } from "../js/ResourceModel";
+import { Type, Resource } from "../js/ResourceModel";
 
 class ResourceViewModel {
     resType: { num: number, name: string }[] =
@@ -17,11 +17,15 @@ class ResourceViewModel {
         , isDead: KnockoutObservable<boolean>
     }> = new ko.observableArray([{ creator: new CreatorModel.Creator("", "", ""),isDead:new ko.observable(false) }]);
 
+    interactions: KnockoutObservableArray<{ name: string, description: string }> = new ko.observableArray();
+
     sources: KnockoutObservableArray<SourceModel.Source> = new ko.observableArray([new SourceModel.Source("","")]);
 
     file: KnockoutObservable<string> = new ko.observable();
 
     type: KnockoutObservable<number> = new ko.observable();
+
+    interactionDescription: KnockoutObservable<string> = new ko.observable("");
 
     upload: () => void;//uploads file via ajax post, validates input, adds sources and creators to resource 
 
@@ -53,6 +57,10 @@ class ResourceViewModel {
 
     typeChange: (val) => void; // event for upload type change that updates ko observable
 
+    setInteractions: (data) => void;
+
+    updateInteractionDescription: (resource) => void;
+
     constructor()
     {
         this.resource({
@@ -67,6 +75,7 @@ class ResourceViewModel {
                 License: "",
                 Sources: [],
             },
+            Interaction: "",
             Data: []
         }); //initialize resource
 
@@ -116,6 +125,7 @@ class ResourceViewModel {
                     License: "",
                     Sources: [],
                 },
+                Interaction: "",
                 Data: []
             }); //initialize resource
             this.typeChange(0);
@@ -169,6 +179,9 @@ class ResourceViewModel {
 
         this.validateInput = () => {
             var i: number = 0;// loop var
+
+            if (this.resource().Interaction == undefined)
+                this.resource().Interaction = "";
 
             if (this.resource().Type != Type.RoomStyle)
             {
@@ -262,6 +275,29 @@ class ResourceViewModel {
             this.openFile(2, element, event);
         };
 
+        this.setInteractions = (data) => {
+            this.interactions(data.possibleInteractions);
+        };
+
+        this.updateInteractionDescription = (resource: Model.Resource) => {
+
+            var found: boolean = false;
+            for (var ob of this.interactions())
+            {
+                if (ob.name == resource.Interaction)
+                {
+                    this.interactionDescription(ob.description);
+                    found = true;
+                }
+            }
+
+            if (!found)
+                this.interactionDescription("");
+        };
+
+        fetch("/api/resource/getinteractions").then(function (response) {
+            return response.json();
+        }).then(this.setInteractions);
     }
 }
 

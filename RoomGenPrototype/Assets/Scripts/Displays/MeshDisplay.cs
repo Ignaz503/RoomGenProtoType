@@ -102,7 +102,7 @@ public class MeshDisplay : Display {
 
     protected override Type SetToDefaultInteractionBehaviour()
     {
-        return typeof(ObejctInHandInteraction);
+        return typeof(RotateAndZoomInteraction);
     }
 
     public override void ApplyPreProcessingInformation(PreProcessingGameObjectInformation info)

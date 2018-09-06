@@ -1,0 +1,17 @@
+{
+    "PossibleInteractions": 
+    [
+        {
+            "Name": "NoInteraction",
+            "Description": "One can't interact with this exhibit"
+        }, 
+        {
+            "Name": "Default",
+            "Description": "Displays have default interactions\nMeshDisplay: RotateAndZoomInteraction\nImageDisplays: NoInteraction"
+        },
+        {
+            "Name": "RotateAndZoomInteraction",
+            "Description": "Allows to rotate and zoom a displayed object inside its display casing"
+        }
+    ]
+}

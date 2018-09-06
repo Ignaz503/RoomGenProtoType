@@ -64,11 +64,6 @@ public class MuseumBuilder : MonoBehaviour
     /// </summary>
     float wallHeight;
 
-    //Temp
-    int TestTextSize;
-    //temp
-    int currIdx = 0;
-
     /// <summary>
     /// the museum being built
     /// </summary>
@@ -113,8 +108,6 @@ public class MuseumBuilder : MonoBehaviour
         Instance = this;
 
         oneDTileCoordToFloorGameObjectMapping = new Dictionary<int, GameObject>();
-
-        TestTextSize = TestTextures.Length;
 
         FloorXPosScale = FloorPrefab.transform.localScale.x;
         FloorZPosScale = FloorPrefab.transform.localScale.z;

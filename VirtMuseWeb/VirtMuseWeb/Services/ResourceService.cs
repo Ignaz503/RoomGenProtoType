@@ -10,19 +10,55 @@ using VirtMuseWeb.Models;
 using VirtMuseWeb.Utility;
 using UnityEngine;
 using System.Drawing;
+using System.IO;
 
 namespace VirtMuseWeb.Services
 {
+    /// <summary>
+    /// Service for getting resources from the server
+    /// </summary>
     public interface IResourceService
     {
+        /// <summary>
+        /// Gets a resource with a certian ID
+        /// </summary>
+        /// <param name="ID">The ID of the wanted resource</param>
+        /// <returns>The resoruce with this ID</returns>
         ResourceModel GetResource(int ID);
+        /// <summary>
+        /// Posts a resource to the server
+        /// </summary>
+        /// <param name="res">the resource that should be posted</param>
+        /// <returns> async task obj for async purposes</returns>
         Task PostResource(Resource<byte> res);
+        
+        /// <summary>
+        ///  gets all possible interactions with exhibits from the server
+        /// </summary>
+        /// <returns></returns>
+        Interactions GetInteractions();
     }
 
+    /// <summary>
+    /// Resource Service Implementation
+    /// </summary>
     public class ResourceService : IResourceService
     {
+        /// <summary>
+        /// The hosting enviroment
+        /// </summary>
         IHostingEnvironment _env;
+        /// <summary>
+        /// the database context
+        /// </summary>
         VirtMuseWebContext _context;
+        /// <summary>
+        /// all possible interactions with exhibits
+        /// </summary>
+        Interactions _possibleInteractions;
+        /// <summary>
+        /// logger of the program
+        /// </summary>
         ILogger<Program> _logger;
 
         public ResourceService(IHostingEnvironment env, VirtMuseWebContext context, ILogger<Program> logger)
@@ -45,6 +81,13 @@ namespace VirtMuseWeb.Services
             if (logger == null)
                 throw new Exception("Logger is null");
 
+            _possibleInteractions = LoadInteractions();
+
+        }
+
+        public Interactions GetInteractions()
+        {
+            return _possibleInteractions;
         }
 
         public ResourceModel GetResource(int ID)
@@ -63,8 +106,9 @@ namespace VirtMuseWeb.Services
             ResourceModel resModel = new ResourceModel()
             {
                 ID = bRes.ID,
-                MetaDataJSON =JsonConvert.SerializeObject(bRes.MetaData),
-                Type = bRes.Type
+                MetaDataJSON = JsonConvert.SerializeObject(bRes.MetaData),
+                Type = bRes.Type,
+                Interaction = bRes.Interaction
             };
 
             if (bRes.Type == ResourceType.Mesh)
@@ -108,5 +152,16 @@ namespace VirtMuseWeb.Services
                 _logger.LogError("Something went wrong whilst adding to the DB\n" + e);
             }
         }
+
+        /// <summary>
+        /// loads interactions from json file in data folder 
+        /// </summary>
+        /// <returns></returns>
+        private Interactions LoadInteractions()
+        {
+            var data = File.ReadAllText(Path.Combine(_env.ContentRootPath, "Data", "interactions.json"));
+            return JsonConvert.DeserializeObject<Interactions>(data);
+        }
+
     }
 }

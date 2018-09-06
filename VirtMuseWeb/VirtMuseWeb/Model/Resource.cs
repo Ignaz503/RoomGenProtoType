@@ -14,14 +14,24 @@ namespace VirtMuseWeb.Models
         RoomStyle
     }
 
+    /// <summary>
+    /// Generic reousrce, not postable to DB
+    /// cause of array of array data
+    /// gotten from client
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Resource<T>
     {
         public int ID { get; set; }
         public ResourceType Type { get; set; }
         public MetaData MetaData { get; set; }
+        public string Interaction { get; set; }
         public T[][] Data { get; set; }
     }
 
+    /// <summary>
+    /// Metadata associated with resource
+    /// </summary>
     public class MetaData
     {
         public int ResourceID { get; set; }
@@ -33,6 +43,9 @@ namespace VirtMuseWeb.Models
         public string License { get; set; }
     }
 
+    /// <summary>
+    /// sources that resource uses
+    /// </summary>
     public class Source
     {
         public int ID { get; set; }//currently unuesd
@@ -40,6 +53,9 @@ namespace VirtMuseWeb.Models
         public string URL { get; set; }
     }
 
+    /// <summary>
+    /// Creators that resource uses
+    /// </summary>
     public class Creator
     {
         public int ID { get; set; }//currently unused
@@ -48,11 +64,16 @@ namespace VirtMuseWeb.Models
         public string DateOfDeath { get; set; }
     }
 
+    /// <summary>
+    /// resource postable to DB
+    /// data should be preprocessed, and serialized to a single byte array
+    /// </summary>
     public class ResourceModel
     {
         public int ID { get; set; }
         public ResourceType Type { get; set; }
         public string MetaDataJSON { get; set; }
+        public string Interaction { get; set; }
         public byte[] Data { get; set; }
     }
 

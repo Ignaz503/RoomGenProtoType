@@ -12,7 +12,7 @@ namespace VirtMuseWeb.Pages
 
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "Service Unavailable";
         }
     }
 }

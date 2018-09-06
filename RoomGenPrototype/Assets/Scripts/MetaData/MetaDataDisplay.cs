@@ -196,9 +196,8 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
 
             contDisp.Item1.ForceMeshUpdate();
             (contDisp.Item1.rectTransform).SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
-                contDisp.Item1.GetRenderedValues().y);
-            Debug.Log(contDisp.Item1.text);
-            Debug.Log(contDisp.Item1.name);
+                contDisp.Item1.GetPreferredValues().y);
+            Debug.Log(contDisp.Item1.rectTransform.rect);
 
         }// end foreach
     }
@@ -242,6 +241,13 @@ public class MetaDataDisplay : MonoBehaviour, IHoldableObject
     {
         //TODO set cursor lock of first person controller to true;
         fpc.SetCursorLock(true);
+
+        for (int i = 0; i < displayBaseCanvas.transform.childCount; i++)
+            displayBaseCanvas.transform.GetChild(i).gameObject.SetActive(false);
+        displayBaseCanvas.gameObject.SetActive(false);
+
+        buttonBaseCanvas.gameObject.SetActive(true);
+
         StopAllCoroutines();
         StartCoroutine(RotateTo(inRestPositionRotation));
     }

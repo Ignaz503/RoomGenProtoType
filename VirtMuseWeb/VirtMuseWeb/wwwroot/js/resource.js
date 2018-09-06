@@ -8,9 +8,11 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
                 { num: Model.Type.RoomStyle.valueOf(), name: "Room Style" }];
             this.resource = new ko.observable();
             this.creators = new ko.observableArray([{ creator: new CreatorModel.Creator("", "", ""), isDead: new ko.observable(false) }]);
+            this.interactions = new ko.observableArray();
             this.sources = new ko.observableArray([new SourceModel.Source("", "")]);
             this.file = new ko.observable();
             this.type = new ko.observable();
+            this.interactionDescription = new ko.observable("");
             this.resource({
                 ID: -1,
                 Type: Model.Type.Image,
@@ -23,6 +25,7 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
                     License: "",
                     Sources: [],
                 },
+                Interaction: "",
                 Data: []
             }); //initialize resource
             this.type(0); //initialize type
@@ -62,6 +65,7 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
                         License: "",
                         Sources: [],
                     },
+                    Interaction: "",
                     Data: []
                 }); //initialize resource
                 this.typeChange(0);
@@ -108,6 +112,8 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
             };
             this.validateInput = () => {
                 var i = 0; // loop var
+                if (this.resource().Interaction == undefined)
+                    this.resource().Interaction = "";
                 if (this.resource().Type != ResourceModel_1.Type.RoomStyle) {
                     if (this.resource().MetaData.Creators.length < 1) {
                         alert("Please enter at least one creator");
@@ -179,6 +185,23 @@ define(["require", "exports", "../lib/knockout/knockout", "jquery", "../js/Resou
             this.openWallTexture = (element, event) => {
                 this.openFile(2, element, event);
             };
+            this.setInteractions = (data) => {
+                this.interactions(data.possibleInteractions);
+            };
+            this.updateInteractionDescription = (resource) => {
+                var found = false;
+                for (var ob of this.interactions()) {
+                    if (ob.name == resource.Interaction) {
+                        this.interactionDescription(ob.description);
+                        found = true;
+                    }
+                }
+                if (!found)
+                    this.interactionDescription("");
+            };
+            fetch("/api/resource/getinteractions").then(function (response) {
+                return response.json();
+            }).then(this.setInteractions);
         }
     }
     ko.applyBindings(new ResourceViewModel());

@@ -112,6 +112,8 @@ public class Museum
     }
 
     /// <summary>
+    /// THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION
+    /// OUTSIDE OF DEBUGGING
     /// Generates a Museum
     /// baisc algortihm:
     /// 1. palce random 1x1 room as start 
@@ -124,13 +126,16 @@ public class Museum
     /// 8. repeat from step 3. until no more tiles in outline
     /// 9. fill all the displays that are in the museum
     /// 10. build museum graph
+    /// THIS IS THE DEBUG IMPLEMENTATION OF THE ALGORITHM
+    /// USED TO VISUALIZE THE ALGORITHM
+    /// FINAL IMPLEMENTATION IN VIRTMUSEWEBPROJECT
     /// </summary>
     /// <param name="seed"></param>
     public void Generate(string seed, bool buildMuseumsGraph = true)
     {
         //TODO add resourcemanager get numb resources for type
         System.Random rng = new System.Random(seed.GetHashCode());
-
+        //int debug_height = 1;
         #region Start Tile setup
         int xStart = rng.Next(0, Size);
         int yStart = rng.Next(0, Size);
@@ -143,11 +148,15 @@ public class Museum
 
         HashSet<int> outline = new HashSet<int>();
 
+        
         foreach (Vector2Int t in startSourrounding)
         {
             outline.Add(t.x + (t.y * Size));
         }
         #endregion
+
+        //if (MuseumGenerator.Instance)
+        //    MuseumGenerator.Instance.GenerateTempRoomDisplay(debug_height++, outline);
 
         //TODO add condition currentNumberDisplays.Count < resourceManager.ResourceCount
         while (outline.Count > 0)
@@ -259,10 +268,12 @@ public class Museum
 
                 //LogMap();
                 //LogOutline(outline);
+                //if (MuseumGenerator.Instance)
+                //    MuseumGenerator.Instance.GenerateTempRoomDisplay(debug_height++, outline);
             }// end if check poss placable type
         }// end while
 
-        FillDisplays(rng);
+        //FillDisplays(rng);
 
         if (buildMuseumsGraph)
             MuseumsGraph.BuildMuseumGraph(this);

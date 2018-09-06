@@ -75,35 +75,15 @@ public class MuseumGenerator : MonoBehaviour {
     private void OnEnable()
     {
         Instance = this;
+        VirtMuse = new Museum(SIZE);
+        VirtMuse.Generate(Seed, false);
+        if (CreateDebugGameobject)
+            GenerateTempRoomDisplay();
     }
 
     private void Update()
     {
-        if(museumRequests.Count > 0)
-        {
-            //TODO Move away from update
-            Tuple<MuseumRequestData,Queue<string>> req = null;
-            if ((req = museumRequests.Dequeue())!= null)
-            {
-                Museum virt = new Museum((int)req.Item1.Size);
-                virt.Generate(Seed);// temp
-                VirtMuse = virt;
-
-                if (CreateDebugGameobject)
-                    GenerateTempRoomDisplay();
-
-
-                //using (FileStream f = File.Open(Application.persistentDataPath + @"\VirtMuse.xml", FileMode.OpenOrCreate))
-                //{
-                //    using (StreamWriter w = new StreamWriter(f))
-                //    {
-                //        w.Write(VirtMuse.Serialize());
-                //    }
-                //}
-                req.Item2.Enqueue(VirtMuse.Serialize());
-                gameObject.SetActive(false);
-        }
-        }
+      
     }
 
     /// <summary>
@@ -118,8 +98,8 @@ public class MuseumGenerator : MonoBehaviour {
                                     requester));
     }
 
-    [Obsolete]
-    private void GenerateTempRoomDisplay(int height, HashSet<int> outline)
+
+    public void GenerateTempRoomDisplay(int height, HashSet<int> outline)
     {
         for (int x = 0; x < SIZE; x++)
         {
@@ -187,7 +167,7 @@ public class MuseumGenerator : MonoBehaviour {
                         Gizmos.color = wall.Type == Wall.WallType.Solid ? Color.black : Color.green;
                         Vector3 cubeLocation = new Vector3(wall.Location[0].x , 1f, wall.Location[0].y);
                         Vector3 cubeSize = wall.Location[0] - wall.Location[1];
-                        Gizmos.DrawCube(cubeLocation - (new Vector3(cubeSize.x,0,cubeSize.y)*.5f), new Vector3(cubeSize.x +0.01f, 1f, cubeSize.y + 0.01f));
+                        Gizmos.DrawCube(cubeLocation - (new Vector3(cubeSize.x,0f,cubeSize.y)*.5f), new Vector3(cubeSize.x +0.02f, 1f, cubeSize.y + 0.02f));
                     }// end foreach wall
                 }
             }// end foreach room

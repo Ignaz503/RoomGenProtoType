@@ -6,16 +6,16 @@ using UnityEngine;
 /// <summary>
 /// TODO FIX
 /// </summary>
-public class ObejctInHandInteraction : Interaction
+public class RotateAndZoomInteraction : Interaction
 {
     /// <summary>
     /// the component behaviour when an object is in hand and rotated
     /// </summary>
-    ObjectInHandComponent comp;
+    RotateAndZoomComponent comp;
  
     public override void StartInteraction(GameObject activator, GameObject interactedUpon)
     {
-        comp = activator.AddComponent<ObjectInHandComponent>();
+        comp = activator.AddComponent<RotateAndZoomComponent>();
         comp.StartInteraction(activator, interactedUpon);
     }
 
@@ -28,7 +28,7 @@ public class ObejctInHandInteraction : Interaction
 /// <summary>
 /// the bahaviour that allows to rotate an obnject that is held with the mouse
 /// </summary>
-public class ObjectInHandComponent : InteractionComponent
+public class RotateAndZoomComponent : InteractionComponent
 {
     /// <summary>
     /// the player holding the object

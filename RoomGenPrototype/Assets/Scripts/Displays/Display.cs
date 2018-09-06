@@ -60,13 +60,24 @@ public abstract class Display : MonoBehaviour, IInteractable {
     /// <param name="wanted_behaviour">the wanted behaviour</param>
     private void SetInteractionType(string wanted_behaviour)
     {
+        if (wanted_behaviour == "NoInteraction")
+        {
+            interactionType = null;
+            return;
+        }
+        else if (wanted_behaviour == "Default")
+        {
+            interactionType = SetToDefaultInteractionBehaviour();
+            return;
+        }
+
         Type t = System.Type.GetType(wanted_behaviour);
 
         if (t == null || !(t.IsSubclassOf(typeof(Interaction))))
         {
             //defaul behaviour it is
             Type def = SetToDefaultInteractionBehaviour();
-            if (def == null)
+            if (def == null)//for debug resons like this ^^
                 interactionType = null;
             else
             {

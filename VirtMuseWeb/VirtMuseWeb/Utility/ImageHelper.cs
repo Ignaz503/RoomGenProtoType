@@ -11,6 +11,10 @@ namespace VirtMuseWeb.Utility
 {
     public static class ImageHelper
     {
+        /// <summary>
+        /// System drawing Bitmap from dataURL
+        /// </summary>
+        /// <param name="dataURL">data url of image</param>
         public static Bitmap GetBitmap(string dataURL)
         {
             var binData = Convert.FromBase64String(dataURL);
@@ -21,6 +25,10 @@ namespace VirtMuseWeb.Utility
             }
         }
 
+        /// <summary>
+        /// System drawing Bitmap from byte array
+        /// </summary>
+        /// <param name="imgData">image as byte array</param>
         public static Bitmap GetBitmap(byte[] imgData)
         {
             using (MemoryStream st = new MemoryStream(imgData))
@@ -29,11 +37,19 @@ namespace VirtMuseWeb.Utility
             }
         }
 
+        /// <summary>
+        /// unity texture 2D from data URL
+        /// </summary>
+        /// <param name="dataURL">data url of image</param>
         public static Texture2D GetImageAsUnityTexture2D(string dataURL)
         {
             return GetImageAsUnityTexture2D(Convert.FromBase64String(dataURL));
         }
 
+        /// <summary>
+        /// Unity Texture 2D from byte array
+        /// </summary>
+        /// <param name="imgData">image as byte array</param>
         public static Texture2D GetImageAsUnityTexture2D(byte[] imgData)
         {
             Bitmap img = GetBitmap(imgData);
@@ -52,6 +68,10 @@ namespace VirtMuseWeb.Utility
             return tex;
         }
 
+        /// <summary>
+        /// Utility.Image from byte array
+        /// </summary>
+        /// <param name="imgData">image as byte array</param>
         public static Utility.Image GetImage(byte[] imgData)
         {
             Bitmap map = GetBitmap(imgData);
@@ -68,11 +88,19 @@ namespace VirtMuseWeb.Utility
             return img;
         }
 
+        /// <summary>
+        /// Utility.Image from data url
+        /// </summary>
+        /// <param name="imgData">image as byte array</param>
         public static Utility.Image GetImage(string dataURL)
         {
             return GetImage(Convert.FromBase64String(dataURL));
         }
 
+        /// <summary>
+        /// Utility image from system drawing bitmap
+        /// </summary>
+        /// <param name="map">bitmap representing image</param>
         public static Utility.Image GetImage(Bitmap map)
         {
             Image img = new Image(map.Width, map.Height);
@@ -102,6 +130,12 @@ namespace VirtMuseWeb.Utility
             return new_imgs;
         }
 
+        /// <summary>
+        /// resizes bitmap
+        /// </summary>
+        /// <param name="map">map to resize</param>
+        /// <param name="dimensions">dimensions to resize to</param>
+        /// <returns>resized bitmap</returns>
         public static Bitmap Resize(Bitmap map, (float,float) dimensions)
         {
             var brush = new SolidBrush(System.Drawing.Color.Black);

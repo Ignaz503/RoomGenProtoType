@@ -12,6 +12,9 @@ using VirtMuseWeb.Services;
 
 namespace VirtMuseWeb.Controllers
 {
+    /// <summary>
+    /// Controller for resources
+    /// </summary>
     [Produces("application/json")]
     [Route("api/resource")]
     public class ResourceController : Controller
@@ -27,6 +30,12 @@ namespace VirtMuseWeb.Controllers
         public ResourceModel GetResource(int id)
         {
             return _resourceService.GetResource(id);
+        }
+
+        [HttpGet, Route("getinteractions")]
+        public Interactions GetInteractions()
+        {
+            return _resourceService.GetInteractions();
         }
 
         [HttpPost, Route("postresource")]
