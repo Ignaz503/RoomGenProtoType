@@ -130,7 +130,7 @@ public class Player : MonoBehaviour {
             Vector3 screenPoint = PlayerCam.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
             centerRay = PlayerCam.ScreenPointToRay(screenPoint);
             RaycastHit[] hits =
-            Physics.RaycastAll(centerRay, RayCastMaxDist, LayerMask.GetMask(new string[] { "Wall", "Display" }));
+            Physics.RaycastAll(centerRay, RayCastMaxDist, LayerMask.GetMask(new string[] { "Wall", "Display" }));//TODO DISPLAY SHOULDE BE INTERACTABLE
             if(hits.Length >0)
             {
                 //check if first hit is display
