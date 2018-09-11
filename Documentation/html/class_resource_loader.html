@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -88,10 +88,10 @@ $(document).ready(function(){initNavTree('class_resource_loader.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_resource_loader-members.html">List of all members</a>  </div>
@@ -99,9 +99,6 @@ $(document).ready(function(){initNavTree('class_resource_loader.html','');});
 <div class="title">ResourceLoader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Manages the loading of resources for the client WARNING NOT IMPLEMENTED CURRENTLY SHOULD BE SEEN AS A WHAT TO EXPECT  
- <a href="class_resource_loader.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ResourceLoader:</div>
 <div class="dyncontent">
@@ -117,63 +114,95 @@ Collaboration diagram for ResourceLoader:</div>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_resource_loader_1_1_request.html">Request</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct for a request from the museum builder to get a certain resource from the server  <a href="struct_resource_loader_1_1_request.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the result of a request after it was revieved from the server  <a href="struct_resource_loader_1_1_request_result.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a55469e5c9294ec83732bfa4e2c3135ab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a55469e5c9294ec83732bfa4e2c3135ab">RequestType</a> { <a class="el" href="class_resource_loader.html#a55469e5c9294ec83732bfa4e2c3135abae9bfe9055aff7833d2f507392005faef">RequestType.MuseumRequest</a>, 
+<a class="el" href="class_resource_loader.html#a55469e5c9294ec83732bfa4e2c3135aba6311ae17c1ee52b36e68aaf4ad066387">RequestType.Other</a>
+ }</td></tr>
+<tr class="separator:a55469e5c9294ec83732bfa4e2c3135ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a901b6c5f5391cb35d69d0917ea4a2b5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a901b6c5f5391cb35d69d0917ea4a2b5a">RequestResource</a> (Action&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt; callback, string ResourceLocator, string resType)</td></tr>
-<tr class="memdesc:a901b6c5f5391cb35d69d0917ea4a2b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets a request for a resource  <a href="#a901b6c5f5391cb35d69d0917ea4a2b5a">More...</a><br /></td></tr>
-<tr class="separator:a901b6c5f5391cb35d69d0917ea4a2b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f219fead6e05415dc2523529d81561"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#ae0f219fead6e05415dc2523529d81561">RetriveResult</a> ()</td></tr>
-<tr class="memdesc:ae0f219fead6e05415dc2523529d81561"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to retrieve a result of a request  <a href="#ae0f219fead6e05415dc2523529d81561">More...</a><br /></td></tr>
-<tr class="separator:ae0f219fead6e05415dc2523529d81561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:adeb4ddafee015e2630ed66e26ec4a4ae"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#adeb4ddafee015e2630ed66e26ec4a4ae">responestring</a> = &quot;&quot;</td></tr>
-<tr class="separator:adeb4ddafee015e2630ed66e26ec4a4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad258acc6c5c963d5ca93dbe36e243d20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#ad258acc6c5c963d5ca93dbe36e243d20">Awake</a> ()</td></tr>
+<tr class="separator:ad258acc6c5c963d5ca93dbe36e243d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcaa27712f43f305baef3df7722c9e73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73">PostRequest</a> (<a class="el" href="interface_i_resource_request.html">IResourceRequest</a> req, <a class="el" href="class_resource_loader.html#a55469e5c9294ec83732bfa4e2c3135ab">RequestType</a> reqType)</td></tr>
+<tr class="memdesc:abcaa27712f43f305baef3df7722c9e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">posts request to request queue and wakes up gameobject  <a href="#abcaa27712f43f305baef3df7722c9e73">More...</a><br /></td></tr>
+<tr class="separator:abcaa27712f43f305baef3df7722c9e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a66d4b7f32938dad50d13f48e362b7b76"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_resource_loader.html">ResourceLoader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a66d4b7f32938dad50d13f48e362b7b76">Instance</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:a66d4b7f32938dad50d13f48e362b7b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug start  <a href="#a66d4b7f32938dad50d13f48e362b7b76">More...</a><br /></td></tr>
 <tr class="separator:a66d4b7f32938dad50d13f48e362b7b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4e93d50757ee75b2356a663c7fd3cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum.html">Museum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#ade4e93d50757ee75b2356a663c7fd3cd">MuseumToBuild</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ade4e93d50757ee75b2356a663c7fd3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">special request for the museum stored for easy storage between scenes  <a href="#ade4e93d50757ee75b2356a663c7fd3cd">More...</a><br /></td></tr>
+<tr class="separator:ade4e93d50757ee75b2356a663c7fd3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a81acd4bfcfed997a7a339d90383a2a26"><td class="memItemLeft" align="right" valign="top">Action&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a81acd4bfcfed997a7a339d90383a2a26">OnResourceDownloaded</a></td></tr>
+<tr class="memdesc:a81acd4bfcfed997a7a339d90383a2a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">event invoked when a resource was downloaded informs about what type the request was DONT send actuall <a class="el" href="interface_i_resource_request.html" title="base interface for a resource request, usable by both style request and image/mesh requests ...">IResourceRequest</a> someone might unwatingly might tameper with things should be seen as info for observers  <a href="#a81acd4bfcfed997a7a339d90383a2a26">More...</a><br /></td></tr>
+<tr class="separator:a81acd4bfcfed997a7a339d90383a2a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ad258acc6c5c963d5ca93dbe36e243d20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#ad258acc6c5c963d5ca93dbe36e243d20">Awake</a> ()</td></tr>
-<tr class="separator:ad258acc6c5c963d5ca93dbe36e243d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20a1036648a453863c96b51d33edfa11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a20a1036648a453863c96b51d33edfa11">Update</a> ()</td></tr>
 <tr class="separator:a20a1036648a453863c96b51d33edfa11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a088ef33ee82be6e64028b6b5512fad5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a088ef33ee82be6e64028b6b5512fad5d">LoadResource</a> (<a class="el" href="struct_resource_loader_1_1_request.html">Request</a> req)</td></tr>
-<tr class="separator:a088ef33ee82be6e64028b6b5512fad5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39eb6b54c79c44d103b0aedfcdc69f81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a39eb6b54c79c44d103b0aedfcdc69f81">TestRequest</a> ()</td></tr>
-<tr class="separator:a39eb6b54c79c44d103b0aedfcdc69f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aac461f634dc821609293616d32e7288e"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#aac461f634dc821609293616d32e7288e">LoadedResources</a> = new Queue&lt;<a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&gt;()</td></tr>
-<tr class="separator:aac461f634dc821609293616d32e7288e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd6d1957bdc4e0212991af05e3454633"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="struct_resource_loader_1_1_request.html">Request</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#acd6d1957bdc4e0212991af05e3454633">LoadRequests</a> = new Queue&lt;<a class="el" href="struct_resource_loader_1_1_request.html">Request</a>&gt;()</td></tr>
-<tr class="separator:acd6d1957bdc4e0212991af05e3454633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0983780f3a6f7517a8377010dfd4fe7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#ab0983780f3a6f7517a8377010dfd4fe7">numWorkableRequestsSameTime</a></td></tr>
+<tr class="memdesc:ab0983780f3a6f7517a8377010dfd4fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of request it is possible to work on at the same time  <a href="#ab0983780f3a6f7517a8377010dfd4fe7">More...</a><br /></td></tr>
+<tr class="separator:ab0983780f3a6f7517a8377010dfd4fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63594097a2099f41637445a76f8df1a9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a63594097a2099f41637445a76f8df1a9">baseURL</a></td></tr>
+<tr class="memdesc:a63594097a2099f41637445a76f8df1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">base url to server eg: <a href="http://localhost:52536">http://localhost:52536</a>  <a href="#a63594097a2099f41637445a76f8df1a9">More...</a><br /></td></tr>
+<tr class="separator:a63594097a2099f41637445a76f8df1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16070d3fe56ca93ca9690f15d36df67b"><td class="memItemLeft" align="right" valign="top">string []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a16070d3fe56ca93ca9690f15d36df67b">resourceRoute</a></td></tr>
+<tr class="memdesc:a16070d3fe56ca93ca9690f15d36df67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">sub route to resource eg /api/resource/getres?id=  <a href="#a16070d3fe56ca93ca9690f15d36df67b">More...</a><br /></td></tr>
+<tr class="separator:a16070d3fe56ca93ca9690f15d36df67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a96acf88c8727a7f76b56bbb483b706"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#a3a96acf88c8727a7f76b56bbb483b706">numCurrentRequestsWorkingOn</a> = 0</td></tr>
+<tr class="memdesc:a3a96acf88c8727a7f76b56bbb483b706"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of currently active requests  <a href="#a3a96acf88c8727a7f76b56bbb483b706">More...</a><br /></td></tr>
+<tr class="separator:a3a96acf88c8727a7f76b56bbb483b706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af06b5459698c44c6acbb52c456fa2c71"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="interface_i_resource_request.html">IResourceRequest</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#af06b5459698c44c6acbb52c456fa2c71">requestQueue</a></td></tr>
+<tr class="memdesc:af06b5459698c44c6acbb52c456fa2c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">queue of request posted  <a href="#af06b5459698c44c6acbb52c456fa2c71">More...</a><br /></td></tr>
+<tr class="separator:af06b5459698c44c6acbb52c456fa2c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbcaf8e71a04ea93dddd62f342b50bc8"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="interface_i_resource_request.html">IResourceRequest</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_loader.html#afbcaf8e71a04ea93dddd62f342b50bc8">requestsWorkingOn</a></td></tr>
+<tr class="memdesc:afbcaf8e71a04ea93dddd62f342b50bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">queue of requests that are currently being worked on  <a href="#afbcaf8e71a04ea93dddd62f342b50bc8">More...</a><br /></td></tr>
+<tr class="separator:afbcaf8e71a04ea93dddd62f342b50bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manages the loading of resources for the client WARNING NOT IMPLEMENTED CURRENTLY SHOULD BE SEEN AS A WHAT TO EXPECT </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad258acc6c5c963d5ca93dbe36e243d20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad258acc6c5c963d5ca93dbe36e243d20">&#9670;&nbsp;</a></span>Awake()</h2>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a55469e5c9294ec83732bfa4e2c3135ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55469e5c9294ec83732bfa4e2c3135ab">&#9670;&nbsp;</a></span>RequestType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_resource_loader.html#a55469e5c9294ec83732bfa4e2c3135ab">ResourceLoader.RequestType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a55469e5c9294ec83732bfa4e2c3135abae9bfe9055aff7833d2f507392005faef"></a>MuseumRequest&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a55469e5c9294ec83732bfa4e2c3135aba6311ae17c1ee52b36e68aaf4ad066387"></a>Other&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad258acc6c5c963d5ca93dbe36e243d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad258acc6c5c963d5ca93dbe36e243d20">&#9670;&nbsp;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void ResourceLoader.Awake </td>
@@ -182,72 +211,27 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a088ef33ee82be6e64028b6b5512fad5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a088ef33ee82be6e64028b6b5512fad5d">&#9670;&nbsp;</a></span>LoadResource()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ResourceLoader.LoadResource </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_resource_loader_1_1_request.html">Request</a>&#160;</td>
-          <td class="paramname"><em>req</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d_icgraph.png" border="0" usemap="#class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d_icgraph" alt=""/></div>
-<map name="class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d_icgraph" id="class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d_icgraph">
-<area shape="rect" id="node2" href="class_resource_loader.html#a20a1036648a453863c96b51d33edfa11" title="ResourceLoader.Update" alt="" coords="256,5,417,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a901b6c5f5391cb35d69d0917ea4a2b5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a901b6c5f5391cb35d69d0917ea4a2b5a">&#9670;&nbsp;</a></span>RequestResource()</h2>
+<a id="abcaa27712f43f305baef3df7722c9e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcaa27712f43f305baef3df7722c9e73">&#9670;&nbsp;</a></span>PostRequest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ResourceLoader.RequestResource </td>
+          <td class="memname">void ResourceLoader.PostRequest </td>
           <td>(</td>
-          <td class="paramtype">Action&lt; <a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> &gt;&#160;</td>
-          <td class="paramname"><em>callback</em>, </td>
+          <td class="paramtype"><a class="el" href="interface_i_resource_request.html">IResourceRequest</a>&#160;</td>
+          <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>ResourceLocator</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>resType</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_resource_loader.html#a55469e5c9294ec83732bfa4e2c3135ab">RequestType</a>&#160;</td>
+          <td class="paramname"><em>reqType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -257,52 +241,34 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>sets a request for a resource </p>
-
+<p>posts request to request queue and wakes up gameobject </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>the request that is posted</td></tr>
+    <tr><td class="paramname">reqType</td><td>reqest type, to figure out routing on server</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_resource_loader_abcaa27712f43f305baef3df7722c9e73_icgraph.png" border="0" usemap="#class_resource_loader_abcaa27712f43f305baef3df7722c9e73_icgraph" alt=""/></div>
+<map name="class_resource_loader_abcaa27712f43f305baef3df7722c9e73_icgraph" id="class_resource_loader_abcaa27712f43f305baef3df7722c9e73_icgraph">
+<area shape="rect" id="node2" href="class_intro_controller.html#afdc3da184119a836c16a44e5615bc2f9" title="IntroController.RequestMuseum" alt="" coords="257,5,461,32"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="249,158,468,199"/>
+<area shape="rect" id="node11" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="248,223,469,265"/>
+<area shape="rect" id="node12" href="class_museum_builder.html#aa4b2759977e29fa40cea22b6f31242ac" title="posts a wall texture request to resource loader " alt="" coords="519,287,731,329"/>
+<area shape="rect" id="node13" href="class_museum_builder.html#a18b0a6f67d3e9053b604c5a7caf9d4b0" title="posts a floor texture request to the resource loader " alt="" coords="517,41,732,82"/>
+<area shape="rect" id="node14" href="class_museum_builder.html#a5b79838dee5015763177bdceca168f5c" title="Posts a ceiling texutre requesst to the resource loader " alt="" coords="790,99,973,141"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="531,194,718,235"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="786,165,977,206"/>
+<area shape="rect" id="node9" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="780,230,983,271"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="1031,140,1213,167"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="1261,189,1456,216"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="1504,189,1648,216"/>
+<area shape="rect" id="node10" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="1035,237,1209,264"/>
+</map>
 </div>
-</div>
-<a id="ae0f219fead6e05415dc2523529d81561"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0f219fead6e05415dc2523529d81561">&#9670;&nbsp;</a></span>RetriveResult()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a> ResourceLoader.RetriveResult </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>function to retrieve a result of a request </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a39eb6b54c79c44d103b0aedfcdc69f81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39eb6b54c79c44d103b0aedfcdc69f81">&#9670;&nbsp;</a></span>TestRequest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ResourceLoader.TestRequest </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -328,20 +294,24 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p>first checks if we can start a new request, when there is space and we have request posted after that, checks if any request finished at the end checks if it can go to sleep when there are no requests worked on and no requests posted </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_resource_loader_a20a1036648a453863c96b51d33edfa11_cgraph.png" border="0" usemap="#class_resource_loader_a20a1036648a453863c96b51d33edfa11_cgraph" alt=""/></div>
 <map name="class_resource_loader_a20a1036648a453863c96b51d33edfa11_cgraph" id="class_resource_loader_a20a1036648a453863c96b51d33edfa11_cgraph">
-<area shape="rect" id="node2" href="class_resource_loader.html#a088ef33ee82be6e64028b6b5512fad5d" title="ResourceLoader.LoadResource" alt="" coords="215,5,417,32"/>
+<area shape="rect" id="node2" href="interface_i_resource_request.html#a5b40a09cb820283600ac9e3f846936f9" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="217,5,408,47"/>
+<area shape="rect" id="node3" href="interface_i_resource_request.html#a056e427fa6233602456ccb2d4c405aa0" title="called when done with request, and it is now time to apply it to a gameobject " alt="" coords="215,71,411,98"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aac461f634dc821609293616d32e7288e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac461f634dc821609293616d32e7288e">&#9670;&nbsp;</a></span>LoadedResources</h2>
+<a id="a63594097a2099f41637445a76f8df1a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63594097a2099f41637445a76f8df1a9">&#9670;&nbsp;</a></span>baseURL</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,7 +320,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Queue&lt;<a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&gt; ResourceLoader.LoadedResources = new Queue&lt;<a class="el" href="struct_resource_loader_1_1_request_result.html">RequestResult</a>&gt;()</td>
+          <td class="memname">string ResourceLoader.baseURL</td>
         </tr>
       </table>
   </td>
@@ -360,10 +330,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>base url to server eg: <a href="http://localhost:52536">http://localhost:52536</a> </p>
+
 </div>
 </div>
-<a id="acd6d1957bdc4e0212991af05e3454633"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd6d1957bdc4e0212991af05e3454633">&#9670;&nbsp;</a></span>LoadRequests</h2>
+<a id="a3a96acf88c8727a7f76b56bbb483b706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a96acf88c8727a7f76b56bbb483b706">&#9670;&nbsp;</a></span>numCurrentRequestsWorkingOn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,7 +344,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Queue&lt;<a class="el" href="struct_resource_loader_1_1_request.html">Request</a>&gt; ResourceLoader.LoadRequests = new Queue&lt;<a class="el" href="struct_resource_loader_1_1_request.html">Request</a>&gt;()</td>
+          <td class="memname">int ResourceLoader.numCurrentRequestsWorkingOn = 0</td>
         </tr>
       </table>
   </td>
@@ -382,19 +354,103 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>number of currently active requests </p>
+
 </div>
 </div>
-<a id="adeb4ddafee015e2630ed66e26ec4a4ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adeb4ddafee015e2630ed66e26ec4a4ae">&#9670;&nbsp;</a></span>responestring</h2>
+<a id="ab0983780f3a6f7517a8377010dfd4fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0983780f3a6f7517a8377010dfd4fe7">&#9670;&nbsp;</a></span>numWorkableRequestsSameTime</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string ResourceLoader.responestring = &quot;&quot;</td>
+          <td class="memname">int ResourceLoader.numWorkableRequestsSameTime</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>number of request it is possible to work on at the same time </p>
+
+</div>
+</div>
+<a id="af06b5459698c44c6acbb52c456fa2c71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af06b5459698c44c6acbb52c456fa2c71">&#9670;&nbsp;</a></span>requestQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Queue&lt;<a class="el" href="interface_i_resource_request.html">IResourceRequest</a>&gt; ResourceLoader.requestQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>queue of request posted </p>
+
+</div>
+</div>
+<a id="afbcaf8e71a04ea93dddd62f342b50bc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbcaf8e71a04ea93dddd62f342b50bc8">&#9670;&nbsp;</a></span>requestsWorkingOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Queue&lt;<a class="el" href="interface_i_resource_request.html">IResourceRequest</a>&gt; ResourceLoader.requestsWorkingOn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>queue of requests that are currently being worked on </p>
+
+</div>
+</div>
+<a id="a16070d3fe56ca93ca9690f15d36df67b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16070d3fe56ca93ca9690f15d36df67b">&#9670;&nbsp;</a></span>resourceRoute</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string [] ResourceLoader.resourceRoute</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>sub route to resource eg /api/resource/getres?id= </p>
 
 </div>
 </div>
@@ -418,6 +474,50 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Debug start </p>
+<p>Instance of resource loader </p>
+
+</div>
+</div>
+<a id="ade4e93d50757ee75b2356a663c7fd3cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4e93d50757ee75b2356a663c7fd3cd">&#9670;&nbsp;</a></span>MuseumToBuild</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_museum.html">Museum</a> ResourceLoader.MuseumToBuild</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>special request for the museum stored for easy storage between scenes </p>
+
+</div>
+</div>
+<h2 class="groupheader">Event Documentation</h2>
+<a id="a81acd4bfcfed997a7a339d90383a2a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81acd4bfcfed997a7a339d90383a2a26">&#9670;&nbsp;</a></span>OnResourceDownloaded</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;Type&gt; ResourceLoader.OnResourceDownloaded</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event invoked when a resource was downloaded informs about what type the request was DONT send actuall <a class="el" href="interface_i_resource_request.html" title="base interface for a resource request, usable by both style request and image/mesh requests ...">IResourceRequest</a> someone might unwatingly might tameper with things should be seen as info for observers </p>
 
 </div>
 </div>

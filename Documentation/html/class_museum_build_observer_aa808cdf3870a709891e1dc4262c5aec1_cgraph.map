@@ -1,0 +1,4 @@
+<map id="MuseumBuildObserver.UpdateEntrance" name="MuseumBuildObserver.UpdateEntrance">
+<area shape="rect" id="node2" href="$class_museum_build_observer.html#a44742cfdf94ae34a329e689e6995075e" title="checks if museum finised building WARNING: currently temp version " alt="" coords="251,5,473,32"/>
+<area shape="rect" id="node3" href="$class_base_door.html#a1fe85317a4742aec4d03deb7c0d52fd2" title="function to unlock a door if it is locked " alt="" coords="301,56,423,83"/>
+</map>

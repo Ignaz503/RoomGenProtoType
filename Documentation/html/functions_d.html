@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -90,8 +90,18 @@ $(document).ready(function(){initNavTree('functions_d.html','');});
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>Data
+: <a class="el" href="class_virt_muse_web_1_1_models_1_1_resource_model.html#a6ffb8a92a30539db047cf1ad26c4fd98">VirtMuseWeb.Models.ResourceModel</a>
+</li>
+<li>DateOfBirth
+: <a class="el" href="class_virt_muse_web_1_1_models_1_1_creator.html#acfafda84c90f8164b8fcc65264209881">VirtMuseWeb.Models.Creator</a>
+</li>
 <li>DateOfCreation
 : <a class="el" href="class_meta_data.html#a693a56223c266f028740844681877e45">MetaData</a>
+, <a class="el" href="class_virt_muse_web_1_1_models_1_1_meta_data_model.html#afc58f55a262a38649e368aeb2ec9964e">VirtMuseWeb.Models.MetaDataModel</a>
+</li>
+<li>DateOfDeath
+: <a class="el" href="class_virt_muse_web_1_1_models_1_1_creator.html#a2d4c062cfd1e12ffc9cb918f476360d7">VirtMuseWeb.Models.Creator</a>
 </li>
 <li>defaultClosePosition
 : <a class="el" href="class_sliding_door.html#ae98a84a3b0580b64ace05dd5ea8f6a2c">SlidingDoor</a>
@@ -99,11 +109,14 @@ $(document).ready(function(){initNavTree('functions_d.html','');});
 <li>Deserialize()
 : <a class="el" href="class_meta_data.html#adcfb4cc074566933e35c3f14451960ed">MetaData</a>
 , <a class="el" href="class_museum.html#a1b4fb627a19112e3ba3d25e8108de2c3">Museum</a>
-, <a class="el" href="class_museum_request.html#abd551a45744c8387841c20e5ef46d420">MuseumRequest</a>
+, <a class="el" href="class_museum_request_data.html#a927b5c1b4ac92161315f7bb717b7c6e6">MuseumRequestData</a>
+, <a class="el" href="class_virt_muse_web_1_1_utility_1_1_image.html#ab45d281959b7e4d99408631f57f1d372">VirtMuseWeb.Utility.Image</a>
+, <a class="el" href="class_virt_muse_web_1_1_utility_1_1_room_style.html#ababd66b3bdab2432fc188a78f75272e6">VirtMuseWeb.Utility.RoomStyle</a>
+, <a class="el" href="class_virt_muse_web_1_1_utility_1_1_unity_mesh_data.html#a72d47231711a93e536a91a202d07caef">VirtMuseWeb.Utility.UnityMeshData</a>
 </li>
 <li>Destroy()
 : <a class="el" href="class_interaction_component.html#aa28f5c9f92b342c3d52f8b0b251fb4fa">InteractionComponent</a>
-, <a class="el" href="class_object_in_hand_component.html#a932b69c4977ec0836389b71a6aa1366c">ObjectInHandComponent</a>
+, <a class="el" href="class_rotate_and_zoom_component.html#aa116a1acdc75d587605b6fa043474982">RotateAndZoomComponent</a>
 </li>
 <li>DisableAfterRequest
 : <a class="el" href="class_museum_builder.html#a13b0442ec3a7b4aededb9a7d90572c70">MuseumBuilder</a>
@@ -121,13 +134,16 @@ $(document).ready(function(){initNavTree('functions_d.html','');});
 : <a class="el" href="class_player_display_interaction_event_args.html#a52aeb669218099852d66e6fc02247b8f">PlayerDisplayInteractionEventArgs</a>
 </li>
 <li>displayMeshRenderes
-: <a class="el" href="class_center_image_display.html#a47f09ee02109c10416288b5022f193f8">CenterImageDisplay</a>
+: <a class="el" href="class_center_image_display.html#afd5ccf58dcdcddc7592026ee840cf55d">CenterImageDisplay</a>
 </li>
 <li>DisplayMeshResource()
-: <a class="el" href="class_display_mesh_resource.html#aa4b6bc70724de2c056737f015cad4a41">DisplayMeshResource</a>
+: <a class="el" href="class_display_mesh_resource.html#ab51d570e0165de27fc603b69ae026e6b">DisplayMeshResource</a>
 </li>
 <li>displayPagePrefab
 : <a class="el" href="class_meta_data_display.html#af81a664bb7d39381b2dd82da5b67ec94">MetaDataDisplay</a>
+</li>
+<li>DisplayResourceRequest()
+: <a class="el" href="class_display_resource_request.html#a97001a4fd6ca62ee0c1a2e99f8ad3567">DisplayResourceRequest&lt; T &gt;</a>
 </li>
 <li>DisplayType
 : <a class="el" href="class_display.html#a7f7abc559192ef7e8f4a03382d3492d7">Display</a>
@@ -135,9 +151,24 @@ $(document).ready(function(){initNavTree('functions_d.html','');});
 </li>
 <li>door
 : <a class="el" href="class_door_trigger.html#a592b30ac7c1c4b719d6a90fa96fbb046">DoorTrigger</a>
+, <a class="el" href="class_museum_build_observer.html#aee761ebe086d7c3e2c3c0901c3b6eea0">MuseumBuildObserver</a>
 </li>
 <li>DoorState
 : <a class="el" href="class_base_door.html#a22e038571daf23b362eb8aaedc78cb43">BaseDoor</a>
+</li>
+<li>doortMaterial
+: <a class="el" href="class_museum_build_observer.html#aeb87eca5f3badfe87f72e7258384452f">MuseumBuildObserver</a>
+</li>
+<li>doorTrigger
+: <a class="el" href="class_museum_build_observer.html#a1eab214fddd9d1ba7d573936ea901a8d">MuseumBuildObserver</a>
+</li>
+<li>down
+: <a class="el" href="class_virt_muse_web_1_1_utility_1_1_vec2.html#ac876086c80c0440f9b3b2dceb5d0bdfc">VirtMuseWeb.Utility.Vec2</a>
+, <a class="el" href="class_virt_muse_web_1_1_utility_1_1_vec3.html#aa806f07a7d76928ab0fe5c81e6f99fd3">VirtMuseWeb.Utility.Vec3</a>
+, <a class="el" href="class_virt_muse_web_1_1_utility_1_1_vec3_int.html#a243ba7fd5823c5fa2a4265005279382b">VirtMuseWeb.Utility.Vec3Int</a>
+</li>
+<li>downloadedRoomStyles
+: <a class="el" href="class_room_style_manager.html#a03aaf980c4dccbd54255045c852d6016">RoomStyleManager</a>
 </li>
 <li>DrawAllWalls
 : <a class="el" href="class_museum_generator.html#a3a354ad136bc8f11fce23708625ccfde">MuseumGenerator</a>

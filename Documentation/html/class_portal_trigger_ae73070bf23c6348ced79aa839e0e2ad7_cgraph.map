@@ -1,0 +1,6 @@
+<map id="PortalTrigger.OnTriggerEnter" name="PortalTrigger.OnTriggerEnter">
+<area shape="rect" id="node2" href="$class_museum_build_observer.html#a506c7314ea2734e8f4881167ab5f2460" title="tepelports player if possible " alt="" coords="240,27,443,69"/>
+<area shape="rect" id="node3" href="$class_museum_build_observer.html#a44742cfdf94ae34a329e689e6995075e" title="checks if museum finised building WARNING: currently temp version " alt="" coords="491,5,713,32"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#a875e7252e31ad7ae28f17eb365ef5ce5" title="Sets player position to the first floor in the museum. " alt="" coords="513,57,691,98"/>
+<area shape="rect" id="node5" href="$class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="761,57,948,98"/>
+</map>

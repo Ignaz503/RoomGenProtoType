@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['lateupdate',['LateUpdate',['../class_interaction_prompt.html#abdf8e29663a41a36dc2db027f3187c49',1,'InteractionPrompt']]],
-  ['loaddisplayresource',['LoadDisplayResource',['../class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d',1,'MuseumBuilder']]],
-  ['loadresource',['LoadResource',['../class_resource_loader.html#a088ef33ee82be6e64028b6b5512fad5d',1,'ResourceLoader']]],
+  ['lateupdate',['LateUpdate',['../class_late_update_rotation_follower.html#a038bf88fd7c04d016cd03292e2e7a180',1,'LateUpdateRotationFollower.LateUpdate()'],['../class_interaction_prompt.html#abdf8e29663a41a36dc2db027f3187c49',1,'InteractionPrompt.LateUpdate()']]],
+  ['loaddisplayresource',['LoadDisplayResource',['../class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2',1,'MuseumBuilder']]],
   ['loadroom',['LoadRoom',['../class_room_managment_unit.html#a7f34dfb62166ebcbd2a314f0bcdb61e9',1,'RoomManagmentUnit']]],
   ['loadroomandneighbors',['LoadRoomAndNeighbors',['../class_museum_controller.html#a8f4312e1b672427e94e590e499d2ca8d',1,'MuseumController']]],
   ['lock',['Lock',['../class_base_door.html#a2b616c52626299f25ac25f7deab44dc4',1,'BaseDoor.Lock()'],['../class_single_hinge_door.html#a329ff33388675ec531996bdb33dd0c70',1,'SingleHingeDoor.Lock()'],['../class_sliding_door.html#a2b21b6ea3181ac95520e0490c900d1a6',1,'SlidingDoor.Lock()']]],

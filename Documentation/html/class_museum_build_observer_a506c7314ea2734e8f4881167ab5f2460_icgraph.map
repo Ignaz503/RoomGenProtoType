@@ -1,0 +1,4 @@
+<map id="MuseumBuildObserver.TeleportIfPossible" name="MuseumBuildObserver.TeleportIfPossible">
+<area shape="rect" id="node2" href="$class_portal_trigger.html#ae73070bf23c6348ced79aa839e0e2ad7" title="PortalTrigger.OnTriggerEnter" alt="" coords="256,5,443,32"/>
+<area shape="rect" id="node3" href="$class_museum_build_observer.html#a18c844a9fe9b649ed4bdaedbdade82a6" title="MuseumBuildObserver.Start" alt="" coords="257,56,441,83"/>
+</map>

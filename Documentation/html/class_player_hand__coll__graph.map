@@ -1,3 +1,4 @@
 <map id="PlayerHand" name="PlayerHand">
 <area shape="rect" id="node3" href="$interface_i_holdable_object.html" title="{IHoldableObject\n|+ Object\l|+ OnHeldInfrontOfFace()\l+ OnPutAway()\l+ OnStartedMoveInfrontOfFace()\l+ OnStartedMoveAwayFromFace()\l+ PositionObjectInHand()\l+ OnGrabed()\l+ OnDropped()\l+ IsInterestedInInteractable\lObjects()\l+ SetInteractedObject()\l}" alt="" coords="140,5,363,215"/>
+<area shape="rect" id="node4" href="$interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="387,71,479,149"/>
 </map>

@@ -1,7 +1,4 @@
 <map id="MeshDisplay.ApplyResource" name="MeshDisplay.ApplyResource">
 <area shape="rect" id="node2" href="$class_base_resource.html#a2d832c8042114da9e3f6240651d59703" title="function that applies a resource to a gamobject " alt="" coords="243,5,471,32"/>
-<area shape="rect" id="node3" href="$class_mesh_display.html#a94176ce6e76cc683336051b49573ab1f" title="scales the mesh that needs displaying to a size so that is fits into the glass sphere ..." alt="" coords="268,57,445,98"/>
-<area shape="rect" id="node6" href="$class_mesh_display.html#ab87e001316410059093fac5d92326ef2" title="setsup the meshrenderer options of the child " alt="" coords="246,122,467,163"/>
-<area shape="rect" id="node4" href="$class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="519,64,693,91"/>
-<area shape="rect" id="node5" href="$class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="741,64,957,91"/>
+<area shape="rect" id="node3" href="$class_mesh_display.html#ab87e001316410059093fac5d92326ef2" title="setsup the meshrenderer options of the child " alt="" coords="246,57,467,98"/>
 </map>

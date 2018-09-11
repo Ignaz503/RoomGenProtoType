@@ -1,3 +1,3 @@
 <map id="PlayerHand.ForwardInteractableObject" name="PlayerHand.ForwardInteractableObject">
-<area shape="rect" id="node2" href="$interface_i_holdable_object.html#aeb32a55273b99d16f9fb5b86f6a73f80" title="IHoldableObject.SetInteracted\lObject" alt="" coords="260,5,455,47"/>
+<area shape="rect" id="node2" href="$interface_i_holdable_object.html#aeb32a55273b99d16f9fb5b86f6a73f80" title="function get&#39;s called by hand if the held object is interessted in interacted objects ..." alt="" coords="260,5,455,47"/>
 </map>

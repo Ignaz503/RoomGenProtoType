@@ -2,8 +2,7 @@
 \label{interface_i_holdable_object}\index{I\+Holdable\+Object@{I\+Holdable\+Object}}
 
 
-Inheritance diagram for I\+Holdable\+Object\+:
-\nopagebreak
+Inheritance diagram for I\+Holdable\+Object\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for I\+Holdable\+Object\+:
 \end{figure}
 
 
-Collaboration diagram for I\+Holdable\+Object\+:
-\nopagebreak
+Collaboration diagram for I\+Holdable\+Object\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,21 +24,21 @@ Collaboration diagram for I\+Holdable\+Object\+:
 void \mbox{\hyperlink{interface_i_holdable_object_a6f63fec8fb8f715ad5cdd08aa5ec0ea5}{On\+Held\+Infront\+Of\+Face}} ()
 \begin{DoxyCompactList}\small\item\em called when hand reaches infront of face position right after state was set to infront of face \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_i_holdable_object_abe7c5e5ed97fb5c908c91da5b8714f0e}{On\+Put\+Away}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called when the hand reaches it\textquotesingle{}s rest positon right after the state is set to Rest\+Position \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_i_holdable_object_af5dcdd5524539104706dadd8a0e15e08}{On\+Started\+Move\+Infront\+Of\+Face}} ()
 \begin{DoxyCompactList}\small\item\em called when hand starts moving towards the infront of face position right after the state is set to Moving\+Infrontof\+Face \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_i_holdable_object_a75f802a9736db51e5e8d1568689dd11c}{On\+Started\+Move\+Away\+From\+Face}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em called when the hand starts moving away from the face right after the hand state is set to Moving\+To\+Rest\+Position \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_i_holdable_object_a3fe2e7a7d0740225142053583f438333}{Position\+Object\+In\+Hand}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
 \begin{DoxyCompactList}\small\item\em used to probably parent obj to hand gamobjt and set local position called by grab object of the hand \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_i_holdable_object_a7b8a42a0c12a26b1668c4dd904f38355}{On\+Grabed}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
-\item 
+\begin{DoxyCompactList}\small\item\em Called the frame this object is grabbed can be seen as an initializer function for when the obj is grabbed \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_i_holdable_object_a19523673c41505d8533aa50b957e95a1}{On\+Dropped}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
-\item 
+\begin{DoxyCompactList}\small\item\em Called the frame this object is dropped by a hand can be seen as a destroy/cleanup function for the opbject when called the hand does not hold the object anyomre \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{interface_i_holdable_object_a0356d534c17ab4e04fba00b42abeea77}{Is\+Interested\+In\+Interactable\+Objects}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em this functions defines iof the held object gets information about an interactable object forwarded to him \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_i_holdable_object_aeb32a55273b99d16f9fb5b86f6a73f80}{Set\+Interacted\+Object}} (\mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} i\+Obj)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em function get\textquotesingle{}s called by hand if the held object is interessted in interacted objects \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,8 +55,6 @@ Game\+Object \mbox{\hyperlink{interface_i_holdable_object_a99b6760e4f5c71c79d8b0
 
 
 
-
-
 this functions defines iof the held object gets information about an interactable object forwarded to him 
 
 \begin{DoxyReturn}{Returns}
@@ -68,8 +64,7 @@ this functions defines iof the held object gets information about an interactabl
 
 Implemented in \mbox{\hyperlink{class_meta_data_display_a6aa943864ef85667977a13c895c2ce23}{Meta\+Data\+Display}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -84,8 +79,6 @@ Here is the caller graph for this function\+:
 
 
 
-
-
 Called the frame this object is dropped by a hand can be seen as a destroy/cleanup function for the opbject when called the hand does not hold the object anyomre 
 
 
@@ -97,8 +90,7 @@ Called the frame this object is dropped by a hand can be seen as a destroy/clean
 
 Implemented in \mbox{\hyperlink{class_meta_data_display_a274478924e6a4df19484a469ae2869ce}{Meta\+Data\+Display}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -113,8 +105,6 @@ Here is the caller graph for this function\+:
 
 
 
-
-
 Called the frame this object is grabbed can be seen as an initializer function for when the obj is grabbed 
 
 
@@ -126,8 +116,7 @@ Called the frame this object is grabbed can be seen as an initializer function f
 
 Implemented in \mbox{\hyperlink{class_meta_data_display_a7d639d7bc58c9340a7f5274884bbc11d}{Meta\+Data\+Display}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -148,8 +137,7 @@ called when hand reaches infront of face position right after state was set to i
 
 Implemented in \mbox{\hyperlink{class_meta_data_display_ab91c62e23ca6af27f8a30859d5a172c9}{Meta\+Data\+Display}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -164,14 +152,13 @@ Here is the caller graph for this function\+:
 
 
 
-
-
 Called when the hand reaches it\textquotesingle{}s rest positon right after the state is set to Rest\+Position 
+
+
 
 Implemented in \mbox{\hyperlink{class_meta_data_display_a55888c6c3e3e224d89d95b6c63652762}{Meta\+Data\+Display}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -186,14 +173,13 @@ Here is the caller graph for this function\+:
 
 
 
-
-
 called when the hand starts moving away from the face right after the hand state is set to Moving\+To\+Rest\+Position 
+
+
 
 Implemented in \mbox{\hyperlink{class_meta_data_display_a98518b3d82ffd1e428cab9a2328fb018}{Meta\+Data\+Display}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -214,8 +200,7 @@ called when hand starts moving towards the infront of face position right after 
 
 Implemented in \mbox{\hyperlink{class_meta_data_display_aa0a9b9ca8243943104c82602e69a0541}{Meta\+Data\+Display}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -249,8 +234,6 @@ Implemented in \mbox{\hyperlink{class_meta_data_display_a1ecbc336a25464fc9999120
 
 
 
-
-
 function get\textquotesingle{}s called by hand if the held object is interessted in interacted objects 
 
 
@@ -262,8 +245,7 @@ function get\textquotesingle{}s called by hand if the held object is interessted
 
 Implemented in \mbox{\hyperlink{class_meta_data_display_a29b7b1ec6193b73606dc7da89c387529}{Meta\+Data\+Display}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

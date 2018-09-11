@@ -1,0 +1,178 @@
+\hypertarget{class_multi_wall_texture_request}{}\section{Multi\+Wall\+Texture\+Request Class Reference}
+\label{class_multi_wall_texture_request}\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+
+
+Inheritance diagram for Multi\+Wall\+Texture\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_multi_wall_texture_request__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Multi\+Wall\+Texture\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_multi_wall_texture_request__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multi_wall_texture_request_a03bbf57a2eb2ef24894f7f4d6dadd439}{Multi\+Wall\+Texture\+Request}} (\mbox{\hyperlink{class_wall}{Wall}} w, Game\+Object requestor)
+\begin{DoxyCompactList}\small\item\em ctor for request \end{DoxyCompactList}\item 
+override I\+Enumerator \mbox{\hyperlink{class_multi_wall_texture_request_a9990230b6a9cb6be581b7948f379065b}{Start\+Work\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Called when the resource starts working, should most likely start a new thread \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_multi_wall_texture_request_a96afd031b54eb8f09658fa1930b7d7f7}{When\+Done}} ()
+\begin{DoxyCompactList}\small\item\em called when done with request, and it is now time to apply it to a gameobject \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_multi_wall_texture_request_a3f9a316d5e1b6e9747d91257b03d45a0}{Second\+Resource\+Locator}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em ID of second style to get \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}} \mbox{\hyperlink{class_multi_wall_texture_request_a5973e2715491e6d34270f14e1c0d33e7}{Second\+Response}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em second style response \end{DoxyCompactList}\item 
+Texture2D \mbox{\hyperlink{class_multi_wall_texture_request_a26f962cdfff74d5594cc5216d4c0065e}{Merged\+Texture}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em merged texure of style one and two \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wall}{Wall}} \mbox{\hyperlink{class_multi_wall_texture_request_a73e34826ed183281d7fd34f5d263d72c}{Requesting\+Wall}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_wall}{Wall}} that requested the texture \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+I\+Enumerator \mbox{\hyperlink{class_multi_wall_texture_request_a66ff9bddcb7230947278ff32f2957ec7}{Merge\+Wall\+Textures}} ()
+\begin{DoxyCompactList}\small\item\em Merges the two wall textures of Response and Second\+Response \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_multi_wall_texture_request_a03bbf57a2eb2ef24894f7f4d6dadd439}\label{class_multi_wall_texture_request_a03bbf57a2eb2ef24894f7f4d6dadd439}} 
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\subsubsection{\texorpdfstring{Multi\+Wall\+Texture\+Request()}{MultiWallTextureRequest()}}
+{\footnotesize\ttfamily Multi\+Wall\+Texture\+Request.\+Multi\+Wall\+Texture\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{w,  }\item[{Game\+Object}]{requestor }\end{DoxyParamCaption})}
+
+
+
+ctor for request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Locator} & ID of first style to get\\
+\hline
+{\em resource\+Locator2} & ID of second style to get\\
+\hline
+{\em requestor} & requessting gameobject\\
+\hline
+{\em res\+Loc\+Position\+Mod} & position modifer of texture info for first style\\
+\hline
+{\em res\+Loc2\+Position\+Mod} & position mod for second style from texture info\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_multi_wall_texture_request_a66ff9bddcb7230947278ff32f2957ec7}\label{class_multi_wall_texture_request_a66ff9bddcb7230947278ff32f2957ec7}} 
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!Merge\+Wall\+Textures@{Merge\+Wall\+Textures}}
+\index{Merge\+Wall\+Textures@{Merge\+Wall\+Textures}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\subsubsection{\texorpdfstring{Merge\+Wall\+Textures()}{MergeWallTextures()}}
+{\footnotesize\ttfamily I\+Enumerator Multi\+Wall\+Texture\+Request.\+Merge\+Wall\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Merges the two wall textures of Response and Second\+Response 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_multi_wall_texture_request_a66ff9bddcb7230947278ff32f2957ec7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multi_wall_texture_request_a9990230b6a9cb6be581b7948f379065b}\label{class_multi_wall_texture_request_a9990230b6a9cb6be581b7948f379065b}} 
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!Start\+Work\+Request@{Start\+Work\+Request}}
+\index{Start\+Work\+Request@{Start\+Work\+Request}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\subsubsection{\texorpdfstring{Start\+Work\+Request()}{StartWorkRequest()}}
+{\footnotesize\ttfamily override I\+Enumerator Multi\+Wall\+Texture\+Request.\+Start\+Work\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called when the resource starts working, should most likely start a new thread 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_base_room_style_request_af2ac2de206ad154351cf6a1b1e7befd5}{Base\+Room\+Style\+Request}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_multi_wall_texture_request_a9990230b6a9cb6be581b7948f379065b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multi_wall_texture_request_a96afd031b54eb8f09658fa1930b7d7f7}\label{class_multi_wall_texture_request_a96afd031b54eb8f09658fa1930b7d7f7}} 
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!When\+Done@{When\+Done}}
+\index{When\+Done@{When\+Done}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\subsubsection{\texorpdfstring{When\+Done()}{WhenDone()}}
+{\footnotesize\ttfamily override void Multi\+Wall\+Texture\+Request.\+When\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+called when done with request, and it is now time to apply it to a gameobject 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_base_room_style_request_ad87356fc17614818e1713857f8901a2a}{Base\+Room\+Style\+Request}}.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_multi_wall_texture_request_a26f962cdfff74d5594cc5216d4c0065e}\label{class_multi_wall_texture_request_a26f962cdfff74d5594cc5216d4c0065e}} 
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!Merged\+Texture@{Merged\+Texture}}
+\index{Merged\+Texture@{Merged\+Texture}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\subsubsection{\texorpdfstring{Merged\+Texture}{MergedTexture}}
+{\footnotesize\ttfamily Texture2D Multi\+Wall\+Texture\+Request.\+Merged\+Texture\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+merged texure of style one and two 
+
+\mbox{\Hypertarget{class_multi_wall_texture_request_a73e34826ed183281d7fd34f5d263d72c}\label{class_multi_wall_texture_request_a73e34826ed183281d7fd34f5d263d72c}} 
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!Requesting\+Wall@{Requesting\+Wall}}
+\index{Requesting\+Wall@{Requesting\+Wall}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\subsubsection{\texorpdfstring{Requesting\+Wall}{RequestingWall}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wall}{Wall}} Multi\+Wall\+Texture\+Request.\+Requesting\+Wall\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+\mbox{\hyperlink{class_wall}{Wall}} that requested the texture 
+
+\mbox{\Hypertarget{class_multi_wall_texture_request_a3f9a316d5e1b6e9747d91257b03d45a0}\label{class_multi_wall_texture_request_a3f9a316d5e1b6e9747d91257b03d45a0}} 
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!Second\+Resource\+Locator@{Second\+Resource\+Locator}}
+\index{Second\+Resource\+Locator@{Second\+Resource\+Locator}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\subsubsection{\texorpdfstring{Second\+Resource\+Locator}{SecondResourceLocator}}
+{\footnotesize\ttfamily int Multi\+Wall\+Texture\+Request.\+Second\+Resource\+Locator\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+ID of second style to get 
+
+\mbox{\Hypertarget{class_multi_wall_texture_request_a5973e2715491e6d34270f14e1c0d33e7}\label{class_multi_wall_texture_request_a5973e2715491e6d34270f14e1c0d33e7}} 
+\index{Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}!Second\+Response@{Second\+Response}}
+\index{Second\+Response@{Second\+Response}!Multi\+Wall\+Texture\+Request@{Multi\+Wall\+Texture\+Request}}
+\subsubsection{\texorpdfstring{Second\+Response}{SecondResponse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}} Multi\+Wall\+Texture\+Request.\+Second\+Response\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+second style response 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Resources/\mbox{\hyperlink{_multi_wall_texture_request_8cs}{Multi\+Wall\+Texture\+Request.\+cs}}\end{DoxyCompactItemize}

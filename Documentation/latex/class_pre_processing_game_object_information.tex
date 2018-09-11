@@ -1,0 +1,158 @@
+\hypertarget{class_pre_processing_game_object_information}{}\section{Pre\+Processing\+Game\+Object\+Information Class Reference}
+\label{class_pre_processing_game_object_information}\index{Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}}
+
+
+Container for traansform inforation thaat needs to be applied to a gamobject after a resource has been preprocessed currently only transform modifications possible  
+
+
+
+
+Collaboration diagram for Pre\+Processing\+Game\+Object\+Information\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{class_pre_processing_game_object_information__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_pre_processing_game_object_information_af58318fffb0f07751dc2472fe7dce7ef}{Apply\+Position}} (Transform t, Space space=Space.\+Self)
+\begin{DoxyCompactList}\small\item\em Applies the position value to a transform (adds vector to transform position) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pre_processing_game_object_information_af252abe53894e441edc39890a6196901}{Apply\+Rotation}} (Transform t, Space space=Space.\+Self)
+\begin{DoxyCompactList}\small\item\em applies the rotation value to a transform (quaternion multiplicaaation) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pre_processing_game_object_information_ae5ce78a8438afe10ba171442ea863c00}{Apply\+Scale}} (Transform t, Space space=Space.\+Self)
+\begin{DoxyCompactList}\small\item\em applies scale to transform (element wise multiplication) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} \mbox{\hyperlink{class_pre_processing_game_object_information_aec5a374a598a20e933424c6891ed5d99}{Neutral}} ()
+\begin{DoxyCompactList}\small\item\em returns a Pre\+Processing\+Gemobject\+Information where all the members are the neutral element of their respective application operation 0,0,0 for position identity matrix for quaaternion 1,1,1 for scale \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_pre_processing_game_object_information_ae7d763dae363a10176299f0dda2347fb}{Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}protected get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The position value that needs to be added can be local or global -\/$>$ decided in Apply\+Position /// \end{DoxyCompactList}\item 
+Quaternion \mbox{\hyperlink{class_pre_processing_game_object_information_a6b7430b36e281c146006f54390a9b555}{Rotation}}\hspace{0.3cm}{\ttfamily  \mbox{[}protected get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The rotation that needs to be applied to the gameobject can be local or global (same as position) \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_pre_processing_game_object_information_a92d86eb1e4dd81055f7b04d3d5aaeb4d}{Scale}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The scaling that needs to be applied to the gameobject caan be local or global (same as position or rotation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container for traansform inforation thaat needs to be applied to a gamobject after a resource has been preprocessed currently only transform modifications possible 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pre_processing_game_object_information_af58318fffb0f07751dc2472fe7dce7ef}\label{class_pre_processing_game_object_information_af58318fffb0f07751dc2472fe7dce7ef}} 
+\index{Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}!Apply\+Position@{Apply\+Position}}
+\index{Apply\+Position@{Apply\+Position}!Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}}
+\subsubsection{\texorpdfstring{Apply\+Position()}{ApplyPosition()}}
+{\footnotesize\ttfamily void Pre\+Processing\+Game\+Object\+Information.\+Apply\+Position (\begin{DoxyParamCaption}\item[{Transform}]{t,  }\item[{Space}]{space = {\ttfamily Space.Self} }\end{DoxyParamCaption})}
+
+
+
+Applies the position value to a transform (adds vector to transform position) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the transform we want to modifiy\\
+\hline
+{\em space} & if local position or global position\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pre_processing_game_object_information_af252abe53894e441edc39890a6196901}\label{class_pre_processing_game_object_information_af252abe53894e441edc39890a6196901}} 
+\index{Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}!Apply\+Rotation@{Apply\+Rotation}}
+\index{Apply\+Rotation@{Apply\+Rotation}!Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}}
+\subsubsection{\texorpdfstring{Apply\+Rotation()}{ApplyRotation()}}
+{\footnotesize\ttfamily void Pre\+Processing\+Game\+Object\+Information.\+Apply\+Rotation (\begin{DoxyParamCaption}\item[{Transform}]{t,  }\item[{Space}]{space = {\ttfamily Space.Self} }\end{DoxyParamCaption})}
+
+
+
+applies the rotation value to a transform (quaternion multiplicaaation) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the transform we want to modify\\
+\hline
+{\em space} & if local or global rotation\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pre_processing_game_object_information_ae5ce78a8438afe10ba171442ea863c00}\label{class_pre_processing_game_object_information_ae5ce78a8438afe10ba171442ea863c00}} 
+\index{Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}!Apply\+Scale@{Apply\+Scale}}
+\index{Apply\+Scale@{Apply\+Scale}!Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}}
+\subsubsection{\texorpdfstring{Apply\+Scale()}{ApplyScale()}}
+{\footnotesize\ttfamily void Pre\+Processing\+Game\+Object\+Information.\+Apply\+Scale (\begin{DoxyParamCaption}\item[{Transform}]{t,  }\item[{Space}]{space = {\ttfamily Space.Self} }\end{DoxyParamCaption})}
+
+
+
+applies scale to transform (element wise multiplication) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the transform we want to modifiy\\
+\hline
+{\em space} & if local or lossy global\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pre_processing_game_object_information_ae5ce78a8438afe10ba171442ea863c00_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pre_processing_game_object_information_aec5a374a598a20e933424c6891ed5d99}\label{class_pre_processing_game_object_information_aec5a374a598a20e933424c6891ed5d99}} 
+\index{Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}!Neutral@{Neutral}}
+\index{Neutral@{Neutral}!Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}}
+\subsubsection{\texorpdfstring{Neutral()}{Neutral()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} Pre\+Processing\+Game\+Object\+Information.\+Neutral (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+returns a Pre\+Processing\+Gemobject\+Information where all the members are the neutral element of their respective application operation 0,0,0 for position identity matrix for quaaternion 1,1,1 for scale 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_pre_processing_game_object_information_ae7d763dae363a10176299f0dda2347fb}\label{class_pre_processing_game_object_information_ae7d763dae363a10176299f0dda2347fb}} 
+\index{Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}!Position@{Position}}
+\index{Position@{Position}!Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}}
+\subsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily Vector3 Pre\+Processing\+Game\+Object\+Information.\+Position\hspace{0.3cm}{\ttfamily [protected get]}, {\ttfamily [set]}}
+
+
+
+The position value that needs to be added can be local or global -\/$>$ decided in Apply\+Position /// 
+
+\mbox{\Hypertarget{class_pre_processing_game_object_information_a6b7430b36e281c146006f54390a9b555}\label{class_pre_processing_game_object_information_a6b7430b36e281c146006f54390a9b555}} 
+\index{Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}}
+\subsubsection{\texorpdfstring{Rotation}{Rotation}}
+{\footnotesize\ttfamily Quaternion Pre\+Processing\+Game\+Object\+Information.\+Rotation\hspace{0.3cm}{\ttfamily [protected get]}, {\ttfamily [set]}}
+
+
+
+The rotation that needs to be applied to the gameobject can be local or global (same as position) 
+
+\mbox{\Hypertarget{class_pre_processing_game_object_information_a92d86eb1e4dd81055f7b04d3d5aaeb4d}\label{class_pre_processing_game_object_information_a92d86eb1e4dd81055f7b04d3d5aaeb4d}} 
+\index{Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}!Scale@{Scale}}
+\index{Scale@{Scale}!Pre\+Processing\+Game\+Object\+Information@{Pre\+Processing\+Game\+Object\+Information}}
+\subsubsection{\texorpdfstring{Scale}{Scale}}
+{\footnotesize\ttfamily Vector3 Pre\+Processing\+Game\+Object\+Information.\+Scale\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The scaling that needs to be applied to the gameobject caan be local or global (same as position or rotation) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Utility/\mbox{\hyperlink{_pre_processing_game_object_information_8cs}{Pre\+Processing\+Game\+Object\+Information.\+cs}}\end{DoxyCompactItemize}

@@ -7,7 +7,7 @@ Inheritance diagram for Museum\+Builder\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=241pt]{class_museum_builder__inherit__graph}
+\includegraphics[height=550pt]{class_museum_builder__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -20,6 +20,13 @@ Collaboration diagram for Museum\+Builder\+:
 \includegraphics[height=550pt]{class_museum_builder__coll__graph}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5}{Set\+To\+Start\+Position}} (Transform t)
+\begin{DoxyCompactList}\small\item\em Sets player position to the first floor in the museum. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_museum_builder_acd17822c3c2fdc7552e94dd1627586a7}{Get\+Game\+Object\+For\+Tile}} (Vector2\+Int t)
+\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,6 +48,8 @@ Game\+Object \mbox{\hyperlink{class_museum_builder_a9966f9ce8cc1117cb72e3aa42ea1
 \item 
 Game\+Object \mbox{\hyperlink{class_museum_builder_a57f709574a50b97bb8f44f0d53606c44}{Player}}
 \item 
+List$<$ Texture2D $>$ \mbox{\hyperlink{class_museum_builder_a0f11ac7ab522b0dfc419a5c2c75788c2}{texture\+Prefabs}}
+\item 
 Mesh\+Filter \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_museum_builder_aac70b019fbefe1d65a4853448eed0609}{Test\+Mesh}}
 \begin{DoxyCompactList}\small\item\em temp test meshes \end{DoxyCompactList}\item 
 Texture2D \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_museum_builder_a002d66342d0fc72765e89a6f78bd312f}{Test\+Textures}}
@@ -49,6 +58,8 @@ float \mbox{\hyperlink{class_museum_builder_a754d766babff00a827e99b8bc51ff716}{F
 \begin{DoxyCompactList}\small\item\em scaling of position in x direction \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_museum_builder_a221fec90b7a551d41df9a6593b649c51}{Floor\+Z\+Pos\+Scale}}
 \begin{DoxyCompactList}\small\item\em caling of floor position in z direction \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_museum_builder_ab7844cfc1f0ff34cdea4ce425585b448}{Virt\+Muse}}
+\begin{DoxyCompactList}\small\item\em the museum being built \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_museum_builder_a13b0442ec3a7b4aededb9a7d90572c70}{Disable\+After\+Request}}
 \begin{DoxyCompactList}\small\item\em temp \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
@@ -58,6 +69,15 @@ static \mbox{\hyperlink{class_museum_builder}{Museum\+Builder}} \mbox{\hyperlink
 \begin{DoxyCompactList}\small\item\em instance of the builder \end{DoxyCompactList}\item 
 static Queue$<$ string $>$ \mbox{\hyperlink{class_museum_builder_ab659e7b1adaace5d5c8dec90df493483}{Museum\+Data}} = new Queue$<$string$>$()
 \begin{DoxyCompactList}\small\item\em temp queue for testing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ \mbox{\hyperlink{class_museum}{Museum}} $>$ \mbox{\hyperlink{class_museum_builder_a6ffb727cee920d5caa79312decbc7c8d}{On\+Museum\+Gotten}}
+\begin{DoxyCompactList}\small\item\em event invoked when the builder received an museum to build \end{DoxyCompactList}\item 
+Action$<$ \mbox{\hyperlink{class_room}{Room}} $>$ \mbox{\hyperlink{class_museum_builder_a88929a7d394c22ace8a2d34638d14322}{On\+Room\+Built}}
+\begin{DoxyCompactList}\small\item\em event invoked when a wall was built \end{DoxyCompactList}\item 
+Action$<$ \mbox{\hyperlink{class_wall}{Wall}} $>$ \mbox{\hyperlink{class_museum_builder_a3076208732163cdad7068436b73a5d59}{On\+Wall\+Built}}
+\begin{DoxyCompactList}\small\item\em event invoked when wall was built \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,31 +87,49 @@ void \mbox{\hyperlink{class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8}{St
 \item 
 void \mbox{\hyperlink{class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c}{Update}} ()
 \item 
-void \mbox{\hyperlink{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1}{Set\+Up\+Floor}} (List$<$ Game\+Object $>$ floors)
-\item 
-void \mbox{\hyperlink{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913}{Set\+Up\+Walls}} (List$<$ Game\+Object $>$ floors)
-\begin{DoxyCompactList}\small\item\em Sets up wall gameobjects for a museum \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_museum_builder_a159e037415aaf348d5a0af9561be8560}{Set\+Up\+Center\+Displays\+For\+Room}} (\mbox{\hyperlink{class_room}{Room}} r, List$<$ Game\+Object $>$ associated\+Floor\+Gameobjects)
 \begin{DoxyCompactList}\small\item\em Creates the center displays for a room List used for correct parenting of gamobject \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5}{Set\+Up\+Displays\+For\+Wall}} (\mbox{\hyperlink{class_wall}{Wall}} w, Game\+Object wall\+Obj)
 \begin{DoxyCompactList}\small\item\em Creates wall displays for museum \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_museum_builder_a895b10deac965d8d7b936dd76d82484d}{Load\+Display\+Resource}} (\mbox{\hyperlink{class_display}{Display}} obj\+In\+Need\+Of\+Resource, string resource\+Locator)
-\begin{DoxyCompactList}\small\item\em T\+E\+M\+P\+O\+R\+A\+RY I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON Loads Resource for a dsiplay \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8}{Add\+To\+Room\+Managment\+Unit}} (uint room\+ID, Game\+Object obj\+To\+Add)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em adds a room gamobject to a room managment unit \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_ad7891701beec2b305c8f0d40a7949933}{Place\+Room}} (\mbox{\hyperlink{class_room}{Room}} r)
+\begin{DoxyCompactList}\small\item\em Places a single room, and it\textquotesingle{}s dilays \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a5a8c364b8b6a51193a5c00d898668835}{Place\+Wall}} (\mbox{\hyperlink{class_wall}{Wall}} w)
+\begin{DoxyCompactList}\small\item\em places a singe wall \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_museum_builder_a604746b8b55c6d423336f44894063244}{Build\+Museum}} ()
+\begin{DoxyCompactList}\small\item\em Builds a \mbox{\hyperlink{class_museum}{Museum}}, over multiple frames(as a coroutine) \end{DoxyCompactList}\item 
+Texture2D \mbox{\hyperlink{class_museum_builder_ab416edbde4d42e80e0d27a29ea4595bd}{Get\+Texture}} (string name)
+\begin{DoxyCompactList}\small\item\em T\+E\+M\+P\+O\+R\+A\+RY function to showcase room styles returns first hit in prefab list with same name as param name \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a3e3b2909202167c6b1e5515317b3cb1e}{T\+E\+M\+P\+Apply\+Texture\+To\+Non\+Walls}} (string name, Game\+Object obj)
+\begin{DoxyCompactList}\small\item\em T\+E\+M\+P\+O\+R\+A\+A\+RY function that is used to showcase room styles applies a texture to this gamobject \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a892b18a8420e1e96ce712f65bc309068}{T\+E\+M\+P\+Apply\+Texture\+To\+Wall}} (\mbox{\hyperlink{class_wall}{Wall}} w, Game\+Object obj)
+\begin{DoxyCompactList}\small\item\em T\+E\+M\+P\+O\+R\+A\+RY function to showcase room styles \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2}{Load\+Display\+Resource}} (\mbox{\hyperlink{class_display}{Display}} obj\+In\+Need\+Of\+Resource, int resource\+Locator)
+\begin{DoxyCompactList}\small\item\em Loads Resource for a dsiplay \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2}{Post\+Mesh\+Display\+Request}} (\mbox{\hyperlink{class_mesh_display}{Mesh\+Display}} disp, int res\+Loc)
+\begin{DoxyCompactList}\small\item\em posts a mesh resource request \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3}{Post\+Image\+Display\+Request}} (\mbox{\hyperlink{class_display}{Display}} disp, int resource\+Locator)
+\begin{DoxyCompactList}\small\item\em Posts an image request to the resource loader \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac}{Post\+Wall\+Texture\+Request}} (\mbox{\hyperlink{class_wall}{Wall}} w, Game\+Object wall\+Obj)
+\begin{DoxyCompactList}\small\item\em posts a wall texture request to resource loader \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0}{Post\+Floor\+Texture\+Request}} (\mbox{\hyperlink{class_room}{Room}} r, Game\+Object floor)
+\begin{DoxyCompactList}\small\item\em posts a floor texture request to the resource loader \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_builder_a5b79838dee5015763177bdceca168f5c}{Post\+Ceiling\+Texture\+Request}} (\mbox{\hyperlink{class_room}{Room}} r, Game\+Object ceiling)
+\begin{DoxyCompactList}\small\item\em Posts a ceiling texutre requesst to the resource loader \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511}{Mesh\+Pre\+Processing}} (\mbox{\hyperlink{class_display_mesh_resource}{Display\+Mesh\+Resource}} res, \mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} pre\+Obj, \mbox{\hyperlink{class_display}{Display}} display)
+\begin{DoxyCompactList}\small\item\em Preprocessing helper coroutine for mesh display \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+Dictionary$<$ string, Texture2D $>$ \mbox{\hyperlink{class_museum_builder_a044a6c2df10a05c3bc9d2de8eb9ad890}{existing\+Wall\+Texture}} = new Dictionary$<$string, Texture2D$>$()
+\begin{DoxyCompactList}\small\item\em temp dictionary containing already gnerated wall texture to speed up start up \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_museum_builder_ae878fab80ac14114029e1fe78877f26a}{wall\+Height}}
 \begin{DoxyCompactList}\small\item\em height of walls in the msuem \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_museum_builder_ade9354ab3c65386fb3ba9c5d5db94a1d}{Test\+Text\+Size}}
-\item 
-int \mbox{\hyperlink{class_museum_builder_aa8b616ce266d39591cc20f6cc884333b}{curr\+Idx}} = 0
-\item 
-\mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_museum_builder_a353644d408300bbadf427e0a0971d039}{virt\+Muse}} = null
-\begin{DoxyCompactList}\small\item\em the museum being built \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_museum_controller}{Museum\+Controller}} \mbox{\hyperlink{class_museum_builder_ab63ff4582a395d2172a05542dbca8341}{\+\_\+\+Musem\+Controller\+Instance}}
-\begin{DoxyCompactList}\small\item\em instance of the museum controller \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em instance of the museum controller \end{DoxyCompactList}\item 
+Dictionary$<$ int, Game\+Object $>$ \mbox{\hyperlink{class_museum_builder_a64a142acbbd1fe905fd89d8aa3163296}{one\+D\+Tile\+Coord\+To\+Floor\+Game\+Object\+Mapping}}
+\end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
@@ -101,8 +139,18 @@ int \mbox{\hyperlink{class_museum_builder_aa8b616ce266d39591cc20f6cc884333b}{cur
 \subsubsection{\texorpdfstring{Add\+To\+Room\+Managment\+Unit()}{AddToRoomManagmentUnit()}}
 {\footnotesize\ttfamily void Museum\+Builder.\+Add\+To\+Room\+Managment\+Unit (\begin{DoxyParamCaption}\item[{uint}]{room\+ID,  }\item[{Game\+Object}]{obj\+To\+Add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+
+
+adds a room gamobject to a room managment unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+ID} & the room id this gameobject is associated with\\
+\hline
+{\em obj\+To\+Add} & the object to add\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -123,22 +171,27 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{Awake()}{Awake()}}
 {\footnotesize\ttfamily void Museum\+Builder.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_museum_builder_a895b10deac965d8d7b936dd76d82484d}\label{class_museum_builder_a895b10deac965d8d7b936dd76d82484d}} 
-\index{Museum\+Builder@{Museum\+Builder}!Load\+Display\+Resource@{Load\+Display\+Resource}}
-\index{Load\+Display\+Resource@{Load\+Display\+Resource}!Museum\+Builder@{Museum\+Builder}}
-\subsubsection{\texorpdfstring{Load\+Display\+Resource()}{LoadDisplayResource()}}
-{\footnotesize\ttfamily void Museum\+Builder.\+Load\+Display\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_display}{Display}}}]{obj\+In\+Need\+Of\+Resource,  }\item[{string}]{resource\+Locator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_museum_builder_a604746b8b55c6d423336f44894063244}\label{class_museum_builder_a604746b8b55c6d423336f44894063244}} 
+\index{Museum\+Builder@{Museum\+Builder}!Build\+Museum@{Build\+Museum}}
+\index{Build\+Museum@{Build\+Museum}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Build\+Museum()}{BuildMuseum()}}
+{\footnotesize\ttfamily I\+Enumerator Museum\+Builder.\+Build\+Museum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-T\+E\+M\+P\+O\+R\+A\+RY I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON Loads Resource for a dsiplay 
+Builds a \mbox{\hyperlink{class_museum}{Museum}}, over multiple frames(as a coroutine) 
 
+
+\begin{DoxyParams}{Parameters}
+{\em M} & \mbox{\hyperlink{class_museum}{Museum}} that needs building\\
+\hline
+\end{DoxyParams}
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph}
+\includegraphics[width=350pt]{class_museum_builder_a604746b8b55c6d423336f44894063244_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -146,7 +199,361 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph}
+\includegraphics[width=350pt]{class_museum_builder_a604746b8b55c6d423336f44894063244_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_acd17822c3c2fdc7552e94dd1627586a7}\label{class_museum_builder_acd17822c3c2fdc7552e94dd1627586a7}} 
+\index{Museum\+Builder@{Museum\+Builder}!Get\+Game\+Object\+For\+Tile@{Get\+Game\+Object\+For\+Tile}}
+\index{Get\+Game\+Object\+For\+Tile@{Get\+Game\+Object\+For\+Tile}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Get\+Game\+Object\+For\+Tile()}{GetGameObjectForTile()}}
+{\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Get\+Game\+Object\+For\+Tile (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{t }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_acd17822c3c2fdc7552e94dd1627586a7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_ab416edbde4d42e80e0d27a29ea4595bd}\label{class_museum_builder_ab416edbde4d42e80e0d27a29ea4595bd}} 
+\index{Museum\+Builder@{Museum\+Builder}!Get\+Texture@{Get\+Texture}}
+\index{Get\+Texture@{Get\+Texture}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Get\+Texture()}{GetTexture()}}
+{\footnotesize\ttfamily Texture2D Museum\+Builder.\+Get\+Texture (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+T\+E\+M\+P\+O\+R\+A\+RY function to showcase room styles returns first hit in prefab list with same name as param name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the texture\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the texutre with the name
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_ab416edbde4d42e80e0d27a29ea4595bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2}\label{class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2}} 
+\index{Museum\+Builder@{Museum\+Builder}!Load\+Display\+Resource@{Load\+Display\+Resource}}
+\index{Load\+Display\+Resource@{Load\+Display\+Resource}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Load\+Display\+Resource()}{LoadDisplayResource()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Load\+Display\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_display}{Display}}}]{obj\+In\+Need\+Of\+Resource,  }\item[{int}]{resource\+Locator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads Resource for a dsiplay 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511}\label{class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511}} 
+\index{Museum\+Builder@{Museum\+Builder}!Mesh\+Pre\+Processing@{Mesh\+Pre\+Processing}}
+\index{Mesh\+Pre\+Processing@{Mesh\+Pre\+Processing}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Mesh\+Pre\+Processing()}{MeshPreProcessing()}}
+{\footnotesize\ttfamily I\+Enumerator Museum\+Builder.\+Mesh\+Pre\+Processing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_display_mesh_resource}{Display\+Mesh\+Resource}}}]{res,  }\item[{\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}}]{pre\+Obj,  }\item[{\mbox{\hyperlink{class_display}{Display}}}]{display }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Preprocessing helper coroutine for mesh display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & the display resource that needs pre processing\\
+\hline
+{\em pre\+Obj} & the preprocessing object that is filled\\
+\hline
+{\em display} & the displaay that requested the resource\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_ad7891701beec2b305c8f0d40a7949933}\label{class_museum_builder_ad7891701beec2b305c8f0d40a7949933}} 
+\index{Museum\+Builder@{Museum\+Builder}!Place\+Room@{Place\+Room}}
+\index{Place\+Room@{Place\+Room}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Place\+Room()}{PlaceRoom()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Place\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room}{Room}}}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Places a single room, and it\textquotesingle{}s dilays 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_ad7891701beec2b305c8f0d40a7949933_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_ad7891701beec2b305c8f0d40a7949933_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a5a8c364b8b6a51193a5c00d898668835}\label{class_museum_builder_a5a8c364b8b6a51193a5c00d898668835}} 
+\index{Museum\+Builder@{Museum\+Builder}!Place\+Wall@{Place\+Wall}}
+\index{Place\+Wall@{Place\+Wall}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Place\+Wall()}{PlaceWall()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Place\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+places a singe wall 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & the wall to palce\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a5b79838dee5015763177bdceca168f5c}\label{class_museum_builder_a5b79838dee5015763177bdceca168f5c}} 
+\index{Museum\+Builder@{Museum\+Builder}!Post\+Ceiling\+Texture\+Request@{Post\+Ceiling\+Texture\+Request}}
+\index{Post\+Ceiling\+Texture\+Request@{Post\+Ceiling\+Texture\+Request}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Post\+Ceiling\+Texture\+Request()}{PostCeilingTextureRequest()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Post\+Ceiling\+Texture\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room}{Room}}}]{r,  }\item[{Game\+Object}]{ceiling }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Posts a ceiling texutre requesst to the resource loader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the room that defines the style\\
+\hline
+{\em ceiling} & the gameobject that the texture should be applied to\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a5b79838dee5015763177bdceca168f5c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a5b79838dee5015763177bdceca168f5c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0}\label{class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0}} 
+\index{Museum\+Builder@{Museum\+Builder}!Post\+Floor\+Texture\+Request@{Post\+Floor\+Texture\+Request}}
+\index{Post\+Floor\+Texture\+Request@{Post\+Floor\+Texture\+Request}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Post\+Floor\+Texture\+Request()}{PostFloorTextureRequest()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Post\+Floor\+Texture\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room}{Room}}}]{r,  }\item[{Game\+Object}]{floor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+posts a floor texture request to the resource loader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the room that defines the room style\\
+\hline
+{\em floor} & the gameobjec tthe texture should be applied to\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3}\label{class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3}} 
+\index{Museum\+Builder@{Museum\+Builder}!Post\+Image\+Display\+Request@{Post\+Image\+Display\+Request}}
+\index{Post\+Image\+Display\+Request@{Post\+Image\+Display\+Request}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Post\+Image\+Display\+Request()}{PostImageDisplayRequest()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Post\+Image\+Display\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_display}{Display}}}]{disp,  }\item[{int}]{resource\+Locator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Posts an image request to the resource loader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disp} & the display taht wants the resource\\
+\hline
+{\em resource\+Locator} & ID of resource\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2}\label{class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2}} 
+\index{Museum\+Builder@{Museum\+Builder}!Post\+Mesh\+Display\+Request@{Post\+Mesh\+Display\+Request}}
+\index{Post\+Mesh\+Display\+Request@{Post\+Mesh\+Display\+Request}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Post\+Mesh\+Display\+Request()}{PostMeshDisplayRequest()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Post\+Mesh\+Display\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mesh_display}{Mesh\+Display}}}]{disp,  }\item[{int}]{res\+Loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+posts a mesh resource request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disp} & the display that wants the mesh\\
+\hline
+{\em res\+Loc} & the ID of the resource\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac}\label{class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac}} 
+\index{Museum\+Builder@{Museum\+Builder}!Post\+Wall\+Texture\+Request@{Post\+Wall\+Texture\+Request}}
+\index{Post\+Wall\+Texture\+Request@{Post\+Wall\+Texture\+Request}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Post\+Wall\+Texture\+Request()}{PostWallTextureRequest()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Post\+Wall\+Texture\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{w,  }\item[{Game\+Object}]{wall\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+posts a wall texture request to resource loader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & the wall that defines the request\\
+\hline
+{\em wall\+Obj} & the gamobject the texture should be applied to\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5}\label{class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5}} 
+\index{Museum\+Builder@{Museum\+Builder}!Set\+To\+Start\+Position@{Set\+To\+Start\+Position}}
+\index{Set\+To\+Start\+Position@{Set\+To\+Start\+Position}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Set\+To\+Start\+Position()}{SetToStartPosition()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+Set\+To\+Start\+Position (\begin{DoxyParamCaption}\item[{Transform}]{t }\end{DoxyParamCaption})}
+
+
+
+Sets player position to the first floor in the museum. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_museum_builder_a159e037415aaf348d5a0af9561be8560}\label{class_museum_builder_a159e037415aaf348d5a0af9561be8560}} 
@@ -201,63 +608,6 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1}\label{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1}} 
-\index{Museum\+Builder@{Museum\+Builder}!Set\+Up\+Floor@{Set\+Up\+Floor}}
-\index{Set\+Up\+Floor@{Set\+Up\+Floor}!Museum\+Builder@{Museum\+Builder}}
-\subsubsection{\texorpdfstring{Set\+Up\+Floor()}{SetUpFloor()}}
-{\footnotesize\ttfamily void Museum\+Builder.\+Set\+Up\+Floor (\begin{DoxyParamCaption}\item[{List$<$ Game\+Object $>$}]{floors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-
-
-Sets up the floor for a museum fills list of gameobjects used for parenting information when setting up walls Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913}\label{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913}} 
-\index{Museum\+Builder@{Museum\+Builder}!Set\+Up\+Walls@{Set\+Up\+Walls}}
-\index{Set\+Up\+Walls@{Set\+Up\+Walls}!Museum\+Builder@{Museum\+Builder}}
-\subsubsection{\texorpdfstring{Set\+Up\+Walls()}{SetUpWalls()}}
-{\footnotesize\ttfamily void Museum\+Builder.\+Set\+Up\+Walls (\begin{DoxyParamCaption}\item[{List$<$ Game\+Object $>$}]{floors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Sets up wall gameobjects for a museum 
-
-
-\begin{DoxyParams}{Parameters}
-{\em floors} & \\
-\hline
-\end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8}\label{class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8}} 
 \index{Museum\+Builder@{Museum\+Builder}!Start@{Start}}
 \index{Start@{Start}!Museum\+Builder@{Museum\+Builder}}
@@ -272,20 +622,62 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{class_museum_builder_a3e3b2909202167c6b1e5515317b3cb1e}\label{class_museum_builder_a3e3b2909202167c6b1e5515317b3cb1e}} 
+\index{Museum\+Builder@{Museum\+Builder}!T\+E\+M\+P\+Apply\+Texture\+To\+Non\+Walls@{T\+E\+M\+P\+Apply\+Texture\+To\+Non\+Walls}}
+\index{T\+E\+M\+P\+Apply\+Texture\+To\+Non\+Walls@{T\+E\+M\+P\+Apply\+Texture\+To\+Non\+Walls}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{T\+E\+M\+P\+Apply\+Texture\+To\+Non\+Walls()}{TEMPApplyTextureToNonWalls()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+T\+E\+M\+P\+Apply\+Texture\+To\+Non\+Walls (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{Game\+Object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+T\+E\+M\+P\+O\+R\+A\+A\+RY function that is used to showcase room styles applies a texture to this gamobject 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the texture\\
+\hline
+{\em obj} & gmaobject to apply to\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a3e3b2909202167c6b1e5515317b3cb1e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_builder_a892b18a8420e1e96ce712f65bc309068}\label{class_museum_builder_a892b18a8420e1e96ce712f65bc309068}} 
+\index{Museum\+Builder@{Museum\+Builder}!T\+E\+M\+P\+Apply\+Texture\+To\+Wall@{T\+E\+M\+P\+Apply\+Texture\+To\+Wall}}
+\index{T\+E\+M\+P\+Apply\+Texture\+To\+Wall@{T\+E\+M\+P\+Apply\+Texture\+To\+Wall}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{T\+E\+M\+P\+Apply\+Texture\+To\+Wall()}{TEMPApplyTextureToWall()}}
+{\footnotesize\ttfamily void Museum\+Builder.\+T\+E\+M\+P\+Apply\+Texture\+To\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{w,  }\item[{Game\+Object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+T\+E\+M\+P\+O\+R\+A\+RY function to showcase room styles 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & the wall for which the texure is\\
+\hline
+{\em obj} & gamobject of this wall\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_builder_a892b18a8420e1e96ce712f65bc309068_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c}\label{class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c}} 
 \index{Museum\+Builder@{Museum\+Builder}!Update@{Update}}
 \index{Update@{Update}!Museum\+Builder@{Museum\+Builder}}
 \subsubsection{\texorpdfstring{Update()}{Update()}}
 {\footnotesize\ttfamily void Museum\+Builder.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c_cgraph}
-\end{center}
-\end{figure}
 
 
 \subsection{Member Data Documentation}
@@ -317,12 +709,6 @@ instance of the museum controller
 \subsubsection{\texorpdfstring{Center\+Mesh\+Display}{CenterMeshDisplay}}
 {\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Center\+Mesh\+Display}
 
-\mbox{\Hypertarget{class_museum_builder_aa8b616ce266d39591cc20f6cc884333b}\label{class_museum_builder_aa8b616ce266d39591cc20f6cc884333b}} 
-\index{Museum\+Builder@{Museum\+Builder}!curr\+Idx@{curr\+Idx}}
-\index{curr\+Idx@{curr\+Idx}!Museum\+Builder@{Museum\+Builder}}
-\subsubsection{\texorpdfstring{curr\+Idx}{currIdx}}
-{\footnotesize\ttfamily int Museum\+Builder.\+curr\+Idx = 0\hspace{0.3cm}{\ttfamily [private]}}
-
 \mbox{\Hypertarget{class_museum_builder_a13b0442ec3a7b4aededb9a7d90572c70}\label{class_museum_builder_a13b0442ec3a7b4aededb9a7d90572c70}} 
 \index{Museum\+Builder@{Museum\+Builder}!Disable\+After\+Request@{Disable\+After\+Request}}
 \index{Disable\+After\+Request@{Disable\+After\+Request}!Museum\+Builder@{Museum\+Builder}}
@@ -332,6 +718,16 @@ instance of the museum controller
 
 
 temp 
+
+\mbox{\Hypertarget{class_museum_builder_a044a6c2df10a05c3bc9d2de8eb9ad890}\label{class_museum_builder_a044a6c2df10a05c3bc9d2de8eb9ad890}} 
+\index{Museum\+Builder@{Museum\+Builder}!existing\+Wall\+Texture@{existing\+Wall\+Texture}}
+\index{existing\+Wall\+Texture@{existing\+Wall\+Texture}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{existing\+Wall\+Texture}{existingWallTexture}}
+{\footnotesize\ttfamily Dictionary$<$string, Texture2D$>$ Museum\+Builder.\+existing\+Wall\+Texture = new Dictionary$<$string, Texture2D$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+temp dictionary containing already gnerated wall texture to speed up start up 
 
 \mbox{\Hypertarget{class_museum_builder_a357c5b16bf4a1b1a10eacfec75bf2869}\label{class_museum_builder_a357c5b16bf4a1b1a10eacfec75bf2869}} 
 \index{Museum\+Builder@{Museum\+Builder}!Floor\+Prefab@{Floor\+Prefab}}
@@ -385,6 +781,12 @@ instance of the builder
 
 temp queue for testing 
 
+\mbox{\Hypertarget{class_museum_builder_a64a142acbbd1fe905fd89d8aa3163296}\label{class_museum_builder_a64a142acbbd1fe905fd89d8aa3163296}} 
+\index{Museum\+Builder@{Museum\+Builder}!one\+D\+Tile\+Coord\+To\+Floor\+Game\+Object\+Mapping@{one\+D\+Tile\+Coord\+To\+Floor\+Game\+Object\+Mapping}}
+\index{one\+D\+Tile\+Coord\+To\+Floor\+Game\+Object\+Mapping@{one\+D\+Tile\+Coord\+To\+Floor\+Game\+Object\+Mapping}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{one\+D\+Tile\+Coord\+To\+Floor\+Game\+Object\+Mapping}{oneDTileCoordToFloorGameObjectMapping}}
+{\footnotesize\ttfamily Dictionary$<$int, Game\+Object$>$ Museum\+Builder.\+one\+D\+Tile\+Coord\+To\+Floor\+Game\+Object\+Mapping\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_museum_builder_a57f709574a50b97bb8f44f0d53606c44}\label{class_museum_builder_a57f709574a50b97bb8f44f0d53606c44}} 
 \index{Museum\+Builder@{Museum\+Builder}!Player@{Player}}
 \index{Player@{Player}!Museum\+Builder@{Museum\+Builder}}
@@ -401,12 +803,6 @@ temp queue for testing
 
 temp test meshes 
 
-\mbox{\Hypertarget{class_museum_builder_ade9354ab3c65386fb3ba9c5d5db94a1d}\label{class_museum_builder_ade9354ab3c65386fb3ba9c5d5db94a1d}} 
-\index{Museum\+Builder@{Museum\+Builder}!Test\+Text\+Size@{Test\+Text\+Size}}
-\index{Test\+Text\+Size@{Test\+Text\+Size}!Museum\+Builder@{Museum\+Builder}}
-\subsubsection{\texorpdfstring{Test\+Text\+Size}{TestTextSize}}
-{\footnotesize\ttfamily int Museum\+Builder.\+Test\+Text\+Size\hspace{0.3cm}{\ttfamily [private]}}
-
 \mbox{\Hypertarget{class_museum_builder_a002d66342d0fc72765e89a6f78bd312f}\label{class_museum_builder_a002d66342d0fc72765e89a6f78bd312f}} 
 \index{Museum\+Builder@{Museum\+Builder}!Test\+Textures@{Test\+Textures}}
 \index{Test\+Textures@{Test\+Textures}!Museum\+Builder@{Museum\+Builder}}
@@ -417,11 +813,17 @@ temp test meshes
 
 temp mesh textures 
 
-\mbox{\Hypertarget{class_museum_builder_a353644d408300bbadf427e0a0971d039}\label{class_museum_builder_a353644d408300bbadf427e0a0971d039}} 
-\index{Museum\+Builder@{Museum\+Builder}!virt\+Muse@{virt\+Muse}}
-\index{virt\+Muse@{virt\+Muse}!Museum\+Builder@{Museum\+Builder}}
-\subsubsection{\texorpdfstring{virt\+Muse}{virtMuse}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_museum}{Museum}} Museum\+Builder.\+virt\+Muse = null\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_museum_builder_a0f11ac7ab522b0dfc419a5c2c75788c2}\label{class_museum_builder_a0f11ac7ab522b0dfc419a5c2c75788c2}} 
+\index{Museum\+Builder@{Museum\+Builder}!texture\+Prefabs@{texture\+Prefabs}}
+\index{texture\+Prefabs@{texture\+Prefabs}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{texture\+Prefabs}{texturePrefabs}}
+{\footnotesize\ttfamily List$<$Texture2D$>$ Museum\+Builder.\+texture\+Prefabs}
+
+\mbox{\Hypertarget{class_museum_builder_ab7844cfc1f0ff34cdea4ce425585b448}\label{class_museum_builder_ab7844cfc1f0ff34cdea4ce425585b448}} 
+\index{Museum\+Builder@{Museum\+Builder}!Virt\+Muse@{Virt\+Muse}}
+\index{Virt\+Muse@{Virt\+Muse}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{Virt\+Muse}{VirtMuse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum}{Museum}} Museum\+Builder.\+Virt\+Muse}
 
 
 
@@ -454,6 +856,39 @@ height of walls in the msuem
 \index{Wall\+With\+Door\+Prefab@{Wall\+With\+Door\+Prefab}!Museum\+Builder@{Museum\+Builder}}
 \subsubsection{\texorpdfstring{Wall\+With\+Door\+Prefab}{WallWithDoorPrefab}}
 {\footnotesize\ttfamily Game\+Object Museum\+Builder.\+Wall\+With\+Door\+Prefab}
+
+
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_museum_builder_a6ffb727cee920d5caa79312decbc7c8d}\label{class_museum_builder_a6ffb727cee920d5caa79312decbc7c8d}} 
+\index{Museum\+Builder@{Museum\+Builder}!On\+Museum\+Gotten@{On\+Museum\+Gotten}}
+\index{On\+Museum\+Gotten@{On\+Museum\+Gotten}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{On\+Museum\+Gotten}{OnMuseumGotten}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_museum}{Museum}}$>$ Museum\+Builder.\+On\+Museum\+Gotten}
+
+
+
+event invoked when the builder received an museum to build 
+
+\mbox{\Hypertarget{class_museum_builder_a88929a7d394c22ace8a2d34638d14322}\label{class_museum_builder_a88929a7d394c22ace8a2d34638d14322}} 
+\index{Museum\+Builder@{Museum\+Builder}!On\+Room\+Built@{On\+Room\+Built}}
+\index{On\+Room\+Built@{On\+Room\+Built}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{On\+Room\+Built}{OnRoomBuilt}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_room}{Room}}$>$ Museum\+Builder.\+On\+Room\+Built}
+
+
+
+event invoked when a wall was built 
+
+\mbox{\Hypertarget{class_museum_builder_a3076208732163cdad7068436b73a5d59}\label{class_museum_builder_a3076208732163cdad7068436b73a5d59}} 
+\index{Museum\+Builder@{Museum\+Builder}!On\+Wall\+Built@{On\+Wall\+Built}}
+\index{On\+Wall\+Built@{On\+Wall\+Built}!Museum\+Builder@{Museum\+Builder}}
+\subsubsection{\texorpdfstring{On\+Wall\+Built}{OnWallBuilt}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_wall}{Wall}}$>$ Museum\+Builder.\+On\+Wall\+Built}
+
+
+
+event invoked when wall was built 
 
 
 

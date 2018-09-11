@@ -1,4 +1,13 @@
 <map id="Museum.TransformTileCoordIntoOneD" name="Museum.TransformTileCoordIntoOneD">
-<area shape="rect" id="node2" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="240,13,369,39"/>
-<area shape="rect" id="node3" href="$class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="417,13,592,39"/>
+<area shape="rect" id="node2" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="281,5,410,32"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#a875e7252e31ad7ae28f17eb365ef5ce5" title="Sets player position to the first floor in the museum. " alt="" coords="256,57,435,98"/>
+<area shape="rect" id="node8" href="$class_museum_builder.html#acd17822c3c2fdc7552e94dd1627586a7" title="MuseumBuilder.GetGameObject\lForTile" alt="" coords="240,122,451,163"/>
+<area shape="rect" id="node9" href="$class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="254,188,437,215"/>
+<area shape="rect" id="node12" href="$class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="258,239,433,265"/>
+<area shape="rect" id="node3" href="$class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="505,5,695,32"/>
+<area shape="rect" id="node5" href="$class_museum_build_observer.html#a18c844a9fe9b649ed4bdaedbdade82a6" title="MuseumBuildObserver.Start" alt="" coords="751,64,935,91"/>
+<area shape="rect" id="node6" href="$class_museum_build_observer.html#a506c7314ea2734e8f4881167ab5f2460" title="tepelports player if possible " alt="" coords="499,111,701,153"/>
+<area shape="rect" id="node7" href="$class_portal_trigger.html#ae73070bf23c6348ced79aa839e0e2ad7" title="PortalTrigger.OnTriggerEnter" alt="" coords="749,119,936,145"/>
+<area shape="rect" id="node10" href="$class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="503,213,697,240"/>
+<area shape="rect" id="node11" href="$class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="771,213,915,240"/>
 </map>

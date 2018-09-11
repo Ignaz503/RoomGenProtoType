@@ -2,90 +2,141 @@
 \label{class_museum_request}\index{Museum\+Request@{Museum\+Request}}
 
 
+Inheritance diagram for Museum\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_museum_request__inherit__graph}
+\end{center}
+\end{figure}
+
+
 Collaboration diagram for Museum\+Request\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=170pt]{class_museum_request__coll__graph}
+\includegraphics[width=192pt]{class_museum_request__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{class_museum_request_ae227bce4871f20bf6661db4a5af5fe1c}{Serialize}} ()
-\begin{DoxyCompactList}\small\item\em serializes it to xml \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
+\mbox{\hyperlink{class_museum_request_a5912914896c546559a250b0d6c7fd65b}{Museum\+Request}} (\mbox{\hyperlink{class_museum_request_data}{Museum\+Request\+Data}} data, Action$<$ \mbox{\hyperlink{class_museum}{Museum}} $>$callback)
 \item 
-static \mbox{\hyperlink{class_museum_request}{Museum\+Request}} \mbox{\hyperlink{class_museum_request_abd551a45744c8387841c20e5ef46d420}{Deserialize}} (string data)
-\begin{DoxyCompactList}\small\item\em from xml to museum request \end{DoxyCompactList}\end{DoxyCompactItemize}
+I\+Enumerator \mbox{\hyperlink{class_museum_request_a41b1a4699551a86415a877d5380febe1}{Start\+Work\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Called when the resource starts working, should most likely start a new thread \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_request_af34f7bf3bc637d500983a44272577a2e}{When\+Done}} ()
+\begin{DoxyCompactList}\small\item\em called when done with request, and it is now time to apply it to a gameobject \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{class_museum_request_a55a4ab7c95751f54af3f8ced9d81ba76}{Museum\+Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em defines what type of musem eg. art sciences and so on \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_mueseum_request_8cs_a462fa84e99cf703318040e54f14146a2}{Museum\+Size}} \mbox{\hyperlink{class_museum_request_a82207d17f80d3a624e7784ffe21c6f43}{Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em defines size of museum limiting displays and rooms \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{class_museum_request_afed65eefeb6ae0675fe955f65e80e671}{Is\+Done}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_museum_request_a05cd8ccf3dcc6fda7ccd84f8d920f013}{Base\+U\+RL}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{class_museum_request_data}{Museum\+Request\+Data}} \mbox{\hyperlink{class_museum_request_aa08e270eb7e8db5c654f1db0641b71c8}{Request\+Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The museum request data sent to the server \end{DoxyCompactList}\item 
+Action$<$ \mbox{\hyperlink{class_museum}{Museum}} $>$ \mbox{\hyperlink{class_museum_request_a004ce0050bd4782e8074937ba3a71724}{Call\+Back}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the function that builds the museum from the data received from the server \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_museum_request_aad328b5658542811993e5770a9fb052a}{Response}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The response from the server \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_museum_request_a5912914896c546559a250b0d6c7fd65b}\label{class_museum_request_a5912914896c546559a250b0d6c7fd65b}} 
+\index{Museum\+Request@{Museum\+Request}!Museum\+Request@{Museum\+Request}}
+\index{Museum\+Request@{Museum\+Request}!Museum\+Request@{Museum\+Request}}
+\subsubsection{\texorpdfstring{Museum\+Request()}{MuseumRequest()}}
+{\footnotesize\ttfamily Museum\+Request.\+Museum\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_museum_request_data}{Museum\+Request\+Data}}}]{data,  }\item[{Action$<$ \mbox{\hyperlink{class_museum}{Museum}} $>$}]{callback }\end{DoxyParamCaption})}
+
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_museum_request_abd551a45744c8387841c20e5ef46d420}\label{class_museum_request_abd551a45744c8387841c20e5ef46d420}} 
-\index{Museum\+Request@{Museum\+Request}!Deserialize@{Deserialize}}
-\index{Deserialize@{Deserialize}!Museum\+Request@{Museum\+Request}}
-\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_museum_request}{Museum\+Request}} Museum\+Request.\+Deserialize (\begin{DoxyParamCaption}\item[{string}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{class_museum_request_a41b1a4699551a86415a877d5380febe1}\label{class_museum_request_a41b1a4699551a86415a877d5380febe1}} 
+\index{Museum\+Request@{Museum\+Request}!Start\+Work\+Request@{Start\+Work\+Request}}
+\index{Start\+Work\+Request@{Start\+Work\+Request}!Museum\+Request@{Museum\+Request}}
+\subsubsection{\texorpdfstring{Start\+Work\+Request()}{StartWorkRequest()}}
+{\footnotesize\ttfamily I\+Enumerator Museum\+Request.\+Start\+Work\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-from xml to museum request 
+Called when the resource starts working, should most likely start a new thread 
 
-Here is the caller graph for this function\+:
+
+
+Implements \mbox{\hyperlink{interface_i_resource_request_a5b40a09cb820283600ac9e3f846936f9}{I\+Resource\+Request}}.
+
+Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_museum_request_abd551a45744c8387841c20e5ef46d420_icgraph}
+\includegraphics[width=350pt]{class_museum_request_a41b1a4699551a86415a877d5380febe1_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_museum_request_ae227bce4871f20bf6661db4a5af5fe1c}\label{class_museum_request_ae227bce4871f20bf6661db4a5af5fe1c}} 
-\index{Museum\+Request@{Museum\+Request}!Serialize@{Serialize}}
-\index{Serialize@{Serialize}!Museum\+Request@{Museum\+Request}}
-\subsubsection{\texorpdfstring{Serialize()}{Serialize()}}
-{\footnotesize\ttfamily string Museum\+Request.\+Serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_museum_request_af34f7bf3bc637d500983a44272577a2e}\label{class_museum_request_af34f7bf3bc637d500983a44272577a2e}} 
+\index{Museum\+Request@{Museum\+Request}!When\+Done@{When\+Done}}
+\index{When\+Done@{When\+Done}!Museum\+Request@{Museum\+Request}}
+\subsubsection{\texorpdfstring{When\+Done()}{WhenDone()}}
+{\footnotesize\ttfamily void Museum\+Request.\+When\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-serializes it to xml 
+called when done with request, and it is now time to apply it to a gameobject 
 
-\begin{DoxyReturn}{Returns}
 
-\end{DoxyReturn}
+
+Implements \mbox{\hyperlink{interface_i_resource_request_a056e427fa6233602456ccb2d4c405aa0}{I\+Resource\+Request}}.
+
 
 
 \subsection{Property Documentation}
-\mbox{\Hypertarget{class_museum_request_a55a4ab7c95751f54af3f8ced9d81ba76}\label{class_museum_request_a55a4ab7c95751f54af3f8ced9d81ba76}} 
-\index{Museum\+Request@{Museum\+Request}!Museum\+Type@{Museum\+Type}}
-\index{Museum\+Type@{Museum\+Type}!Museum\+Request@{Museum\+Request}}
-\subsubsection{\texorpdfstring{Museum\+Type}{MuseumType}}
-{\footnotesize\ttfamily string Museum\+Request.\+Museum\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\mbox{\Hypertarget{class_museum_request_a05cd8ccf3dcc6fda7ccd84f8d920f013}\label{class_museum_request_a05cd8ccf3dcc6fda7ccd84f8d920f013}} 
+\index{Museum\+Request@{Museum\+Request}!Base\+U\+RL@{Base\+U\+RL}}
+\index{Base\+U\+RL@{Base\+U\+RL}!Museum\+Request@{Museum\+Request}}
+\subsubsection{\texorpdfstring{Base\+U\+RL}{BaseURL}}
+{\footnotesize\ttfamily string Museum\+Request.\+Base\+U\+RL\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_museum_request_a004ce0050bd4782e8074937ba3a71724}\label{class_museum_request_a004ce0050bd4782e8074937ba3a71724}} 
+\index{Museum\+Request@{Museum\+Request}!Call\+Back@{Call\+Back}}
+\index{Call\+Back@{Call\+Back}!Museum\+Request@{Museum\+Request}}
+\subsubsection{\texorpdfstring{Call\+Back}{CallBack}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_museum}{Museum}}$>$ Museum\+Request.\+Call\+Back\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
 
 
 
-defines what type of musem eg. art sciences and so on 
+the function that builds the museum from the data received from the server 
 
-\mbox{\Hypertarget{class_museum_request_a82207d17f80d3a624e7784ffe21c6f43}\label{class_museum_request_a82207d17f80d3a624e7784ffe21c6f43}} 
-\index{Museum\+Request@{Museum\+Request}!Size@{Size}}
-\index{Size@{Size}!Museum\+Request@{Museum\+Request}}
-\subsubsection{\texorpdfstring{Size}{Size}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_mueseum_request_8cs_a462fa84e99cf703318040e54f14146a2}{Museum\+Size}} Museum\+Request.\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\mbox{\Hypertarget{class_museum_request_afed65eefeb6ae0675fe955f65e80e671}\label{class_museum_request_afed65eefeb6ae0675fe955f65e80e671}} 
+\index{Museum\+Request@{Museum\+Request}!Is\+Done@{Is\+Done}}
+\index{Is\+Done@{Is\+Done}!Museum\+Request@{Museum\+Request}}
+\subsubsection{\texorpdfstring{Is\+Done}{IsDone}}
+{\footnotesize\ttfamily bool Museum\+Request.\+Is\+Done\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+\mbox{\Hypertarget{class_museum_request_aa08e270eb7e8db5c654f1db0641b71c8}\label{class_museum_request_aa08e270eb7e8db5c654f1db0641b71c8}} 
+\index{Museum\+Request@{Museum\+Request}!Request\+Data@{Request\+Data}}
+\index{Request\+Data@{Request\+Data}!Museum\+Request@{Museum\+Request}}
+\subsubsection{\texorpdfstring{Request\+Data}{RequestData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_request_data}{Museum\+Request\+Data}} Museum\+Request.\+Request\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
 
 
 
-defines size of museum limiting displays and rooms 
+The museum request data sent to the server 
+
+\mbox{\Hypertarget{class_museum_request_aad328b5658542811993e5770a9fb052a}\label{class_museum_request_aad328b5658542811993e5770a9fb052a}} 
+\index{Museum\+Request@{Museum\+Request}!Response@{Response}}
+\index{Response@{Response}!Museum\+Request@{Museum\+Request}}
+\subsubsection{\texorpdfstring{Response}{Response}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum}{Museum}} Museum\+Request.\+Response\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+The response from the server 
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\mbox{\hyperlink{_mueseum_request_8cs}{Mueseum\+Request.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Resources/\mbox{\hyperlink{_museum_request_8cs}{Museum\+Request.\+cs}}\end{DoxyCompactItemize}

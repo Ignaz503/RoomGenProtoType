@@ -1,3 +1,4 @@
 <map id="ResourceLoader.Update" name="ResourceLoader.Update">
-<area shape="rect" id="node2" href="$class_resource_loader.html#a088ef33ee82be6e64028b6b5512fad5d" title="ResourceLoader.LoadResource" alt="" coords="215,5,417,32"/>
+<area shape="rect" id="node2" href="$interface_i_resource_request.html#a5b40a09cb820283600ac9e3f846936f9" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="217,5,408,47"/>
+<area shape="rect" id="node3" href="$interface_i_resource_request.html#a056e427fa6233602456ccb2d4c405aa0" title="called when done with request, and it is now time to apply it to a gameobject " alt="" coords="215,71,411,98"/>
 </map>

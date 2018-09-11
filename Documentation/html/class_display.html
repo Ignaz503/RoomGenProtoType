@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -108,9 +108,9 @@ Inheritance diagram for Display:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display__inherit__graph.png" border="0" usemap="#_display_inherit__map" alt="Inheritance graph"/></div>
 <map name="_display_inherit__map" id="_display_inherit__map">
-<area shape="rect" id="node4" href="class_center_image_display.html" title="{CenterImageDisplay\n|&#45; MaterialPrefab\l&#45; displayMeshRenderes\l|+ ApplyResource()\l+ SetUp()\l# SetToDefaultInteractionBehaviour()\l# InteractionStarted()\l# InteractionEnded()\l&#45; Awake()\l}" alt="" coords="5,476,236,641"/>
-<area shape="rect" id="node5" href="class_image_display.html" title="{ImageDisplay\n|+ XPosScale\l+ Rotation\l+ Scale\l+ YPos\l&#45; materialPrefab\l&#45; meshRenderer\l|+ ApplyResource()\l+ SetUp()\l# SetToDefaultInteractionBehaviour()\l# InteractionStarted()\l# InteractionEnded()\l&#45; Awake()\l}" alt="" coords="260,447,491,671"/>
-<area shape="rect" id="node6" href="class_mesh_display.html" title="{MeshDisplay\n|+ ParentMesh\l+ ChildMesh\l+ XPosScale\l+ XPosModifier\l|+ ScaleChildToFitParent()\l+ ApplyResource()\l+ SetUp()\l# InteractionStarted()\l# InteractionEnded()\l# SetToDefaultInteractionBehaviour()\l&#45; Awake()\l&#45; SetUpMeshRendererOptions()\l}" alt="" coords="515,447,745,671"/>
+<area shape="rect" id="node4" href="class_center_image_display.html" title="{CenterImageDisplay\n|+ displayMeshRenderes\l|+ ApplyResource()\l+ SetUp()\l+ ApplyPreProcessingInformation()\l# SetToDefaultInteractionBehaviour()\l# InteractionStarted()\l# InteractionEnded()\l&#45; Awake()\l}" alt="" coords="5,469,236,634"/>
+<area shape="rect" id="node5" href="class_image_display.html" title="{ImageDisplay\n|+ XPosScale\l+ Rotation\l+ Scale\l+ YPos\l&#45; imageDisplays\l|+ ApplyResource()\l+ SetUp()\l+ ApplyPreProcessingInformation()\l# SetToDefaultInteractionBehaviour()\l# InteractionStarted()\l# InteractionEnded()\l&#45; Awake()\l}" alt="" coords="260,439,491,663"/>
+<area shape="rect" id="node6" href="class_mesh_display.html" title="{MeshDisplay\n|+ ParentMesh\l+ ChildMesh\l+ XPosScale\l+ XPosModifier\l|+ ScaleChildToFitParent()\l+ ApplyResource()\l+ SetUp()\l+ ApplyPreProcessingInformation()\l# InteractionStarted()\l# InteractionEnded()\l# SetToDefaultInteractionBehaviour()\l&#45; Awake()\l&#45; SetUpMeshRendererOptions()\l}" alt="" coords="515,432,745,671"/>
 <area shape="rect" id="node3" href="interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="392,5,484,83"/>
 <area shape="rect" id="node7" href="class_center_mesh_display.html" title="{CenterMeshDisplay\n||+ SetUp()\l}" alt="" coords="563,719,697,796"/>
 </map>
@@ -137,8 +137,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a811157ddb42ae4d72f690457a08711d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a811157ddb42ae4d72f690457a08711d3">ApplyResource</a> (<a class="el" href="class_base_display_resource.html">BaseDisplayResource</a> resource)</td></tr>
 <tr class="memdesc:a811157ddb42ae4d72f690457a08711d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a resource to a display  <a href="#a811157ddb42ae4d72f690457a08711d3">More...</a><br /></td></tr>
 <tr class="separator:a811157ddb42ae4d72f690457a08711d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a293687a976cbe23a09b7c6ddef36a48d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a293687a976cbe23a09b7c6ddef36a48d">GetMetadata</a> ()</td></tr>
-<tr class="separator:a293687a976cbe23a09b7c6ddef36a48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9cd24c11c43dd87bc50e85a8e9e4c31"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#ab9cd24c11c43dd87bc50e85a8e9e4c31">ApplyPreProcessingInformation</a> (<a class="el" href="class_pre_processing_game_object_information.html">PreProcessingGameObjectInformation</a> info)</td></tr>
+<tr class="separator:ab9cd24c11c43dd87bc50e85a8e9e4c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57325251fbeac943cd48520e50f0bec4"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a57325251fbeac943cd48520e50f0bec4">SetUp</a> (<a class="el" href="class_museum_display_info.html">MuseumDisplayInfo</a> dispInfo, GameObject parent)</td></tr>
 <tr class="memdesc:a57325251fbeac943cd48520e50f0bec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the display in the museum, position and rotation  <a href="#a57325251fbeac943cd48520e50f0bec4">More...</a><br /></td></tr>
 <tr class="separator:a57325251fbeac943cd48520e50f0bec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,9 +189,6 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a76e9b246ebdd9a5799de8df52279f05e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a76e9b246ebdd9a5799de8df52279f05e">metadata</a> = &quot;All Speech is free speech&quot;</td></tr>
-<tr class="memdesc:a76e9b246ebdd9a5799de8df52279f05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">old metadata string used for testing  <a href="#a76e9b246ebdd9a5799de8df52279f05e">More...</a><br /></td></tr>
-<tr class="separator:a76e9b246ebdd9a5799de8df52279f05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af35594f083ed6dd4279183215719583f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_interaction.html">Interaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#af35594f083ed6dd4279183215719583f">interaction</a></td></tr>
 <tr class="memdesc:af35594f083ed6dd4279183215719583f"><td class="mdescLeft">&#160;</td><td class="mdescRight">the interaction that is currently taking place  <a href="#af35594f083ed6dd4279183215719583f">More...</a><br /></td></tr>
 <tr class="separator:af35594f083ed6dd4279183215719583f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,6 +223,42 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab9cd24c11c43dd87bc50e85a8e9e4c31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9cd24c11c43dd87bc50e85a8e9e4c31">&#9670;&nbsp;</a></span>ApplyPreProcessingInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void Display.ApplyPreProcessingInformation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_pre_processing_game_object_information.html">PreProcessingGameObjectInformation</a>&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_mesh_display.html#ab52b4d43c963b3bef383e2eebd1e4115">MeshDisplay</a>, <a class="el" href="class_image_display.html#a0ad82d85f6c4ec5eabb65afa1ae72bc1">ImageDisplay</a>, and <a class="el" href="class_center_image_display.html#af746f7d72e82809aaa0b5b5bf0ad2cc0">CenterImageDisplay</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31_icgraph.png" border="0" usemap="#class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31_icgraph" alt=""/></div>
+<map name="class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31_icgraph" id="class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31_icgraph">
+<area shape="rect" id="node2" href="class_display_resource_request.html#a60a8a75088ba20c6c42ebcab8309f1de" title="called when done with request, and it is now time to apply it to a gameobject " alt="" coords="240,13,476,39"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a811157ddb42ae4d72f690457a08711d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a811157ddb42ae4d72f690457a08711d3">&#9670;&nbsp;</a></span>ApplyResource()</h2>
 
@@ -273,31 +306,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display_a811157ddb42ae4d72f690457a08711d3_icgraph.png" border="0" usemap="#class_display_a811157ddb42ae4d72f690457a08711d3_icgraph" alt=""/></div>
 <map name="class_display_a811157ddb42ae4d72f690457a08711d3_icgraph" id="class_display_a811157ddb42ae4d72f690457a08711d3_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="211,39,397,80"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="451,5,642,47"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="445,71,648,112"/>
-<area shape="rect" id="node4" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="698,17,879,43"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="929,45,1087,71"/>
-<area shape="rect" id="node7" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="696,71,881,98"/>
+<area shape="rect" id="node2" href="class_display_resource_request.html#a60a8a75088ba20c6c42ebcab8309f1de" title="called when done with request, and it is now time to apply it to a gameobject " alt="" coords="211,5,447,32"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a293687a976cbe23a09b7c6ddef36a48d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a293687a976cbe23a09b7c6ddef36a48d">&#9670;&nbsp;</a></span>GetMetadata()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Display.GetMetadata </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -503,13 +514,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display_af8aa8a663725645f431095397ad802e6_icgraph.png" border="0" usemap="#class_display_af8aa8a663725645f431095397ad802e6_icgraph" alt=""/></div>
 <map name="class_display_af8aa8a663725645f431095397ad802e6_icgraph" id="class_display_af8aa8a663725645f431095397ad802e6_icgraph">
-<area shape="rect" id="node2" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="231,46,388,73"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="436,39,623,80"/>
-<area shape="rect" id="node4" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="677,5,867,47"/>
-<area shape="rect" id="node7" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="671,71,873,112"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="923,17,1105,43"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="1155,45,1312,71"/>
-<area shape="rect" id="node8" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="921,71,1107,98"/>
+<area shape="rect" id="node2" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="231,5,388,32"/>
+<area shape="rect" id="node3" href="class_display_resource_request.html#a60a8a75088ba20c6c42ebcab8309f1de" title="called when done with request, and it is now time to apply it to a gameobject " alt="" coords="436,5,672,32"/>
 </map>
 </div>
 
@@ -546,14 +552,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display_a81f07350cf50b3924f4fe269e1b4cf17_icgraph.png" border="0" usemap="#class_display_a81f07350cf50b3924f4fe269e1b4cf17_icgraph" alt=""/></div>
 <map name="class_display_a81f07350cf50b3924f4fe269e1b4cf17_icgraph" id="class_display_a81f07350cf50b3924f4fe269e1b4cf17_icgraph">
-<area shape="rect" id="node2" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="256,46,433,73"/>
-<area shape="rect" id="node3" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="481,46,639,73"/>
-<area shape="rect" id="node4" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="687,39,873,80"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="927,5,1118,47"/>
-<area shape="rect" id="node8" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="921,71,1124,112"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="1174,17,1355,43"/>
-<area shape="rect" id="node7" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="1405,45,1563,71"/>
-<area shape="rect" id="node9" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="1172,71,1357,98"/>
+<area shape="rect" id="node2" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="256,13,433,39"/>
+<area shape="rect" id="node3" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="481,13,639,39"/>
+<area shape="rect" id="node4" href="class_display_resource_request.html#a60a8a75088ba20c6c42ebcab8309f1de" title="called when done with request, and it is now time to apply it to a gameobject " alt="" coords="687,13,923,39"/>
 </map>
 </div>
 
@@ -609,10 +610,11 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_display_a57325251fbeac943cd48520e50f0bec4_icgraph.png" border="0" usemap="#class_display_a57325251fbeac943cd48520e50f0bec4_icgraph" alt=""/></div>
 <map name="class_display_a57325251fbeac943cd48520e50f0bec4_icgraph" id="class_display_a57325251fbeac943cd48520e50f0bec4_icgraph">
 <area shape="rect" id="node2" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="165,5,355,47"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="159,71,361,112"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="411,17,593,43"/>
-<area shape="rect" id="node4" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="643,45,800,71"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="409,71,595,98"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="159,71,361,112"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="409,17,592,43"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="640,45,835,71"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="883,45,1027,71"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="413,71,588,98"/>
 </map>
 </div>
 
@@ -664,30 +666,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>System type of the interaction the display provides </p>
-
-</div>
-</div>
-<a id="a76e9b246ebdd9a5799de8df52279f05e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76e9b246ebdd9a5799de8df52279f05e">&#9670;&nbsp;</a></span>metadata</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Display.metadata = &quot;All Speech is free speech&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>old metadata string used for testing </p>
 
 </div>
 </div>

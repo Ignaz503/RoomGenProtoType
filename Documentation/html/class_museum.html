@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -111,11 +111,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa946df02a55ba522f7a39ac688648733"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#aa946df02a55ba522f7a39ac688648733">Museum</a> (int size)</td></tr>
 <tr class="separator:aa946df02a55ba522f7a39ac688648733"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a301b4e27f35da164ffa03b3d3d7e81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81">Generate</a> (string seed, bool buildMuseumsGraph=true)</td></tr>
-<tr class="memdesc:a2a301b4e27f35da164ffa03b3d3d7e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a <a class="el" href="class_museum.html">Museum</a> baisc algortihm:  <a href="#a2a301b4e27f35da164ffa03b3d3d7e81">More...</a><br /></td></tr>
+<tr class="memdesc:a2a301b4e27f35da164ffa03b3d3d7e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a <a class="el" href="class_museum.html">Museum</a> baisc algortihm:  <a href="#a2a301b4e27f35da164ffa03b3d3d7e81">More...</a><br /></td></tr>
 <tr class="separator:a2a301b4e27f35da164ffa03b3d3d7e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31c3e63a3a1e2edf6e219cb1f04b9515"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_room.html">Room</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a31c3e63a3a1e2edf6e219cb1f04b9515">GetRoomByID</a> (uint RoomID)</td></tr>
 <tr class="memdesc:a31c3e63a3a1e2edf6e219cb1f04b9515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a room via the ID of it  <a href="#a31c3e63a3a1e2edf6e219cb1f04b9515">More...</a><br /></td></tr>
 <tr class="separator:a31c3e63a3a1e2edf6e219cb1f04b9515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a405e60db962417dde46d46180cbf81df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a405e60db962417dde46d46180cbf81df">TransformTileCoordIntoOneD</a> (Vector2Int coord)</td></tr>
+<tr class="memdesc:a405e60db962417dde46d46180cbf81df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum  <a href="#a405e60db962417dde46d46180cbf81df">More...</a><br /></td></tr>
+<tr class="separator:a405e60db962417dde46d46180cbf81df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a458545a518b026779c23e6c5b477bbf4"><td class="memItemLeft" align="right" valign="top">Vector2Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a458545a518b026779c23e6c5b477bbf4">TransformOneDCoordIntoTwoD</a> (int coord)</td></tr>
+<tr class="memdesc:a458545a518b026779c23e6c5b477bbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a one dimensional value into a row and column value for this museum item1 in tuple = x item2 in tuple = y  <a href="#a458545a518b026779c23e6c5b477bbf4">More...</a><br /></td></tr>
+<tr class="separator:a458545a518b026779c23e6c5b477bbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e441db98efeaa314ae974222aea08e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a6e441db98efeaa314ae974222aea08e6">AddWall</a> (<a class="el" href="class_wall.html">Wall</a> w)</td></tr>
 <tr class="memdesc:a6e441db98efeaa314ae974222aea08e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a wall to the walls container if the wall doesn't exist otherwise returns the index of the wall that already exists (2 rooms share one wall in that case)  <a href="#a6e441db98efeaa314ae974222aea08e6">More...</a><br /></td></tr>
 <tr class="separator:a6e441db98efeaa314ae974222aea08e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,12 +170,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:af5b732fe3a0821d02852171a73cf8f8b"><td class="memItemLeft" align="right" valign="top">List&lt; Vector2Int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b">GetSourroundingTiles</a> (Vector2Int pos)</td></tr>
 <tr class="memdesc:af5b732fe3a0821d02852171a73cf8f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the sourrounding tiles for a given position  <a href="#af5b732fe3a0821d02852171a73cf8f8b">More...</a><br /></td></tr>
 <tr class="separator:af5b732fe3a0821d02852171a73cf8f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a405e60db962417dde46d46180cbf81df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a405e60db962417dde46d46180cbf81df">TransformTileCoordIntoOneD</a> (Vector2Int coord)</td></tr>
-<tr class="memdesc:a405e60db962417dde46d46180cbf81df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum  <a href="#a405e60db962417dde46d46180cbf81df">More...</a><br /></td></tr>
-<tr class="separator:a405e60db962417dde46d46180cbf81df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72e9020ee5d8406df0fc41fc4295727f"><td class="memItemLeft" align="right" valign="top">Tuple&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a72e9020ee5d8406df0fc41fc4295727f">TransformOneDCoordIntoTwoD</a> (int coord)</td></tr>
-<tr class="memdesc:a72e9020ee5d8406df0fc41fc4295727f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a one dimensional value into a row and column value for this museum item1 in tuple = x item2 in tuple = y  <a href="#a72e9020ee5d8406df0fc41fc4295727f">More...</a><br /></td></tr>
-<tr class="separator:a72e9020ee5d8406df0fc41fc4295727f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a161feedcbb8a471eb0e68b7e3e4027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a6a161feedcbb8a471eb0e68b7e3e4027">LogMap</a> ()</td></tr>
 <tr class="separator:a6a161feedcbb8a471eb0e68b7e3e4027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a237d1ccf7cb53c4db64647b6addc6576"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum.html#a237d1ccf7cb53c4db64647b6addc6576">LogOutline</a> (HashSet&lt; int &gt; outline)</td></tr>
@@ -205,7 +205,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_museum_aa946df02a55ba522f7a39ac688648733_icgraph.png" border="0" usemap="#class_museum_aa946df02a55ba522f7a39ac688648733_icgraph" alt=""/></div>
 <map name="class_museum_aa946df02a55ba522f7a39ac688648733_icgraph" id="class_museum_aa946df02a55ba522f7a39ac688648733_icgraph">
 <area shape="rect" id="node2" href="class_museum.html#a1b4fb627a19112e3ba3d25e8108de2c3" title="creates a museum from an xml string " alt="" coords="180,5,320,32"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="368,5,525,32"/>
+<area shape="rect" id="node3" href="class_museum_request.html#a41b1a4699551a86415a877d5380febe1" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="368,5,599,32"/>
 </map>
 </div>
 
@@ -349,7 +349,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_a1b4fb627a19112e3ba3d25e8108de2c3_icgraph.png" border="0" usemap="#class_museum_a1b4fb627a19112e3ba3d25e8108de2c3_icgraph" alt=""/></div>
 <map name="class_museum_a1b4fb627a19112e3ba3d25e8108de2c3_icgraph" id="class_museum_a1b4fb627a19112e3ba3d25e8108de2c3_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="193,5,351,32"/>
+<area shape="rect" id="node2" href="class_museum_request.html#a41b1a4699551a86415a877d5380febe1" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="193,5,424,32"/>
 </map>
 </div>
 
@@ -380,15 +380,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Fills the displas that exist in the museum also creates texture info for walls WARNING: CURRENTLY TEMP IMPLEMENTATION </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_ae07741bc8fd7f97c84fed0050e18c3c4_icgraph.png" border="0" usemap="#class_museum_ae07741bc8fd7f97c84fed0050e18c3c4_icgraph" alt=""/></div>
-<map name="class_museum_ae07741bc8fd7f97c84fed0050e18c3c4_icgraph" id="class_museum_ae07741bc8fd7f97c84fed0050e18c3c4_icgraph">
-<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="196,5,325,32"/>
-<area shape="rect" id="node3" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="373,5,548,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -418,7 +409,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Generates a <a class="el" href="class_museum.html">Museum</a> baisc algortihm: </p>
+<p>THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a <a class="el" href="class_museum.html">Museum</a> baisc algortihm: </p>
 <ol type="1">
 <li>palce random 1x1 room as start</li>
 <li>get outline around this room</li>
@@ -429,7 +420,7 @@ Here is the caller graph for this function:</div>
 <li>update outline</li>
 <li>repeat from step 3. until no more tiles in outline</li>
 <li>fill all the displays that are in the museum</li>
-<li>build museum graph </li>
+<li>build museum graph THIS IS THE DEBUG IMPLEMENTATION OF THE ALGORITHM USED TO VISUALIZE THE ALGORITHM FINAL IMPLEMENTATION IN VIRTMUSEWEBPROJECT </li>
 </ol>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -445,10 +436,9 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node2" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b" title="returns the sourrounding tiles for a given position " alt="" coords="195,5,395,32"/>
 <area shape="rect" id="node3" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="202,57,389,98"/>
 <area shape="rect" id="node4" href="class_room.html#a294bb89a25ac765eca25106ccb4d1955" title="Creats a single door between two rooms " alt="" coords="187,123,403,149"/>
-<area shape="rect" id="node5" href="class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4" title="Fills the displas that exist in the museum also creates texture info for walls WARNING: CURRENTLY TEM..." alt="" coords="224,173,367,200"/>
-<area shape="rect" id="node6" href="class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="183,224,408,251"/>
-<area shape="rect" id="node7" href="class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="456,217,649,258"/>
-<area shape="rect" id="node8" href="class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="697,224,896,251"/>
+<area shape="rect" id="node5" href="class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="183,173,408,200"/>
+<area shape="rect" id="node6" href="class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="456,166,649,207"/>
+<area shape="rect" id="node7" href="class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="697,173,896,200"/>
 </map>
 </div>
 <div class="dynheader">
@@ -456,7 +446,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_icgraph.png" border="0" usemap="#class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_icgraph" alt=""/></div>
 <map name="class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_icgraph" id="class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_icgraph">
-<area shape="rect" id="node2" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="183,5,357,32"/>
+<area shape="rect" id="node2" href="class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="183,5,373,32"/>
 </map>
 </div>
 
@@ -526,8 +516,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_af5b732fe3a0821d02852171a73cf8f8b_icgraph.png" border="0" usemap="#class_museum_af5b732fe3a0821d02852171a73cf8f8b_icgraph" alt=""/></div>
 <map name="class_museum_af5b732fe3a0821d02852171a73cf8f8b_icgraph" id="class_museum_af5b732fe3a0821d02852171a73cf8f8b_icgraph">
-<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="253,5,383,32"/>
-<area shape="rect" id="node3" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="431,5,605,32"/>
+<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="253,5,383,32"/>
+<area shape="rect" id="node3" href="class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="431,5,621,32"/>
 </map>
 </div>
 
@@ -627,39 +617,23 @@ Here is the caller graph for this function:</div>
 
 <p>Serilaizes a museum to an xml string </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_ac956bb7d7454f99944af157c79f695b8_icgraph.png" border="0" usemap="#class_museum_ac956bb7d7454f99944af157c79f695b8_icgraph" alt=""/></div>
-<map name="class_museum_ac956bb7d7454f99944af157c79f695b8_icgraph" id="class_museum_ac956bb7d7454f99944af157c79f695b8_icgraph">
-<area shape="rect" id="node2" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="180,5,355,32"/>
-</map>
-</div>
 
 </div>
 </div>
-<a id="a72e9020ee5d8406df0fc41fc4295727f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72e9020ee5d8406df0fc41fc4295727f">&#9670;&nbsp;</a></span>TransformOneDCoordIntoTwoD()</h2>
+<a id="a458545a518b026779c23e6c5b477bbf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a458545a518b026779c23e6c5b477bbf4">&#9670;&nbsp;</a></span>TransformOneDCoordIntoTwoD()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Tuple&lt;int,int&gt; Museum.TransformOneDCoordIntoTwoD </td>
+          <td class="memname">Vector2Int Museum.TransformOneDCoordIntoTwoD </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>coord</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Transforms a one dimensional value into a row and column value for this museum item1 in tuple = x item2 in tuple = y </p>
@@ -671,9 +645,6 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Museum.TransformTileCoordIntoOneD </td>
@@ -683,11 +654,6 @@ Here is the caller graph for this function:</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum </p>
@@ -703,8 +669,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_a405e60db962417dde46d46180cbf81df_icgraph.png" border="0" usemap="#class_museum_a405e60db962417dde46d46180cbf81df_icgraph" alt=""/></div>
 <map name="class_museum_a405e60db962417dde46d46180cbf81df_icgraph" id="class_museum_a405e60db962417dde46d46180cbf81df_icgraph">
-<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="240,13,369,39"/>
-<area shape="rect" id="node3" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="417,13,592,39"/>
+<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="281,5,410,32"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a875e7252e31ad7ae28f17eb365ef5ce5" title="Sets player position to the first floor in the museum. " alt="" coords="256,57,435,98"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#acd17822c3c2fdc7552e94dd1627586a7" title="MuseumBuilder.GetGameObject\lForTile" alt="" coords="240,122,451,163"/>
+<area shape="rect" id="node9" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="254,188,437,215"/>
+<area shape="rect" id="node12" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="258,239,433,265"/>
+<area shape="rect" id="node3" href="class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="505,5,695,32"/>
+<area shape="rect" id="node5" href="class_museum_build_observer.html#a18c844a9fe9b649ed4bdaedbdade82a6" title="MuseumBuildObserver.Start" alt="" coords="751,64,935,91"/>
+<area shape="rect" id="node6" href="class_museum_build_observer.html#a506c7314ea2734e8f4881167ab5f2460" title="tepelports player if possible " alt="" coords="499,111,701,153"/>
+<area shape="rect" id="node7" href="class_portal_trigger.html#ae73070bf23c6348ced79aa839e0e2ad7" title="PortalTrigger.OnTriggerEnter" alt="" coords="749,119,936,145"/>
+<area shape="rect" id="node10" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="503,213,697,240"/>
+<area shape="rect" id="node11" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="771,213,915,240"/>
 </map>
 </div>
 
@@ -730,7 +705,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> Dictionary&lt;RoomType, IRoomPlacableChecker&gt;()</div><div class="line">    {</div><div class="line">            { <a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Normal, <span class="keyword">new</span> <a class="code" href="class_base_room_type_placable_cheker.html">BaseRoomTypePlacableCheker</a>(<a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Normal) },</div><div class="line">            { <a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Long, <span class="keyword">new</span> <a class="code" href="class_base_room_type_placable_cheker.html">BaseRoomTypePlacableCheker</a>(<a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Long) },</div><div class="line">            { <a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Big, <span class="keyword">new</span> <a class="code" href="class_base_room_type_placable_cheker.html">BaseRoomTypePlacableCheker</a>(<a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Big) },</div><div class="line">            { <a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.L, <span class="keyword">new</span> <a class="code" href="class_base_room_type_placable_cheker.html">BaseRoomTypePlacableCheker</a>(<a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.L) }</div><div class="line">    }</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> Dictionary&lt;RoomType, IRoomPlacableChecker&gt;()</div><div class="line">{</div><div class="line">        { <a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Normal, <span class="keyword">new</span> <a class="code" href="class_base_room_type_placable_cheker.html">BaseRoomTypePlacableCheker</a>(<a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Normal) },</div><div class="line">        { <a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Long, <span class="keyword">new</span> <a class="code" href="class_base_room_type_placable_cheker.html">BaseRoomTypePlacableCheker</a>(<a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Long) },</div><div class="line">        { <a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Big, <span class="keyword">new</span> <a class="code" href="class_base_room_type_placable_cheker.html">BaseRoomTypePlacableCheker</a>(<a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.Big) },</div><div class="line">        { <a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.L, <span class="keyword">new</span> <a class="code" href="class_base_room_type_placable_cheker.html">BaseRoomTypePlacableCheker</a>(<a class="code" href="_room_8cs.html#ab540f7414f306325d92272bcef1e34e1">RoomType</a>.L) }</div><div class="line">}</div></div><!-- fragment -->
 <p>helper dictionary that maps from room type to placable checker of this room </p>
 
 </div>

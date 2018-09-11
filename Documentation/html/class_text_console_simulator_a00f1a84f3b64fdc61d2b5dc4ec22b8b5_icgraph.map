@@ -1,0 +1,6 @@
+<map id="TextConsoleSimulator.EnableBehaviours" name="TextConsoleSimulator.EnableBehaviours">
+<area shape="rect" id="node2" href="$class_text_console_simulator.html#a3ba3d788ab24c2b0d5949e5f34992b45" title="TextConsoleSimulator.Update" alt="" coords="247,5,441,32"/>
+<area shape="rect" id="node3" href="$class_text_console_simulator.html#a6740593a0a66d052b4bc2076b0032d96" title="Method revealing the text one character at a time. " alt="" coords="249,57,439,98"/>
+<area shape="rect" id="node5" href="$class_text_console_simulator.html#a02b5d223477f40d452dc46d86f55376f" title="Method revealing the text one word at a time. " alt="" coords="249,122,439,163"/>
+<area shape="rect" id="node4" href="$class_text_console_simulator.html#a9e43e79bb6b5c9b3ecfa426ded2a7995" title="TextConsoleSimulator.Start" alt="" coords="489,97,671,124"/>
+</map>

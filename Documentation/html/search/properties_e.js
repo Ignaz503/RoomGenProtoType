@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['wallid',['WallID',['../class_wall.html#a44f8ec4294e23148d51bcd33206a78c7',1,'Wall']]],
-  ['walls',['Walls',['../class_museum.html#a4851cdf10f162bbf4b26c757874031da',1,'Museum']]]
+  ['r',['R',['../struct_virt_muse_web_1_1_utility_1_1_image_1_1_color32.html#a26dcbe31304611abc45cb02a7a3dc645',1,'VirtMuseWeb::Utility::Image::Color32']]],
+  ['raycastmaxdist',['RayCastMaxDist',['../class_player.html#adafd180f492907d445a3ace023f63040',1,'Player']]],
+  ['requestdata',['RequestData',['../class_museum_request.html#aa08e270eb7e8db5c654f1db0641b71c8',1,'MuseumRequest']]],
+  ['requestingwall',['RequestingWall',['../class_multi_wall_texture_request.html#a73e34826ed183281d7fd34f5d263d72c',1,'MultiWallTextureRequest']]],
+  ['requestor',['Requestor',['../class_base_room_style_request.html#abac03d12004ad78ee9ddd7fddf3dffdb',1,'BaseRoomStyleRequest.Requestor()'],['../class_display_resource_request.html#a45c1024a90ddda1f8837daa50796458c',1,'DisplayResourceRequest.Requestor()']]],
+  ['resourceid',['ResourceID',['../class_meta_data.html#a1bbd18efe27fdbeb0ee920414caa12c8',1,'MetaData.ResourceID()'],['../class_room_style_resource.html#a113194d661027fdac0a956cdf19dc166',1,'RoomStyleResource.ResourceID()'],['../class_virt_muse_web_1_1_models_1_1_meta_data_model.html#a5d49d277b2680998b79d7c07462baccf',1,'VirtMuseWeb.Models.MetaDataModel.ResourceID()']]],
+  ['resourcelocator',['ResourceLocator',['../class_base_room_style_request.html#a5787f94bce07b0c2d1e8833030d74fcf',1,'BaseRoomStyleRequest.ResourceLocator()'],['../class_display_resource_request.html#af7db29f1689fbcdd4bc5a9dd40675cf1',1,'DisplayResourceRequest.ResourceLocator()']]],
+  ['resourecid',['ResourecID',['../class_base_resource.html#adbdcd8935067e622c993b912a475c21b',1,'BaseResource']]],
+  ['response',['Response',['../class_base_room_style_request.html#a1a30d5a6a7da9fe5b221d4fe6b3f69de',1,'BaseRoomStyleRequest.Response()'],['../class_display_resource_request.html#a95743229fd3f58ceed7090f9fd5e2fd5',1,'DisplayResourceRequest.Response()'],['../class_museum_request.html#aad328b5658542811993e5770a9fb052a',1,'MuseumRequest.Response()']]],
+  ['resrourcetype',['ResrourceType',['../class_base_resource.html#a6c40931e66a2e4fd8061f069eb0c0ba8',1,'BaseResource']]],
+  ['right',['right',['../class_virt_muse_web_1_1_utility_1_1_vec2.html#ace4b0b7f54d2b12e73811b8dda6533f6',1,'VirtMuseWeb.Utility.Vec2.right()'],['../class_virt_muse_web_1_1_utility_1_1_vec3.html#accdbfe734dc6d5a7fa9cdeed2f0aeb62',1,'VirtMuseWeb.Utility.Vec3.right()'],['../class_virt_muse_web_1_1_utility_1_1_vec3_int.html#a0dbece60d48c203672dbb74177b52abc',1,'VirtMuseWeb.Utility.Vec3Int.right()']]],
+  ['roomid',['RoomID',['../class_room.html#a499df97242b8996b66cc22737159f59c',1,'Room']]],
+  ['roommap',['RoomMap',['../class_museum.html#add7cf92391f0c501eaf2ebb76ddd54f6',1,'Museum']]],
+  ['rooms',['Rooms',['../class_museum.html#afbe49bbdcf1b263d32fd0ae323289e7d',1,'Museum']]],
+  ['roomtiles',['RoomTiles',['../class_room.html#aed67349f7f161cb2214111eff3e51018',1,'Room']]],
+  ['rotation',['Rotation',['../class_pre_processing_game_object_information.html#a6b7430b36e281c146006f54390a9b555',1,'PreProcessingGameObjectInformation.Rotation()'],['../class_wall.html#aa2d6c86c7ccabbb5e317b9ccac62e99e',1,'Wall.Rotation()']]]
 ];

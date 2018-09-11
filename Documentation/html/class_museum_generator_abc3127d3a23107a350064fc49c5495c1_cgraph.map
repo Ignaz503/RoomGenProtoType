@@ -1,0 +1,10 @@
+<map id="MuseumGenerator.OnEnable" name="MuseumGenerator.OnEnable">
+<area shape="rect" id="node2" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="273,93,402,120"/>
+<area shape="rect" id="node9" href="$class_museum_generator.html#a1b9419222535f317005ca9fe1fe757f3" title="gnerates a temp display of the museum but only floor walls handled by draw gizmos ..." alt="" coords="244,145,431,186"/>
+<area shape="rect" id="node3" href="$class_museum.html#af5b732fe3a0821d02852171a73cf8f8b" title="returns the sourrounding tiles for a given position " alt="" coords="491,5,691,32"/>
+<area shape="rect" id="node4" href="$class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="498,57,685,98"/>
+<area shape="rect" id="node5" href="$class_room.html#a294bb89a25ac765eca25106ccb4d1955" title="Creats a single door between two rooms " alt="" coords="483,123,699,149"/>
+<area shape="rect" id="node6" href="$class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="479,173,704,200"/>
+<area shape="rect" id="node7" href="$class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="752,166,945,207"/>
+<area shape="rect" id="node8" href="$class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="993,173,1192,200"/>
+</map>

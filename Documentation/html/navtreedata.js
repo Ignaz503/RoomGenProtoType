@@ -25,7 +25,11 @@ var NAVTREE =
 [
   [ "VirtMuse", "index.html", [
     [ "Packages", "namespaces.html", [
-      [ "Packages", "namespaces.html", "namespaces_dup" ]
+      [ "Packages", "namespaces.html", "namespaces_dup" ],
+      [ "Package Functions", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -53,8 +57,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_base_door_8cs.html",
-"class_museum.html#a31c3e63a3a1e2edf6e219cb1f04b9515",
-"class_room.html#a415866d8fd49a481729fa9782f348d8d"
+"class_late_update_rotation_follower.html#a8421f97a652a361093702b1e39752bfb",
+"class_museum_request_data.html#ac2ab3cbc8d51ee55b5b23fe2cf9e93f3",
+"class_virt_muse_web_1_1_models_1_1_meta_data_model.html#a343fb149896049236a06cfbea3b62b1c",
+"interface_i_wall_validator.html#a1618acf45bf2614985aeb8b240bf7da8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

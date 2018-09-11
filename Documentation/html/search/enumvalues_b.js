@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['upperleft',['UpperLeft',['../_room_8cs.html#a76844f8b36502b81ec9dd133f7f91124a6f43ca0793e0c68184761673278f4ca4',1,'Room.cs']]],
-  ['upperright',['UpperRight',['../_room_8cs.html#a76844f8b36502b81ec9dd133f7f91124a894d4b94cedce8501ff5165b6863ea3a',1,'Room.cs']]]
+  ['small',['Small',['../_mueseum_request_data_8cs.html#a462fa84e99cf703318040e54f14146a2a2660064e68655415da2628c2ae2f7592',1,'MueseumRequestData.cs']]],
+  ['solid',['Solid',['../class_wall.html#a1366d94ac70428624a6703d7db89638dae41480b6bbfbf7407974a88d3d34f4fa',1,'Wall']]]
 ];

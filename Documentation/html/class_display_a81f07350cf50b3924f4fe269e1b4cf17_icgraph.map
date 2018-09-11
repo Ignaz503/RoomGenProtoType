@@ -1,10 +1,5 @@
 <map id="Display.SetToDefaultInteractionBehaviour" name="Display.SetToDefaultInteractionBehaviour">
-<area shape="rect" id="node2" href="$class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="256,46,433,73"/>
-<area shape="rect" id="node3" href="$class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="481,46,639,73"/>
-<area shape="rect" id="node4" href="$class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="687,39,873,80"/>
-<area shape="rect" id="node5" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="927,5,1118,47"/>
-<area shape="rect" id="node8" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="921,71,1124,112"/>
-<area shape="rect" id="node6" href="$class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="1174,17,1355,43"/>
-<area shape="rect" id="node7" href="$class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="1405,45,1563,71"/>
-<area shape="rect" id="node9" href="$class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="1172,71,1357,98"/>
+<area shape="rect" id="node2" href="$class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="256,13,433,39"/>
+<area shape="rect" id="node3" href="$class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="481,13,639,39"/>
+<area shape="rect" id="node4" href="$class_display_resource_request.html#a60a8a75088ba20c6c42ebcab8309f1de" title="called when done with request, and it is now time to apply it to a gameobject " alt="" coords="687,13,923,39"/>
 </map>

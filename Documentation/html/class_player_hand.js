@@ -14,6 +14,7 @@ var class_player_hand =
     [ "InvokeOnStartMovingInfrontOfFace", "class_player_hand.html#a1f8cc0ae3bc7e9d3c4d21943eb09852e", null ],
     [ "InvokeOnStartMovingToRestPosition", "class_player_hand.html#a2c861364aaf53271c0e3dc1e42ee5e47", null ],
     [ "_currentState", "class_player_hand.html#ab038075d9d0b60c19a1c80f6baebfa58", null ],
+    [ "lastFrameInteractedObj", "class_player_hand.html#a0ce49de26e010945c8a499ac6182be67", null ],
     [ "objectInHand", "class_player_hand.html#a043a1be665181f9e3c9d00cd18e4c4fe", null ],
     [ "CurrentState", "class_player_hand.html#a6eb1eff28793294622f4037a0aa7afeb", null ],
     [ "OwningPlayer", "class_player_hand.html#a0d33095483c291ac3dd5b5350974b626", null ],

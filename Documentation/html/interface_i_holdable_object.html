@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -107,8 +107,6 @@ Inheritance diagram for IHoldableObject:</div>
 Collaboration diagram for IHoldableObject:</div>
 <div class="dyncontent">
 <div class="center"><img src="interface_i_holdable_object__coll__graph.png" border="0" usemap="#_i_holdable_object_coll__map" alt="Collaboration graph"/></div>
-<map name="_i_holdable_object_coll__map" id="_i_holdable_object_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -117,22 +115,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6f63fec8fb8f715ad5cdd08aa5ec0ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">called when hand reaches infront of face position right after state was set to infront of face  <a href="#a6f63fec8fb8f715ad5cdd08aa5ec0ea5">More...</a><br /></td></tr>
 <tr class="separator:a6f63fec8fb8f715ad5cdd08aa5ec0ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe7c5e5ed97fb5c908c91da5b8714f0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_holdable_object.html#abe7c5e5ed97fb5c908c91da5b8714f0e">OnPutAway</a> ()</td></tr>
+<tr class="memdesc:abe7c5e5ed97fb5c908c91da5b8714f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the hand reaches it's rest positon right after the state is set to RestPosition  <a href="#abe7c5e5ed97fb5c908c91da5b8714f0e">More...</a><br /></td></tr>
 <tr class="separator:abe7c5e5ed97fb5c908c91da5b8714f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5dcdd5524539104706dadd8a0e15e08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_holdable_object.html#af5dcdd5524539104706dadd8a0e15e08">OnStartedMoveInfrontOfFace</a> ()</td></tr>
 <tr class="memdesc:af5dcdd5524539104706dadd8a0e15e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">called when hand starts moving towards the infront of face position right after the state is set to MovingInfrontofFace  <a href="#af5dcdd5524539104706dadd8a0e15e08">More...</a><br /></td></tr>
 <tr class="separator:af5dcdd5524539104706dadd8a0e15e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75f802a9736db51e5e8d1568689dd11c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_holdable_object.html#a75f802a9736db51e5e8d1568689dd11c">OnStartedMoveAwayFromFace</a> ()</td></tr>
+<tr class="memdesc:a75f802a9736db51e5e8d1568689dd11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">called when the hand starts moving away from the face right after the hand state is set to MovingToRestPosition  <a href="#a75f802a9736db51e5e8d1568689dd11c">More...</a><br /></td></tr>
 <tr class="separator:a75f802a9736db51e5e8d1568689dd11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fe2e7a7d0740225142053583f438333"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_holdable_object.html#a3fe2e7a7d0740225142053583f438333">PositionObjectInHand</a> (<a class="el" href="class_player_hand.html">PlayerHand</a> hand)</td></tr>
 <tr class="memdesc:a3fe2e7a7d0740225142053583f438333"><td class="mdescLeft">&#160;</td><td class="mdescRight">used to probably parent obj to hand gamobjt and set local position called by grab object of the hand  <a href="#a3fe2e7a7d0740225142053583f438333">More...</a><br /></td></tr>
 <tr class="separator:a3fe2e7a7d0740225142053583f438333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b8a42a0c12a26b1668c4dd904f38355"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_holdable_object.html#a7b8a42a0c12a26b1668c4dd904f38355">OnGrabed</a> (<a class="el" href="class_player_hand.html">PlayerHand</a> hand)</td></tr>
+<tr class="memdesc:a7b8a42a0c12a26b1668c4dd904f38355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called the frame this object is grabbed can be seen as an initializer function for when the obj is grabbed  <a href="#a7b8a42a0c12a26b1668c4dd904f38355">More...</a><br /></td></tr>
 <tr class="separator:a7b8a42a0c12a26b1668c4dd904f38355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19523673c41505d8533aa50b957e95a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_holdable_object.html#a19523673c41505d8533aa50b957e95a1">OnDropped</a> (<a class="el" href="class_player_hand.html">PlayerHand</a> hand)</td></tr>
+<tr class="memdesc:a19523673c41505d8533aa50b957e95a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called the frame this object is dropped by a hand can be seen as a destroy/cleanup function for the opbject when called the hand does not hold the object anyomre  <a href="#a19523673c41505d8533aa50b957e95a1">More...</a><br /></td></tr>
 <tr class="separator:a19523673c41505d8533aa50b957e95a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0356d534c17ab4e04fba00b42abeea77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_holdable_object.html#a0356d534c17ab4e04fba00b42abeea77">IsInterestedInInteractableObjects</a> ()</td></tr>
+<tr class="memdesc:a0356d534c17ab4e04fba00b42abeea77"><td class="mdescLeft">&#160;</td><td class="mdescRight">this functions defines iof the held object gets information about an interactable object forwarded to him  <a href="#a0356d534c17ab4e04fba00b42abeea77">More...</a><br /></td></tr>
 <tr class="separator:a0356d534c17ab4e04fba00b42abeea77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb32a55273b99d16f9fb5b86f6a73f80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_holdable_object.html#aeb32a55273b99d16f9fb5b86f6a73f80">SetInteractedObject</a> (<a class="el" href="interface_i_interactable.html">IInteractable</a> iObj)</td></tr>
+<tr class="memdesc:aeb32a55273b99d16f9fb5b86f6a73f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">function get's called by hand if the held object is interessted in interacted objects  <a href="#aeb32a55273b99d16f9fb5b86f6a73f80">More...</a><br /></td></tr>
 <tr class="separator:aeb32a55273b99d16f9fb5b86f6a73f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -157,7 +161,6 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p></p>
 <p>this functions defines iof the held object gets information about an interactable object forwarded to him </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
@@ -190,7 +193,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p></p>
 <p>Called the frame this object is dropped by a hand can be seen as a destroy/cleanup function for the opbject when called the hand does not hold the object anyomre </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -227,7 +229,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p></p>
 <p>Called the frame this object is grabbed can be seen as an initializer function for when the obj is grabbed </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -293,7 +294,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p></p>
 <p>Called when the hand reaches it's rest positon right after the state is set to RestPosition </p>
 
 <p>Implemented in <a class="el" href="class_meta_data_display.html#a55888c6c3e3e224d89d95b6c63652762">MetaDataDisplay</a>.</p>
@@ -324,7 +324,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p></p>
 <p>called when the hand starts moving away from the face right after the hand state is set to MovingToRestPosition </p>
 
 <p>Implemented in <a class="el" href="class_meta_data_display.html#a98518b3d82ffd1e428cab9a2328fb018">MetaDataDisplay</a>.</p>
@@ -414,7 +413,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p></p>
 <p>function get's called by hand if the held object is interessted in interacted objects </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

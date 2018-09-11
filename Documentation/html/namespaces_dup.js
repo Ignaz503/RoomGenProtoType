@@ -1,4 +1,4 @@
 var namespaces_dup =
 [
-    [ "UnityTest", "namespace_unity_test.html", null ]
+    [ "VirtMuseWeb", "namespace_virt_muse_web.html", "namespace_virt_muse_web" ]
 ];

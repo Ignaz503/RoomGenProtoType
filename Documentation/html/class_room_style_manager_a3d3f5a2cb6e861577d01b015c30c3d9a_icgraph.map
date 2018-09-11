@@ -1,0 +1,4 @@
+<map id="RoomStyleManager.NotifyDownloading" name="RoomStyleManager.NotifyDownloading">
+<area shape="rect" id="node2" href="$class_base_room_style_request.html#af2ac2de206ad154351cf6a1b1e7befd5" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="300,5,496,47"/>
+<area shape="rect" id="node3" href="$class_multi_wall_texture_request.html#a9990230b6a9cb6be581b7948f379065b" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="313,71,483,112"/>
+</map>

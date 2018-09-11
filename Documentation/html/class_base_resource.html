@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -103,10 +103,9 @@ Inheritance diagram for BaseResource:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_base_resource__inherit__graph.png" border="0" usemap="#_base_resource_inherit__map" alt="Inheritance graph"/></div>
 <map name="_base_resource_inherit__map" id="_base_resource_inherit__map">
-<area shape="rect" id="node2" href="class_base_display_resource.html" title="base class for resource " alt="" coords="116,153,267,245"/>
-<area shape="rect" id="node5" href="class_texture_resource.html" title="resource that is a texture " alt="" coords="291,145,449,252"/>
-<area shape="rect" id="node3" href="class_display_image_resource.html" title="resource that is a image that needs to be displayed " alt="" coords="5,307,180,414"/>
-<area shape="rect" id="node4" href="class_display_mesh_resource.html" title="a resource that is a mesh " alt="" coords="204,300,376,421"/>
+<area shape="rect" id="node2" href="class_base_display_resource.html" title="base class for resource " alt="" coords="116,145,267,237"/>
+<area shape="rect" id="node3" href="class_display_image_resource.html" title="resource that is a image that needs to be displayed " alt="" coords="5,293,180,399"/>
+<area shape="rect" id="node4" href="class_display_mesh_resource.html" title="a resource that is a mesh " alt="" coords="204,285,376,407"/>
 </map>
 </div>
 <div class="dynheader">
@@ -125,12 +124,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a947dc7c31c7b98089aa6f560f90c4cb3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_resource.html#a947dc7c31c7b98089aa6f560f90c4cb3">ResourecID</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:a947dc7c31c7b98089aa6f560f90c4cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resource ID  <a href="#a947dc7c31c7b98089aa6f560f90c4cb3">More...</a><br /></td></tr>
-<tr class="separator:a947dc7c31c7b98089aa6f560f90c4cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a226a36a32013947cb069e023324cd3af"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_resource.html#a226a36a32013947cb069e023324cd3af">ResrourceType</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:a226a36a32013947cb069e023324cd3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of resource currently: <a class="el" href="class_mesh_display.html">MeshDisplay</a> <a class="el" href="class_image_display.html">ImageDisplay</a> Texture  <a href="#a226a36a32013947cb069e023324cd3af">More...</a><br /></td></tr>
-<tr class="separator:a226a36a32013947cb069e023324cd3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbdcd8935067e622c993b912a475c21b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_resource.html#adbdcd8935067e622c993b912a475c21b">ResourecID</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:adbdcd8935067e622c993b912a475c21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resource ID  <a href="#adbdcd8935067e622c993b912a475c21b">More...</a><br /></td></tr>
+<tr class="separator:adbdcd8935067e622c993b912a475c21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c40931e66a2e4fd8061f069eb0c0ba8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_virt_muse_web_1_1_models.html#ab185d30c831a1ac813a53670c29d6397">ResourceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_resource.html#a6c40931e66a2e4fd8061f069eb0c0ba8">ResrourceType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6c40931e66a2e4fd8061f069eb0c0ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of resource currently: Image Mesh <a class="el" href="class_room_style.html">RoomStyle</a>  <a href="#a6c40931e66a2e4fd8061f069eb0c0ba8">More...</a><br /></td></tr>
+<tr class="separator:a6c40931e66a2e4fd8061f069eb0c0ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>base class for any resource be it display resource or other </p>
@@ -167,22 +166,21 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_texture_resource.html#a29bbc4442f2a390b5f40cab63c01b282">TextureResource</a>, <a class="el" href="class_display_image_resource.html#a26992a5ecb6c449d85539cc5d07112e2">DisplayImageResource</a>, and <a class="el" href="class_display_mesh_resource.html#a62672f28a402bebeed1cb79fcca81828">DisplayMeshResource</a>.</p>
+<p>Implemented in <a class="el" href="class_display_image_resource.html#a26992a5ecb6c449d85539cc5d07112e2">DisplayImageResource</a>, and <a class="el" href="class_display_mesh_resource.html#a62672f28a402bebeed1cb79fcca81828">DisplayMeshResource</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_base_resource_a2d832c8042114da9e3f6240651d59703_icgraph.png" border="0" usemap="#class_base_resource_a2d832c8042114da9e3f6240651d59703_icgraph" alt=""/></div>
 <map name="class_base_resource_a2d832c8042114da9e3f6240651d59703_icgraph" id="class_base_resource_a2d832c8042114da9e3f6240651d59703_icgraph">
-<area shape="rect" id="node2" href="class_image_display.html#ab4cae8c66db7e7d77ab117fe24e63980" title="Applies a resource to a display " alt="" coords="281,5,473,32"/>
-<area shape="rect" id="node3" href="class_mesh_display.html#ab9a24f407a8ff995658097a98242095e" title="Applies a resource to a display " alt="" coords="283,56,472,83"/>
+<area shape="rect" id="node2" href="class_mesh_display.html#ab9a24f407a8ff995658097a98242095e" title="Applies a resource to a display " alt="" coords="281,5,471,32"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="a947dc7c31c7b98089aa6f560f90c4cb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a947dc7c31c7b98089aa6f560f90c4cb3">&#9670;&nbsp;</a></span>ResourecID</h2>
+<a id="adbdcd8935067e622c993b912a475c21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbdcd8935067e622c993b912a475c21b">&#9670;&nbsp;</a></span>ResourecID</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,12 +189,12 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string BaseResource.ResourecID</td>
+          <td class="memname">int BaseResource.ResourecID</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -205,8 +203,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a226a36a32013947cb069e023324cd3af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a226a36a32013947cb069e023324cd3af">&#9670;&nbsp;</a></span>ResrourceType</h2>
+<a id="a6c40931e66a2e4fd8061f069eb0c0ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c40931e66a2e4fd8061f069eb0c0ba8">&#9670;&nbsp;</a></span>ResrourceType</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,17 +213,17 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string BaseResource.ResrourceType</td>
+          <td class="memname"><a class="el" href="namespace_virt_muse_web_1_1_models.html#ab185d30c831a1ac813a53670c29d6397">ResourceType</a> BaseResource.ResrourceType</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>The type of resource currently: <a class="el" href="class_mesh_display.html">MeshDisplay</a> <a class="el" href="class_image_display.html">ImageDisplay</a> Texture </p>
+<p>The type of resource currently: Image Mesh <a class="el" href="class_room_style.html">RoomStyle</a> </p>
 
 </div>
 </div>

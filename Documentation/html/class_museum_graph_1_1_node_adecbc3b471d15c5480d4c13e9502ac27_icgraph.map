@@ -1,6 +1,6 @@
 <map id="MuseumGraph.Node.AddEdge" name="MuseumGraph.Node.AddEdge">
 <area shape="rect" id="node2" href="$class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="252,5,445,47"/>
 <area shape="rect" id="node3" href="$class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="493,13,719,39"/>
-<area shape="rect" id="node4" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="767,13,896,39"/>
-<area shape="rect" id="node5" href="$class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="944,13,1119,39"/>
+<area shape="rect" id="node4" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="767,13,896,39"/>
+<area shape="rect" id="node5" href="$class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="944,13,1135,39"/>
 </map>

@@ -92,3 +92,11 @@ VirtMuseWeb/VirtMuseWeb/bin/Debug/netcoreapp2.0/UnityEngine.PhysicsModule.xml
 VirtMuseWeb/VirtMuseWeb/bin/Debug/netcoreapp2.0/UnityEngine.CoreModule.xml
 VirtMuseWeb/VirtMuseWeb/bin/Debug/netcoreapp2.0/UnityEngine.ClothModule.xml
 RoomGenPrototype/Assets/TextMesh Pro/
+RoomGenPrototype/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll
+RoomGenPrototype/Assets/JsonDotNet/Assemblies/AOT/Newtonsoft.Json.dll
+VirtMuseWeb/VirtMuseWeb/bin/Debug/netcoreapp2.0/VirtMuseWeb.pdb
+VirtMuseWeb/VirtMuseWeb/bin/Debug/netcoreapp2.0/VirtMuseWeb.dll
+VirtMuseWeb/VirtMuseWeb/bin/Debug/netcoreapp2.0/UnityEngine.dll
+VirtMuseWeb/VirtMuseWeb/VirtMuseWeb.csproj.user
+RoomGenPrototype/Assets/JsonDotNet/Assemblies/Windows/Newtonsoft.Json.dll
+Documentation/Doxyfile

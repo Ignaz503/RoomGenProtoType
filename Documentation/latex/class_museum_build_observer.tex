@@ -1,0 +1,385 @@
+\hypertarget{class_museum_build_observer}{}\section{Museum\+Build\+Observer Class Reference}
+\label{class_museum_build_observer}\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+
+
+class that tracks the build progress of the museum and sees if player can teleport into museum  
+
+
+
+
+Inheritance diagram for Museum\+Build\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_museum_build_observer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Museum\+Build\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_museum_build_observer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_museum_build_observer_a44742cfdf94ae34a329e689e6995075e}{Check\+Done}} ()
+\begin{DoxyCompactList}\small\item\em checks if museum finised building W\+A\+R\+N\+I\+NG\+: currently temp version \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_build_observer_aa808cdf3870a709891e1dc4262c5aec1}{Update\+Entrance}} ()
+\begin{DoxyCompactList}\small\item\em updates entrance, and display above \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_build_observer_a506c7314ea2734e8f4881167ab5f2460}{Teleport\+If\+Possible}} ()
+\begin{DoxyCompactList}\small\item\em tepelports player if possible \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_museum_build_observer_a36ee941b63f5ab4a0bf1f1b9a6df8cf7}{current\+Floors\+And\+Ceilings\+Built}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em current number of floors built \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_build_observer_a6f8eb9f119236ca8f3d657c6fe924407}{current\+Walls\+Built}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em current number of walls built \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_build_observer_a086380dcd30edbd12c4f7c0d4edcbf29}{current\+Resources\+Requested}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em current number of resources requested \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_museum_build_observer_a18c844a9fe9b649ed4bdaedbdade82a6}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_museum_build_observer_aa6fcd74a0a516329511ccbdafcb5e6f0}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_museum_build_observer_a4bd33ad4fee577f34f861c4d92d8bff4}{On\+Destroy}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+First\+Person\+Controller \mbox{\hyperlink{class_museum_build_observer_a47fdbc350fee260a67469c35fdcd03da}{first\+Person\+Controller}}
+\begin{DoxyCompactList}\small\item\em the player transform \end{DoxyCompactList}\item 
+Text\+Mesh\+Pro\+U\+G\+UI \mbox{\hyperlink{class_museum_build_observer_a21bf3dceaf6f9eb310d52112357df8f2}{floor\+Progress\+Display}}
+\begin{DoxyCompactList}\small\item\em status display for floors built \end{DoxyCompactList}\item 
+Text\+Mesh\+Pro\+U\+G\+UI \mbox{\hyperlink{class_museum_build_observer_ae79ec7d93bf8943b78cd5dc8e5f1ecdd}{wall\+Progress\+Dispalys}}
+\begin{DoxyCompactList}\small\item\em status display fpr walls built \end{DoxyCompactList}\item 
+Text\+Mesh\+Pro\+U\+G\+UI \mbox{\hyperlink{class_museum_build_observer_a2a19b3d591d9debde4b275ab476b5123}{resource\+Progress\+Display}}
+\begin{DoxyCompactList}\small\item\em status display for resources requested \end{DoxyCompactList}\item 
+Text\+Mesh\+Pro\+U\+G\+UI \mbox{\hyperlink{class_museum_build_observer_a4086ee53944228851a48c234f0c03fa3}{entrance\+Closed\+Open\+Text}}
+\begin{DoxyCompactList}\small\item\em Test display if entrance closed or open \end{DoxyCompactList}\item 
+Material \mbox{\hyperlink{class_museum_build_observer_aeb87eca5f3badfe87f72e7258384452f}{doort\+Material}}
+\begin{DoxyCompactList}\small\item\em Material of Door mesh, will have color changed when done \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_door}{Base\+Door}} \mbox{\hyperlink{class_museum_build_observer_aee761ebe086d7c3e2c3c0901c3b6eea0}{door}}
+\begin{DoxyCompactList}\small\item\em Door that is the entrace into the museum \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_door_trigger}{Door\+Trigger}} \mbox{\hyperlink{class_museum_build_observer_a1eab214fddd9d1ba7d573936ea901a8d}{door\+Trigger}}
+\begin{DoxyCompactList}\small\item\em trigger for the entrance door \end{DoxyCompactList}\item 
+Camera \mbox{\hyperlink{class_museum_build_observer_ab22bb2bf959e8017fdb2c4eb4c209554}{portal\+Camera}}
+\begin{DoxyCompactList}\small\item\em Camera that renders redner texute, behind entracne door \end{DoxyCompactList}\item 
+Image \mbox{\hyperlink{class_museum_build_observer_ace25103fa08dfc3a95eb261181e1a77b}{progress\+Bar}}
+\begin{DoxyCompactList}\small\item\em porgressbar over entrance \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_build_observer_aed34a9911b192457efff421f0ad04559}{max\+Floors\+And\+Ceilings\+To\+Build}}
+\begin{DoxyCompactList}\small\item\em max number of floors to buil \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_build_observer_a6ba2afcd7f4b4e012471b53e8ecfec7b}{max\+Walls\+To\+Build}}
+\begin{DoxyCompactList}\small\item\em max number of walls to build \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_build_observer_a00f5891dea738079aa9ca90b3188b58e}{max\+Resource\+To\+Request}}
+\begin{DoxyCompactList}\small\item\em max number of resources to request \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_build_observer_ac17e9eb255546c561bcae3744c824aa0}{\+\_\+current\+Floors\+And\+Ceilings\+Built}} = 0
+\item 
+int \mbox{\hyperlink{class_museum_build_observer_acf9542c010b6e0dbaa7c88ab83cf3cdc}{\+\_\+current\+Walls\+Built}} = 0
+\item 
+int \mbox{\hyperlink{class_museum_build_observer_af4c87e72e4cc807de7fc70a10b6fb3ea}{\+\_\+current\+Resources\+Requested}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that tracks the build progress of the museum and sees if player can teleport into museum 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_museum_build_observer_a44742cfdf94ae34a329e689e6995075e}\label{class_museum_build_observer_a44742cfdf94ae34a329e689e6995075e}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!Check\+Done@{Check\+Done}}
+\index{Check\+Done@{Check\+Done}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{Check\+Done()}{CheckDone()}}
+{\footnotesize\ttfamily bool Museum\+Build\+Observer.\+Check\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if museum finised building W\+A\+R\+N\+I\+NG\+: currently temp version 
+
+\begin{DoxyReturn}{Returns}
+true if done building, false otherwise
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_build_observer_a44742cfdf94ae34a329e689e6995075e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_build_observer_a4bd33ad4fee577f34f861c4d92d8bff4}\label{class_museum_build_observer_a4bd33ad4fee577f34f861c4d92d8bff4}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!On\+Destroy@{On\+Destroy}}
+\index{On\+Destroy@{On\+Destroy}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{On\+Destroy()}{OnDestroy()}}
+{\footnotesize\ttfamily void Museum\+Build\+Observer.\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_build_observer_aa6fcd74a0a516329511ccbdafcb5e6f0}\label{class_museum_build_observer_aa6fcd74a0a516329511ccbdafcb5e6f0}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!On\+Enable@{On\+Enable}}
+\index{On\+Enable@{On\+Enable}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{On\+Enable()}{OnEnable()}}
+{\footnotesize\ttfamily void Museum\+Build\+Observer.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_build_observer_a18c844a9fe9b649ed4bdaedbdade82a6}\label{class_museum_build_observer_a18c844a9fe9b649ed4bdaedbdade82a6}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!Start@{Start}}
+\index{Start@{Start}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Museum\+Build\+Observer.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_build_observer_a18c844a9fe9b649ed4bdaedbdade82a6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_build_observer_a506c7314ea2734e8f4881167ab5f2460}\label{class_museum_build_observer_a506c7314ea2734e8f4881167ab5f2460}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!Teleport\+If\+Possible@{Teleport\+If\+Possible}}
+\index{Teleport\+If\+Possible@{Teleport\+If\+Possible}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{Teleport\+If\+Possible()}{TeleportIfPossible()}}
+{\footnotesize\ttfamily void Museum\+Build\+Observer.\+Teleport\+If\+Possible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tepelports player if possible 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_build_observer_a506c7314ea2734e8f4881167ab5f2460_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_build_observer_a506c7314ea2734e8f4881167ab5f2460_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_build_observer_aa808cdf3870a709891e1dc4262c5aec1}\label{class_museum_build_observer_aa808cdf3870a709891e1dc4262c5aec1}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!Update\+Entrance@{Update\+Entrance}}
+\index{Update\+Entrance@{Update\+Entrance}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{Update\+Entrance()}{UpdateEntrance()}}
+{\footnotesize\ttfamily void Museum\+Build\+Observer.\+Update\+Entrance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+updates entrance, and display above 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_build_observer_aa808cdf3870a709891e1dc4262c5aec1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_build_observer_aa808cdf3870a709891e1dc4262c5aec1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_museum_build_observer_ac17e9eb255546c561bcae3744c824aa0}\label{class_museum_build_observer_ac17e9eb255546c561bcae3744c824aa0}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!\+\_\+current\+Floors\+And\+Ceilings\+Built@{\+\_\+current\+Floors\+And\+Ceilings\+Built}}
+\index{\+\_\+current\+Floors\+And\+Ceilings\+Built@{\+\_\+current\+Floors\+And\+Ceilings\+Built}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+current\+Floors\+And\+Ceilings\+Built}{\_currentFloorsAndCeilingsBuilt}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+\_\+current\+Floors\+And\+Ceilings\+Built = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_build_observer_af4c87e72e4cc807de7fc70a10b6fb3ea}\label{class_museum_build_observer_af4c87e72e4cc807de7fc70a10b6fb3ea}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!\+\_\+current\+Resources\+Requested@{\+\_\+current\+Resources\+Requested}}
+\index{\+\_\+current\+Resources\+Requested@{\+\_\+current\+Resources\+Requested}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+current\+Resources\+Requested}{\_currentResourcesRequested}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+\_\+current\+Resources\+Requested = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_build_observer_acf9542c010b6e0dbaa7c88ab83cf3cdc}\label{class_museum_build_observer_acf9542c010b6e0dbaa7c88ab83cf3cdc}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!\+\_\+current\+Walls\+Built@{\+\_\+current\+Walls\+Built}}
+\index{\+\_\+current\+Walls\+Built@{\+\_\+current\+Walls\+Built}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+current\+Walls\+Built}{\_currentWallsBuilt}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+\_\+current\+Walls\+Built = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_build_observer_aee761ebe086d7c3e2c3c0901c3b6eea0}\label{class_museum_build_observer_aee761ebe086d7c3e2c3c0901c3b6eea0}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!door@{door}}
+\index{door@{door}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{door}{door}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_base_door}{Base\+Door}} Museum\+Build\+Observer.\+door\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Door that is the entrace into the museum 
+
+\mbox{\Hypertarget{class_museum_build_observer_aeb87eca5f3badfe87f72e7258384452f}\label{class_museum_build_observer_aeb87eca5f3badfe87f72e7258384452f}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!doort\+Material@{doort\+Material}}
+\index{doort\+Material@{doort\+Material}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{doort\+Material}{doortMaterial}}
+{\footnotesize\ttfamily Material Museum\+Build\+Observer.\+doort\+Material\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Material of Door mesh, will have color changed when done 
+
+\mbox{\Hypertarget{class_museum_build_observer_a1eab214fddd9d1ba7d573936ea901a8d}\label{class_museum_build_observer_a1eab214fddd9d1ba7d573936ea901a8d}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!door\+Trigger@{door\+Trigger}}
+\index{door\+Trigger@{door\+Trigger}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{door\+Trigger}{doorTrigger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_door_trigger}{Door\+Trigger}} Museum\+Build\+Observer.\+door\+Trigger\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+trigger for the entrance door 
+
+\mbox{\Hypertarget{class_museum_build_observer_a4086ee53944228851a48c234f0c03fa3}\label{class_museum_build_observer_a4086ee53944228851a48c234f0c03fa3}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!entrance\+Closed\+Open\+Text@{entrance\+Closed\+Open\+Text}}
+\index{entrance\+Closed\+Open\+Text@{entrance\+Closed\+Open\+Text}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{entrance\+Closed\+Open\+Text}{entranceClosedOpenText}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Museum\+Build\+Observer.\+entrance\+Closed\+Open\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Test display if entrance closed or open 
+
+\mbox{\Hypertarget{class_museum_build_observer_a47fdbc350fee260a67469c35fdcd03da}\label{class_museum_build_observer_a47fdbc350fee260a67469c35fdcd03da}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!first\+Person\+Controller@{first\+Person\+Controller}}
+\index{first\+Person\+Controller@{first\+Person\+Controller}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{first\+Person\+Controller}{firstPersonController}}
+{\footnotesize\ttfamily First\+Person\+Controller Museum\+Build\+Observer.\+first\+Person\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the player transform 
+
+\mbox{\Hypertarget{class_museum_build_observer_a21bf3dceaf6f9eb310d52112357df8f2}\label{class_museum_build_observer_a21bf3dceaf6f9eb310d52112357df8f2}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!floor\+Progress\+Display@{floor\+Progress\+Display}}
+\index{floor\+Progress\+Display@{floor\+Progress\+Display}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{floor\+Progress\+Display}{floorProgressDisplay}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Museum\+Build\+Observer.\+floor\+Progress\+Display\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+status display for floors built 
+
+\mbox{\Hypertarget{class_museum_build_observer_aed34a9911b192457efff421f0ad04559}\label{class_museum_build_observer_aed34a9911b192457efff421f0ad04559}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!max\+Floors\+And\+Ceilings\+To\+Build@{max\+Floors\+And\+Ceilings\+To\+Build}}
+\index{max\+Floors\+And\+Ceilings\+To\+Build@{max\+Floors\+And\+Ceilings\+To\+Build}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{max\+Floors\+And\+Ceilings\+To\+Build}{maxFloorsAndCeilingsToBuild}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+max\+Floors\+And\+Ceilings\+To\+Build\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+max number of floors to buil 
+
+\mbox{\Hypertarget{class_museum_build_observer_a00f5891dea738079aa9ca90b3188b58e}\label{class_museum_build_observer_a00f5891dea738079aa9ca90b3188b58e}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!max\+Resource\+To\+Request@{max\+Resource\+To\+Request}}
+\index{max\+Resource\+To\+Request@{max\+Resource\+To\+Request}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{max\+Resource\+To\+Request}{maxResourceToRequest}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+max\+Resource\+To\+Request\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+max number of resources to request 
+
+\mbox{\Hypertarget{class_museum_build_observer_a6ba2afcd7f4b4e012471b53e8ecfec7b}\label{class_museum_build_observer_a6ba2afcd7f4b4e012471b53e8ecfec7b}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!max\+Walls\+To\+Build@{max\+Walls\+To\+Build}}
+\index{max\+Walls\+To\+Build@{max\+Walls\+To\+Build}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{max\+Walls\+To\+Build}{maxWallsToBuild}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+max\+Walls\+To\+Build\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+max number of walls to build 
+
+\mbox{\Hypertarget{class_museum_build_observer_ab22bb2bf959e8017fdb2c4eb4c209554}\label{class_museum_build_observer_ab22bb2bf959e8017fdb2c4eb4c209554}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!portal\+Camera@{portal\+Camera}}
+\index{portal\+Camera@{portal\+Camera}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{portal\+Camera}{portalCamera}}
+{\footnotesize\ttfamily Camera Museum\+Build\+Observer.\+portal\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Camera that renders redner texute, behind entracne door 
+
+\mbox{\Hypertarget{class_museum_build_observer_ace25103fa08dfc3a95eb261181e1a77b}\label{class_museum_build_observer_ace25103fa08dfc3a95eb261181e1a77b}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!progress\+Bar@{progress\+Bar}}
+\index{progress\+Bar@{progress\+Bar}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{progress\+Bar}{progressBar}}
+{\footnotesize\ttfamily Image Museum\+Build\+Observer.\+progress\+Bar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+porgressbar over entrance 
+
+\mbox{\Hypertarget{class_museum_build_observer_a2a19b3d591d9debde4b275ab476b5123}\label{class_museum_build_observer_a2a19b3d591d9debde4b275ab476b5123}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!resource\+Progress\+Display@{resource\+Progress\+Display}}
+\index{resource\+Progress\+Display@{resource\+Progress\+Display}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{resource\+Progress\+Display}{resourceProgressDisplay}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Museum\+Build\+Observer.\+resource\+Progress\+Display\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+status display for resources requested 
+
+\mbox{\Hypertarget{class_museum_build_observer_ae79ec7d93bf8943b78cd5dc8e5f1ecdd}\label{class_museum_build_observer_ae79ec7d93bf8943b78cd5dc8e5f1ecdd}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!wall\+Progress\+Dispalys@{wall\+Progress\+Dispalys}}
+\index{wall\+Progress\+Dispalys@{wall\+Progress\+Dispalys}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{wall\+Progress\+Dispalys}{wallProgressDispalys}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Museum\+Build\+Observer.\+wall\+Progress\+Dispalys\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+status display fpr walls built 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_museum_build_observer_a36ee941b63f5ab4a0bf1f1b9a6df8cf7}\label{class_museum_build_observer_a36ee941b63f5ab4a0bf1f1b9a6df8cf7}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!current\+Floors\+And\+Ceilings\+Built@{current\+Floors\+And\+Ceilings\+Built}}
+\index{current\+Floors\+And\+Ceilings\+Built@{current\+Floors\+And\+Ceilings\+Built}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{current\+Floors\+And\+Ceilings\+Built}{currentFloorsAndCeilingsBuilt}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+current\+Floors\+And\+Ceilings\+Built\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [private]}}
+
+
+
+current number of floors built 
+
+\mbox{\Hypertarget{class_museum_build_observer_a086380dcd30edbd12c4f7c0d4edcbf29}\label{class_museum_build_observer_a086380dcd30edbd12c4f7c0d4edcbf29}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!current\+Resources\+Requested@{current\+Resources\+Requested}}
+\index{current\+Resources\+Requested@{current\+Resources\+Requested}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{current\+Resources\+Requested}{currentResourcesRequested}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+current\+Resources\+Requested\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [private]}}
+
+
+
+current number of resources requested 
+
+\mbox{\Hypertarget{class_museum_build_observer_a6f8eb9f119236ca8f3d657c6fe924407}\label{class_museum_build_observer_a6f8eb9f119236ca8f3d657c6fe924407}} 
+\index{Museum\+Build\+Observer@{Museum\+Build\+Observer}!current\+Walls\+Built@{current\+Walls\+Built}}
+\index{current\+Walls\+Built@{current\+Walls\+Built}!Museum\+Build\+Observer@{Museum\+Build\+Observer}}
+\subsubsection{\texorpdfstring{current\+Walls\+Built}{currentWallsBuilt}}
+{\footnotesize\ttfamily int Museum\+Build\+Observer.\+current\+Walls\+Built\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [private]}}
+
+
+
+current number of walls built 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\mbox{\hyperlink{_museum_build_observer_8cs}{Museum\+Build\+Observer.\+cs}}\end{DoxyCompactItemize}

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['small',['Small',['../_mueseum_request_8cs.html#a462fa84e99cf703318040e54f14146a2a2660064e68655415da2628c2ae2f7592',1,'MueseumRequest.cs']]],
-  ['solid',['Solid',['../class_wall.html#a1366d94ac70428624a6703d7db89638dae41480b6bbfbf7407974a88d3d34f4fa',1,'Wall']]]
+  ['roomstyle',['RoomStyle',['../namespace_virt_muse_web_1_1_models.html#ab185d30c831a1ac813a53670c29d6397a29c586208e02ddb885b956f7abb5f57c',1,'VirtMuseWeb::Models']]]
 ];

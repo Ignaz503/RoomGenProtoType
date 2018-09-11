@@ -12,7 +12,7 @@ var class_museum =
     [ "LogOutline", "class_museum.html#a237d1ccf7cb53c4db64647b6addc6576", null ],
     [ "RemoveWallsContainigPoint", "class_museum.html#a6b395af086d9773720b1cb5536f405a8", null ],
     [ "Serialize", "class_museum.html#ac956bb7d7454f99944af157c79f695b8", null ],
-    [ "TransformOneDCoordIntoTwoD", "class_museum.html#a72e9020ee5d8406df0fc41fc4295727f", null ],
+    [ "TransformOneDCoordIntoTwoD", "class_museum.html#a458545a518b026779c23e6c5b477bbf4", null ],
     [ "TransformTileCoordIntoOneD", "class_museum.html#a405e60db962417dde46d46180cbf81df", null ],
     [ "roomTypeToPlaceableChecker", "class_museum.html#af3826f71fcb80bd1bf30f5fbf75b5e28", null ],
     [ "CurrentNumberOfDoors", "class_museum.html#ab814feb2d391ec372dfc3a6c6c61c51f", null ],

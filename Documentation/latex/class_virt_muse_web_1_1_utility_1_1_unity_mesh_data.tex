@@ -1,0 +1,266 @@
+\hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{}\section{Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data Class Reference}
+\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}\index{Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data@{Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data}}
+
+
+Helper Class that holds information to build a unity mesh and is serializable, used by server to store mesh data  
+
+
+
+
+Inheritance diagram for Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override string \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a75d6a8e007b7f5feaac4b550ac5eb67b}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em To string that returns object in json format \end{DoxyCompactList}\item 
+byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_aecb9b3e9ca6cb88d5126e228982b4e06}{Serialize}} ()
+\begin{DoxyCompactList}\small\item\em serializes to byte array \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_ae1ccde7727b2551f950ce046499774f2}{Serialize}} (Binary\+Writer w)
+\begin{DoxyCompactList}\small\item\em serializes object into already existing binary writer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a72d47231711a93e536a91a202d07caef}{Deserialize}} (byte\mbox{[}$\,$\mbox{]} obj)
+\begin{DoxyCompactList}\small\item\em Deserializes unity mesh data from a byte array \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_abfb03456d3f2baa170d038b6d189fbab}{Deserialize}} (Binary\+Reader r)
+\begin{DoxyCompactList}\small\item\em Deserializes Unity\+Mesh data from an existing binray reader \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a85eca41f6b09eda97803c04857d71b35}{Triangles}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em triangles in mesh \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_vec3}{Vec3}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_ab521629085e0dc212a7a32268c3c1c65}{Vertices}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em vertices in mesh \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_vec2}{Vec2}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a790f45fd753b0c2e9294da66be08ee30}{U\+Vs}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em uv coords of vertices in mesh \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_vec3}{Vec3}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a2b5b5618a3261799a035240c970526d4}{Normals}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em normals of mesh \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Utility.\+Image}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a47b7950c5751051cddef6b3d6ee9d2cd}{Texture}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em texture of mesh \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a87e2e6579f7e627b855616daf715e500}{Write\+To}} (Binary\+Writer w)
+\begin{DoxyCompactList}\small\item\em Wrtites object to binary writer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a85e372f94563bce9ce66a0f930881607}{Read\+From}} (Binary\+Reader r)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} from binary reader \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper Class that holds information to build a unity mesh and is serializable, used by server to store mesh data 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a72d47231711a93e536a91a202d07caef}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a72d47231711a93e536a91a202d07caef}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Deserialize (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserializes unity mesh data from a byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the obj in byte array representation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} read from the byte array
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a72d47231711a93e536a91a202d07caef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_abfb03456d3f2baa170d038b6d189fbab}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_abfb03456d3f2baa170d038b6d189fbab}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Deserialize (\begin{DoxyParamCaption}\item[{Binary\+Reader}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserializes Unity\+Mesh data from an existing binray reader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the binary reader we read the mesh data from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} we read from the reader
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a85e372f94563bce9ce66a0f930881607}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a85e372f94563bce9ce66a0f930881607}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Read\+From@{Read\+From}}
+\index{Read\+From@{Read\+From}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Read\+From()}{ReadFrom()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Read\+From (\begin{DoxyParamCaption}\item[{Binary\+Reader}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Reads \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}} from binary reader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The binary reader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the deserialized \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data}{Unity\+Mesh\+Data}}
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a85e372f94563bce9ce66a0f930881607_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_aecb9b3e9ca6cb88d5126e228982b4e06}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_aecb9b3e9ca6cb88d5126e228982b4e06}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+serializes to byte array 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_virt_muse_web_1_1_utility_1_1_i_serializable_ab466c2a156753c658cff1e073606e9bd}{Virt\+Muse\+Web.\+Utility.\+I\+Serializable}}.
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_ae1ccde7727b2551f950ce046499774f2}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_ae1ccde7727b2551f950ce046499774f2}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Serialize (\begin{DoxyParamCaption}\item[{Binary\+Writer}]{w }\end{DoxyParamCaption})}
+
+
+
+serializes object into already existing binary writer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & the binary writer we need to write to\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_virt_muse_web_1_1_utility_1_1_i_serializable_a99aed8cf41a4ed3ff1ccbedf84d89291}{Virt\+Muse\+Web.\+Utility.\+I\+Serializable}}.
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a75d6a8e007b7f5feaac4b550ac5eb67b}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a75d6a8e007b7f5feaac4b550ac5eb67b}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily override string Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+To string that returns object in json format 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a87e2e6579f7e627b855616daf715e500}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a87e2e6579f7e627b855616daf715e500}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Write\+To@{Write\+To}}
+\index{Write\+To@{Write\+To}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Write\+To()}{WriteTo()}}
+{\footnotesize\ttfamily void Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Write\+To (\begin{DoxyParamCaption}\item[{Binary\+Writer}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wrtites object to binary writer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & the binary writer it needs to be written to\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a2b5b5618a3261799a035240c970526d4}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a2b5b5618a3261799a035240c970526d4}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Normals@{Normals}}
+\index{Normals@{Normals}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Normals}{Normals}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_vec3}{Vec3}} \mbox{[}$\,$\mbox{]} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Normals\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+normals of mesh 
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a47b7950c5751051cddef6b3d6ee9d2cd}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a47b7950c5751051cddef6b3d6ee9d2cd}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Texture@{Texture}}
+\index{Texture@{Texture}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Texture}{Texture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Utility.\+Image}} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Texture\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+texture of mesh 
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a85eca41f6b09eda97803c04857d71b35}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a85eca41f6b09eda97803c04857d71b35}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Triangles@{Triangles}}
+\index{Triangles@{Triangles}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Triangles}{Triangles}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Triangles\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+triangles in mesh 
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a790f45fd753b0c2e9294da66be08ee30}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_a790f45fd753b0c2e9294da66be08ee30}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!U\+Vs@{U\+Vs}}
+\index{U\+Vs@{U\+Vs}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{U\+Vs}{UVs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_vec2}{Vec2}} \mbox{[}$\,$\mbox{]} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+U\+Vs\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+uv coords of vertices in mesh 
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_ab521629085e0dc212a7a32268c3c1c65}\label{class_virt_muse_web_1_1_utility_1_1_unity_mesh_data_ab521629085e0dc212a7a32268c3c1c65}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}!Vertices@{Vertices}}
+\index{Vertices@{Vertices}!Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data@{Virt\+Muse\+Web\+::\+Utility\+::\+Unity\+Mesh\+Data}}
+\subsubsection{\texorpdfstring{Vertices}{Vertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_vec3}{Vec3}} \mbox{[}$\,$\mbox{]} Virt\+Muse\+Web.\+Utility.\+Unity\+Mesh\+Data.\+Vertices\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+vertices in mesh 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Utility/\+Virt\+Muse\+Web\+Helper/\+Resource\+Helper/\mbox{\hyperlink{_unity_mesh_data_8cs}{Unity\+Mesh\+Data.\+cs}}\end{DoxyCompactItemize}

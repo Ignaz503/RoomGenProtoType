@@ -17,7 +17,7 @@ Collaboration diagram for Player\+Hand\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=348pt]{class_player_hand__coll__graph}
+\includegraphics[width=350pt]{class_player_hand__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
@@ -80,7 +80,9 @@ Action$<$ \mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}}, \
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}} \mbox{\hyperlink{class_player_hand_ab038075d9d0b60c19a1c80f6baebfa58}{\+\_\+current\+State}}
-\end{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} \mbox{\hyperlink{class_player_hand_a0ce49de26e010945c8a499ac6182be67}{last\+Frame\+Interacted\+Obj}}
+\begin{DoxyCompactList}\small\item\em interacted object last frame only forwarded if difference between frames \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Member Enumeration Documentation}
@@ -156,8 +158,7 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_player_hand_a67095e4c1db1e3369c435dd1fe1ebec5_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -196,8 +197,7 @@ Here is the call graph for this function\+:
 
 invokes event In\+Resting\+Position 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -242,6 +242,16 @@ invokes On\+Start\+Moving\+To\+Rest\+Position event
 \index{\+\_\+current\+State@{\+\_\+current\+State}!Player\+Hand@{Player\+Hand}}
 \subsubsection{\texorpdfstring{\+\_\+current\+State}{\_currentState}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}} Player\+Hand.\+\_\+current\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_player_hand_a0ce49de26e010945c8a499ac6182be67}\label{class_player_hand_a0ce49de26e010945c8a499ac6182be67}} 
+\index{Player\+Hand@{Player\+Hand}!last\+Frame\+Interacted\+Obj@{last\+Frame\+Interacted\+Obj}}
+\index{last\+Frame\+Interacted\+Obj@{last\+Frame\+Interacted\+Obj}!Player\+Hand@{Player\+Hand}}
+\subsubsection{\texorpdfstring{last\+Frame\+Interacted\+Obj}{lastFrameInteractedObj}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} Player\+Hand.\+last\+Frame\+Interacted\+Obj\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+interacted object last frame only forwarded if difference between frames 
 
 \mbox{\Hypertarget{class_player_hand_a043a1be665181f9e3c9d00cd18e4c4fe}\label{class_player_hand_a043a1be665181f9e3c9d00cd18e4c4fe}} 
 \index{Player\+Hand@{Player\+Hand}!object\+In\+Hand@{object\+In\+Hand}}

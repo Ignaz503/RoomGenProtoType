@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -110,7 +110,7 @@ Collaboration diagram for MuseumGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_generator__coll__graph.png" border="0" usemap="#_museum_generator_coll__map" alt="Collaboration graph"/></div>
 <map name="_museum_generator_coll__map" id="_museum_generator_coll__map">
-<area shape="rect" id="node3" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; TransformTileCoordIntoOneD()\l&#45; TransformOneDCoordIntoTwoD()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="140,5,363,376"/>
+<area shape="rect" id="node3" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ TransformTileCoordIntoOneD()\l+ TransformOneDCoordIntoTwoD()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="140,5,363,376"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -119,6 +119,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ead852effaa81309fe98b4d61fe9759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a5ead852effaa81309fe98b4d61fe9759">RequestNewMuseum</a> (string request, Queue&lt; string &gt; requester)</td></tr>
 <tr class="memdesc:a5ead852effaa81309fe98b4d61fe9759"><td class="mdescLeft">&#160;</td><td class="mdescRight">enqueues a new museum request  <a href="#a5ead852effaa81309fe98b4d61fe9759">More...</a><br /></td></tr>
 <tr class="separator:a5ead852effaa81309fe98b4d61fe9759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ac409691646fa2f92ee9b84294ac57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a65ac409691646fa2f92ee9b84294ac57">GenerateTempRoomDisplay</a> (int height, HashSet&lt; int &gt; outline)</td></tr>
+<tr class="separator:a65ac409691646fa2f92ee9b84294ac57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -149,6 +151,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a09fab0187bd69fd0c13220168b4a7ad2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a09fab0187bd69fd0c13220168b4a7ad2">CreateDebugGameobject</a></td></tr>
 <tr class="memdesc:a09fab0187bd69fd0c13220168b4a7ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag if debug output should be gnerated  <a href="#a09fab0187bd69fd0c13220168b4a7ad2">More...</a><br /></td></tr>
 <tr class="separator:a09fab0187bd69fd0c13220168b4a7ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9da3303011da2300a31cd9280fd29e8"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_room_style.html">RoomStyle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#ab9da3303011da2300a31cd9280fd29e8">RoomStyles</a></td></tr>
+<tr class="memdesc:ab9da3303011da2300a31cd9280fd29e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tempory list of room styles that helps showcase the functionality of styled rooms  <a href="#ab9da3303011da2300a31cd9280fd29e8">More...</a><br /></td></tr>
+<tr class="separator:ab9da3303011da2300a31cd9280fd29e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -163,8 +168,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:abc3127d3a23107a350064fc49c5495c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa0b7c3e8ab1bccedc4c7828cbf4724e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e">Update</a> ()</td></tr>
 <tr class="separator:afa0b7c3e8ab1bccedc4c7828cbf4724e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65ac409691646fa2f92ee9b84294ac57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a65ac409691646fa2f92ee9b84294ac57">GenerateTempRoomDisplay</a> (int height, HashSet&lt; int &gt; outline)</td></tr>
-<tr class="separator:a65ac409691646fa2f92ee9b84294ac57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b9419222535f317005ca9fe1fe757f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a1b9419222535f317005ca9fe1fe757f3">GenerateTempRoomDisplay</a> ()</td></tr>
 <tr class="memdesc:a1b9419222535f317005ca9fe1fe757f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">gnerates a temp display of the museum but only floor walls handled by draw gizmos  <a href="#a1b9419222535f317005ca9fe1fe757f3">More...</a><br /></td></tr>
 <tr class="separator:a1b9419222535f317005ca9fe1fe757f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,9 +177,9 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a5295b75989f837f22b5d3de571061572"><td class="memItemLeft" align="right" valign="top">static Queue&lt; Tuple&lt; <a class="el" href="class_museum_request.html">MuseumRequest</a>, Queue&lt; string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a5295b75989f837f22b5d3de571061572">museumRequests</a> = new Queue&lt;Tuple&lt;<a class="el" href="class_museum_request.html">MuseumRequest</a>, Queue&lt;string&gt;&gt;&gt;()</td></tr>
-<tr class="memdesc:a5295b75989f837f22b5d3de571061572"><td class="mdescLeft">&#160;</td><td class="mdescRight">temp queue for testing  <a href="#a5295b75989f837f22b5d3de571061572">More...</a><br /></td></tr>
-<tr class="separator:a5295b75989f837f22b5d3de571061572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e2f6523a8d57b8265dab775c85b9f6"><td class="memItemLeft" align="right" valign="top">static Queue&lt; Tuple&lt; <a class="el" href="class_museum_request_data.html">MuseumRequestData</a>, Queue&lt; string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_generator.html#a10e2f6523a8d57b8265dab775c85b9f6">museumRequests</a> = new Queue&lt;Tuple&lt;<a class="el" href="class_museum_request_data.html">MuseumRequestData</a>, Queue&lt;string&gt;&gt;&gt;()</td></tr>
+<tr class="memdesc:a10e2f6523a8d57b8265dab775c85b9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">temp queue for testing  <a href="#a10e2f6523a8d57b8265dab775c85b9f6">More...</a><br /></td></tr>
+<tr class="separator:a10e2f6523a8d57b8265dab775c85b9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a65ac409691646fa2f92ee9b84294ac57"></a>
@@ -184,9 +187,6 @@ Static Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void MuseumGenerator.GenerateTempRoomDisplay </td>
@@ -206,11 +206,6 @@ Static Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -244,7 +239,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_generator_a1b9419222535f317005ca9fe1fe757f3_icgraph.png" border="0" usemap="#class_museum_generator_a1b9419222535f317005ca9fe1fe757f3_icgraph" alt=""/></div>
 <map name="class_museum_generator_a1b9419222535f317005ca9fe1fe757f3_icgraph" id="class_museum_generator_a1b9419222535f317005ca9fe1fe757f3_icgraph">
-<area shape="rect" id="node2" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="240,13,415,39"/>
+<area shape="rect" id="node2" href="class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="240,13,431,39"/>
 </map>
 </div>
 
@@ -301,6 +296,21 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>sets Instance of generator </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_generator_abc3127d3a23107a350064fc49c5495c1_cgraph.png" border="0" usemap="#class_museum_generator_abc3127d3a23107a350064fc49c5495c1_cgraph" alt=""/></div>
+<map name="class_museum_generator_abc3127d3a23107a350064fc49c5495c1_cgraph" id="class_museum_generator_abc3127d3a23107a350064fc49c5495c1_cgraph">
+<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="273,93,402,120"/>
+<area shape="rect" id="node9" href="class_museum_generator.html#a1b9419222535f317005ca9fe1fe757f3" title="gnerates a temp display of the museum but only floor walls handled by draw gizmos ..." alt="" coords="244,145,431,186"/>
+<area shape="rect" id="node3" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b" title="returns the sourrounding tiles for a given position " alt="" coords="491,5,691,32"/>
+<area shape="rect" id="node4" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="498,57,685,98"/>
+<area shape="rect" id="node5" href="class_room.html#a294bb89a25ac765eca25106ccb4d1955" title="Creats a single door between two rooms " alt="" coords="483,123,699,149"/>
+<area shape="rect" id="node6" href="class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="479,173,704,200"/>
+<area shape="rect" id="node7" href="class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="752,166,945,207"/>
+<area shape="rect" id="node8" href="class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="993,173,1192,200"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -343,15 +353,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_cgraph.png" border="0" usemap="#class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_cgraph" alt=""/></div>
 <map name="class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_cgraph" id="class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_cgraph">
-<area shape="rect" id="node2" href="class_museum_request.html#abd551a45744c8387841c20e5ef46d420" title="from xml to museum request " alt="" coords="260,13,448,39"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_icgraph.png" border="0" usemap="#class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_icgraph" alt=""/></div>
-<map name="class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_icgraph" id="class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="260,13,404,39"/>
+<area shape="rect" id="node2" href="class_museum_request_data.html#a927b5c1b4ac92161315f7bb717b7c6e6" title="from xml to museum request " alt="" coords="260,13,475,39"/>
 </map>
 </div>
 
@@ -379,23 +381,6 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e_cgraph.png" border="0" usemap="#class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e_cgraph" alt=""/></div>
-<map name="class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e_cgraph" id="class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e_cgraph">
-<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="257,123,386,149"/>
-<area shape="rect" id="node10" href="class_museum_generator.html#a1b9419222535f317005ca9fe1fe757f3" title="gnerates a temp display of the museum but only floor walls handled by draw gizmos ..." alt="" coords="228,174,415,215"/>
-<area shape="rect" id="node11" href="class_museum.html#ac956bb7d7454f99944af157c79f695b8" title="Serilaizes a museum to an xml string " alt="" coords="258,240,385,267"/>
-<area shape="rect" id="node3" href="class_museum.html#af5b732fe3a0821d02852171a73cf8f8b" title="returns the sourrounding tiles for a given position " alt="" coords="475,5,675,32"/>
-<area shape="rect" id="node4" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="482,57,669,98"/>
-<area shape="rect" id="node5" href="class_room.html#a294bb89a25ac765eca25106ccb4d1955" title="Creats a single door between two rooms " alt="" coords="467,123,683,149"/>
-<area shape="rect" id="node6" href="class_museum.html#ae07741bc8fd7f97c84fed0050e18c3c4" title="Fills the displas that exist in the museum also creates texture info for walls WARNING: CURRENTLY TEM..." alt="" coords="504,173,647,200"/>
-<area shape="rect" id="node7" href="class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="463,224,688,251"/>
-<area shape="rect" id="node8" href="class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="736,217,929,258"/>
-<area shape="rect" id="node9" href="class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="977,224,1176,251"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -488,8 +473,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a5295b75989f837f22b5d3de571061572"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5295b75989f837f22b5d3de571061572">&#9670;&nbsp;</a></span>museumRequests</h2>
+<a id="a10e2f6523a8d57b8265dab775c85b9f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10e2f6523a8d57b8265dab775c85b9f6">&#9670;&nbsp;</a></span>museumRequests</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -498,7 +483,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Queue&lt;Tuple&lt;<a class="el" href="class_museum_request.html">MuseumRequest</a>,Queue&lt;string&gt; &gt; &gt; MuseumGenerator.museumRequests = new Queue&lt;Tuple&lt;<a class="el" href="class_museum_request.html">MuseumRequest</a>, Queue&lt;string&gt;&gt;&gt;()</td>
+          <td class="memname">Queue&lt;Tuple&lt;<a class="el" href="class_museum_request_data.html">MuseumRequestData</a>,Queue&lt;string&gt; &gt; &gt; MuseumGenerator.museumRequests = new Queue&lt;Tuple&lt;<a class="el" href="class_museum_request_data.html">MuseumRequestData</a>, Queue&lt;string&gt;&gt;&gt;()</td>
         </tr>
       </table>
   </td>
@@ -509,6 +494,22 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>temp queue for testing </p>
+
+</div>
+</div>
+<a id="ab9da3303011da2300a31cd9280fd29e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9da3303011da2300a31cd9280fd29e8">&#9670;&nbsp;</a></span>RoomStyles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="class_room_style.html">RoomStyle</a>&gt; MuseumGenerator.RoomStyles</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tempory list of room styles that helps showcase the functionality of styled rooms </p>
 
 </div>
 </div>

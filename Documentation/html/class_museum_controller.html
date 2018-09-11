@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -101,17 +101,15 @@ $(document).ready(function(){initNavTree('class_museum_controller.html','');});
 Inheritance diagram for MuseumController:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_controller__inherit__graph.png" border="0" usemap="#_museum_controller_inherit__map" alt="Inheritance graph"/></div>
-<map name="_museum_controller_inherit__map" id="_museum_controller_inherit__map">
-</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for MuseumController:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_controller__coll__graph.png" border="0" usemap="#_museum_controller_coll__map" alt="Collaboration graph"/></div>
 <map name="_museum_controller_coll__map" id="_museum_controller_coll__map">
-<area shape="rect" id="node3" href="class_room.html" title="defines a room in a virtual museum " alt="" coords="140,439,339,721"/>
-<area shape="rect" id="node4" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; TransformTileCoordIntoOneD()\l&#45; TransformOneDCoordIntoTwoD()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="128,5,351,376"/>
-<area shape="rect" id="node5" href="class_museum_graph.html" title="{MuseumGraph\n|+ Nodes\l&#45; NodeMap\l|+ MuseumGraph()\l+ BuildMuseumGraph()\l+ GetNodeForRoom()\l}" alt="" coords="363,519,519,641"/>
+<area shape="rect" id="node3" href="class_room.html" title="defines a room in a virtual museum " alt="" coords="140,439,339,707"/>
+<area shape="rect" id="node4" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ TransformTileCoordIntoOneD()\l+ TransformOneDCoordIntoTwoD()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="128,5,351,376"/>
+<area shape="rect" id="node5" href="class_museum_graph.html" title="{MuseumGraph\n|+ Nodes\l&#45; NodeMap\l|+ MuseumGraph()\l+ BuildMuseumGraph()\l+ GetNodeForRoom()\l}" alt="" coords="363,512,519,633"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -285,12 +283,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_controller_a430d02fd399da5cea23a02f4b9269418_icgraph.png" border="0" usemap="#class_museum_controller_a430d02fd399da5cea23a02f4b9269418_icgraph" alt=""/></div>
 <map name="class_museum_controller_a430d02fd399da5cea23a02f4b9269418_icgraph" id="class_museum_controller_a430d02fd399da5cea23a02f4b9269418_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="240,64,519,91"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="819,35,1001,62"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="817,94,1003,120"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="573,28,763,69"/>
-<area shape="rect" id="node7" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="567,145,769,186"/>
-<area shape="rect" id="node4" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="1051,64,1208,91"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="240,101,519,127"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="573,5,763,47"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="817,71,1000,98"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="567,123,769,164"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="821,130,996,157"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="1048,101,1243,127"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="1291,101,1435,127"/>
 </map>
 </div>
 
@@ -487,7 +486,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_controller_a276d26ec047cda4e6f36b29fb673d968_icgraph.png" border="0" usemap="#class_museum_controller_a276d26ec047cda4e6f36b29fb673d968_icgraph" alt=""/></div>
 <map name="class_museum_controller_a276d26ec047cda4e6f36b29fb673d968_icgraph" id="class_museum_controller_a276d26ec047cda4e6f36b29fb673d968_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="255,13,412,39"/>
+<area shape="rect" id="node2" href="class_museum_controller.html#a3c48dd82fe1c3b55ee978ced6095f84e" title="MuseumController.Start" alt="" coords="255,13,413,39"/>
 </map>
 </div>
 
@@ -515,6 +514,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_controller_a3c48dd82fe1c3b55ee978ced6095f84e_cgraph.png" border="0" usemap="#class_museum_controller_a3c48dd82fe1c3b55ee978ced6095f84e_cgraph" alt=""/></div>
+<map name="class_museum_controller_a3c48dd82fe1c3b55ee978ced6095f84e_cgraph" id="class_museum_controller_a3c48dd82fe1c3b55ee978ced6095f84e_cgraph">
+<area shape="rect" id="node2" href="class_museum_controller.html#a276d26ec047cda4e6f36b29fb673d968" title="Sets the museum that needs controlling creating the room managment units " alt="" coords="212,5,413,47"/>
+</map>
+</div>
 
 </div>
 </div>

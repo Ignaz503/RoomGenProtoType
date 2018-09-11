@@ -1,4 +1,5 @@
 <map id="MuseumBuilder.SetUpDisplaysForWall" name="MuseumBuilder.SetUpDisplaysForWall">
-<area shape="rect" id="node2" href="$class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="256,13,441,39"/>
-<area shape="rect" id="node3" href="$class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="489,13,647,39"/>
+<area shape="rect" id="node2" href="$class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="256,13,431,39"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="479,13,673,39"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="721,13,865,39"/>
 </map>

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -88,8 +88,10 @@ $(document).ready(function(){initNavTree('class_museum_builder.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_museum_builder-members.html">List of all members</a>  </div>
@@ -109,13 +111,21 @@ Collaboration diagram for MuseumBuilder:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder__coll__graph.png" border="0" usemap="#_museum_builder_coll__map" alt="Collaboration graph"/></div>
 <map name="_museum_builder_coll__map" id="_museum_builder_coll__map">
-<area shape="rect" id="node3" href="class_museum_controller.html" title="{MuseumController\n|&#45; xPositionScaler\l&#45; zPositionScaler\l&#45; player\l&#45; manageRooms\l&#45; drawGraphGizmos\l&#45; drawRoomManagmentUnitGizmos\l&#45; museumSize\l&#45; roomManagmentMap\l&#45; roomDictionary\l|+ SetMuseumToControl()\l+ GetRoomManagmentUnitForRoom()\l+ LogRoomManagmentUnitForRoom()\l&#45; Awake()\l&#45; Start()\l&#45; Update()\l&#45; LoadRoomAndNeighbors()\l&#45; UnloadRoomAndNeighbors()\l&#45; InBounds()\l&#45; OnDrawGizmos()\l&#45; DrawMuseumGraph()\l}" alt="" coords="151,799,392,1140"/>
-<area shape="rect" id="node4" href="class_room.html" title="defines a room in a virtual museum " alt="" coords="373,439,572,721"/>
-<area shape="rect" id="node5" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; TransformTileCoordIntoOneD()\l&#45; TransformOneDCoordIntoTwoD()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="33,5,256,376"/>
-<area shape="rect" id="node6" href="class_museum_graph.html" title="{MuseumGraph\n|+ Nodes\l&#45; NodeMap\l|+ MuseumGraph()\l+ BuildMuseumGraph()\l+ GetNodeForRoom()\l}" alt="" coords="193,519,349,641"/>
+<area shape="rect" id="node3" href="class_museum_controller.html" title="{MuseumController\n|&#45; xPositionScaler\l&#45; zPositionScaler\l&#45; player\l&#45; manageRooms\l&#45; drawGraphGizmos\l&#45; drawRoomManagmentUnitGizmos\l&#45; museumSize\l&#45; roomManagmentMap\l&#45; roomDictionary\l|+ SetMuseumToControl()\l+ GetRoomManagmentUnitForRoom()\l+ LogRoomManagmentUnitForRoom()\l&#45; Awake()\l&#45; Start()\l&#45; Update()\l&#45; LoadRoomAndNeighbors()\l&#45; UnloadRoomAndNeighbors()\l&#45; InBounds()\l&#45; OnDrawGizmos()\l&#45; DrawMuseumGraph()\l}" alt="" coords="153,784,395,1125"/>
+<area shape="rect" id="node4" href="class_room.html" title="defines a room in a virtual museum " alt="" coords="376,439,575,707"/>
+<area shape="rect" id="node5" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ TransformTileCoordIntoOneD()\l+ TransformOneDCoordIntoTwoD()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="36,5,259,376"/>
+<area shape="rect" id="node6" href="class_museum_graph.html" title="{MuseumGraph\n|+ Nodes\l&#45; NodeMap\l|+ MuseumGraph()\l+ BuildMuseumGraph()\l+ GetNodeForRoom()\l}" alt="" coords="196,512,352,633"/>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a875e7252e31ad7ae28f17eb365ef5ce5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a875e7252e31ad7ae28f17eb365ef5ce5">SetToStartPosition</a> (Transform t)</td></tr>
+<tr class="memdesc:a875e7252e31ad7ae28f17eb365ef5ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets player position to the first floor in the museum.  <a href="#a875e7252e31ad7ae28f17eb365ef5ce5">More...</a><br /></td></tr>
+<tr class="separator:a875e7252e31ad7ae28f17eb365ef5ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd17822c3c2fdc7552e94dd1627586a7"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#acd17822c3c2fdc7552e94dd1627586a7">GetGameObjectForTile</a> (Vector2Int t)</td></tr>
+<tr class="separator:acd17822c3c2fdc7552e94dd1627586a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a357c5b16bf4a1b1a10eacfec75bf2869"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a357c5b16bf4a1b1a10eacfec75bf2869">FloorPrefab</a></td></tr>
@@ -136,6 +146,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9966f9ce8cc1117cb72e3aa42ea1a490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57f709574a50b97bb8f44f0d53606c44"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a57f709574a50b97bb8f44f0d53606c44">Player</a></td></tr>
 <tr class="separator:a57f709574a50b97bb8f44f0d53606c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f11ac7ab522b0dfc419a5c2c75788c2"><td class="memItemLeft" align="right" valign="top">List&lt; Texture2D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a0f11ac7ab522b0dfc419a5c2c75788c2">texturePrefabs</a></td></tr>
+<tr class="separator:a0f11ac7ab522b0dfc419a5c2c75788c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac70b019fbefe1d65a4853448eed0609"><td class="memItemLeft" align="right" valign="top">MeshFilter []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#aac70b019fbefe1d65a4853448eed0609">TestMesh</a></td></tr>
 <tr class="memdesc:aac70b019fbefe1d65a4853448eed0609"><td class="mdescLeft">&#160;</td><td class="mdescRight">temp test meshes  <a href="#aac70b019fbefe1d65a4853448eed0609">More...</a><br /></td></tr>
 <tr class="separator:aac70b019fbefe1d65a4853448eed0609"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +160,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a221fec90b7a551d41df9a6593b649c51"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a221fec90b7a551d41df9a6593b649c51">FloorZPosScale</a></td></tr>
 <tr class="memdesc:a221fec90b7a551d41df9a6593b649c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">caling of floor position in z direction  <a href="#a221fec90b7a551d41df9a6593b649c51">More...</a><br /></td></tr>
 <tr class="separator:a221fec90b7a551d41df9a6593b649c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7844cfc1f0ff34cdea4ce425585b448"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum.html">Museum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#ab7844cfc1f0ff34cdea4ce425585b448">VirtMuse</a></td></tr>
+<tr class="memdesc:ab7844cfc1f0ff34cdea4ce425585b448"><td class="mdescLeft">&#160;</td><td class="mdescRight">the museum being built  <a href="#ab7844cfc1f0ff34cdea4ce425585b448">More...</a><br /></td></tr>
+<tr class="separator:ab7844cfc1f0ff34cdea4ce425585b448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13b0442ec3a7b4aededb9a7d90572c70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a13b0442ec3a7b4aededb9a7d90572c70">DisableAfterRequest</a></td></tr>
 <tr class="memdesc:a13b0442ec3a7b4aededb9a7d90572c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">temp  <a href="#a13b0442ec3a7b4aededb9a7d90572c70">More...</a><br /></td></tr>
 <tr class="separator:a13b0442ec3a7b4aededb9a7d90572c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,6 +176,18 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:ab659e7b1adaace5d5c8dec90df493483"><td class="mdescLeft">&#160;</td><td class="mdescRight">temp queue for testing  <a href="#ab659e7b1adaace5d5c8dec90df493483">More...</a><br /></td></tr>
 <tr class="separator:ab659e7b1adaace5d5c8dec90df493483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a6ffb727cee920d5caa79312decbc7c8d"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="class_museum.html">Museum</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a6ffb727cee920d5caa79312decbc7c8d">OnMuseumGotten</a></td></tr>
+<tr class="memdesc:a6ffb727cee920d5caa79312decbc7c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">event invoked when the builder received an museum to build  <a href="#a6ffb727cee920d5caa79312decbc7c8d">More...</a><br /></td></tr>
+<tr class="separator:a6ffb727cee920d5caa79312decbc7c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88929a7d394c22ace8a2d34638d14322"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="class_room.html">Room</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a88929a7d394c22ace8a2d34638d14322">OnRoomBuilt</a></td></tr>
+<tr class="memdesc:a88929a7d394c22ace8a2d34638d14322"><td class="mdescLeft">&#160;</td><td class="mdescRight">event invoked when a wall was built  <a href="#a88929a7d394c22ace8a2d34638d14322">More...</a><br /></td></tr>
+<tr class="separator:a88929a7d394c22ace8a2d34638d14322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3076208732163cdad7068436b73a5d59"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="class_wall.html">Wall</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a3076208732163cdad7068436b73a5d59">OnWallBuilt</a></td></tr>
+<tr class="memdesc:a3076208732163cdad7068436b73a5d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">event invoked when wall was built  <a href="#a3076208732163cdad7068436b73a5d59">More...</a><br /></td></tr>
+<tr class="separator:a3076208732163cdad7068436b73a5d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a846546ea2e9bf91bba2a166dc2b01e2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a846546ea2e9bf91bba2a166dc2b01e2d">Awake</a> ()</td></tr>
@@ -169,38 +196,68 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a33c69af71baa8a6033be9d2fc04ef5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f66f859260dac43de5248e3c4a0b25c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c">Update</a> ()</td></tr>
 <tr class="separator:a6f66f859260dac43de5248e3c4a0b25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a68d64f1f418c4cdf43afc48ffa07b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1">SetUpFloor</a> (List&lt; GameObject &gt; floors)</td></tr>
-<tr class="separator:a7a68d64f1f418c4cdf43afc48ffa07b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52350d2e48a73d0e5400e2d8d31a8913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913">SetUpWalls</a> (List&lt; GameObject &gt; floors)</td></tr>
-<tr class="memdesc:a52350d2e48a73d0e5400e2d8d31a8913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up wall gameobjects for a museum  <a href="#a52350d2e48a73d0e5400e2d8d31a8913">More...</a><br /></td></tr>
-<tr class="separator:a52350d2e48a73d0e5400e2d8d31a8913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a159e037415aaf348d5a0af9561be8560"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560">SetUpCenterDisplaysForRoom</a> (<a class="el" href="class_room.html">Room</a> r, List&lt; GameObject &gt; associatedFloorGameobjects)</td></tr>
 <tr class="memdesc:a159e037415aaf348d5a0af9561be8560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the center displays for a room List used for correct parenting of gamobject  <a href="#a159e037415aaf348d5a0af9561be8560">More...</a><br /></td></tr>
 <tr class="separator:a159e037415aaf348d5a0af9561be8560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbfb12c00a855fe0f816bc18a51a72e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5">SetUpDisplaysForWall</a> (<a class="el" href="class_wall.html">Wall</a> w, GameObject wallObj)</td></tr>
 <tr class="memdesc:adbfb12c00a855fe0f816bc18a51a72e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates wall displays for museum  <a href="#adbfb12c00a855fe0f816bc18a51a72e5">More...</a><br /></td></tr>
 <tr class="separator:adbfb12c00a855fe0f816bc18a51a72e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a895b10deac965d8d7b936dd76d82484d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d">LoadDisplayResource</a> (<a class="el" href="class_display.html">Display</a> objInNeedOfResource, string resourceLocator)</td></tr>
-<tr class="memdesc:a895b10deac965d8d7b936dd76d82484d"><td class="mdescLeft">&#160;</td><td class="mdescRight">TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay  <a href="#a895b10deac965d8d7b936dd76d82484d">More...</a><br /></td></tr>
-<tr class="separator:a895b10deac965d8d7b936dd76d82484d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1991ecd1258a2eb6d020d3c429ad9c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8">AddToRoomManagmentUnit</a> (uint roomID, GameObject objToAdd)</td></tr>
+<tr class="memdesc:ad1991ecd1258a2eb6d020d3c429ad9c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a room gamobject to a room managment unit  <a href="#ad1991ecd1258a2eb6d020d3c429ad9c8">More...</a><br /></td></tr>
 <tr class="separator:ad1991ecd1258a2eb6d020d3c429ad9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7891701beec2b305c8f0d40a7949933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933">PlaceRoom</a> (<a class="el" href="class_room.html">Room</a> r)</td></tr>
+<tr class="memdesc:ad7891701beec2b305c8f0d40a7949933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Places a single room, and it's dilays  <a href="#ad7891701beec2b305c8f0d40a7949933">More...</a><br /></td></tr>
+<tr class="separator:ad7891701beec2b305c8f0d40a7949933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a8c364b8b6a51193a5c00d898668835"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835">PlaceWall</a> (<a class="el" href="class_wall.html">Wall</a> w)</td></tr>
+<tr class="memdesc:a5a8c364b8b6a51193a5c00d898668835"><td class="mdescLeft">&#160;</td><td class="mdescRight">places a singe wall  <a href="#a5a8c364b8b6a51193a5c00d898668835">More...</a><br /></td></tr>
+<tr class="separator:a5a8c364b8b6a51193a5c00d898668835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604746b8b55c6d423336f44894063244"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244">BuildMuseum</a> ()</td></tr>
+<tr class="memdesc:a604746b8b55c6d423336f44894063244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a <a class="el" href="class_museum.html">Museum</a>, over multiple frames(as a coroutine)  <a href="#a604746b8b55c6d423336f44894063244">More...</a><br /></td></tr>
+<tr class="separator:a604746b8b55c6d423336f44894063244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab416edbde4d42e80e0d27a29ea4595bd"><td class="memItemLeft" align="right" valign="top">Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#ab416edbde4d42e80e0d27a29ea4595bd">GetTexture</a> (string name)</td></tr>
+<tr class="memdesc:ab416edbde4d42e80e0d27a29ea4595bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">TEMPORARY function to showcase room styles returns first hit in prefab list with same name as param name  <a href="#ab416edbde4d42e80e0d27a29ea4595bd">More...</a><br /></td></tr>
+<tr class="separator:ab416edbde4d42e80e0d27a29ea4595bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3b2909202167c6b1e5515317b3cb1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a3e3b2909202167c6b1e5515317b3cb1e">TEMPApplyTextureToNonWalls</a> (string name, GameObject obj)</td></tr>
+<tr class="memdesc:a3e3b2909202167c6b1e5515317b3cb1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">TEMPORAARY function that is used to showcase room styles applies a texture to this gamobject  <a href="#a3e3b2909202167c6b1e5515317b3cb1e">More...</a><br /></td></tr>
+<tr class="separator:a3e3b2909202167c6b1e5515317b3cb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892b18a8420e1e96ce712f65bc309068"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a892b18a8420e1e96ce712f65bc309068">TEMPApplyTextureToWall</a> (<a class="el" href="class_wall.html">Wall</a> w, GameObject obj)</td></tr>
+<tr class="memdesc:a892b18a8420e1e96ce712f65bc309068"><td class="mdescLeft">&#160;</td><td class="mdescRight">TEMPORARY function to showcase room styles  <a href="#a892b18a8420e1e96ce712f65bc309068">More...</a><br /></td></tr>
+<tr class="separator:a892b18a8420e1e96ce712f65bc309068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f7bfa34308891e3a2bf306c2b0d5e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2">LoadDisplayResource</a> (<a class="el" href="class_display.html">Display</a> objInNeedOfResource, int resourceLocator)</td></tr>
+<tr class="memdesc:a09f7bfa34308891e3a2bf306c2b0d5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads Resource for a dsiplay  <a href="#a09f7bfa34308891e3a2bf306c2b0d5e2">More...</a><br /></td></tr>
+<tr class="separator:a09f7bfa34308891e3a2bf306c2b0d5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e5fce7036671ef7bf735b341e56bbf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2">PostMeshDisplayRequest</a> (<a class="el" href="class_mesh_display.html">MeshDisplay</a> disp, int resLoc)</td></tr>
+<tr class="memdesc:a4e5fce7036671ef7bf735b341e56bbf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">posts a mesh resource request  <a href="#a4e5fce7036671ef7bf735b341e56bbf2">More...</a><br /></td></tr>
+<tr class="separator:a4e5fce7036671ef7bf735b341e56bbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5a59830643d185fbda5b11a251ffc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3">PostImageDisplayRequest</a> (<a class="el" href="class_display.html">Display</a> disp, int resourceLocator)</td></tr>
+<tr class="memdesc:a4d5a59830643d185fbda5b11a251ffc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posts an image request to the resource loader  <a href="#a4d5a59830643d185fbda5b11a251ffc3">More...</a><br /></td></tr>
+<tr class="separator:a4d5a59830643d185fbda5b11a251ffc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b2759977e29fa40cea22b6f31242ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#aa4b2759977e29fa40cea22b6f31242ac">PostWallTextureRequest</a> (<a class="el" href="class_wall.html">Wall</a> w, GameObject wallObj)</td></tr>
+<tr class="memdesc:aa4b2759977e29fa40cea22b6f31242ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">posts a wall texture request to resource loader  <a href="#aa4b2759977e29fa40cea22b6f31242ac">More...</a><br /></td></tr>
+<tr class="separator:aa4b2759977e29fa40cea22b6f31242ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18b0a6f67d3e9053b604c5a7caf9d4b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a18b0a6f67d3e9053b604c5a7caf9d4b0">PostFloorTextureRequest</a> (<a class="el" href="class_room.html">Room</a> r, GameObject floor)</td></tr>
+<tr class="memdesc:a18b0a6f67d3e9053b604c5a7caf9d4b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">posts a floor texture request to the resource loader  <a href="#a18b0a6f67d3e9053b604c5a7caf9d4b0">More...</a><br /></td></tr>
+<tr class="separator:a18b0a6f67d3e9053b604c5a7caf9d4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b79838dee5015763177bdceca168f5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a5b79838dee5015763177bdceca168f5c">PostCeilingTextureRequest</a> (<a class="el" href="class_room.html">Room</a> r, GameObject ceiling)</td></tr>
+<tr class="memdesc:a5b79838dee5015763177bdceca168f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posts a ceiling texutre requesst to the resource loader  <a href="#a5b79838dee5015763177bdceca168f5c">More...</a><br /></td></tr>
+<tr class="separator:a5b79838dee5015763177bdceca168f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695eba49b601fcd36a6f5477ce2c1511"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511">MeshPreProcessing</a> (<a class="el" href="class_display_mesh_resource.html">DisplayMeshResource</a> res, <a class="el" href="class_pre_processing_game_object_information.html">PreProcessingGameObjectInformation</a> preObj, <a class="el" href="class_display.html">Display</a> display)</td></tr>
+<tr class="memdesc:a695eba49b601fcd36a6f5477ce2c1511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preprocessing helper coroutine for mesh display  <a href="#a695eba49b601fcd36a6f5477ce2c1511">More...</a><br /></td></tr>
+<tr class="separator:a695eba49b601fcd36a6f5477ce2c1511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a044a6c2df10a05c3bc9d2de8eb9ad890"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, Texture2D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a044a6c2df10a05c3bc9d2de8eb9ad890">existingWallTexture</a> = new Dictionary&lt;string, Texture2D&gt;()</td></tr>
+<tr class="memdesc:a044a6c2df10a05c3bc9d2de8eb9ad890"><td class="mdescLeft">&#160;</td><td class="mdescRight">temp dictionary containing already gnerated wall texture to speed up start up  <a href="#a044a6c2df10a05c3bc9d2de8eb9ad890">More...</a><br /></td></tr>
+<tr class="separator:a044a6c2df10a05c3bc9d2de8eb9ad890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae878fab80ac14114029e1fe78877f26a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#ae878fab80ac14114029e1fe78877f26a">wallHeight</a></td></tr>
 <tr class="memdesc:ae878fab80ac14114029e1fe78877f26a"><td class="mdescLeft">&#160;</td><td class="mdescRight">height of walls in the msuem  <a href="#ae878fab80ac14114029e1fe78877f26a">More...</a><br /></td></tr>
 <tr class="separator:ae878fab80ac14114029e1fe78877f26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9354ab3c65386fb3ba9c5d5db94a1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#ade9354ab3c65386fb3ba9c5d5db94a1d">TestTextSize</a></td></tr>
-<tr class="separator:ade9354ab3c65386fb3ba9c5d5db94a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8b616ce266d39591cc20f6cc884333b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#aa8b616ce266d39591cc20f6cc884333b">currIdx</a> = 0</td></tr>
-<tr class="separator:aa8b616ce266d39591cc20f6cc884333b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a353644d408300bbadf427e0a0971d039"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum.html">Museum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a353644d408300bbadf427e0a0971d039">virtMuse</a> = null</td></tr>
-<tr class="memdesc:a353644d408300bbadf427e0a0971d039"><td class="mdescLeft">&#160;</td><td class="mdescRight">the museum being built  <a href="#a353644d408300bbadf427e0a0971d039">More...</a><br /></td></tr>
-<tr class="separator:a353644d408300bbadf427e0a0971d039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab63ff4582a395d2172a05542dbca8341"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum_controller.html">MuseumController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#ab63ff4582a395d2172a05542dbca8341">_MusemControllerInstance</a></td></tr>
 <tr class="memdesc:ab63ff4582a395d2172a05542dbca8341"><td class="mdescLeft">&#160;</td><td class="mdescRight">instance of the museum controller  <a href="#ab63ff4582a395d2172a05542dbca8341">More...</a><br /></td></tr>
 <tr class="separator:ab63ff4582a395d2172a05542dbca8341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64a142acbbd1fe905fd89d8aa3163296"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; int, GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_builder.html#a64a142acbbd1fe905fd89d8aa3163296">oneDTileCoordToFloorGameObjectMapping</a></td></tr>
+<tr class="separator:a64a142acbbd1fe905fd89d8aa3163296"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad1991ecd1258a2eb6d020d3c429ad9c8"></a>
@@ -236,6 +293,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>adds a room gamobject to a room managment unit </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">roomID</td><td>the room id this gameobject is associated with</td></tr>
+    <tr><td class="paramname">objToAdd</td><td>the object to add</td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -250,11 +316,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8_icgraph.png" border="0" usemap="#class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8_icgraph" alt=""/></div>
 <map name="class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8_icgraph" id="class_museum_builder_ad1991ecd1258a2eb6d020d3c429ad9c8_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="585,35,766,62"/>
-<area shape="rect" id="node4" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="583,94,768,120"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="338,28,529,69"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="332,145,535,186"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="816,64,973,91"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="338,5,529,47"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="583,71,765,98"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="332,123,535,164"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="587,130,761,157"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="813,101,1008,127"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="1056,101,1200,127"/>
 </map>
 </div>
 
@@ -285,8 +352,145 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a895b10deac965d8d7b936dd76d82484d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a895b10deac965d8d7b936dd76d82484d">&#9670;&nbsp;</a></span>LoadDisplayResource()</h2>
+<a id="a604746b8b55c6d423336f44894063244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a604746b8b55c6d423336f44894063244">&#9670;&nbsp;</a></span>BuildMuseum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator MuseumBuilder.BuildMuseum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Builds a <a class="el" href="class_museum.html">Museum</a>, over multiple frames(as a coroutine) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">M</td><td><a class="el" href="class_museum.html">Museum</a> that needs building</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a604746b8b55c6d423336f44894063244_cgraph.png" border="0" usemap="#class_museum_builder_a604746b8b55c6d423336f44894063244_cgraph" alt=""/></div>
+<map name="class_museum_builder_a604746b8b55c6d423336f44894063244_cgraph" id="class_museum_builder_a604746b8b55c6d423336f44894063244_cgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="248,169,431,195"/>
+<area shape="rect" id="node18" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="252,289,427,315"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="739,183,1017,210"/>
+<area shape="rect" id="node6" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="491,281,678,323"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a18b0a6f67d3e9053b604c5a7caf9d4b0" title="posts a floor texture request to the resource loader " alt="" coords="771,71,985,112"/>
+<area shape="rect" id="node9" href="class_museum_builder.html#a5b79838dee5015763177bdceca168f5c" title="Posts a ceiling texutre requesst to the resource loader " alt="" coords="787,5,969,47"/>
+<area shape="rect" id="node10" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="489,216,680,257"/>
+<area shape="rect" id="node4" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="1083,195,1269,236"/>
+<area shape="rect" id="node5" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="1071,129,1281,171"/>
+<area shape="rect" id="node8" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="1354,267,1549,294"/>
+<area shape="rect" id="node11" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="825,323,931,350"/>
+<area shape="rect" id="node12" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="785,257,971,299"/>
+<area shape="rect" id="node13" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="1067,425,1285,467"/>
+<area shape="rect" id="node17" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="1065,260,1287,301"/>
+<area shape="rect" id="node14" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="1335,433,1568,459"/>
+<area shape="rect" id="node15" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="1616,433,1791,459"/>
+<area shape="rect" id="node16" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="1839,433,2055,459"/>
+<area shape="rect" id="node19" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="483,347,686,388"/>
+<area shape="rect" id="node20" href="class_museum_builder.html#aa4b2759977e29fa40cea22b6f31242ac" title="posts a wall texture request to resource loader " alt="" coords="479,412,691,453"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a604746b8b55c6d423336f44894063244_icgraph.png" border="0" usemap="#class_museum_builder_a604746b8b55c6d423336f44894063244_icgraph" alt=""/></div>
+<map name="class_museum_builder_a604746b8b55c6d423336f44894063244_icgraph" id="class_museum_builder_a604746b8b55c6d423336f44894063244_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="248,5,392,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acd17822c3c2fdc7552e94dd1627586a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd17822c3c2fdc7552e94dd1627586a7">&#9670;&nbsp;</a></span>GetGameObjectForTile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject MuseumBuilder.GetGameObjectForTile </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_acd17822c3c2fdc7552e94dd1627586a7_cgraph.png" border="0" usemap="#class_museum_builder_acd17822c3c2fdc7552e94dd1627586a7_cgraph" alt=""/></div>
+<map name="class_museum_builder_acd17822c3c2fdc7552e94dd1627586a7_cgraph" id="class_museum_builder_acd17822c3c2fdc7552e94dd1627586a7_cgraph">
+<area shape="rect" id="node2" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="264,5,451,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab416edbde4d42e80e0d27a29ea4595bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab416edbde4d42e80e0d27a29ea4595bd">&#9670;&nbsp;</a></span>GetTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Texture2D MuseumBuilder.GetTexture </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TEMPORARY function to showcase room styles returns first hit in prefab list with same name as param name </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the name of the texture</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the texutre with the name</dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_ab416edbde4d42e80e0d27a29ea4595bd_icgraph.png" border="0" usemap="#class_museum_builder_ab416edbde4d42e80e0d27a29ea4595bd_icgraph" alt=""/></div>
+<map name="class_museum_builder_ab416edbde4d42e80e0d27a29ea4595bd_icgraph" id="class_museum_builder_ab416edbde4d42e80e0d27a29ea4595bd_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a3e3b2909202167c6b1e5515317b3cb1e" title="TEMPORAARY function that is used to showcase room styles applies a texture to this gamobject ..." alt="" coords="233,5,461,47"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a892b18a8420e1e96ce712f65bc309068" title="TEMPORARY function to showcase room styles " alt="" coords="233,71,461,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a09f7bfa34308891e3a2bf306c2b0d5e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f7bfa34308891e3a2bf306c2b0d5e2">&#9670;&nbsp;</a></span>LoadDisplayResource()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -303,7 +507,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>resourceLocator</em>&#160;</td>
         </tr>
         <tr>
@@ -319,27 +523,600 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay </p>
+<p>Loads Resource for a dsiplay </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph.png" border="0" usemap="#class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph" alt=""/></div>
-<map name="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph" id="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_cgraph">
-<area shape="rect" id="node2" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="240,13,397,39"/>
-<area shape="rect" id="node3" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="445,13,623,39"/>
-<area shape="rect" id="node4" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="671,5,873,47"/>
+<div class="center"><img src="class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_cgraph.png" border="0" usemap="#class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_cgraph" alt=""/></div>
+<map name="class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_cgraph" id="class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_cgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="241,5,460,47"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="240,71,461,112"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="509,13,743,39"/>
+<area shape="rect" id="node6" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="529,70,723,97"/>
+<area shape="rect" id="node4" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="791,13,965,39"/>
+<area shape="rect" id="node5" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="1013,13,1229,39"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph.png" border="0" usemap="#class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph" alt=""/></div>
-<map name="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph" id="class_museum_builder_a895b10deac965d8d7b936dd76d82484d_icgraph">
+<div class="center"><img src="class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_icgraph.png" border="0" usemap="#class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_icgraph" alt=""/></div>
+<map name="class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_icgraph" id="class_museum_builder_a09f7bfa34308891e3a2bf306c2b0d5e2_icgraph">
 <area shape="rect" id="node2" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="246,5,437,47"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="240,71,443,112"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="493,17,674,43"/>
-<area shape="rect" id="node4" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="724,45,881,71"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="491,71,676,98"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="240,71,443,112"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="491,17,673,43"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="721,45,916,71"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="964,45,1108,71"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="495,71,669,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a695eba49b601fcd36a6f5477ce2c1511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695eba49b601fcd36a6f5477ce2c1511">&#9670;&nbsp;</a></span>MeshPreProcessing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator MuseumBuilder.MeshPreProcessing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_display_mesh_resource.html">DisplayMeshResource</a>&#160;</td>
+          <td class="paramname"><em>res</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_pre_processing_game_object_information.html">PreProcessingGameObjectInformation</a>&#160;</td>
+          <td class="paramname"><em>preObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_display.html">Display</a>&#160;</td>
+          <td class="paramname"><em>display</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Preprocessing helper coroutine for mesh display </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">res</td><td>the display resource that needs pre processing</td></tr>
+    <tr><td class="paramname">preObj</td><td>the preprocessing object that is filled</td></tr>
+    <tr><td class="paramname">display</td><td>the displaay that requested the resource</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_cgraph.png" border="0" usemap="#class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_cgraph" alt=""/></div>
+<map name="class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_cgraph" id="class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_cgraph">
+<area shape="rect" id="node2" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="287,5,461,32"/>
+<area shape="rect" id="node3" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="509,5,725,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_icgraph.png" border="0" usemap="#class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_icgraph" alt=""/></div>
+<map name="class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_icgraph" id="class_museum_builder_a695eba49b601fcd36a6f5477ce2c1511_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="287,39,505,80"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="553,39,740,80"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="794,5,985,47"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="788,71,991,112"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="1039,17,1221,43"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="1269,45,1464,71"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="1512,45,1656,71"/>
+<area shape="rect" id="node9" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="1043,71,1217,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad7891701beec2b305c8f0d40a7949933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7891701beec2b305c8f0d40a7949933">&#9670;&nbsp;</a></span>PlaceRoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.PlaceRoom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_room.html">Room</a>&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Places a single room, and it's dilays </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_ad7891701beec2b305c8f0d40a7949933_cgraph.png" border="0" usemap="#class_museum_builder_ad7891701beec2b305c8f0d40a7949933_cgraph" alt=""/></div>
+<map name="class_museum_builder_ad7891701beec2b305c8f0d40a7949933_cgraph" id="class_museum_builder_ad7891701beec2b305c8f0d40a7949933_cgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="475,81,753,107"/>
+<area shape="rect" id="node5" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="238,348,425,389"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a18b0a6f67d3e9053b604c5a7caf9d4b0" title="posts a floor texture request to the resource loader " alt="" coords="507,252,721,293"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a5b79838dee5015763177bdceca168f5c" title="Posts a ceiling texutre requesst to the resource loader " alt="" coords="240,283,423,324"/>
+<area shape="rect" id="node9" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="236,136,427,177"/>
+<area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="819,5,1005,47"/>
+<area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="807,71,1017,112"/>
+<area shape="rect" id="node7" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="1090,238,1285,265"/>
+<area shape="rect" id="node10" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="561,201,667,227"/>
+<area shape="rect" id="node11" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="521,135,707,176"/>
+<area shape="rect" id="node12" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="803,136,1021,177"/>
+<area shape="rect" id="node16" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="801,201,1023,243"/>
+<area shape="rect" id="node13" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="1071,143,1304,170"/>
+<area shape="rect" id="node14" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="1352,143,1527,170"/>
+<area shape="rect" id="node15" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="1575,143,1791,170"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_ad7891701beec2b305c8f0d40a7949933_icgraph.png" border="0" usemap="#class_museum_builder_ad7891701beec2b305c8f0d40a7949933_icgraph" alt=""/></div>
+<map name="class_museum_builder_ad7891701beec2b305c8f0d40a7949933_icgraph" id="class_museum_builder_ad7891701beec2b305c8f0d40a7949933_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="236,5,431,32"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="479,5,623,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5a8c364b8b6a51193a5c00d898668835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a8c364b8b6a51193a5c00d898668835">&#9670;&nbsp;</a></span>PlaceWall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.PlaceWall </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_wall.html">Wall</a>&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>places a singe wall </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>the wall to palce</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_cgraph.png" border="0" usemap="#class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_cgraph" alt=""/></div>
+<map name="class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_cgraph" id="class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_cgraph">
+<area shape="rect" id="node2" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="241,12,427,53"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="488,78,767,105"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="233,129,435,171"/>
+<area shape="rect" id="node15" href="class_museum_builder.html#aa4b2759977e29fa40cea22b6f31242ac" title="posts a wall texture request to resource loader " alt="" coords="228,227,440,268"/>
+<area shape="rect" id="node4" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="832,5,1019,47"/>
+<area shape="rect" id="node5" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="821,71,1030,112"/>
+<area shape="rect" id="node7" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="575,133,680,159"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="534,184,721,225"/>
+<area shape="rect" id="node9" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="816,136,1035,177"/>
+<area shape="rect" id="node14" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="815,201,1036,243"/>
+<area shape="rect" id="node10" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="1084,143,1317,170"/>
+<area shape="rect" id="node13" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="1103,209,1298,235"/>
+<area shape="rect" id="node11" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="1365,143,1540,170"/>
+<area shape="rect" id="node12" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="1588,143,1804,170"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_icgraph.png" border="0" usemap="#class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_icgraph" alt=""/></div>
+<map name="class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_icgraph" id="class_museum_builder_a5a8c364b8b6a51193a5c00d898668835_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="228,5,423,32"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="471,5,615,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5b79838dee5015763177bdceca168f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b79838dee5015763177bdceca168f5c">&#9670;&nbsp;</a></span>PostCeilingTextureRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.PostCeilingTextureRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_room.html">Room</a>&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameObject&#160;</td>
+          <td class="paramname"><em>ceiling</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Posts a ceiling texutre requesst to the resource loader </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>the room that defines the style</td></tr>
+    <tr><td class="paramname">ceiling</td><td>the gameobject that the texture should be applied to</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a5b79838dee5015763177bdceca168f5c_cgraph.png" border="0" usemap="#class_museum_builder_a5b79838dee5015763177bdceca168f5c_cgraph" alt=""/></div>
+<map name="class_museum_builder_a5b79838dee5015763177bdceca168f5c_cgraph" id="class_museum_builder_a5b79838dee5015763177bdceca168f5c_cgraph">
+<area shape="rect" id="node2" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="236,13,431,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a5b79838dee5015763177bdceca168f5c_icgraph.png" border="0" usemap="#class_museum_builder_a5b79838dee5015763177bdceca168f5c_icgraph" alt=""/></div>
+<map name="class_museum_builder_a5b79838dee5015763177bdceca168f5c_icgraph" id="class_museum_builder_a5b79838dee5015763177bdceca168f5c_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="236,13,419,39"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="467,13,661,39"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="709,13,853,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a18b0a6f67d3e9053b604c5a7caf9d4b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b0a6f67d3e9053b604c5a7caf9d4b0">&#9670;&nbsp;</a></span>PostFloorTextureRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.PostFloorTextureRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_room.html">Room</a>&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameObject&#160;</td>
+          <td class="paramname"><em>floor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>posts a floor texture request to the resource loader </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>the room that defines the room style</td></tr>
+    <tr><td class="paramname">floor</td><td>the gameobjec tthe texture should be applied to</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_cgraph.png" border="0" usemap="#class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_cgraph" alt=""/></div>
+<map name="class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_cgraph" id="class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_cgraph">
+<area shape="rect" id="node2" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="268,13,463,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_icgraph.png" border="0" usemap="#class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_icgraph" alt=""/></div>
+<map name="class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_icgraph" id="class_museum_builder_a18b0a6f67d3e9053b604c5a7caf9d4b0_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="268,13,451,39"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="499,13,693,39"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="741,13,885,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d5a59830643d185fbda5b11a251ffc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5a59830643d185fbda5b11a251ffc3">&#9670;&nbsp;</a></span>PostImageDisplayRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.PostImageDisplayRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_display.html">Display</a>&#160;</td>
+          <td class="paramname"><em>disp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>resourceLocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Posts an image request to the resource loader </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">disp</td><td>the display taht wants the resource</td></tr>
+    <tr><td class="paramname">resourceLocator</td><td>ID of resource</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_cgraph.png" border="0" usemap="#class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_cgraph" alt=""/></div>
+<map name="class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_cgraph" id="class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_cgraph">
+<area shape="rect" id="node2" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="275,13,469,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_icgraph.png" border="0" usemap="#class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_icgraph" alt=""/></div>
+<map name="class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_icgraph" id="class_museum_builder_a4d5a59830643d185fbda5b11a251ffc3_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="275,39,461,80"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="515,5,706,47"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="509,71,712,112"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="760,17,943,43"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="991,45,1185,71"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="1233,45,1377,71"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="764,71,939,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4e5fce7036671ef7bf735b341e56bbf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e5fce7036671ef7bf735b341e56bbf2">&#9670;&nbsp;</a></span>PostMeshDisplayRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.PostMeshDisplayRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mesh_display.html">MeshDisplay</a>&#160;</td>
+          <td class="paramname"><em>disp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>resLoc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>posts a mesh resource request </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">disp</td><td>the display that wants the mesh</td></tr>
+    <tr><td class="paramname">resLoc</td><td>the ID of the resource</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_cgraph.png" border="0" usemap="#class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_cgraph" alt=""/></div>
+<map name="class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_cgraph" id="class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_cgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="272,5,505,32"/>
+<area shape="rect" id="node5" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="291,56,486,83"/>
+<area shape="rect" id="node3" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="553,5,728,32"/>
+<area shape="rect" id="node4" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="776,5,992,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_icgraph.png" border="0" usemap="#class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_icgraph" alt=""/></div>
+<map name="class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_icgraph" id="class_museum_builder_a4e5fce7036671ef7bf735b341e56bbf2_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="272,39,459,80"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="513,5,703,47"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="507,71,709,112"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="757,17,940,43"/>
+<area shape="rect" id="node5" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="988,45,1183,71"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="1231,45,1375,71"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="761,71,936,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa4b2759977e29fa40cea22b6f31242ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b2759977e29fa40cea22b6f31242ac">&#9670;&nbsp;</a></span>PostWallTextureRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.PostWallTextureRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_wall.html">Wall</a>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameObject&#160;</td>
+          <td class="paramname"><em>wallObj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>posts a wall texture request to resource loader </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>the wall that defines the request</td></tr>
+    <tr><td class="paramname">wallObj</td><td>the gamobject the texture should be applied to</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_cgraph.png" border="0" usemap="#class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_cgraph" alt=""/></div>
+<map name="class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_cgraph" id="class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_cgraph">
+<area shape="rect" id="node2" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="265,13,460,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_icgraph.png" border="0" usemap="#class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_icgraph" alt=""/></div>
+<map name="class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_icgraph" id="class_museum_builder_aa4b2759977e29fa40cea22b6f31242ac_icgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="265,13,440,39"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="488,13,683,39"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="731,13,875,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a875e7252e31ad7ae28f17eb365ef5ce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a875e7252e31ad7ae28f17eb365ef5ce5">&#9670;&nbsp;</a></span>SetToStartPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.SetToStartPosition </td>
+          <td>(</td>
+          <td class="paramtype">Transform&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets player position to the first floor in the museum. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_cgraph.png" border="0" usemap="#class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_cgraph" alt=""/></div>
+<map name="class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_cgraph" id="class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_cgraph">
+<area shape="rect" id="node2" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="232,5,419,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_icgraph.png" border="0" usemap="#class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_icgraph" alt=""/></div>
+<map name="class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_icgraph" id="class_museum_builder_a875e7252e31ad7ae28f17eb365ef5ce5_icgraph">
+<area shape="rect" id="node2" href="class_museum_build_observer.html#a18c844a9fe9b649ed4bdaedbdade82a6" title="MuseumBuildObserver.Start" alt="" coords="484,5,668,32"/>
+<area shape="rect" id="node3" href="class_museum_build_observer.html#a506c7314ea2734e8f4881167ab5f2460" title="tepelports player if possible " alt="" coords="232,53,435,94"/>
+<area shape="rect" id="node4" href="class_portal_trigger.html#ae73070bf23c6348ced79aa839e0e2ad7" title="PortalTrigger.OnTriggerEnter" alt="" coords="483,60,669,87"/>
 </map>
 </div>
 
@@ -385,14 +1162,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph.png" border="0" usemap="#class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph" alt=""/></div>
 <map name="class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph" id="class_museum_builder_a159e037415aaf348d5a0af9561be8560_cgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="244,53,523,79"/>
-<area shape="rect" id="node5" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="331,103,436,130"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="290,155,477,196"/>
-<area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="582,5,769,47"/>
-<area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="571,71,780,112"/>
-<area shape="rect" id="node7" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="597,162,754,189"/>
-<area shape="rect" id="node8" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="828,162,1005,189"/>
-<area shape="rect" id="node9" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1053,155,1256,196"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="244,67,523,94"/>
+<area shape="rect" id="node5" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="331,118,436,145"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="290,169,477,211"/>
+<area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="588,5,775,47"/>
+<area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="577,71,786,112"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="572,157,791,199"/>
+<area shape="rect" id="node12" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="571,223,792,264"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="840,165,1073,191"/>
+<area shape="rect" id="node11" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="859,222,1054,249"/>
+<area shape="rect" id="node9" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="1121,165,1296,191"/>
+<area shape="rect" id="node10" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="1344,165,1560,191"/>
 </map>
 </div>
 <div class="dynheader">
@@ -400,8 +1180,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_a159e037415aaf348d5a0af9561be8560_icgraph.png" border="0" usemap="#class_museum_builder_a159e037415aaf348d5a0af9561be8560_icgraph" alt=""/></div>
 <map name="class_museum_builder_a159e037415aaf348d5a0af9561be8560_icgraph" id="class_museum_builder_a159e037415aaf348d5a0af9561be8560_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="244,13,425,39"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="473,13,631,39"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="244,13,427,39"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="475,13,669,39"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="717,13,861,39"/>
 </map>
 </div>
 
@@ -447,14 +1228,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph.png" border="0" usemap="#class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph" alt=""/></div>
 <map name="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph" id="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_cgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="256,53,535,79"/>
-<area shape="rect" id="node5" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="343,103,448,130"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="302,155,489,196"/>
-<area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="594,5,781,47"/>
-<area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="583,71,792,112"/>
-<area shape="rect" id="node7" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="609,162,766,189"/>
-<area shape="rect" id="node8" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="840,162,1017,189"/>
-<area shape="rect" id="node9" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1065,155,1268,196"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="256,67,535,94"/>
+<area shape="rect" id="node5" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="343,118,448,145"/>
+<area shape="rect" id="node6" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="302,169,489,211"/>
+<area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="600,5,787,47"/>
+<area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="589,71,798,112"/>
+<area shape="rect" id="node7" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="584,157,803,199"/>
+<area shape="rect" id="node12" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="583,223,804,264"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="852,165,1085,191"/>
+<area shape="rect" id="node11" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="871,222,1066,249"/>
+<area shape="rect" id="node9" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="1133,165,1308,191"/>
+<area shape="rect" id="node10" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="1356,165,1572,191"/>
 </map>
 </div>
 <div class="dynheader">
@@ -462,119 +1246,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_icgraph.png" border="0" usemap="#class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_icgraph" alt=""/></div>
 <map name="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_icgraph" id="class_museum_builder_adbfb12c00a855fe0f816bc18a51a72e5_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="256,13,441,39"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="489,13,647,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a7a68d64f1f418c4cdf43afc48ffa07b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a68d64f1f418c4cdf43afc48ffa07b1">&#9670;&nbsp;</a></span>SetUpFloor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MuseumBuilder.SetUpFloor </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; GameObject &gt;&#160;</td>
-          <td class="paramname"><em>floors</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<p>Sets up the floor for a museum fills list of gameobjects used for parenting information when setting up walls </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph.png" border="0" usemap="#class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph" alt=""/></div>
-<map name="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph" id="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_cgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="473,49,752,75"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="235,99,425,140"/>
-<area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="811,5,998,47"/>
-<area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="800,71,1009,112"/>
-<area shape="rect" id="node6" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="560,103,665,130"/>
-<area shape="rect" id="node7" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="519,155,706,196"/>
-<area shape="rect" id="node8" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="826,162,983,189"/>
-<area shape="rect" id="node9" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1057,162,1235,189"/>
-<area shape="rect" id="node10" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1283,155,1485,196"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_icgraph.png" border="0" usemap="#class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_icgraph" alt=""/></div>
-<map name="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_icgraph" id="class_museum_builder_a7a68d64f1f418c4cdf43afc48ffa07b1_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="235,5,392,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a52350d2e48a73d0e5400e2d8d31a8913"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52350d2e48a73d0e5400e2d8d31a8913">&#9670;&nbsp;</a></span>SetUpWalls()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MuseumBuilder.SetUpWalls </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; GameObject &gt;&#160;</td>
-          <td class="paramname"><em>floors</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets up wall gameobjects for a museum </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">floors</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph.png" border="0" usemap="#class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph" alt=""/></div>
-<map name="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph" id="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_cgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="489,49,768,75"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="239,99,441,140"/>
-<area shape="rect" id="node3" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="827,5,1014,47"/>
-<area shape="rect" id="node4" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="816,71,1025,112"/>
-<area shape="rect" id="node6" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="576,103,681,130"/>
-<area shape="rect" id="node7" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="535,155,722,196"/>
-<area shape="rect" id="node8" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="842,162,999,189"/>
-<area shape="rect" id="node9" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1073,162,1251,189"/>
-<area shape="rect" id="node10" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1299,155,1501,196"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_icgraph.png" border="0" usemap="#class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_icgraph" alt=""/></div>
-<map name="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_icgraph" id="class_museum_builder_a52350d2e48a73d0e5400e2d8d31a8913_icgraph">
-<area shape="rect" id="node2" href="class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="239,5,396,32"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="256,13,431,39"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="479,13,673,39"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="721,13,865,39"/>
 </map>
 </div>
 
@@ -607,8 +1281,132 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph.png" border="0" usemap="#class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph" alt=""/></div>
 <map name="class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph" id="class_museum_builder_a33c69af71baa8a6033be9d2fc04ef5f8_cgraph">
-<area shape="rect" id="node2" href="class_museum_generator.html#a5ead852effaa81309fe98b4d61fe9759" title="enqueues a new museum request " alt="" coords="197,5,404,47"/>
-<area shape="rect" id="node3" href="class_museum_request.html#abd551a45744c8387841c20e5ef46d420" title="from xml to museum request " alt="" coords="452,13,640,39"/>
+<area shape="rect" id="node2" href="class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="197,229,392,255"/>
+<area shape="rect" id="node3" href="class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="440,169,623,195"/>
+<area shape="rect" id="node19" href="class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="444,289,619,315"/>
+<area shape="rect" id="node4" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="931,183,1209,210"/>
+<area shape="rect" id="node7" href="class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="683,281,870,323"/>
+<area shape="rect" id="node8" href="class_museum_builder.html#a18b0a6f67d3e9053b604c5a7caf9d4b0" title="posts a floor texture request to the resource loader " alt="" coords="963,71,1177,112"/>
+<area shape="rect" id="node10" href="class_museum_builder.html#a5b79838dee5015763177bdceca168f5c" title="Posts a ceiling texutre requesst to the resource loader " alt="" coords="979,5,1161,47"/>
+<area shape="rect" id="node11" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="681,216,872,257"/>
+<area shape="rect" id="node5" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="1275,195,1461,236"/>
+<area shape="rect" id="node6" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="1263,129,1473,171"/>
+<area shape="rect" id="node9" href="class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="1546,267,1741,294"/>
+<area shape="rect" id="node12" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="1017,323,1123,350"/>
+<area shape="rect" id="node13" href="class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="977,257,1163,299"/>
+<area shape="rect" id="node14" href="class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="1259,425,1477,467"/>
+<area shape="rect" id="node18" href="class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="1257,260,1479,301"/>
+<area shape="rect" id="node15" href="class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="1527,433,1760,459"/>
+<area shape="rect" id="node16" href="class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="1808,433,1983,459"/>
+<area shape="rect" id="node17" href="class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="2031,433,2247,459"/>
+<area shape="rect" id="node20" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="675,347,878,388"/>
+<area shape="rect" id="node21" href="class_museum_builder.html#aa4b2759977e29fa40cea22b6f31242ac" title="posts a wall texture request to resource loader " alt="" coords="671,412,883,453"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3e3b2909202167c6b1e5515317b3cb1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3b2909202167c6b1e5515317b3cb1e">&#9670;&nbsp;</a></span>TEMPApplyTextureToNonWalls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.TEMPApplyTextureToNonWalls </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameObject&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TEMPORAARY function that is used to showcase room styles applies a texture to this gamobject </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>name of the texture</td></tr>
+    <tr><td class="paramname">obj</td><td>gmaobject to apply to</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a3e3b2909202167c6b1e5515317b3cb1e_cgraph.png" border="0" usemap="#class_museum_builder_a3e3b2909202167c6b1e5515317b3cb1e_cgraph" alt=""/></div>
+<map name="class_museum_builder_a3e3b2909202167c6b1e5515317b3cb1e_cgraph" id="class_museum_builder_a3e3b2909202167c6b1e5515317b3cb1e_cgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#ab416edbde4d42e80e0d27a29ea4595bd" title="TEMPORARY function to showcase room styles returns first hit in prefab list with same name as param n..." alt="" coords="281,13,461,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a892b18a8420e1e96ce712f65bc309068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a892b18a8420e1e96ce712f65bc309068">&#9670;&nbsp;</a></span>TEMPApplyTextureToWall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumBuilder.TEMPApplyTextureToWall </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_wall.html">Wall</a>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameObject&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TEMPORARY function to showcase room styles </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>the wall for which the texure is</td></tr>
+    <tr><td class="paramname">obj</td><td>gamobject of this wall</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_builder_a892b18a8420e1e96ce712f65bc309068_cgraph.png" border="0" usemap="#class_museum_builder_a892b18a8420e1e96ce712f65bc309068_cgraph" alt=""/></div>
+<map name="class_museum_builder_a892b18a8420e1e96ce712f65bc309068_cgraph" id="class_museum_builder_a892b18a8420e1e96ce712f65bc309068_cgraph">
+<area shape="rect" id="node2" href="class_museum_builder.html#ab416edbde4d42e80e0d27a29ea4595bd" title="TEMPORARY function to showcase room styles returns first hit in prefab list with same name as param n..." alt="" coords="281,13,461,39"/>
 </map>
 </div>
 
@@ -636,28 +1434,6 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c_cgraph.png" border="0" usemap="#class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c_cgraph" alt=""/></div>
-<map name="class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c_cgraph" id="class_museum_builder_a6f66f859260dac43de5248e3c4a0b25c_cgraph">
-<area shape="rect" id="node2" href="class_museum.html#a1b4fb627a19112e3ba3d25e8108de2c3" title="creates a museum from an xml string " alt="" coords="241,5,381,32"/>
-<area shape="rect" id="node4" href="class_museum_controller.html#a276d26ec047cda4e6f36b29fb673d968" title="Sets the museum that needs controlling creating the room managment units " alt="" coords="211,57,412,98"/>
-<area shape="rect" id="node5" href="class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="221,173,402,200"/>
-<area shape="rect" id="node15" href="class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="219,123,404,149"/>
-<area shape="rect" id="node3" href="class_museum.html#aa946df02a55ba522f7a39ac688648733" title="Museum.Museum" alt="" coords="498,5,625,32"/>
-<area shape="rect" id="node6" href="class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="711,141,989,168"/>
-<area shape="rect" id="node9" href="class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="466,257,657,298"/>
-<area shape="rect" id="node7" href="class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="1049,135,1235,177"/>
-<area shape="rect" id="node8" href="class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="1037,70,1247,111"/>
-<area shape="rect" id="node10" href="class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="797,263,903,289"/>
-<area shape="rect" id="node11" href="class_museum_builder.html#a895b10deac965d8d7b936dd76d82484d" title="TEMPORARY IMPLEMENTATION Loads Resource for a dsiplay " alt="" coords="757,195,943,237"/>
-<area shape="rect" id="node12" href="class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="1063,203,1221,229"/>
-<area shape="rect" id="node13" href="class_display.html#af8aa8a663725645f431095397ad802e6" title="sets the interaction type of this display " alt="" coords="1295,203,1472,229"/>
-<area shape="rect" id="node14" href="class_display.html#a81f07350cf50b3924f4fe269e1b4cf17" title="if the wanted behaviour is not possible or not exitent the behaviour will be set to this default ..." alt="" coords="1520,195,1723,237"/>
-<area shape="rect" id="node16" href="class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="460,191,663,233"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -728,28 +1504,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aa8b616ce266d39591cc20f6cc884333b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8b616ce266d39591cc20f6cc884333b">&#9670;&nbsp;</a></span>currIdx</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MuseumBuilder.currIdx = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a13b0442ec3a7b4aededb9a7d90572c70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13b0442ec3a7b4aededb9a7d90572c70">&#9670;&nbsp;</a></span>DisableAfterRequest</h2>
 
@@ -763,6 +1517,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>temp </p>
+
+</div>
+</div>
+<a id="a044a6c2df10a05c3bc9d2de8eb9ad890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a044a6c2df10a05c3bc9d2de8eb9ad890">&#9670;&nbsp;</a></span>existingWallTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, Texture2D&gt; MuseumBuilder.existingWallTexture = new Dictionary&lt;string, Texture2D&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>temp dictionary containing already gnerated wall texture to speed up start up </p>
 
 </div>
 </div>
@@ -874,6 +1652,28 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a64a142acbbd1fe905fd89d8aa3163296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a142acbbd1fe905fd89d8aa3163296">&#9670;&nbsp;</a></span>oneDTileCoordToFloorGameObjectMapping</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;int, GameObject&gt; MuseumBuilder.oneDTileCoordToFloorGameObjectMapping</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a57f709574a50b97bb8f44f0d53606c44"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a57f709574a50b97bb8f44f0d53606c44">&#9670;&nbsp;</a></span>Player</h2>
 
@@ -904,28 +1704,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ade9354ab3c65386fb3ba9c5d5db94a1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade9354ab3c65386fb3ba9c5d5db94a1d">&#9670;&nbsp;</a></span>TestTextSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MuseumBuilder.TestTextSize</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a002d66342d0fc72765e89a6f78bd312f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a002d66342d0fc72765e89a6f78bd312f">&#9670;&nbsp;</a></span>TestTextures</h2>
 
@@ -942,24 +1720,30 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a353644d408300bbadf427e0a0971d039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a353644d408300bbadf427e0a0971d039">&#9670;&nbsp;</a></span>virtMuse</h2>
+<a id="a0f11ac7ab522b0dfc419a5c2c75788c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f11ac7ab522b0dfc419a5c2c75788c2">&#9670;&nbsp;</a></span>texturePrefabs</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_museum.html">Museum</a> MuseumBuilder.virtMuse = null</td>
+          <td class="memname">List&lt;Texture2D&gt; MuseumBuilder.texturePrefabs</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7844cfc1f0ff34cdea4ce425585b448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7844cfc1f0ff34cdea4ce425585b448">&#9670;&nbsp;</a></span>VirtMuse</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_museum.html">Museum</a> MuseumBuilder.VirtMuse</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 <p>the museum being built </p>
@@ -1029,6 +1813,55 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Event Documentation</h2>
+<a id="a6ffb727cee920d5caa79312decbc7c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ffb727cee920d5caa79312decbc7c8d">&#9670;&nbsp;</a></span>OnMuseumGotten</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;<a class="el" href="class_museum.html">Museum</a>&gt; MuseumBuilder.OnMuseumGotten</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event invoked when the builder received an museum to build </p>
+
+</div>
+</div>
+<a id="a88929a7d394c22ace8a2d34638d14322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88929a7d394c22ace8a2d34638d14322">&#9670;&nbsp;</a></span>OnRoomBuilt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;<a class="el" href="class_room.html">Room</a>&gt; MuseumBuilder.OnRoomBuilt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event invoked when a wall was built </p>
+
+</div>
+</div>
+<a id="a3076208732163cdad7068436b73a5d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3076208732163cdad7068436b73a5d59">&#9670;&nbsp;</a></span>OnWallBuilt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;<a class="el" href="class_wall.html">Wall</a>&gt; MuseumBuilder.OnWallBuilt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event invoked when wall was built </p>
 
 </div>
 </div>

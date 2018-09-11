@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -89,7 +89,6 @@ $(document).ready(function(){initNavTree('class_museum_request.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_museum_request-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -97,80 +96,94 @@ $(document).ready(function(){initNavTree('class_museum_request.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
+Inheritance diagram for MuseumRequest:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_request__inherit__graph.png" border="0" usemap="#_museum_request_inherit__map" alt="Inheritance graph"/></div>
+<map name="_museum_request_inherit__map" id="_museum_request_inherit__map">
+<area shape="rect" id="node2" href="interface_i_resource_request.html" title="base interface for a resource request, usable by both style request and image/mesh requests ..." alt="" coords="5,5,155,112"/>
+</map>
+</div>
+<div class="dynheader">
 Collaboration diagram for MuseumRequest:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_museum_request__coll__graph.png" border="0" usemap="#_museum_request_coll__map" alt="Collaboration graph"/></div>
 <map name="_museum_request_coll__map" id="_museum_request_coll__map">
+<area shape="rect" id="node2" href="interface_i_resource_request.html" title="base interface for a resource request, usable by both style request and image/mesh requests ..." alt="" coords="5,5,155,112"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae227bce4871f20bf6661db4a5af5fe1c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#ae227bce4871f20bf6661db4a5af5fe1c">Serialize</a> ()</td></tr>
-<tr class="memdesc:ae227bce4871f20bf6661db4a5af5fe1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">serializes it to xml  <a href="#ae227bce4871f20bf6661db4a5af5fe1c">More...</a><br /></td></tr>
-<tr class="separator:ae227bce4871f20bf6661db4a5af5fe1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abd551a45744c8387841c20e5ef46d420"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_museum_request.html">MuseumRequest</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#abd551a45744c8387841c20e5ef46d420">Deserialize</a> (string data)</td></tr>
-<tr class="memdesc:abd551a45744c8387841c20e5ef46d420"><td class="mdescLeft">&#160;</td><td class="mdescRight">from xml to museum request  <a href="#abd551a45744c8387841c20e5ef46d420">More...</a><br /></td></tr>
-<tr class="separator:abd551a45744c8387841c20e5ef46d420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5912914896c546559a250b0d6c7fd65b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#a5912914896c546559a250b0d6c7fd65b">MuseumRequest</a> (<a class="el" href="class_museum_request_data.html">MuseumRequestData</a> data, Action&lt; <a class="el" href="class_museum.html">Museum</a> &gt;callback)</td></tr>
+<tr class="separator:a5912914896c546559a250b0d6c7fd65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b1a4699551a86415a877d5380febe1"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#a41b1a4699551a86415a877d5380febe1">StartWorkRequest</a> ()</td></tr>
+<tr class="memdesc:a41b1a4699551a86415a877d5380febe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the resource starts working, should most likely start a new thread  <a href="#a41b1a4699551a86415a877d5380febe1">More...</a><br /></td></tr>
+<tr class="separator:a41b1a4699551a86415a877d5380febe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34f7bf3bc637d500983a44272577a2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#af34f7bf3bc637d500983a44272577a2e">WhenDone</a> ()</td></tr>
+<tr class="memdesc:af34f7bf3bc637d500983a44272577a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">called when done with request, and it is now time to apply it to a gameobject  <a href="#af34f7bf3bc637d500983a44272577a2e">More...</a><br /></td></tr>
+<tr class="separator:af34f7bf3bc637d500983a44272577a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a55a4ab7c95751f54af3f8ced9d81ba76"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#a55a4ab7c95751f54af3f8ced9d81ba76">MuseumType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a55a4ab7c95751f54af3f8ced9d81ba76"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines what type of musem eg. art sciences and so on  <a href="#a55a4ab7c95751f54af3f8ced9d81ba76">More...</a><br /></td></tr>
-<tr class="separator:a55a4ab7c95751f54af3f8ced9d81ba76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82207d17f80d3a624e7784ffe21c6f43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mueseum_request_8cs.html#a462fa84e99cf703318040e54f14146a2">MuseumSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#a82207d17f80d3a624e7784ffe21c6f43">Size</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a82207d17f80d3a624e7784ffe21c6f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines size of museum limiting displays and rooms  <a href="#a82207d17f80d3a624e7784ffe21c6f43">More...</a><br /></td></tr>
-<tr class="separator:a82207d17f80d3a624e7784ffe21c6f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed65eefeb6ae0675fe955f65e80e671"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#afed65eefeb6ae0675fe955f65e80e671">IsDone</a><code> [get, private set]</code></td></tr>
+<tr class="separator:afed65eefeb6ae0675fe955f65e80e671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05cd8ccf3dcc6fda7ccd84f8d920f013"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#a05cd8ccf3dcc6fda7ccd84f8d920f013">BaseURL</a><code> [get, set]</code></td></tr>
+<tr class="separator:a05cd8ccf3dcc6fda7ccd84f8d920f013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08e270eb7e8db5c654f1db0641b71c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum_request_data.html">MuseumRequestData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#aa08e270eb7e8db5c654f1db0641b71c8">RequestData</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:aa08e270eb7e8db5c654f1db0641b71c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The museum request data sent to the server  <a href="#aa08e270eb7e8db5c654f1db0641b71c8">More...</a><br /></td></tr>
+<tr class="separator:aa08e270eb7e8db5c654f1db0641b71c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a004ce0050bd4782e8074937ba3a71724"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="class_museum.html">Museum</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#a004ce0050bd4782e8074937ba3a71724">CallBack</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:a004ce0050bd4782e8074937ba3a71724"><td class="mdescLeft">&#160;</td><td class="mdescRight">the function that builds the museum from the data received from the server  <a href="#a004ce0050bd4782e8074937ba3a71724">More...</a><br /></td></tr>
+<tr class="separator:a004ce0050bd4782e8074937ba3a71724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad328b5658542811993e5770a9fb052a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum.html">Museum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_museum_request.html#aad328b5658542811993e5770a9fb052a">Response</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:aad328b5658542811993e5770a9fb052a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The response from the server  <a href="#aad328b5658542811993e5770a9fb052a">More...</a><br /></td></tr>
+<tr class="separator:aad328b5658542811993e5770a9fb052a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_interface_i_resource_request"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_i_resource_request')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_i_resource_request.html">IResourceRequest</a></td></tr>
+<tr class="memitem:a3f805c8d561c119c795598b98611fb90 inherit properties_interface_i_resource_request"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_resource_request.html#a3f805c8d561c119c795598b98611fb90">IsDone</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3f805c8d561c119c795598b98611fb90 inherit properties_interface_i_resource_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicator if request finished and it can no be applied to gObj  <a href="interface_i_resource_request.html#a3f805c8d561c119c795598b98611fb90">More...</a><br /></td></tr>
+<tr class="separator:a3f805c8d561c119c795598b98611fb90 inherit properties_interface_i_resource_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da6ac392229cc1a8a09d420ee4357dd inherit properties_interface_i_resource_request"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_resource_request.html#a6da6ac392229cc1a8a09d420ee4357dd">BaseURL</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6da6ac392229cc1a8a09d420ee4357dd inherit properties_interface_i_resource_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">URL of server to get resource, thread should only need to append the ResourceLocator at the end of the string should be supplied by resource loader  <a href="interface_i_resource_request.html#a6da6ac392229cc1a8a09d420ee4357dd">More...</a><br /></td></tr>
+<tr class="separator:a6da6ac392229cc1a8a09d420ee4357dd inherit properties_interface_i_resource_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="abd551a45744c8387841c20e5ef46d420"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd551a45744c8387841c20e5ef46d420">&#9670;&nbsp;</a></span>Deserialize()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5912914896c546559a250b0d6c7fd65b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5912914896c546559a250b0d6c7fd65b">&#9670;&nbsp;</a></span>MuseumRequest()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_museum_request.html">MuseumRequest</a> MuseumRequest.Deserialize </td>
+          <td class="memname">MuseumRequest.MuseumRequest </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_museum_request_data.html">MuseumRequestData</a>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Action&lt; <a class="el" href="class_museum.html">Museum</a> &gt;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>from xml to museum request </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_museum_request_abd551a45744c8387841c20e5ef46d420_icgraph.png" border="0" usemap="#class_museum_request_abd551a45744c8387841c20e5ef46d420_icgraph" alt=""/></div>
-<map name="class_museum_request_abd551a45744c8387841c20e5ef46d420_icgraph" id="class_museum_request_abd551a45744c8387841c20e5ef46d420_icgraph">
-<area shape="rect" id="node2" href="class_museum_generator.html#a5ead852effaa81309fe98b4d61fe9759" title="enqueues a new museum request " alt="" coords="241,5,448,47"/>
-<area shape="rect" id="node3" href="class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="496,13,640,39"/>
-</map>
-</div>
-
 </div>
 </div>
-<a id="ae227bce4871f20bf6661db4a5af5fe1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae227bce4871f20bf6661db4a5af5fe1c">&#9670;&nbsp;</a></span>Serialize()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a41b1a4699551a86415a877d5380febe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b1a4699551a86415a877d5380febe1">&#9670;&nbsp;</a></span>StartWorkRequest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string MuseumRequest.Serialize </td>
+          <td class="memname">IEnumerator MuseumRequest.StartWorkRequest </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -178,14 +191,45 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>serializes it to xml </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Called when the resource starts working, should most likely start a new thread </p>
+
+<p>Implements <a class="el" href="interface_i_resource_request.html#a5b40a09cb820283600ac9e3f846936f9">IResourceRequest</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_museum_request_a41b1a4699551a86415a877d5380febe1_cgraph.png" border="0" usemap="#class_museum_request_a41b1a4699551a86415a877d5380febe1_cgraph" alt=""/></div>
+<map name="class_museum_request_a41b1a4699551a86415a877d5380febe1_cgraph" id="class_museum_request_a41b1a4699551a86415a877d5380febe1_cgraph">
+<area shape="rect" id="node2" href="class_museum.html#a1b4fb627a19112e3ba3d25e8108de2c3" title="creates a museum from an xml string " alt="" coords="284,5,424,32"/>
+<area shape="rect" id="node3" href="class_museum.html#aa946df02a55ba522f7a39ac688648733" title="Museum.Museum" alt="" coords="472,5,599,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af34f7bf3bc637d500983a44272577a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34f7bf3bc637d500983a44272577a2e">&#9670;&nbsp;</a></span>WhenDone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MuseumRequest.WhenDone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>called when done with request, and it is now time to apply it to a gameobject </p>
+
+<p>Implements <a class="el" href="interface_i_resource_request.html#a056e427fa6233602456ccb2d4c405aa0">IResourceRequest</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="a55a4ab7c95751f54af3f8ced9d81ba76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55a4ab7c95751f54af3f8ced9d81ba76">&#9670;&nbsp;</a></span>MuseumType</h2>
+<a id="a05cd8ccf3dcc6fda7ccd84f8d920f013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05cd8ccf3dcc6fda7ccd84f8d920f013">&#9670;&nbsp;</a></span>BaseURL</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +238,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string MuseumRequest.MuseumType</td>
+          <td class="memname">string MuseumRequest.BaseURL</td>
         </tr>
       </table>
   </td>
@@ -204,12 +248,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>defines what type of musem eg. art sciences and so on </p>
-
 </div>
 </div>
-<a id="a82207d17f80d3a624e7784ffe21c6f43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82207d17f80d3a624e7784ffe21c6f43">&#9670;&nbsp;</a></span>Size</h2>
+<a id="a004ce0050bd4782e8074937ba3a71724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a004ce0050bd4782e8074937ba3a71724">&#9670;&nbsp;</a></span>CallBack</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,22 +260,92 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mueseum_request_8cs.html#a462fa84e99cf703318040e54f14146a2">MuseumSize</a> MuseumRequest.Size</td>
+          <td class="memname">Action&lt;<a class="el" href="class_museum.html">Museum</a>&gt; MuseumRequest.CallBack</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>defines size of museum limiting displays and rooms </p>
+<p>the function that builds the museum from the data received from the server </p>
+
+</div>
+</div>
+<a id="afed65eefeb6ae0675fe955f65e80e671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afed65eefeb6ae0675fe955f65e80e671">&#9670;&nbsp;</a></span>IsDone</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MuseumRequest.IsDone</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa08e270eb7e8db5c654f1db0641b71c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08e270eb7e8db5c654f1db0641b71c8">&#9670;&nbsp;</a></span>RequestData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_museum_request_data.html">MuseumRequestData</a> MuseumRequest.RequestData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The museum request data sent to the server </p>
+
+</div>
+</div>
+<a id="aad328b5658542811993e5770a9fb052a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad328b5658542811993e5770a9fb052a">&#9670;&nbsp;</a></span>Response</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_museum.html">Museum</a> MuseumRequest.Response</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The response from the server </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/UnityProjects/VirtMuse/RoomGenPrototype/Assets/Scripts/VirtMuseum/<a class="el" href="_mueseum_request_8cs.html">MueseumRequest.cs</a></li>
+<li>C:/UnityProjects/VirtMuse/RoomGenPrototype/Assets/Scripts/Resources/<a class="el" href="_museum_request_8cs.html">MuseumRequest.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

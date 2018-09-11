@@ -1,0 +1,8 @@
+<map id="BaseRoomStyleRequest.StartWorkRequest" name="BaseRoomStyleRequest.StartWorkRequest">
+<area shape="rect" id="node2" href="$class_room_style_manager.html#a4cc11d2cbbe1a94def12775722d64b74" title="checks if style was downloaded " alt="" coords="281,5,464,47"/>
+<area shape="rect" id="node3" href="$class_room_style_manager.html#acc946bc24833e24565dee0cdc3b2ef44" title="gets a style from the downloaded ones may return null if not found " alt="" coords="277,71,468,98"/>
+<area shape="rect" id="node4" href="$class_room_style_manager.html#aab9bdbc810904cb623cddcb636165a6a" title="checks if style is currently being downloaded " alt="" coords="281,123,464,164"/>
+<area shape="rect" id="node5" href="$class_room_style_manager.html#a3d3f5a2cb6e861577d01b015c30c3d9a" title="notifies manager that this ID started downloading " alt="" coords="249,189,496,215"/>
+<area shape="rect" id="node6" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#ae85d25e8e130285ea18964b535f82f41" title="VirtMuseWeb.Models.Resource\lModel.ToRoomStyleResource" alt="" coords="269,240,476,281"/>
+<area shape="rect" id="node7" href="$class_room_style_manager.html#a2b0802f24ffe1c2cb4db101359c6bf5e" title="Adds a style to the downloaded styles and removes from currrently downloading tracker if contained ..." alt="" coords="276,306,469,333"/>
+</map>

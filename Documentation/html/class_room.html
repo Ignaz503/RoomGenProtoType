@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -108,7 +108,7 @@ Collaboration diagram for Room:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_room__coll__graph.png" border="0" usemap="#_room_coll__map" alt="Collaboration graph"/></div>
 <map name="_room_coll__map" id="_room_coll__map">
-<area shape="rect" id="node2" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; TransformTileCoordIntoOneD()\l&#45; TransformOneDCoordIntoTwoD()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="5,5,228,376"/>
+<area shape="rect" id="node2" href="class_museum.html" title="{Museum\n|+ Size\l+ RoomMap\l+ Rooms\l+ Walls\l+ MuseumsGraph\l+ CurrentNumberOfDoors\l+ NumberOfDisplays\l&#45; roomTypeToPlaceableChecker\l|+ Museum()\l+ Generate()\l+ GetRoomByID()\l+ TransformTileCoordIntoOneD()\l+ TransformOneDCoordIntoTwoD()\l+ AddWall()\l+ Serialize()\l+ Deserialize()\l+ AddNewRoomPlacableChecker()\l&#45; FillDisplays()\l&#45; GetSourroundingTiles()\l&#45; LogMap()\l&#45; LogOutline()\l&#45; RemoveWallsContainigPoint()\l}" alt="" coords="5,5,228,376"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -143,12 +143,9 @@ Properties</h2></td></tr>
 <tr class="memitem:aed67349f7f161cb2214111eff3e51018"><td class="memItemLeft" align="right" valign="top">List&lt; Vector2Int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#aed67349f7f161cb2214111eff3e51018">RoomTiles</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:aed67349f7f161cb2214111eff3e51018"><td class="mdescLeft">&#160;</td><td class="mdescRight">all the tiles of the museum that make up this room  <a href="#aed67349f7f161cb2214111eff3e51018">More...</a><br /></td></tr>
 <tr class="separator:aed67349f7f161cb2214111eff3e51018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53b139a4a9f372914e9c574b42f0a8b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum_texture_info.html">MuseumTextureInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#a53b139a4a9f372914e9c574b42f0a8b2">FloorTexture</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a53b139a4a9f372914e9c574b42f0a8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The texture info for the floor  <a href="#a53b139a4a9f372914e9c574b42f0a8b2">More...</a><br /></td></tr>
-<tr class="separator:a53b139a4a9f372914e9c574b42f0a8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a415866d8fd49a481729fa9782f348d8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum_texture_info.html">MuseumTextureInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#a415866d8fd49a481729fa9782f348d8d">CeilingTexture</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a415866d8fd49a481729fa9782f348d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The texture for the ceiling of the room  <a href="#a415866d8fd49a481729fa9782f348d8d">More...</a><br /></td></tr>
-<tr class="separator:a415866d8fd49a481729fa9782f348d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cd7f8c4f2ee7b7397a40a463cd14196"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum_texture_info.html">MuseumTextureInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#a3cd7f8c4f2ee7b7397a40a463cd14196">StyleInfo</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3cd7f8c4f2ee7b7397a40a463cd14196"><td class="mdescLeft">&#160;</td><td class="mdescRight">The room style information  <a href="#a3cd7f8c4f2ee7b7397a40a463cd14196">More...</a><br /></td></tr>
+<tr class="separator:a3cd7f8c4f2ee7b7397a40a463cd14196"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7a1da4fa70bf843d643391bdbaa1fb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_museum_display_info.html">MuseumDisplayInfo</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_room.html#ab7a1da4fa70bf843d643391bdbaa1fb5">CenterDisplayInfos</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:ab7a1da4fa70bf843d643391bdbaa1fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">display information for all the displays that this room has wall displays are not counted as displays for this room  <a href="#ab7a1da4fa70bf843d643391bdbaa1fb5">More...</a><br /></td></tr>
 <tr class="separator:ab7a1da4fa70bf843d643391bdbaa1fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -380,8 +377,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_room_a294bb89a25ac765eca25106ccb4d1955_icgraph.png" border="0" usemap="#class_room_a294bb89a25ac765eca25106ccb4d1955_icgraph" alt=""/></div>
 <map name="class_room_a294bb89a25ac765eca25106ccb4d1955_icgraph" id="class_room_a294bb89a25ac765eca25106ccb4d1955_icgraph">
-<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="269,5,399,32"/>
-<area shape="rect" id="node3" href="class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="447,5,621,32"/>
+<area shape="rect" id="node2" href="class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="269,5,399,32"/>
+<area shape="rect" id="node3" href="class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="447,5,637,32"/>
 </map>
 </div>
 
@@ -595,30 +592,6 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="a415866d8fd49a481729fa9782f348d8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a415866d8fd49a481729fa9782f348d8d">&#9670;&nbsp;</a></span>CeilingTexture</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_museum_texture_info.html">MuseumTextureInfo</a> Room.CeilingTexture</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The texture for the ceiling of the room </p>
-
-</div>
-</div>
 <a id="ab7a1da4fa70bf843d643391bdbaa1fb5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7a1da4fa70bf843d643391bdbaa1fb5">&#9670;&nbsp;</a></span>CenterDisplayInfos</h2>
 
@@ -640,30 +613,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>display information for all the displays that this room has wall displays are not counted as displays for this room </p>
-
-</div>
-</div>
-<a id="a53b139a4a9f372914e9c574b42f0a8b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53b139a4a9f372914e9c574b42f0a8b2">&#9670;&nbsp;</a></span>FloorTexture</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_museum_texture_info.html">MuseumTextureInfo</a> Room.FloorTexture</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The texture info for the floor </p>
 
 </div>
 </div>
@@ -712,6 +661,30 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>all the tiles of the museum that make up this room </p>
+
+</div>
+</div>
+<a id="a3cd7f8c4f2ee7b7397a40a463cd14196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cd7f8c4f2ee7b7397a40a463cd14196">&#9670;&nbsp;</a></span>StyleInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_museum_texture_info.html">MuseumTextureInfo</a> Room.StyleInfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The room style information </p>
 
 </div>
 </div>

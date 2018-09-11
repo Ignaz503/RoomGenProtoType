@@ -1,0 +1,310 @@
+\hypertarget{class_virt_muse_web_1_1_utility_1_1_image}{}\section{Virt\+Muse\+Web.\+Utility.\+Image Class Reference}
+\label{class_virt_muse_web_1_1_utility_1_1_image}\index{Virt\+Muse\+Web.\+Utility.\+Image@{Virt\+Muse\+Web.\+Utility.\+Image}}
+
+
+Represents an easily serializable \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} resource that can be cast to a Unity\+Texture2D used by server to store image data  
+
+
+
+
+Inheritance diagram for Virt\+Muse\+Web.\+Utility.\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_virt_muse_web_1_1_utility_1_1_image__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Virt\+Muse\+Web.\+Utility.\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_virt_muse_web_1_1_utility_1_1_image__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_virt_muse_web_1_1_utility_1_1_image_1_1_color32}{Color32}}
+\begin{DoxyCompactList}\small\item\em Color struct that is serializable and used by \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Virt\+Muse\+Web.\+Utility.\+Image}} to represent color \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_ae05544069e19310301727b4b9edc917a}{Image}} (int w, int h)
+\item 
+byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_ac644e9eaee839b3bc66b48c6a5776118}{Serialize}} ()
+\begin{DoxyCompactList}\small\item\em serializes image to byte array \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_ae0ecd3ea4039b53bfe62c753b0669f2f}{Serialize}} (Binary\+Writer w)
+\begin{DoxyCompactList}\small\item\em serializes image into already existing binary writer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_ab45d281959b7e4d99408631f57f1d372}{Deserialize}} (byte\mbox{[}$\,$\mbox{]} obj)
+\begin{DoxyCompactList}\small\item\em deserializes \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} from byte array \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_a0d1b4f954a69ba6cd90639d0d605a814}{Deserialize}} (Binary\+Reader r)
+\begin{DoxyCompactList}\small\item\em deserializes image from existing binary reader \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_a0c71d3c117265cce4de488f0ef1e793e}{Black}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em creates a black image with given width and height min size\+: 1x1 \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_a2d472e394459543eddfdfe5dd2c14d7b}{White}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em creates a white image with given width and height min size\+: 1x1 \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_ad31a5f8472bedbb30dc0c1448db5393b}{operator Texture2D}} (\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} img)
+\begin{DoxyCompactList}\small\item\em explicit cast to Unity\+Engine Texture2D \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_aa60d34edebf73095308ca23c31a0024e}{Width}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} width \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_a1640e2f4c3018eda9de31a2ea3a14e4f}{Height}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} height \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_virt_muse_web_1_1_utility_1_1_image_1_1_color32}{Color32}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_a05a3e3ec4ecba22e4338d2459127abb1}{this\mbox{[}int x, int y\mbox{]}}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_aa4740b3d049ec78a42d90c539ee4b186}{Write\+To}} (Binary\+Writer w)
+\begin{DoxyCompactList}\small\item\em Writes image to binary writer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_a36723067acdbb5d730ed84bc198ad424}{Read\+From}} (Binary\+Reader r)
+\begin{DoxyCompactList}\small\item\em Reads \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} from binary reader \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_virt_muse_web_1_1_utility_1_1_image_1_1_color32}{Color32}} \mbox{[},\mbox{]} \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image_a0a52ad672d00d9b10d8f66717ce4cfb2}{color}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} as a 1D color array \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an easily serializable \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} resource that can be cast to a Unity\+Texture2D used by server to store image data 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_ae05544069e19310301727b4b9edc917a}\label{class_virt_muse_web_1_1_utility_1_1_image_ae05544069e19310301727b4b9edc917a}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Image@{Image}}
+\index{Image@{Image}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}}
+{\footnotesize\ttfamily Virt\+Muse\+Web.\+Utility.\+Image.\+Image (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_a0c71d3c117265cce4de488f0ef1e793e}\label{class_virt_muse_web_1_1_utility_1_1_image_a0c71d3c117265cce4de488f0ef1e793e}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Black@{Black}}
+\index{Black@{Black}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Black()}{Black()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} Virt\+Muse\+Web.\+Utility.\+Image.\+Black (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+creates a black image with given width and height min size\+: 1x1 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the wanted width\\
+\hline
+{\em height} & the wanted height\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+completly black image
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_ab45d281959b7e4d99408631f57f1d372}\label{class_virt_muse_web_1_1_utility_1_1_image_ab45d281959b7e4d99408631f57f1d372}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} Virt\+Muse\+Web.\+Utility.\+Image.\+Deserialize (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+deserializes \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} from byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the byte array representing the image\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} object created from the byte array
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_virt_muse_web_1_1_utility_1_1_image_ab45d281959b7e4d99408631f57f1d372_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_a0d1b4f954a69ba6cd90639d0d605a814}\label{class_virt_muse_web_1_1_utility_1_1_image_a0d1b4f954a69ba6cd90639d0d605a814}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} Virt\+Muse\+Web.\+Utility.\+Image.\+Deserialize (\begin{DoxyParamCaption}\item[{Binary\+Reader}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+deserializes image from existing binary reader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the reader we read the obj from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the image deserialized from the binary reader
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_ad31a5f8472bedbb30dc0c1448db5393b}\label{class_virt_muse_web_1_1_utility_1_1_image_ad31a5f8472bedbb30dc0c1448db5393b}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!operator Texture2D@{operator Texture2D}}
+\index{operator Texture2D@{operator Texture2D}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{operator Texture2\+D()}{operator Texture2D()}}
+{\footnotesize\ttfamily static Virt\+Muse\+Web.\+Utility.\+Image.\+operator Texture2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}}}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [static]}}
+
+
+
+explicit cast to Unity\+Engine Texture2D 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & the image that needs casting\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_a36723067acdbb5d730ed84bc198ad424}\label{class_virt_muse_web_1_1_utility_1_1_image_a36723067acdbb5d730ed84bc198ad424}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Read\+From@{Read\+From}}
+\index{Read\+From@{Read\+From}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Read\+From()}{ReadFrom()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} Virt\+Muse\+Web.\+Utility.\+Image.\+Read\+From (\begin{DoxyParamCaption}\item[{Binary\+Reader}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Reads \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} from binary reader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the reader we read the object from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the image object read from the binary reader
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_ac644e9eaee839b3bc66b48c6a5776118}\label{class_virt_muse_web_1_1_utility_1_1_image_ac644e9eaee839b3bc66b48c6a5776118}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Virt\+Muse\+Web.\+Utility.\+Image.\+Serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+serializes image to byte array 
+
+\begin{DoxyReturn}{Returns}
+image as byte array
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_virt_muse_web_1_1_utility_1_1_i_serializable_ab466c2a156753c658cff1e073606e9bd}{Virt\+Muse\+Web.\+Utility.\+I\+Serializable}}.
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_ae0ecd3ea4039b53bfe62c753b0669f2f}\label{class_virt_muse_web_1_1_utility_1_1_image_ae0ecd3ea4039b53bfe62c753b0669f2f}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Virt\+Muse\+Web.\+Utility.\+Image.\+Serialize (\begin{DoxyParamCaption}\item[{Binary\+Writer}]{w }\end{DoxyParamCaption})}
+
+
+
+serializes image into already existing binary writer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & the writer we need to write to\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_virt_muse_web_1_1_utility_1_1_i_serializable_a99aed8cf41a4ed3ff1ccbedf84d89291}{Virt\+Muse\+Web.\+Utility.\+I\+Serializable}}.
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_a2d472e394459543eddfdfe5dd2c14d7b}\label{class_virt_muse_web_1_1_utility_1_1_image_a2d472e394459543eddfdfe5dd2c14d7b}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!White@{White}}
+\index{White@{White}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{White()}{White()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} Virt\+Muse\+Web.\+Utility.\+Image.\+White (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+creates a white image with given width and height min size\+: 1x1 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the wanted width\\
+\hline
+{\em height} & the wanted height\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+completly white image
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_aa4740b3d049ec78a42d90c539ee4b186}\label{class_virt_muse_web_1_1_utility_1_1_image_aa4740b3d049ec78a42d90c539ee4b186}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Write\+To@{Write\+To}}
+\index{Write\+To@{Write\+To}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Write\+To()}{WriteTo()}}
+{\footnotesize\ttfamily void Virt\+Muse\+Web.\+Utility.\+Image.\+Write\+To (\begin{DoxyParamCaption}\item[{Binary\+Writer}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes image to binary writer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & the writer we need to write to\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_a0a52ad672d00d9b10d8f66717ce4cfb2}\label{class_virt_muse_web_1_1_utility_1_1_image_a0a52ad672d00d9b10d8f66717ce4cfb2}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!color@{color}}
+\index{color@{color}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_virt_muse_web_1_1_utility_1_1_image_1_1_color32}{Color32}} \mbox{[},\mbox{]} Virt\+Muse\+Web.\+Utility.\+Image.\+color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} as a 1D color array 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_a1640e2f4c3018eda9de31a2ea3a14e4f}\label{class_virt_muse_web_1_1_utility_1_1_image_a1640e2f4c3018eda9de31a2ea3a14e4f}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Height@{Height}}
+\index{Height@{Height}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Height}{Height}}
+{\footnotesize\ttfamily int Virt\+Muse\+Web.\+Utility.\+Image.\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} height 
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_a05a3e3ec4ecba22e4338d2459127abb1}\label{class_virt_muse_web_1_1_utility_1_1_image_a05a3e3ec4ecba22e4338d2459127abb1}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!this\mbox{[}int x, int y\mbox{]}@{this[int x, int y]}}
+\index{this\mbox{[}int x, int y\mbox{]}@{this[int x, int y]}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{this[int x, int y]}{this[int x, int y]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_virt_muse_web_1_1_utility_1_1_image_1_1_color32}{Color32}} Virt\+Muse\+Web.\+Utility.\+Image.\+this\mbox{[}int x, int y\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_virt_muse_web_1_1_utility_1_1_image_aa60d34edebf73095308ca23c31a0024e}\label{class_virt_muse_web_1_1_utility_1_1_image_aa60d34edebf73095308ca23c31a0024e}} 
+\index{Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}!Width@{Width}}
+\index{Width@{Width}!Virt\+Muse\+Web\+::\+Utility\+::\+Image@{Virt\+Muse\+Web\+::\+Utility\+::\+Image}}
+\subsubsection{\texorpdfstring{Width}{Width}}
+{\footnotesize\ttfamily int Virt\+Muse\+Web.\+Utility.\+Image.\+Width\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{class_virt_muse_web_1_1_utility_1_1_image}{Image}} width 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Utility/\+Virt\+Muse\+Web\+Helper/\+Resource\+Helper/\mbox{\hyperlink{_image_8cs}{Image.\+cs}}\end{DoxyCompactItemize}

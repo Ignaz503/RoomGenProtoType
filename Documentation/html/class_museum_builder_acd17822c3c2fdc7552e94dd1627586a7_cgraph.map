@@ -1,0 +1,3 @@
+<map id="MuseumBuilder.GetGameObjectForTile" name="MuseumBuilder.GetGameObjectForTile">
+<area shape="rect" id="node2" href="$class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="264,5,451,47"/>
+</map>

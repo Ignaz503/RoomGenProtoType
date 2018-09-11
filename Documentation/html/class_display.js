@@ -4,8 +4,8 @@ var class_display =
       [ "MeshDisplay", "class_display.html#a7f7abc559192ef7e8f4a03382d3492d7a6465642df623349960f917dcf68ba989", null ],
       [ "ImageDisplay", "class_display.html#a7f7abc559192ef7e8f4a03382d3492d7a6790a36b5a0528029d4ed43891266fcb", null ]
     ] ],
+    [ "ApplyPreProcessingInformation", "class_display.html#ab9cd24c11c43dd87bc50e85a8e9e4c31", null ],
     [ "ApplyResource", "class_display.html#a811157ddb42ae4d72f690457a08711d3", null ],
-    [ "GetMetadata", "class_display.html#a293687a976cbe23a09b7c6ddef36a48d", null ],
     [ "Interact", "class_display.html#a43fc2a6f19bbf2f1bdb676392b37e921", null ],
     [ "InteractionEnded", "class_display.html#a6fd38485267e1b78f1d1dfb589ec4ae0", null ],
     [ "InteractionStarted", "class_display.html#a21c51fcf185403197a78a5acfd2065de", null ],
@@ -15,7 +15,6 @@ var class_display =
     [ "SetUp", "class_display.html#a57325251fbeac943cd48520e50f0bec4", null ],
     [ "interaction", "class_display.html#af35594f083ed6dd4279183215719583f", null ],
     [ "interactionType", "class_display.html#aab913d6cfa4e9631e8129ed131e79196", null ],
-    [ "metadata", "class_display.html#a76e9b246ebdd9a5799de8df52279f05e", null ],
     [ "MetaData", "class_display.html#a9ae693bcb1553822aed7ae887a65591c", null ],
     [ "Object", "class_display.html#a32b9644a140d330a9c51cfdbb6f6093c", null ],
     [ "Type", "class_display.html#a2c80ba13fff1fd81aaa6915b28e8c14f", null ]

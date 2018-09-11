@@ -1,8 +1,9 @@
 <map id="RoomManagmentUnit.AddGameObject" name="RoomManagmentUnit.AddGameObject">
-<area shape="rect" id="node2" href="$class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="MuseumBuilder.AddToRoomManagmentUnit" alt="" coords="263,64,541,91"/>
-<area shape="rect" id="node3" href="$class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="842,35,1023,62"/>
-<area shape="rect" id="node5" href="$class_museum_builder.html#a52350d2e48a73d0e5400e2d8d31a8913" title="Sets up wall gameobjects for a museum " alt="" coords="840,94,1025,120"/>
-<area shape="rect" id="node6" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="595,28,786,69"/>
-<area shape="rect" id="node7" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="589,145,792,186"/>
-<area shape="rect" id="node4" href="$class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="1073,64,1231,91"/>
+<area shape="rect" id="node2" href="$class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="263,101,541,127"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="595,5,786,47"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="840,71,1023,98"/>
+<area shape="rect" id="node7" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="589,123,792,164"/>
+<area shape="rect" id="node8" href="$class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="844,130,1019,157"/>
+<area shape="rect" id="node5" href="$class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="1071,101,1265,127"/>
+<area shape="rect" id="node6" href="$class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="1313,101,1457,127"/>
 </map>

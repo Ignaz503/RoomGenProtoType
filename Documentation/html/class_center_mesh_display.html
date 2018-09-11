@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -99,8 +99,8 @@ Inheritance diagram for CenterMeshDisplay:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_center_mesh_display__inherit__graph.png" border="0" usemap="#_center_mesh_display_inherit__map" alt="Inheritance graph"/></div>
 <map name="_center_mesh_display_inherit__map" id="_center_mesh_display_inherit__map">
-<area shape="rect" id="node2" href="class_mesh_display.html" title="{MeshDisplay\n|+ ParentMesh\l+ ChildMesh\l+ XPosScale\l+ XPosModifier\l|+ ScaleChildToFitParent()\l+ ApplyResource()\l+ SetUp()\l# InteractionStarted()\l# InteractionEnded()\l# SetToDefaultInteractionBehaviour()\l&#45; Awake()\l&#45; SetUpMeshRendererOptions()\l}" alt="" coords="8,447,239,671"/>
-<area shape="rect" id="node3" href="class_display.html" title="The base class for displaying resources " alt="" coords="8,131,239,399"/>
+<area shape="rect" id="node2" href="class_mesh_display.html" title="{MeshDisplay\n|+ ParentMesh\l+ ChildMesh\l+ XPosScale\l+ XPosModifier\l|+ ScaleChildToFitParent()\l+ ApplyResource()\l+ SetUp()\l+ ApplyPreProcessingInformation()\l# InteractionStarted()\l# InteractionEnded()\l# SetToDefaultInteractionBehaviour()\l&#45; Awake()\l&#45; SetUpMeshRendererOptions()\l}" alt="" coords="8,432,239,671"/>
+<area shape="rect" id="node3" href="class_display.html" title="The base class for displaying resources " alt="" coords="8,131,239,384"/>
 <area shape="rect" id="node5" href="interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="140,5,232,83"/>
 </map>
 </div>
@@ -109,8 +109,8 @@ Collaboration diagram for CenterMeshDisplay:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_center_mesh_display__coll__graph.png" border="0" usemap="#_center_mesh_display_coll__map" alt="Collaboration graph"/></div>
 <map name="_center_mesh_display_coll__map" id="_center_mesh_display_coll__map">
-<area shape="rect" id="node2" href="class_mesh_display.html" title="{MeshDisplay\n|+ ParentMesh\l+ ChildMesh\l+ XPosScale\l+ XPosModifier\l|+ ScaleChildToFitParent()\l+ ApplyResource()\l+ SetUp()\l# InteractionStarted()\l# InteractionEnded()\l# SetToDefaultInteractionBehaviour()\l&#45; Awake()\l&#45; SetUpMeshRendererOptions()\l}" alt="" coords="71,589,301,813"/>
-<area shape="rect" id="node3" href="class_display.html" title="The base class for displaying resources " alt="" coords="71,287,301,540"/>
+<area shape="rect" id="node2" href="class_mesh_display.html" title="{MeshDisplay\n|+ ParentMesh\l+ ChildMesh\l+ XPosScale\l+ XPosModifier\l|+ ScaleChildToFitParent()\l+ ApplyResource()\l+ SetUp()\l+ ApplyPreProcessingInformation()\l# InteractionStarted()\l# InteractionEnded()\l# SetToDefaultInteractionBehaviour()\l&#45; Awake()\l&#45; SetUpMeshRendererOptions()\l}" alt="" coords="71,575,301,813"/>
+<area shape="rect" id="node3" href="class_display.html" title="The base class for displaying resources " alt="" coords="71,287,301,525"/>
 <area shape="rect" id="node5" href="interface_i_interactable.html" title="{IInteractable\n|+ Object\l|+ Interact()\l}" alt="" coords="140,139,232,217"/>
 <area shape="rect" id="node6" href="class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="257,132,387,224"/>
 </map>
@@ -131,9 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adb19ca4d076a93df64d1c035663fce0f inherit pub_methods_class_mesh_display"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh_display.html#adb19ca4d076a93df64d1c035663fce0f">SetUp</a> (<a class="el" href="class_museum_display_info.html">MuseumDisplayInfo</a> dispInfo, GameObject parent)</td></tr>
 <tr class="memdesc:adb19ca4d076a93df64d1c035663fce0f inherit pub_methods_class_mesh_display"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the display in the museum, position and rotation  <a href="class_mesh_display.html#adb19ca4d076a93df64d1c035663fce0f">More...</a><br /></td></tr>
 <tr class="separator:adb19ca4d076a93df64d1c035663fce0f inherit pub_methods_class_mesh_display"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab52b4d43c963b3bef383e2eebd1e4115 inherit pub_methods_class_mesh_display"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh_display.html#ab52b4d43c963b3bef383e2eebd1e4115">ApplyPreProcessingInformation</a> (<a class="el" href="class_pre_processing_game_object_information.html">PreProcessingGameObjectInformation</a> info)</td></tr>
+<tr class="separator:ab52b4d43c963b3bef383e2eebd1e4115 inherit pub_methods_class_mesh_display"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_display"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_display')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_display.html">Display</a></td></tr>
-<tr class="memitem:a293687a976cbe23a09b7c6ddef36a48d inherit pub_methods_class_display"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a293687a976cbe23a09b7c6ddef36a48d">GetMetadata</a> ()</td></tr>
-<tr class="separator:a293687a976cbe23a09b7c6ddef36a48d inherit pub_methods_class_display"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43fc2a6f19bbf2f1bdb676392b37e921 inherit pub_methods_class_display"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a43fc2a6f19bbf2f1bdb676392b37e921">Interact</a> (<a class="el" href="class_player.html">Player</a> player)</td></tr>
 <tr class="memdesc:a43fc2a6f19bbf2f1bdb676392b37e921 inherit pub_methods_class_display"><td class="mdescLeft">&#160;</td><td class="mdescRight">called when the player interacts with this display  <a href="class_display.html#a43fc2a6f19bbf2f1bdb676392b37e921">More...</a><br /></td></tr>
 <tr class="separator:a43fc2a6f19bbf2f1bdb676392b37e921 inherit pub_methods_class_display"><td class="memSeparator" colspan="2">&#160;</td></tr>

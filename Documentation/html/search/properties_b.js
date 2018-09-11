@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['raycastmaxdist',['RayCastMaxDist',['../class_player.html#adafd180f492907d445a3ace023f63040',1,'Player']]],
-  ['resourecid',['ResourecID',['../class_base_resource.html#a947dc7c31c7b98089aa6f560f90c4cb3',1,'BaseResource']]],
-  ['resrourcetype',['ResrourceType',['../class_base_resource.html#a226a36a32013947cb069e023324cd3af',1,'BaseResource']]],
-  ['roomid',['RoomID',['../class_room.html#a499df97242b8996b66cc22737159f59c',1,'Room']]],
-  ['roommap',['RoomMap',['../class_museum.html#add7cf92391f0c501eaf2ebb76ddd54f6',1,'Museum']]],
-  ['rooms',['Rooms',['../class_museum.html#afbe49bbdcf1b263d32fd0ae323289e7d',1,'Museum']]],
-  ['roomtiles',['RoomTiles',['../class_room.html#aed67349f7f161cb2214111eff3e51018',1,'Room']]],
-  ['rotation',['Rotation',['../class_wall.html#aa2d6c86c7ccabbb5e317b9ccac62e99e',1,'Wall']]]
+  ['name',['Name',['../class_virt_muse_web_1_1_models_1_1_creator.html#a4ebb4ac1c0dede1965066e5dc9c13061',1,'VirtMuseWeb.Models.Creator.Name()'],['../class_virt_muse_web_1_1_models_1_1_source.html#a7e1487db24858ab8e3b7bd65e296bfb2',1,'VirtMuseWeb.Models.Source.Name()']]],
+  ['nameofpiece',['NameOfPiece',['../class_meta_data.html#abb2ca2ab73300089a68d6c38f5610949',1,'MetaData.NameOfPiece()'],['../class_virt_muse_web_1_1_models_1_1_meta_data_model.html#a7aa6bab63294f59d3f20f74e4a76422d',1,'VirtMuseWeb.Models.MetaDataModel.NameOfPiece()']]],
+  ['nodeid',['NodeID',['../class_museum_graph_1_1_node.html#a6d459bfb4115130070c796f1179c27b2',1,'MuseumGraph::Node']]],
+  ['nodes',['Nodes',['../class_museum_graph.html#aa166ad4620069c3aaa4b87fd3ae4bfd7',1,'MuseumGraph']]],
+  ['normals',['Normals',['../class_virt_muse_web_1_1_utility_1_1_unity_mesh_data.html#a2b5b5618a3261799a035240c970526d4',1,'VirtMuseWeb::Utility::UnityMeshData']]],
+  ['numberofdisplays',['NumberOfDisplays',['../class_museum.html#ac6942612f3be979812b450ee9140caf1',1,'Museum']]]
 ];

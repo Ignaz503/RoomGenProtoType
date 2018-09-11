@@ -1,0 +1,9 @@
+<map id="IResourceRequest" name="IResourceRequest">
+<area shape="rect" id="node2" href="$class_base_room_style_request.html" title="{BaseRoomStyleRequest\n|+ IsDone\l+ BaseURL\l+ ResourceLocator\l+ Requestor\l+ TextureToApply\l+ Response\l|+ BaseRoomStyleRequest()\l+ StartWorkRequest()\l+ WhenDone()\l}" alt="" coords="290,167,474,347"/>
+<area shape="rect" id="node7" href="$class_display_resource_request.html" title="{DisplayResourceRequest\&lt; T \&gt;\n|+ ResourceLocator\l+ Requestor\l+ Response\l+ PreProcessing\l+ PreProcessedGameObjectInformation\l+ BaseURL\l+ IsDone\l|+ DisplayResourceRequest()\l+ StartWorkRequest()\l+ WhenDone()\l}" alt="" coords="499,160,751,355"/>
+<area shape="rect" id="node8" href="$class_museum_request.html" title="{MuseumRequest\n|+ IsDone\l+ BaseURL\l+ RequestData\l+ CallBack\l+ Response\l|+ MuseumRequest()\l+ StartWorkRequest()\l+ WhenDone()\l}" alt="" coords="775,175,925,340"/>
+<area shape="rect" id="node3" href="$class_ceiling_texture_request.html" title="{CeilingTextureRequest\n||+ CeilingTextureRequest()\l}" alt="" coords="5,447,177,524"/>
+<area shape="rect" id="node4" href="$class_floor_texture_request.html" title="{FloorTextureRequest\n||+ FloorTextureRequest()\l}" alt="" coords="202,447,365,524"/>
+<area shape="rect" id="node5" href="$class_multi_wall_texture_request.html" title="{MultiWallTextureRequest\n|+ SecondResourceLocator\l+ SecondResponse\l+ MergedTexture\l+ RequestingWall\l|+ MultiWallTextureRequest()\l+ StartWorkRequest()\l+ WhenDone()\l&#45; MergeWallTextures()\l}" alt="" coords="389,403,575,568"/>
+<area shape="rect" id="node6" href="$class_single_wall_texture_request.html" title="{SingleWallTextureRequest\n||+ SingleWallTextureRequest()\l}" alt="" coords="599,447,794,524"/>
+</map>

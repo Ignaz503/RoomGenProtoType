@@ -2,17 +2,12 @@
 \label{class_resource_loader}\index{Resource\+Loader@{Resource\+Loader}}
 
 
-Manages the loading of resources for the client W\+A\+R\+N\+I\+NG N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED C\+U\+R\+R\+E\+N\+T\+LY S\+H\+O\+U\+LD BE S\+E\+EN AS A W\+H\+AT TO E\+X\+P\+E\+CT  
-
-
-
-
 Inheritance diagram for Resource\+Loader\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=189pt]{class_resource_loader__inherit__graph}
+\includegraphics[width=250pt]{class_resource_loader__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -22,56 +17,74 @@ Collaboration diagram for Resource\+Loader\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=189pt]{class_resource_loader__coll__graph}
+\includegraphics[width=250pt]{class_resource_loader__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{Classes}
+\subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}
-\begin{DoxyCompactList}\small\item\em struct for a request from the museum builder to get a certain resource from the server \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}
-\begin{DoxyCompactList}\small\item\em the result of a request after it was revieved from the server \end{DoxyCompactList}\end{DoxyCompactItemize}
+enum \mbox{\hyperlink{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135ab}{Request\+Type}} \{ \mbox{\hyperlink{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135abae9bfe9055aff7833d2f507392005faef}{Request\+Type.\+Museum\+Request}}, 
+\mbox{\hyperlink{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135aba6311ae17c1ee52b36e68aaf4ad066387}{Request\+Type.\+Other}}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_resource_loader_a901b6c5f5391cb35d69d0917ea4a2b5a}{Request\+Resource}} (Action$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$ callback, string Resource\+Locator, string res\+Type)
-\begin{DoxyCompactList}\small\item\em sets a request for a resource \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} \mbox{\hyperlink{class_resource_loader_ae0f219fead6e05415dc2523529d81561}{Retrive\+Result}} ()
-\begin{DoxyCompactList}\small\item\em function to retrieve a result of a request \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-string \mbox{\hyperlink{class_resource_loader_adeb4ddafee015e2630ed66e26ec4a4ae}{responestring}} = \char`\"{}\char`\"{}
-\end{DoxyCompactItemize}
-\subsection*{Properties}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{class_resource_loader}{Resource\+Loader}} \mbox{\hyperlink{class_resource_loader_a66d4b7f32938dad50d13f48e362b7b76}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
-\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_resource_loader_ad258acc6c5c963d5ca93dbe36e243d20}{Awake}} ()
 \item 
+void \mbox{\hyperlink{class_resource_loader_abcaa27712f43f305baef3df7722c9e73}{Post\+Request}} (\mbox{\hyperlink{interface_i_resource_request}{I\+Resource\+Request}} req, \mbox{\hyperlink{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135ab}{Request\+Type}} req\+Type)
+\begin{DoxyCompactList}\small\item\em posts request to request queue and wakes up gameobject \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_resource_loader}{Resource\+Loader}} \mbox{\hyperlink{class_resource_loader_a66d4b7f32938dad50d13f48e362b7b76}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Debug start \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_resource_loader_ade4e93d50757ee75b2356a663c7fd3cd}{Museum\+To\+Build}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em special request for the museum stored for easy storage between scenes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ Type $>$ \mbox{\hyperlink{class_resource_loader_a81acd4bfcfed997a7a339d90383a2a26}{On\+Resource\+Downloaded}}
+\begin{DoxyCompactList}\small\item\em event invoked when a resource was downloaded informs about what type the request was D\+O\+NT send actuall \mbox{\hyperlink{interface_i_resource_request}{I\+Resource\+Request}} someone might unwatingly might tameper with things should be seen as info for observers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
 void \mbox{\hyperlink{class_resource_loader_a20a1036648a453863c96b51d33edfa11}{Update}} ()
-\item 
-void \mbox{\hyperlink{class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d}{Load\+Resource}} (\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}} req)
-\item 
-void \mbox{\hyperlink{class_resource_loader_a39eb6b54c79c44d103b0aedfcdc69f81}{Test\+Request}} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Queue$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$ \mbox{\hyperlink{class_resource_loader_aac461f634dc821609293616d32e7288e}{Loaded\+Resources}} = new Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}$>$()
-\item 
-Queue$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}} $>$ \mbox{\hyperlink{class_resource_loader_acd6d1957bdc4e0212991af05e3454633}{Load\+Requests}} = new Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}$>$()
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{class_resource_loader_ab0983780f3a6f7517a8377010dfd4fe7}{num\+Workable\+Requests\+Same\+Time}}
+\begin{DoxyCompactList}\small\item\em number of request it is possible to work on at the same time \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_resource_loader_a63594097a2099f41637445a76f8df1a9}{base\+U\+RL}}
+\begin{DoxyCompactList}\small\item\em base url to server eg\+: \href{http://localhost:52536}{\tt http\+://localhost\+:52536} \end{DoxyCompactList}\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_resource_loader_a16070d3fe56ca93ca9690f15d36df67b}{resource\+Route}}
+\begin{DoxyCompactList}\small\item\em sub route to resource eg /api/resource/getres?id= \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_resource_loader_a3a96acf88c8727a7f76b56bbb483b706}{num\+Current\+Requests\+Working\+On}} = 0
+\begin{DoxyCompactList}\small\item\em number of currently active requests \end{DoxyCompactList}\item 
+Queue$<$ \mbox{\hyperlink{interface_i_resource_request}{I\+Resource\+Request}} $>$ \mbox{\hyperlink{class_resource_loader_af06b5459698c44c6acbb52c456fa2c71}{request\+Queue}}
+\begin{DoxyCompactList}\small\item\em queue of request posted \end{DoxyCompactList}\item 
+Queue$<$ \mbox{\hyperlink{interface_i_resource_request}{I\+Resource\+Request}} $>$ \mbox{\hyperlink{class_resource_loader_afbcaf8e71a04ea93dddd62f342b50bc8}{requests\+Working\+On}}
+\begin{DoxyCompactList}\small\item\em queue of requests that are currently being worked on \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Manages the loading of resources for the client W\+A\+R\+N\+I\+NG N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED C\+U\+R\+R\+E\+N\+T\+LY S\+H\+O\+U\+LD BE S\+E\+EN AS A W\+H\+AT TO E\+X\+P\+E\+CT 
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135ab}\label{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135ab}} 
+\index{Resource\+Loader@{Resource\+Loader}!Request\+Type@{Request\+Type}}
+\index{Request\+Type@{Request\+Type}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{Request\+Type}{RequestType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135ab}{Resource\+Loader.\+Request\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
 
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Museum\+Request@{Museum\+Request}!Resource\+Loader@{Resource\+Loader}}\index{Resource\+Loader@{Resource\+Loader}!Museum\+Request@{Museum\+Request}}}\mbox{\Hypertarget{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135abae9bfe9055aff7833d2f507392005faef}\label{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135abae9bfe9055aff7833d2f507392005faef}} 
+Museum\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Other@{Other}!Resource\+Loader@{Resource\+Loader}}\index{Resource\+Loader@{Resource\+Loader}!Other@{Other}}}\mbox{\Hypertarget{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135aba6311ae17c1ee52b36e68aaf4ad066387}\label{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135aba6311ae17c1ee52b36e68aaf4ad066387}} 
+Other&\\
+\hline
+
+\end{DoxyEnumFields}
 
 
 \subsection{Member Function Documentation}
@@ -79,58 +92,44 @@ Manages the loading of resources for the client W\+A\+R\+N\+I\+NG N\+OT I\+M\+P\
 \index{Resource\+Loader@{Resource\+Loader}!Awake@{Awake}}
 \index{Awake@{Awake}!Resource\+Loader@{Resource\+Loader}}
 \subsubsection{\texorpdfstring{Awake()}{Awake()}}
-{\footnotesize\ttfamily void Resource\+Loader.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Resource\+Loader.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d}\label{class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d}} 
-\index{Resource\+Loader@{Resource\+Loader}!Load\+Resource@{Load\+Resource}}
-\index{Load\+Resource@{Load\+Resource}!Resource\+Loader@{Resource\+Loader}}
-\subsubsection{\texorpdfstring{Load\+Resource()}{LoadResource()}}
-{\footnotesize\ttfamily void Resource\+Loader.\+Load\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}}]{req }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_resource_loader_abcaa27712f43f305baef3df7722c9e73}\label{class_resource_loader_abcaa27712f43f305baef3df7722c9e73}} 
+\index{Resource\+Loader@{Resource\+Loader}!Post\+Request@{Post\+Request}}
+\index{Post\+Request@{Post\+Request}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{Post\+Request()}{PostRequest()}}
+{\footnotesize\ttfamily void Resource\+Loader.\+Post\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_resource_request}{I\+Resource\+Request}}}]{req,  }\item[{\mbox{\hyperlink{class_resource_loader_a55469e5c9294ec83732bfa4e2c3135ab}{Request\+Type}}}]{req\+Type }\end{DoxyParamCaption})}
 
+
+
+posts request to request queue and wakes up gameobject 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & the request that is posted\\
+\hline
+{\em req\+Type} & reqest type, to figure out routing on server\\
+\hline
+\end{DoxyParams}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_resource_loader_a088ef33ee82be6e64028b6b5512fad5d_icgraph}
+\includegraphics[width=350pt]{class_resource_loader_abcaa27712f43f305baef3df7722c9e73_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_resource_loader_a901b6c5f5391cb35d69d0917ea4a2b5a}\label{class_resource_loader_a901b6c5f5391cb35d69d0917ea4a2b5a}} 
-\index{Resource\+Loader@{Resource\+Loader}!Request\+Resource@{Request\+Resource}}
-\index{Request\+Resource@{Request\+Resource}!Resource\+Loader@{Resource\+Loader}}
-\subsubsection{\texorpdfstring{Request\+Resource()}{RequestResource()}}
-{\footnotesize\ttfamily void Resource\+Loader.\+Request\+Resource (\begin{DoxyParamCaption}\item[{Action$<$ \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} $>$}]{callback,  }\item[{string}]{Resource\+Locator,  }\item[{string}]{res\+Type }\end{DoxyParamCaption})}
-
-
-
-sets a request for a resource 
-
-\mbox{\Hypertarget{class_resource_loader_ae0f219fead6e05415dc2523529d81561}\label{class_resource_loader_ae0f219fead6e05415dc2523529d81561}} 
-\index{Resource\+Loader@{Resource\+Loader}!Retrive\+Result@{Retrive\+Result}}
-\index{Retrive\+Result@{Retrive\+Result}!Resource\+Loader@{Resource\+Loader}}
-\subsubsection{\texorpdfstring{Retrive\+Result()}{RetriveResult()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}} Resource\+Loader.\+Retrive\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-function to retrieve a result of a request 
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_resource_loader_a39eb6b54c79c44d103b0aedfcdc69f81}\label{class_resource_loader_a39eb6b54c79c44d103b0aedfcdc69f81}} 
-\index{Resource\+Loader@{Resource\+Loader}!Test\+Request@{Test\+Request}}
-\index{Test\+Request@{Test\+Request}!Resource\+Loader@{Resource\+Loader}}
-\subsubsection{\texorpdfstring{Test\+Request()}{TestRequest()}}
-{\footnotesize\ttfamily void Resource\+Loader.\+Test\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
 \mbox{\Hypertarget{class_resource_loader_a20a1036648a453863c96b51d33edfa11}\label{class_resource_loader_a20a1036648a453863c96b51d33edfa11}} 
 \index{Resource\+Loader@{Resource\+Loader}!Update@{Update}}
 \index{Update@{Update}!Resource\+Loader@{Resource\+Loader}}
 \subsubsection{\texorpdfstring{Update()}{Update()}}
 {\footnotesize\ttfamily void Resource\+Loader.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:
+
+
+
+
+first checks if we can start a new request, when there is space and we have request posted after that, checks if any request finished at the end checks if it can go to sleep when there are no requests worked on and no requests posted Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -141,23 +140,65 @@ Here is the call graph for this function\+:
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_resource_loader_aac461f634dc821609293616d32e7288e}\label{class_resource_loader_aac461f634dc821609293616d32e7288e}} 
-\index{Resource\+Loader@{Resource\+Loader}!Loaded\+Resources@{Loaded\+Resources}}
-\index{Loaded\+Resources@{Loaded\+Resources}!Resource\+Loader@{Resource\+Loader}}
-\subsubsection{\texorpdfstring{Loaded\+Resources}{LoadedResources}}
-{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}$>$ Resource\+Loader.\+Loaded\+Resources = new Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request_result}{Request\+Result}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_resource_loader_a63594097a2099f41637445a76f8df1a9}\label{class_resource_loader_a63594097a2099f41637445a76f8df1a9}} 
+\index{Resource\+Loader@{Resource\+Loader}!base\+U\+RL@{base\+U\+RL}}
+\index{base\+U\+RL@{base\+U\+RL}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{base\+U\+RL}{baseURL}}
+{\footnotesize\ttfamily string Resource\+Loader.\+base\+U\+RL\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_resource_loader_acd6d1957bdc4e0212991af05e3454633}\label{class_resource_loader_acd6d1957bdc4e0212991af05e3454633}} 
-\index{Resource\+Loader@{Resource\+Loader}!Load\+Requests@{Load\+Requests}}
-\index{Load\+Requests@{Load\+Requests}!Resource\+Loader@{Resource\+Loader}}
-\subsubsection{\texorpdfstring{Load\+Requests}{LoadRequests}}
-{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}$>$ Resource\+Loader.\+Load\+Requests = new Queue$<$\mbox{\hyperlink{struct_resource_loader_1_1_request}{Request}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_resource_loader_adeb4ddafee015e2630ed66e26ec4a4ae}\label{class_resource_loader_adeb4ddafee015e2630ed66e26ec4a4ae}} 
-\index{Resource\+Loader@{Resource\+Loader}!responestring@{responestring}}
-\index{responestring@{responestring}!Resource\+Loader@{Resource\+Loader}}
-\subsubsection{\texorpdfstring{responestring}{responestring}}
-{\footnotesize\ttfamily string Resource\+Loader.\+responestring = \char`\"{}\char`\"{}}
+
+base url to server eg\+: \href{http://localhost:52536}{\tt http\+://localhost\+:52536} 
+
+\mbox{\Hypertarget{class_resource_loader_a3a96acf88c8727a7f76b56bbb483b706}\label{class_resource_loader_a3a96acf88c8727a7f76b56bbb483b706}} 
+\index{Resource\+Loader@{Resource\+Loader}!num\+Current\+Requests\+Working\+On@{num\+Current\+Requests\+Working\+On}}
+\index{num\+Current\+Requests\+Working\+On@{num\+Current\+Requests\+Working\+On}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{num\+Current\+Requests\+Working\+On}{numCurrentRequestsWorkingOn}}
+{\footnotesize\ttfamily int Resource\+Loader.\+num\+Current\+Requests\+Working\+On = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of currently active requests 
+
+\mbox{\Hypertarget{class_resource_loader_ab0983780f3a6f7517a8377010dfd4fe7}\label{class_resource_loader_ab0983780f3a6f7517a8377010dfd4fe7}} 
+\index{Resource\+Loader@{Resource\+Loader}!num\+Workable\+Requests\+Same\+Time@{num\+Workable\+Requests\+Same\+Time}}
+\index{num\+Workable\+Requests\+Same\+Time@{num\+Workable\+Requests\+Same\+Time}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{num\+Workable\+Requests\+Same\+Time}{numWorkableRequestsSameTime}}
+{\footnotesize\ttfamily int Resource\+Loader.\+num\+Workable\+Requests\+Same\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of request it is possible to work on at the same time 
+
+\mbox{\Hypertarget{class_resource_loader_af06b5459698c44c6acbb52c456fa2c71}\label{class_resource_loader_af06b5459698c44c6acbb52c456fa2c71}} 
+\index{Resource\+Loader@{Resource\+Loader}!request\+Queue@{request\+Queue}}
+\index{request\+Queue@{request\+Queue}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{request\+Queue}{requestQueue}}
+{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{interface_i_resource_request}{I\+Resource\+Request}}$>$ Resource\+Loader.\+request\+Queue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+queue of request posted 
+
+\mbox{\Hypertarget{class_resource_loader_afbcaf8e71a04ea93dddd62f342b50bc8}\label{class_resource_loader_afbcaf8e71a04ea93dddd62f342b50bc8}} 
+\index{Resource\+Loader@{Resource\+Loader}!requests\+Working\+On@{requests\+Working\+On}}
+\index{requests\+Working\+On@{requests\+Working\+On}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{requests\+Working\+On}{requestsWorkingOn}}
+{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{interface_i_resource_request}{I\+Resource\+Request}}$>$ Resource\+Loader.\+requests\+Working\+On\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+queue of requests that are currently being worked on 
+
+\mbox{\Hypertarget{class_resource_loader_a16070d3fe56ca93ca9690f15d36df67b}\label{class_resource_loader_a16070d3fe56ca93ca9690f15d36df67b}} 
+\index{Resource\+Loader@{Resource\+Loader}!resource\+Route@{resource\+Route}}
+\index{resource\+Route@{resource\+Route}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{resource\+Route}{resourceRoute}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Resource\+Loader.\+resource\+Route\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sub route to resource eg /api/resource/getres?id= 
 
 
 
@@ -167,6 +208,33 @@ Here is the call graph for this function\+:
 \index{Instance@{Instance}!Resource\+Loader@{Resource\+Loader}}
 \subsubsection{\texorpdfstring{Instance}{Instance}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_resource_loader}{Resource\+Loader}} Resource\+Loader.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Debug start 
+
+Instance of resource loader \mbox{\Hypertarget{class_resource_loader_ade4e93d50757ee75b2356a663c7fd3cd}\label{class_resource_loader_ade4e93d50757ee75b2356a663c7fd3cd}} 
+\index{Resource\+Loader@{Resource\+Loader}!Museum\+To\+Build@{Museum\+To\+Build}}
+\index{Museum\+To\+Build@{Museum\+To\+Build}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{Museum\+To\+Build}{MuseumToBuild}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum}{Museum}} Resource\+Loader.\+Museum\+To\+Build\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+special request for the museum stored for easy storage between scenes 
+
+
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_resource_loader_a81acd4bfcfed997a7a339d90383a2a26}\label{class_resource_loader_a81acd4bfcfed997a7a339d90383a2a26}} 
+\index{Resource\+Loader@{Resource\+Loader}!On\+Resource\+Downloaded@{On\+Resource\+Downloaded}}
+\index{On\+Resource\+Downloaded@{On\+Resource\+Downloaded}!Resource\+Loader@{Resource\+Loader}}
+\subsubsection{\texorpdfstring{On\+Resource\+Downloaded}{OnResourceDownloaded}}
+{\footnotesize\ttfamily Action$<$Type$>$ Resource\+Loader.\+On\+Resource\+Downloaded}
+
+
+
+event invoked when a resource was downloaded informs about what type the request was D\+O\+NT send actuall \mbox{\hyperlink{interface_i_resource_request}{I\+Resource\+Request}} someone might unwatingly might tameper with things should be seen as info for observers 
 
 
 

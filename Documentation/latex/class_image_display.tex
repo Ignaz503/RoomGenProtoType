@@ -26,13 +26,15 @@ Collaboration diagram for Image\+Display\+:
 override void \mbox{\hyperlink{class_image_display_ab4cae8c66db7e7d77ab117fe24e63980}{Apply\+Resource}} (\mbox{\hyperlink{class_base_display_resource}{Base\+Display\+Resource}} resource)
 \begin{DoxyCompactList}\small\item\em Applies a resource to a display \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_image_display_a28fead7caeeb12490d26fae943da6a1e}{Set\+Up}} (\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} disp\+Info, Game\+Object parent)
-\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_image_display_a0ad82d85f6c4ec5eabb65afa1ae72bc1}{Apply\+Pre\+Processing\+Information}} (\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} info)
+\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static float \mbox{\hyperlink{class_image_display_ae1044419b2f9dfa64d75329e48e312de}{X\+Pos\+Scale}} = .\+55f
 \begin{DoxyCompactList}\small\item\em scales the x pos when setuping \end{DoxyCompactList}\item 
-static Vector3 \mbox{\hyperlink{class_image_display_a8ecd7f162065170c3f5cbcf906b11873}{Rotation}} = new Vector3(0, -\/90f, 180)
+static Vector3 \mbox{\hyperlink{class_image_display_a8ecd7f162065170c3f5cbcf906b11873}{Rotation}} = new Vector3(0, -\/90f, 0)
 \begin{DoxyCompactList}\small\item\em the rotation of the image display \end{DoxyCompactList}\item 
 static float \mbox{\hyperlink{class_image_display_aac7ba9a36c272ad5c6873119b521ed5e}{Scale}} = 0.\+2f
 \begin{DoxyCompactList}\small\item\em scale of the image \end{DoxyCompactList}\item 
@@ -55,14 +57,22 @@ void \mbox{\hyperlink{class_image_display_a3dfa32d33641e56a6623265150b8ddba}{Awa
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Material \mbox{\hyperlink{class_image_display_a19b3e5d9b9fba307ab9f4529808b7768}{material\+Prefab}}
-\begin{DoxyCompactList}\small\item\em the material prefab that is used to apply an image to this mesh \end{DoxyCompactList}\item 
-Mesh\+Renderer \mbox{\hyperlink{class_image_display_ab96891e8a9d31e5fd90bff26b8485287}{mesh\+Renderer}}
+Raw\+Image \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_image_display_a3f64480a2ecdc17ac43e0db335ca8a4c}{image\+Displays}}
 \begin{DoxyCompactList}\small\item\em the mseh render that displays the image \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_image_display_a0ad82d85f6c4ec5eabb65afa1ae72bc1}\label{class_image_display_a0ad82d85f6c4ec5eabb65afa1ae72bc1}} 
+\index{Image\+Display@{Image\+Display}!Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}}
+\index{Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Pre\+Processing\+Information()}{ApplyPreProcessingInformation()}}
+{\footnotesize\ttfamily override void Image\+Display.\+Apply\+Pre\+Processing\+Information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31}{Display}}.
+
 \mbox{\Hypertarget{class_image_display_ab4cae8c66db7e7d77ab117fe24e63980}\label{class_image_display_ab4cae8c66db7e7d77ab117fe24e63980}} 
 \index{Image\+Display@{Image\+Display}!Apply\+Resource@{Apply\+Resource}}
 \index{Apply\+Resource@{Apply\+Resource}!Image\+Display@{Image\+Display}}
@@ -82,14 +92,6 @@ Applies a resource to a display
 
 Reimplemented from \mbox{\hyperlink{class_display_a811157ddb42ae4d72f690457a08711d3}{Display}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_image_display_ab4cae8c66db7e7d77ab117fe24e63980_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{class_image_display_a3dfa32d33641e56a6623265150b8ddba}\label{class_image_display_a3dfa32d33641e56a6623265150b8ddba}} 
 \index{Image\+Display@{Image\+Display}!Awake@{Awake}}
 \index{Awake@{Awake}!Image\+Display@{Image\+Display}}
@@ -162,21 +164,11 @@ Implements \mbox{\hyperlink{class_display_a57325251fbeac943cd48520e50f0bec4}{Dis
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_image_display_a19b3e5d9b9fba307ab9f4529808b7768}\label{class_image_display_a19b3e5d9b9fba307ab9f4529808b7768}} 
-\index{Image\+Display@{Image\+Display}!material\+Prefab@{material\+Prefab}}
-\index{material\+Prefab@{material\+Prefab}!Image\+Display@{Image\+Display}}
-\subsubsection{\texorpdfstring{material\+Prefab}{materialPrefab}}
-{\footnotesize\ttfamily Material Image\+Display.\+material\+Prefab\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-the material prefab that is used to apply an image to this mesh 
-
-\mbox{\Hypertarget{class_image_display_ab96891e8a9d31e5fd90bff26b8485287}\label{class_image_display_ab96891e8a9d31e5fd90bff26b8485287}} 
-\index{Image\+Display@{Image\+Display}!mesh\+Renderer@{mesh\+Renderer}}
-\index{mesh\+Renderer@{mesh\+Renderer}!Image\+Display@{Image\+Display}}
-\subsubsection{\texorpdfstring{mesh\+Renderer}{meshRenderer}}
-{\footnotesize\ttfamily Mesh\+Renderer Image\+Display.\+mesh\+Renderer\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_image_display_a3f64480a2ecdc17ac43e0db335ca8a4c}\label{class_image_display_a3f64480a2ecdc17ac43e0db335ca8a4c}} 
+\index{Image\+Display@{Image\+Display}!image\+Displays@{image\+Displays}}
+\index{image\+Displays@{image\+Displays}!Image\+Display@{Image\+Display}}
+\subsubsection{\texorpdfstring{image\+Displays}{imageDisplays}}
+{\footnotesize\ttfamily Raw\+Image \mbox{[}$\,$\mbox{]} Image\+Display.\+image\+Displays\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -186,7 +178,7 @@ the mseh render that displays the image
 \index{Image\+Display@{Image\+Display}!Rotation@{Rotation}}
 \index{Rotation@{Rotation}!Image\+Display@{Image\+Display}}
 \subsubsection{\texorpdfstring{Rotation}{Rotation}}
-{\footnotesize\ttfamily Vector3 Image\+Display.\+Rotation = new Vector3(0, -\/90f, 180)\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily Vector3 Image\+Display.\+Rotation = new Vector3(0, -\/90f, 0)\hspace{0.3cm}{\ttfamily [static]}}
 
 
 

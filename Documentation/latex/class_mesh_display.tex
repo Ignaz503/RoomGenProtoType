@@ -28,7 +28,9 @@ void \mbox{\hyperlink{class_mesh_display_a94176ce6e76cc683336051b49573ab1f}{Scal
 override void \mbox{\hyperlink{class_mesh_display_ab9a24f407a8ff995658097a98242095e}{Apply\+Resource}} (\mbox{\hyperlink{class_base_display_resource}{Base\+Display\+Resource}} resource)
 \begin{DoxyCompactList}\small\item\em Applies a resource to a display \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_mesh_display_adb19ca4d076a93df64d1c035663fce0f}{Set\+Up}} (\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} disp\+Info, Game\+Object parent)
-\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115}{Apply\+Pre\+Processing\+Information}} (\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} info)
+\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,6 +65,24 @@ void \mbox{\hyperlink{class_mesh_display_ab87e001316410059093fac5d92326ef2}{Set\
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115}\label{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115}} 
+\index{Mesh\+Display@{Mesh\+Display}!Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}}
+\index{Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Pre\+Processing\+Information()}{ApplyPreProcessingInformation()}}
+{\footnotesize\ttfamily override void Mesh\+Display.\+Apply\+Pre\+Processing\+Information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31}{Display}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_mesh_display_ab9a24f407a8ff995658097a98242095e}\label{class_mesh_display_ab9a24f407a8ff995658097a98242095e}} 
 \index{Mesh\+Display@{Mesh\+Display}!Apply\+Resource@{Apply\+Resource}}
 \index{Apply\+Resource@{Apply\+Resource}!Mesh\+Display@{Mesh\+Display}}
@@ -134,20 +154,11 @@ Implements \mbox{\hyperlink{class_display_a21c51fcf185403197a78a5acfd2065de}{Dis
 
 scales the mesh that needs displaying to a size so that is fits into the glass sphere 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_mesh_display_a94176ce6e76cc683336051b49573ab1f_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_mesh_display_a94176ce6e76cc683336051b49573ab1f_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_mesh_display_a8cd58e07cb9d64598c3bbc6701515d1d}\label{class_mesh_display_a8cd58e07cb9d64598c3bbc6701515d1d}} 

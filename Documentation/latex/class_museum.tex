@@ -16,9 +16,13 @@ Collaboration diagram for Museum\+:
 \mbox{\hyperlink{class_museum_aa946df02a55ba522f7a39ac688648733}{Museum}} (int size)
 \item 
 void \mbox{\hyperlink{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81}{Generate}} (string seed, bool build\+Museums\+Graph=true)
-\begin{DoxyCompactList}\small\item\em Generates a \mbox{\hyperlink{class_museum}{Museum}} baisc algortihm\+: \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em T\+HE C\+L\+I\+E\+NT S\+H\+O\+U\+LD N\+E\+V\+ER N\+E\+ED TO C\+A\+LL T\+H\+IS F\+U\+N\+C\+T\+I\+ON O\+U\+T\+S\+I\+DE OF D\+E\+B\+U\+G\+G\+I\+NG Generates a \mbox{\hyperlink{class_museum}{Museum}} baisc algortihm\+: \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_room}{Room}} \mbox{\hyperlink{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}{Get\+Room\+By\+ID}} (uint Room\+ID)
 \begin{DoxyCompactList}\small\item\em Finds a room via the ID of it \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_a405e60db962417dde46d46180cbf81df}{Transform\+Tile\+Coord\+Into\+OneD}} (Vector2\+Int coord)
+\begin{DoxyCompactList}\small\item\em Transforms a two dimensional coord(row$\vert$column) into a one dimensional coord for this museum \end{DoxyCompactList}\item 
+Vector2\+Int \mbox{\hyperlink{class_museum_a458545a518b026779c23e6c5b477bbf4}{Transform\+One\+D\+Coord\+Into\+TwoD}} (int coord)
+\begin{DoxyCompactList}\small\item\em Transforms a one dimensional value into a row and column value for this museum item1 in tuple = x item2 in tuple = y \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_museum_a6e441db98efeaa314ae974222aea08e6}{Add\+Wall}} (\mbox{\hyperlink{class_wall}{Wall}} w)
 \begin{DoxyCompactList}\small\item\em Adds a wall to the walls container if the wall doesn\textquotesingle{}t exist otherwise returns the index of the wall that already exists (2 rooms share one wall in that case) \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_museum_ac956bb7d7454f99944af157c79f695b8}{Serialize}} ()
@@ -54,10 +58,6 @@ void \mbox{\hyperlink{class_museum_ae07741bc8fd7f97c84fed0050e18c3c4}{Fill\+Disp
 \begin{DoxyCompactList}\small\item\em Fills the displas that exist in the museum also creates texture info for walls W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY T\+E\+MP I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON \end{DoxyCompactList}\item 
 List$<$ Vector2\+Int $>$ \mbox{\hyperlink{class_museum_af5b732fe3a0821d02852171a73cf8f8b}{Get\+Sourrounding\+Tiles}} (Vector2\+Int pos)
 \begin{DoxyCompactList}\small\item\em returns the sourrounding tiles for a given position \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_museum_a405e60db962417dde46d46180cbf81df}{Transform\+Tile\+Coord\+Into\+OneD}} (Vector2\+Int coord)
-\begin{DoxyCompactList}\small\item\em Transforms a two dimensional coord(row$\vert$column) into a one dimensional coord for this museum \end{DoxyCompactList}\item 
-Tuple$<$ int, int $>$ \mbox{\hyperlink{class_museum_a72e9020ee5d8406df0fc41fc4295727f}{Transform\+One\+D\+Coord\+Into\+TwoD}} (int coord)
-\begin{DoxyCompactList}\small\item\em Transforms a one dimensional value into a row and column value for this museum item1 in tuple = x item2 in tuple = y \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_museum_a6a161feedcbb8a471eb0e68b7e3e4027}{Log\+Map}} ()
 \item 
 void \mbox{\hyperlink{class_museum_a237d1ccf7cb53c4db64647b6addc6576}{Log\+Outline}} (Hash\+Set$<$ int $>$ outline)
@@ -121,16 +121,14 @@ Adds a wall to the walls container if the wall doesn\textquotesingle{}t exist ot
 \begin{DoxyReturn}{Returns}
 the location of the wall in the museum walls array
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_museum_a6e441db98efeaa314ae974222aea08e6_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -155,8 +153,7 @@ creates a museum from an xml string
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -168,7 +165,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=339pt]{class_museum_a1b4fb627a19112e3ba3d25e8108de2c3_icgraph}
+\includegraphics[width=350pt]{class_museum_a1b4fb627a19112e3ba3d25e8108de2c3_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_museum_ae07741bc8fd7f97c84fed0050e18c3c4}\label{class_museum_ae07741bc8fd7f97c84fed0050e18c3c4}} 
@@ -181,14 +178,6 @@ Here is the caller graph for this function\+:
 
 Fills the displas that exist in the museum also creates texture info for walls W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY T\+E\+MP I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON 
 
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_museum_ae07741bc8fd7f97c84fed0050e18c3c4_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81}\label{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81}} 
 \index{Museum@{Museum}!Generate@{Generate}}
 \index{Generate@{Generate}!Museum@{Museum}}
@@ -197,7 +186,7 @@ Here is the caller graph for this function\+:
 
 
 
-Generates a \mbox{\hyperlink{class_museum}{Museum}} baisc algortihm\+: 
+T\+HE C\+L\+I\+E\+NT S\+H\+O\+U\+LD N\+E\+V\+ER N\+E\+ED TO C\+A\+LL T\+H\+IS F\+U\+N\+C\+T\+I\+ON O\+U\+T\+S\+I\+DE OF D\+E\+B\+U\+G\+G\+I\+NG Generates a \mbox{\hyperlink{class_museum}{Museum}} baisc algortihm\+: 
 
 
 \begin{DoxyEnumerate}
@@ -210,7 +199,7 @@ Generates a \mbox{\hyperlink{class_museum}{Museum}} baisc algortihm\+:
 \item update outline
 \item repeat from step 3. until no more tiles in outline
 \item fill all the displays that are in the museum
-\item build museum graph 
+\item build museum graph T\+H\+IS IS T\+HE D\+E\+B\+UG I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON OF T\+HE A\+L\+G\+O\+R\+I\+T\+HM U\+S\+ED TO V\+I\+S\+U\+A\+L\+I\+ZE T\+HE A\+L\+G\+O\+R\+I\+T\+HM F\+I\+N\+AL I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON IN V\+I\+R\+T\+M\+U\+S\+E\+W\+E\+B\+P\+R\+O\+J\+E\+CT 
 \end{DoxyEnumerate}
 
 
@@ -231,7 +220,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=344pt]{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_icgraph}
+\includegraphics[width=350pt]{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}\label{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}} 
@@ -309,19 +298,11 @@ Serilaizes a museum to an xml string
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=342pt]{class_museum_ac956bb7d7454f99944af157c79f695b8_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_museum_a72e9020ee5d8406df0fc41fc4295727f}\label{class_museum_a72e9020ee5d8406df0fc41fc4295727f}} 
+\mbox{\Hypertarget{class_museum_a458545a518b026779c23e6c5b477bbf4}\label{class_museum_a458545a518b026779c23e6c5b477bbf4}} 
 \index{Museum@{Museum}!Transform\+One\+D\+Coord\+Into\+TwoD@{Transform\+One\+D\+Coord\+Into\+TwoD}}
 \index{Transform\+One\+D\+Coord\+Into\+TwoD@{Transform\+One\+D\+Coord\+Into\+TwoD}!Museum@{Museum}}
 \subsubsection{\texorpdfstring{Transform\+One\+D\+Coord\+Into\+Two\+D()}{TransformOneDCoordIntoTwoD()}}
-{\footnotesize\ttfamily Tuple$<$int,int$>$ Museum.\+Transform\+One\+D\+Coord\+Into\+TwoD (\begin{DoxyParamCaption}\item[{int}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily Vector2\+Int Museum.\+Transform\+One\+D\+Coord\+Into\+TwoD (\begin{DoxyParamCaption}\item[{int}]{coord }\end{DoxyParamCaption})}
 
 
 
@@ -331,7 +312,7 @@ Transforms a one dimensional value into a row and column value for this museum i
 \index{Museum@{Museum}!Transform\+Tile\+Coord\+Into\+OneD@{Transform\+Tile\+Coord\+Into\+OneD}}
 \index{Transform\+Tile\+Coord\+Into\+OneD@{Transform\+Tile\+Coord\+Into\+OneD}!Museum@{Museum}}
 \subsubsection{\texorpdfstring{Transform\+Tile\+Coord\+Into\+One\+D()}{TransformTileCoordIntoOneD()}}
-{\footnotesize\ttfamily int Museum.\+Transform\+Tile\+Coord\+Into\+OneD (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Museum.\+Transform\+Tile\+Coord\+Into\+OneD (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{coord }\end{DoxyParamCaption})}
 
 
 
@@ -365,16 +346,16 @@ Here is the caller graph for this function\+:
 {\bfseries Initial value\+:}
 \begin{DoxyCode}
 = \textcolor{keyword}{new} Dictionary<RoomType, IRoomPlacableChecker>()
-    \{
-            \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Normal, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
+\{
+        \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Normal, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
       \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Normal) \},
-            \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Long, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
+        \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Long, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
       \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Long) \},
-            \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Big, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
+        \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Big, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
       \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Big) \},
-            \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.L, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
+        \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.L, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
       \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.L) \}
-    \}
+\}
 \end{DoxyCode}
 
 

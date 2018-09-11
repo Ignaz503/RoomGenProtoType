@@ -1,4 +1,4 @@
 <map id="MuseumGraph.BuildMuseumGraph" name="MuseumGraph.BuildMuseumGraph">
-<area shape="rect" id="node2" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="Generates a Museum baisc algortihm: " alt="" coords="279,5,408,32"/>
-<area shape="rect" id="node3" href="$class_museum_generator.html#afa0b7c3e8ab1bccedc4c7828cbf4724e" title="MuseumGenerator.Update" alt="" coords="456,5,631,32"/>
+<area shape="rect" id="node2" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="279,5,408,32"/>
+<area shape="rect" id="node3" href="$class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="456,5,647,32"/>
 </map>

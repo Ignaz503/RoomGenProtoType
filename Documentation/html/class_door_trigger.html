@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VirtMuse
-   &#160;<span id="projectnumber">.1.02</span>
+   &#160;<span id="projectnumber">.1</span>
    </div>
    <div id="projectbrief">Virtual Museum</div>
   </td>
@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('class_door_trigger.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#events">Events</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_door_trigger-members.html">List of all members</a>  </div>
@@ -114,6 +115,13 @@ Collaboration diagram for DoorTrigger:</div>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:aaf26dd7fb0f0ce643f5fd50805e2b4e0"><td class="memItemLeft" align="right" valign="top">Action&lt; Collider, <a class="el" href="class_base_door.html">BaseDoor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_door_trigger.html#aaf26dd7fb0f0ce643f5fd50805e2b4e0">OnColliderEnter</a></td></tr>
+<tr class="separator:aaf26dd7fb0f0ce643f5fd50805e2b4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00f29ad47c5853b9f8ff03048223e30"><td class="memItemLeft" align="right" valign="top">Action&lt; Collider, <a class="el" href="class_base_door.html">BaseDoor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_door_trigger.html#af00f29ad47c5853b9f8ff03048223e30">OnColliderLeave</a></td></tr>
+<tr class="separator:af00f29ad47c5853b9f8ff03048223e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a3b079888a26feb3139b6a0507b89c65c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_door_trigger.html#a3b079888a26feb3139b6a0507b89c65c">Start</a> ()</td></tr>
@@ -127,6 +135,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a592b30ac7c1c4b719d6a90fa96fbb046"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_base_door.html">BaseDoor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_door_trigger.html#a592b30ac7c1c4b719d6a90fa96fbb046">door</a></td></tr>
 <tr class="separator:a592b30ac7c1c4b719d6a90fa96fbb046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f14399b44bff7efd22f9ce4d4ef5c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_door_trigger.html#ac3f14399b44bff7efd22f9ce4d4ef5c6">openOnStart</a> = true</td></tr>
+<tr class="separator:ac3f14399b44bff7efd22f9ce4d4ef5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Box collider trigger that opens and closes a door it is responsible for </p>
@@ -252,6 +262,57 @@ Here is the call graph for this function:</div>
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3f14399b44bff7efd22f9ce4d4ef5c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3f14399b44bff7efd22f9ce4d4ef5c6">&#9670;&nbsp;</a></span>openOnStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DoorTrigger.openOnStart = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Event Documentation</h2>
+<a id="aaf26dd7fb0f0ce643f5fd50805e2b4e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf26dd7fb0f0ce643f5fd50805e2b4e0">&#9670;&nbsp;</a></span>OnColliderEnter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;Collider, <a class="el" href="class_base_door.html">BaseDoor</a>&gt; DoorTrigger.OnColliderEnter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af00f29ad47c5853b9f8ff03048223e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00f29ad47c5853b9f8ff03048223e30">&#9670;&nbsp;</a></span>OnColliderLeave</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;Collider, <a class="el" href="class_base_door.html">BaseDoor</a>&gt; DoorTrigger.OnColliderLeave</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>

@@ -1,3 +1,3 @@
 <map id="Museum.Deserialize" name="Museum.Deserialize">
-<area shape="rect" id="node2" href="$class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="193,5,351,32"/>
+<area shape="rect" id="node2" href="$class_museum_request.html#a41b1a4699551a86415a877d5380febe1" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="193,5,424,32"/>
 </map>

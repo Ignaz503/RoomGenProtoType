@@ -26,7 +26,14 @@ Collaboration diagram for Center\+Image\+Display\+:
 override void \mbox{\hyperlink{class_center_image_display_a140b8b82522c1aedb473b3cd532dcd34}{Apply\+Resource}} (\mbox{\hyperlink{class_base_display_resource}{Base\+Display\+Resource}} resource)
 \begin{DoxyCompactList}\small\item\em Applies a resource to a display \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_center_image_display_a3da996020c7d8abcd24f35660945703a}{Set\+Up}} (\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} disp\+Info, Game\+Object parent)
-\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_center_image_display_af746f7d72e82809aaa0b5b5bf0ad2cc0}{Apply\+Pre\+Processing\+Information}} (\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} info)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Raw\+Image \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_center_image_display_afd5ccf58dcdcddc7592026ee840cf55d}{display\+Mesh\+Renderes}}
+\begin{DoxyCompactList}\small\item\em the mesh renderes on all sides of the pillar \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,17 +48,20 @@ override void \mbox{\hyperlink{class_center_image_display_ac78f5ea36aa445bb3d121
 \item 
 void \mbox{\hyperlink{class_center_image_display_a413c4767daa6cca041577ba63eb3b8d5}{Awake}} ()
 \end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-Material \mbox{\hyperlink{class_center_image_display_af22091d70f8772c7263ad852e3770619}{Material\+Prefab}}
-\begin{DoxyCompactList}\small\item\em Material prefab used to apply texture \end{DoxyCompactList}\item 
-Mesh\+Renderer \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_center_image_display_a47f09ee02109c10416288b5022f193f8}{display\+Mesh\+Renderes}}
-\begin{DoxyCompactList}\small\item\em the mesh renderes on all sides of the pillar \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_center_image_display_af746f7d72e82809aaa0b5b5bf0ad2cc0}\label{class_center_image_display_af746f7d72e82809aaa0b5b5bf0ad2cc0}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}}
+\index{Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Pre\+Processing\+Information()}{ApplyPreProcessingInformation()}}
+{\footnotesize\ttfamily override void Center\+Image\+Display.\+Apply\+Pre\+Processing\+Information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31}{Display}}.
+
 \mbox{\Hypertarget{class_center_image_display_a140b8b82522c1aedb473b3cd532dcd34}\label{class_center_image_display_a140b8b82522c1aedb473b3cd532dcd34}} 
 \index{Center\+Image\+Display@{Center\+Image\+Display}!Apply\+Resource@{Apply\+Resource}}
 \index{Apply\+Resource@{Apply\+Resource}!Center\+Image\+Display@{Center\+Image\+Display}}
@@ -143,25 +153,15 @@ Implements \mbox{\hyperlink{class_display_a57325251fbeac943cd48520e50f0bec4}{Dis
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_center_image_display_a47f09ee02109c10416288b5022f193f8}\label{class_center_image_display_a47f09ee02109c10416288b5022f193f8}} 
+\mbox{\Hypertarget{class_center_image_display_afd5ccf58dcdcddc7592026ee840cf55d}\label{class_center_image_display_afd5ccf58dcdcddc7592026ee840cf55d}} 
 \index{Center\+Image\+Display@{Center\+Image\+Display}!display\+Mesh\+Renderes@{display\+Mesh\+Renderes}}
 \index{display\+Mesh\+Renderes@{display\+Mesh\+Renderes}!Center\+Image\+Display@{Center\+Image\+Display}}
 \subsubsection{\texorpdfstring{display\+Mesh\+Renderes}{displayMeshRenderes}}
-{\footnotesize\ttfamily Mesh\+Renderer \mbox{[}$\,$\mbox{]} Center\+Image\+Display.\+display\+Mesh\+Renderes\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily Raw\+Image \mbox{[}$\,$\mbox{]} Center\+Image\+Display.\+display\+Mesh\+Renderes}
 
 
 
 the mesh renderes on all sides of the pillar 
-
-\mbox{\Hypertarget{class_center_image_display_af22091d70f8772c7263ad852e3770619}\label{class_center_image_display_af22091d70f8772c7263ad852e3770619}} 
-\index{Center\+Image\+Display@{Center\+Image\+Display}!Material\+Prefab@{Material\+Prefab}}
-\index{Material\+Prefab@{Material\+Prefab}!Center\+Image\+Display@{Center\+Image\+Display}}
-\subsubsection{\texorpdfstring{Material\+Prefab}{MaterialPrefab}}
-{\footnotesize\ttfamily Material Center\+Image\+Display.\+Material\+Prefab\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Material prefab used to apply texture 
 
 
 

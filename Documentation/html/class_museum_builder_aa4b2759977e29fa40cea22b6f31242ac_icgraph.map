@@ -1,0 +1,5 @@
+<map id="MuseumBuilder.PostWallTextureRequest" name="MuseumBuilder.PostWallTextureRequest">
+<area shape="rect" id="node2" href="$class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="265,13,440,39"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="488,13,683,39"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="731,13,875,39"/>
+</map>

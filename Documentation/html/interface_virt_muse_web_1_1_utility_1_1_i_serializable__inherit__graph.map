@@ -1,0 +1,5 @@
+<map id="VirtMuseWeb.Utility.ISerializable" name="VirtMuseWeb.Utility.ISerializable">
+<area shape="rect" id="node2" href="$class_virt_muse_web_1_1_utility_1_1_image.html" title="Represents an easily serializable Image resource that can be cast to a UnityTexture2D used by server ..." alt="" coords="5,145,183,399"/>
+<area shape="rect" id="node3" href="$class_virt_muse_web_1_1_utility_1_1_room_style.html" title="Represents a Room Style that client gets from server " alt="" coords="207,160,383,384"/>
+<area shape="rect" id="node4" href="$class_virt_muse_web_1_1_utility_1_1_unity_mesh_data.html" title="Helper Class that holds information to build a unity mesh and is serializable, used by server to stor..." alt="" coords="408,153,580,391"/>
+</map>

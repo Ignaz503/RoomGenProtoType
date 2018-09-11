@@ -1,4 +1,5 @@
 <map id="MuseumBuilder.SetUpCenterDisplaysForRoom" name="MuseumBuilder.SetUpCenterDisplaysForRoom">
-<area shape="rect" id="node2" href="$class_museum_builder.html#a7a68d64f1f418c4cdf43afc48ffa07b1" title="MuseumBuilder.SetUpFloor" alt="" coords="244,13,425,39"/>
-<area shape="rect" id="node3" href="$class_museum_builder.html#a6f66f859260dac43de5248e3c4a0b25c" title="MuseumBuilder.Update" alt="" coords="473,13,631,39"/>
+<area shape="rect" id="node2" href="$class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="244,13,427,39"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="475,13,669,39"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="717,13,861,39"/>
 </map>

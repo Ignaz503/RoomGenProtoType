@@ -1,0 +1,8 @@
+<map id="MuseumBuilder.LoadDisplayResource" name="MuseumBuilder.LoadDisplayResource">
+<area shape="rect" id="node2" href="$class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="241,5,460,47"/>
+<area shape="rect" id="node7" href="$class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="240,71,461,112"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="509,13,743,39"/>
+<area shape="rect" id="node6" href="$class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="529,70,723,97"/>
+<area shape="rect" id="node4" href="$class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="791,13,965,39"/>
+<area shape="rect" id="node5" href="$class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="1013,13,1229,39"/>
+</map>

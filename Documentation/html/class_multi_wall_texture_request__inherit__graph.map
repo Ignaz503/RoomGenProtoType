@@ -1,0 +1,4 @@
+<map id="MultiWallTextureRequest" name="MultiWallTextureRequest">
+<area shape="rect" id="node2" href="$class_base_room_style_request.html" title="{BaseRoomStyleRequest\n|+ IsDone\l+ BaseURL\l+ ResourceLocator\l+ Requestor\l+ TextureToApply\l+ Response\l|+ BaseRoomStyleRequest()\l+ StartWorkRequest()\l+ WhenDone()\l}" alt="" coords="7,160,191,340"/>
+<area shape="rect" id="node3" href="$interface_i_resource_request.html" title="base interface for a resource request, usable by both style request and image/mesh requests ..." alt="" coords="24,5,173,112"/>
+</map>

@@ -1,4 +1,12 @@
 <map id="BoundingSphere.Calculate" name="BoundingSphere.Calculate">
-<area shape="rect" id="node2" href="$class_mesh_display.html#a94176ce6e76cc683336051b49573ab1f" title="scales the mesh that needs displaying to a size so that is fits into the glass sphere ..." alt="" coords="228,5,405,47"/>
-<area shape="rect" id="node3" href="$class_mesh_display.html#ab9a24f407a8ff995658097a98242095e" title="Applies a resource to a display " alt="" coords="453,13,643,39"/>
+<area shape="rect" id="node2" href="$class_mesh_display.html#a94176ce6e76cc683336051b49573ab1f" title="scales the mesh that needs displaying to a size so that is fits into the glass sphere ..." alt="" coords="256,5,433,47"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="228,71,461,98"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="509,64,728,105"/>
+<area shape="rect" id="node5" href="$class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="776,64,963,105"/>
+<area shape="rect" id="node6" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="1017,31,1207,72"/>
+<area shape="rect" id="node10" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="1011,96,1213,137"/>
+<area shape="rect" id="node7" href="$class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="1261,42,1444,69"/>
+<area shape="rect" id="node8" href="$class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="1492,70,1687,97"/>
+<area shape="rect" id="node9" href="$class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="1735,70,1879,97"/>
+<area shape="rect" id="node11" href="$class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="1265,97,1440,123"/>
 </map>

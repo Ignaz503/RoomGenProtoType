@@ -1,5 +1,6 @@
 var class_meta_data =
 [
+    [ "MetaData", "class_meta_data.html#a51477d7066b8b3e42d41236f62ef5f36", null ],
     [ "Deserialize", "class_meta_data.html#adcfb4cc074566933e35c3f14451960ed", null ],
     [ "GetFieldWithAttributeTypeAsString", "class_meta_data.html#a6060e6297723e54b0df6c20defb57297", null ],
     [ "Serialize", "class_meta_data.html#ad61836ec0caf65061ecdcd16c0ee6109", null ],

@@ -37,7 +37,7 @@ enum \mbox{\hyperlink{class_display_a7f7abc559192ef7e8f4a03382d3492d7}{Display\+
 \item 
 virtual void \mbox{\hyperlink{class_display_a811157ddb42ae4d72f690457a08711d3}{Apply\+Resource}} (\mbox{\hyperlink{class_base_display_resource}{Base\+Display\+Resource}} resource)
 \begin{DoxyCompactList}\small\item\em Applies a resource to a display \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{class_display_a293687a976cbe23a09b7c6ddef36a48d}{Get\+Metadata}} ()
+abstract void \mbox{\hyperlink{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31}{Apply\+Pre\+Processing\+Information}} (\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} info)
 \item 
 abstract void \mbox{\hyperlink{class_display_a57325251fbeac943cd48520e50f0bec4}{Set\+Up}} (\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} disp\+Info, Game\+Object parent)
 \begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\item 
@@ -76,8 +76,6 @@ void \mbox{\hyperlink{class_display_af8aa8a663725645f431095397ad802e6}{Set\+Inte
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{class_display_a76e9b246ebdd9a5799de8df52279f05e}{metadata}} = \char`\"{}All Speech is free speech\char`\"{}
-\begin{DoxyCompactList}\small\item\em old metadata string used for testing \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_interaction}{Interaction}} \mbox{\hyperlink{class_display_af35594f083ed6dd4279183215719583f}{interaction}}
 \begin{DoxyCompactList}\small\item\em the interaction that is currently taking place \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -107,6 +105,24 @@ Image\+Display&\\
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31}\label{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31}} 
+\index{Display@{Display}!Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}}
+\index{Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}!Display@{Display}}
+\subsubsection{\texorpdfstring{Apply\+Pre\+Processing\+Information()}{ApplyPreProcessingInformation()}}
+{\footnotesize\ttfamily abstract void Display.\+Apply\+Pre\+Processing\+Information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115}{Mesh\+Display}}, \mbox{\hyperlink{class_image_display_a0ad82d85f6c4ec5eabb65afa1ae72bc1}{Image\+Display}}, and \mbox{\hyperlink{class_center_image_display_af746f7d72e82809aaa0b5b5bf0ad2cc0}{Center\+Image\+Display}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_display_a811157ddb42ae4d72f690457a08711d3}\label{class_display_a811157ddb42ae4d72f690457a08711d3}} 
 \index{Display@{Display}!Apply\+Resource@{Apply\+Resource}}
 \index{Apply\+Resource@{Apply\+Resource}!Display@{Display}}
@@ -142,12 +158,6 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_display_a811157ddb42ae4d72f690457a08711d3_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_display_a293687a976cbe23a09b7c6ddef36a48d}\label{class_display_a293687a976cbe23a09b7c6ddef36a48d}} 
-\index{Display@{Display}!Get\+Metadata@{Get\+Metadata}}
-\index{Get\+Metadata@{Get\+Metadata}!Display@{Display}}
-\subsubsection{\texorpdfstring{Get\+Metadata()}{GetMetadata()}}
-{\footnotesize\ttfamily string Display.\+Get\+Metadata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{class_display_a43fc2a6f19bbf2f1bdb676392b37e921}\label{class_display_a43fc2a6f19bbf2f1bdb676392b37e921}} 
 \index{Display@{Display}!Interact@{Interact}}
 \index{Interact@{Interact}!Display@{Display}}
@@ -354,16 +364,6 @@ the interaction that is currently taking place
 
 
 System type of the interaction the display provides 
-
-\mbox{\Hypertarget{class_display_a76e9b246ebdd9a5799de8df52279f05e}\label{class_display_a76e9b246ebdd9a5799de8df52279f05e}} 
-\index{Display@{Display}!metadata@{metadata}}
-\index{metadata@{metadata}!Display@{Display}}
-\subsubsection{\texorpdfstring{metadata}{metadata}}
-{\footnotesize\ttfamily string Display.\+metadata = \char`\"{}All Speech is free speech\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-old metadata string used for testing 
 
 
 

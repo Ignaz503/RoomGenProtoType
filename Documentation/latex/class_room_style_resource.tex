@@ -1,0 +1,161 @@
+\hypertarget{class_room_style_resource}{}\section{Room\+Style\+Resource Class Reference}
+\label{class_room_style_resource}\index{Room\+Style\+Resource@{Room\+Style\+Resource}}
+
+
+resource that is a roomstyle  
+
+
+
+
+Collaboration diagram for Room\+Style\+Resource\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{class_room_style_resource__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}{Texture\+To\+Apply}} \{ \mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45faf3f6d0343d56ce88ce7958170ed05cb3}{Texture\+To\+Apply.\+Floor}}, 
+\mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45fa3237fbc8204064c106cb9080088a17cb}{Texture\+To\+Apply.\+Ceiling}}, 
+\mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45fa94e8a499539d1a472f3b5dbbb85508c0}{Texture\+To\+Apply.\+Wall}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_room_style_resource_a207acd092d1aac00169f329097e836fc}{Room\+Style\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em No param ctor that doens\textquotesingle{}t initialize anything \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room_style_resource_aa269ae01fc600ab23b7f7ce6a742a3f5}{Room\+Style\+Resource}} (Texture2D floor, Texture2D ceil, Texture2D wall)
+\begin{DoxyCompactList}\small\item\em Ctor that sets the Image of this resource \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_style_resource_a631919fd4d90b01b2bfad87a30a6b7b2}{Apply\+To\+Gameobject}} (Game\+Object obj, \mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}{Texture\+To\+Apply}} tex\+To\+Apl)
+\begin{DoxyCompactList}\small\item\em gets mesh renderer of object, or adds one sets the material texture to Image if created Material created will have Standard shader \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_room_style_resource_a113194d661027fdac0a956cdf19dc166}{Resource\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Texture2D \mbox{\hyperlink{class_room_style_resource_a9bb9edda92402b8e4889a168dfa13d6a}{Floor}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Texture2D \mbox{\hyperlink{class_room_style_resource_ab07f5729c88a8a7229e1e625ef859d38}{Ceiling}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Texture2D \mbox{\hyperlink{class_room_style_resource_a7e7f15cc941b23c889b3ff8f1b05e732}{Wall}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+resource that is a roomstyle 
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}\label{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}} 
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Texture\+To\+Apply@{Texture\+To\+Apply}}
+\index{Texture\+To\+Apply@{Texture\+To\+Apply}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\subsubsection{\texorpdfstring{Texture\+To\+Apply}{TextureToApply}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}{Room\+Style\+Resource.\+Texture\+To\+Apply}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Floor@{Floor}!Room\+Style\+Resource@{Room\+Style\+Resource}}\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Floor@{Floor}}}\mbox{\Hypertarget{class_room_style_resource_a877062d3830671f8376cc30340cdb45faf3f6d0343d56ce88ce7958170ed05cb3}\label{class_room_style_resource_a877062d3830671f8376cc30340cdb45faf3f6d0343d56ce88ce7958170ed05cb3}} 
+Floor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ceiling@{Ceiling}!Room\+Style\+Resource@{Room\+Style\+Resource}}\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Ceiling@{Ceiling}}}\mbox{\Hypertarget{class_room_style_resource_a877062d3830671f8376cc30340cdb45fa3237fbc8204064c106cb9080088a17cb}\label{class_room_style_resource_a877062d3830671f8376cc30340cdb45fa3237fbc8204064c106cb9080088a17cb}} 
+Ceiling&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wall@{Wall}!Room\+Style\+Resource@{Room\+Style\+Resource}}\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Wall@{Wall}}}\mbox{\Hypertarget{class_room_style_resource_a877062d3830671f8376cc30340cdb45fa94e8a499539d1a472f3b5dbbb85508c0}\label{class_room_style_resource_a877062d3830671f8376cc30340cdb45fa94e8a499539d1a472f3b5dbbb85508c0}} 
+Wall&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_room_style_resource_a207acd092d1aac00169f329097e836fc}\label{class_room_style_resource_a207acd092d1aac00169f329097e836fc}} 
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\subsubsection{\texorpdfstring{Room\+Style\+Resource()}{RoomStyleResource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Room\+Style\+Resource.\+Room\+Style\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+No param ctor that doens\textquotesingle{}t initialize anything 
+
+\mbox{\Hypertarget{class_room_style_resource_aa269ae01fc600ab23b7f7ce6a742a3f5}\label{class_room_style_resource_aa269ae01fc600ab23b7f7ce6a742a3f5}} 
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\subsubsection{\texorpdfstring{Room\+Style\+Resource()}{RoomStyleResource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Room\+Style\+Resource.\+Room\+Style\+Resource (\begin{DoxyParamCaption}\item[{Texture2D}]{floor,  }\item[{Texture2D}]{ceil,  }\item[{Texture2D}]{wall }\end{DoxyParamCaption})}
+
+
+
+Ctor that sets the Image of this resource 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_room_style_resource_a631919fd4d90b01b2bfad87a30a6b7b2}\label{class_room_style_resource_a631919fd4d90b01b2bfad87a30a6b7b2}} 
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Apply\+To\+Gameobject@{Apply\+To\+Gameobject}}
+\index{Apply\+To\+Gameobject@{Apply\+To\+Gameobject}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\subsubsection{\texorpdfstring{Apply\+To\+Gameobject()}{ApplyToGameobject()}}
+{\footnotesize\ttfamily void Room\+Style\+Resource.\+Apply\+To\+Gameobject (\begin{DoxyParamCaption}\item[{Game\+Object}]{obj,  }\item[{\mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}{Texture\+To\+Apply}}}]{tex\+To\+Apl }\end{DoxyParamCaption})}
+
+
+
+gets mesh renderer of object, or adds one sets the material texture to Image if created Material created will have Standard shader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & obj to apply to\\
+\hline
+{\em tex\+To\+Apl} & what texture to apply\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_style_resource_a631919fd4d90b01b2bfad87a30a6b7b2_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_room_style_resource_ab07f5729c88a8a7229e1e625ef859d38}\label{class_room_style_resource_ab07f5729c88a8a7229e1e625ef859d38}} 
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Ceiling@{Ceiling}}
+\index{Ceiling@{Ceiling}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\subsubsection{\texorpdfstring{Ceiling}{Ceiling}}
+{\footnotesize\ttfamily Texture2D Room\+Style\+Resource.\+Ceiling\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_room_style_resource_a9bb9edda92402b8e4889a168dfa13d6a}\label{class_room_style_resource_a9bb9edda92402b8e4889a168dfa13d6a}} 
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Floor@{Floor}}
+\index{Floor@{Floor}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\subsubsection{\texorpdfstring{Floor}{Floor}}
+{\footnotesize\ttfamily Texture2D Room\+Style\+Resource.\+Floor\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_room_style_resource_a113194d661027fdac0a956cdf19dc166}\label{class_room_style_resource_a113194d661027fdac0a956cdf19dc166}} 
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Resource\+ID@{Resource\+ID}}
+\index{Resource\+ID@{Resource\+ID}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\subsubsection{\texorpdfstring{Resource\+ID}{ResourceID}}
+{\footnotesize\ttfamily int Room\+Style\+Resource.\+Resource\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_room_style_resource_a7e7f15cc941b23c889b3ff8f1b05e732}\label{class_room_style_resource_a7e7f15cc941b23c889b3ff8f1b05e732}} 
+\index{Room\+Style\+Resource@{Room\+Style\+Resource}!Wall@{Wall}}
+\index{Wall@{Wall}!Room\+Style\+Resource@{Room\+Style\+Resource}}
+\subsubsection{\texorpdfstring{Wall}{Wall}}
+{\footnotesize\ttfamily Texture2D Room\+Style\+Resource.\+Wall\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Resources/\mbox{\hyperlink{_resource_8cs}{Resource.\+cs}}\end{DoxyCompactItemize}

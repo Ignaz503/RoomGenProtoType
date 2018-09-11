@@ -1,10 +1,10 @@
 <map id="PlayerHand.GrabObject" name="PlayerHand.GrabObject">
-<area shape="rect" id="node2" href="$interface_i_holdable_object.html#abe7c5e5ed97fb5c908c91da5b8714f0e" title="IHoldableObject.OnPutAway" alt="" coords="222,5,409,32"/>
+<area shape="rect" id="node2" href="$interface_i_holdable_object.html#abe7c5e5ed97fb5c908c91da5b8714f0e" title="Called when the hand reaches it&#39;s rest positon right after the state is set to RestPosition ..." alt="" coords="222,5,409,32"/>
 <area shape="rect" id="node3" href="$interface_i_holdable_object.html#a6f63fec8fb8f715ad5cdd08aa5ec0ea5" title="called when hand reaches infront of face position right after state was set to infront of face ..." alt="" coords="218,57,413,98"/>
 <area shape="rect" id="node4" href="$interface_i_holdable_object.html#af5dcdd5524539104706dadd8a0e15e08" title="called when hand starts moving towards the infront of face position right after the state is set to M..." alt="" coords="227,122,403,163"/>
-<area shape="rect" id="node5" href="$interface_i_holdable_object.html#a75f802a9736db51e5e8d1568689dd11c" title="IHoldableObject.OnStarted\lMoveAwayFromFace" alt="" coords="227,187,403,229"/>
-<area shape="rect" id="node6" href="$interface_i_holdable_object.html#a0356d534c17ab4e04fba00b42abeea77" title="IHoldableObject.IsInterested\lInInteractableObjects" alt="" coords="223,253,407,294"/>
+<area shape="rect" id="node5" href="$interface_i_holdable_object.html#a75f802a9736db51e5e8d1568689dd11c" title="called when the hand starts moving away from the face right after the hand state is set to MovingToRe..." alt="" coords="227,187,403,229"/>
+<area shape="rect" id="node6" href="$interface_i_holdable_object.html#a0356d534c17ab4e04fba00b42abeea77" title="this functions defines iof the held object gets information about an interactable object forwarded to..." alt="" coords="223,253,407,294"/>
 <area shape="rect" id="node7" href="$class_player_hand.html#a67095e4c1db1e3369c435dd1fe1ebec5" title="Forwards the IInteractable information to the held object if it is intersted in so that not all objec..." alt="" coords="212,318,419,359"/>
-<area shape="rect" id="node9" href="$interface_i_holdable_object.html#a7b8a42a0c12a26b1668c4dd904f38355" title="IHoldableObject.OnGrabed" alt="" coords="227,384,403,411"/>
-<area shape="rect" id="node8" href="$interface_i_holdable_object.html#aeb32a55273b99d16f9fb5b86f6a73f80" title="IHoldableObject.SetInteracted\lObject" alt="" coords="467,318,661,359"/>
+<area shape="rect" id="node9" href="$interface_i_holdable_object.html#a7b8a42a0c12a26b1668c4dd904f38355" title="Called the frame this object is grabbed can be seen as an initializer function for when the obj is gr..." alt="" coords="227,384,403,411"/>
+<area shape="rect" id="node8" href="$interface_i_holdable_object.html#aeb32a55273b99d16f9fb5b86f6a73f80" title="function get&#39;s called by hand if the held object is interessted in interacted objects ..." alt="" coords="467,318,661,359"/>
 </map>

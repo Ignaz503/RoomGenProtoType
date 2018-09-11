@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['object',['Object',['../class_display.html#a32b9644a140d330a9c51cfdbb6f6093c',1,'Display.Object()'],['../class_meta_data_display.html#a6c8c48f48c075530099da10bb4b9b7c4',1,'MetaDataDisplay.Object()'],['../interface_i_holdable_object.html#a99b6760e4f5c71c79d8b084673a3818b',1,'IHoldableObject.Object()'],['../interface_i_interactable.html#a1ea155218acad8d933577fa071de48af',1,'IInteractable.Object()']]],
-  ['objectinteractedwith',['ObjectInteractedWith',['../class_player_interaction_event_args.html#aed3b17be64843abba84c9eed7309be4e',1,'PlayerInteractionEventArgs']]],
-  ['objectposition',['ObjectPosition',['../class_player_interaction_event_args.html#a610706ef98e54ba59ce5012a3506e3a3',1,'PlayerInteractionEventArgs']]],
-  ['objecttransform',['ObjectTransform',['../class_player_interaction_event_args.html#a85b1b1e10b2e9e3816c8c4efc0b00546',1,'PlayerInteractionEventArgs']]],
-  ['owningplayer',['OwningPlayer',['../class_player_hand.html#a0d33095483c291ac3dd5b5350974b626',1,'PlayerHand']]]
+  ['left',['left',['../class_virt_muse_web_1_1_utility_1_1_vec2.html#a55a8d17525fcb7c5c40d42db064cf360',1,'VirtMuseWeb.Utility.Vec2.left()'],['../class_virt_muse_web_1_1_utility_1_1_vec3.html#af4d8fead5f7944e96c58dcb8a3b2fdea',1,'VirtMuseWeb.Utility.Vec3.left()'],['../class_virt_muse_web_1_1_utility_1_1_vec3_int.html#a75ad3839e609291ad0a94d5233c996e6',1,'VirtMuseWeb.Utility.Vec3Int.left()']]],
+  ['license',['License',['../class_meta_data.html#a43c021341f7ac2b2237041aae37bd3db',1,'MetaData.License()'],['../class_virt_muse_web_1_1_models_1_1_meta_data_model.html#a343fb149896049236a06cfbea3b62b1c',1,'VirtMuseWeb.Models.MetaDataModel.License()']]],
+  ['location',['Location',['../class_wall.html#ac7769d0a497da7e7ae3a11c813645b7a',1,'Wall']]]
 ];
