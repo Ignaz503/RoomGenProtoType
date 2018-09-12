@@ -1,0 +1,4 @@
+<map id="DoorTrigger.Start" name="DoorTrigger.Start">
+<area shape="rect" id="node2" href="$class_base_door.html#a9a851525c3b6e878bec459992ac75408" title="function to lock a door open and stop it from closing " alt="" coords="173,5,316,32"/>
+<area shape="rect" id="node3" href="$class_base_door.html#a418df6f73cc5c56b6989c0512a6a909b" title="function called to open the door " alt="" coords="187,56,302,83"/>
+</map>

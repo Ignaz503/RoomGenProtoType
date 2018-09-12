@@ -1,0 +1,7 @@
+<map id="BaseRoomStyleRequest" name="BaseRoomStyleRequest">
+<area shape="rect" id="node3" href="$class_ceiling_texture_request.html" title="CeilingTextureRequest" alt="" coords="405,5,557,32"/>
+<area shape="rect" id="node4" href="$class_floor_texture_request.html" title="FloorTextureRequest" alt="" coords="409,56,552,83"/>
+<area shape="rect" id="node5" href="$class_multi_wall_texture_request.html" title="MultiWallTextureRequest" alt="" coords="397,107,564,133"/>
+<area shape="rect" id="node6" href="$class_single_wall_texture_request.html" title="SingleWallTextureRequest" alt="" coords="393,157,568,184"/>
+<area shape="rect" id="node2" href="$interface_i_resource_request.html" title="base interface for a resource request, usable by both style request and image/mesh requests ..." alt="" coords="5,81,133,108"/>
+</map>

@@ -1,0 +1,154 @@
+\hypertarget{class_base_room_style_request}{}\section{Base\+Room\+Style\+Request Class Reference}
+\label{class_base_room_style_request}\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+
+
+Inheritance diagram for Base\+Room\+Style\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_room_style_request__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\+Room\+Style\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_base_room_style_request__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_room_style_request_a7ac7b7ae86b8b63b1be428ad0cf8c6eb}{Base\+Room\+Style\+Request}} (int res\+Locator, Game\+Object requestor, \mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}{Room\+Style\+Resource.\+Texture\+To\+Apply}} needed\+Texture)
+\item 
+virtual I\+Enumerator \mbox{\hyperlink{class_base_room_style_request_af2ac2de206ad154351cf6a1b1e7befd5}{Start\+Work\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Called when the resource starts working, should most likely start a new thread \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_base_room_style_request_ad87356fc17614818e1713857f8901a2a}{When\+Done}} ()
+\begin{DoxyCompactList}\small\item\em called when done with request, and it is now time to apply it to a gameobject \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_base_room_style_request_a26ebb6b3a4b26d749687ad56f6b7c8aa}{Is\+Done}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_base_room_style_request_a1bd3ac311ae8be564cf06fc42320d575}{Base\+U\+RL}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_base_room_style_request_a5787f94bce07b0c2d1e8833030d74fcf}{Resource\+Locator}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\item 
+Game\+Object \mbox{\hyperlink{class_base_room_style_request_abac03d12004ad78ee9ddd7fddf3dffdb}{Requestor}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\item 
+\mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}{Room\+Style\+Resource.\+Texture\+To\+Apply}} \mbox{\hyperlink{class_base_room_style_request_a0c2996f1b625ee3556bec48ce3370273}{Texture\+To\+Apply}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\item 
+\mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}} \mbox{\hyperlink{class_base_room_style_request_a1a30d5a6a7da9fe5b221d4fe6b3f69de}{Response}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_base_room_style_request_a7ac7b7ae86b8b63b1be428ad0cf8c6eb}\label{class_base_room_style_request_a7ac7b7ae86b8b63b1be428ad0cf8c6eb}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{Base\+Room\+Style\+Request()}{BaseRoomStyleRequest()}}
+{\footnotesize\ttfamily Base\+Room\+Style\+Request.\+Base\+Room\+Style\+Request (\begin{DoxyParamCaption}\item[{int}]{res\+Locator,  }\item[{Game\+Object}]{requestor,  }\item[{\mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}{Room\+Style\+Resource.\+Texture\+To\+Apply}}}]{needed\+Texture }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_room_style_request_af2ac2de206ad154351cf6a1b1e7befd5}\label{class_base_room_style_request_af2ac2de206ad154351cf6a1b1e7befd5}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Start\+Work\+Request@{Start\+Work\+Request}}
+\index{Start\+Work\+Request@{Start\+Work\+Request}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{Start\+Work\+Request()}{StartWorkRequest()}}
+{\footnotesize\ttfamily virtual I\+Enumerator Base\+Room\+Style\+Request.\+Start\+Work\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called when the resource starts working, should most likely start a new thread 
+
+
+
+Implements \mbox{\hyperlink{interface_i_resource_request_a5b40a09cb820283600ac9e3f846936f9}{I\+Resource\+Request}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_multi_wall_texture_request_a9990230b6a9cb6be581b7948f379065b}{Multi\+Wall\+Texture\+Request}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_room_style_request_af2ac2de206ad154351cf6a1b1e7befd5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_room_style_request_ad87356fc17614818e1713857f8901a2a}\label{class_base_room_style_request_ad87356fc17614818e1713857f8901a2a}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!When\+Done@{When\+Done}}
+\index{When\+Done@{When\+Done}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{When\+Done()}{WhenDone()}}
+{\footnotesize\ttfamily virtual void Base\+Room\+Style\+Request.\+When\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+called when done with request, and it is now time to apply it to a gameobject 
+
+
+
+Implements \mbox{\hyperlink{interface_i_resource_request_a056e427fa6233602456ccb2d4c405aa0}{I\+Resource\+Request}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_multi_wall_texture_request_a96afd031b54eb8f09658fa1930b7d7f7}{Multi\+Wall\+Texture\+Request}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_room_style_request_ad87356fc17614818e1713857f8901a2a_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_base_room_style_request_a1bd3ac311ae8be564cf06fc42320d575}\label{class_base_room_style_request_a1bd3ac311ae8be564cf06fc42320d575}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Base\+U\+RL@{Base\+U\+RL}}
+\index{Base\+U\+RL@{Base\+U\+RL}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{Base\+U\+RL}{BaseURL}}
+{\footnotesize\ttfamily string Base\+Room\+Style\+Request.\+Base\+U\+RL\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_base_room_style_request_a26ebb6b3a4b26d749687ad56f6b7c8aa}\label{class_base_room_style_request_a26ebb6b3a4b26d749687ad56f6b7c8aa}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Is\+Done@{Is\+Done}}
+\index{Is\+Done@{Is\+Done}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{Is\+Done}{IsDone}}
+{\footnotesize\ttfamily virtual bool Base\+Room\+Style\+Request.\+Is\+Done\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+\mbox{\Hypertarget{class_base_room_style_request_abac03d12004ad78ee9ddd7fddf3dffdb}\label{class_base_room_style_request_abac03d12004ad78ee9ddd7fddf3dffdb}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Requestor@{Requestor}}
+\index{Requestor@{Requestor}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{Requestor}{Requestor}}
+{\footnotesize\ttfamily Game\+Object Base\+Room\+Style\+Request.\+Requestor\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+\mbox{\Hypertarget{class_base_room_style_request_a5787f94bce07b0c2d1e8833030d74fcf}\label{class_base_room_style_request_a5787f94bce07b0c2d1e8833030d74fcf}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Resource\+Locator@{Resource\+Locator}}
+\index{Resource\+Locator@{Resource\+Locator}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{Resource\+Locator}{ResourceLocator}}
+{\footnotesize\ttfamily int Base\+Room\+Style\+Request.\+Resource\+Locator\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+\mbox{\Hypertarget{class_base_room_style_request_a1a30d5a6a7da9fe5b221d4fe6b3f69de}\label{class_base_room_style_request_a1a30d5a6a7da9fe5b221d4fe6b3f69de}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Response@{Response}}
+\index{Response@{Response}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{Response}{Response}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}} Base\+Room\+Style\+Request.\+Response\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_base_room_style_request_a0c2996f1b625ee3556bec48ce3370273}\label{class_base_room_style_request_a0c2996f1b625ee3556bec48ce3370273}} 
+\index{Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}!Texture\+To\+Apply@{Texture\+To\+Apply}}
+\index{Texture\+To\+Apply@{Texture\+To\+Apply}!Base\+Room\+Style\+Request@{Base\+Room\+Style\+Request}}
+\subsubsection{\texorpdfstring{Texture\+To\+Apply}{TextureToApply}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room_style_resource_a877062d3830671f8376cc30340cdb45f}{Room\+Style\+Resource.\+Texture\+To\+Apply}} Base\+Room\+Style\+Request.\+Texture\+To\+Apply\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Resources/\mbox{\hyperlink{_base_room_style_request_8cs}{Base\+Room\+Style\+Request.\+cs}}\end{DoxyCompactItemize}

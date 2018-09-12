@@ -1,0 +1,6 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node3" href="$class_interaction_prompt.html" title="InteractionPrompt" alt="" coords="43,273,167,300"/>
+<area shape="rect" id="node4" href="$class_player_hand.html" title="PlayerHand" alt="" coords="151,95,240,121"/>
+<area shape="rect" id="node5" href="$interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="140,5,253,32"/>
+<area shape="rect" id="node6" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="348,5,440,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="RoomManagmentUnit.SetGameobjectsActiveTo" name="RoomManagmentUnit.SetGameobjectsActiveTo">
+<area shape="rect" id="node2" href="$class_room_managment_unit.html#a7f34dfb62166ebcbd2a314f0bcdb61e9" title="RoomManagmentUnit.LoadRoom" alt="" coords="307,5,521,32"/>
+<area shape="rect" id="node3" href="$class_room_managment_unit.html#a45c039de8a79db7ada5831e0abeda972" title="RoomManagmentUnit.UnloadRoom" alt="" coords="301,56,527,83"/>
+<area shape="rect" id="node4" href="$class_room_managment_unit.html#a6043074719f8d67150cbfcff4c7a4cec" title="RoomManagmentUnit.ToggleRoom" alt="" coords="303,107,525,133"/>
+</map>

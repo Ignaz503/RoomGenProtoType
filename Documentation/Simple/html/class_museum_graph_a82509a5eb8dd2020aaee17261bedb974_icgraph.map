@@ -1,0 +1,5 @@
+<map id="MuseumGraph.GetNodeForRoom" name="MuseumGraph.GetNodeForRoom">
+<area shape="rect" id="node2" href="$class_museum_controller.html#a8f4312e1b672427e94e590e499d2ca8d" title="Loads a room and it&#39;s direct neighbors according to the museum graph Load currently means set gamobje..." alt="" coords="274,5,467,47"/>
+<area shape="rect" id="node4" href="$class_museum_controller.html#aa65b2ea9f99d62431282233f0582fc4a" title="unloads a room and it&#39;s immediate neighbors according to the museum graph unload currently means set ..." alt="" coords="268,71,473,112"/>
+<area shape="rect" id="node3" href="$class_museum_controller.html#adfeaf699686c1a1aad33bd585db636b9" title="MuseumController.Update" alt="" coords="521,46,693,73"/>
+</map>

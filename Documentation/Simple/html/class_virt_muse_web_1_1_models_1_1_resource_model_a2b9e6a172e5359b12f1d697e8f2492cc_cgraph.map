@@ -1,0 +1,6 @@
+<map id="VirtMuseWeb.Models.ResourceModel.operator DisplayMeshResource" name="VirtMuseWeb.Models.ResourceModel.operator DisplayMeshResource">
+<area shape="rect" id="node2" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#a709437fa190459e77caea248f2ab5179" title="Fills a base display resource with the base data " alt="" coords="296,5,503,47"/>
+<area shape="rect" id="node3" href="$class_virt_muse_web_1_1_utility_1_1_unity_mesh_data.html#a72d47231711a93e536a91a202d07caef" title="Deserializes unity mesh data from a byte array " alt="" coords="313,71,485,112"/>
+<area shape="rect" id="node4" href="$class_virt_muse_web_1_1_utility_1_1_vec3.html#a0328deac658dc5e70dcf34da465d21fc" title="returns a UnityEngine Vector3 " alt="" coords="311,136,487,177"/>
+<area shape="rect" id="node5" href="$class_virt_muse_web_1_1_utility_1_1_vec2.html#adf9d148c0badd947b5655efbc24f560e" title="Returns a UnityEngine Vector2 with coords this vector " alt="" coords="311,201,487,243"/>
+</map>

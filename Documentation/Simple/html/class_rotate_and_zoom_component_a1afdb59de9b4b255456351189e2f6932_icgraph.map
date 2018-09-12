@@ -1,0 +1,4 @@
+<map id="RotateAndZoomComponent.StartInteraction" name="RotateAndZoomComponent.StartInteraction">
+<area shape="rect" id="node2" href="$class_rotate_and_zoom_interaction.html#ad92e1c40e9cbb2fb3dcf234e72d0e595" title="Function that should be called on interact This Function should apply the InteractionComponents ..." alt="" coords="284,5,463,47"/>
+<area shape="rect" id="node3" href="$class_rotate_and_zoom_component.html#ac6afb9569858cf59c584c7bdfac41def" title="setup function when interaction starts " alt="" coords="267,71,480,112"/>
+</map>

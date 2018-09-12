@@ -1,0 +1,4 @@
+<map id="MetaDataDisplay.RotateTo" name="MetaDataDisplay.RotateTo">
+<area shape="rect" id="node2" href="$class_meta_data_display.html#aa0a9b9ca8243943104c82602e69a0541" title="starts corutine to rotate to 0deg and sets self active " alt="" coords="231,5,415,47"/>
+<area shape="rect" id="node3" href="$class_meta_data_display.html#a98518b3d82ffd1e428cab9a2328fb018" title="start corutine to rotate towards 90 deg and locks cursor " alt="" coords="231,71,415,112"/>
+</map>

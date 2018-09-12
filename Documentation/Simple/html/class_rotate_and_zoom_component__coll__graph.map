@@ -1,0 +1,8 @@
+<map id="RotateAndZoomComponent" name="RotateAndZoomComponent">
+<area shape="rect" id="node2" href="$class_interaction_component.html" title="Base Component class for any interaction that should be possible between two gameobjects ..." alt="" coords="5,145,153,172"/>
+<area shape="rect" id="node4" href="$class_player.html" title="Player" alt="" coords="330,196,389,223"/>
+<area shape="rect" id="node5" href="$class_interaction_prompt.html" title="InteractionPrompt" alt="" coords="308,285,432,312"/>
+<area shape="rect" id="node6" href="$class_player_hand.html" title="PlayerHand" alt="" coords="279,95,368,121"/>
+<area shape="rect" id="node7" href="$interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="253,5,367,32"/>
+<area shape="rect" id="node8" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="463,5,555,32"/>
+</map>

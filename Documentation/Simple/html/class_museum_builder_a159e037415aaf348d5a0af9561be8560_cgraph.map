@@ -1,0 +1,13 @@
+<map id="MuseumBuilder.SetUpCenterDisplaysForRoom" name="MuseumBuilder.SetUpCenterDisplaysForRoom">
+<area shape="rect" id="node2" href="$class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="244,67,523,94"/>
+<area shape="rect" id="node5" href="$class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="331,118,436,145"/>
+<area shape="rect" id="node6" href="$class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="290,169,477,211"/>
+<area shape="rect" id="node3" href="$class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="588,5,775,47"/>
+<area shape="rect" id="node4" href="$class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="577,71,786,112"/>
+<area shape="rect" id="node7" href="$class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="572,157,791,199"/>
+<area shape="rect" id="node12" href="$class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="571,223,792,264"/>
+<area shape="rect" id="node8" href="$class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="840,165,1073,191"/>
+<area shape="rect" id="node11" href="$class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="859,222,1054,249"/>
+<area shape="rect" id="node9" href="$class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="1121,165,1296,191"/>
+<area shape="rect" id="node10" href="$class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="1344,165,1560,191"/>
+</map>

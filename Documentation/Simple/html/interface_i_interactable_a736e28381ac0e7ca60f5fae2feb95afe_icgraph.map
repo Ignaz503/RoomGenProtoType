@@ -1,0 +1,4 @@
+<map id="IInteractable.Interact" name="IInteractable.Interact">
+<area shape="rect" id="node2" href="$class_player.html#a377a703ca99ceaf80d62874b2585c745" title="handles the possibility of the player interacting with somthing if he is in range and calls appropria..." alt="" coords="192,5,355,32"/>
+<area shape="rect" id="node3" href="$class_player.html#aace80372e18e32fe177e295fe5d93ba8" title="Player.Update" alt="" coords="403,5,507,32"/>
+</map>

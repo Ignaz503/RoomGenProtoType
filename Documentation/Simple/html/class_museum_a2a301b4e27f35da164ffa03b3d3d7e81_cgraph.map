@@ -1,0 +1,8 @@
+<map id="Museum.Generate" name="Museum.Generate">
+<area shape="rect" id="node2" href="$class_museum.html#af5b732fe3a0821d02852171a73cf8f8b" title="returns the sourrounding tiles for a given position " alt="" coords="195,5,395,32"/>
+<area shape="rect" id="node3" href="$class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="202,57,389,98"/>
+<area shape="rect" id="node4" href="$class_room.html#a294bb89a25ac765eca25106ccb4d1955" title="Creats a single door between two rooms " alt="" coords="187,123,403,149"/>
+<area shape="rect" id="node5" href="$class_museum_graph.html#a36a26248bb9c304f8e67c60eb6d517f5" title="builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other ..." alt="" coords="183,173,408,200"/>
+<area shape="rect" id="node6" href="$class_museum_graph_1_1_node.html#afc85f1140ee37f6365863f34ac3482bc" title="creates edges between two nodes " alt="" coords="456,166,649,207"/>
+<area shape="rect" id="node7" href="$class_museum_graph_1_1_node.html#adecbc3b471d15c5480d4c13e9502ac27" title="adss an edge to this node " alt="" coords="697,173,896,200"/>
+</map>

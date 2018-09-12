@@ -1,0 +1,4 @@
+<map id="InteractionPrompt.PlaceBetweenAndRotateTowardsFirst" name="InteractionPrompt.PlaceBetweenAndRotateTowardsFirst">
+<area shape="rect" id="node2" href="$class_interaction_prompt.html#ada65c2aa759ea18aa2ccf6ba8cd3843b" title="InteractionPrompt.Start" alt="" coords="283,5,439,32"/>
+<area shape="rect" id="node3" href="$class_interaction_prompt.html#abdf8e29663a41a36dc2db027f3187c49" title="InteractionPrompt.LateUpdate" alt="" coords="264,56,459,83"/>
+</map>

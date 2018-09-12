@@ -1,0 +1,271 @@
+\hypertarget{class_p_c_player_hand}{}\section{P\+C\+Player\+Hand Class Reference}
+\label{class_p_c_player_hand}\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+
+
+Inheritance diagram for P\+C\+Player\+Hand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_p_c_player_hand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+C\+Player\+Hand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_c_player_hand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_p_c_player_hand_a42c7ffd95f8493901c93e2c1e4576585}{Drop\+Object}} ()
+\begin{DoxyCompactList}\small\item\em drops any held object, unssubscribes this object from all events \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_p_c_player_hand_a08da28b459501727d269733569559c24}{Grab\+Object}} (\mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}} hold\+Obj)
+\begin{DoxyCompactList}\small\item\em subscribes object to all relevent events and calles on obj grabbed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Key\+Code \mbox{\hyperlink{class_p_c_player_hand_a4d757a10aeef1d8b06d19687218584f0}{Move\+Hand\+Key}}
+\begin{DoxyCompactList}\small\item\em the key that starts the process of moving the hand eiter into rest or infront of face position \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_p_c_player_hand_a8c3efd819803169fc351ce8e456a8a0f}{p}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em used so that player shows up in editor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_p_c_player_hand_aa3eed40e80c66f9e85905cf2c2c4fcbe}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_p_c_player_hand_a40a567183ee039605d5778060e5ce17a}{On\+Draw\+Gizmos}} ()
+\item 
+void \mbox{\hyperlink{class_p_c_player_hand_a1fec11a83fbd674a2a0ff6790704a847}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_p_c_player_hand_a81d7137403650fb8da125b6356d50496}{Handle\+Movement}} ()
+\begin{DoxyCompactList}\small\item\em handels state transitions of hand and how to move it in the case of move hand key being pressed \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_p_c_player_hand_a338f6e5898a4953d48c046354ffef9e2}{Move\+To}} (Vector3 position, \mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}} next\+State)
+\begin{DoxyCompactList}\small\item\em corutione that moves to a local position \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_p_c_player_hand_a67a82329e791c5fce99188ba601e229d}{rest\+Position}}
+\begin{DoxyCompactList}\small\item\em the position the mouse has when in rest position \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_p_c_player_hand_a25ff91db9893158f5185b4826d563e60}{infront\+Of\+Face\+Position}}
+\begin{DoxyCompactList}\small\item\em the position the hand has when held infront of the face \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_meta_data_display}{Meta\+Data\+Display}} \mbox{\hyperlink{class_p_c_player_hand_a132e4dc18579e0b2b561857fafaca912}{meta\+Display}}
+\begin{DoxyCompactList}\small\item\em the meta display held from the start \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_c_player_hand_aaa5dc972ddaedd270c6f4c19a4c4f61b}{movement\+Time}}
+\begin{DoxyCompactList}\small\item\em Time To reach one position to another in seconds \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_p_c_player_hand_a15c7717a137aa7790c06f2bdf9b247a1}{velocity}} = Vector3.\+zero
+\begin{DoxyCompactList}\small\item\em velocity vector used by smoothdamp \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_p_c_player_hand_a42c7ffd95f8493901c93e2c1e4576585}\label{class_p_c_player_hand_a42c7ffd95f8493901c93e2c1e4576585}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!Drop\+Object@{Drop\+Object}}
+\index{Drop\+Object@{Drop\+Object}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{Drop\+Object()}{DropObject()}}
+{\footnotesize\ttfamily override void P\+C\+Player\+Hand.\+Drop\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+drops any held object, unssubscribes this object from all events 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_player_hand_a3b127b846b420ef37cba3a3a8de68e78}{Player\+Hand}}.
+
+\mbox{\Hypertarget{class_p_c_player_hand_a08da28b459501727d269733569559c24}\label{class_p_c_player_hand_a08da28b459501727d269733569559c24}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!Grab\+Object@{Grab\+Object}}
+\index{Grab\+Object@{Grab\+Object}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{Grab\+Object()}{GrabObject()}}
+{\footnotesize\ttfamily override void P\+C\+Player\+Hand.\+Grab\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_holdable_object}{I\+Holdable\+Object}}}]{hold\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+subscribes object to all relevent events and calles on obj grabbed 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_player_hand_a64a86af904a77f4a0b92d72bd5fdf43c}{Player\+Hand}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_c_player_hand_a08da28b459501727d269733569559c24_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_p_c_player_hand_a81d7137403650fb8da125b6356d50496}\label{class_p_c_player_hand_a81d7137403650fb8da125b6356d50496}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!Handle\+Movement@{Handle\+Movement}}
+\index{Handle\+Movement@{Handle\+Movement}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{Handle\+Movement()}{HandleMovement()}}
+{\footnotesize\ttfamily void P\+C\+Player\+Hand.\+Handle\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handels state transitions of hand and how to move it in the case of move hand key being pressed 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_c_player_hand_a81d7137403650fb8da125b6356d50496_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_c_player_hand_a81d7137403650fb8da125b6356d50496_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_p_c_player_hand_a338f6e5898a4953d48c046354ffef9e2}\label{class_p_c_player_hand_a338f6e5898a4953d48c046354ffef9e2}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!Move\+To@{Move\+To}}
+\index{Move\+To@{Move\+To}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{Move\+To()}{MoveTo()}}
+{\footnotesize\ttfamily I\+Enumerator P\+C\+Player\+Hand.\+Move\+To (\begin{DoxyParamCaption}\item[{Vector3}]{position,  }\item[{\mbox{\hyperlink{class_player_hand_a1af76750da713cbc88856161d8d5ac0e}{Hand\+State}}}]{next\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+corutione that moves to a local position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the position to move to\\
+\hline
+{\em next\+State} & the state the hand enters next\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_c_player_hand_a338f6e5898a4953d48c046354ffef9e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_p_c_player_hand_a40a567183ee039605d5778060e5ce17a}\label{class_p_c_player_hand_a40a567183ee039605d5778060e5ce17a}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!On\+Draw\+Gizmos@{On\+Draw\+Gizmos}}
+\index{On\+Draw\+Gizmos@{On\+Draw\+Gizmos}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{On\+Draw\+Gizmos()}{OnDrawGizmos()}}
+{\footnotesize\ttfamily void P\+C\+Player\+Hand.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_p_c_player_hand_aa3eed40e80c66f9e85905cf2c2c4fcbe}\label{class_p_c_player_hand_aa3eed40e80c66f9e85905cf2c2c4fcbe}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!Start@{Start}}
+\index{Start@{Start}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void P\+C\+Player\+Hand.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_c_player_hand_aa3eed40e80c66f9e85905cf2c2c4fcbe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_p_c_player_hand_a1fec11a83fbd674a2a0ff6790704a847}\label{class_p_c_player_hand_a1fec11a83fbd674a2a0ff6790704a847}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!Update@{Update}}
+\index{Update@{Update}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void P\+C\+Player\+Hand.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_c_player_hand_a1fec11a83fbd674a2a0ff6790704a847_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_p_c_player_hand_a25ff91db9893158f5185b4826d563e60}\label{class_p_c_player_hand_a25ff91db9893158f5185b4826d563e60}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!infront\+Of\+Face\+Position@{infront\+Of\+Face\+Position}}
+\index{infront\+Of\+Face\+Position@{infront\+Of\+Face\+Position}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{infront\+Of\+Face\+Position}{infrontOfFacePosition}}
+{\footnotesize\ttfamily Vector3 P\+C\+Player\+Hand.\+infront\+Of\+Face\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the position the hand has when held infront of the face 
+
+\mbox{\Hypertarget{class_p_c_player_hand_a132e4dc18579e0b2b561857fafaca912}\label{class_p_c_player_hand_a132e4dc18579e0b2b561857fafaca912}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!meta\+Display@{meta\+Display}}
+\index{meta\+Display@{meta\+Display}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{meta\+Display}{metaDisplay}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_meta_data_display}{Meta\+Data\+Display}} P\+C\+Player\+Hand.\+meta\+Display\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the meta display held from the start 
+
+\mbox{\Hypertarget{class_p_c_player_hand_a4d757a10aeef1d8b06d19687218584f0}\label{class_p_c_player_hand_a4d757a10aeef1d8b06d19687218584f0}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!Move\+Hand\+Key@{Move\+Hand\+Key}}
+\index{Move\+Hand\+Key@{Move\+Hand\+Key}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{Move\+Hand\+Key}{MoveHandKey}}
+{\footnotesize\ttfamily Key\+Code P\+C\+Player\+Hand.\+Move\+Hand\+Key}
+
+
+
+the key that starts the process of moving the hand eiter into rest or infront of face position 
+
+\mbox{\Hypertarget{class_p_c_player_hand_aaa5dc972ddaedd270c6f4c19a4c4f61b}\label{class_p_c_player_hand_aaa5dc972ddaedd270c6f4c19a4c4f61b}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!movement\+Time@{movement\+Time}}
+\index{movement\+Time@{movement\+Time}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{movement\+Time}{movementTime}}
+{\footnotesize\ttfamily float P\+C\+Player\+Hand.\+movement\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time To reach one position to another in seconds 
+
+\mbox{\Hypertarget{class_p_c_player_hand_a67a82329e791c5fce99188ba601e229d}\label{class_p_c_player_hand_a67a82329e791c5fce99188ba601e229d}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!rest\+Position@{rest\+Position}}
+\index{rest\+Position@{rest\+Position}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{rest\+Position}{restPosition}}
+{\footnotesize\ttfamily Vector3 P\+C\+Player\+Hand.\+rest\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the position the mouse has when in rest position 
+
+\mbox{\Hypertarget{class_p_c_player_hand_a15c7717a137aa7790c06f2bdf9b247a1}\label{class_p_c_player_hand_a15c7717a137aa7790c06f2bdf9b247a1}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!velocity@{velocity}}
+\index{velocity@{velocity}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily Vector3 P\+C\+Player\+Hand.\+velocity = Vector3.\+zero\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+velocity vector used by smoothdamp 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_p_c_player_hand_a8c3efd819803169fc351ce8e456a8a0f}\label{class_p_c_player_hand_a8c3efd819803169fc351ce8e456a8a0f}} 
+\index{P\+C\+Player\+Hand@{P\+C\+Player\+Hand}!p@{p}}
+\index{p@{p}!P\+C\+Player\+Hand@{P\+C\+Player\+Hand}}
+\subsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} P\+C\+Player\+Hand.\+p\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [private]}}
+
+
+
+used so that player shows up in editor 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Player/\+Player\+Hand/\mbox{\hyperlink{_p_c_player_hand_8cs}{P\+C\+Player\+Hand.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,332 @@
+\hypertarget{class_player}{}\section{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+Inheritance diagram for Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_player_aa3b6104791d642173caf761cf81f8c08}{State}} \{ \mbox{\hyperlink{class_player_aa3b6104791d642173caf761cf81f8c08adefe967ad0373b2274fc298f19125ca7}{State.\+Moving}}, 
+\mbox{\hyperlink{class_player_aa3b6104791d642173caf761cf81f8c08af023446a52e84d38f186937dad1d8f76}{State.\+Interacting}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Camera \mbox{\hyperlink{class_player_af09423c3841ebcb3c1e77cf3fa1b0084}{Player\+Cam}}
+\begin{DoxyCompactList}\small\item\em The camera that is the player head so to speek \end{DoxyCompactList}\item 
+First\+Person\+Controller \mbox{\hyperlink{class_player_a2b1dcb2e1f53c780a7501dbc6f89a174}{First\+Person\+Controller}}
+\begin{DoxyCompactList}\small\item\em The first person controller of the std unity assets \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_hand}{Player\+Hand}} \mbox{\hyperlink{class_player_add63756ae44fffede30732d219ed0410}{P\+Hand}}
+\begin{DoxyCompactList}\small\item\em The player hand \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_player_adafd180f492907d445a3ace023f63040}{Ray\+Cast\+Max\+Dist}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ \mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}} $>$ \mbox{\hyperlink{class_player_a22eae36e514445cac4172890ed186638}{On\+Interaction\+Start}}
+\begin{DoxyCompactList}\small\item\em called right before I\+Interacttable function called and player state set to interacting same frame as interact button is pressed \end{DoxyCompactList}\item 
+Action$<$ \mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}} $>$ \mbox{\hyperlink{class_player_a08a7813ef2273b80058d734256218cff}{On\+Interaction\+End}}
+\begin{DoxyCompactList}\small\item\em Called right befor playerstate is set to not interacting, the frame where the cancel interaction button is pressed \end{DoxyCompactList}\item 
+Action$<$ \mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}} $>$ \mbox{\hyperlink{class_player_a6da2c61e5e06e970835852ed3d65157c}{On\+In\+Interaction\+Range}}
+\begin{DoxyCompactList}\small\item\em called once for any display when the player moves in range to interact with it W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY C\+A\+L\+L\+ED E\+V\+E\+RY F\+R\+A\+ME U\+N\+T\+IL T\+O\+DO IS D\+O\+NE \end{DoxyCompactList}\item 
+System.\+Action \mbox{\hyperlink{class_player_a319e807c138700dc247ebbba9579899e}{On\+Out\+Of\+Interaction\+Range}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_aaddfa9f3b558df64f5d1d09e2b906901}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_player_aace80372e18e32fe177e295fe5d93ba8}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_player_a5f5cd09ca02aa4a73fb2df2828671596}{Handle\+Display\+Raycast}} ()
+\begin{DoxyCompactList}\small\item\em handles the raycast to see if we can interact with anything and calls appropriate evetns \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a377a703ca99ceaf80d62874b2585c745}{Handle\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em handles the possibility of the player interacting with somthing if he is in range and calls appropriate events \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ray \mbox{\hyperlink{class_player_ae2a4edadae1e278ef28c3bb236e7af83}{center\+Ray}}
+\begin{DoxyCompactList}\small\item\em ray that is cent throught the center of the screen to see if anything interactable is hit \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_a322b20647ba7b9c279006c4745f7eae9}{ray\+Cast\+Max\+Dist}}
+\begin{DoxyCompactList}\small\item\em limits the distance the ray that checks for anything interactbale hit \end{DoxyCompactList}\item 
+Key\+Code \mbox{\hyperlink{class_player_ad17e0e6b44972e1c99a08fbaa38b0672}{interact\+Key}}
+\begin{DoxyCompactList}\small\item\em the key that needs to be pressed to start an interaction if possible \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_interaction_prompt}{Interaction\+Prompt}} \mbox{\hyperlink{class_player_aa1545460a9996f71150823c51dc60ab5}{interaction\+Prompt}}
+\begin{DoxyCompactList}\small\item\em the prompt that appear when an interaction is possible should probably be removed \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_aa3b6104791d642173caf761cf81f8c08}{State}} \mbox{\hyperlink{class_player_a8b94069330ce05b42769d5cc61c6f00a}{player\+State}}
+\begin{DoxyCompactList}\small\item\em The state of the player \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} \mbox{\hyperlink{class_player_ac05f1557fc411c88274df512abb865ac}{last\+Interactable\+Hit}}
+\begin{DoxyCompactList}\small\item\em The display that was hit last, can be null should probaly be \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_player_aa3b6104791d642173caf761cf81f8c08}\label{class_player_aa3b6104791d642173caf761cf81f8c08}} 
+\index{Player@{Player}!State@{State}}
+\index{State@{State}!Player@{Player}}
+\subsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_player_aa3b6104791d642173caf761cf81f8c08}{Player.\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Moving@{Moving}!Player@{Player}}\index{Player@{Player}!Moving@{Moving}}}\mbox{\Hypertarget{class_player_aa3b6104791d642173caf761cf81f8c08adefe967ad0373b2274fc298f19125ca7}\label{class_player_aa3b6104791d642173caf761cf81f8c08adefe967ad0373b2274fc298f19125ca7}} 
+Moving&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Interacting@{Interacting}!Player@{Player}}\index{Player@{Player}!Interacting@{Interacting}}}\mbox{\Hypertarget{class_player_aa3b6104791d642173caf761cf81f8c08af023446a52e84d38f186937dad1d8f76}\label{class_player_aa3b6104791d642173caf761cf81f8c08af023446a52e84d38f186937dad1d8f76}} 
+Interacting&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_aaddfa9f3b558df64f5d1d09e2b906901}\label{class_player_aaddfa9f3b558df64f5d1d09e2b906901}} 
+\index{Player@{Player}!Awake@{Awake}}
+\index{Awake@{Awake}!Player@{Player}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Player.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_player_a5f5cd09ca02aa4a73fb2df2828671596}\label{class_player_a5f5cd09ca02aa4a73fb2df2828671596}} 
+\index{Player@{Player}!Handle\+Display\+Raycast@{Handle\+Display\+Raycast}}
+\index{Handle\+Display\+Raycast@{Handle\+Display\+Raycast}!Player@{Player}}
+\subsubsection{\texorpdfstring{Handle\+Display\+Raycast()}{HandleDisplayRaycast()}}
+{\footnotesize\ttfamily void Player.\+Handle\+Display\+Raycast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the raycast to see if we can interact with anything and calls appropriate evetns 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_player_a5f5cd09ca02aa4a73fb2df2828671596_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a377a703ca99ceaf80d62874b2585c745}\label{class_player_a377a703ca99ceaf80d62874b2585c745}} 
+\index{Player@{Player}!Handle\+Interaction@{Handle\+Interaction}}
+\index{Handle\+Interaction@{Handle\+Interaction}!Player@{Player}}
+\subsubsection{\texorpdfstring{Handle\+Interaction()}{HandleInteraction()}}
+{\footnotesize\ttfamily void Player.\+Handle\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the possibility of the player interacting with somthing if he is in range and calls appropriate events 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_player_a377a703ca99ceaf80d62874b2585c745_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_player_a377a703ca99ceaf80d62874b2585c745_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}\label{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}} 
+\index{Player@{Player}!Start@{Start}}
+\index{Start@{Start}!Player@{Player}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Player.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_aace80372e18e32fe177e295fe5d93ba8}\label{class_player_aace80372e18e32fe177e295fe5d93ba8}} 
+\index{Player@{Player}!Update@{Update}}
+\index{Update@{Update}!Player@{Player}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Player.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_aace80372e18e32fe177e295fe5d93ba8_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_player_ae2a4edadae1e278ef28c3bb236e7af83}\label{class_player_ae2a4edadae1e278ef28c3bb236e7af83}} 
+\index{Player@{Player}!center\+Ray@{center\+Ray}}
+\index{center\+Ray@{center\+Ray}!Player@{Player}}
+\subsubsection{\texorpdfstring{center\+Ray}{centerRay}}
+{\footnotesize\ttfamily Ray Player.\+center\+Ray\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ray that is cent throught the center of the screen to see if anything interactable is hit 
+
+\mbox{\Hypertarget{class_player_a2b1dcb2e1f53c780a7501dbc6f89a174}\label{class_player_a2b1dcb2e1f53c780a7501dbc6f89a174}} 
+\index{Player@{Player}!First\+Person\+Controller@{First\+Person\+Controller}}
+\index{First\+Person\+Controller@{First\+Person\+Controller}!Player@{Player}}
+\subsubsection{\texorpdfstring{First\+Person\+Controller}{FirstPersonController}}
+{\footnotesize\ttfamily First\+Person\+Controller Player.\+First\+Person\+Controller}
+
+
+
+The first person controller of the std unity assets 
+
+\mbox{\Hypertarget{class_player_aa1545460a9996f71150823c51dc60ab5}\label{class_player_aa1545460a9996f71150823c51dc60ab5}} 
+\index{Player@{Player}!interaction\+Prompt@{interaction\+Prompt}}
+\index{interaction\+Prompt@{interaction\+Prompt}!Player@{Player}}
+\subsubsection{\texorpdfstring{interaction\+Prompt}{interactionPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_interaction_prompt}{Interaction\+Prompt}} Player.\+interaction\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the prompt that appear when an interaction is possible should probably be removed 
+
+\mbox{\Hypertarget{class_player_ad17e0e6b44972e1c99a08fbaa38b0672}\label{class_player_ad17e0e6b44972e1c99a08fbaa38b0672}} 
+\index{Player@{Player}!interact\+Key@{interact\+Key}}
+\index{interact\+Key@{interact\+Key}!Player@{Player}}
+\subsubsection{\texorpdfstring{interact\+Key}{interactKey}}
+{\footnotesize\ttfamily Key\+Code Player.\+interact\+Key\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the key that needs to be pressed to start an interaction if possible 
+
+\mbox{\Hypertarget{class_player_ac05f1557fc411c88274df512abb865ac}\label{class_player_ac05f1557fc411c88274df512abb865ac}} 
+\index{Player@{Player}!last\+Interactable\+Hit@{last\+Interactable\+Hit}}
+\index{last\+Interactable\+Hit@{last\+Interactable\+Hit}!Player@{Player}}
+\subsubsection{\texorpdfstring{last\+Interactable\+Hit}{lastInteractableHit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} Player.\+last\+Interactable\+Hit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The display that was hit last, can be null should probaly be \mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} 
+
+\mbox{\Hypertarget{class_player_add63756ae44fffede30732d219ed0410}\label{class_player_add63756ae44fffede30732d219ed0410}} 
+\index{Player@{Player}!P\+Hand@{P\+Hand}}
+\index{P\+Hand@{P\+Hand}!Player@{Player}}
+\subsubsection{\texorpdfstring{P\+Hand}{PHand}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player_hand}{Player\+Hand}} Player.\+P\+Hand}
+
+
+
+The player hand 
+
+\mbox{\Hypertarget{class_player_af09423c3841ebcb3c1e77cf3fa1b0084}\label{class_player_af09423c3841ebcb3c1e77cf3fa1b0084}} 
+\index{Player@{Player}!Player\+Cam@{Player\+Cam}}
+\index{Player\+Cam@{Player\+Cam}!Player@{Player}}
+\subsubsection{\texorpdfstring{Player\+Cam}{PlayerCam}}
+{\footnotesize\ttfamily Camera Player.\+Player\+Cam}
+
+
+
+The camera that is the player head so to speek 
+
+\mbox{\Hypertarget{class_player_a8b94069330ce05b42769d5cc61c6f00a}\label{class_player_a8b94069330ce05b42769d5cc61c6f00a}} 
+\index{Player@{Player}!player\+State@{player\+State}}
+\index{player\+State@{player\+State}!Player@{Player}}
+\subsubsection{\texorpdfstring{player\+State}{playerState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player_aa3b6104791d642173caf761cf81f8c08}{State}} Player.\+player\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The state of the player 
+
+\mbox{\Hypertarget{class_player_a322b20647ba7b9c279006c4745f7eae9}\label{class_player_a322b20647ba7b9c279006c4745f7eae9}} 
+\index{Player@{Player}!ray\+Cast\+Max\+Dist@{ray\+Cast\+Max\+Dist}}
+\index{ray\+Cast\+Max\+Dist@{ray\+Cast\+Max\+Dist}!Player@{Player}}
+\subsubsection{\texorpdfstring{ray\+Cast\+Max\+Dist}{rayCastMaxDist}}
+{\footnotesize\ttfamily float Player.\+ray\+Cast\+Max\+Dist\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+limits the distance the ray that checks for anything interactbale hit 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_player_adafd180f492907d445a3ace023f63040}\label{class_player_adafd180f492907d445a3ace023f63040}} 
+\index{Player@{Player}!Ray\+Cast\+Max\+Dist@{Ray\+Cast\+Max\+Dist}}
+\index{Ray\+Cast\+Max\+Dist@{Ray\+Cast\+Max\+Dist}!Player@{Player}}
+\subsubsection{\texorpdfstring{Ray\+Cast\+Max\+Dist}{RayCastMaxDist}}
+{\footnotesize\ttfamily float Player.\+Ray\+Cast\+Max\+Dist\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_player_a6da2c61e5e06e970835852ed3d65157c}\label{class_player_a6da2c61e5e06e970835852ed3d65157c}} 
+\index{Player@{Player}!On\+In\+Interaction\+Range@{On\+In\+Interaction\+Range}}
+\index{On\+In\+Interaction\+Range@{On\+In\+Interaction\+Range}!Player@{Player}}
+\subsubsection{\texorpdfstring{On\+In\+Interaction\+Range}{OnInInteractionRange}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}}$>$ Player.\+On\+In\+Interaction\+Range}
+
+
+
+called once for any display when the player moves in range to interact with it W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY C\+A\+L\+L\+ED E\+V\+E\+RY F\+R\+A\+ME U\+N\+T\+IL T\+O\+DO IS D\+O\+NE 
+
+\mbox{\Hypertarget{class_player_a08a7813ef2273b80058d734256218cff}\label{class_player_a08a7813ef2273b80058d734256218cff}} 
+\index{Player@{Player}!On\+Interaction\+End@{On\+Interaction\+End}}
+\index{On\+Interaction\+End@{On\+Interaction\+End}!Player@{Player}}
+\subsubsection{\texorpdfstring{On\+Interaction\+End}{OnInteractionEnd}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}}$>$ Player.\+On\+Interaction\+End}
+
+
+
+Called right befor playerstate is set to not interacting, the frame where the cancel interaction button is pressed 
+
+\mbox{\Hypertarget{class_player_a22eae36e514445cac4172890ed186638}\label{class_player_a22eae36e514445cac4172890ed186638}} 
+\index{Player@{Player}!On\+Interaction\+Start@{On\+Interaction\+Start}}
+\index{On\+Interaction\+Start@{On\+Interaction\+Start}!Player@{Player}}
+\subsubsection{\texorpdfstring{On\+Interaction\+Start}{OnInteractionStart}}
+{\footnotesize\ttfamily Action$<$\mbox{\hyperlink{class_player_interaction_event_args}{Player\+Interaction\+Event\+Args}}$>$ Player.\+On\+Interaction\+Start}
+
+
+
+called right before I\+Interacttable function called and player state set to interacting same frame as interact button is pressed 
+
+\mbox{\Hypertarget{class_player_a319e807c138700dc247ebbba9579899e}\label{class_player_a319e807c138700dc247ebbba9579899e}} 
+\index{Player@{Player}!On\+Out\+Of\+Interaction\+Range@{On\+Out\+Of\+Interaction\+Range}}
+\index{On\+Out\+Of\+Interaction\+Range@{On\+Out\+Of\+Interaction\+Range}!Player@{Player}}
+\subsubsection{\texorpdfstring{On\+Out\+Of\+Interaction\+Range}{OnOutOfInteractionRange}}
+{\footnotesize\ttfamily System.\+Action Player.\+On\+Out\+Of\+Interaction\+Range}
+
+
+
+
+
+called the frame when player moves out of interaction range when the interacable object in the previous fame was not null 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Player/\mbox{\hyperlink{_player_8cs}{Player.\+cs}}\end{DoxyCompactItemize}

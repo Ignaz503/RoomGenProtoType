@@ -1,0 +1,525 @@
+\hypertarget{class_meta_data_display}{}\section{Meta\+Data\+Display Class Reference}
+\label{class_meta_data_display}\index{Meta\+Data\+Display@{Meta\+Data\+Display}}
+
+
+The display for all the metadata T\+O\+DO\+: make interactable and define pickup interaction  
+
+
+
+
+Inheritance diagram for Meta\+Data\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_meta_data_display__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Meta\+Data\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_meta_data_display__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_meta_data_display_ab91c62e23ca6af27f8a30859d5a172c9}{On\+Held\+Infront\+Of\+Face}} ()
+\begin{DoxyCompactList}\small\item\em stops all corutines sets local rotation dissolves cursor lock \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_a55888c6c3e3e224d89d95b6c63652762}{On\+Put\+Away}} ()
+\begin{DoxyCompactList}\small\item\em sets inactive and stops all corutines \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_aa0a9b9ca8243943104c82602e69a0541}{On\+Started\+Move\+Infront\+Of\+Face}} ()
+\begin{DoxyCompactList}\small\item\em starts corutine to rotate to 0deg and sets self active \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_a98518b3d82ffd1e428cab9a2328fb018}{On\+Started\+Move\+Away\+From\+Face}} ()
+\begin{DoxyCompactList}\small\item\em start corutine to rotate towards 90 deg and locks cursor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_a1ecbc336a25464fc9999120066263e2a}{Position\+Object\+In\+Hand}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
+\begin{DoxyCompactList}\small\item\em sets local position to somthing depending on hand state \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_meta_data_display_a6aa943864ef85667977a13c895c2ce23}{Is\+Interested\+In\+Interactable\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em is intersted in interactable objects should probably be a property \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_a29b7b1ec6193b73606dc7da89c387529}{Set\+Interacted\+Object}} (\mbox{\hyperlink{interface_i_interactable}{I\+Interactable}} i\+Obj)
+\begin{DoxyCompactList}\small\item\em applies the metadata of the interacted object if it is a display that has been interacted with \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_a7d639d7bc58c9340a7f5274884bbc11d}{On\+Grabed}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
+\begin{DoxyCompactList}\small\item\em calls poisiton object in hand and gets the fpc of the player \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_a274478924e6a4df19484a469ae2869ce}{On\+Dropped}} (\mbox{\hyperlink{class_player_hand}{Player\+Hand}} hand)
+\begin{DoxyCompactList}\small\item\em stops all corutines and clears the fpc clears metadata probably and sets cursor lock \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_meta_data_display_a6c8c48f48c075530099da10bb4b9b7c4}{Object}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the gameobject the behaviour is placed upon(used by interface) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_meta_data_display_a45d9e14c784a8526dafd62f8efec02a7}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_meta_data_display_a1f06c004b7d217cbf4075b0b8eb1650e}{Setup\+Button\+Prefab\+Correctly}} (int num\+Fields)
+\begin{DoxyCompactList}\small\item\em setsup layout element preferred height for easier more correct button set up \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_a9306b452a284969cbca1414a034eb5c9}{Create\+Metadata\+Display}} (\mbox{\hyperlink{class_meta_data_attribute}{Meta\+Data\+Attribute}} attribute)
+\begin{DoxyCompactList}\small\item\em creates the metadata display for a certain attribute \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_meta_data_display_ab982cb6123576aff6eae89a859899ad0}{Apply\+Metadata\+To\+Dislplay}} (\mbox{\hyperlink{class_meta_data}{Meta\+Data}} meta)
+\begin{DoxyCompactList}\small\item\em Applys a metadata to the display \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_meta_data_display_adee283ec76c3631bf535ae3e5071090b}{Rotate\+To}} (Vector3 loc\+Euler)
+\begin{DoxyCompactList}\small\item\em rotates to given rotation in local coords \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Canvas \mbox{\hyperlink{class_meta_data_display_aafcc610f0d96f968cda456a0a4ec539f}{button\+Base\+Canvas}}
+\begin{DoxyCompactList}\small\item\em The canvas that holds all the buttons that are lead to the singular displays \end{DoxyCompactList}\item 
+Canvas \mbox{\hyperlink{class_meta_data_display_ab6cf1e74b49c27d63fcc863d1be99aa6}{display\+Base\+Canvas}}
+\begin{DoxyCompactList}\small\item\em the canvas that holds all the pages displaying the different information \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_meta_data_display_a82ed5fe18cb79fe0fedc8f8a4eb082d7}{metadata\+Buttons\+Prefab}}
+\begin{DoxyCompactList}\small\item\em the prefab for the metadata button that when clicked opens the page for this info \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_meta_data_display_af81a664bb7d39381b2dd82da5b67ec94}{display\+Page\+Prefab}}
+\begin{DoxyCompactList}\small\item\em the prefab for the singular pages displaying the information \end{DoxyCompactList}\item 
+List$<$ Tuple$<$ Text\+Mesh\+Pro\+U\+G\+UI, string $>$ $>$ \mbox{\hyperlink{class_meta_data_display_a347d0dacfa16900eb101f45904a89f73}{content\+Displays}} = new List$<$Tuple$<$Text\+Mesh\+Pro\+U\+G\+UI, string$>$$>$()
+\begin{DoxyCompactList}\small\item\em Containers for the tmp text fields associated with what information of the metadata they need to display(taken from metadata attribute) \end{DoxyCompactList}\item 
+First\+Person\+Controller \mbox{\hyperlink{class_meta_data_display_a91e82b2cdd0e114b1616ef8ced5773bc}{fpc}}
+\begin{DoxyCompactList}\small\item\em first person controller of player used to disable/enable cursor lock \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_meta_data_display_a4e34e1d8b9c75b14c8f6c855fb2111f1}{in\+Hand\+Position}}
+\begin{DoxyCompactList}\small\item\em The local position of the gameobject when placed in a hand \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_meta_data_display_a9ef2490b62574ea0bab65606aec7dfa3}{in\+Rest\+Position\+Rotation}}
+\begin{DoxyCompactList}\small\item\em the rotation of the displa when in rest position \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_meta_data_display_ae41331b0fbedf8bfd267c2b3a0adab1d}{infont\+Of\+Face\+Rotation}}
+\begin{DoxyCompactList}\small\item\em rotation of display when held infront of face \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_meta_data_display_a612841c627976605dcf6e6463ae9263a}{seconds\+To\+Rotate}}
+\begin{DoxyCompactList}\small\item\em how many seconds it should take to rotate from one rotation to another \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_meta_data_display_acf43e79c248b25fb43dcf3d997c25c59}{vel}} = Vector3.\+zero
+\begin{DoxyCompactList}\small\item\em velocity used by smoothdamp to rotate \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The display for all the metadata T\+O\+DO\+: make interactable and define pickup interaction 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_meta_data_display_ab982cb6123576aff6eae89a859899ad0}\label{class_meta_data_display_ab982cb6123576aff6eae89a859899ad0}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Apply\+Metadata\+To\+Dislplay@{Apply\+Metadata\+To\+Dislplay}}
+\index{Apply\+Metadata\+To\+Dislplay@{Apply\+Metadata\+To\+Dislplay}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Metadata\+To\+Dislplay()}{ApplyMetadataToDislplay()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+Apply\+Metadata\+To\+Dislplay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_data}{Meta\+Data}}}]{meta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Applys a metadata to the display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & the metadata whose information should be displayed\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_ab982cb6123576aff6eae89a859899ad0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_a45d9e14c784a8526dafd62f8efec02a7}\label{class_meta_data_display_a45d9e14c784a8526dafd62f8efec02a7}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Awake@{Awake}}
+\index{Awake@{Awake}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_a45d9e14c784a8526dafd62f8efec02a7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_a9306b452a284969cbca1414a034eb5c9}\label{class_meta_data_display_a9306b452a284969cbca1414a034eb5c9}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Create\+Metadata\+Display@{Create\+Metadata\+Display}}
+\index{Create\+Metadata\+Display@{Create\+Metadata\+Display}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Create\+Metadata\+Display()}{CreateMetadataDisplay()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+Create\+Metadata\+Display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_data_attribute}{Meta\+Data\+Attribute}}}]{attribute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+creates the metadata display for a certain attribute 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attribute} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_a9306b452a284969cbca1414a034eb5c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_a6aa943864ef85667977a13c895c2ce23}\label{class_meta_data_display_a6aa943864ef85667977a13c895c2ce23}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Is\+Interested\+In\+Interactable\+Objects@{Is\+Interested\+In\+Interactable\+Objects}}
+\index{Is\+Interested\+In\+Interactable\+Objects@{Is\+Interested\+In\+Interactable\+Objects}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Is\+Interested\+In\+Interactable\+Objects()}{IsInterestedInInteractableObjects()}}
+{\footnotesize\ttfamily bool Meta\+Data\+Display.\+Is\+Interested\+In\+Interactable\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+is intersted in interactable objects should probably be a property 
+
+\begin{DoxyReturn}{Returns}
+true
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_a0356d534c17ab4e04fba00b42abeea77}{I\+Holdable\+Object}}.
+
+\mbox{\Hypertarget{class_meta_data_display_a274478924e6a4df19484a469ae2869ce}\label{class_meta_data_display_a274478924e6a4df19484a469ae2869ce}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!On\+Dropped@{On\+Dropped}}
+\index{On\+Dropped@{On\+Dropped}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{On\+Dropped()}{OnDropped()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+On\+Dropped (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_hand}{Player\+Hand}}}]{hand }\end{DoxyParamCaption})}
+
+
+
+stops all corutines and clears the fpc clears metadata probably and sets cursor lock 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_a19523673c41505d8533aa50b957e95a1}{I\+Holdable\+Object}}.
+
+\mbox{\Hypertarget{class_meta_data_display_a7d639d7bc58c9340a7f5274884bbc11d}\label{class_meta_data_display_a7d639d7bc58c9340a7f5274884bbc11d}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!On\+Grabed@{On\+Grabed}}
+\index{On\+Grabed@{On\+Grabed}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{On\+Grabed()}{OnGrabed()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+On\+Grabed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_hand}{Player\+Hand}}}]{hand }\end{DoxyParamCaption})}
+
+
+
+calls poisiton object in hand and gets the fpc of the player 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_a7b8a42a0c12a26b1668c4dd904f38355}{I\+Holdable\+Object}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_a7d639d7bc58c9340a7f5274884bbc11d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_ab91c62e23ca6af27f8a30859d5a172c9}\label{class_meta_data_display_ab91c62e23ca6af27f8a30859d5a172c9}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!On\+Held\+Infront\+Of\+Face@{On\+Held\+Infront\+Of\+Face}}
+\index{On\+Held\+Infront\+Of\+Face@{On\+Held\+Infront\+Of\+Face}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{On\+Held\+Infront\+Of\+Face()}{OnHeldInfrontOfFace()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+On\+Held\+Infront\+Of\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+stops all corutines sets local rotation dissolves cursor lock 
+
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_a6f63fec8fb8f715ad5cdd08aa5ec0ea5}{I\+Holdable\+Object}}.
+
+\mbox{\Hypertarget{class_meta_data_display_a55888c6c3e3e224d89d95b6c63652762}\label{class_meta_data_display_a55888c6c3e3e224d89d95b6c63652762}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!On\+Put\+Away@{On\+Put\+Away}}
+\index{On\+Put\+Away@{On\+Put\+Away}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{On\+Put\+Away()}{OnPutAway()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+On\+Put\+Away (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sets inactive and stops all corutines 
+
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_abe7c5e5ed97fb5c908c91da5b8714f0e}{I\+Holdable\+Object}}.
+
+\mbox{\Hypertarget{class_meta_data_display_a98518b3d82ffd1e428cab9a2328fb018}\label{class_meta_data_display_a98518b3d82ffd1e428cab9a2328fb018}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!On\+Started\+Move\+Away\+From\+Face@{On\+Started\+Move\+Away\+From\+Face}}
+\index{On\+Started\+Move\+Away\+From\+Face@{On\+Started\+Move\+Away\+From\+Face}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{On\+Started\+Move\+Away\+From\+Face()}{OnStartedMoveAwayFromFace()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+On\+Started\+Move\+Away\+From\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+start corutine to rotate towards 90 deg and locks cursor 
+
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_a75f802a9736db51e5e8d1568689dd11c}{I\+Holdable\+Object}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_a98518b3d82ffd1e428cab9a2328fb018_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_aa0a9b9ca8243943104c82602e69a0541}\label{class_meta_data_display_aa0a9b9ca8243943104c82602e69a0541}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!On\+Started\+Move\+Infront\+Of\+Face@{On\+Started\+Move\+Infront\+Of\+Face}}
+\index{On\+Started\+Move\+Infront\+Of\+Face@{On\+Started\+Move\+Infront\+Of\+Face}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{On\+Started\+Move\+Infront\+Of\+Face()}{OnStartedMoveInfrontOfFace()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+On\+Started\+Move\+Infront\+Of\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+starts corutine to rotate to 0deg and sets self active 
+
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_af5dcdd5524539104706dadd8a0e15e08}{I\+Holdable\+Object}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_aa0a9b9ca8243943104c82602e69a0541_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_a1ecbc336a25464fc9999120066263e2a}\label{class_meta_data_display_a1ecbc336a25464fc9999120066263e2a}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Position\+Object\+In\+Hand@{Position\+Object\+In\+Hand}}
+\index{Position\+Object\+In\+Hand@{Position\+Object\+In\+Hand}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Position\+Object\+In\+Hand()}{PositionObjectInHand()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+Position\+Object\+In\+Hand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_hand}{Player\+Hand}}}]{hand }\end{DoxyParamCaption})}
+
+
+
+sets local position to somthing depending on hand state 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & the hand holding the display\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_a3fe2e7a7d0740225142053583f438333}{I\+Holdable\+Object}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_a1ecbc336a25464fc9999120066263e2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_adee283ec76c3631bf535ae3e5071090b}\label{class_meta_data_display_adee283ec76c3631bf535ae3e5071090b}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Rotate\+To@{Rotate\+To}}
+\index{Rotate\+To@{Rotate\+To}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Rotate\+To()}{RotateTo()}}
+{\footnotesize\ttfamily I\+Enumerator Meta\+Data\+Display.\+Rotate\+To (\begin{DoxyParamCaption}\item[{Vector3}]{loc\+Euler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+rotates to given rotation in local coords 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc\+Euler} & local angle to rotate towards\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_adee283ec76c3631bf535ae3e5071090b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_a29b7b1ec6193b73606dc7da89c387529}\label{class_meta_data_display_a29b7b1ec6193b73606dc7da89c387529}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Set\+Interacted\+Object@{Set\+Interacted\+Object}}
+\index{Set\+Interacted\+Object@{Set\+Interacted\+Object}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Set\+Interacted\+Object()}{SetInteractedObject()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+Set\+Interacted\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_interactable}{I\+Interactable}}}]{i\+Obj }\end{DoxyParamCaption})}
+
+
+
+applies the metadata of the interacted object if it is a display that has been interacted with 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Obj} & the interacted object\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_holdable_object_aeb32a55273b99d16f9fb5b86f6a73f80}{I\+Holdable\+Object}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_a29b7b1ec6193b73606dc7da89c387529_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_meta_data_display_a1f06c004b7d217cbf4075b0b8eb1650e}\label{class_meta_data_display_a1f06c004b7d217cbf4075b0b8eb1650e}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Setup\+Button\+Prefab\+Correctly@{Setup\+Button\+Prefab\+Correctly}}
+\index{Setup\+Button\+Prefab\+Correctly@{Setup\+Button\+Prefab\+Correctly}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Setup\+Button\+Prefab\+Correctly()}{SetupButtonPrefabCorrectly()}}
+{\footnotesize\ttfamily void Meta\+Data\+Display.\+Setup\+Button\+Prefab\+Correctly (\begin{DoxyParamCaption}\item[{int}]{num\+Fields }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+setsup layout element preferred height for easier more correct button set up 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Fields} & the number of fields the metadata has\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_meta_data_display_a1f06c004b7d217cbf4075b0b8eb1650e_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_meta_data_display_aafcc610f0d96f968cda456a0a4ec539f}\label{class_meta_data_display_aafcc610f0d96f968cda456a0a4ec539f}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!button\+Base\+Canvas@{button\+Base\+Canvas}}
+\index{button\+Base\+Canvas@{button\+Base\+Canvas}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{button\+Base\+Canvas}{buttonBaseCanvas}}
+{\footnotesize\ttfamily Canvas Meta\+Data\+Display.\+button\+Base\+Canvas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The canvas that holds all the buttons that are lead to the singular displays 
+
+\mbox{\Hypertarget{class_meta_data_display_a347d0dacfa16900eb101f45904a89f73}\label{class_meta_data_display_a347d0dacfa16900eb101f45904a89f73}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!content\+Displays@{content\+Displays}}
+\index{content\+Displays@{content\+Displays}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{content\+Displays}{contentDisplays}}
+{\footnotesize\ttfamily List$<$Tuple$<$Text\+Mesh\+Pro\+U\+G\+UI,string$>$ $>$ Meta\+Data\+Display.\+content\+Displays = new List$<$Tuple$<$Text\+Mesh\+Pro\+U\+G\+UI, string$>$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Containers for the tmp text fields associated with what information of the metadata they need to display(taken from metadata attribute) 
+
+\mbox{\Hypertarget{class_meta_data_display_ab6cf1e74b49c27d63fcc863d1be99aa6}\label{class_meta_data_display_ab6cf1e74b49c27d63fcc863d1be99aa6}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!display\+Base\+Canvas@{display\+Base\+Canvas}}
+\index{display\+Base\+Canvas@{display\+Base\+Canvas}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{display\+Base\+Canvas}{displayBaseCanvas}}
+{\footnotesize\ttfamily Canvas Meta\+Data\+Display.\+display\+Base\+Canvas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the canvas that holds all the pages displaying the different information 
+
+\mbox{\Hypertarget{class_meta_data_display_af81a664bb7d39381b2dd82da5b67ec94}\label{class_meta_data_display_af81a664bb7d39381b2dd82da5b67ec94}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!display\+Page\+Prefab@{display\+Page\+Prefab}}
+\index{display\+Page\+Prefab@{display\+Page\+Prefab}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{display\+Page\+Prefab}{displayPagePrefab}}
+{\footnotesize\ttfamily Game\+Object Meta\+Data\+Display.\+display\+Page\+Prefab\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the prefab for the singular pages displaying the information 
+
+\mbox{\Hypertarget{class_meta_data_display_a91e82b2cdd0e114b1616ef8ced5773bc}\label{class_meta_data_display_a91e82b2cdd0e114b1616ef8ced5773bc}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!fpc@{fpc}}
+\index{fpc@{fpc}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{fpc}{fpc}}
+{\footnotesize\ttfamily First\+Person\+Controller Meta\+Data\+Display.\+fpc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+first person controller of player used to disable/enable cursor lock 
+
+\mbox{\Hypertarget{class_meta_data_display_ae41331b0fbedf8bfd267c2b3a0adab1d}\label{class_meta_data_display_ae41331b0fbedf8bfd267c2b3a0adab1d}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!infont\+Of\+Face\+Rotation@{infont\+Of\+Face\+Rotation}}
+\index{infont\+Of\+Face\+Rotation@{infont\+Of\+Face\+Rotation}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{infont\+Of\+Face\+Rotation}{infontOfFaceRotation}}
+{\footnotesize\ttfamily Vector3 Meta\+Data\+Display.\+infont\+Of\+Face\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+rotation of display when held infront of face 
+
+\mbox{\Hypertarget{class_meta_data_display_a4e34e1d8b9c75b14c8f6c855fb2111f1}\label{class_meta_data_display_a4e34e1d8b9c75b14c8f6c855fb2111f1}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!in\+Hand\+Position@{in\+Hand\+Position}}
+\index{in\+Hand\+Position@{in\+Hand\+Position}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{in\+Hand\+Position}{inHandPosition}}
+{\footnotesize\ttfamily Vector3 Meta\+Data\+Display.\+in\+Hand\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The local position of the gameobject when placed in a hand 
+
+\mbox{\Hypertarget{class_meta_data_display_a9ef2490b62574ea0bab65606aec7dfa3}\label{class_meta_data_display_a9ef2490b62574ea0bab65606aec7dfa3}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!in\+Rest\+Position\+Rotation@{in\+Rest\+Position\+Rotation}}
+\index{in\+Rest\+Position\+Rotation@{in\+Rest\+Position\+Rotation}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{in\+Rest\+Position\+Rotation}{inRestPositionRotation}}
+{\footnotesize\ttfamily Vector3 Meta\+Data\+Display.\+in\+Rest\+Position\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the rotation of the displa when in rest position 
+
+\mbox{\Hypertarget{class_meta_data_display_a82ed5fe18cb79fe0fedc8f8a4eb082d7}\label{class_meta_data_display_a82ed5fe18cb79fe0fedc8f8a4eb082d7}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!metadata\+Buttons\+Prefab@{metadata\+Buttons\+Prefab}}
+\index{metadata\+Buttons\+Prefab@{metadata\+Buttons\+Prefab}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{metadata\+Buttons\+Prefab}{metadataButtonsPrefab}}
+{\footnotesize\ttfamily Game\+Object Meta\+Data\+Display.\+metadata\+Buttons\+Prefab\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the prefab for the metadata button that when clicked opens the page for this info 
+
+\mbox{\Hypertarget{class_meta_data_display_a612841c627976605dcf6e6463ae9263a}\label{class_meta_data_display_a612841c627976605dcf6e6463ae9263a}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!seconds\+To\+Rotate@{seconds\+To\+Rotate}}
+\index{seconds\+To\+Rotate@{seconds\+To\+Rotate}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{seconds\+To\+Rotate}{secondsToRotate}}
+{\footnotesize\ttfamily float Meta\+Data\+Display.\+seconds\+To\+Rotate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many seconds it should take to rotate from one rotation to another 
+
+\mbox{\Hypertarget{class_meta_data_display_acf43e79c248b25fb43dcf3d997c25c59}\label{class_meta_data_display_acf43e79c248b25fb43dcf3d997c25c59}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!vel@{vel}}
+\index{vel@{vel}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{vel}{vel}}
+{\footnotesize\ttfamily Vector3 Meta\+Data\+Display.\+vel = Vector3.\+zero\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+velocity used by smoothdamp to rotate 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_meta_data_display_a6c8c48f48c075530099da10bb4b9b7c4}\label{class_meta_data_display_a6c8c48f48c075530099da10bb4b9b7c4}} 
+\index{Meta\+Data\+Display@{Meta\+Data\+Display}!Object@{Object}}
+\index{Object@{Object}!Meta\+Data\+Display@{Meta\+Data\+Display}}
+\subsubsection{\texorpdfstring{Object}{Object}}
+{\footnotesize\ttfamily Game\+Object Meta\+Data\+Display.\+Object\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+the gameobject the behaviour is placed upon(used by interface) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Meta\+Data/\mbox{\hyperlink{_meta_data_display_8cs}{Meta\+Data\+Display.\+cs}}\end{DoxyCompactItemize}

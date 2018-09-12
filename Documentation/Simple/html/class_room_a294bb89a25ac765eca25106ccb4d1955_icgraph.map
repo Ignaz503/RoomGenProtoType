@@ -1,0 +1,4 @@
+<map id="Room.CreateDoorBetweenRooms" name="Room.CreateDoorBetweenRooms">
+<area shape="rect" id="node2" href="$class_museum.html#a2a301b4e27f35da164ffa03b3d3d7e81" title="THE CLIENT SHOULD NEVER NEED TO CALL THIS FUNCTION OUTSIDE OF DEBUGGING Generates a Museum baisc algo..." alt="" coords="269,5,399,32"/>
+<area shape="rect" id="node3" href="$class_museum_generator.html#abc3127d3a23107a350064fc49c5495c1" title="sets Instance of generator " alt="" coords="447,5,637,32"/>
+</map>

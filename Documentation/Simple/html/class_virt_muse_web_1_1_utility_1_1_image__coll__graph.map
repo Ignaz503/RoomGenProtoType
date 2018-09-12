@@ -1,0 +1,4 @@
+<map id="VirtMuseWeb.Utility.Image" name="VirtMuseWeb.Utility.Image">
+<area shape="rect" id="node2" href="$interface_virt_muse_web_1_1_utility_1_1_i_serializable.html" title="ISerializable" alt="" coords="5,13,97,39"/>
+<area shape="rect" id="node3" href="$struct_virt_muse_web_1_1_utility_1_1_image_1_1_color32.html" title="Color struct that is serializable and used by VirtMuseWeb.Utility.Image to represent color ..." alt="" coords="122,5,303,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="MuseumBuildObserver" name="MuseumBuildObserver">
+<area shape="rect" id="node3" href="$class_base_door.html" title="BaseDoor" alt="" coords="58,81,137,108"/>
+<area shape="rect" id="node4" href="$class_door_trigger.html" title="Box collider trigger that opens and closes a door it is responsible for " alt="" coords="135,171,223,197"/>
+</map>

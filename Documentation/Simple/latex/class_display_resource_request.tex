@@ -1,0 +1,174 @@
+\hypertarget{class_display_resource_request}{}\section{Display\+Resource\+Request$<$ T $>$ Class Template Reference}
+\label{class_display_resource_request}\index{Display\+Resource\+Request$<$ T $>$@{Display\+Resource\+Request$<$ T $>$}}
+
+
+Inheritance diagram for Display\+Resource\+Request$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{class_display_resource_request__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Display\+Resource\+Request$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{class_display_resource_request__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_display_resource_request_a97001a4fd6ca62ee0c1a2e99f8ad3567}{Display\+Resource\+Request}} (int resource\+Locator, \mbox{\hyperlink{class_display}{Display}} requestor, Func$<$ T, \mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}, \mbox{\hyperlink{class_display}{Display}}, I\+Enumerator $>$ pre\+Process)
+\item 
+I\+Enumerator \mbox{\hyperlink{class_display_resource_request_ab447f9d42e473b8bc8839c6f3d306a17}{Start\+Work\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Called when the resource starts working, should most likely start a new thread \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_display_resource_request_a60a8a75088ba20c6c42ebcab8309f1de}{When\+Done}} ()
+\begin{DoxyCompactList}\small\item\em called when done with request, and it is now time to apply it to a gameobject \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_display_resource_request_af7db29f1689fbcdd4bc5a9dd40675cf1}{Resource\+Locator}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Resource ID of resource to get \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_display}{Display}} \mbox{\hyperlink{class_display_resource_request_a45c1024a90ddda1f8837daa50796458c}{Requestor}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_display}{Display}} that requested this resource \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_display_resource_request_a95743229fd3f58ceed7090f9fd5e2fd5}{Response}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Resonse gotten from server, applicable to gamobject \end{DoxyCompactList}\item 
+Func$<$ T, \mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}, \mbox{\hyperlink{class_display}{Display}}, I\+Enumerator $>$ \mbox{\hyperlink{class_display_resource_request_a46343aa637c011c702f7b734e52fbe0b}{Pre\+Processing}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em function to preprocess resource gotten \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} \mbox{\hyperlink{class_display_resource_request_ae237edf32250ad6e9a417d6c24224537}{Pre\+Processed\+Game\+Object\+Information}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em preprocessing information, that needs to be applied to the gameobject of the resource from the main thread \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_display_resource_request_ab299093412d9885b2b59b8df67683444}{Base\+U\+RL}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_display_resource_request_afbe053e1527c852172eb72aa2edb8339}{Is\+Done}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_display_resource_request_a97001a4fd6ca62ee0c1a2e99f8ad3567}\label{class_display_resource_request_a97001a4fd6ca62ee0c1a2e99f8ad3567}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Display\+Resource\+Request()}{DisplayResourceRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.\mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}} (\begin{DoxyParamCaption}\item[{int}]{resource\+Locator,  }\item[{\mbox{\hyperlink{class_display}{Display}}}]{requestor,  }\item[{Func$<$ T, \mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}, \mbox{\hyperlink{class_display}{Display}}, I\+Enumerator $>$}]{pre\+Process }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_display_resource_request_ab447f9d42e473b8bc8839c6f3d306a17}\label{class_display_resource_request_ab447f9d42e473b8bc8839c6f3d306a17}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Start\+Work\+Request@{Start\+Work\+Request}}
+\index{Start\+Work\+Request@{Start\+Work\+Request}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Start\+Work\+Request()}{StartWorkRequest()}}
+{\footnotesize\ttfamily I\+Enumerator \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.Start\+Work\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the resource starts working, should most likely start a new thread 
+
+
+
+Implements \mbox{\hyperlink{interface_i_resource_request_a5b40a09cb820283600ac9e3f846936f9}{I\+Resource\+Request}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_resource_request_ab447f9d42e473b8bc8839c6f3d306a17_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_resource_request_a60a8a75088ba20c6c42ebcab8309f1de}\label{class_display_resource_request_a60a8a75088ba20c6c42ebcab8309f1de}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!When\+Done@{When\+Done}}
+\index{When\+Done@{When\+Done}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{When\+Done()}{WhenDone()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.When\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+called when done with request, and it is now time to apply it to a gameobject 
+
+
+
+Implements \mbox{\hyperlink{interface_i_resource_request_a056e427fa6233602456ccb2d4c405aa0}{I\+Resource\+Request}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_resource_request_a60a8a75088ba20c6c42ebcab8309f1de_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_display_resource_request_ab299093412d9885b2b59b8df67683444}\label{class_display_resource_request_ab299093412d9885b2b59b8df67683444}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Base\+U\+RL@{Base\+U\+RL}}
+\index{Base\+U\+RL@{Base\+U\+RL}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Base\+U\+RL}{BaseURL}}
+{\footnotesize\ttfamily string \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.Base\+U\+RL\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_display_resource_request_afbe053e1527c852172eb72aa2edb8339}\label{class_display_resource_request_afbe053e1527c852172eb72aa2edb8339}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Is\+Done@{Is\+Done}}
+\index{Is\+Done@{Is\+Done}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Is\+Done}{IsDone}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.Is\+Done\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+\mbox{\Hypertarget{class_display_resource_request_ae237edf32250ad6e9a417d6c24224537}\label{class_display_resource_request_ae237edf32250ad6e9a417d6c24224537}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Pre\+Processed\+Game\+Object\+Information@{Pre\+Processed\+Game\+Object\+Information}}
+\index{Pre\+Processed\+Game\+Object\+Information@{Pre\+Processed\+Game\+Object\+Information}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Pre\+Processed\+Game\+Object\+Information}{PreProcessedGameObjectInformation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.Pre\+Processed\+Game\+Object\+Information\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+preprocessing information, that needs to be applied to the gameobject of the resource from the main thread 
+
+\mbox{\Hypertarget{class_display_resource_request_a46343aa637c011c702f7b734e52fbe0b}\label{class_display_resource_request_a46343aa637c011c702f7b734e52fbe0b}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Pre\+Processing@{Pre\+Processing}}
+\index{Pre\+Processing@{Pre\+Processing}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Pre\+Processing}{PreProcessing}}
+{\footnotesize\ttfamily Func$<$T,\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}, \mbox{\hyperlink{class_display}{Display}}, I\+Enumerator$>$ \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.Pre\+Processing\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+function to preprocess resource gotten 
+
+\mbox{\Hypertarget{class_display_resource_request_a45c1024a90ddda1f8837daa50796458c}\label{class_display_resource_request_a45c1024a90ddda1f8837daa50796458c}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Requestor@{Requestor}}
+\index{Requestor@{Requestor}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Requestor}{Requestor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_display}{Display}} \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.Requestor\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+\mbox{\hyperlink{class_display}{Display}} that requested this resource 
+
+\mbox{\Hypertarget{class_display_resource_request_af7db29f1689fbcdd4bc5a9dd40675cf1}\label{class_display_resource_request_af7db29f1689fbcdd4bc5a9dd40675cf1}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Resource\+Locator@{Resource\+Locator}}
+\index{Resource\+Locator@{Resource\+Locator}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Resource\+Locator}{ResourceLocator}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.Resource\+Locator\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Resource ID of resource to get 
+
+\mbox{\Hypertarget{class_display_resource_request_a95743229fd3f58ceed7090f9fd5e2fd5}\label{class_display_resource_request_a95743229fd3f58ceed7090f9fd5e2fd5}} 
+\index{Display\+Resource\+Request@{Display\+Resource\+Request}!Response@{Response}}
+\index{Response@{Response}!Display\+Resource\+Request@{Display\+Resource\+Request}}
+\subsubsection{\texorpdfstring{Response}{Response}}
+{\footnotesize\ttfamily T \mbox{\hyperlink{class_display_resource_request}{Display\+Resource\+Request}}$<$ T $>$.Response\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Resonse gotten from server, applicable to gamobject 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Resources/\mbox{\hyperlink{_display_resource_request_8cs}{Display\+Resource\+Request.\+cs}}\end{DoxyCompactItemize}

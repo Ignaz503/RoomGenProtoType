@@ -1,0 +1,342 @@
+\hypertarget{class_room}{}\section{Room Class Reference}
+\label{class_room}\index{Room@{Room}}
+
+
+defines a room in a virtual museum  
+
+
+
+
+Collaboration diagram for Room\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{class_room__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_room_aae232017aa8caf310d109e90c8821227}{Room}} (\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} t, List$<$ Vector2\+Int $>$ Tiles, \mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_room_a7b3cf4bdc95a8c1bf69ae4ff71b4f02a}{virt\+Muse}})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_room_a294bb89a25ac765eca25106ccb4d1955}{Create\+Door\+Between\+Rooms}} (\mbox{\hyperlink{class_room}{Room}} r1, \mbox{\hyperlink{class_room}{Room}} r2)
+\begin{DoxyCompactList}\small\item\em Creats a single door between two rooms \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_room_a99801f9d1f4ff83d049929183715c680}{Add\+New\+Wall\+Validator}} (\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} t, \mbox{\hyperlink{interface_i_wall_validator}{I\+Wall\+Validator}} val, bool override\+Existing=false)
+\begin{DoxyCompactList}\small\item\em adds new wall vaildator to the helper dictinary \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ int $>$ \mbox{\hyperlink{class_room_a22669d53756bbfecb106f4f6c9529bb9}{Walls}}
+\begin{DoxyCompactList}\small\item\em list of indices of walls in the virt musem wall list, of all the walls that are part of this room \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+uint \mbox{\hyperlink{class_room_a499df97242b8996b66cc22737159f59c}{Room\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the ID of this room \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} \mbox{\hyperlink{class_room_a55dc5c580ea31562a0aa6f11b4b8f462}{Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The type of this room \end{DoxyCompactList}\item 
+List$<$ Vector2\+Int $>$ \mbox{\hyperlink{class_room_aed67349f7f161cb2214111eff3e51018}{Room\+Tiles}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em all the tiles of the museum that make up this room \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum_texture_info}{Museum\+Texture\+Info}} \mbox{\hyperlink{class_room_a3cd7f8c4f2ee7b7397a40a463cd14196}{Style\+Info}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The room style information \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_room_ab7a1da4fa70bf843d643391bdbaa1fb5}{Center\+Display\+Infos}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em display information for all the displays that this room has wall displays are not counted as displays for this room \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_aade4dd11dfe01508688d382a49d7c606}{Figure\+Out\+Walls\+For\+Room}} ()
+\begin{DoxyCompactList}\small\item\em Creates the correct walls for this room and ensures that the museum knows about them \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_a710be7ee50b4dd0abb526e344543a513}{Add\+Walls\+To\+Museum}} (List$<$ \mbox{\hyperlink{class_wall}{Wall}} $>$ temp\+Walls)
+\begin{DoxyCompactList}\small\item\em Adds the walls this room has to the walls container in the museum \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_ae3ade89041403549ba23b6d373e62391}{Remove\+Unnecessary\+Walls}} (Dictionary$<$ float, uint $>$ Appearance\+Count, List$<$ \mbox{\hyperlink{class_wall}{Wall}} $>$ temp\+Walls)
+\begin{DoxyCompactList}\small\item\em handles the removal of unncesarryly created walls in figure out walls removal is dependent on roomtype \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_room_a7b3cf4bdc95a8c1bf69ae4ff71b4f02a}{virt\+Muse}}
+\begin{DoxyCompactList}\small\item\em the virtual museum this room belongs to \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static readonly Vector2 \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_room_aeb66d344acdc21822d0598beb0d7d71b}{corner\+Offsets}}
+\begin{DoxyCompactList}\small\item\em helper array to calculate corners of room with center coord given \end{DoxyCompactList}\item 
+static Dictionary$<$ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}}, \mbox{\hyperlink{interface_i_wall_validator}{I\+Wall\+Validator}} $>$ \mbox{\hyperlink{class_room_a274899cf7b41ac5190fb7754817510d6}{wall\+Validators}}
+\begin{DoxyCompactList}\small\item\em helper dictonary that maps from room type to wall validator of this type \end{DoxyCompactList}\item 
+static uint \mbox{\hyperlink{class_room_a2e52c767e772a29e39cb5598aea534fb}{Room\+I\+D\+Gen}} = 0
+\begin{DoxyCompactList}\small\item\em id gen for all rooms \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+defines a room in a virtual museum 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_room_aae232017aa8caf310d109e90c8821227}\label{class_room_aae232017aa8caf310d109e90c8821227}} 
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\subsubsection{\texorpdfstring{Room()}{Room()}}
+{\footnotesize\ttfamily Room.\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}}}]{t,  }\item[{List$<$ Vector2\+Int $>$}]{Tiles,  }\item[{\mbox{\hyperlink{class_museum}{Museum}}}]{virt\+Muse }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_aae232017aa8caf310d109e90c8821227_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_room_a99801f9d1f4ff83d049929183715c680}\label{class_room_a99801f9d1f4ff83d049929183715c680}} 
+\index{Room@{Room}!Add\+New\+Wall\+Validator@{Add\+New\+Wall\+Validator}}
+\index{Add\+New\+Wall\+Validator@{Add\+New\+Wall\+Validator}!Room@{Room}}
+\subsubsection{\texorpdfstring{Add\+New\+Wall\+Validator()}{AddNewWallValidator()}}
+{\footnotesize\ttfamily static void Room.\+Add\+New\+Wall\+Validator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}}}]{t,  }\item[{\mbox{\hyperlink{interface_i_wall_validator}{I\+Wall\+Validator}}}]{val,  }\item[{bool}]{override\+Existing = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+adds new wall vaildator to the helper dictinary 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the new room type\\
+\hline
+{\em val} & the valdiator for this room type\\
+\hline
+{\em override\+Existing} & flag if any already existing one for this type should be overwritten\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_room_a710be7ee50b4dd0abb526e344543a513}\label{class_room_a710be7ee50b4dd0abb526e344543a513}} 
+\index{Room@{Room}!Add\+Walls\+To\+Museum@{Add\+Walls\+To\+Museum}}
+\index{Add\+Walls\+To\+Museum@{Add\+Walls\+To\+Museum}!Room@{Room}}
+\subsubsection{\texorpdfstring{Add\+Walls\+To\+Museum()}{AddWallsToMuseum()}}
+{\footnotesize\ttfamily void Room.\+Add\+Walls\+To\+Museum (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_wall}{Wall}} $>$}]{temp\+Walls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds the walls this room has to the walls container in the museum 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp\+Walls} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_a710be7ee50b4dd0abb526e344543a513_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_a710be7ee50b4dd0abb526e344543a513_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_a294bb89a25ac765eca25106ccb4d1955}\label{class_room_a294bb89a25ac765eca25106ccb4d1955}} 
+\index{Room@{Room}!Create\+Door\+Between\+Rooms@{Create\+Door\+Between\+Rooms}}
+\index{Create\+Door\+Between\+Rooms@{Create\+Door\+Between\+Rooms}!Room@{Room}}
+\subsubsection{\texorpdfstring{Create\+Door\+Between\+Rooms()}{CreateDoorBetweenRooms()}}
+{\footnotesize\ttfamily static bool Room.\+Create\+Door\+Between\+Rooms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room}{Room}}}]{r1,  }\item[{\mbox{\hyperlink{class_room}{Room}}}]{r2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creats a single door between two rooms 
+
+\begin{DoxyReturn}{Returns}
+ture if a door was created false otherwise
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_a294bb89a25ac765eca25106ccb4d1955_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_aade4dd11dfe01508688d382a49d7c606}\label{class_room_aade4dd11dfe01508688d382a49d7c606}} 
+\index{Room@{Room}!Figure\+Out\+Walls\+For\+Room@{Figure\+Out\+Walls\+For\+Room}}
+\index{Figure\+Out\+Walls\+For\+Room@{Figure\+Out\+Walls\+For\+Room}!Room@{Room}}
+\subsubsection{\texorpdfstring{Figure\+Out\+Walls\+For\+Room()}{FigureOutWallsForRoom()}}
+{\footnotesize\ttfamily void Room.\+Figure\+Out\+Walls\+For\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates the correct walls for this room and ensures that the museum knows about them 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_aade4dd11dfe01508688d382a49d7c606_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_room_aade4dd11dfe01508688d382a49d7c606_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_ae3ade89041403549ba23b6d373e62391}\label{class_room_ae3ade89041403549ba23b6d373e62391}} 
+\index{Room@{Room}!Remove\+Unnecessary\+Walls@{Remove\+Unnecessary\+Walls}}
+\index{Remove\+Unnecessary\+Walls@{Remove\+Unnecessary\+Walls}!Room@{Room}}
+\subsubsection{\texorpdfstring{Remove\+Unnecessary\+Walls()}{RemoveUnnecessaryWalls()}}
+{\footnotesize\ttfamily void Room.\+Remove\+Unnecessary\+Walls (\begin{DoxyParamCaption}\item[{Dictionary$<$ float, uint $>$}]{Appearance\+Count,  }\item[{List$<$ \mbox{\hyperlink{class_wall}{Wall}} $>$}]{temp\+Walls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the removal of unncesarryly created walls in figure out walls removal is dependent on roomtype 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_ae3ade89041403549ba23b6d373e62391_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_room_aeb66d344acdc21822d0598beb0d7d71b}\label{class_room_aeb66d344acdc21822d0598beb0d7d71b}} 
+\index{Room@{Room}!corner\+Offsets@{corner\+Offsets}}
+\index{corner\+Offsets@{corner\+Offsets}!Room@{Room}}
+\subsubsection{\texorpdfstring{corner\+Offsets}{cornerOffsets}}
+{\footnotesize\ttfamily readonly Vector2 \mbox{[}$\,$\mbox{]} Room.\+corner\+Offsets\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} Vector2[]
+    \{
+        \textcolor{keyword}{new} Vector2(.5f, .5f),
+        \textcolor{keyword}{new} Vector2(-.5f, .5f),
+        \textcolor{keyword}{new} Vector2(.5f, -.5f),
+        \textcolor{keyword}{new} Vector2(-.5f, -.5f)
+    \}
+\end{DoxyCode}
+
+
+helper array to calculate corners of room with center coord given 
+
+\mbox{\Hypertarget{class_room_a2e52c767e772a29e39cb5598aea534fb}\label{class_room_a2e52c767e772a29e39cb5598aea534fb}} 
+\index{Room@{Room}!Room\+I\+D\+Gen@{Room\+I\+D\+Gen}}
+\index{Room\+I\+D\+Gen@{Room\+I\+D\+Gen}!Room@{Room}}
+\subsubsection{\texorpdfstring{Room\+I\+D\+Gen}{RoomIDGen}}
+{\footnotesize\ttfamily uint Room.\+Room\+I\+D\+Gen = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+id gen for all rooms 
+
+\mbox{\Hypertarget{class_room_a7b3cf4bdc95a8c1bf69ae4ff71b4f02a}\label{class_room_a7b3cf4bdc95a8c1bf69ae4ff71b4f02a}} 
+\index{Room@{Room}!virt\+Muse@{virt\+Muse}}
+\index{virt\+Muse@{virt\+Muse}!Room@{Room}}
+\subsubsection{\texorpdfstring{virt\+Muse}{virtMuse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum}{Museum}} Room.\+virt\+Muse\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the virtual museum this room belongs to 
+
+\mbox{\Hypertarget{class_room_a22669d53756bbfecb106f4f6c9529bb9}\label{class_room_a22669d53756bbfecb106f4f6c9529bb9}} 
+\index{Room@{Room}!Walls@{Walls}}
+\index{Walls@{Walls}!Room@{Room}}
+\subsubsection{\texorpdfstring{Walls}{Walls}}
+{\footnotesize\ttfamily List$<$int$>$ Room.\+Walls}
+
+
+
+list of indices of walls in the virt musem wall list, of all the walls that are part of this room 
+
+\mbox{\Hypertarget{class_room_a274899cf7b41ac5190fb7754817510d6}\label{class_room_a274899cf7b41ac5190fb7754817510d6}} 
+\index{Room@{Room}!wall\+Validators@{wall\+Validators}}
+\index{wall\+Validators@{wall\+Validators}!Room@{Room}}
+\subsubsection{\texorpdfstring{wall\+Validators}{wallValidators}}
+{\footnotesize\ttfamily Dictionary$<$\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}}, \mbox{\hyperlink{interface_i_wall_validator}{I\+Wall\+Validator}}$>$ Room.\+wall\+Validators\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} Dictionary<RoomType, IWallValidator>()
+    \{
+        \{\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Normal, \textcolor{keyword}{new} \mbox{\hyperlink{class_normal_room_wall_validator}{NormalRoomWallValidator}}() \},
+        \{\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Long, \textcolor{keyword}{new} \mbox{\hyperlink{class_long_room_wall_validator}{LongRoomWallValidator}}() \},
+        \{\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.L, \textcolor{keyword}{new} \mbox{\hyperlink{class_l_room_wall_vaildator}{LRoomWallVaildator}}() \},
+        \{\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Big, \textcolor{keyword}{new} \mbox{\hyperlink{class_big_room_wall_validator}{BigRoomWallValidator}}() \},
+
+    \}
+\end{DoxyCode}
+
+
+helper dictonary that maps from room type to wall validator of this type 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_room_ab7a1da4fa70bf843d643391bdbaa1fb5}\label{class_room_ab7a1da4fa70bf843d643391bdbaa1fb5}} 
+\index{Room@{Room}!Center\+Display\+Infos@{Center\+Display\+Infos}}
+\index{Center\+Display\+Infos@{Center\+Display\+Infos}!Room@{Room}}
+\subsubsection{\texorpdfstring{Center\+Display\+Infos}{CenterDisplayInfos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} \mbox{[}$\,$\mbox{]} Room.\+Center\+Display\+Infos\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+display information for all the displays that this room has wall displays are not counted as displays for this room 
+
+\mbox{\Hypertarget{class_room_a499df97242b8996b66cc22737159f59c}\label{class_room_a499df97242b8996b66cc22737159f59c}} 
+\index{Room@{Room}!Room\+ID@{Room\+ID}}
+\index{Room\+ID@{Room\+ID}!Room@{Room}}
+\subsubsection{\texorpdfstring{Room\+ID}{RoomID}}
+{\footnotesize\ttfamily uint Room.\+Room\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+the ID of this room 
+
+\mbox{\Hypertarget{class_room_aed67349f7f161cb2214111eff3e51018}\label{class_room_aed67349f7f161cb2214111eff3e51018}} 
+\index{Room@{Room}!Room\+Tiles@{Room\+Tiles}}
+\index{Room\+Tiles@{Room\+Tiles}!Room@{Room}}
+\subsubsection{\texorpdfstring{Room\+Tiles}{RoomTiles}}
+{\footnotesize\ttfamily List$<$Vector2\+Int$>$ Room.\+Room\+Tiles\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+all the tiles of the museum that make up this room 
+
+\mbox{\Hypertarget{class_room_a3cd7f8c4f2ee7b7397a40a463cd14196}\label{class_room_a3cd7f8c4f2ee7b7397a40a463cd14196}} 
+\index{Room@{Room}!Style\+Info@{Style\+Info}}
+\index{Style\+Info@{Style\+Info}!Room@{Room}}
+\subsubsection{\texorpdfstring{Style\+Info}{StyleInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_texture_info}{Museum\+Texture\+Info}} Room.\+Style\+Info\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The room style information 
+
+\mbox{\Hypertarget{class_room_a55dc5c580ea31562a0aa6f11b4b8f462}\label{class_room_a55dc5c580ea31562a0aa6f11b4b8f462}} 
+\index{Room@{Room}!Type@{Type}}
+\index{Type@{Type}!Room@{Room}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} Room.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+The type of this room 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\+Room\+\_\+\+Walls/\mbox{\hyperlink{_room_8cs}{Room.\+cs}}\end{DoxyCompactItemize}

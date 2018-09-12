@@ -1,0 +1,4 @@
+<map id="SingleHingeDoor.Close" name="SingleHingeDoor.Close">
+<area shape="rect" id="node2" href="$class_single_hinge_door.html#a6b1760cbc6ac5ed4c0e9d7ecb10d2606" title="coroutine to close the door " alt="" coords="208,5,419,32"/>
+<area shape="rect" id="node3" href="$class_base_door.html#a3ce14aa6aca622f9d18e7054e76ec8d2" title="wrapper function to invoke event from sub classes " alt="" coords="467,5,627,32"/>
+</map>

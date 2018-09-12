@@ -1,0 +1,22 @@
+<map id="MuseumBuilder.Start" name="MuseumBuilder.Start">
+<area shape="rect" id="node2" href="$class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="197,229,392,255"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#ad7891701beec2b305c8f0d40a7949933" title="Places a single room, and it&#39;s dilays " alt="" coords="440,169,623,195"/>
+<area shape="rect" id="node19" href="$class_museum_builder.html#a5a8c364b8b6a51193a5c00d898668835" title="places a singe wall " alt="" coords="444,289,619,315"/>
+<area shape="rect" id="node4" href="$class_museum_builder.html#ad1991ecd1258a2eb6d020d3c429ad9c8" title="adds a room gamobject to a room managment unit " alt="" coords="931,183,1209,210"/>
+<area shape="rect" id="node7" href="$class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="683,281,870,323"/>
+<area shape="rect" id="node8" href="$class_museum_builder.html#a18b0a6f67d3e9053b604c5a7caf9d4b0" title="posts a floor texture request to the resource loader " alt="" coords="963,71,1177,112"/>
+<area shape="rect" id="node10" href="$class_museum_builder.html#a5b79838dee5015763177bdceca168f5c" title="Posts a ceiling texutre requesst to the resource loader " alt="" coords="979,5,1161,47"/>
+<area shape="rect" id="node11" href="$class_museum_builder.html#a159e037415aaf348d5a0af9561be8560" title="Creates the center displays for a room List used for correct parenting of gamobject ..." alt="" coords="681,216,872,257"/>
+<area shape="rect" id="node5" href="$class_museum_controller.html#a430d02fd399da5cea23a02f4b9269418" title="returns room managment unit that belongs to this room id " alt="" coords="1275,195,1461,236"/>
+<area shape="rect" id="node6" href="$class_room_managment_unit.html#ac7f3f62eb0e6f9f0bb239266796a323a" title="RoomManagmentUnit.AddGame\lObject" alt="" coords="1263,129,1473,171"/>
+<area shape="rect" id="node9" href="$class_resource_loader.html#abcaa27712f43f305baef3df7722c9e73" title="posts request to request queue and wakes up gameobject " alt="" coords="1546,267,1741,294"/>
+<area shape="rect" id="node12" href="$class_display.html#a57325251fbeac943cd48520e50f0bec4" title="Set up the display in the museum, position and rotation " alt="" coords="1017,323,1123,350"/>
+<area shape="rect" id="node13" href="$class_museum_builder.html#a09f7bfa34308891e3a2bf306c2b0d5e2" title="Loads Resource for a dsiplay " alt="" coords="977,257,1163,299"/>
+<area shape="rect" id="node14" href="$class_museum_builder.html#a4e5fce7036671ef7bf735b341e56bbf2" title="posts a mesh resource request " alt="" coords="1259,425,1477,467"/>
+<area shape="rect" id="node18" href="$class_museum_builder.html#a4d5a59830643d185fbda5b11a251ffc3" title="Posts an image request to the resource loader " alt="" coords="1257,260,1479,301"/>
+<area shape="rect" id="node15" href="$class_museum_builder.html#a695eba49b601fcd36a6f5477ce2c1511" title="Preprocessing helper coroutine for mesh display " alt="" coords="1527,433,1760,459"/>
+<area shape="rect" id="node16" href="$class_bounding_sphere.html#a29c277d13a701089666b94fabf3c87d6" title="calculates a bounding sphrere for a given list of vertices " alt="" coords="1808,433,1983,459"/>
+<area shape="rect" id="node17" href="$class_bounding_sphere.html#ad35e7960a2e532e8f7cbebbca2136ef7" title="BoundingSphere.BoundingSphere" alt="" coords="2031,433,2247,459"/>
+<area shape="rect" id="node20" href="$class_museum_builder.html#adbfb12c00a855fe0f816bc18a51a72e5" title="Creates wall displays for museum " alt="" coords="675,347,878,388"/>
+<area shape="rect" id="node21" href="$class_museum_builder.html#aa4b2759977e29fa40cea22b6f31242ac" title="posts a wall texture request to resource loader " alt="" coords="671,412,883,453"/>
+</map>

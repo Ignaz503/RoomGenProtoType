@@ -1,0 +1,4 @@
+<map id="IHoldableObject.OnStartedMoveAwayFromFace" name="IHoldableObject.OnStartedMoveAwayFromFace">
+<area shape="rect" id="node2" href="$class_player_hand.html#a64a86af904a77f4a0b92d72bd5fdf43c" title="subscribes object to all relevent events and calles on obj grabbed " alt="" coords="229,5,388,32"/>
+<area shape="rect" id="node3" href="$class_player_hand.html#a3b127b846b420ef37cba3a3a8de68e78" title="drops any held object, unssubscribes this object from all events " alt="" coords="229,56,388,83"/>
+</map>

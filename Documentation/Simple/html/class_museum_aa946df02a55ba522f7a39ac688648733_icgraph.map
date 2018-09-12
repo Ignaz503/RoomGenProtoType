@@ -1,0 +1,4 @@
+<map id="Museum.Museum" name="Museum.Museum">
+<area shape="rect" id="node2" href="$class_museum.html#a1b4fb627a19112e3ba3d25e8108de2c3" title="creates a museum from an xml string " alt="" coords="180,5,320,32"/>
+<area shape="rect" id="node3" href="$class_museum_request.html#a41b1a4699551a86415a877d5380febe1" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="368,5,599,32"/>
+</map>

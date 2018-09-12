@@ -1,0 +1,4 @@
+<map id="BaseDoor.Unlock" name="BaseDoor.Unlock">
+<area shape="rect" id="node2" href="$class_museum_build_observer.html#aa808cdf3870a709891e1dc4262c5aec1" title="updates entrance, and display above " alt="" coords="176,5,373,47"/>
+<area shape="rect" id="node3" href="$class_museum_build_observer.html#a18c844a9fe9b649ed4bdaedbdade82a6" title="MuseumBuildObserver.Start" alt="" coords="421,13,605,39"/>
+</map>

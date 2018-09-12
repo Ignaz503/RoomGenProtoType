@@ -1,0 +1,7 @@
+<map id="VirtMuseWeb.Utility.Image.Deserialize" name="VirtMuseWeb.Utility.Image.Deserialize">
+<area shape="rect" id="node2" href="$class_virt_muse_web_1_1_utility_1_1_room_style.html#aa2db7310f1626d8c2c75434a4dd87e69" title="reads obj from a binary reader " alt="" coords="269,5,445,47"/>
+<area shape="rect" id="node3" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#a5d037d051f31d4db90f53b067b522f0b" title="VirtMuseWeb.Models.Resource\lModel.operator DisplayImageResource" alt="" coords="235,71,480,112"/>
+<area shape="rect" id="node4" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#a4ff757b0ed17663d3d503dbb4decff7b" title="conversion to appliable image resource as coroutine " alt="" coords="253,136,461,177"/>
+<area shape="rect" id="node6" href="$class_virt_muse_web_1_1_utility_1_1_unity_mesh_data.html#a85e372f94563bce9ce66a0f930881607" title="Reads UnityMeshData from binary reader " alt="" coords="271,201,443,243"/>
+<area shape="rect" id="node5" href="$class_display_resource_request.html#ab447f9d42e473b8bc8839c6f3d306a17" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="528,136,728,177"/>
+</map>

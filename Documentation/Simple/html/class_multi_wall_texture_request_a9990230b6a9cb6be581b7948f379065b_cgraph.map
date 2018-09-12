@@ -1,0 +1,9 @@
+<map id="MultiWallTextureRequest.StartWorkRequest" name="MultiWallTextureRequest.StartWorkRequest">
+<area shape="rect" id="node2" href="$class_room_style_manager.html#a4cc11d2cbbe1a94def12775722d64b74" title="checks if style was downloaded " alt="" coords="256,5,439,47"/>
+<area shape="rect" id="node3" href="$class_room_style_manager.html#acc946bc24833e24565dee0cdc3b2ef44" title="gets a style from the downloaded ones may return null if not found " alt="" coords="252,71,443,98"/>
+<area shape="rect" id="node4" href="$class_room_style_manager.html#aab9bdbc810904cb623cddcb636165a6a" title="checks if style is currently being downloaded " alt="" coords="256,123,439,164"/>
+<area shape="rect" id="node5" href="$class_room_style_manager.html#a3d3f5a2cb6e861577d01b015c30c3d9a" title="notifies manager that this ID started downloading " alt="" coords="224,189,471,215"/>
+<area shape="rect" id="node6" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#ae85d25e8e130285ea18964b535f82f41" title="VirtMuseWeb.Models.Resource\lModel.ToRoomStyleResource" alt="" coords="244,240,451,281"/>
+<area shape="rect" id="node7" href="$class_room_style_manager.html#a2b0802f24ffe1c2cb4db101359c6bf5e" title="Adds a style to the downloaded styles and removes from currrently downloading tracker if contained ..." alt="" coords="251,306,444,333"/>
+<area shape="rect" id="node8" href="$class_multi_wall_texture_request.html#a66ff9bddcb7230947278ff32f2957ec7" title="Merges the two wall textures of Response and SecondResponse " alt="" coords="262,357,433,399"/>
+</map>

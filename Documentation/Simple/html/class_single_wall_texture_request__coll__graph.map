@@ -1,0 +1,4 @@
+<map id="SingleWallTextureRequest" name="SingleWallTextureRequest">
+<area shape="rect" id="node2" href="$class_base_room_style_request.html" title="BaseRoomStyleRequest" alt="" coords="11,80,175,107"/>
+<area shape="rect" id="node3" href="$interface_i_resource_request.html" title="base interface for a resource request, usable by both style request and image/mesh requests ..." alt="" coords="29,5,157,32"/>
+</map>

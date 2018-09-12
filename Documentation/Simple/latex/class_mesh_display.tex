@@ -1,0 +1,257 @@
+\hypertarget{class_mesh_display}{}\section{Mesh\+Display Class Reference}
+\label{class_mesh_display}\index{Mesh\+Display@{Mesh\+Display}}
+
+
+Inheritance diagram for Mesh\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_mesh_display__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_mesh_display__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mesh_display_a94176ce6e76cc683336051b49573ab1f}{Scale\+Child\+To\+Fit\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em scales the mesh that needs displaying to a size so that is fits into the glass sphere \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_mesh_display_ab9a24f407a8ff995658097a98242095e}{Apply\+Resource}} (\mbox{\hyperlink{class_base_display_resource}{Base\+Display\+Resource}} resource)
+\begin{DoxyCompactList}\small\item\em Applies a resource to a display \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_mesh_display_adb19ca4d076a93df64d1c035663fce0f}{Set\+Up}} (\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} disp\+Info, Game\+Object parent)
+\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115}{Apply\+Pre\+Processing\+Information}} (\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} info)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Mesh\+Filter \mbox{\hyperlink{class_mesh_display_a112cd7fd6e19ed52906cbb4240dc6735}{Parent\+Mesh}}
+\begin{DoxyCompactList}\small\item\em mesh of the glass sphere holding the mesh to display \end{DoxyCompactList}\item 
+Mesh\+Filter \mbox{\hyperlink{class_mesh_display_aef69e30c103e4ccea952b87876384d6d}{Child\+Mesh}}
+\begin{DoxyCompactList}\small\item\em the mseh that is displayed in this display \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_mesh_display_a13c5ad03c68d0b4519bfb8ca23ac6f11}{X\+Pos\+Scale}}
+\item 
+static float \mbox{\hyperlink{class_mesh_display_a6b33d912f5f2abd389f3feb3af1ce621}{X\+Pos\+Modifier}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_mesh_display_aa4affc65c23027c877f511fc2b8aaeb8}{Interaction\+Started}} ()
+\begin{DoxyCompactList}\small\item\em called when interaction with this display started used to maybe disable anything on the display gamobject if needed \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_mesh_display_a23f7ab8b0f48536940ad1cc2145297b3}{Interaction\+Ended}} ()
+\begin{DoxyCompactList}\small\item\em called when an interaction ends used to reactivate any component deactivated during the interaction \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}{Type}} \mbox{\hyperlink{class_mesh_display_a8cd58e07cb9d64598c3bbc6701515d1d}{Set\+To\+Default\+Interaction\+Behaviour}} ()
+\begin{DoxyCompactList}\small\item\em if the wanted behaviour is not possible or not exitent the behaviour will be set to this default \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mesh_display_a13c3b8325ff12c302510a38ead46aba3}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_mesh_display_ab87e001316410059093fac5d92326ef2}{Set\+Up\+Mesh\+Renderer\+Options}} ()
+\begin{DoxyCompactList}\small\item\em setsup the meshrenderer options of the child \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115}\label{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115}} 
+\index{Mesh\+Display@{Mesh\+Display}!Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}}
+\index{Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Pre\+Processing\+Information()}{ApplyPreProcessingInformation()}}
+{\footnotesize\ttfamily override void Mesh\+Display.\+Apply\+Pre\+Processing\+Information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31}{Display}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_display_ab52b4d43c963b3bef383e2eebd1e4115_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mesh_display_ab9a24f407a8ff995658097a98242095e}\label{class_mesh_display_ab9a24f407a8ff995658097a98242095e}} 
+\index{Mesh\+Display@{Mesh\+Display}!Apply\+Resource@{Apply\+Resource}}
+\index{Apply\+Resource@{Apply\+Resource}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Resource()}{ApplyResource()}}
+{\footnotesize\ttfamily override void Mesh\+Display.\+Apply\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_base_display_resource}{Base\+Display\+Resource}}}]{resource }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Applies a resource to a display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_display_a811157ddb42ae4d72f690457a08711d3}{Display}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_display_ab9a24f407a8ff995658097a98242095e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mesh_display_a13c3b8325ff12c302510a38ead46aba3}\label{class_mesh_display_a13c3b8325ff12c302510a38ead46aba3}} 
+\index{Mesh\+Display@{Mesh\+Display}!Awake@{Awake}}
+\index{Awake@{Awake}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Mesh\+Display.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_mesh_display_a23f7ab8b0f48536940ad1cc2145297b3}\label{class_mesh_display_a23f7ab8b0f48536940ad1cc2145297b3}} 
+\index{Mesh\+Display@{Mesh\+Display}!Interaction\+Ended@{Interaction\+Ended}}
+\index{Interaction\+Ended@{Interaction\+Ended}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Interaction\+Ended()}{InteractionEnded()}}
+{\footnotesize\ttfamily override void Mesh\+Display.\+Interaction\+Ended (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+called when an interaction ends used to reactivate any component deactivated during the interaction 
+
+
+
+Implements \mbox{\hyperlink{class_display_a6fd38485267e1b78f1d1dfb589ec4ae0}{Display}}.
+
+\mbox{\Hypertarget{class_mesh_display_aa4affc65c23027c877f511fc2b8aaeb8}\label{class_mesh_display_aa4affc65c23027c877f511fc2b8aaeb8}} 
+\index{Mesh\+Display@{Mesh\+Display}!Interaction\+Started@{Interaction\+Started}}
+\index{Interaction\+Started@{Interaction\+Started}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Interaction\+Started()}{InteractionStarted()}}
+{\footnotesize\ttfamily override void Mesh\+Display.\+Interaction\+Started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+called when interaction with this display started used to maybe disable anything on the display gamobject if needed 
+
+
+
+Implements \mbox{\hyperlink{class_display_a21c51fcf185403197a78a5acfd2065de}{Display}}.
+
+\mbox{\Hypertarget{class_mesh_display_a94176ce6e76cc683336051b49573ab1f}\label{class_mesh_display_a94176ce6e76cc683336051b49573ab1f}} 
+\index{Mesh\+Display@{Mesh\+Display}!Scale\+Child\+To\+Fit\+Parent@{Scale\+Child\+To\+Fit\+Parent}}
+\index{Scale\+Child\+To\+Fit\+Parent@{Scale\+Child\+To\+Fit\+Parent}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Scale\+Child\+To\+Fit\+Parent()}{ScaleChildToFitParent()}}
+{\footnotesize\ttfamily void Mesh\+Display.\+Scale\+Child\+To\+Fit\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+scales the mesh that needs displaying to a size so that is fits into the glass sphere 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_display_a94176ce6e76cc683336051b49573ab1f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mesh_display_a8cd58e07cb9d64598c3bbc6701515d1d}\label{class_mesh_display_a8cd58e07cb9d64598c3bbc6701515d1d}} 
+\index{Mesh\+Display@{Mesh\+Display}!Set\+To\+Default\+Interaction\+Behaviour@{Set\+To\+Default\+Interaction\+Behaviour}}
+\index{Set\+To\+Default\+Interaction\+Behaviour@{Set\+To\+Default\+Interaction\+Behaviour}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Set\+To\+Default\+Interaction\+Behaviour()}{SetToDefaultInteractionBehaviour()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{class_display_a2c80ba13fff1fd81aaa6915b28e8c14f}{Type}} Mesh\+Display.\+Set\+To\+Default\+Interaction\+Behaviour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if the wanted behaviour is not possible or not exitent the behaviour will be set to this default 
+
+
+
+Implements \mbox{\hyperlink{class_display_a81f07350cf50b3924f4fe269e1b4cf17}{Display}}.
+
+\mbox{\Hypertarget{class_mesh_display_adb19ca4d076a93df64d1c035663fce0f}\label{class_mesh_display_adb19ca4d076a93df64d1c035663fce0f}} 
+\index{Mesh\+Display@{Mesh\+Display}!Set\+Up@{Set\+Up}}
+\index{Set\+Up@{Set\+Up}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Set\+Up()}{SetUp()}}
+{\footnotesize\ttfamily override void Mesh\+Display.\+Set\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}}}]{disp\+Info,  }\item[{Game\+Object}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set up the display in the museum, position and rotation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disp\+Info} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_display_a57325251fbeac943cd48520e50f0bec4}{Display}}.
+
+\mbox{\Hypertarget{class_mesh_display_ab87e001316410059093fac5d92326ef2}\label{class_mesh_display_ab87e001316410059093fac5d92326ef2}} 
+\index{Mesh\+Display@{Mesh\+Display}!Set\+Up\+Mesh\+Renderer\+Options@{Set\+Up\+Mesh\+Renderer\+Options}}
+\index{Set\+Up\+Mesh\+Renderer\+Options@{Set\+Up\+Mesh\+Renderer\+Options}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Set\+Up\+Mesh\+Renderer\+Options()}{SetUpMeshRendererOptions()}}
+{\footnotesize\ttfamily void Mesh\+Display.\+Set\+Up\+Mesh\+Renderer\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+setsup the meshrenderer options of the child 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_display_ab87e001316410059093fac5d92326ef2_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_mesh_display_aef69e30c103e4ccea952b87876384d6d}\label{class_mesh_display_aef69e30c103e4ccea952b87876384d6d}} 
+\index{Mesh\+Display@{Mesh\+Display}!Child\+Mesh@{Child\+Mesh}}
+\index{Child\+Mesh@{Child\+Mesh}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Child\+Mesh}{ChildMesh}}
+{\footnotesize\ttfamily Mesh\+Filter Mesh\+Display.\+Child\+Mesh}
+
+
+
+the mseh that is displayed in this display 
+
+\mbox{\Hypertarget{class_mesh_display_a112cd7fd6e19ed52906cbb4240dc6735}\label{class_mesh_display_a112cd7fd6e19ed52906cbb4240dc6735}} 
+\index{Mesh\+Display@{Mesh\+Display}!Parent\+Mesh@{Parent\+Mesh}}
+\index{Parent\+Mesh@{Parent\+Mesh}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{Parent\+Mesh}{ParentMesh}}
+{\footnotesize\ttfamily Mesh\+Filter Mesh\+Display.\+Parent\+Mesh}
+
+
+
+mesh of the glass sphere holding the mesh to display 
+
+\mbox{\Hypertarget{class_mesh_display_a6b33d912f5f2abd389f3feb3af1ce621}\label{class_mesh_display_a6b33d912f5f2abd389f3feb3af1ce621}} 
+\index{Mesh\+Display@{Mesh\+Display}!X\+Pos\+Modifier@{X\+Pos\+Modifier}}
+\index{X\+Pos\+Modifier@{X\+Pos\+Modifier}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{X\+Pos\+Modifier}{XPosModifier}}
+{\footnotesize\ttfamily float Mesh\+Display.\+X\+Pos\+Modifier\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_mesh_display_a13c5ad03c68d0b4519bfb8ca23ac6f11}\label{class_mesh_display_a13c5ad03c68d0b4519bfb8ca23ac6f11}} 
+\index{Mesh\+Display@{Mesh\+Display}!X\+Pos\+Scale@{X\+Pos\+Scale}}
+\index{X\+Pos\+Scale@{X\+Pos\+Scale}!Mesh\+Display@{Mesh\+Display}}
+\subsubsection{\texorpdfstring{X\+Pos\+Scale}{XPosScale}}
+{\footnotesize\ttfamily float Mesh\+Display.\+X\+Pos\+Scale\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Displays/\mbox{\hyperlink{_mesh_display_8cs}{Mesh\+Display.\+cs}}\end{DoxyCompactItemize}

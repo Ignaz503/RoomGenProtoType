@@ -1,0 +1,5 @@
+<map id="PortalTrigger" name="PortalTrigger">
+<area shape="rect" id="node3" href="$class_museum_build_observer.html" title="class that tracks the build progress of the museum and sees if player can teleport into museum ..." alt="" coords="51,260,203,287"/>
+<area shape="rect" id="node4" href="$class_base_door.html" title="BaseDoor" alt="" coords="103,81,181,108"/>
+<area shape="rect" id="node5" href="$class_door_trigger.html" title="Box collider trigger that opens and closes a door it is responsible for " alt="" coords="179,171,267,197"/>
+</map>

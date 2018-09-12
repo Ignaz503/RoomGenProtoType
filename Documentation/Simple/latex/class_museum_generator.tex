@@ -1,0 +1,287 @@
+\hypertarget{class_museum_generator}{}\section{Museum\+Generator Class Reference}
+\label{class_museum_generator}\index{Museum\+Generator@{Museum\+Generator}}
+
+
+Inheritance diagram for Museum\+Generator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{class_museum_generator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Museum\+Generator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{class_museum_generator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_museum_generator_a5ead852effaa81309fe98b4d61fe9759}{Request\+New\+Museum}} (string request, Queue$<$ string $>$ requester)
+\begin{DoxyCompactList}\small\item\em enqueues a new museum request \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_generator_a65ac409691646fa2f92ee9b84294ac57}{Generate\+Temp\+Room\+Display}} (int height, Hash\+Set$<$ int $>$ outline)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_museum_generator_a3274560824ac1574cf5b23b70c93f549}{S\+I\+ZE}}
+\begin{DoxyCompactList}\small\item\em temp size selector of museum \end{DoxyCompactList}\item 
+Color \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_museum_generator_abc5bc077cf9c07228ecc90887c534373}{Room\+Type\+Colors}}
+\begin{DoxyCompactList}\small\item\em debug color array for room types \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_museum_generator_a79420e442fa719cbcbceb76df5659209}{Seed}} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em seed used to gnerate museum \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_museum_generator_ae7a748c64ae256fdc85e29a79a2fc0a8}{cube\+Prefab}}
+\begin{DoxyCompactList}\small\item\em debug cube prefab for debug outuput \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} \mbox{\hyperlink{class_museum_generator_afba388daa5228b0542ebdf7799521ca9}{type\+To\+Draw\+Walls\+For}}
+\begin{DoxyCompactList}\small\item\em debug helper to only draw walls for this room type \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_museum_generator_a3a354ad136bc8f11fce23708625ccfde}{Draw\+All\+Walls}}
+\begin{DoxyCompactList}\small\item\em flag if all walls should be drawn or not \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_museum_generator_a102f8361f66eb629d3ad5c9951616b42}{Draw\+Gizmos}}
+\begin{DoxyCompactList}\small\item\em flag if gizmos should be drawn or not \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_museum_generator_abd9c3bf24730c6ad36b0ae78838ffaa8}{Virt\+Muse}} = null
+\begin{DoxyCompactList}\small\item\em museum being generated \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_museum_generator_a09fab0187bd69fd0c13220168b4a7ad2}{Create\+Debug\+Gameobject}}
+\begin{DoxyCompactList}\small\item\em flag if debug output should be gnerated \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_room_style}{Room\+Style}} $>$ \mbox{\hyperlink{class_museum_generator_ab9da3303011da2300a31cd9280fd29e8}{Room\+Styles}}
+\begin{DoxyCompactList}\small\item\em Tempory list of room styles that helps showcase the functionality of styled rooms \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_museum_generator}{Museum\+Generator}} \mbox{\hyperlink{class_museum_generator_ab3655c1b58520b049e4ca4f80744180a}{Instance}}
+\begin{DoxyCompactList}\small\item\em instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_museum_generator_abc3127d3a23107a350064fc49c5495c1}{On\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em sets Instance of generator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_museum_generator_a1b9419222535f317005ca9fe1fe757f3}{Generate\+Temp\+Room\+Display}} ()
+\begin{DoxyCompactList}\small\item\em gnerates a temp display of the museum but only floor walls handled by draw gizmos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_generator_a7c219625d39af0857271734995728a10}{On\+Draw\+Gizmos}} ()
+\begin{DoxyCompactList}\small\item\em gnerates walls for museum in editor and color codes them depending on type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Queue$<$ Tuple$<$ \mbox{\hyperlink{class_museum_request_data}{Museum\+Request\+Data}}, Queue$<$ string $>$ $>$ $>$ \mbox{\hyperlink{class_museum_generator_a10e2f6523a8d57b8265dab775c85b9f6}{museum\+Requests}} = new Queue$<$Tuple$<$\mbox{\hyperlink{class_museum_request_data}{Museum\+Request\+Data}}, Queue$<$string$>$$>$$>$()
+\begin{DoxyCompactList}\small\item\em temp queue for testing \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_museum_generator_a65ac409691646fa2f92ee9b84294ac57}\label{class_museum_generator_a65ac409691646fa2f92ee9b84294ac57}} 
+\index{Museum\+Generator@{Museum\+Generator}!Generate\+Temp\+Room\+Display@{Generate\+Temp\+Room\+Display}}
+\index{Generate\+Temp\+Room\+Display@{Generate\+Temp\+Room\+Display}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Generate\+Temp\+Room\+Display()}{GenerateTempRoomDisplay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Museum\+Generator.\+Generate\+Temp\+Room\+Display (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{Hash\+Set$<$ int $>$}]{outline }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_museum_generator_a1b9419222535f317005ca9fe1fe757f3}\label{class_museum_generator_a1b9419222535f317005ca9fe1fe757f3}} 
+\index{Museum\+Generator@{Museum\+Generator}!Generate\+Temp\+Room\+Display@{Generate\+Temp\+Room\+Display}}
+\index{Generate\+Temp\+Room\+Display@{Generate\+Temp\+Room\+Display}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Generate\+Temp\+Room\+Display()}{GenerateTempRoomDisplay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Museum\+Generator.\+Generate\+Temp\+Room\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+gnerates a temp display of the museum but only floor walls handled by draw gizmos 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_generator_a1b9419222535f317005ca9fe1fe757f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_generator_a7c219625d39af0857271734995728a10}\label{class_museum_generator_a7c219625d39af0857271734995728a10}} 
+\index{Museum\+Generator@{Museum\+Generator}!On\+Draw\+Gizmos@{On\+Draw\+Gizmos}}
+\index{On\+Draw\+Gizmos@{On\+Draw\+Gizmos}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{On\+Draw\+Gizmos()}{OnDrawGizmos()}}
+{\footnotesize\ttfamily void Museum\+Generator.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+gnerates walls for museum in editor and color codes them depending on type 
+
+\mbox{\Hypertarget{class_museum_generator_abc3127d3a23107a350064fc49c5495c1}\label{class_museum_generator_abc3127d3a23107a350064fc49c5495c1}} 
+\index{Museum\+Generator@{Museum\+Generator}!On\+Enable@{On\+Enable}}
+\index{On\+Enable@{On\+Enable}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{On\+Enable()}{OnEnable()}}
+{\footnotesize\ttfamily void Museum\+Generator.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sets Instance of generator 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_generator_abc3127d3a23107a350064fc49c5495c1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_generator_a5ead852effaa81309fe98b4d61fe9759}\label{class_museum_generator_a5ead852effaa81309fe98b4d61fe9759}} 
+\index{Museum\+Generator@{Museum\+Generator}!Request\+New\+Museum@{Request\+New\+Museum}}
+\index{Request\+New\+Museum@{Request\+New\+Museum}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Request\+New\+Museum()}{RequestNewMuseum()}}
+{\footnotesize\ttfamily void Museum\+Generator.\+Request\+New\+Museum (\begin{DoxyParamCaption}\item[{string}]{request,  }\item[{Queue$<$ string $>$}]{requester }\end{DoxyParamCaption})}
+
+
+
+enqueues a new museum request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & the request as a xml string\\
+\hline
+{\em requester} & queue where respone should go??? no idea-\/$>$ yes indeed\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_generator_a5ead852effaa81309fe98b4d61fe9759_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e}\label{class_museum_generator_afa0b7c3e8ab1bccedc4c7828cbf4724e}} 
+\index{Museum\+Generator@{Museum\+Generator}!Update@{Update}}
+\index{Update@{Update}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Museum\+Generator.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_museum_generator_a09fab0187bd69fd0c13220168b4a7ad2}\label{class_museum_generator_a09fab0187bd69fd0c13220168b4a7ad2}} 
+\index{Museum\+Generator@{Museum\+Generator}!Create\+Debug\+Gameobject@{Create\+Debug\+Gameobject}}
+\index{Create\+Debug\+Gameobject@{Create\+Debug\+Gameobject}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Create\+Debug\+Gameobject}{CreateDebugGameobject}}
+{\footnotesize\ttfamily bool Museum\+Generator.\+Create\+Debug\+Gameobject}
+
+
+
+flag if debug output should be gnerated 
+
+\mbox{\Hypertarget{class_museum_generator_ae7a748c64ae256fdc85e29a79a2fc0a8}\label{class_museum_generator_ae7a748c64ae256fdc85e29a79a2fc0a8}} 
+\index{Museum\+Generator@{Museum\+Generator}!cube\+Prefab@{cube\+Prefab}}
+\index{cube\+Prefab@{cube\+Prefab}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{cube\+Prefab}{cubePrefab}}
+{\footnotesize\ttfamily Game\+Object Museum\+Generator.\+cube\+Prefab}
+
+
+
+debug cube prefab for debug outuput 
+
+\mbox{\Hypertarget{class_museum_generator_a3a354ad136bc8f11fce23708625ccfde}\label{class_museum_generator_a3a354ad136bc8f11fce23708625ccfde}} 
+\index{Museum\+Generator@{Museum\+Generator}!Draw\+All\+Walls@{Draw\+All\+Walls}}
+\index{Draw\+All\+Walls@{Draw\+All\+Walls}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Draw\+All\+Walls}{DrawAllWalls}}
+{\footnotesize\ttfamily bool Museum\+Generator.\+Draw\+All\+Walls}
+
+
+
+flag if all walls should be drawn or not 
+
+\mbox{\Hypertarget{class_museum_generator_a102f8361f66eb629d3ad5c9951616b42}\label{class_museum_generator_a102f8361f66eb629d3ad5c9951616b42}} 
+\index{Museum\+Generator@{Museum\+Generator}!Draw\+Gizmos@{Draw\+Gizmos}}
+\index{Draw\+Gizmos@{Draw\+Gizmos}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Draw\+Gizmos}{DrawGizmos}}
+{\footnotesize\ttfamily bool Museum\+Generator.\+Draw\+Gizmos}
+
+
+
+flag if gizmos should be drawn or not 
+
+\mbox{\Hypertarget{class_museum_generator_ab3655c1b58520b049e4ca4f80744180a}\label{class_museum_generator_ab3655c1b58520b049e4ca4f80744180a}} 
+\index{Museum\+Generator@{Museum\+Generator}!Instance@{Instance}}
+\index{Instance@{Instance}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_generator}{Museum\+Generator}} Museum\+Generator.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+instance 
+
+\mbox{\Hypertarget{class_museum_generator_a10e2f6523a8d57b8265dab775c85b9f6}\label{class_museum_generator_a10e2f6523a8d57b8265dab775c85b9f6}} 
+\index{Museum\+Generator@{Museum\+Generator}!museum\+Requests@{museum\+Requests}}
+\index{museum\+Requests@{museum\+Requests}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{museum\+Requests}{museumRequests}}
+{\footnotesize\ttfamily Queue$<$Tuple$<$\mbox{\hyperlink{class_museum_request_data}{Museum\+Request\+Data}},Queue$<$string$>$ $>$ $>$ Museum\+Generator.\+museum\+Requests = new Queue$<$Tuple$<$\mbox{\hyperlink{class_museum_request_data}{Museum\+Request\+Data}}, Queue$<$string$>$$>$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+temp queue for testing 
+
+\mbox{\Hypertarget{class_museum_generator_ab9da3303011da2300a31cd9280fd29e8}\label{class_museum_generator_ab9da3303011da2300a31cd9280fd29e8}} 
+\index{Museum\+Generator@{Museum\+Generator}!Room\+Styles@{Room\+Styles}}
+\index{Room\+Styles@{Room\+Styles}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Room\+Styles}{RoomStyles}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_room_style}{Room\+Style}}$>$ Museum\+Generator.\+Room\+Styles}
+
+
+
+Tempory list of room styles that helps showcase the functionality of styled rooms 
+
+\mbox{\Hypertarget{class_museum_generator_abc5bc077cf9c07228ecc90887c534373}\label{class_museum_generator_abc5bc077cf9c07228ecc90887c534373}} 
+\index{Museum\+Generator@{Museum\+Generator}!Room\+Type\+Colors@{Room\+Type\+Colors}}
+\index{Room\+Type\+Colors@{Room\+Type\+Colors}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Room\+Type\+Colors}{RoomTypeColors}}
+{\footnotesize\ttfamily Color \mbox{[}$\,$\mbox{]} Museum\+Generator.\+Room\+Type\+Colors}
+
+
+
+debug color array for room types 
+
+\mbox{\Hypertarget{class_museum_generator_a79420e442fa719cbcbceb76df5659209}\label{class_museum_generator_a79420e442fa719cbcbceb76df5659209}} 
+\index{Museum\+Generator@{Museum\+Generator}!Seed@{Seed}}
+\index{Seed@{Seed}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Seed}{Seed}}
+{\footnotesize\ttfamily string Museum\+Generator.\+Seed = \char`\"{}\char`\"{}}
+
+
+
+seed used to gnerate museum 
+
+\mbox{\Hypertarget{class_museum_generator_a3274560824ac1574cf5b23b70c93f549}\label{class_museum_generator_a3274560824ac1574cf5b23b70c93f549}} 
+\index{Museum\+Generator@{Museum\+Generator}!S\+I\+ZE@{S\+I\+ZE}}
+\index{S\+I\+ZE@{S\+I\+ZE}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{S\+I\+ZE}{SIZE}}
+{\footnotesize\ttfamily int Museum\+Generator.\+S\+I\+ZE}
+
+
+
+temp size selector of museum 
+
+\mbox{\Hypertarget{class_museum_generator_afba388daa5228b0542ebdf7799521ca9}\label{class_museum_generator_afba388daa5228b0542ebdf7799521ca9}} 
+\index{Museum\+Generator@{Museum\+Generator}!type\+To\+Draw\+Walls\+For@{type\+To\+Draw\+Walls\+For}}
+\index{type\+To\+Draw\+Walls\+For@{type\+To\+Draw\+Walls\+For}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{type\+To\+Draw\+Walls\+For}{typeToDrawWallsFor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} Museum\+Generator.\+type\+To\+Draw\+Walls\+For}
+
+
+
+debug helper to only draw walls for this room type 
+
+\mbox{\Hypertarget{class_museum_generator_abd9c3bf24730c6ad36b0ae78838ffaa8}\label{class_museum_generator_abd9c3bf24730c6ad36b0ae78838ffaa8}} 
+\index{Museum\+Generator@{Museum\+Generator}!Virt\+Muse@{Virt\+Muse}}
+\index{Virt\+Muse@{Virt\+Muse}!Museum\+Generator@{Museum\+Generator}}
+\subsubsection{\texorpdfstring{Virt\+Muse}{VirtMuse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum}{Museum}} Museum\+Generator.\+Virt\+Muse = null}
+
+
+
+museum being generated 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\mbox{\hyperlink{_museum_generator_8cs}{Museum\+Generator.\+cs}}\end{DoxyCompactItemize}

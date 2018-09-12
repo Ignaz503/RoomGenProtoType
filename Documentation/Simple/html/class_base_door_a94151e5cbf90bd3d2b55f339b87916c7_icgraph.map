@@ -1,0 +1,3 @@
+<map id="BaseDoor.Close" name="BaseDoor.Close">
+<area shape="rect" id="node2" href="$class_door_trigger.html#adee54426b691466c5d667b912816bb56" title="DoorTrigger.OnTriggerExit" alt="" coords="169,5,340,32"/>
+</map>

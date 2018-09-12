@@ -1,0 +1,3 @@
+<map id="IHoldableObject.OnDropped" name="IHoldableObject.OnDropped">
+<area shape="rect" id="node2" href="$class_player_hand.html#a3b127b846b420ef37cba3a3a8de68e78" title="drops any held object, unssubscribes this object from all events " alt="" coords="236,5,395,32"/>
+</map>

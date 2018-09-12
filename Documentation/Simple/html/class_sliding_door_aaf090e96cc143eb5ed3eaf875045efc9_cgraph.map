@@ -1,0 +1,4 @@
+<map id="SlidingDoor.Open" name="SlidingDoor.Open">
+<area shape="rect" id="node2" href="$class_sliding_door.html#adb583a66e0b4eeb5e03e50a3d4d4e109" title="coroutine to open sliding door " alt="" coords="176,5,347,32"/>
+<area shape="rect" id="node3" href="$class_base_door.html#af53bd804dcee24b1f2019c2d2e8e03c6" title="wrapper class to invoke event from sub classes " alt="" coords="395,5,553,32"/>
+</map>

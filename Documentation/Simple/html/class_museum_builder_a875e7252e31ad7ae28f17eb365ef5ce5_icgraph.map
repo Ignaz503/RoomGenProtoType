@@ -1,0 +1,5 @@
+<map id="MuseumBuilder.SetToStartPosition" name="MuseumBuilder.SetToStartPosition">
+<area shape="rect" id="node2" href="$class_museum_build_observer.html#a18c844a9fe9b649ed4bdaedbdade82a6" title="MuseumBuildObserver.Start" alt="" coords="484,5,668,32"/>
+<area shape="rect" id="node3" href="$class_museum_build_observer.html#a506c7314ea2734e8f4881167ab5f2460" title="tepelports player if possible " alt="" coords="232,53,435,94"/>
+<area shape="rect" id="node4" href="$class_portal_trigger.html#ae73070bf23c6348ced79aa839e0e2ad7" title="PortalTrigger.OnTriggerEnter" alt="" coords="483,60,669,87"/>
+</map>

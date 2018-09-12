@@ -1,0 +1,4 @@
+<map id="MeshDisplay.ApplyResource" name="MeshDisplay.ApplyResource">
+<area shape="rect" id="node2" href="$class_base_resource.html#a2d832c8042114da9e3f6240651d59703" title="function that applies a resource to a gamobject " alt="" coords="243,5,471,32"/>
+<area shape="rect" id="node3" href="$class_mesh_display.html#ab87e001316410059093fac5d92326ef2" title="setsup the meshrenderer options of the child " alt="" coords="246,57,467,98"/>
+</map>

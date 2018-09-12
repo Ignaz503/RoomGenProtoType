@@ -1,0 +1,434 @@
+\hypertarget{class_museum}{}\section{Museum Class Reference}
+\label{class_museum}\index{Museum@{Museum}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_museum_aa946df02a55ba522f7a39ac688648733}{Museum}} (int size)
+\item 
+void \mbox{\hyperlink{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81}{Generate}} (string seed, bool build\+Museums\+Graph=true)
+\begin{DoxyCompactList}\small\item\em T\+HE C\+L\+I\+E\+NT S\+H\+O\+U\+LD N\+E\+V\+ER N\+E\+ED TO C\+A\+LL T\+H\+IS F\+U\+N\+C\+T\+I\+ON O\+U\+T\+S\+I\+DE OF D\+E\+B\+U\+G\+G\+I\+NG Generates a \mbox{\hyperlink{class_museum}{Museum}} baisc algortihm\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room}{Room}} \mbox{\hyperlink{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}{Get\+Room\+By\+ID}} (uint Room\+ID)
+\begin{DoxyCompactList}\small\item\em Finds a room via the ID of it \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_a405e60db962417dde46d46180cbf81df}{Transform\+Tile\+Coord\+Into\+OneD}} (Vector2\+Int coord)
+\begin{DoxyCompactList}\small\item\em Transforms a two dimensional coord(row$\vert$column) into a one dimensional coord for this museum \end{DoxyCompactList}\item 
+Vector2\+Int \mbox{\hyperlink{class_museum_a458545a518b026779c23e6c5b477bbf4}{Transform\+One\+D\+Coord\+Into\+TwoD}} (int coord)
+\begin{DoxyCompactList}\small\item\em Transforms a one dimensional value into a row and column value for this museum item1 in tuple = x item2 in tuple = y \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_a6e441db98efeaa314ae974222aea08e6}{Add\+Wall}} (\mbox{\hyperlink{class_wall}{Wall}} w)
+\begin{DoxyCompactList}\small\item\em Adds a wall to the walls container if the wall doesn\textquotesingle{}t exist otherwise returns the index of the wall that already exists (2 rooms share one wall in that case) \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_museum_ac956bb7d7454f99944af157c79f695b8}{Serialize}} ()
+\begin{DoxyCompactList}\small\item\em Serilaizes a museum to an xml string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_museum}{Museum}} \mbox{\hyperlink{class_museum_a1b4fb627a19112e3ba3d25e8108de2c3}{Deserialize}} (string data)
+\begin{DoxyCompactList}\small\item\em creates a museum from an xml string \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_museum_a4317c41f1bef1ffeee3678f5c342c9aa}{Add\+New\+Room\+Placable\+Checker}} (\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}} t, \mbox{\hyperlink{interface_i_room_placable_checker}{I\+Room\+Placable\+Checker}} checker, bool override\+Existing)
+\begin{DoxyCompactList}\small\item\em adds a new room placable checker \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_museum_a954b0f1a64a26af54502b46c4058d99d}{Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em defines size of museum they currently are always same width and height \end{DoxyCompactList}\item 
+int \mbox{[},\mbox{]} \mbox{\hyperlink{class_museum_add7cf92391f0c501eaf2ebb76ddd54f6}{Room\+Map}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em map of all the tiles in the museum and which room type is placed in this tile -\/1 if there is currently no room on this tile \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_room}{Room}} $>$ \mbox{\hyperlink{class_museum_afbe49bbdcf1b263d32fd0ae323289e7d}{Rooms}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em list of all the rooms that build this museum \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_wall}{Wall}} $>$ \mbox{\hyperlink{class_museum_a4851cdf10f162bbf4b26c757874031da}{Walls}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em list of all the walls in the museum \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum_graph}{Museum\+Graph}} \mbox{\hyperlink{class_museum_abdd7abe1cc5b4de86c868edb9f3ca177}{Museums\+Graph}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em a graph that defines the connectivty of the rooms with each other \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_ab814feb2d391ec372dfc3a6c6c61c51f}{Current\+Number\+Of\+Doors}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the current number of doors in the museum \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_ac6942612f3be979812b450ee9140caf1}{Number\+Of\+Displays}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the current number of displays in the museum \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_museum_ae07741bc8fd7f97c84fed0050e18c3c4}{Fill\+Displays}} (System.\+Random rng)
+\begin{DoxyCompactList}\small\item\em Fills the displas that exist in the museum also creates texture info for walls W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY T\+E\+MP I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON \end{DoxyCompactList}\item 
+List$<$ Vector2\+Int $>$ \mbox{\hyperlink{class_museum_af5b732fe3a0821d02852171a73cf8f8b}{Get\+Sourrounding\+Tiles}} (Vector2\+Int pos)
+\begin{DoxyCompactList}\small\item\em returns the sourrounding tiles for a given position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_a6a161feedcbb8a471eb0e68b7e3e4027}{Log\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_museum_a237d1ccf7cb53c4db64647b6addc6576}{Log\+Outline}} (Hash\+Set$<$ int $>$ outline)
+\item 
+void \mbox{\hyperlink{class_museum_a6b395af086d9773720b1cb5536f405a8}{Remove\+Walls\+Containig\+Point}} (Vector2 p)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Dictionary$<$ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}}, \mbox{\hyperlink{interface_i_room_placable_checker}{I\+Room\+Placable\+Checker}} $>$ \mbox{\hyperlink{class_museum_af3826f71fcb80bd1bf30f5fbf75b5e28}{room\+Type\+To\+Placeable\+Checker}}
+\begin{DoxyCompactList}\small\item\em helper dictionary that maps from room type to placable checker of this room \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_museum_aa946df02a55ba522f7a39ac688648733}\label{class_museum_aa946df02a55ba522f7a39ac688648733}} 
+\index{Museum@{Museum}!Museum@{Museum}}
+\index{Museum@{Museum}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Museum()}{Museum()}}
+{\footnotesize\ttfamily Museum.\+Museum (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_aa946df02a55ba522f7a39ac688648733_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_museum_a4317c41f1bef1ffeee3678f5c342c9aa}\label{class_museum_a4317c41f1bef1ffeee3678f5c342c9aa}} 
+\index{Museum@{Museum}!Add\+New\+Room\+Placable\+Checker@{Add\+New\+Room\+Placable\+Checker}}
+\index{Add\+New\+Room\+Placable\+Checker@{Add\+New\+Room\+Placable\+Checker}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Add\+New\+Room\+Placable\+Checker()}{AddNewRoomPlacableChecker()}}
+{\footnotesize\ttfamily static void Museum.\+Add\+New\+Room\+Placable\+Checker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}}}]{t,  }\item[{\mbox{\hyperlink{interface_i_room_placable_checker}{I\+Room\+Placable\+Checker}}}]{checker,  }\item[{bool}]{override\+Existing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+adds a new room placable checker 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & new room type\\
+\hline
+{\em checker} & the placable checker for this type\\
+\hline
+{\em override\+Existing} & flag if already existing placable checker should be overwritten\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_museum_a6e441db98efeaa314ae974222aea08e6}\label{class_museum_a6e441db98efeaa314ae974222aea08e6}} 
+\index{Museum@{Museum}!Add\+Wall@{Add\+Wall}}
+\index{Add\+Wall@{Add\+Wall}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Add\+Wall()}{AddWall()}}
+{\footnotesize\ttfamily int Museum.\+Add\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wall}{Wall}}}]{w }\end{DoxyParamCaption})}
+
+
+
+Adds a wall to the walls container if the wall doesn\textquotesingle{}t exist otherwise returns the index of the wall that already exists (2 rooms share one wall in that case) 
+
+\begin{DoxyReturn}{Returns}
+the location of the wall in the museum walls array
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_a6e441db98efeaa314ae974222aea08e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_a6e441db98efeaa314ae974222aea08e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_a1b4fb627a19112e3ba3d25e8108de2c3}\label{class_museum_a1b4fb627a19112e3ba3d25e8108de2c3}} 
+\index{Museum@{Museum}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_museum}{Museum}} Museum.\+Deserialize (\begin{DoxyParamCaption}\item[{string}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+creates a museum from an xml string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_museum_a1b4fb627a19112e3ba3d25e8108de2c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_a1b4fb627a19112e3ba3d25e8108de2c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_ae07741bc8fd7f97c84fed0050e18c3c4}\label{class_museum_ae07741bc8fd7f97c84fed0050e18c3c4}} 
+\index{Museum@{Museum}!Fill\+Displays@{Fill\+Displays}}
+\index{Fill\+Displays@{Fill\+Displays}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Fill\+Displays()}{FillDisplays()}}
+{\footnotesize\ttfamily void Museum.\+Fill\+Displays (\begin{DoxyParamCaption}\item[{System.\+Random}]{rng }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fills the displas that exist in the museum also creates texture info for walls W\+A\+R\+N\+I\+NG\+: C\+U\+R\+R\+E\+N\+T\+LY T\+E\+MP I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON 
+
+\mbox{\Hypertarget{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81}\label{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81}} 
+\index{Museum@{Museum}!Generate@{Generate}}
+\index{Generate@{Generate}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Generate()}{Generate()}}
+{\footnotesize\ttfamily void Museum.\+Generate (\begin{DoxyParamCaption}\item[{string}]{seed,  }\item[{bool}]{build\+Museums\+Graph = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+T\+HE C\+L\+I\+E\+NT S\+H\+O\+U\+LD N\+E\+V\+ER N\+E\+ED TO C\+A\+LL T\+H\+IS F\+U\+N\+C\+T\+I\+ON O\+U\+T\+S\+I\+DE OF D\+E\+B\+U\+G\+G\+I\+NG Generates a \mbox{\hyperlink{class_museum}{Museum}} baisc algortihm\+: 
+
+
+\begin{DoxyEnumerate}
+\item palce random 1x1 room as start
+\item get outline around this room
+\item choose random tile from outline
+\item find out what rooms can be placed at this tile
+\item place one of the possible rooms
+\item connect new room to already existing rooms
+\item update outline
+\item repeat from step 3. until no more tiles in outline
+\item fill all the displays that are in the museum
+\item build museum graph T\+H\+IS IS T\+HE D\+E\+B\+UG I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON OF T\+HE A\+L\+G\+O\+R\+I\+T\+HM U\+S\+ED TO V\+I\+S\+U\+A\+L\+I\+ZE T\+HE A\+L\+G\+O\+R\+I\+T\+HM F\+I\+N\+AL I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+ON IN V\+I\+R\+T\+M\+U\+S\+E\+W\+E\+B\+P\+R\+O\+J\+E\+CT 
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_a2a301b4e27f35da164ffa03b3d3d7e81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}\label{class_museum_a31c3e63a3a1e2edf6e219cb1f04b9515}} 
+\index{Museum@{Museum}!Get\+Room\+By\+ID@{Get\+Room\+By\+ID}}
+\index{Get\+Room\+By\+ID@{Get\+Room\+By\+ID}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Get\+Room\+By\+I\+D()}{GetRoomByID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room}{Room}} Museum.\+Get\+Room\+By\+ID (\begin{DoxyParamCaption}\item[{uint}]{Room\+ID }\end{DoxyParamCaption})}
+
+
+
+Finds a room via the ID of it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Room\+ID} & the room ID of the room we are looking for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The room with the ID
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_museum_af5b732fe3a0821d02852171a73cf8f8b}\label{class_museum_af5b732fe3a0821d02852171a73cf8f8b}} 
+\index{Museum@{Museum}!Get\+Sourrounding\+Tiles@{Get\+Sourrounding\+Tiles}}
+\index{Get\+Sourrounding\+Tiles@{Get\+Sourrounding\+Tiles}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Get\+Sourrounding\+Tiles()}{GetSourroundingTiles()}}
+{\footnotesize\ttfamily List$<$Vector2\+Int$>$ Museum.\+Get\+Sourrounding\+Tiles (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+returns the sourrounding tiles for a given position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_af5b732fe3a0821d02852171a73cf8f8b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_a6a161feedcbb8a471eb0e68b7e3e4027}\label{class_museum_a6a161feedcbb8a471eb0e68b7e3e4027}} 
+\index{Museum@{Museum}!Log\+Map@{Log\+Map}}
+\index{Log\+Map@{Log\+Map}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Log\+Map()}{LogMap()}}
+{\footnotesize\ttfamily void Museum.\+Log\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_a237d1ccf7cb53c4db64647b6addc6576}\label{class_museum_a237d1ccf7cb53c4db64647b6addc6576}} 
+\index{Museum@{Museum}!Log\+Outline@{Log\+Outline}}
+\index{Log\+Outline@{Log\+Outline}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Log\+Outline()}{LogOutline()}}
+{\footnotesize\ttfamily void Museum.\+Log\+Outline (\begin{DoxyParamCaption}\item[{Hash\+Set$<$ int $>$}]{outline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_a6b395af086d9773720b1cb5536f405a8}\label{class_museum_a6b395af086d9773720b1cb5536f405a8}} 
+\index{Museum@{Museum}!Remove\+Walls\+Containig\+Point@{Remove\+Walls\+Containig\+Point}}
+\index{Remove\+Walls\+Containig\+Point@{Remove\+Walls\+Containig\+Point}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Remove\+Walls\+Containig\+Point()}{RemoveWallsContainigPoint()}}
+{\footnotesize\ttfamily void Museum.\+Remove\+Walls\+Containig\+Point (\begin{DoxyParamCaption}\item[{Vector2}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_ac956bb7d7454f99944af157c79f695b8}\label{class_museum_ac956bb7d7454f99944af157c79f695b8}} 
+\index{Museum@{Museum}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily string Museum.\+Serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Serilaizes a museum to an xml string 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_museum_a458545a518b026779c23e6c5b477bbf4}\label{class_museum_a458545a518b026779c23e6c5b477bbf4}} 
+\index{Museum@{Museum}!Transform\+One\+D\+Coord\+Into\+TwoD@{Transform\+One\+D\+Coord\+Into\+TwoD}}
+\index{Transform\+One\+D\+Coord\+Into\+TwoD@{Transform\+One\+D\+Coord\+Into\+TwoD}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Transform\+One\+D\+Coord\+Into\+Two\+D()}{TransformOneDCoordIntoTwoD()}}
+{\footnotesize\ttfamily Vector2\+Int Museum.\+Transform\+One\+D\+Coord\+Into\+TwoD (\begin{DoxyParamCaption}\item[{int}]{coord }\end{DoxyParamCaption})}
+
+
+
+Transforms a one dimensional value into a row and column value for this museum item1 in tuple = x item2 in tuple = y 
+
+\mbox{\Hypertarget{class_museum_a405e60db962417dde46d46180cbf81df}\label{class_museum_a405e60db962417dde46d46180cbf81df}} 
+\index{Museum@{Museum}!Transform\+Tile\+Coord\+Into\+OneD@{Transform\+Tile\+Coord\+Into\+OneD}}
+\index{Transform\+Tile\+Coord\+Into\+OneD@{Transform\+Tile\+Coord\+Into\+OneD}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Transform\+Tile\+Coord\+Into\+One\+D()}{TransformTileCoordIntoOneD()}}
+{\footnotesize\ttfamily int Museum.\+Transform\+Tile\+Coord\+Into\+OneD (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{coord }\end{DoxyParamCaption})}
+
+
+
+Transforms a two dimensional coord(row$\vert$column) into a one dimensional coord for this museum 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_a405e60db962417dde46d46180cbf81df_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_museum_af3826f71fcb80bd1bf30f5fbf75b5e28}\label{class_museum_af3826f71fcb80bd1bf30f5fbf75b5e28}} 
+\index{Museum@{Museum}!room\+Type\+To\+Placeable\+Checker@{room\+Type\+To\+Placeable\+Checker}}
+\index{room\+Type\+To\+Placeable\+Checker@{room\+Type\+To\+Placeable\+Checker}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{room\+Type\+To\+Placeable\+Checker}{roomTypeToPlaceableChecker}}
+{\footnotesize\ttfamily Dictionary$<$\mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{Room\+Type}}, \mbox{\hyperlink{interface_i_room_placable_checker}{I\+Room\+Placable\+Checker}}$>$ Museum.\+room\+Type\+To\+Placeable\+Checker\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} Dictionary<RoomType, IRoomPlacableChecker>()
+\{
+        \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Normal, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
+      \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Normal) \},
+        \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Long, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
+      \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Long) \},
+        \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Big, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
+      \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.Big) \},
+        \{ \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.L, \textcolor{keyword}{new} \mbox{\hyperlink{class_base_room_type_placable_cheker}{BaseRoomTypePlacableCheker}}(
+      \mbox{\hyperlink{_room_8cs_ab540f7414f306325d92272bcef1e34e1}{RoomType}}.L) \}
+\}
+\end{DoxyCode}
+
+
+helper dictionary that maps from room type to placable checker of this room 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_museum_ab814feb2d391ec372dfc3a6c6c61c51f}\label{class_museum_ab814feb2d391ec372dfc3a6c6c61c51f}} 
+\index{Museum@{Museum}!Current\+Number\+Of\+Doors@{Current\+Number\+Of\+Doors}}
+\index{Current\+Number\+Of\+Doors@{Current\+Number\+Of\+Doors}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Current\+Number\+Of\+Doors}{CurrentNumberOfDoors}}
+{\footnotesize\ttfamily int Museum.\+Current\+Number\+Of\+Doors\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+the current number of doors in the museum 
+
+\mbox{\Hypertarget{class_museum_abdd7abe1cc5b4de86c868edb9f3ca177}\label{class_museum_abdd7abe1cc5b4de86c868edb9f3ca177}} 
+\index{Museum@{Museum}!Museums\+Graph@{Museums\+Graph}}
+\index{Museums\+Graph@{Museums\+Graph}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Museums\+Graph}{MuseumsGraph}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_graph}{Museum\+Graph}} Museum.\+Museums\+Graph\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+a graph that defines the connectivty of the rooms with each other 
+
+\mbox{\Hypertarget{class_museum_ac6942612f3be979812b450ee9140caf1}\label{class_museum_ac6942612f3be979812b450ee9140caf1}} 
+\index{Museum@{Museum}!Number\+Of\+Displays@{Number\+Of\+Displays}}
+\index{Number\+Of\+Displays@{Number\+Of\+Displays}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Number\+Of\+Displays}{NumberOfDisplays}}
+{\footnotesize\ttfamily int Museum.\+Number\+Of\+Displays\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+the current number of displays in the museum 
+
+\mbox{\Hypertarget{class_museum_add7cf92391f0c501eaf2ebb76ddd54f6}\label{class_museum_add7cf92391f0c501eaf2ebb76ddd54f6}} 
+\index{Museum@{Museum}!Room\+Map@{Room\+Map}}
+\index{Room\+Map@{Room\+Map}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Room\+Map}{RoomMap}}
+{\footnotesize\ttfamily int \mbox{[},\mbox{]} Museum.\+Room\+Map\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+map of all the tiles in the museum and which room type is placed in this tile -\/1 if there is currently no room on this tile 
+
+\mbox{\Hypertarget{class_museum_afbe49bbdcf1b263d32fd0ae323289e7d}\label{class_museum_afbe49bbdcf1b263d32fd0ae323289e7d}} 
+\index{Museum@{Museum}!Rooms@{Rooms}}
+\index{Rooms@{Rooms}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Rooms}{Rooms}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_room}{Room}}$>$ Museum.\+Rooms\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+list of all the rooms that build this museum 
+
+\mbox{\Hypertarget{class_museum_a954b0f1a64a26af54502b46c4058d99d}\label{class_museum_a954b0f1a64a26af54502b46c4058d99d}} 
+\index{Museum@{Museum}!Size@{Size}}
+\index{Size@{Size}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily int Museum.\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+defines size of museum they currently are always same width and height 
+
+\mbox{\Hypertarget{class_museum_a4851cdf10f162bbf4b26c757874031da}\label{class_museum_a4851cdf10f162bbf4b26c757874031da}} 
+\index{Museum@{Museum}!Walls@{Walls}}
+\index{Walls@{Walls}!Museum@{Museum}}
+\subsubsection{\texorpdfstring{Walls}{Walls}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_wall}{Wall}}$>$ Museum.\+Walls\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+list of all the walls in the museum 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\mbox{\hyperlink{_museum_8cs}{Museum.\+cs}}\end{DoxyCompactItemize}

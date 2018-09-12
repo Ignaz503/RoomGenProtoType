@@ -1,0 +1,6 @@
+<map id="MuseumBuildObserver.CheckDone" name="MuseumBuildObserver.CheckDone">
+<area shape="rect" id="node2" href="$class_museum_build_observer.html#a18c844a9fe9b649ed4bdaedbdade82a6" title="MuseumBuildObserver.Start" alt="" coords="528,33,712,60"/>
+<area shape="rect" id="node3" href="$class_museum_build_observer.html#aa808cdf3870a709891e1dc4262c5aec1" title="updates entrance, and display above " alt="" coords="279,26,476,67"/>
+<area shape="rect" id="node4" href="$class_museum_build_observer.html#a506c7314ea2734e8f4881167ab5f2460" title="tepelports player if possible " alt="" coords="276,91,479,132"/>
+<area shape="rect" id="node5" href="$class_portal_trigger.html#ae73070bf23c6348ced79aa839e0e2ad7" title="PortalTrigger.OnTriggerEnter" alt="" coords="527,98,713,125"/>
+</map>

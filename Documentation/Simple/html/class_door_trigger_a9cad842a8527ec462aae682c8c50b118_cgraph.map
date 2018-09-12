@@ -1,0 +1,3 @@
+<map id="DoorTrigger.OnTriggerEnter" name="DoorTrigger.OnTriggerEnter">
+<area shape="rect" id="node2" href="$class_base_door.html#a418df6f73cc5c56b6989c0512a6a909b" title="function called to open the door " alt="" coords="232,5,347,32"/>
+</map>

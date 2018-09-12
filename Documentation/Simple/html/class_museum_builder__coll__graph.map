@@ -1,0 +1,6 @@
+<map id="MuseumBuilder" name="MuseumBuilder">
+<area shape="rect" id="node3" href="$class_museum_controller.html" title="MuseumController" alt="" coords="128,199,255,225"/>
+<area shape="rect" id="node4" href="$class_room.html" title="defines a room in a virtual museum " alt="" coords="292,95,348,121"/>
+<area shape="rect" id="node5" href="$class_museum.html" title="Museum" alt="" coords="45,5,117,32"/>
+<area shape="rect" id="node6" href="$class_museum_graph.html" title="MuseumGraph" alt="" coords="161,95,268,121"/>
+</map>

@@ -1,0 +1,262 @@
+\hypertarget{class_rotate_and_zoom_component}{}\section{Rotate\+And\+Zoom\+Component Class Reference}
+\label{class_rotate_and_zoom_component}\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+
+
+the bahaviour that allows to rotate an obnject that is held with the mouse  
+
+
+
+
+Inheritance diagram for Rotate\+And\+Zoom\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{class_rotate_and_zoom_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rotate\+And\+Zoom\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rotate_and_zoom_component__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_rotate_and_zoom_component_a1afdb59de9b4b255456351189e2f6932}{Start\+Interaction}} (\mbox{\hyperlink{class_player}{Player}} p, Transform obj\+To\+Rot)
+\begin{DoxyCompactList}\small\item\em sets the object and player that are itneracting \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_rotate_and_zoom_component_ac6afb9569858cf59c584c7bdfac41def}{Start\+Interaction}} (Game\+Object activator, Game\+Object interacted\+Upon)
+\begin{DoxyCompactList}\small\item\em setup function when interaction starts \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_rotate_and_zoom_component_aa116a1acdc75d587605b6fa043474982}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em cleanup funciton after interaction was ended \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_rotate_and_zoom_component_af92720943f59348caa6f58952fec5c6b}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_rotate_and_zoom_component_a4f44c8f8dc5f9b2f1f38075595d20489}{Handle\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Handles rotation of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rotate_and_zoom_component_a8157abad4e54f49ebccf9499a3f698a8}{Handle\+Zoom}} ()
+\begin{DoxyCompactList}\small\item\em handles the zoom of camera \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_rotate_and_zoom_component_a23043ca556a278ade0b2b55ba849844c}{player\+Holding\+Object}}
+\begin{DoxyCompactList}\small\item\em the player holding the object \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_rotate_and_zoom_component_a752201d107b44a70e657f7024a250116}{object\+To\+Rotate}}
+\begin{DoxyCompactList}\small\item\em transform of the object that need rotating \end{DoxyCompactList}\item 
+Key\+Code \mbox{\hyperlink{class_rotate_and_zoom_component_a2fede316c27329fc1bd1fb1c8f2bbfa0}{rotation\+Key}} = Key\+Code.\+Mouse0
+\begin{DoxyCompactList}\small\item\em key that need pressing to rotate the object \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_rotate_and_zoom_component_a6a3704e758eaf77ee29764845052dbcf}{init\+Cam\+Loc\+Pos}}
+\begin{DoxyCompactList}\small\item\em the initial camera position for zoom reasons \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_rotate_and_zoom_component_a420363e569184cd0923a3c6dff6019ca}{currentT}} = 0f
+\begin{DoxyCompactList}\small\item\em current T for lerping of zoom level \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_rotate_and_zoom_component_ad5f4bb60f7d02385cded9602eb48822a}{vel}}
+\begin{DoxyCompactList}\small\item\em velocity vector used by smooth damp \end{DoxyCompactList}\item 
+Quaternion \mbox{\hyperlink{class_rotate_and_zoom_component_a616cda2bf47fa6d5a99c0678e3e51ae8}{initial\+Object\+Rotation}}
+\begin{DoxyCompactList}\small\item\em The Rotation of the object when the interaction starts \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the bahaviour that allows to rotate an obnject that is held with the mouse 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rotate_and_zoom_component_aa116a1acdc75d587605b6fa043474982}\label{class_rotate_and_zoom_component_aa116a1acdc75d587605b6fa043474982}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily override void Rotate\+And\+Zoom\+Component.\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+cleanup funciton after interaction was ended 
+
+
+
+Implements \mbox{\hyperlink{class_interaction_component_aa28f5c9f92b342c3d52f8b0b251fb4fa}{Interaction\+Component}}.
+
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a4f44c8f8dc5f9b2f1f38075595d20489}\label{class_rotate_and_zoom_component_a4f44c8f8dc5f9b2f1f38075595d20489}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!Handle\+Rotation@{Handle\+Rotation}}
+\index{Handle\+Rotation@{Handle\+Rotation}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{Handle\+Rotation()}{HandleRotation()}}
+{\footnotesize\ttfamily void Rotate\+And\+Zoom\+Component.\+Handle\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles rotation of the object 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rotate_and_zoom_component_a4f44c8f8dc5f9b2f1f38075595d20489_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a8157abad4e54f49ebccf9499a3f698a8}\label{class_rotate_and_zoom_component_a8157abad4e54f49ebccf9499a3f698a8}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!Handle\+Zoom@{Handle\+Zoom}}
+\index{Handle\+Zoom@{Handle\+Zoom}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{Handle\+Zoom()}{HandleZoom()}}
+{\footnotesize\ttfamily void Rotate\+And\+Zoom\+Component.\+Handle\+Zoom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the zoom of camera 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rotate_and_zoom_component_a8157abad4e54f49ebccf9499a3f698a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a1afdb59de9b4b255456351189e2f6932}\label{class_rotate_and_zoom_component_a1afdb59de9b4b255456351189e2f6932}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!Start\+Interaction@{Start\+Interaction}}
+\index{Start\+Interaction@{Start\+Interaction}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{Start\+Interaction()}{StartInteraction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Rotate\+And\+Zoom\+Component.\+Start\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}}]{p,  }\item[{Transform}]{obj\+To\+Rot }\end{DoxyParamCaption})}
+
+
+
+sets the object and player that are itneracting 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rotate_and_zoom_component_a1afdb59de9b4b255456351189e2f6932_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_rotate_and_zoom_component_ac6afb9569858cf59c584c7bdfac41def}\label{class_rotate_and_zoom_component_ac6afb9569858cf59c584c7bdfac41def}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!Start\+Interaction@{Start\+Interaction}}
+\index{Start\+Interaction@{Start\+Interaction}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{Start\+Interaction()}{StartInteraction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override void Rotate\+And\+Zoom\+Component.\+Start\+Interaction (\begin{DoxyParamCaption}\item[{Game\+Object}]{activator,  }\item[{Game\+Object}]{interacted\+Upon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setup function when interaction starts 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activator} & obj activating interaction\\
+\hline
+{\em interacted\+Upon} & object that is interacted upon\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_interaction_component_a80d4c2288af453dd9611bbea092843e5}{Interaction\+Component}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rotate_and_zoom_component_ac6afb9569858cf59c584c7bdfac41def_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_rotate_and_zoom_component_af92720943f59348caa6f58952fec5c6b}\label{class_rotate_and_zoom_component_af92720943f59348caa6f58952fec5c6b}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!Update@{Update}}
+\index{Update@{Update}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Rotate\+And\+Zoom\+Component.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_rotate_and_zoom_component_af92720943f59348caa6f58952fec5c6b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a420363e569184cd0923a3c6dff6019ca}\label{class_rotate_and_zoom_component_a420363e569184cd0923a3c6dff6019ca}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!currentT@{currentT}}
+\index{currentT@{currentT}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{currentT}{currentT}}
+{\footnotesize\ttfamily float Rotate\+And\+Zoom\+Component.\+currentT = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current T for lerping of zoom level 
+
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a6a3704e758eaf77ee29764845052dbcf}\label{class_rotate_and_zoom_component_a6a3704e758eaf77ee29764845052dbcf}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!init\+Cam\+Loc\+Pos@{init\+Cam\+Loc\+Pos}}
+\index{init\+Cam\+Loc\+Pos@{init\+Cam\+Loc\+Pos}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{init\+Cam\+Loc\+Pos}{initCamLocPos}}
+{\footnotesize\ttfamily Vector3 Rotate\+And\+Zoom\+Component.\+init\+Cam\+Loc\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the initial camera position for zoom reasons 
+
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a616cda2bf47fa6d5a99c0678e3e51ae8}\label{class_rotate_and_zoom_component_a616cda2bf47fa6d5a99c0678e3e51ae8}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!initial\+Object\+Rotation@{initial\+Object\+Rotation}}
+\index{initial\+Object\+Rotation@{initial\+Object\+Rotation}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{initial\+Object\+Rotation}{initialObjectRotation}}
+{\footnotesize\ttfamily Quaternion Rotate\+And\+Zoom\+Component.\+initial\+Object\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Rotation of the object when the interaction starts 
+
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a752201d107b44a70e657f7024a250116}\label{class_rotate_and_zoom_component_a752201d107b44a70e657f7024a250116}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!object\+To\+Rotate@{object\+To\+Rotate}}
+\index{object\+To\+Rotate@{object\+To\+Rotate}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{object\+To\+Rotate}{objectToRotate}}
+{\footnotesize\ttfamily Transform Rotate\+And\+Zoom\+Component.\+object\+To\+Rotate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+transform of the object that need rotating 
+
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a23043ca556a278ade0b2b55ba849844c}\label{class_rotate_and_zoom_component_a23043ca556a278ade0b2b55ba849844c}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!player\+Holding\+Object@{player\+Holding\+Object}}
+\index{player\+Holding\+Object@{player\+Holding\+Object}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{player\+Holding\+Object}{playerHoldingObject}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} Rotate\+And\+Zoom\+Component.\+player\+Holding\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the player holding the object 
+
+\mbox{\Hypertarget{class_rotate_and_zoom_component_a2fede316c27329fc1bd1fb1c8f2bbfa0}\label{class_rotate_and_zoom_component_a2fede316c27329fc1bd1fb1c8f2bbfa0}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!rotation\+Key@{rotation\+Key}}
+\index{rotation\+Key@{rotation\+Key}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{rotation\+Key}{rotationKey}}
+{\footnotesize\ttfamily Key\+Code Rotate\+And\+Zoom\+Component.\+rotation\+Key = Key\+Code.\+Mouse0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+key that need pressing to rotate the object 
+
+\mbox{\Hypertarget{class_rotate_and_zoom_component_ad5f4bb60f7d02385cded9602eb48822a}\label{class_rotate_and_zoom_component_ad5f4bb60f7d02385cded9602eb48822a}} 
+\index{Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}!vel@{vel}}
+\index{vel@{vel}!Rotate\+And\+Zoom\+Component@{Rotate\+And\+Zoom\+Component}}
+\subsubsection{\texorpdfstring{vel}{vel}}
+{\footnotesize\ttfamily Vector3 Rotate\+And\+Zoom\+Component.\+vel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+velocity vector used by smooth damp 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Interaction/\mbox{\hyperlink{_rotate_and_zoom_interaction_8cs}{Rotate\+And\+Zoom\+Interaction.\+cs}}\end{DoxyCompactItemize}

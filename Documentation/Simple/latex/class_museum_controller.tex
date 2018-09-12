@@ -1,0 +1,443 @@
+\hypertarget{class_museum_controller}{}\section{Museum\+Controller Class Reference}
+\label{class_museum_controller}\index{Museum\+Controller@{Museum\+Controller}}
+
+
+Inheritance diagram for Museum\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_museum_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Museum\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_museum_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_museum_controller_a276d26ec047cda4e6f36b29fb673d968}{Set\+Museum\+To\+Control}} (\mbox{\hyperlink{class_museum}{Museum}} vir\+Mus)
+\begin{DoxyCompactList}\small\item\em Sets the museum that needs controlling creating the room managment units \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room_managment_unit}{Room\+Managment\+Unit}} \mbox{\hyperlink{class_museum_controller_a430d02fd399da5cea23a02f4b9269418}{Get\+Room\+Managment\+Unit\+For\+Room}} (uint r)
+\begin{DoxyCompactList}\small\item\em returns room managment unit that belongs to this room id \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_controller_a56fa5cc287bbe98e48284641da456f61}{Log\+Room\+Managment\+Unit\+For\+Room}} (uint room\+ID)
+\begin{DoxyCompactList}\small\item\em logs a room managment unit for a given room id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_museum_controller}{Museum\+Controller}} \mbox{\hyperlink{class_museum_controller_ab4bf6462a15c26e2acb9340ec207d9a6}{Instance}}
+\begin{DoxyCompactList}\small\item\em the instance of the controller \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_museum_controller_a410c60188546e65ea43c8d7c85cc0713}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_museum_controller_a3c48dd82fe1c3b55ee978ced6095f84e}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_museum_controller_adfeaf699686c1a1aad33bd585db636b9}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_museum_controller_a8f4312e1b672427e94e590e499d2ca8d}{Load\+Room\+And\+Neighbors}} (\mbox{\hyperlink{class_room}{Room}} r\+To\+Load)
+\begin{DoxyCompactList}\small\item\em Loads a room and it\textquotesingle{}s direct neighbors according to the museum graph Load currently means set gamobject active$^\wedge$$^\wedge$ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_controller_aa65b2ea9f99d62431282233f0582fc4a}{Unload\+Room\+And\+Neighbors}} (\mbox{\hyperlink{class_room}{Room}} r\+To\+Unload)
+\begin{DoxyCompactList}\small\item\em unloads a room and it\textquotesingle{}s immediate neighbors according to the museum graph unload currently means set gamobject inactive$^\wedge$$^\wedge$ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_museum_controller_a5b242d5604840f35efb90e4b645829fe}{In\+Bounds}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em checks if cords are in bound of the room grid \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_museum_controller_a09d2311468a7d9359368ddb266cdf898}{On\+Draw\+Gizmos}} ()
+\item 
+void \mbox{\hyperlink{class_museum_controller_a35d0940d2ad548791dda37d371132124}{Draw\+Museum\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em draws the museum graph as gizmos \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_museum_controller_a48d4258798186a4c7bea39d1f522e4ca}{x\+Position\+Scaler}}
+\begin{DoxyCompactList}\small\item\em scaler to convert from world to museum coords \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_museum_controller_a8d52c606f74d7363018bd4a291b010ec}{z\+Position\+Scaler}}
+\begin{DoxyCompactList}\small\item\em scaler to convert from world to museum coords \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_museum_controller_a7741c74482a18bc9ffea21da0f78ec23}{player}}
+\begin{DoxyCompactList}\small\item\em the transform of the player gameobject \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_museum_controller_a45d6d1ffedb15567ac080d1e47092fdc}{manage\+Rooms}}
+\begin{DoxyCompactList}\small\item\em flag to decide if rooms should be managed ro not \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_museum_controller_a1a767943d586c25b0fe68bafd35276d5}{draw\+Graph\+Gizmos}}
+\begin{DoxyCompactList}\small\item\em flag to decide if gizmos should be drawn \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_museum_controller_a4ee410c0d4bf59e30d0374537fc28dcb}{draw\+Room\+Managment\+Unit\+Gizmos}}
+\begin{DoxyCompactList}\small\item\em flag to decide if room managment gizmos should be drawn \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum_graph}{Museum\+Graph}} \mbox{\hyperlink{class_museum_controller_a57a917ddd05b61fde1cc3bd5ea6dff58}{virt\+Muse\+Graph}}
+\begin{DoxyCompactList}\small\item\em the graph of room conectivity for a museum \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_museum_controller_afdb90407fa9a9f8712edc815798bf2c0}{museum\+Size}}
+\begin{DoxyCompactList}\small\item\em the size of the museum \end{DoxyCompactList}\item 
+Dictionary$<$ uint, \mbox{\hyperlink{class_room_managment_unit}{Room\+Managment\+Unit}} $>$ \mbox{\hyperlink{class_museum_controller_a57b266b14d5c65fb079c5a186bdca086}{room\+Managment\+Map}}
+\begin{DoxyCompactList}\small\item\em dictionary mapping from room id to room mamangment unit \end{DoxyCompactList}\item 
+Dictionary$<$ uint, \mbox{\hyperlink{class_room}{Room}} $>$ \mbox{\hyperlink{class_museum_controller_a7a6b5291769b64502b696b1d12a9622c}{room\+Dictionary}}
+\begin{DoxyCompactList}\small\item\em temp dictionary that maps from room id to room \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room}{Room}} \mbox{[},\mbox{]} \mbox{\hyperlink{class_museum_controller_a8f8aae6242a4e941a011e2f50b51823d}{room\+Map}}
+\begin{DoxyCompactList}\small\item\em grid with size of museum that has refrence to which room this tile belongs too \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room}{Room}} \mbox{\hyperlink{class_museum_controller_ad8a32fa2d9bbd8d2e995331183cd20fb}{room\+Player\+Is\+In}}
+\begin{DoxyCompactList}\small\item\em the room the player is currently in \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_museum_controller_a410c60188546e65ea43c8d7c85cc0713}\label{class_museum_controller_a410c60188546e65ea43c8d7c85cc0713}} 
+\index{Museum\+Controller@{Museum\+Controller}!Awake@{Awake}}
+\index{Awake@{Awake}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_museum_controller_a35d0940d2ad548791dda37d371132124}\label{class_museum_controller_a35d0940d2ad548791dda37d371132124}} 
+\index{Museum\+Controller@{Museum\+Controller}!Draw\+Museum\+Graph@{Draw\+Museum\+Graph}}
+\index{Draw\+Museum\+Graph@{Draw\+Museum\+Graph}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Draw\+Museum\+Graph()}{DrawMuseumGraph()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+Draw\+Museum\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+draws the museum graph as gizmos 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_a35d0940d2ad548791dda37d371132124_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_controller_a430d02fd399da5cea23a02f4b9269418}\label{class_museum_controller_a430d02fd399da5cea23a02f4b9269418}} 
+\index{Museum\+Controller@{Museum\+Controller}!Get\+Room\+Managment\+Unit\+For\+Room@{Get\+Room\+Managment\+Unit\+For\+Room}}
+\index{Get\+Room\+Managment\+Unit\+For\+Room@{Get\+Room\+Managment\+Unit\+For\+Room}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Room\+Managment\+Unit\+For\+Room()}{GetRoomManagmentUnitForRoom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room_managment_unit}{Room\+Managment\+Unit}} Museum\+Controller.\+Get\+Room\+Managment\+Unit\+For\+Room (\begin{DoxyParamCaption}\item[{uint}]{r }\end{DoxyParamCaption})}
+
+
+
+returns room managment unit that belongs to this room id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the room id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the room managment unit
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_a430d02fd399da5cea23a02f4b9269418_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_controller_a5b242d5604840f35efb90e4b645829fe}\label{class_museum_controller_a5b242d5604840f35efb90e4b645829fe}} 
+\index{Museum\+Controller@{Museum\+Controller}!In\+Bounds@{In\+Bounds}}
+\index{In\+Bounds@{In\+Bounds}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{In\+Bounds()}{InBounds()}}
+{\footnotesize\ttfamily bool Museum\+Controller.\+In\+Bounds (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if cords are in bound of the room grid 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_a5b242d5604840f35efb90e4b645829fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_controller_a8f4312e1b672427e94e590e499d2ca8d}\label{class_museum_controller_a8f4312e1b672427e94e590e499d2ca8d}} 
+\index{Museum\+Controller@{Museum\+Controller}!Load\+Room\+And\+Neighbors@{Load\+Room\+And\+Neighbors}}
+\index{Load\+Room\+And\+Neighbors@{Load\+Room\+And\+Neighbors}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Load\+Room\+And\+Neighbors()}{LoadRoomAndNeighbors()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+Load\+Room\+And\+Neighbors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room}{Room}}}]{r\+To\+Load }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads a room and it\textquotesingle{}s direct neighbors according to the museum graph Load currently means set gamobject active$^\wedge$$^\wedge$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+To\+Load} & The room that needs loading\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_a8f4312e1b672427e94e590e499d2ca8d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_a8f4312e1b672427e94e590e499d2ca8d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_controller_a56fa5cc287bbe98e48284641da456f61}\label{class_museum_controller_a56fa5cc287bbe98e48284641da456f61}} 
+\index{Museum\+Controller@{Museum\+Controller}!Log\+Room\+Managment\+Unit\+For\+Room@{Log\+Room\+Managment\+Unit\+For\+Room}}
+\index{Log\+Room\+Managment\+Unit\+For\+Room@{Log\+Room\+Managment\+Unit\+For\+Room}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Log\+Room\+Managment\+Unit\+For\+Room()}{LogRoomManagmentUnitForRoom()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+Log\+Room\+Managment\+Unit\+For\+Room (\begin{DoxyParamCaption}\item[{uint}]{room\+ID }\end{DoxyParamCaption})}
+
+
+
+logs a room managment unit for a given room id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+ID} & the room id of the room that needs logging\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_museum_controller_a09d2311468a7d9359368ddb266cdf898}\label{class_museum_controller_a09d2311468a7d9359368ddb266cdf898}} 
+\index{Museum\+Controller@{Museum\+Controller}!On\+Draw\+Gizmos@{On\+Draw\+Gizmos}}
+\index{On\+Draw\+Gizmos@{On\+Draw\+Gizmos}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{On\+Draw\+Gizmos()}{OnDrawGizmos()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_a09d2311468a7d9359368ddb266cdf898_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_controller_a276d26ec047cda4e6f36b29fb673d968}\label{class_museum_controller_a276d26ec047cda4e6f36b29fb673d968}} 
+\index{Museum\+Controller@{Museum\+Controller}!Set\+Museum\+To\+Control@{Set\+Museum\+To\+Control}}
+\index{Set\+Museum\+To\+Control@{Set\+Museum\+To\+Control}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Set\+Museum\+To\+Control()}{SetMuseumToControl()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+Set\+Museum\+To\+Control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_museum}{Museum}}}]{vir\+Mus }\end{DoxyParamCaption})}
+
+
+
+Sets the museum that needs controlling creating the room managment units 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vir\+Mus} & the museum that needs controlling\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_a276d26ec047cda4e6f36b29fb673d968_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_controller_a3c48dd82fe1c3b55ee978ced6095f84e}\label{class_museum_controller_a3c48dd82fe1c3b55ee978ced6095f84e}} 
+\index{Museum\+Controller@{Museum\+Controller}!Start@{Start}}
+\index{Start@{Start}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_a3c48dd82fe1c3b55ee978ced6095f84e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_controller_aa65b2ea9f99d62431282233f0582fc4a}\label{class_museum_controller_aa65b2ea9f99d62431282233f0582fc4a}} 
+\index{Museum\+Controller@{Museum\+Controller}!Unload\+Room\+And\+Neighbors@{Unload\+Room\+And\+Neighbors}}
+\index{Unload\+Room\+And\+Neighbors@{Unload\+Room\+And\+Neighbors}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Unload\+Room\+And\+Neighbors()}{UnloadRoomAndNeighbors()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+Unload\+Room\+And\+Neighbors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room}{Room}}}]{r\+To\+Unload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+unloads a room and it\textquotesingle{}s immediate neighbors according to the museum graph unload currently means set gamobject inactive$^\wedge$$^\wedge$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+To\+Unload} & the room that needs unloading\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_aa65b2ea9f99d62431282233f0582fc4a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_aa65b2ea9f99d62431282233f0582fc4a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_controller_adfeaf699686c1a1aad33bd585db636b9}\label{class_museum_controller_adfeaf699686c1a1aad33bd585db636b9}} 
+\index{Museum\+Controller@{Museum\+Controller}!Update@{Update}}
+\index{Update@{Update}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Museum\+Controller.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_controller_adfeaf699686c1a1aad33bd585db636b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_museum_controller_a1a767943d586c25b0fe68bafd35276d5}\label{class_museum_controller_a1a767943d586c25b0fe68bafd35276d5}} 
+\index{Museum\+Controller@{Museum\+Controller}!draw\+Graph\+Gizmos@{draw\+Graph\+Gizmos}}
+\index{draw\+Graph\+Gizmos@{draw\+Graph\+Gizmos}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{draw\+Graph\+Gizmos}{drawGraphGizmos}}
+{\footnotesize\ttfamily bool Museum\+Controller.\+draw\+Graph\+Gizmos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag to decide if gizmos should be drawn 
+
+\mbox{\Hypertarget{class_museum_controller_a4ee410c0d4bf59e30d0374537fc28dcb}\label{class_museum_controller_a4ee410c0d4bf59e30d0374537fc28dcb}} 
+\index{Museum\+Controller@{Museum\+Controller}!draw\+Room\+Managment\+Unit\+Gizmos@{draw\+Room\+Managment\+Unit\+Gizmos}}
+\index{draw\+Room\+Managment\+Unit\+Gizmos@{draw\+Room\+Managment\+Unit\+Gizmos}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{draw\+Room\+Managment\+Unit\+Gizmos}{drawRoomManagmentUnitGizmos}}
+{\footnotesize\ttfamily bool Museum\+Controller.\+draw\+Room\+Managment\+Unit\+Gizmos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag to decide if room managment gizmos should be drawn 
+
+\mbox{\Hypertarget{class_museum_controller_ab4bf6462a15c26e2acb9340ec207d9a6}\label{class_museum_controller_ab4bf6462a15c26e2acb9340ec207d9a6}} 
+\index{Museum\+Controller@{Museum\+Controller}!Instance@{Instance}}
+\index{Instance@{Instance}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_controller}{Museum\+Controller}} Museum\+Controller.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+the instance of the controller 
+
+\mbox{\Hypertarget{class_museum_controller_a45d6d1ffedb15567ac080d1e47092fdc}\label{class_museum_controller_a45d6d1ffedb15567ac080d1e47092fdc}} 
+\index{Museum\+Controller@{Museum\+Controller}!manage\+Rooms@{manage\+Rooms}}
+\index{manage\+Rooms@{manage\+Rooms}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{manage\+Rooms}{manageRooms}}
+{\footnotesize\ttfamily bool Museum\+Controller.\+manage\+Rooms\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag to decide if rooms should be managed ro not 
+
+\mbox{\Hypertarget{class_museum_controller_afdb90407fa9a9f8712edc815798bf2c0}\label{class_museum_controller_afdb90407fa9a9f8712edc815798bf2c0}} 
+\index{Museum\+Controller@{Museum\+Controller}!museum\+Size@{museum\+Size}}
+\index{museum\+Size@{museum\+Size}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{museum\+Size}{museumSize}}
+{\footnotesize\ttfamily int Museum\+Controller.\+museum\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the size of the museum 
+
+\mbox{\Hypertarget{class_museum_controller_a7741c74482a18bc9ffea21da0f78ec23}\label{class_museum_controller_a7741c74482a18bc9ffea21da0f78ec23}} 
+\index{Museum\+Controller@{Museum\+Controller}!player@{player}}
+\index{player@{player}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily Transform Museum\+Controller.\+player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the transform of the player gameobject 
+
+\mbox{\Hypertarget{class_museum_controller_a7a6b5291769b64502b696b1d12a9622c}\label{class_museum_controller_a7a6b5291769b64502b696b1d12a9622c}} 
+\index{Museum\+Controller@{Museum\+Controller}!room\+Dictionary@{room\+Dictionary}}
+\index{room\+Dictionary@{room\+Dictionary}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{room\+Dictionary}{roomDictionary}}
+{\footnotesize\ttfamily Dictionary$<$uint, \mbox{\hyperlink{class_room}{Room}}$>$ Museum\+Controller.\+room\+Dictionary\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+temp dictionary that maps from room id to room 
+
+\mbox{\Hypertarget{class_museum_controller_a57b266b14d5c65fb079c5a186bdca086}\label{class_museum_controller_a57b266b14d5c65fb079c5a186bdca086}} 
+\index{Museum\+Controller@{Museum\+Controller}!room\+Managment\+Map@{room\+Managment\+Map}}
+\index{room\+Managment\+Map@{room\+Managment\+Map}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{room\+Managment\+Map}{roomManagmentMap}}
+{\footnotesize\ttfamily Dictionary$<$uint, \mbox{\hyperlink{class_room_managment_unit}{Room\+Managment\+Unit}}$>$ Museum\+Controller.\+room\+Managment\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+dictionary mapping from room id to room mamangment unit 
+
+\mbox{\Hypertarget{class_museum_controller_a8f8aae6242a4e941a011e2f50b51823d}\label{class_museum_controller_a8f8aae6242a4e941a011e2f50b51823d}} 
+\index{Museum\+Controller@{Museum\+Controller}!room\+Map@{room\+Map}}
+\index{room\+Map@{room\+Map}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{room\+Map}{roomMap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room}{Room}} \mbox{[},\mbox{]} Museum\+Controller.\+room\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+grid with size of museum that has refrence to which room this tile belongs too 
+
+\mbox{\Hypertarget{class_museum_controller_ad8a32fa2d9bbd8d2e995331183cd20fb}\label{class_museum_controller_ad8a32fa2d9bbd8d2e995331183cd20fb}} 
+\index{Museum\+Controller@{Museum\+Controller}!room\+Player\+Is\+In@{room\+Player\+Is\+In}}
+\index{room\+Player\+Is\+In@{room\+Player\+Is\+In}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{room\+Player\+Is\+In}{roomPlayerIsIn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room}{Room}} Museum\+Controller.\+room\+Player\+Is\+In\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the room the player is currently in 
+
+\mbox{\Hypertarget{class_museum_controller_a57a917ddd05b61fde1cc3bd5ea6dff58}\label{class_museum_controller_a57a917ddd05b61fde1cc3bd5ea6dff58}} 
+\index{Museum\+Controller@{Museum\+Controller}!virt\+Muse\+Graph@{virt\+Muse\+Graph}}
+\index{virt\+Muse\+Graph@{virt\+Muse\+Graph}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{virt\+Muse\+Graph}{virtMuseGraph}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_graph}{Museum\+Graph}} Museum\+Controller.\+virt\+Muse\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the graph of room conectivity for a museum 
+
+\mbox{\Hypertarget{class_museum_controller_a48d4258798186a4c7bea39d1f522e4ca}\label{class_museum_controller_a48d4258798186a4c7bea39d1f522e4ca}} 
+\index{Museum\+Controller@{Museum\+Controller}!x\+Position\+Scaler@{x\+Position\+Scaler}}
+\index{x\+Position\+Scaler@{x\+Position\+Scaler}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{x\+Position\+Scaler}{xPositionScaler}}
+{\footnotesize\ttfamily float Museum\+Controller.\+x\+Position\+Scaler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+scaler to convert from world to museum coords 
+
+\mbox{\Hypertarget{class_museum_controller_a8d52c606f74d7363018bd4a291b010ec}\label{class_museum_controller_a8d52c606f74d7363018bd4a291b010ec}} 
+\index{Museum\+Controller@{Museum\+Controller}!z\+Position\+Scaler@{z\+Position\+Scaler}}
+\index{z\+Position\+Scaler@{z\+Position\+Scaler}!Museum\+Controller@{Museum\+Controller}}
+\subsubsection{\texorpdfstring{z\+Position\+Scaler}{zPositionScaler}}
+{\footnotesize\ttfamily float Museum\+Controller.\+z\+Position\+Scaler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+scaler to convert from world to museum coords 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Controllers/\mbox{\hyperlink{_museum_controller_8cs}{Museum\+Controller.\+cs}}\end{DoxyCompactItemize}

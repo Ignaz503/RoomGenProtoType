@@ -1,0 +1,6 @@
+<map id="PCPlayerHand" name="PCPlayerHand">
+<area shape="rect" id="node2" href="$class_player_hand.html" title="PlayerHand" alt="" coords="177,95,267,121"/>
+<area shape="rect" id="node6" href="$class_meta_data_display.html" title="The display for all the metadata TODO: make interactable and define pickup interaction ..." alt="" coords="291,95,412,121"/>
+<area shape="rect" id="node4" href="$interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="173,5,287,32"/>
+<area shape="rect" id="node5" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="5,5,97,32"/>
+</map>

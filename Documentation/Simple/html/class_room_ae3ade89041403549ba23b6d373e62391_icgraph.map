@@ -1,0 +1,4 @@
+<map id="Room.RemoveUnnecessaryWalls" name="Room.RemoveUnnecessaryWalls">
+<area shape="rect" id="node2" href="$class_room.html#aade4dd11dfe01508688d382a49d7c606" title="Creates the correct walls for this room and ensures that the museum knows about them ..." alt="" coords="268,5,471,32"/>
+<area shape="rect" id="node3" href="$class_room.html#aae232017aa8caf310d109e90c8821227" title="Room.Room" alt="" coords="519,5,613,32"/>
+</map>

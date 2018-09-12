@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_i_room_placable_checker.html" title="IRoomPlacableChecker" alt="" coords="5,5,163,32"/>
+<area shape="rect" id="node2" href="$class_base_room_type_placable_cheker.html" title="checks for the room types defined by me if they are placable at a certain location in the musem ..." alt="" coords="211,5,416,32"/>
+</map>

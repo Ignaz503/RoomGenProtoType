@@ -1,0 +1,5 @@
+<map id="VirtMuseWeb.Utility.UnityMeshData.Deserialize" name="VirtMuseWeb.Utility.UnityMeshData.Deserialize">
+<area shape="rect" id="node2" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#a2b9e6a172e5359b12f1d697e8f2492cc" title="VirtMuseWeb.Models.Resource\lModel.operator DisplayMeshResource" alt="" coords="225,5,468,47"/>
+<area shape="rect" id="node3" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#a57f31b86ab776544b1f5480d7efc1a9c" title="Converison to appliable mesh resource as coroutine " alt="" coords="243,71,450,112"/>
+<area shape="rect" id="node4" href="$class_display_resource_request.html#ab447f9d42e473b8bc8839c6f3d306a17" title="Called when the resource starts working, should most likely start a new thread " alt="" coords="516,71,716,112"/>
+</map>

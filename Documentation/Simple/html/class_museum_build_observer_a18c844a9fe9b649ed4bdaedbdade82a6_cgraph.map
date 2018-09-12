@@ -1,0 +1,9 @@
+<map id="MuseumBuildObserver.Start" name="MuseumBuildObserver.Start">
+<area shape="rect" id="node2" href="$class_museum_build_observer.html#aa808cdf3870a709891e1dc4262c5aec1" title="updates entrance, and display above " alt="" coords="240,5,437,47"/>
+<area shape="rect" id="node3" href="$class_museum_build_observer.html#a44742cfdf94ae34a329e689e6995075e" title="checks if museum finised building WARNING: currently temp version " alt="" coords="488,71,711,98"/>
+<area shape="rect" id="node5" href="$class_museum_builder.html#a875e7252e31ad7ae28f17eb365ef5ce5" title="Sets player position to the first floor in the museum. " alt="" coords="510,152,689,193"/>
+<area shape="rect" id="node7" href="$class_museum_build_observer.html#a506c7314ea2734e8f4881167ab5f2460" title="tepelports player if possible " alt="" coords="237,123,440,164"/>
+<area shape="rect" id="node8" href="$class_base_door.html#a2b616c52626299f25ac25f7deab44dc4" title="function called to lock a door closed " alt="" coords="283,239,394,266"/>
+<area shape="rect" id="node4" href="$class_base_door.html#a1fe85317a4742aec4d03deb7c0d52fd2" title="function to unlock a door if it is locked " alt="" coords="538,13,661,39"/>
+<area shape="rect" id="node6" href="$class_museum.html#a405e60db962417dde46d46180cbf81df" title="Transforms a two dimensional coord(row|column) into a one dimensional coord for this museum ..." alt="" coords="759,152,945,193"/>
+</map>

@@ -1,0 +1,302 @@
+\hypertarget{class_sliding_door}{}\section{Sliding\+Door Class Reference}
+\label{class_sliding_door}\index{Sliding\+Door@{Sliding\+Door}}
+
+
+door that slides open to one side  
+
+
+
+
+Inheritance diagram for Sliding\+Door\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_sliding_door__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sliding\+Door\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_sliding_door__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_sliding_door_a22d2e8580503b045da48510214599746}{Close}} ()
+\begin{DoxyCompactList}\small\item\em function called to close door \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_sliding_door_aaf090e96cc143eb5ed3eaf875045efc9}{Open}} ()
+\begin{DoxyCompactList}\small\item\em function called to open the door \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_sliding_door_a2b21b6ea3181ac95520e0490c900d1a6}{Lock}} (string key)
+\begin{DoxyCompactList}\small\item\em function called to lock a door closed \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_sliding_door_a259817872880d475d54ba9721a6db5cc}{Unlock}} (string key)
+\begin{DoxyCompactList}\small\item\em function to unlock a door if it is locked \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_sliding_door_aca96469919dc50b5b3cc77cd6f4fc7d2}{Lock\+Open}} ()
+\begin{DoxyCompactList}\small\item\em function to lock a door open and stop it from closing \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_sliding_door_af3b93ba6356b95277be1913224ad1415}{Unlock\+Open}} ()
+\begin{DoxyCompactList}\small\item\em function to unlock a door from it\textquotesingle{}s forced open state \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sliding_door_af7235e859e82cdf3dbedc926cf789623}{Awake}} ()
+\item 
+I\+Enumerator \mbox{\hyperlink{class_sliding_door_adb583a66e0b4eeb5e03e50a3d4d4e109}{Open\+Corutine}} ()
+\begin{DoxyCompactList}\small\item\em coroutine to open sliding door \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_sliding_door_adcfa4000b6eafa6ec8b6ec335dbd5efe}{Close\+Corutine}} ()
+\begin{DoxyCompactList}\small\item\em coroutine to close the door \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_sliding_door_ae98a84a3b0580b64ace05dd5ea8f6a2c}{default\+Close\+Position}}
+\begin{DoxyCompactList}\small\item\em local position when door is closed \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sliding_door_a88b13866a50815f6435905ad8f07888b}{max\+Movement}}
+\begin{DoxyCompactList}\small\item\em maximum movment to the side the door needs to do to be open \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_sliding_door_aa1520830e43525a3b3f0ea3ac5891407}{current\+Movement}}
+\begin{DoxyCompactList}\small\item\em the current movement of the door when opening or closing \end{DoxyCompactList}\item 
+Coroutine \mbox{\hyperlink{class_sliding_door_a0f440064aa6ae61923c4a05c38a6a60d}{open\+Coroutine}}
+\begin{DoxyCompactList}\small\item\em coroutine ref when openeing \end{DoxyCompactList}\item 
+Coroutine \mbox{\hyperlink{class_sliding_door_adfdf9df55e4882d083680e2cde5016c5}{close\+Coroutine}}
+\begin{DoxyCompactList}\small\item\em coroutine ref when closing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+door that slides open to one side 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sliding_door_af7235e859e82cdf3dbedc926cf789623}\label{class_sliding_door_af7235e859e82cdf3dbedc926cf789623}} 
+\index{Sliding\+Door@{Sliding\+Door}!Awake@{Awake}}
+\index{Awake@{Awake}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Sliding\+Door.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_sliding_door_a22d2e8580503b045da48510214599746}\label{class_sliding_door_a22d2e8580503b045da48510214599746}} 
+\index{Sliding\+Door@{Sliding\+Door}!Close@{Close}}
+\index{Close@{Close}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily override void Sliding\+Door.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function called to close door 
+
+
+
+Implements \mbox{\hyperlink{class_base_door_a94151e5cbf90bd3d2b55f339b87916c7}{Base\+Door}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sliding_door_a22d2e8580503b045da48510214599746_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sliding_door_adcfa4000b6eafa6ec8b6ec335dbd5efe}\label{class_sliding_door_adcfa4000b6eafa6ec8b6ec335dbd5efe}} 
+\index{Sliding\+Door@{Sliding\+Door}!Close\+Corutine@{Close\+Corutine}}
+\index{Close\+Corutine@{Close\+Corutine}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Close\+Corutine()}{CloseCorutine()}}
+{\footnotesize\ttfamily I\+Enumerator Sliding\+Door.\+Close\+Corutine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+coroutine to close the door 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sliding_door_adcfa4000b6eafa6ec8b6ec335dbd5efe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_sliding_door_adcfa4000b6eafa6ec8b6ec335dbd5efe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sliding_door_a2b21b6ea3181ac95520e0490c900d1a6}\label{class_sliding_door_a2b21b6ea3181ac95520e0490c900d1a6}} 
+\index{Sliding\+Door@{Sliding\+Door}!Lock@{Lock}}
+\index{Lock@{Lock}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Lock()}{Lock()}}
+{\footnotesize\ttfamily override void Sliding\+Door.\+Lock (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function called to lock a door closed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key needed to lock the door\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_base_door_a2b616c52626299f25ac25f7deab44dc4}{Base\+Door}}.
+
+\mbox{\Hypertarget{class_sliding_door_aca96469919dc50b5b3cc77cd6f4fc7d2}\label{class_sliding_door_aca96469919dc50b5b3cc77cd6f4fc7d2}} 
+\index{Sliding\+Door@{Sliding\+Door}!Lock\+Open@{Lock\+Open}}
+\index{Lock\+Open@{Lock\+Open}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Lock\+Open()}{LockOpen()}}
+{\footnotesize\ttfamily override void Sliding\+Door.\+Lock\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function to lock a door open and stop it from closing 
+
+
+
+Implements \mbox{\hyperlink{class_base_door_a9a851525c3b6e878bec459992ac75408}{Base\+Door}}.
+
+\mbox{\Hypertarget{class_sliding_door_aaf090e96cc143eb5ed3eaf875045efc9}\label{class_sliding_door_aaf090e96cc143eb5ed3eaf875045efc9}} 
+\index{Sliding\+Door@{Sliding\+Door}!Open@{Open}}
+\index{Open@{Open}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily override void Sliding\+Door.\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function called to open the door 
+
+
+
+Implements \mbox{\hyperlink{class_base_door_a418df6f73cc5c56b6989c0512a6a909b}{Base\+Door}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sliding_door_aaf090e96cc143eb5ed3eaf875045efc9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sliding_door_adb583a66e0b4eeb5e03e50a3d4d4e109}\label{class_sliding_door_adb583a66e0b4eeb5e03e50a3d4d4e109}} 
+\index{Sliding\+Door@{Sliding\+Door}!Open\+Corutine@{Open\+Corutine}}
+\index{Open\+Corutine@{Open\+Corutine}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Open\+Corutine()}{OpenCorutine()}}
+{\footnotesize\ttfamily I\+Enumerator Sliding\+Door.\+Open\+Corutine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+coroutine to open sliding door 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sliding_door_adb583a66e0b4eeb5e03e50a3d4d4e109_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_sliding_door_adb583a66e0b4eeb5e03e50a3d4d4e109_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sliding_door_a259817872880d475d54ba9721a6db5cc}\label{class_sliding_door_a259817872880d475d54ba9721a6db5cc}} 
+\index{Sliding\+Door@{Sliding\+Door}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Unlock()}{Unlock()}}
+{\footnotesize\ttfamily override void Sliding\+Door.\+Unlock (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function to unlock a door if it is locked 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key needed to unlock it\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_base_door_a1fe85317a4742aec4d03deb7c0d52fd2}{Base\+Door}}.
+
+\mbox{\Hypertarget{class_sliding_door_af3b93ba6356b95277be1913224ad1415}\label{class_sliding_door_af3b93ba6356b95277be1913224ad1415}} 
+\index{Sliding\+Door@{Sliding\+Door}!Unlock\+Open@{Unlock\+Open}}
+\index{Unlock\+Open@{Unlock\+Open}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{Unlock\+Open()}{UnlockOpen()}}
+{\footnotesize\ttfamily override void Sliding\+Door.\+Unlock\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+function to unlock a door from it\textquotesingle{}s forced open state 
+
+
+
+Implements \mbox{\hyperlink{class_base_door_aae09177b7a5578ede6d44f758551684e}{Base\+Door}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sliding_door_adfdf9df55e4882d083680e2cde5016c5}\label{class_sliding_door_adfdf9df55e4882d083680e2cde5016c5}} 
+\index{Sliding\+Door@{Sliding\+Door}!close\+Coroutine@{close\+Coroutine}}
+\index{close\+Coroutine@{close\+Coroutine}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{close\+Coroutine}{closeCoroutine}}
+{\footnotesize\ttfamily Coroutine Sliding\+Door.\+close\+Coroutine\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+coroutine ref when closing 
+
+\mbox{\Hypertarget{class_sliding_door_aa1520830e43525a3b3f0ea3ac5891407}\label{class_sliding_door_aa1520830e43525a3b3f0ea3ac5891407}} 
+\index{Sliding\+Door@{Sliding\+Door}!current\+Movement@{current\+Movement}}
+\index{current\+Movement@{current\+Movement}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{current\+Movement}{currentMovement}}
+{\footnotesize\ttfamily float Sliding\+Door.\+current\+Movement\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the current movement of the door when opening or closing 
+
+\mbox{\Hypertarget{class_sliding_door_ae98a84a3b0580b64ace05dd5ea8f6a2c}\label{class_sliding_door_ae98a84a3b0580b64ace05dd5ea8f6a2c}} 
+\index{Sliding\+Door@{Sliding\+Door}!default\+Close\+Position@{default\+Close\+Position}}
+\index{default\+Close\+Position@{default\+Close\+Position}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{default\+Close\+Position}{defaultClosePosition}}
+{\footnotesize\ttfamily float Sliding\+Door.\+default\+Close\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+local position when door is closed 
+
+\mbox{\Hypertarget{class_sliding_door_a88b13866a50815f6435905ad8f07888b}\label{class_sliding_door_a88b13866a50815f6435905ad8f07888b}} 
+\index{Sliding\+Door@{Sliding\+Door}!max\+Movement@{max\+Movement}}
+\index{max\+Movement@{max\+Movement}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{max\+Movement}{maxMovement}}
+{\footnotesize\ttfamily float Sliding\+Door.\+max\+Movement\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+maximum movment to the side the door needs to do to be open 
+
+\mbox{\Hypertarget{class_sliding_door_a0f440064aa6ae61923c4a05c38a6a60d}\label{class_sliding_door_a0f440064aa6ae61923c4a05c38a6a60d}} 
+\index{Sliding\+Door@{Sliding\+Door}!open\+Coroutine@{open\+Coroutine}}
+\index{open\+Coroutine@{open\+Coroutine}!Sliding\+Door@{Sliding\+Door}}
+\subsubsection{\texorpdfstring{open\+Coroutine}{openCoroutine}}
+{\footnotesize\ttfamily Coroutine Sliding\+Door.\+open\+Coroutine\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+coroutine ref when openeing 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Door/\mbox{\hyperlink{_sliding_door_8cs}{Sliding\+Door.\+cs}}\end{DoxyCompactItemize}

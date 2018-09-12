@@ -1,0 +1,4 @@
+<map id="Display.SetInteractionType" name="Display.SetInteractionType">
+<area shape="rect" id="node2" href="$class_display.html#a811157ddb42ae4d72f690457a08711d3" title="Applies a resource to a display " alt="" coords="231,5,388,32"/>
+<area shape="rect" id="node3" href="$class_display_resource_request.html#a60a8a75088ba20c6c42ebcab8309f1de" title="called when done with request, and it is now time to apply it to a gameobject " alt="" coords="436,5,672,32"/>
+</map>

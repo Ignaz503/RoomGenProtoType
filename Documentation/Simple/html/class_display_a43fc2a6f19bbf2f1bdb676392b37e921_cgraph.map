@@ -1,0 +1,7 @@
+<map id="Display.Interact" name="Display.Interact">
+<area shape="rect" id="node2" href="$class_display.html#a29f45efdf15e97219d2c8a614d699da8" title="called from event when the interction is ended " alt="" coords="165,31,348,57"/>
+<area shape="rect" id="node5" href="$class_interaction.html#afa5031e1db8f7c23cf26c896937e69f9" title="Function that should be called on interact This Function should apply the InteractionComponents ..." alt="" coords="169,81,344,108"/>
+<area shape="rect" id="node6" href="$class_display.html#a21c51fcf185403197a78a5acfd2065de" title="called when interaction with this display started used to maybe disable anything on the display gamob..." alt="" coords="171,132,342,159"/>
+<area shape="rect" id="node3" href="$class_interaction.html#a13c7d99dbecf8e0d61973fd23de6400c" title="function called on end of interaction should cleanup any components added to any gamobject ..." alt="" coords="396,5,565,32"/>
+<area shape="rect" id="node4" href="$class_display.html#a6fd38485267e1b78f1d1dfb589ec4ae0" title="called when an interaction ends used to reactivate any component deactivated during the interaction ..." alt="" coords="397,56,564,83"/>
+</map>

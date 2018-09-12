@@ -1,0 +1,170 @@
+\hypertarget{class_center_image_display}{}\section{Center\+Image\+Display Class Reference}
+\label{class_center_image_display}\index{Center\+Image\+Display@{Center\+Image\+Display}}
+
+
+Inheritance diagram for Center\+Image\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_center_image_display__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Center\+Image\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_center_image_display__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_center_image_display_a140b8b82522c1aedb473b3cd532dcd34}{Apply\+Resource}} (\mbox{\hyperlink{class_base_display_resource}{Base\+Display\+Resource}} resource)
+\begin{DoxyCompactList}\small\item\em Applies a resource to a display \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_center_image_display_a3da996020c7d8abcd24f35660945703a}{Set\+Up}} (\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}} disp\+Info, Game\+Object parent)
+\begin{DoxyCompactList}\small\item\em Set up the display in the museum, position and rotation \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_center_image_display_af746f7d72e82809aaa0b5b5bf0ad2cc0}{Apply\+Pre\+Processing\+Information}} (\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}} info)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Raw\+Image \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_center_image_display_afd5ccf58dcdcddc7592026ee840cf55d}{display\+Mesh\+Renderes}}
+\begin{DoxyCompactList}\small\item\em the mesh renderes on all sides of the pillar \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override System.\+Type \mbox{\hyperlink{class_center_image_display_ac6ddf9c8df99ff76c0f508ba4e45a217}{Set\+To\+Default\+Interaction\+Behaviour}} ()
+\begin{DoxyCompactList}\small\item\em if the wanted behaviour is not possible or not exitent the behaviour will be set to this default \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_center_image_display_a2944541a38bcc65b7fff15200c9f0fc3}{Interaction\+Started}} ()
+\begin{DoxyCompactList}\small\item\em called when interaction with this display started used to maybe disable anything on the display gamobject if needed \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_center_image_display_ac78f5ea36aa445bb3d12124f1baf814d}{Interaction\+Ended}} ()
+\begin{DoxyCompactList}\small\item\em called when an interaction ends used to reactivate any component deactivated during the interaction \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_center_image_display_a413c4767daa6cca041577ba63eb3b8d5}{Awake}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_center_image_display_af746f7d72e82809aaa0b5b5bf0ad2cc0}\label{class_center_image_display_af746f7d72e82809aaa0b5b5bf0ad2cc0}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}}
+\index{Apply\+Pre\+Processing\+Information@{Apply\+Pre\+Processing\+Information}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Pre\+Processing\+Information()}{ApplyPreProcessingInformation()}}
+{\footnotesize\ttfamily override void Center\+Image\+Display.\+Apply\+Pre\+Processing\+Information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pre_processing_game_object_information}{Pre\+Processing\+Game\+Object\+Information}}}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_display_ab9cd24c11c43dd87bc50e85a8e9e4c31}{Display}}.
+
+\mbox{\Hypertarget{class_center_image_display_a140b8b82522c1aedb473b3cd532dcd34}\label{class_center_image_display_a140b8b82522c1aedb473b3cd532dcd34}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!Apply\+Resource@{Apply\+Resource}}
+\index{Apply\+Resource@{Apply\+Resource}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{Apply\+Resource()}{ApplyResource()}}
+{\footnotesize\ttfamily override void Center\+Image\+Display.\+Apply\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_base_display_resource}{Base\+Display\+Resource}}}]{resource }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Applies a resource to a display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_display_a811157ddb42ae4d72f690457a08711d3}{Display}}.
+
+\mbox{\Hypertarget{class_center_image_display_a413c4767daa6cca041577ba63eb3b8d5}\label{class_center_image_display_a413c4767daa6cca041577ba63eb3b8d5}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!Awake@{Awake}}
+\index{Awake@{Awake}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Center\+Image\+Display.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_center_image_display_ac78f5ea36aa445bb3d12124f1baf814d}\label{class_center_image_display_ac78f5ea36aa445bb3d12124f1baf814d}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!Interaction\+Ended@{Interaction\+Ended}}
+\index{Interaction\+Ended@{Interaction\+Ended}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{Interaction\+Ended()}{InteractionEnded()}}
+{\footnotesize\ttfamily override void Center\+Image\+Display.\+Interaction\+Ended (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+called when an interaction ends used to reactivate any component deactivated during the interaction 
+
+
+
+Implements \mbox{\hyperlink{class_display_a6fd38485267e1b78f1d1dfb589ec4ae0}{Display}}.
+
+\mbox{\Hypertarget{class_center_image_display_a2944541a38bcc65b7fff15200c9f0fc3}\label{class_center_image_display_a2944541a38bcc65b7fff15200c9f0fc3}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!Interaction\+Started@{Interaction\+Started}}
+\index{Interaction\+Started@{Interaction\+Started}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{Interaction\+Started()}{InteractionStarted()}}
+{\footnotesize\ttfamily override void Center\+Image\+Display.\+Interaction\+Started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+called when interaction with this display started used to maybe disable anything on the display gamobject if needed 
+
+
+
+Implements \mbox{\hyperlink{class_display_a21c51fcf185403197a78a5acfd2065de}{Display}}.
+
+\mbox{\Hypertarget{class_center_image_display_ac6ddf9c8df99ff76c0f508ba4e45a217}\label{class_center_image_display_ac6ddf9c8df99ff76c0f508ba4e45a217}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!Set\+To\+Default\+Interaction\+Behaviour@{Set\+To\+Default\+Interaction\+Behaviour}}
+\index{Set\+To\+Default\+Interaction\+Behaviour@{Set\+To\+Default\+Interaction\+Behaviour}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{Set\+To\+Default\+Interaction\+Behaviour()}{SetToDefaultInteractionBehaviour()}}
+{\footnotesize\ttfamily override System.\+Type Center\+Image\+Display.\+Set\+To\+Default\+Interaction\+Behaviour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if the wanted behaviour is not possible or not exitent the behaviour will be set to this default 
+
+
+
+Implements \mbox{\hyperlink{class_display_a81f07350cf50b3924f4fe269e1b4cf17}{Display}}.
+
+\mbox{\Hypertarget{class_center_image_display_a3da996020c7d8abcd24f35660945703a}\label{class_center_image_display_a3da996020c7d8abcd24f35660945703a}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!Set\+Up@{Set\+Up}}
+\index{Set\+Up@{Set\+Up}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{Set\+Up()}{SetUp()}}
+{\footnotesize\ttfamily override void Center\+Image\+Display.\+Set\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_museum_display_info}{Museum\+Display\+Info}}}]{disp\+Info,  }\item[{Game\+Object}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set up the display in the museum, position and rotation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disp\+Info} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_display_a57325251fbeac943cd48520e50f0bec4}{Display}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_center_image_display_afd5ccf58dcdcddc7592026ee840cf55d}\label{class_center_image_display_afd5ccf58dcdcddc7592026ee840cf55d}} 
+\index{Center\+Image\+Display@{Center\+Image\+Display}!display\+Mesh\+Renderes@{display\+Mesh\+Renderes}}
+\index{display\+Mesh\+Renderes@{display\+Mesh\+Renderes}!Center\+Image\+Display@{Center\+Image\+Display}}
+\subsubsection{\texorpdfstring{display\+Mesh\+Renderes}{displayMeshRenderes}}
+{\footnotesize\ttfamily Raw\+Image \mbox{[}$\,$\mbox{]} Center\+Image\+Display.\+display\+Mesh\+Renderes}
+
+
+
+the mesh renderes on all sides of the pillar 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Displays/\mbox{\hyperlink{_center_image_display_8cs}{Center\+Image\+Display.\+cs}}\end{DoxyCompactItemize}

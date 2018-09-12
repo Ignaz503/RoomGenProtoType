@@ -1,0 +1,4 @@
+<map id="PlayerHand" name="PlayerHand">
+<area shape="rect" id="node3" href="$interface_i_holdable_object.html" title="IHoldableObject" alt="" coords="140,5,253,32"/>
+<area shape="rect" id="node4" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="277,5,369,32"/>
+</map>

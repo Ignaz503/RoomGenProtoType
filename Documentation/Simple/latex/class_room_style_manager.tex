@@ -1,0 +1,247 @@
+\hypertarget{class_room_style_manager}{}\section{Room\+Style\+Manager Class Reference}
+\label{class_room_style_manager}\index{Room\+Style\+Manager@{Room\+Style\+Manager}}
+
+
+Manages downloaded roomstyles, as to not download them multiple times is thread safeish  
+
+
+
+
+Collaboration diagram for Room\+Style\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{class_room_style_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_room_style_manager_a4cc11d2cbbe1a94def12775722d64b74}{Check\+If\+Downloaded}} (int ID)
+\begin{DoxyCompactList}\small\item\em checks if style was downloaded \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_room_style_manager_aab9bdbc810904cb623cddcb636165a6a}{Check\+If\+Downloading}} (int ID)
+\begin{DoxyCompactList}\small\item\em checks if style is currently being downloaded \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_style_manager_a2b0802f24ffe1c2cb4db101359c6bf5e}{Add\+Style}} (\mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}} st)
+\begin{DoxyCompactList}\small\item\em Adds a style to the downloaded styles and removes from currrently downloading tracker if contained \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_room_style_manager_a3d3f5a2cb6e861577d01b015c30c3d9a}{Notify\+Downloading}} (int ID)
+\begin{DoxyCompactList}\small\item\em notifies manager that this ID started downloading \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}} \mbox{\hyperlink{class_room_style_manager_acc946bc24833e24565dee0cdc3b2ef44}{Get\+Style}} (int ID)
+\begin{DoxyCompactList}\small\item\em gets a style from the downloaded ones may return null if not found \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_room_style_manager}{Room\+Style\+Manager}} \mbox{\hyperlink{class_room_style_manager_a1f3eb1f4b0e619fa59fc1584ef21a6c3}{\+\_\+\+Instance}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_room_style_manager}{Room\+Style\+Manager}} \mbox{\hyperlink{class_room_style_manager_aa4bee6c020c8d25f983a975e952afd02}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Instance of the manager \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_room_style_manager_a47b2da6167cd42679c424266734fbeba}{Room\+Style\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em ctor that creates a manager with empty dictionaries \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Concurrent\+Dictionary$<$ int, \mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}} $>$ \mbox{\hyperlink{class_room_style_manager_a03aaf980c4dccbd54255045c852d6016}{downloaded\+Room\+Styles}}
+\item 
+Concurrent\+Dictionary$<$ int, byte $>$ \mbox{\hyperlink{class_room_style_manager_ae508b55c7621b0c69424050942d436d6}{currently\+Downloading\+Styles}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages downloaded roomstyles, as to not download them multiple times is thread safeish 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_room_style_manager_a47b2da6167cd42679c424266734fbeba}\label{class_room_style_manager_a47b2da6167cd42679c424266734fbeba}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{Room\+Style\+Manager()}{RoomStyleManager()}}
+{\footnotesize\ttfamily Room\+Style\+Manager.\+Room\+Style\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ctor that creates a manager with empty dictionaries 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_room_style_manager_a2b0802f24ffe1c2cb4db101359c6bf5e}\label{class_room_style_manager_a2b0802f24ffe1c2cb4db101359c6bf5e}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!Add\+Style@{Add\+Style}}
+\index{Add\+Style@{Add\+Style}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Style()}{AddStyle()}}
+{\footnotesize\ttfamily void Room\+Style\+Manager.\+Add\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}}}]{st }\end{DoxyParamCaption})}
+
+
+
+Adds a style to the downloaded styles and removes from currrently downloading tracker if contained 
+
+
+\begin{DoxyParams}{Parameters}
+{\em st} & the style we want to add\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_style_manager_a2b0802f24ffe1c2cb4db101359c6bf5e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_style_manager_a4cc11d2cbbe1a94def12775722d64b74}\label{class_room_style_manager_a4cc11d2cbbe1a94def12775722d64b74}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!Check\+If\+Downloaded@{Check\+If\+Downloaded}}
+\index{Check\+If\+Downloaded@{Check\+If\+Downloaded}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{Check\+If\+Downloaded()}{CheckIfDownloaded()}}
+{\footnotesize\ttfamily bool Room\+Style\+Manager.\+Check\+If\+Downloaded (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})}
+
+
+
+checks if style was downloaded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & the id of the style we want to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if downloaded, false if not
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_style_manager_a4cc11d2cbbe1a94def12775722d64b74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_style_manager_aab9bdbc810904cb623cddcb636165a6a}\label{class_room_style_manager_aab9bdbc810904cb623cddcb636165a6a}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!Check\+If\+Downloading@{Check\+If\+Downloading}}
+\index{Check\+If\+Downloading@{Check\+If\+Downloading}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{Check\+If\+Downloading()}{CheckIfDownloading()}}
+{\footnotesize\ttfamily bool Room\+Style\+Manager.\+Check\+If\+Downloading (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})}
+
+
+
+checks if style is currently being downloaded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & ID of style we want to know if being dowloaded\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+auto reset event for waiting on of this resource is currently downloaded
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_style_manager_aab9bdbc810904cb623cddcb636165a6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_style_manager_acc946bc24833e24565dee0cdc3b2ef44}\label{class_room_style_manager_acc946bc24833e24565dee0cdc3b2ef44}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!Get\+Style@{Get\+Style}}
+\index{Get\+Style@{Get\+Style}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Style()}{GetStyle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}} Room\+Style\+Manager.\+Get\+Style (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})}
+
+
+
+gets a style from the downloaded ones may return null if not found 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & id of style wanted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the style with the id\+: ID
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_style_manager_acc946bc24833e24565dee0cdc3b2ef44_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_room_style_manager_a3d3f5a2cb6e861577d01b015c30c3d9a}\label{class_room_style_manager_a3d3f5a2cb6e861577d01b015c30c3d9a}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!Notify\+Downloading@{Notify\+Downloading}}
+\index{Notify\+Downloading@{Notify\+Downloading}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{Notify\+Downloading()}{NotifyDownloading()}}
+{\footnotesize\ttfamily bool Room\+Style\+Manager.\+Notify\+Downloading (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})}
+
+
+
+notifies manager that this ID started downloading 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & ID of stlye we download\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if ID was added to tracker, false if not
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room_style_manager_a3d3f5a2cb6e861577d01b015c30c3d9a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_room_style_manager_a1f3eb1f4b0e619fa59fc1584ef21a6c3}\label{class_room_style_manager_a1f3eb1f4b0e619fa59fc1584ef21a6c3}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!\+\_\+\+Instance@{\+\_\+\+Instance}}
+\index{\+\_\+\+Instance@{\+\_\+\+Instance}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+Instance}{\_Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room_style_manager}{Room\+Style\+Manager}} Room\+Style\+Manager.\+\_\+\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_room_style_manager_ae508b55c7621b0c69424050942d436d6}\label{class_room_style_manager_ae508b55c7621b0c69424050942d436d6}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!currently\+Downloading\+Styles@{currently\+Downloading\+Styles}}
+\index{currently\+Downloading\+Styles@{currently\+Downloading\+Styles}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{currently\+Downloading\+Styles}{currentlyDownloadingStyles}}
+{\footnotesize\ttfamily Concurrent\+Dictionary$<$int, byte$>$ Room\+Style\+Manager.\+currently\+Downloading\+Styles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+
+thread safe dictionary, that tracks all styles that are currently being downloaded as to not start downloading it multiple times is dictinary cause of\+: \href{https://stackoverflow.com/questions/18922985/concurrent-hashsett-in-net-framework}{\tt https\+://stackoverflow.\+com/questions/18922985/concurrent-\/hashsett-\/in-\/net-\/framework} \mbox{\Hypertarget{class_room_style_manager_a03aaf980c4dccbd54255045c852d6016}\label{class_room_style_manager_a03aaf980c4dccbd54255045c852d6016}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!downloaded\+Room\+Styles@{downloaded\+Room\+Styles}}
+\index{downloaded\+Room\+Styles@{downloaded\+Room\+Styles}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{downloaded\+Room\+Styles}{downloadedRoomStyles}}
+{\footnotesize\ttfamily Concurrent\+Dictionary$<$int, \mbox{\hyperlink{class_room_style_resource}{Room\+Style\+Resource}}$>$ Room\+Style\+Manager.\+downloaded\+Room\+Styles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+
+thread safe dictionary of all roomstyles, maps from resource ID to style 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_room_style_manager_aa4bee6c020c8d25f983a975e952afd02}\label{class_room_style_manager_aa4bee6c020c8d25f983a975e952afd02}} 
+\index{Room\+Style\+Manager@{Room\+Style\+Manager}!Instance@{Instance}}
+\index{Instance@{Instance}!Room\+Style\+Manager@{Room\+Style\+Manager}}
+\subsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room_style_manager}{Room\+Style\+Manager}} Room\+Style\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Instance of the manager 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Resources/\+Romm\+Style\+Manager/\mbox{\hyperlink{_room_style_manager_8cs}{Room\+Style\+Manager.\+cs}}\end{DoxyCompactItemize}

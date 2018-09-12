@@ -1,0 +1,6 @@
+<map id="DisplayResourceRequest.StartWorkRequest" name="DisplayResourceRequest.StartWorkRequest">
+<area shape="rect" id="node2" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#a57f31b86ab776544b1f5480d7efc1a9c" title="Converison to appliable mesh resource as coroutine " alt="" coords="254,5,461,47"/>
+<area shape="rect" id="node4" href="$class_virt_muse_web_1_1_models_1_1_resource_model.html#a4ff757b0ed17663d3d503dbb4decff7b" title="conversion to appliable image resource as coroutine " alt="" coords="253,71,461,112"/>
+<area shape="rect" id="node3" href="$class_virt_muse_web_1_1_utility_1_1_unity_mesh_data.html#a72d47231711a93e536a91a202d07caef" title="Deserializes unity mesh data from a byte array " alt="" coords="514,5,686,47"/>
+<area shape="rect" id="node5" href="$class_virt_muse_web_1_1_utility_1_1_image.html#ab45d281959b7e4d99408631f57f1d372" title="deserializes Image from byte array " alt="" coords="509,71,691,112"/>
+</map>

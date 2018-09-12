@@ -1,0 +1,5 @@
+<map id="BaseResource" name="BaseResource">
+<area shape="rect" id="node2" href="$class_base_display_resource.html" title="base class for resource " alt="" coords="95,80,246,107"/>
+<area shape="rect" id="node3" href="$class_display_image_resource.html" title="resource that is a image that needs to be displayed " alt="" coords="5,155,160,181"/>
+<area shape="rect" id="node4" href="$class_display_mesh_resource.html" title="a resource that is a mesh " alt="" coords="184,155,336,181"/>
+</map>

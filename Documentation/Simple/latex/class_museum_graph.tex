@@ -1,0 +1,118 @@
+\hypertarget{class_museum_graph}{}\section{Museum\+Graph Class Reference}
+\label{class_museum_graph}\index{Museum\+Graph@{Museum\+Graph}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_museum_graph_1_1_node}{Node}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_museum_graph_a36c6cda2e0045c0d501e6c1c5dc286bf}{Museum\+Graph}} ()
+\item 
+void \mbox{\hyperlink{class_museum_graph_a36a26248bb9c304f8e67c60eb6d517f5}{Build\+Museum\+Graph}} (\mbox{\hyperlink{class_museum}{Museum}} virt\+Muse)
+\begin{DoxyCompactList}\small\item\em builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_museum_graph_1_1_node}{Node}} \mbox{\hyperlink{class_museum_graph_a82509a5eb8dd2020aaee17261bedb974}{Get\+Node\+For\+Room}} (\mbox{\hyperlink{class_room}{Room}} r)
+\begin{DoxyCompactList}\small\item\em gets a museum node that represents this room \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_museum_graph_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_museum_graph_aa166ad4620069c3aaa4b87fd3ae4bfd7}{Nodes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em list of all the nodes in the graph \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ uint, \mbox{\hyperlink{class_museum_graph_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_museum_graph_a79484680da9ead2da6cca2a8225458e5}{Node\+Map}}
+\begin{DoxyCompactList}\small\item\em map that maps from node id to ref \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_museum_graph_a36c6cda2e0045c0d501e6c1c5dc286bf}\label{class_museum_graph_a36c6cda2e0045c0d501e6c1c5dc286bf}} 
+\index{Museum\+Graph@{Museum\+Graph}!Museum\+Graph@{Museum\+Graph}}
+\index{Museum\+Graph@{Museum\+Graph}!Museum\+Graph@{Museum\+Graph}}
+\subsubsection{\texorpdfstring{Museum\+Graph()}{MuseumGraph()}}
+{\footnotesize\ttfamily Museum\+Graph.\+Museum\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_museum_graph_a36a26248bb9c304f8e67c60eb6d517f5}\label{class_museum_graph_a36a26248bb9c304f8e67c60eb6d517f5}} 
+\index{Museum\+Graph@{Museum\+Graph}!Build\+Museum\+Graph@{Build\+Museum\+Graph}}
+\index{Build\+Museum\+Graph@{Build\+Museum\+Graph}!Museum\+Graph@{Museum\+Graph}}
+\subsubsection{\texorpdfstring{Build\+Museum\+Graph()}{BuildMuseumGraph()}}
+{\footnotesize\ttfamily void Museum\+Graph.\+Build\+Museum\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_museum}{Museum}}}]{virt\+Muse }\end{DoxyParamCaption})}
+
+
+
+builds a graph of the museum nodes are rooms edges are when two rooms have a door between each other 
+
+
+\begin{DoxyParams}{Parameters}
+{\em virt\+Muse} & the museum the graph should be built for\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_graph_a36a26248bb9c304f8e67c60eb6d517f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_graph_a36a26248bb9c304f8e67c60eb6d517f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_museum_graph_a82509a5eb8dd2020aaee17261bedb974}\label{class_museum_graph_a82509a5eb8dd2020aaee17261bedb974}} 
+\index{Museum\+Graph@{Museum\+Graph}!Get\+Node\+For\+Room@{Get\+Node\+For\+Room}}
+\index{Get\+Node\+For\+Room@{Get\+Node\+For\+Room}!Museum\+Graph@{Museum\+Graph}}
+\subsubsection{\texorpdfstring{Get\+Node\+For\+Room()}{GetNodeForRoom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_museum_graph_1_1_node}{Node}} Museum\+Graph.\+Get\+Node\+For\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_room}{Room}}}]{r }\end{DoxyParamCaption})}
+
+
+
+gets a museum node that represents this room 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_museum_graph_a82509a5eb8dd2020aaee17261bedb974_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_museum_graph_a79484680da9ead2da6cca2a8225458e5}\label{class_museum_graph_a79484680da9ead2da6cca2a8225458e5}} 
+\index{Museum\+Graph@{Museum\+Graph}!Node\+Map@{Node\+Map}}
+\index{Node\+Map@{Node\+Map}!Museum\+Graph@{Museum\+Graph}}
+\subsubsection{\texorpdfstring{Node\+Map}{NodeMap}}
+{\footnotesize\ttfamily Dictionary$<$uint, \mbox{\hyperlink{class_museum_graph_1_1_node}{Node}}$>$ Museum\+Graph.\+Node\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map that maps from node id to ref 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_museum_graph_aa166ad4620069c3aaa4b87fd3ae4bfd7}\label{class_museum_graph_aa166ad4620069c3aaa4b87fd3ae4bfd7}} 
+\index{Museum\+Graph@{Museum\+Graph}!Nodes@{Nodes}}
+\index{Nodes@{Nodes}!Museum\+Graph@{Museum\+Graph}}
+\subsubsection{\texorpdfstring{Nodes}{Nodes}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_museum_graph_1_1_node}{Node}}$>$ Museum\+Graph.\+Nodes\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+list of all the nodes in the graph 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Unity\+Projects/\+Virt\+Muse/\+Room\+Gen\+Prototype/\+Assets/\+Scripts/\+Virt\+Museum/\mbox{\hyperlink{_museum_graph_8cs}{Museum\+Graph.\+cs}}\end{DoxyCompactItemize}

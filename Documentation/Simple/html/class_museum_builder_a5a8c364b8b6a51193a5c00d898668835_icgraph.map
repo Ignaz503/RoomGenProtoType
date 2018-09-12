@@ -1,0 +1,4 @@
+<map id="MuseumBuilder.PlaceWall" name="MuseumBuilder.PlaceWall">
+<area shape="rect" id="node2" href="$class_museum_builder.html#a604746b8b55c6d423336f44894063244" title="Builds a Museum, over multiple frames(as a coroutine) " alt="" coords="228,5,423,32"/>
+<area shape="rect" id="node3" href="$class_museum_builder.html#a33c69af71baa8a6033be9d2fc04ef5f8" title="MuseumBuilder.Start" alt="" coords="471,5,615,32"/>
+</map>

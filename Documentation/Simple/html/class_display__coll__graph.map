@@ -1,0 +1,4 @@
+<map id="Display" name="Display">
+<area shape="rect" id="node3" href="$interface_i_interactable.html" title="IInteractable" alt="" coords="140,81,232,108"/>
+<area shape="rect" id="node4" href="$class_interaction.html" title="This is the base class for any interaction any class inhereting from this should " alt="" coords="257,81,339,108"/>
+</map>

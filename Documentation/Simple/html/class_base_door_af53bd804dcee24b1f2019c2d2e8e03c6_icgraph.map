@@ -1,0 +1,6 @@
+<map id="BaseDoor.OnDoorOpen" name="BaseDoor.OnDoorOpen">
+<area shape="rect" id="node2" href="$class_single_hinge_door.html#ae0aa0776b9f80616a0b2a35d968101ad" title="coroutine that opens the door " alt="" coords="212,5,420,32"/>
+<area shape="rect" id="node4" href="$class_sliding_door.html#adb583a66e0b4eeb5e03e50a3d4d4e109" title="coroutine to open sliding door " alt="" coords="231,56,401,83"/>
+<area shape="rect" id="node3" href="$class_single_hinge_door.html#ad48e670701a9e9d35f97de3b8ff36208" title="function called to open the door " alt="" coords="468,5,621,32"/>
+<area shape="rect" id="node5" href="$class_sliding_door.html#aaf090e96cc143eb5ed3eaf875045efc9" title="function called to open the door " alt="" coords="483,56,606,83"/>
+</map>
