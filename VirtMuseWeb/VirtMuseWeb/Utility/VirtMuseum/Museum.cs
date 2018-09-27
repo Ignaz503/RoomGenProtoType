@@ -91,7 +91,7 @@ public class Museum
     /// Flag if Initialize has been called or not
     /// can only generate if initialize was called beforehand
     /// </summary>
-    bool IsInitialized { get; set; }
+    bool isInitialized { get; set; }
 
     /// <summary>
     /// the current number of displays in the museum
@@ -129,7 +129,7 @@ public class Museum
         roomTypeToPlaceableChecker = new Dictionary<RoomType, IRoomPlacableChecker>();
         possibleResourceIDs = new List<(int,ResourceType)>();
         possibleRoomStyleIDs = new List<int>();
-        IsInitialized = false;
+        isInitialized = false;
     }
 
     /// <summary>
@@ -144,7 +144,7 @@ public class Museum
         }
         possibleRoomStyleIDs = possRoomstyles;
         possibleResourceIDs = possResources;
-        IsInitialized = true;
+        isInitialized = true;
     }
 
     /// <summary>
@@ -165,7 +165,7 @@ public class Museum
     /// <param name="seed"></param>
     public void Generate(string seed, bool buildMuseumsGraph = true)
     {
-        if (!IsInitialized)
+        if (!isInitialized)
             throw new Exception("Need to initialize museum before generating");
         //TODO add resourcemanager get numb resources for type
         System.Random rng = new System.Random(seed.GetHashCode());

@@ -8,7 +8,7 @@
 
 <!--Type-->
 <div data-bind="with: resource">
-    <h3>What Type of Resource are your trying to upload?</h3>
+    <h3>What Type of Resource are you trying to upload?</h3>
    <h3><select data-bind="options: $root.resType, value: Type, optionsText: 'name',optionsValue: 'num',event:{change: $root.typeChange}"></select></h3>
 </div>
 
@@ -115,7 +115,7 @@
     <input type="file" accept="image/*" data-bind="event: {change: $root.openTexture}" />
 </div>
 
-<!--RoomStyle-->>
+<!--RoomStyle-->
 <div data-bind="visible: type() == 2">
     <!--2 is when type RoomStyle-->
     <h4>Choose Floor Texture To Upload</h4>

@@ -19,6 +19,7 @@ public class MuseumRequest : IResourceRequest
     /// the function that builds the museum from the data received from the server
     /// </summary>
     public Action<Museum> CallBack { get; protected set; }
+
     /// <summary>
     /// The response from the server
     /// </summary>
